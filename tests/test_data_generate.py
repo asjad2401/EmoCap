@@ -41,9 +41,14 @@ class StubLLM:
     def __init__(self, replies):
         self.replies = list(replies)
         self.prompts: list[str] = []
+        self.images: list[bytes | None] = []
+        self.schemas: list[dict | None] = []
 
-    def __call__(self, prompt: str) -> str:
+    def __call__(self, prompt: str, image_bytes: bytes | None = None,
+                 response_schema: dict | None = None) -> str:
         self.prompts.append(prompt)
+        self.images.append(image_bytes)
+        self.schemas.append(response_schema)
         if not self.replies:
             raise AssertionError("StubLLM ran out of replies")
         r = self.replies.pop(0)
@@ -325,3 +330,229 @@ def test_run_generation_records_rejection_reasons(tmp_path):
     )
     assert stats["incomplete"] == 0
     assert sum(stats["rejection_reasons"].values()) >= 1
+
+
+# ── multimodal path ─────────────────────────────────────────────────────────
+
+
+def _tiny_jpeg(tmp_path, name="a.jpg", size=(64, 48), colour=(120, 90, 60)):
+    from PIL import Image
+
+    p = tmp_path / name
+    Image.new("RGB", size, colour).save(p, format="JPEG")
+    return p
+
+
+def test_load_image_bytes_returns_jpeg(tmp_path):
+    from emocap.data.generate import load_image_bytes
+
+    b = load_image_bytes(_tiny_jpeg(tmp_path))
+    assert b[:2] == b"\xff\xd8"  # JPEG SOI marker
+
+
+def test_load_image_bytes_downscales_above_max_dim(tmp_path):
+    """Image tokens are the main cost lever, so the cap must actually apply."""
+    from io import BytesIO
+
+    from PIL import Image
+
+    from emocap.data.generate import load_image_bytes
+
+    big = _tiny_jpeg(tmp_path, "big.jpg", size=(1600, 1200))
+    small = load_image_bytes(big, max_dim=256)
+    assert max(Image.open(BytesIO(small)).size) == 256
+
+    unchanged = load_image_bytes(big, max_dim=None)
+    assert max(Image.open(BytesIO(unchanged)).size) == 1600
+
+
+def test_image_is_passed_to_the_llm_and_prompt_switches_to_multimodal(tmp_path):
+    from emocap.data.generate import load_image_bytes
+
+    img = load_image_bytes(_tiny_jpeg(tmp_path))
+    llm = StubLLM([_json_reply(_five())])
+    generate_one(llm, "A child climbs the stairs.", image_bytes=img)
+
+    assert llm.images == [img]
+    assert "USE THE IMAGE FOR MOOD" in llm.prompts[0]
+
+
+def test_text_only_prompt_when_no_image_given():
+    llm = StubLLM([_json_reply(_five())])
+    generate_one(llm, "A child climbs the stairs.")
+    assert llm.images == [None]
+    assert "USE THE IMAGE FOR MOOD" not in llm.prompts[0]
+
+
+def test_runner_loads_images_and_reuses_them_across_source_captions(tmp_path):
+    """Five source captions share one image, so it must be encoded once."""
+    from emocap.data import generate as gen_mod
+
+    _tiny_jpeg(tmp_path, "a.jpg")
+    rows = [Row("a.jpg", i, f"Caption {i}.") for i in range(5)]
+    llm = StubLLM([_json_reply(_five())] * 5)
+
+    calls = {"n": 0}
+    real = gen_mod.load_image_bytes
+
+    def counting(path, **kw):
+        calls["n"] += 1
+        return real(path, **kw)
+
+    gen_mod.load_image_bytes = counting
+    try:
+        stats = run_generation(llm, rows, tmp_path / "gen.jsonl",
+                               model="stub", images_dir=tmp_path)
+    finally:
+        gen_mod.load_image_bytes = real
+
+    assert stats["written"] == 5
+    assert calls["n"] == 1, f"image encoded {calls['n']} times, expected 1"
+    assert all(b is not None for b in llm.images)
+
+
+def test_rows_with_a_missing_image_are_skipped_not_silently_text_only(tmp_path):
+    """Falling back to a text-only call would put ungrounded rows in the dataset
+    with no record that they differ."""
+    rows = [Row("absent.jpg", 0, "Caption.")]
+    llm = StubLLM([_json_reply(_five())])
+    stats = run_generation(llm, rows, tmp_path / "gen.jsonl",
+                           model="stub", images_dir=tmp_path)
+    assert stats["missing_images"] == 1
+    assert stats["written"] == 0
+    assert llm.prompts == []
+
+
+# ── Option B: one call per image, 25 outputs ────────────────────────────────
+
+
+SOURCES = [
+    "A black dog and a spotted dog are fighting in the street",
+    "A black dog and a tri-colored dog play with each other on the road",
+    "Two dogs of different breeds look at each other on the road",
+    "Two dogs on pavement move toward each other slowly",
+    "A black dog and a white dog with brown spots stare at each other",
+]
+
+
+def _matrix_reply(n=5, bad_index=None, drop_index=None):
+    """A well-formed batch response, optionally with a defect at one index."""
+    out = {}
+    for i in range(n):
+        if i == drop_index:
+            continue
+        caps = {e: f"{SOURCES[i][:60]} in a {e} register today here now." for e in EMOTIONS}
+        if i == bad_index:
+            caps["sad"] = "Short."
+        out[str(i)] = caps
+    return json.dumps(out)
+
+
+def test_parse_batch_response_reads_the_full_matrix():
+    from emocap.data.generate import parse_batch_response
+
+    m = parse_batch_response(_matrix_reply(), 5)
+    assert set(m) == set(range(5))
+    assert all(set(v) == set(EMOTIONS) for v in m.values())
+
+
+def test_parse_batch_response_tolerates_a_code_fence():
+    from emocap.data.generate import parse_batch_response
+
+    assert len(parse_batch_response(f"```json\n{_matrix_reply()}\n```", 5)) == 5
+
+
+def test_parse_batch_response_reports_missing_indices_by_omission():
+    """A dropped index must be visibly absent, not silently filled -- completion by
+    position is the measurement that decides whether batching is safe."""
+    from emocap.data.generate import parse_batch_response
+
+    m = parse_batch_response(_matrix_reply(drop_index=3), 5)
+    assert 3 not in m
+    assert len(m) == 4
+
+
+def test_parse_batch_response_on_junk():
+    from emocap.data.generate import parse_batch_response
+
+    assert parse_batch_response("sorry, I cannot", 5) == {}
+    assert parse_batch_response("", 5) == {}
+
+
+def test_generate_image_batch_returns_matrix_and_per_index_rejections():
+    from emocap.data.generate import generate_image_batch
+
+    llm = StubLLM([_matrix_reply(bad_index=2)])
+    matrix, attempts, rejects = generate_image_batch(llm, SOURCES, max_attempts=1)
+    assert set(matrix) == set(range(5))
+    assert attempts == 1
+    assert 2 in rejects and "sad" in rejects[2]
+    assert 0 not in rejects
+
+
+def test_generate_image_batch_passes_the_schema_when_enabled():
+    from emocap.data.generate import generate_image_batch
+
+    llm = StubLLM([_matrix_reply()])
+    generate_image_batch(llm, SOURCES, max_attempts=1, use_schema=True)
+    schema = llm.schemas[0]
+    assert schema is not None
+    assert schema["required"] == ["0", "1", "2", "3", "4"]
+    assert schema["properties"]["0"]["required"] == list(EMOTIONS)
+
+
+def test_generate_image_batch_omits_the_schema_when_disabled():
+    from emocap.data.generate import generate_image_batch
+
+    llm = StubLLM([_matrix_reply()])
+    generate_image_batch(llm, SOURCES, max_attempts=1, use_schema=False)
+    assert llm.schemas[0] is None
+
+
+def test_generate_image_batch_uses_the_batch_prompt_with_every_source():
+    from emocap.data.generate import generate_image_batch
+
+    llm = StubLLM([_matrix_reply()])
+    generate_image_batch(llm, SOURCES, max_attempts=1)
+    prompt = llm.prompts[0]
+    for s in SOURCES:
+        assert s in prompt
+    assert "25 captions in total" in prompt
+
+
+def test_generate_image_batch_keeps_the_best_attempt():
+    from emocap.data.generate import generate_image_batch
+
+    worse = _matrix_reply(bad_index=0, drop_index=4)
+    better = _matrix_reply(bad_index=0)
+    llm = StubLLM([better, worse])
+    matrix, attempts, rejects = generate_image_batch(llm, SOURCES, max_attempts=2)
+    assert attempts == 2
+    assert set(matrix) == set(range(5)), "a retry must never lose an index"
+
+
+def test_generate_image_batch_survives_a_transport_error():
+    from emocap.data.generate import generate_image_batch
+
+    llm = StubLLM([RuntimeError("503"), _matrix_reply()])
+    matrix, attempts, rejects = generate_image_batch(llm, SOURCES, max_attempts=2)
+    assert attempts == 2 and rejects == {}
+
+
+def test_batch_prompt_switches_to_text_only_without_an_image():
+    from emocap.data.generate import generate_image_batch
+
+    llm = StubLLM([_matrix_reply()])
+    generate_image_batch(llm, SOURCES, max_attempts=1)
+    assert "USE THE IMAGE FOR MOOD" not in llm.prompts[0]
+
+    llm2 = StubLLM([_matrix_reply()])
+    generate_image_batch(llm2, SOURCES, image_bytes=b"\xff\xd8fake", max_attempts=1)
+    assert "USE THE IMAGE FOR MOOD" in llm2.prompts[0]
+
+
+def test_single_call_path_also_sends_a_schema():
+    llm = StubLLM([_json_reply(_five())])
+    generate_one(llm, "A child climbs the stairs.")
+    assert llm.schemas[0] is not None
+    assert llm.schemas[0]["required"] == list(EMOTIONS)

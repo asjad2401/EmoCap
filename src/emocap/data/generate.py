@@ -20,9 +20,16 @@ import re
 import time
 from dataclasses import dataclass, asdict, field
 from pathlib import Path
-from typing import Callable, Iterable
+from typing import Callable, Iterable, Sequence
 
-from emocap.data.prompt import BANNED_ADVERBS, EMOTIONS, build_prompt
+from emocap.data.prompt import (
+    BANNED_ADVERBS,
+    EMOTIONS,
+    batch_response_schema,
+    build_batch_prompt,
+    build_prompt,
+    single_response_schema,
+)
 
 __all__ = [
     "GenerationRecord",
@@ -30,7 +37,10 @@ __all__ = [
     "validate_caption",
     "validate_all",
     "parse_response",
+    "parse_batch_response",
     "generate_one",
+    "generate_image_batch",
+    "load_image_bytes",
     "completed_keys",
     "append_record",
     "read_records",
@@ -38,7 +48,10 @@ __all__ = [
     "gemini_llm",
 ]
 
-LLM = Callable[[str], str]
+#: A generation backend: ``llm(prompt, image_bytes=None, response_schema=None) -> raw_text``.
+#: Injected so every test here runs offline against a stub, and so nothing else in the
+#: codebase knows which provider is in use.
+LLM = Callable[..., str]
 
 _BANNED_RE = re.compile(r"\b(" + "|".join(BANNED_ADVERBS) + r")\b", re.I)
 #: Abstraction frames v1 leaked constantly, in the appositive form
@@ -183,10 +196,69 @@ def parse_response(raw: str) -> dict[str, str]:
 # ── one call, with retry-and-feedback ───────────────────────────────────────
 
 
+def parse_batch_response(raw: str, n_sources: int) -> dict[int, dict[str, str]]:
+    """Extract an ``{caption_idx: {emotion: text}}`` matrix from a batch response.
+
+    Missing indices and missing registers are simply absent from the result -- the
+    caller reports the completion rate rather than this function guessing. That
+    per-position completeness is the measurement that decides whether batching is
+    safe, so it must not be papered over here.
+    """
+    if not raw:
+        return {}
+    text = raw.strip()
+    fenced = re.search(r"```(?:json)?\s*(.*?)```", text, re.S)
+    if fenced:
+        text = fenced.group(1).strip()
+
+    data = None
+    for candidate in (text, *(m.group(0) for m in re.finditer(r"\{.*\}", text, re.S))):
+        try:
+            parsed = json.loads(candidate)
+        except (json.JSONDecodeError, TypeError):
+            continue
+        if isinstance(parsed, dict):
+            data = parsed
+            break
+    if data is None:
+        return {}
+
+    out: dict[int, dict[str, str]] = {}
+    for i in range(n_sources):
+        block = data.get(str(i), data.get(i))
+        if not isinstance(block, dict):
+            continue
+        caps = {e: str(block[e]).strip() for e in EMOTIONS if block.get(e)}
+        if caps:
+            out[i] = caps
+    return out
+
+
+def load_image_bytes(path: str | Path, *, max_dim: int | None = 512) -> bytes:
+    """Read an image as JPEG bytes, optionally downscaled.
+
+    Gemini charges images as tokens by tile, so downscaling is the main cost lever.
+    512px is well above CLIP ViT-B/32's 224px input, so nothing the captioning model
+    could learn is lost by capping here.
+    """
+    from io import BytesIO
+
+    from PIL import Image
+
+    img = Image.open(path).convert("RGB")
+    if max_dim and max(img.size) > max_dim:
+        scale = max_dim / max(img.size)
+        img = img.resize((max(1, int(img.width * scale)), max(1, int(img.height * scale))))
+    buf = BytesIO()
+    img.save(buf, format="JPEG", quality=90)
+    return buf.getvalue()
+
+
 def generate_one(
     llm: LLM,
     source_caption: str,
     *,
+    image_bytes: bytes | None = None,
     min_words: int = 8,
     max_words: int = 24,
     max_attempts: int = 3,
@@ -206,10 +278,11 @@ def generate_one(
     for attempt in range(1, max_attempts + 1):
         attempts = attempt
         prompt = build_prompt(
-            source_caption, min_words=min_words, max_words=max_words, failures=failures
+            source_caption, min_words=min_words, max_words=max_words,
+            failures=failures, multimodal=image_bytes is not None,
         )
         try:
-            raw = llm(prompt)
+            raw = llm(prompt, image_bytes, single_response_schema())
         except Exception as exc:  # noqa: BLE001 -- transport errors are expected
             if on_error:
                 on_error(exc, attempt)
@@ -224,6 +297,65 @@ def generate_one(
             break
 
         failures = {e: (captions.get(e, ""), why) for e, why in rejects.items()}
+
+    return best, attempts, best_rejects
+
+
+def generate_image_batch(
+    llm: LLM,
+    source_captions: Sequence[str],
+    *,
+    image_bytes: bytes | None = None,
+    min_words: int = 8,
+    max_words: int = 24,
+    max_attempts: int = 1,
+    use_schema: bool = True,
+    on_error: Callable[[Exception, int], None] | None = None,
+) -> tuple[dict[int, dict[str, str]], int, dict[int, dict[str, str]]]:
+    """Option B: rewrite every source caption of one image in a single call.
+
+    Returns ``(matrix, attempts, rejects)`` where ``matrix`` maps caption index to
+    ``{emotion: text}`` and ``rejects`` maps caption index to ``{emotion: reason}``.
+
+    Retries request the whole matrix again -- there is no partial-repair path here on
+    purpose. Repairing one register of one caption is what Option A is for, and the
+    probe measures whether that fallback is needed often enough to matter.
+    """
+    n = len(source_captions)
+    best: dict[int, dict[str, str]] = {}
+    best_rejects: dict[int, dict[str, str]] = {i: {e: "not generated" for e in EMOTIONS}
+                                               for i in range(n)}
+    attempts = 0
+
+    def n_bad(rej: dict[int, dict[str, str]]) -> int:
+        return sum(len(v) for v in rej.values())
+
+    for attempt in range(1, max_attempts + 1):
+        attempts = attempt
+        prompt = build_batch_prompt(
+            source_captions, min_words=min_words, max_words=max_words,
+            multimodal=image_bytes is not None,
+        )
+        schema = batch_response_schema(n) if use_schema else None
+        try:
+            raw = llm(prompt, image_bytes, schema)
+        except Exception as exc:  # noqa: BLE001 -- transport errors are expected
+            if on_error:
+                on_error(exc, attempt)
+            continue
+
+        matrix = parse_batch_response(raw, n)
+        rejects: dict[int, dict[str, str]] = {}
+        for i in range(n):
+            caps = matrix.get(i, {})
+            bad = validate_all(caps, min_words=min_words, max_words=max_words)
+            if bad:
+                rejects[i] = bad
+
+        if n_bad(rejects) < n_bad(best_rejects):
+            best, best_rejects = matrix, rejects
+        if not rejects:
+            break
 
     return best, attempts, best_rejects
 
@@ -291,6 +423,8 @@ def run_generation(
     out_path: str | Path,
     *,
     model: str = "gemini-2.0-flash",
+    images_dir: str | Path | None = None,
+    max_image_dim: int | None = 512,
     min_words: int = 8,
     max_words: int = 24,
     max_attempts: int = 3,
@@ -313,12 +447,29 @@ def run_generation(
         "written": 0,
         "incomplete": 0,
         "total_attempts": 0,
+        "missing_images": 0,
         "rejection_reasons": {},
     }
 
+    # One image is reused across its 5 source captions, so cache the encode.
+    image_cache: dict[str, bytes | None] = {}
+
     for row in pending:
+        img_bytes = None
+        if images_dir is not None:
+            if row.image_id not in image_cache:
+                path = Path(images_dir) / row.image_id
+                try:
+                    image_cache[row.image_id] = load_image_bytes(path, max_dim=max_image_dim)
+                except Exception:
+                    image_cache[row.image_id] = None
+            img_bytes = image_cache[row.image_id]
+            if img_bytes is None:
+                stats["missing_images"] += 1
+                continue
+
         captions, attempts, rejects = generate_one(
-            llm, row.caption,
+            llm, row.caption, image_bytes=img_bytes,
             min_words=min_words, max_words=max_words, max_attempts=max_attempts,
         )
         stats["attempted"] += 1
@@ -357,32 +508,65 @@ def gemini_llm(
     *,
     model: str = "gemini-2.0-flash",
     temperature: float = 0.9,
-    max_output_tokens: int = 512,
+    max_output_tokens: int = 1024,
     max_retries: int = 4,
     base_delay: float = 2.0,
 ) -> LLM:
-    """A ``Callable[[str], str]`` over Gemini, with exponential backoff.
+    """A multimodal ``llm(prompt, image_bytes=None) -> str`` over Gemini.
 
-    Kept behind the same interface the tests stub, so nothing else in the codebase
-    knows which provider is being used.
+    The returned callable carries a ``.usage`` list -- one dict per successful call
+    with ``prompt_tokens``, ``output_tokens`` and ``total_tokens`` read from the
+    API's own ``usage_metadata``. That is what makes the cost of a full run
+    measurable from a small probe batch instead of estimated from list prices.
     """
     from google import genai
     from google.genai import types
 
     client = genai.Client(api_key=api_key)
-    cfg = types.GenerateContentConfig(
-        temperature=temperature,
-        max_output_tokens=max_output_tokens,
-        response_mime_type="application/json",
-    )
+    usage: list[dict] = []
 
-    def call(prompt: str) -> str:
+    def call(
+        prompt: str,
+        image_bytes: bytes | None = None,
+        response_schema: dict | None = None,
+    ) -> str:
+        cfg = types.GenerateContentConfig(
+            temperature=temperature,
+            max_output_tokens=max_output_tokens,
+            response_mime_type="application/json",
+            **({"response_schema": response_schema} if response_schema else {}),
+        )
+        parts: list = []
+        if image_bytes is not None:
+            parts.append(types.Part.from_bytes(data=image_bytes, mime_type="image/jpeg"))
+        parts.append(types.Part.from_text(text=prompt))
+
         last: Exception | None = None
         for attempt in range(max_retries):
             try:
+                t0 = time.time()
                 resp = client.models.generate_content(
-                    model=model, contents=prompt, config=cfg
+                    model=model,
+                    contents=[types.Content(role="user", parts=parts)],
+                    config=cfg,
                 )
+                latency = time.time() - t0
+                um = getattr(resp, "usage_metadata", None)
+                finish = None
+                try:
+                    finish = str(resp.candidates[0].finish_reason)
+                except Exception:  # noqa: BLE001 -- telemetry only
+                    pass
+                usage.append({
+                    "prompt_tokens": getattr(um, "prompt_token_count", 0) or 0,
+                    "output_tokens": getattr(um, "candidates_token_count", 0) or 0,
+                    "total_tokens": getattr(um, "total_token_count", 0) or 0,
+                    "latency_s": round(latency, 3),
+                    "finish_reason": finish,
+                    "had_image": image_bytes is not None,
+                    "image_bytes": len(image_bytes) if image_bytes else 0,
+                    "schema": bool(response_schema),
+                })
                 return resp.text or ""
             except Exception as exc:  # noqa: BLE001 -- retry any transport failure
                 last = exc
@@ -390,4 +574,15 @@ def gemini_llm(
                     time.sleep(base_delay * (2**attempt))
         raise RuntimeError(f"Gemini call failed after {max_retries} attempts") from last
 
+    def count_text_tokens(prompt: str) -> int:
+        """Tokens for the prompt text alone, via the API's own counter.
+
+        Subtracting this from a multimodal call's prompt_token_count isolates the
+        image's token cost, which is the quantity the resolution decision turns on.
+        """
+        r = client.models.count_tokens(model=model, contents=prompt)
+        return int(getattr(r, "total_tokens", 0) or 0)
+
+    call.usage = usage  # type: ignore[attr-defined]
+    call.count_text_tokens = count_text_tokens  # type: ignore[attr-defined]
     return call

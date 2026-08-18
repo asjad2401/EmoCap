@@ -17,11 +17,16 @@ feeling. That is the whole design.
 
 from __future__ import annotations
 
+from typing import Sequence
+
 __all__ = [
     "EMOTIONS",
     "BANNED_ADVERBS",
     "REGISTERS",
     "build_prompt",
+    "build_batch_prompt",
+    "single_response_schema",
+    "batch_response_schema",
 ]
 
 #: Order fixes emotion_id everywhere. Locked in configs/prereg.lock.yaml.
@@ -63,14 +68,37 @@ Worked examples, on the caption "A child in a pink dress is climbing up a set of
 """
 
 
+#: Steering that keeps targets inside what the captioning model can actually learn.
+#: The model never sees this prompt or the source caption -- at inference it gets
+#: CLIP ViT-B/32 features and an emotion id. A target carrying detail that a global
+#: CLIP embedding cannot recover ("a white bucket and a green bucket near the base")
+#: teaches confident invention, because the loss rewards producing those words.
+_GROUNDING_STEER = """\
+USE THE IMAGE FOR MOOD, THE CAPTION FOR CONTENT
+The caption fixes what is in the scene. The image tells you how it *feels* -- light,
+weather, colour, crowding, posture, expression, how open or closed the space is.
+
+Draw on the image only for those broad properties. Do NOT inventory small objects
+you can see but the caption does not mention: no "a wire mesh screen", no "two
+buckets near the base", no background signage or brand names. Broad and true beats
+specific and unverifiable.
+"""
+
+
 def build_prompt(
     source_caption: str,
     *,
     min_words: int = 8,
     max_words: int = 24,
     failures: dict[str, tuple[str, str]] | None = None,
+    multimodal: bool = True,
 ) -> str:
     """Build the generation prompt for one human caption.
+
+    With ``multimodal=True`` the call also carries the image, so the prompt tells the
+    model to take mood from the picture and content from the caption -- and steers it
+    away from small-object inventory, which the captioning model could not learn from
+    CLIP features and would only learn to hallucinate.
 
     ``failures`` maps emotion -> (previous attempt, why it was rejected), and is
     appended on a retry so the model is told exactly what to fix. v1 did this for
@@ -79,9 +107,17 @@ def build_prompt(
     registers = "\n".join(f"  {e:<9} {REGISTERS[e]}" for e in EMOTIONS)
     keys = ", ".join(f'"{e}"' for e in EMOTIONS)
 
+    opening = (
+        "You are shown an image and one human-written caption of it. Rewrite that "
+        "caption so it carries a specific emotional register, without changing "
+        "anything about what is in the picture."
+        if multimodal else
+        "You rewrite an image caption so it carries a specific emotional register, "
+        "without changing anything about what is in the picture."
+    )
+
     prompt = f"""\
-You rewrite an image caption so it carries a specific emotional register, without \
-changing anything about what is in the picture.
+{opening}
 
 ORIGINAL CAPTION: "{source_caption.strip()}"
 
@@ -99,6 +135,7 @@ WHERE THE EMOTION COMES FROM
 Word choice, sentence rhythm, and which detail you put first. Never from naming the \
 feeling, and never from figurative language.
 
+{_GROUNDING_STEER if multimodal else ""}
 {_WORKED_EXAMPLES}
 HARD RULES
   1. Between {min_words} and {max_words} words. Count before finalising.
@@ -123,3 +160,101 @@ REGISTERS
 
     prompt += '\nReturn only the JSON object, with no surrounding text or code fence.\n'
     return prompt
+
+
+# ── Option B: all five source captions in one call ──────────────────────────
+
+
+def build_batch_prompt(
+    source_captions: Sequence[str],
+    *,
+    min_words: int = 8,
+    max_words: int = 24,
+    multimodal: bool = True,
+) -> str:
+    """One prompt covering every source caption for one image.
+
+    Flickr8k gives five human captions per image, and the study needs each rewritten
+    into each of the five registers -- 25 targets per image. Doing that in one call
+    sends the image and the instructions once instead of five times.
+
+    The tradeoff is a 25-field response: more truncation exposure, and structured
+    output quality that may decay toward the end. Pair this with
+    :func:`batch_response_schema` so the shape is constrained rather than hoped for,
+    and measure completion rate *by output position* before trusting it.
+    """
+    base = build_prompt(
+        source_captions[0], min_words=min_words, max_words=max_words,
+        multimodal=multimodal,
+    )
+    # Reuse the rules and worked examples verbatim; swap the task framing.
+    head, _, rules = base.partition("Rewrite it five times, once per register.")
+    rules = rules.split("\n", 1)[1] if "\n" in rules else rules
+    # build_prompt ends with its own "return only JSON" line; this prompt adds its
+    # own after the batch-specific instructions, so drop the inherited one.
+    rules = rules.replace(
+        "Return only the JSON object, with no surrounding text or code fence.\n", ""
+    ).rstrip() + "\n"
+
+    listing = "\n".join(
+        f'  {i}: "{c.strip()}"' for i, c in enumerate(source_captions)
+    )
+    keys = ", ".join(f'"{e}"' for e in EMOTIONS)
+
+    opening = (
+        "You are shown an image and five human-written captions of it. Each caption "
+        "describes the same picture differently."
+        if multimodal else
+        "You are given five human-written captions of one image. Each describes the "
+        "same picture differently."
+    )
+
+    return f"""\
+{opening}
+
+CAPTIONS:
+{listing}
+
+For EACH caption, rewrite it into all five emotional registers, without changing \
+anything about what is in the picture.
+
+Return ONLY a JSON object whose keys are the caption indices \
+({", ".join(f'"{i}"' for i in range(len(source_captions)))}), each mapping to an \
+object with exactly these five keys: {keys}.
+
+{rules}
+Rewrite every caption index. Do not omit any. Keep each rewrite anchored to its own \
+caption -- rewrite {len(source_captions)} x 5 = {len(source_captions) * 5} captions in total.
+
+Return only the JSON object, with no surrounding text or code fence.
+"""
+
+
+# ── response schemas, for constrained structured output ─────────────────────
+
+
+def single_response_schema() -> dict:
+    """Schema for one caption's five registers. Guarantees all keys are present."""
+    return {
+        "type": "object",
+        "properties": {e: {"type": "string"} for e in EMOTIONS},
+        "required": list(EMOTIONS),
+        "propertyOrdering": list(EMOTIONS),
+    }
+
+
+def batch_response_schema(n_sources: int) -> dict:
+    """Schema for ``n_sources`` captions x five registers.
+
+    Constraining the shape is the main mitigation for Option B's 25-field response:
+    without it, a dropped or renamed key is silent, and we would only discover it as
+    a missing-caption rate after paying for the run.
+    """
+    inner = single_response_schema()
+    keys = [str(i) for i in range(n_sources)]
+    return {
+        "type": "object",
+        "properties": {k: inner for k in keys},
+        "required": keys,
+        "propertyOrdering": keys,
+    }
