@@ -83,29 +83,53 @@ def flatten(cfg: Any, prefix: str = "") -> Iterator[tuple[str, Any]]:
         yield prefix, cfg
 
 
-def lock_violations(live: dict[str, Any], lock: dict[str, Any] | None = None) -> list[str]:
-    """Every pre-registered key that ``live`` contradicts.
+def lock_violations(
+    live: dict[str, Any],
+    lock: dict[str, Any] | None = None,
+    *,
+    require_sections: Sequence[str] = (),
+) -> list[str]:
+    """Every pre-registered key that ``live`` contradicts, or silently drops.
 
-    Keys absent from ``live`` are fine -- a config need not restate the whole
-    study. Keys present in both must agree exactly.
+    Keys absent from ``live`` are normally fine -- a config need not restate the
+    whole study. Keys present in both must agree exactly.
+
+    ``require_sections`` names top-level sections (``"data"``, ``"decode"``) that
+    ``live`` claims to own in full: within those, a locked key that is *missing*
+    from ``live`` is also a violation.
+
+    That second check exists because of a real miss: an edit adopting the official
+    Flickr8k splits landed in ``configs/data.yaml`` but not in the lock, leaving
+    ``split_source: official_flickr8k`` in one file and ``split_ratios: 80/10/10``
+    in the other. Contradiction-only checking passed both, because neither key
+    appeared in both files. A missing pre-registered setting is exactly as
+    dangerous as a contradicting one.
     """
     if lock is None:
         lock = load_config(LOCK_PATH)
     live_flat = dict(flatten(live))
     out: list[str] = []
     for key, locked in flatten(lock):
-        if key in live_flat and live_flat[key] != locked:
-            out.append(f"{key}: live={live_flat[key]!r} locked={locked!r}")
+        if key in live_flat:
+            if live_flat[key] != locked:
+                out.append(f"{key}: live={live_flat[key]!r} locked={locked!r}")
+        elif any(key.startswith(f"{sec}.") for sec in require_sections):
+            out.append(f"{key}: MISSING from live config (locked={locked!r})")
     return out
 
 
-def assert_matches_lock(live: dict[str, Any], lock: dict[str, Any] | None = None) -> None:
+def assert_matches_lock(
+    live: dict[str, Any],
+    lock: dict[str, Any] | None = None,
+    *,
+    require_sections: Sequence[str] = (),
+) -> None:
     """Raise if a live config has drifted from the pre-registration.
 
     Stage 10 calls this before computing any metric. Drifting is allowed -- but it
     has to be deliberate: log it in docs/deviations.md and bump the lock tag.
     """
-    bad = lock_violations(live, lock)
+    bad = lock_violations(live, lock, require_sections=require_sections)
     if bad:
         raise ValueError(
             "live config contradicts configs/prereg.lock.yaml:\n  "

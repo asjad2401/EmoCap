@@ -99,6 +99,28 @@ def test_shipped_data_config_agrees_with_the_lock():
     assert lock_violations(load_config("data")) == []
 
 
+def test_data_config_restates_every_locked_data_key():
+    """A pre-registered key that a config silently *drops* is as dangerous as one
+    it contradicts.
+
+    Caught for real: adopting the official Flickr8k splits landed in data.yaml but
+    not in the lock, leaving `split_source: official_flickr8k` in one file and
+    `split_ratios: 80/10/10` in the other. Contradiction-only checking passed both,
+    because neither key appeared in both files.
+    """
+    assert lock_violations(load_config("data"), require_sections=("data",)) == []
+
+
+def test_missing_locked_key_is_reported_when_the_section_is_required():
+    bad = lock_violations({"data": {"dataset": "flickr8k"}}, require_sections=("data",))
+    assert any("MISSING" in v for v in bad)
+    assert any("split_source" in v for v in bad)
+
+
+def test_missing_keys_are_ignored_outside_required_sections():
+    assert lock_violations({"data": {"dataset": "flickr8k"}}) == []
+
+
 def test_seeds_in_the_lock_match_the_code_constant():
     from emocap.runtime import PREREGISTERED_SEEDS
 
@@ -118,6 +140,9 @@ def test_decode_defaults_match_the_lock():
 
     locked = load_config("prereg.lock")["decode"]
     assert DecodeConfig().as_dict() == locked
+    assert lock_violations(
+        {"decode": DecodeConfig().as_dict()}, require_sections=("decode",)
+    ) == []
 
 
 # ── manifests ───────────────────────────────────────────────────────────────

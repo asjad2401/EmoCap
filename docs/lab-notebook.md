@@ -93,3 +93,45 @@ Compressed to 2.6 MB, sha256-verified byte-identical, documented in
 **Next:** stage 03 (`captions_qa` — the LLM-judge rubric and the four quality gates), then
 the notebook runners. Stage 02 is ready to run against the real key whenever the Flickr8k
 captions file is in place.
+
+## 2026-08-18 (later) — vocab sweep: what it settled, and where I overspent
+
+**Settled, and worth the time:**
+
+- **UNK is not a tradeoff, it is an artifact of pruning someone else's vocabulary.** A
+  byte-level BPE trained on our corpus has every byte in its alphabet: 0% UNK at every
+  vocab size, with only sequence length varying. v1's frequency-pruned CLIP vocab sent
+  8.0% / 4.4% / 2.1% / 0.9% of dev tokens to UNK at V = 1k / 2k / 4k / 9k.
+- **Track A never needed CLIP's text vocabulary at all.** Its decoder trains from scratch
+  and only the CLIP *vision* tower is used. The whole `local2clip` mapping was dead weight,
+  and it is where the off-by-one came from.
+- **V=9000 does not exist for this corpus.** The BPE trainer saturates at 7,667 types at
+  `min_frequency=2`, so v1's 9,048-token vocabulary was larger than its corpus could support.
+- **Per-token perplexity rises with V (14.6 -> 28.6) while bits/word falls.** Anyone tuning
+  vocab on per-token loss -- which is what v1 logged -- picks the smallest vocab for entirely
+  spurious reasons. Per-token loss is not comparable across vocabularies; bits per word is.
+
+**Where I overspent.** I then relaunched the whole sweep at 34 epochs to reach convergence,
+and killed it 8 epochs in when the user asked why we were doing it. They were right. The
+measured spread was 1.92% bits/word across a 7.7x vocab range, and the decision is not
+actually driven by that number -- it is driven by parameter budget. Even if convergence
+widened the gap threefold in favour of V=7667, spending 71% of a ~5M-param model on token
+lookup is wrong for a study about visual and emotional conditioning. **The experiment could
+not change the decision, so finishing it was waste.** Worth asking "what outcome would change
+my mind?" before spending the compute, not after.
+
+**Vocab size is not pre-registered, and should not be.** It is held constant across all
+conditions, so it cannot confound the ablation. It belongs in a tunable config, and Track A
+runs cost ~4 min each on Kaggle, so it can be swept for nearly free alongside the real runs.
+
+**A real bug the audit surfaced.** Adopting the official splits landed in `configs/data.yaml`
+but *not* in `configs/prereg.lock.yaml` -- my edit matched on text that differed by a trailing
+comment in the lock, and the script printed success without verifying the replacement. So the
+two files contradicted each other: `split_source: official_flickr8k` in one,
+`split_ratios: 80/10/10` in the other. **The lock test passed anyway**, because
+`lock_violations` only compared keys present in *both* files and neither key was.
+
+Fixed the lock, and closed the hole: `lock_violations(..., require_sections=("data",))` now
+treats a locked key *missing* from a config that owns that section as a violation. A dropped
+pre-registered setting is exactly as dangerous as a contradicting one. Two lessons: assert
+that an edit actually applied, and a guard that only checks agreement is not a guard.
