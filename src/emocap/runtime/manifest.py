@@ -117,7 +117,13 @@ class Manifest:
     def finalise(self, run_dir: str | Path, status: str = "complete") -> Path:
         self.finished_at = time.time()
         self.status = status
-        failed = [k for k, v in self.checks.items() if not v["passed"]]
+        # Defensive: finalise runs *after* the work is paid for, so a malformed
+        # check entry must not lose the manifest. A caller once stored a raw stats
+        # dict here and the KeyError discarded the record of a completed batch run.
+        failed = [
+            k for k, v in self.checks.items()
+            if isinstance(v, dict) and v.get("passed") is False
+        ]
         if failed and status == "complete":
             self.status = "complete_with_failed_checks"
         return self.save(run_dir)

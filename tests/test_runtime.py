@@ -226,3 +226,24 @@ def test_different_seeds_diverge():
     a = torch.randn(3).tolist()
     seed_everything(1337)
     assert a != torch.randn(3).tolist()
+
+
+def test_finalise_survives_a_malformed_check_entry(tmp_path):
+    """finalise runs *after* the work is paid for. A caller once stored a raw stats
+    dict in `checks` and the resulting KeyError discarded the manifest of a completed
+    batch run -- 1,250 generated captions with no provenance record."""
+    m = Manifest(run_id="r1", stage="s", config={})
+    m.checks["stats"] = {"captions": 1250, "jobs": 1}       # not a check at all
+    m.record_check("real_gate", passed=True)
+    m.finalise(tmp_path)
+    d = Manifest.load(tmp_path)
+    assert d["status"] == "complete"
+    assert d["checks"]["stats"]["captions"] == 1250
+
+
+def test_finalise_still_flags_a_genuinely_failed_check(tmp_path):
+    m = Manifest(run_id="r1", stage="s", config={})
+    m.checks["junk"] = "not a dict"
+    m.record_check("real_gate", passed=False, detail="nope")
+    m.finalise(tmp_path)
+    assert Manifest.load(tmp_path)["status"] == "complete_with_failed_checks"

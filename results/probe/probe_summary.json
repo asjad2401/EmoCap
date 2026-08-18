@@ -1,0 +1,383 @@
+{
+  "summaries": [
+    {
+      "arm": "A-text@gemini-3.5-flash",
+      "calls": 150,
+      "completion_ci": {
+        "mean": 0.9933,
+        "lo": 0.98,
+        "hi": 1.0,
+        "n_clusters": 30,
+        "width": 0.02
+      },
+      "rejection_ci": {
+        "mean": 0.0067,
+        "lo": 0.0014,
+        "hi": 0.0121,
+        "n_clusters": 30,
+        "width": 0.0107
+      },
+      "errors": 0,
+      "captions_returned": 745,
+      "captions_expected": 750,
+      "completion_rate": 0.9933,
+      "rejection_rate": 0.0134,
+      "rejections_by_rule": {
+        "not generated": 5,
+        "figurative/abstract phrasing": 4,
+        "7 words": 1
+      },
+      "truncated": 0,
+      "input_tokens_mean": 710.9,
+      "output_tokens_mean": 120.3,
+      "latency_mean_s": 3.5,
+      "latency_p95_s": 7.57,
+      "length": {
+        "n": 745,
+        "mean": 15.97,
+        "p05": 11,
+        "p50": 16,
+        "p95": 20,
+        "min": 7,
+        "max": 24,
+        "in_target": 0.9987
+      },
+      "content_recall_mean": 0.8652,
+      "novel_rate_mean": 0.4161,
+      "register_similarity_mean": 0.4367,
+      "full_run_input_tokens": 28757571,
+      "full_run_output_tokens": 4866736,
+      "full_run_calls": 40455
+    },
+    {
+      "arm": "A-224@gemini-3.5-flash",
+      "calls": 150,
+      "completion_ci": {
+        "mean": 1.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "n_clusters": 30,
+        "width": 0.0
+      },
+      "rejection_ci": {
+        "mean": 0.0107,
+        "lo": 0.0027,
+        "hi": 0.0213,
+        "n_clusters": 30,
+        "width": 0.0187
+      },
+      "errors": 0,
+      "captions_returned": 750,
+      "captions_expected": 750,
+      "completion_rate": 1.0,
+      "rejection_rate": 0.0107,
+      "rejections_by_rule": {
+        "figurative/abstract phrasing": 6,
+        "25 words": 1,
+        "26 words": 1
+      },
+      "truncated": 0,
+      "input_tokens_mean": 1922.2,
+      "output_tokens_mean": 130.4,
+      "latency_mean_s": 2.48,
+      "latency_p95_s": 3.78,
+      "length": {
+        "n": 750,
+        "mean": 18.05,
+        "p05": 14,
+        "p50": 18,
+        "p95": 22,
+        "min": 10,
+        "max": 26,
+        "in_target": 0.9973
+      },
+      "content_recall_mean": 0.8204,
+      "novel_rate_mean": 0.5312,
+      "register_similarity_mean": 0.3373,
+      "full_run_input_tokens": 77760713,
+      "full_run_output_tokens": 5275871,
+      "full_run_calls": 40455
+    },
+    {
+      "arm": "A-384@gemini-3.5-flash",
+      "calls": 150,
+      "completion_ci": {
+        "mean": 0.9933,
+        "lo": 0.98,
+        "hi": 1.0,
+        "n_clusters": 30,
+        "width": 0.02
+      },
+      "rejection_ci": {
+        "mean": 0.0067,
+        "lo": 0.0027,
+        "hi": 0.0122,
+        "n_clusters": 30,
+        "width": 0.0096
+      },
+      "errors": 0,
+      "captions_returned": 745,
+      "captions_expected": 750,
+      "completion_rate": 0.9933,
+      "rejection_rate": 0.0134,
+      "rejections_by_rule": {
+        "not generated": 5,
+        "figurative/abstract phrasing": 4,
+        "25 words": 1
+      },
+      "truncated": 0,
+      "input_tokens_mean": 1922.7,
+      "output_tokens_mean": 133.7,
+      "latency_mean_s": 4.41,
+      "latency_p95_s": 11.32,
+      "length": {
+        "n": 745,
+        "mean": 18.49,
+        "p05": 15,
+        "p50": 18,
+        "p95": 22,
+        "min": 11,
+        "max": 25,
+        "in_target": 0.9987
+      },
+      "content_recall_mean": 0.8304,
+      "novel_rate_mean": 0.5325,
+      "register_similarity_mean": 0.3408,
+      "full_run_input_tokens": 77780940,
+      "full_run_output_tokens": 5409372,
+      "full_run_calls": 40455
+    },
+    {
+      "arm": "A-512@gemini-3.5-flash",
+      "calls": 150,
+      "completion_ci": {
+        "mean": 1.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "n_clusters": 30,
+        "width": 0.0
+      },
+      "rejection_ci": {
+        "mean": 0.0133,
+        "lo": 0.0027,
+        "hi": 0.0293,
+        "n_clusters": 30,
+        "width": 0.0267
+      },
+      "errors": 0,
+      "captions_returned": 750,
+      "captions_expected": 750,
+      "completion_rate": 1.0,
+      "rejection_rate": 0.0133,
+      "rejections_by_rule": {
+        "figurative/abstract phrasing": 9,
+        "25 words": 1
+      },
+      "truncated": 0,
+      "input_tokens_mean": 1920.8,
+      "output_tokens_mean": 130.7,
+      "latency_mean_s": 5.53,
+      "latency_p95_s": 18.83,
+      "length": {
+        "n": 750,
+        "mean": 18.09,
+        "p05": 14,
+        "p50": 18,
+        "p95": 22,
+        "min": 10,
+        "max": 25,
+        "in_target": 0.9987
+      },
+      "content_recall_mean": 0.8285,
+      "novel_rate_mean": 0.5271,
+      "register_similarity_mean": 0.3446,
+      "full_run_input_tokens": 77705424,
+      "full_run_output_tokens": 5285850,
+      "full_run_calls": 40455
+    },
+    {
+      "arm": "B-384-schema@gemini-3.5-flash",
+      "calls": 60,
+      "completion_ci": {
+        "mean": 1.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "n_clusters": 60,
+        "width": 0.0
+      },
+      "rejection_ci": {
+        "mean": 0.0233,
+        "lo": 0.0127,
+        "hi": 0.036,
+        "n_clusters": 60,
+        "width": 0.0233
+      },
+      "errors": 0,
+      "captions_returned": 1500,
+      "captions_expected": 1500,
+      "completion_rate": 1.0,
+      "rejection_rate": 0.0233,
+      "rejections_by_rule": {
+        "figurative/abstract phrasing": 29,
+        "25 words": 2,
+        "26 words": 2,
+        "names the emotion with \"tensely\"": 1,
+        "27 words": 1
+      },
+      "truncated": 0,
+      "input_tokens_mean": 2053,
+      "output_tokens_mean": 654.4,
+      "latency_mean_s": 6.48,
+      "latency_p95_s": 12.48,
+      "length": {
+        "n": 1500,
+        "mean": 16.9,
+        "p05": 12,
+        "p50": 17,
+        "p95": 21,
+        "min": 9,
+        "max": 27,
+        "in_target": 0.9967
+      },
+      "content_recall_mean": 0.9004,
+      "novel_rate_mean": 0.4631,
+      "register_similarity_mean": 0.4049,
+      "full_run_input_tokens": 16610823,
+      "full_run_output_tokens": 5294345,
+      "full_run_calls": 8091
+    },
+    {
+      "arm": "B-384-noschema@gemini-3.5-flash",
+      "calls": 60,
+      "completion_ci": {
+        "mean": 0.8327,
+        "lo": 0.732,
+        "hi": 0.9167,
+        "n_clusters": 60,
+        "width": 0.1847
+      },
+      "rejection_ci": {
+        "mean": 0.0152,
+        "lo": 0.0072,
+        "hi": 0.0256,
+        "n_clusters": 50,
+        "width": 0.0184
+      },
+      "errors": 0,
+      "captions_returned": 1249,
+      "captions_expected": 1500,
+      "completion_rate": 0.8327,
+      "rejection_rate": 0.2162,
+      "rejections_by_rule": {
+        "not generated": 250,
+        "figurative/abstract phrasing": 19,
+        "empty": 1
+      },
+      "truncated": 0,
+      "input_tokens_mean": 2053,
+      "output_tokens_mean": 692.9,
+      "latency_mean_s": 4.94,
+      "latency_p95_s": 7.11,
+      "length": {
+        "n": 1249,
+        "mean": 16.43,
+        "p05": 12,
+        "p50": 16,
+        "p95": 21,
+        "min": 9,
+        "max": 24,
+        "in_target": 1.0
+      },
+      "content_recall_mean": 0.7541,
+      "novel_rate_mean": 0.376,
+      "register_similarity_mean": 0.418,
+      "full_run_input_tokens": 16610823,
+      "full_run_output_tokens": 5606388,
+      "full_run_calls": 8091
+    },
+    {
+      "arm": "A-384@gemini-3.6-flash",
+      "calls": 150,
+      "completion_ci": {
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "n_clusters": 30,
+        "width": 0.0
+      },
+      "rejection_ci": {
+        "mean": null,
+        "lo": null,
+        "hi": null,
+        "n_clusters": 0,
+        "width": null
+      },
+      "errors": 0,
+      "captions_returned": 0,
+      "captions_expected": 750,
+      "completion_rate": 0.0,
+      "rejection_rate": 750.0,
+      "rejections_by_rule": {
+        "not generated": 750
+      },
+      "truncated": 0,
+      "input_tokens_mean": null,
+      "output_tokens_mean": null,
+      "latency_mean_s": null,
+      "latency_p95_s": null,
+      "length": {
+        "n": 0
+      },
+      "content_recall_mean": 0.0,
+      "novel_rate_mean": 0.0,
+      "register_similarity_mean": null
+    },
+    {
+      "arm": "A-384@gemini-3.1-flash-lite",
+      "calls": 150,
+      "completion_ci": {
+        "mean": 1.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "n_clusters": 30,
+        "width": 0.0
+      },
+      "rejection_ci": {
+        "mean": 0.0093,
+        "lo": 0.0027,
+        "hi": 0.0173,
+        "n_clusters": 30,
+        "width": 0.0147
+      },
+      "errors": 0,
+      "captions_returned": 750,
+      "captions_expected": 750,
+      "completion_rate": 1.0,
+      "rejection_rate": 0.0093,
+      "rejections_by_rule": {
+        "figurative/abstract phrasing": 7
+      },
+      "truncated": 0,
+      "input_tokens_mean": 1922.7,
+      "output_tokens_mean": 128.2,
+      "latency_mean_s": 4.62,
+      "latency_p95_s": 11.66,
+      "length": {
+        "n": 750,
+        "mean": 16.71,
+        "p05": 14,
+        "p50": 17,
+        "p95": 19,
+        "min": 12,
+        "max": 24,
+        "in_target": 1.0
+      },
+      "content_recall_mean": 0.7352,
+      "novel_rate_mean": 0.5326,
+      "register_similarity_mean": 0.345,
+      "full_run_input_tokens": 77780940,
+      "full_run_output_tokens": 5185791,
+      "full_run_calls": 40455
+    }
+  ]
+}

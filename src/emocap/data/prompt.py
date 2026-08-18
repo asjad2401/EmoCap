@@ -165,12 +165,34 @@ REGISTERS
 # ── Option B: all five source captions in one call ──────────────────────────
 
 
+#: Batching measurably weakened register distinguishability on 3.5-flash: mean
+#: pairwise similarity rose from 0.341 (one call per caption) to 0.424 (one call per
+#: image), a paired difference of +0.083 [0.058, 0.109]. The hypothesis this block
+#: tests is that the requirement simply gets buried when 25 captions are requested at
+#: once -- in the single-caption prompt "the five rewrites must be distinguishable"
+#: sits a few lines from the one caption it governs; in the batch prompt it is one
+#: line among instructions for 25 outputs.
+_DISTINCTNESS_BLOCK = """\
+THE MOST COMMON FAILURE, AND THE ONE TO AVOID
+Producing five rewrites of a caption that are near-paraphrases of each other, differing
+only in one or two adjectives. That is a failure even if each reads well on its own.
+
+For EVERY caption index, treat its five rewrites as five different sentences about the
+same scene:
+  - vary the sentence structure, not only the adjectives
+  - vary which element you put first
+  - two rewrites of the same caption should share almost no distinctive wording
+If two of a caption's five rewrites feel interchangeable, rewrite both before answering.
+"""
+
+
 def build_batch_prompt(
     source_captions: Sequence[str],
     *,
     min_words: int = 8,
     max_words: int = 24,
     multimodal: bool = True,
+    emphasise_distinctness: bool = False,
 ) -> str:
     """One prompt covering every source caption for one image.
 
@@ -209,6 +231,8 @@ def build_batch_prompt(
         "same picture differently."
     )
 
+    distinct = _DISTINCTNESS_BLOCK if emphasise_distinctness else ""
+
     return f"""\
 {opening}
 
@@ -217,6 +241,8 @@ CAPTIONS:
 
 For EACH caption, rewrite it into all five emotional registers, without changing \
 anything about what is in the picture.
+
+{distinct}
 
 Return ONLY a JSON object whose keys are the caption indices \
 ({", ".join(f'"{i}"' for i in range(len(source_captions)))}), each mapping to an \

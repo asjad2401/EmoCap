@@ -274,6 +274,7 @@ def generate_one(
     best_rejects: dict[str, str] = {e: "not generated" for e in EMOTIONS}
     failures: dict[str, tuple[str, str]] | None = None
     attempts = 0
+    last_exc: Exception | None = None
 
     for attempt in range(1, max_attempts + 1):
         attempts = attempt
@@ -284,6 +285,7 @@ def generate_one(
         try:
             raw = llm(prompt, image_bytes, single_response_schema())
         except Exception as exc:  # noqa: BLE001 -- transport errors are expected
+            last_exc = exc
             if on_error:
                 on_error(exc, attempt)
             continue
@@ -298,6 +300,15 @@ def generate_one(
 
         failures = {e: (captions.get(e, ""), why) for e, why in rejects.items()}
 
+    # A call that never succeeded must not be reported as "not generated". That is
+    # how 150 consecutive `thinking_budget=0` rejections from gemini-3.6-flash
+    # appeared in a probe as empty captions with `error: None` -- a systematic config
+    # failure wearing the costume of a model-quality result.
+    if not best and last_exc is not None:
+        raise RuntimeError(
+            f"all {attempts} attempt(s) failed with no response: {last_exc}"
+        ) from last_exc
+
     return best, attempts, best_rejects
 
 
@@ -310,6 +321,7 @@ def generate_image_batch(
     max_words: int = 24,
     max_attempts: int = 1,
     use_schema: bool = True,
+    emphasise_distinctness: bool = False,
     on_error: Callable[[Exception, int], None] | None = None,
 ) -> tuple[dict[int, dict[str, str]], int, dict[int, dict[str, str]]]:
     """Option B: rewrite every source caption of one image in a single call.
@@ -326,6 +338,7 @@ def generate_image_batch(
     best_rejects: dict[int, dict[str, str]] = {i: {e: "not generated" for e in EMOTIONS}
                                                for i in range(n)}
     attempts = 0
+    last_exc: Exception | None = None
 
     def n_bad(rej: dict[int, dict[str, str]]) -> int:
         return sum(len(v) for v in rej.values())
@@ -335,11 +348,13 @@ def generate_image_batch(
         prompt = build_batch_prompt(
             source_captions, min_words=min_words, max_words=max_words,
             multimodal=image_bytes is not None,
+            emphasise_distinctness=emphasise_distinctness,
         )
         schema = batch_response_schema(n) if use_schema else None
         try:
             raw = llm(prompt, image_bytes, schema)
         except Exception as exc:  # noqa: BLE001 -- transport errors are expected
+            last_exc = exc
             if on_error:
                 on_error(exc, attempt)
             continue
@@ -356,6 +371,11 @@ def generate_image_batch(
             best, best_rejects = matrix, rejects
         if not rejects:
             break
+
+    if not best and last_exc is not None:
+        raise RuntimeError(
+            f"all {attempts} attempt(s) failed with no response: {last_exc}"
+        ) from last_exc
 
     return best, attempts, best_rejects
 
@@ -429,6 +449,8 @@ def run_generation(
     max_words: int = 24,
     max_attempts: int = 3,
     limit: int | None = None,
+    max_error_rate: float = 0.10,
+    min_before_abort: int = 20,
     progress: Callable[[dict], None] | None = None,
 ) -> dict:
     """Generate rewrites for ``rows`` (``CaptionRow``-like), resuming from disk.
@@ -448,6 +470,7 @@ def run_generation(
         "incomplete": 0,
         "total_attempts": 0,
         "missing_images": 0,
+        "errors_hard": 0,
         "rejection_reasons": {},
     }
 
@@ -468,10 +491,26 @@ def run_generation(
                 stats["missing_images"] += 1
                 continue
 
-        captions, attempts, rejects = generate_one(
-            llm, row.caption, image_bytes=img_bytes,
-            min_words=min_words, max_words=max_words, max_attempts=max_attempts,
-        )
+        try:
+            captions, attempts, rejects = generate_one(
+                llm, row.caption, image_bytes=img_bytes,
+                min_words=min_words, max_words=max_words, max_attempts=max_attempts,
+            )
+        except Exception as exc:  # noqa: BLE001
+            stats["errors_hard"] += 1
+            stats.setdefault("last_error", str(exc)[:300])
+            # Abort instead of grinding through thousands of doomed calls. A broken
+            # model id or argument fails every call identically; discovering that at
+            # call 8,000 costs the whole run.
+            if (stats["attempted"] >= min_before_abort
+                    and stats["errors_hard"] / max(1, stats["attempted"] + stats["errors_hard"])
+                    > max_error_rate):
+                raise RuntimeError(
+                    f"aborting: {stats['errors_hard']} hard failures in "
+                    f"{stats['attempted'] + stats['errors_hard']} calls "
+                    f"(> {max_error_rate:.0%}). Last: {exc}"
+                ) from exc
+            continue
         stats["attempted"] += 1
         stats["total_attempts"] += attempts
 

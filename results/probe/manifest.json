@@ -27,9 +27,9 @@
   "python": "3.12.14",
   "platform": "macOS-26.5-arm64-arm-64bit",
   "started_at": 1787061818.911009,
-  "finished_at": null,
-  "status": "running",
+  "finished_at": 1787065840.610771,
+  "status": "complete",
   "checks": {},
   "config_hash": "da95cc61c7a4f4f0",
-  "wall_seconds": null
+  "wall_seconds": 4021.699761867523
 }

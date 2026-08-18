@@ -1,0 +1,13 @@
+{
+  "images_written": 50,
+  "captions_written": 1250,
+  "captions_expected": 1250,
+  "rejections": 30,
+  "rejection_reasons": {
+    "figurative/abstract phrasing": 29,
+    "names the emotion with \"tenderly\"": 1
+  },
+  "jobs": 1,
+  "wall_seconds": 373,
+  "note": "reconstructed: the run crashed in Manifest.finalise after all writes"
+}
