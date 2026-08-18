@@ -52,6 +52,20 @@ metrics:
 anchors:
   ceiling: reference_captions               # expect >= 0.85 emotion accuracy
   floor: shuffled_emotion_labels            # expect ~0.20 (chance)
+  # Third anchor, added 2026-08-18 after auditing the Part 0 sample. The generated
+  # registers carry stereotyped vocabulary -- "bright" in 31% of joyful captions,
+  # "alone" in 21% of sad, "soft" in 26% of romantic -- and a trivial rule using the
+  # top 25 keywords per register classifies at 53.9% against 20% chance.
+  #
+  # So a large share of the PRIMARY metric is available without any emotional
+  # register at all. Reporting the classifier alone would credit the captioning model
+  # for keyword emission. This anchor makes that share explicit: the model's real
+  # contribution is the margin above it, not the raw accuracy.
+  lexical_shortcut: top25_keyword_rule      # measured 0.539 on the Part 0 sample
+  # Pre-registered expectation, so it is not discovered after the fact: `tense` and
+  # `humorous` have the weakest lexical markers (grips/edge 12%; seemingly/quite 6%)
+  # and should dominate the classifier's confusion matrix.
+  expected_hardest_registers: [tense, humorous]
 
 gates:                                      # a run or the study halts if these fail
   manipulation_check:

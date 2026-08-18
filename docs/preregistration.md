@@ -69,6 +69,13 @@ mitigations, all reported:
    is the instrument's real measurement error.
 3. **Confusion matrix**, always. If *romantic* and *sad* collapse into each other, that is
    a finding about the taxonomy, not noise to average away.
+4. **Report against the lexical-shortcut anchor.** Auditing the Part 0 captions showed
+   stereotyped register vocabulary ("bright" in 31% of joyful, "alone" in 21% of sad,
+   "soft" in 26% of romantic); a 25-keyword-per-register rule reaches 53.9% against 20%
+   chance. Classifier accuracy is therefore always reported alongside that baseline.
+   This threatens *construct* validity, not internal validity: stereotypy affects every
+   condition equally, so it cannot explain V0 vs V2, but it does mean "emotion accuracy"
+   partly measures keyword emission rather than register.
 
 ## 5. Analysis plan
 
@@ -86,6 +93,7 @@ mitigations, all reported:
 |---|---|---|
 | Ceiling — accuracy on the reference captions | ≥ 0.85 | The generated data lacks separable tone. **Halt the study.** |
 | Floor — accuracy with randomly reassigned labels | ≈ 0.20 | The metric is broken. |
+| **Lexical shortcut** — top-25-keyword-per-register rule | measured **0.539** | Not a failure, a correction: this much of the primary metric needs no emotional register at all. The model's contribution is the margin above it. |
 | Manipulation check — V0 accuracy | ≤ 0.25 | The classifier reads something other than tone. **Results not interpretable.** |
 | Negative control — condition C | indistinguishable from V0 | Conditioning is not doing the work. |
 | Visual-dependence probe — zero the features | captions change substantially | The run collapsed to a language prior. **Exclude the run.** |

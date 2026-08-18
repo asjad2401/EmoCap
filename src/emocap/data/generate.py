@@ -63,15 +63,30 @@ _BANNED_RE = re.compile(r"\b(" + "|".join(BANNED_ADVERBS) + r")\b", re.I)
 #: This is a cheap deterministic pre-filter tuned against the actual v1 output
 #: (see tests/test_data_generate.py). The LLM-judge rubric in stage 03 is the real
 #: style gate; this only catches the obvious cases for free.
-_ABSTRACTION_NOUNS = (
-    "testament reminder echo symphony dance tapestry canvas whisper whispers tide "
-    "ballet witness poem melody metaphor promise portrait tribute embrace caress "
-    "void abyss beacon"
+#: Two tiers, because some of these words name real things in Flickr8k photographs.
+#:
+#: Tier 1 is figurative in this corpus essentially always -- "the sled a cold
+#: reminder", "a tender ballet", "the house a silent, distant witness". Flagged in the
+#: appositive form: article, up to two modifiers, then the noun.
+_ABSTRACTION_ALWAYS = (
+    "testament reminder echo symphony tapestry whisper whispers ballet witness poem "
+    "melody metaphor tribute void abyss"
 ).split()
+
+#: Tier 2 words are frequently literal here: Flickr8k has painted canvases, beaches
+#: with tides, and people embracing. Part 0 flagged five captions for "a canvas" on
+#: images that genuinely contain a painted canvas, and one for "a gentle embrace"
+#: describing a couple holding their newborn. Those are false positives, so tier 2 is
+#: only flagged in the unambiguously figurative "X of Y" frame -- "a canvas of light"
+#: is metaphor, "a canvas with a rainbow" is a description.
+_ABSTRACTION_IF_OF = (
+    "canvas tide dance embrace caress portrait beacon promise mirror shadow"
+).split()
+
 _ABSTRACTION_RE = re.compile(
-    # "a" / "an" / "the", up to two comma-separated modifiers, then an abstraction noun
-    r"\b(?:a|an|the)\s+(?:[a-z]+,?\s+){0,2}(?:" + "|".join(_ABSTRACTION_NOUNS) + r")\b"
-    # or an explicit simile
+    r"\b(?:a|an|the)\s+(?:[a-z]+,?\s+){0,2}(?:" + "|".join(_ABSTRACTION_ALWAYS) + r")\b"
+    r"|\b(?:a|an|the)\s+(?:[a-z]+,?\s+){0,2}(?:" + "|".join(_ABSTRACTION_IF_OF) + r")\s+of\b"
+    # Similes are forbidden by the prompt outright, literal or not.
     r"|\bas if\b|\blike a\b|\bas though\b",
     re.I,
 )
