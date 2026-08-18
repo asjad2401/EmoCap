@@ -69,6 +69,44 @@ human captions in the first place.
 The official lists cover 8,000 of the 8,091 valid images. The remaining 91 are assigned to
 train with `split_seed: 42`, so nothing leaks into val or test and no image is discarded.
 
+### 2026-08-18 — listing is not usability; the whole 2.5 family is retired
+`models.list()` returns models this key **cannot call**. `gemini-2.5-flash` appeared in
+the listing and then returned `404 "no longer available to new users. Please update
+your code to use models/gemini-3.6-flash"` on every request. Same for
+`gemini-2.5-flash-lite` and `gemini-2.5-pro`.
+
+So `--validate-models` now makes one real 256-token call per candidate. Availability is
+only knowable by calling.
+
+Verified callable, with measured single-call latency:
+
+| model | s/call | thinking tokens | note |
+|---|---|---|---|
+| `gemini-flash-lite-latest` | 0.9 | 0 | **excluded: moving alias** |
+| `gemini-3.1-flash-lite` | 1.4 | 0 | honours `thinking_budget=0` |
+| `gemini-3-flash-preview` | 1.5 | 25 | preview |
+| `gemini-3.5-flash` | 1.6 | 77 | **reference** |
+| `gemini-3.6-flash` | 2.4 | 96 | newest GA flash |
+| `gemini-pro-latest` | 38.1 | 116 | ~50 h for the full run |
+| `gemini-3.5-flash-lite` | 37.8 | 0 | 1.0 s on an earlier call -- huge variance |
+
+Two cautions that follow:
+
+* **Single-call latency is unreliable.** `gemini-3.5-flash-lite` measured 1.0 s and
+  37.8 s minutes apart. Model selection needs several samples, not one.
+* **Availability is transient.** `gemini-3.7-flash` returned OK, then `503 UNAVAILABLE`
+  ten minutes later. 503 is retryable and now handled as such; a 404 is not.
+
+`thinking_budget=0` is honoured only by the *lite* models. The full flash models still
+spend 25-96 tokens thinking, billed as output and counted against
+`max_output_tokens` -- so a tight budget silently returns empty text.
+
+### 2026-08-18 — retry only transient errors
+`gemini_llm` retried every exception with exponential backoff, so a retired model's
+clean 0.7 s 404 became a silent ~14 s hang per call and the actual message never
+surfaced. It now retries only 408/409/429/5xx and transport faults, and raises
+permanent errors immediately with the API's own text.
+
 ### 2026-08-18 — `gemini-2.0-flash` is retired; model choice moved to the probe
 Both configs named `gemini-2.0-flash`, the pilot's model. Querying the API's own model
 list shows it is **no longer served** — the configs pointed at a model that does not

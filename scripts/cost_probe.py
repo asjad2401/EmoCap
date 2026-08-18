@@ -155,6 +155,12 @@ def main() -> None:
                          "others are compared at A-384 on identical inputs.")
     ap.add_argument("--list-models", action="store_true",
                     help="query the API for available models and exit")
+    ap.add_argument("--validate-models", action="store_true",
+                    help="make one real call per candidate model and exit. Listing is "
+                         "not usability -- retired models still appear in models.list()")
+    ap.add_argument("--thinking-budget", type=int, default=0,
+                    help="0 disables thinking (default). Thinking tokens are billed as "
+                         "output and count against max_output_tokens")
     ap.add_argument("--model", default=None, help="alias for a single --models entry")
     ap.add_argument("--in-price", type=float, default=None, help="USD / 1M input tokens")
     ap.add_argument("--out-price", type=float, default=None, help="USD / 1M output tokens")
@@ -165,8 +171,8 @@ def main() -> None:
     args = ap.parse_args()
 
     cfg = load_config("data")
-    if args.list_models:
-        _list_models()
+    if args.list_models or args.validate_models:
+        _list_models(validate=args.validate_models)
         return
     models = [m.strip() for m in (args.models or args.model
                                   or cfg["generation"]["model"]).split(",") if m.strip()]
@@ -204,7 +210,11 @@ def main() -> None:
     manifest.save(OUT_DIR)
 
     key = load_key()
-    llms = {m: gemini_llm(key, model=m, max_output_tokens=4096) for m in models}
+    llms = {
+        m: gemini_llm(key, model=m, max_output_tokens=4096,
+                      thinking_budget=args.thinking_budget)
+        for m in models
+    }
     # Config arms at the reference model; each additional model compared at A-384.
     arms = [f"{a.strip()}@{model}" for a in args.arms.split(",") if a.strip()]
     arms += [f"A-384@{m}" for m in models[1:]]
@@ -290,13 +300,19 @@ def _parse_arm(arm: str) -> tuple[str, int | None, bool, str]:
     return kind, res, schema, model
 
 
-def _list_models() -> None:
+def _list_models(validate: bool = False) -> None:
     """Ask the API what exists, rather than trusting a hardcoded list.
 
     Model availability and naming change; picking from a stale recollection is how
     a run fails 30,000 calls in.
+
+    **Listing is not usability.** `models.list()` returns models this key cannot
+    call: `gemini-2.5-flash` was listed and then returned
+    404 "no longer available to new users" on every request. With ``validate``, each
+    candidate gets one real 8-token call, which is the only trustworthy check.
     """
     from google import genai
+    from google.genai import types
 
     client = genai.Client(api_key=load_key())
     rows = []
@@ -307,11 +323,45 @@ def _list_models() -> None:
         rows.append((m.name.replace("models/", ""),
                      getattr(m, "input_token_limit", "?"),
                      getattr(m, "output_token_limit", "?")))
-    print(f"{'model':<44}{'in limit':>12}{'out limit':>12}")
-    for name, i, o in sorted(rows):
-        print(f"{name:<44}{str(i):>12}{str(o):>12}")
-    print(f"\n{len(rows)} models support generateContent. "
-          f"Pass a comma-separated subset to --models to compare them.")
+
+    if not validate:
+        print(f"{'model':<44}{'in limit':>12}{'out limit':>12}")
+        for name, i, o in sorted(rows):
+            print(f"{name:<44}{str(i):>12}{str(o):>12}")
+        print(f"\n{len(rows)} models are listed for generateContent -- but listing is "
+              f"not usability.\nRe-run with --validate-models to make one real call "
+              f"per candidate and see which actually work.")
+        return
+
+    # Text-generation candidates only: skip tts / image / robotics / embedding heads.
+    skip = ("tts", "image", "robotics", "embedding", "lyria", "banana", "computer-use")
+    cands = [n for n, _, _ in sorted(rows)
+             if n.startswith("gemini") and not any(s in n for s in skip)]
+    cfg = types.GenerateContentConfig(max_output_tokens=256)
+    print(f"validating {len(cands)} candidates with one real call each\n")
+    print(f"{'model':<40}{'status':<8}{'s':>7}{'think':>7}  note")
+    ok_models = []
+    for m in cands:
+        t0 = time.time()
+        try:
+            r = client.models.generate_content(
+                model=m, contents="Reply with the word ok.", config=cfg)
+            dt = time.time() - t0
+            um = r.usage_metadata
+            think = getattr(um, "thoughts_token_count", None) or 0
+            print(f"{m:<40}{'OK':<8}{dt:7.1f}{think:7}  out={um.candidates_token_count}")
+            ok_models.append((m, dt, think))
+        except Exception as exc:  # noqa: BLE001
+            msg = str(exc)
+            note = ("retired for this key" if "no longer available" in msg
+                    else msg.split("{")[0][:52].strip())
+            print(f"{m:<40}{'FAIL':<8}{time.time()-t0:7.1f}{'-':>7}  {note}")
+
+    print(f"\n{len(ok_models)} usable. Fastest first:")
+    for m, dt, think in sorted(ok_models, key=lambda x: x[1])[:8]:
+        est = dt * 40455 / 8 / 3600
+        print(f"  {m:<40}{dt:6.1f}s/call  thinking={think:<4} "
+              f"~{est:.1f}h for 40,455 calls at concurrency 8")
 
 
 def _call_A(llm, row, img_bytes, lo, hi, arm) -> dict:

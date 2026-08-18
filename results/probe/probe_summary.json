@@ -1,0 +1,52 @@
+{
+  "summaries": [
+    {
+      "arm": "A-384@gemini-3.5-flash",
+      "calls": 30,
+      "completion_ci": {
+        "mean": 0.9667,
+        "lo": 0.9,
+        "hi": 1.0,
+        "n_clusters": 6,
+        "width": 0.1
+      },
+      "rejection_ci": {
+        "mean": 0.0138,
+        "lo": 0.0,
+        "hi": 0.0296,
+        "n_clusters": 6,
+        "width": 0.0296
+      },
+      "errors": 0,
+      "captions_returned": 145,
+      "captions_expected": 150,
+      "completion_rate": 0.9667,
+      "rejection_rate": 0.0483,
+      "rejections_by_rule": {
+        "not generated": 5,
+        "figurative/abstract phrasing": 2
+      },
+      "truncated": 0,
+      "input_tokens_mean": 1921.4,
+      "output_tokens_mean": 132.6,
+      "latency_mean_s": 3.03,
+      "latency_p95_s": 4.19,
+      "length": {
+        "n": 145,
+        "mean": 18.41,
+        "p05": 14,
+        "p50": 19,
+        "p95": 22,
+        "min": 12,
+        "max": 23,
+        "in_target": 1.0
+      },
+      "content_recall_mean": 0.8063,
+      "novel_rate_mean": 0.5186,
+      "register_similarity_mean": 0.3299,
+      "full_run_input_tokens": 77731585,
+      "full_run_output_tokens": 5364333,
+      "full_run_calls": 40455
+    }
+  ]
+}

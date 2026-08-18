@@ -503,12 +503,33 @@ def run_generation(
 # ── the real client ─────────────────────────────────────────────────────────
 
 
+#: HTTP statuses worth retrying: rate limits, and transient server faults.
+#: Everything else (404 for a retired model, 400 for a bad request, 403 for a bad
+#: key) is permanent -- retrying only delays the error and buries the message.
+_RETRYABLE_STATUS = (408, 409, 429, 500, 502, 503, 504)
+
+
+def _is_retryable(exc: Exception) -> bool:
+    code = getattr(exc, "code", None) or getattr(exc, "status_code", None)
+    if isinstance(code, int):
+        return code in _RETRYABLE_STATUS
+    text = str(exc)
+    if any(str(s) in text for s in _RETRYABLE_STATUS):
+        return True
+    # Transport-level failures carry no status but are worth another attempt.
+    return any(
+        w in text.lower()
+        for w in ("timeout", "timed out", "connection", "temporarily", "unavailable retry")
+    ) and "no longer available" not in text.lower()
+
+
 def gemini_llm(
     api_key: str,
     *,
-    model: str = "gemini-2.0-flash",
+    model: str,
     temperature: float = 0.9,
-    max_output_tokens: int = 1024,
+    max_output_tokens: int = 4096,
+    thinking_budget: int | None = 0,
     max_retries: int = 4,
     base_delay: float = 2.0,
 ) -> LLM:
@@ -530,11 +551,28 @@ def gemini_llm(
         image_bytes: bytes | None = None,
         response_schema: dict | None = None,
     ) -> str:
+        # Thinking tokens are billed as output and count against
+        # max_output_tokens. Measured on a trivial prompt, flash models spend
+        # 26-29 of them by default -- so a small budget can be consumed entirely by
+        # thinking, returning empty text that looks like a model-quality problem
+        # rather than a configuration one. This task is constrained rewriting, not
+        # reasoning, so thinking defaults to off; the probe measures whether that
+        # costs any caption quality.
+        extra: dict = {}
+        if response_schema:
+            extra["response_schema"] = response_schema
+        if thinking_budget is not None:
+            try:
+                extra["thinking_config"] = types.ThinkingConfig(
+                    thinking_budget=thinking_budget
+                )
+            except (AttributeError, TypeError):
+                pass  # SDK or model without thinking control; harmless
         cfg = types.GenerateContentConfig(
             temperature=temperature,
             max_output_tokens=max_output_tokens,
             response_mime_type="application/json",
-            **({"response_schema": response_schema} if response_schema else {}),
+            **extra,
         )
         parts: list = []
         if image_bytes is not None:
@@ -560,6 +598,7 @@ def gemini_llm(
                 usage.append({
                     "prompt_tokens": getattr(um, "prompt_token_count", 0) or 0,
                     "output_tokens": getattr(um, "candidates_token_count", 0) or 0,
+                    "thinking_tokens": getattr(um, "thoughts_token_count", 0) or 0,
                     "total_tokens": getattr(um, "total_token_count", 0) or 0,
                     "latency_s": round(latency, 3),
                     "finish_reason": finish,
@@ -568,11 +607,19 @@ def gemini_llm(
                     "schema": bool(response_schema),
                 })
                 return resp.text or ""
-            except Exception as exc:  # noqa: BLE001 -- retry any transport failure
+            except Exception as exc:  # noqa: BLE001
                 last = exc
+                # Retrying a permanent error wastes the backoff and hides the cause.
+                # A retired model returns 404 in 0.7s; four retries with exponential
+                # backoff turned that into a silent ~14s hang per call, and the real
+                # message ("no longer available to new users") never surfaced.
+                if not _is_retryable(exc):
+                    raise RuntimeError(f"Gemini call failed permanently: {exc}") from exc
                 if attempt < max_retries - 1:
                     time.sleep(base_delay * (2**attempt))
-        raise RuntimeError(f"Gemini call failed after {max_retries} attempts") from last
+        raise RuntimeError(
+            f"Gemini call failed after {max_retries} attempts: {last}"
+        ) from last
 
     def count_text_tokens(prompt: str) -> int:
         """Tokens for the prompt text alone, via the API's own counter.

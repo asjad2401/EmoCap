@@ -1,0 +1,33 @@
+{
+  "run_id": "stage02-probe",
+  "stage": "02_probe",
+  "config": {
+    "n": 6,
+    "n_batch": 12,
+    "models": [
+      "gemini-3.5-flash"
+    ],
+    "arms": "A-384"
+  },
+  "seed": null,
+  "notes": "",
+  "git_sha": "34136784f53a0cb67976970259c97bb27548eb0a-dirty",
+  "packages": {
+    "torch": "2.13.0",
+    "transformers": "5.15.0",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5"
+  },
+  "accelerator": {
+    "device": "cpu",
+    "n_devices": 0
+  },
+  "python": "3.12.14",
+  "platform": "macOS-26.5-arm64-arm-64bit",
+  "started_at": 1787061462.059434,
+  "finished_at": 1787061553.400523,
+  "status": "complete",
+  "checks": {},
+  "config_hash": "7d5750209e7aa5ab",
+  "wall_seconds": 91.34108901023865
+}
