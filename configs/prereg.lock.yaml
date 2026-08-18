@@ -1,0 +1,68 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# FROZEN at git tag `prereg-v1`. Do not edit.
+#
+# Stage 10 (metrics_and_anchors) hashes the live configs against this file and
+# refuses to run on a mismatch. To change anything here, log the change in
+# docs/deviations.md, bump to prereg-v2, and say so in the write-up.
+# ═══════════════════════════════════════════════════════════════════════════
+
+study:
+  name: "EmoCap: where should emotion enter a caption decoder?"
+  emotions: [joyful, sad, tense, romantic, humorous]   # order fixes emotion_id
+  seeds: [42, 1337, 2024]
+  conditions: [V0, V1, V2, V3, C]
+  tracks: [A_lstm, B_clipcap]
+
+data:
+  dataset: flickr8k
+  neutral_source: human_annotations       # NOT a VLM. See docs/deviations.md if changed.
+  captions_per_image: 5                   # Flickr8k ships 5 human captions
+  references_per_cell: 5                   # one per human caption, per emotion
+  split_ratios: {train: 0.80, val: 0.10, test: 0.10}
+  split_by: image_id                       # never by row -- prevents leakage
+  split_seed: 42
+  generator_model: "gemini-2.0-flash"
+  target_caption_words: {min: 8, max: 24}
+
+decode:                                    # identical for every variant and track
+  beam_size: 4
+  max_new_tokens: 40
+  min_new_tokens: 4
+  length_penalty: 1.0
+  no_repeat_ngram_size: 3
+
+metrics:
+  primary: emotion_accuracy                # held-out classifier, top-1
+  secondary: [cider_d, bleu_4, clipscore, distinctiveness]
+  confirmatory: human_eval
+  smallest_effect_of_interest: 0.10         # +10 points of emotion accuracy vs V0
+  bootstrap:
+    resamples: 10000
+    cluster_by: image_id                   # the 5 emotion cells of one image are not independent
+    ci: 0.95
+  multiple_comparisons: holm_bonferroni     # 3 comparisons per track
+
+anchors:
+  ceiling: reference_captions               # expect >= 0.85 emotion accuracy
+  floor: shuffled_emotion_labels            # expect ~0.20 (chance)
+
+gates:                                      # a run or the study halts if these fail
+  manipulation_check:
+    v0_emotion_accuracy_max: 0.25
+  ceiling_min: 0.85
+  visual_dependence_probe: required         # captions must change when features are zeroed
+  truncation_rate_max: 0.02
+
+exclusions:                                 # the ONLY grounds for dropping a run
+  - crashed_or_incomplete_training
+  - nan_loss
+  - failed_visual_dependence_probe
+# Poor metric performance is explicitly NOT grounds for exclusion.
+
+human_eval:
+  items: 150
+  raters: 3
+  scales: [tone_match_1_5, grounding_1_5]
+  reliability: krippendorff_alpha
+  blinded: true
+  attention_checks: true

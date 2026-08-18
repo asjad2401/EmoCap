@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+
+# Secrets — the Gemini key must never land in the repo
+.env
+*.key
+kaggle.json
+
+# Large artifacts. runs/ keeps manifests and metrics (they are the record);
+# checkpoints and feature tensors are reproducible and stay out.
+*.pt
+*.pth
+*.safetensors
+runs/**/checkpoint*
+/data/
+!/data/.gitkeep
+.DS_Store
+.ipynb_checkpoints/
