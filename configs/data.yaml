@@ -1,0 +1,29 @@
+# Operational data settings. Pre-registered values here MUST agree with
+# configs/prereg.lock.yaml -- emocap.runtime.assert_matches_lock enforces it.
+
+data:
+  dataset: flickr8k
+  neutral_source: human_annotations
+  captions_per_image: 5
+  references_per_cell: 5
+  split_ratios: {train: 0.80, val: 0.10, test: 0.10}
+  split_by: image_id
+  split_seed: 42
+  generator_model: "gemini-2.0-flash"
+  target_caption_words: {min: 8, max: 24}
+
+# Operational only -- not pre-registered, safe to tune.
+paths:
+  captions_file: "data/flickr8k/captions.txt"
+  images_dir: "data/flickr8k/Images"
+  raw_generations: "data/generated/captions_raw.jsonl"
+  clean_captions: "data/generated/captions.parquet"
+  splits_file: "data/splits.csv"
+
+generation:
+  model: "gemini-2.0-flash"
+  temperature: 0.9          # diversity across the 5 registers
+  max_output_tokens: 512
+  max_attempts: 3           # per (image, caption) before giving up
+  concurrency: 8
+  audit_sample: 200         # read this many by hand before the full run

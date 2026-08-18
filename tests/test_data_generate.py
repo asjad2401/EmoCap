@@ -1,0 +1,327 @@
+"""Tests for stage 02 -- caption generation.
+
+Everything here runs offline: the LLM is a plain `Callable[[str], str]`, so the
+tests stub it. The style filter is pinned against captions the v1 pilot actually
+produced, which is the only honest way to know it catches what went wrong.
+"""
+
+from __future__ import annotations
+
+import json
+
+import pytest
+
+from emocap.data.generate import (
+    GenerationRecord,
+    append_record,
+    completed_keys,
+    generate_one,
+    parse_response,
+    read_records,
+    run_generation,
+    validate_all,
+    validate_caption,
+)
+from emocap.data.prompt import EMOTIONS
+
+GOOD = "A child in a pink dress bounds up the entryway stairs, one hand out for balance."
+
+
+def _five(text=GOOD):
+    return {e: f"{text[:-1]} ({e})." for e in EMOTIONS}
+
+
+def _json_reply(captions):
+    return json.dumps(captions)
+
+
+class StubLLM:
+    """Returns queued replies in order, recording the prompts it was given."""
+
+    def __init__(self, replies):
+        self.replies = list(replies)
+        self.prompts: list[str] = []
+
+    def __call__(self, prompt: str) -> str:
+        self.prompts.append(prompt)
+        if not self.replies:
+            raise AssertionError("StubLLM ran out of replies")
+        r = self.replies.pop(0)
+        if isinstance(r, Exception):
+            raise r
+        return r
+
+
+class Row:
+    def __init__(self, image_id, caption_idx, caption):
+        self.image_id, self.caption_idx, self.caption = image_id, caption_idx, caption
+
+
+# ── validation, pinned against real v1 output ───────────────────────────────
+
+# Verbatim references from notebooka1ac23db48.ipynb cell 45. The v1 prompt forbade
+# metaphor; Gemini produced these anyway, and v1's 13-regex filter passed them all.
+V1_LEAKAGE = [
+    "the blue and pink sled a cold reminder against the stark, white snow.",
+    "two dogs, collars of blue and brown, dance through the yard, a tender ballet beneath the house.",
+    "the red wooden house a silent, distant witness to the running dogs in the yard.",
+    "the woman with dark hair holds the clear mug, her presence a quiet poem in the light.",
+    "man in sunglasses points at the woman's neck tattoo, a melody in ink on her skin.",
+    "the blue and pink sled a soft, sweet echo on the snowy hill this afternoon.",
+]
+
+CLEAN = [
+    "A child in a pink dress bounds up the entryway stairs, one hand out for balance.",
+    "A black dog and a spotted dog lunge at each other in the street, teeth bared.",
+    "Two brown dachshunds push through the tall grass, one carrying a red toy.",
+    "A girl in a red life jacket climbs the white inflatable wall above the water.",
+    "The woman in the white graphic tee holds a clear mug of something brown.",
+]
+
+
+@pytest.mark.parametrize("text", V1_LEAKAGE)
+def test_rejects_the_figurative_style_v1_leaked(text):
+    reason = validate_caption(text, min_words=8, max_words=30)
+    assert reason is not None, f"v1 leakage slipped through: {text!r}"
+    assert "figurative" in reason
+
+
+@pytest.mark.parametrize("text", CLEAN)
+def test_accepts_plain_grounded_captions(text):
+    assert validate_caption(text, min_words=8, max_words=30) is None
+
+
+def test_rejects_too_short():
+    assert "needs 8-24" in validate_caption("A dog runs fast.")
+
+
+def test_rejects_too_long():
+    assert "needs 8-24" in validate_caption(" ".join(["word"] * 40) + ".")
+
+
+def test_rejects_emotion_naming_adverb():
+    r = validate_caption("A child joyfully climbs the entryway stairs with one hand out today.")
+    assert "names the emotion" in r and "joyfully" in r
+
+
+def test_rejects_simile():
+    r = validate_caption("A child climbs the entryway stairs like a small determined machine today.")
+    assert "figurative" in r
+
+
+def test_rejects_two_sentences():
+    r = validate_caption("A child climbs the stairs. She wears a pink dress and holds on tight.")
+    assert r == "more than one sentence"
+
+
+def test_accepts_internal_punctuation_that_is_not_a_sentence_break():
+    assert validate_caption(
+        "A child in a pink dress climbs the entryway stairs, slowly, one hand out."
+    ) is None
+
+
+def test_rejects_empty():
+    assert validate_caption("") == "empty"
+    assert validate_caption("   ") == "empty"
+
+
+def test_validate_all_passes_a_clean_set():
+    assert validate_all(_five()) == {}
+
+
+def test_validate_all_flags_identical_rewrites():
+    caps = _five()
+    caps["sad"] = caps["joyful"]
+    out = validate_all(caps)
+    assert "sad" in out and "identical to" in out["sad"]
+
+
+def test_validate_all_flags_a_missing_emotion():
+    caps = _five()
+    del caps["tense"]
+    assert validate_all(caps)["tense"] == "empty"
+
+
+# ── response parsing ────────────────────────────────────────────────────────
+
+
+def test_parses_plain_json():
+    caps = _five()
+    assert parse_response(_json_reply(caps)) == caps
+
+
+def test_parses_fenced_json():
+    caps = _five()
+    assert parse_response(f"```json\n{_json_reply(caps)}\n```") == caps
+
+
+def test_parses_json_wrapped_in_prose():
+    caps = _five()
+    assert parse_response(f"Sure, here you go:\n{_json_reply(caps)}\nHope that helps!") == caps
+
+
+def test_recovers_pairs_from_malformed_json():
+    got = parse_response('{"joyful": "a bright thing", "sad": "a dim thing",,}')
+    assert got == {"joyful": "a bright thing", "sad": "a dim thing"}
+
+
+def test_parses_empty_and_junk_without_raising():
+    assert parse_response("") == {}
+    assert parse_response("I cannot help with that.") == {}
+    assert parse_response("[1, 2, 3]") == {}
+
+
+# ── generate_one ────────────────────────────────────────────────────────────
+
+
+def test_succeeds_on_the_first_attempt():
+    llm = StubLLM([_json_reply(_five())])
+    caps, attempts, rejects = generate_one(llm, "A child climbs the stairs.")
+    assert attempts == 1 and rejects == {} and len(caps) == 5
+
+
+def test_retries_and_tells_the_model_what_to_fix():
+    bad = _five()
+    bad["sad"] = "Too short."
+    llm = StubLLM([_json_reply(bad), _json_reply(_five())])
+
+    caps, attempts, rejects = generate_one(llm, "A child climbs the stairs.")
+
+    assert attempts == 2 and rejects == {}
+    assert "REJECTED" in llm.prompts[1]
+    assert "sad" in llm.prompts[1]
+    assert "Too short." in llm.prompts[1], "feedback must quote the rejected text"
+    assert "REJECTED" not in llm.prompts[0]
+
+
+def test_keeps_the_best_attempt_not_the_last():
+    """A retry must never make the result worse."""
+    two_bad = _five()
+    two_bad["sad"] = "Short."
+    two_bad["tense"] = "Also short."
+    three_bad = _five()
+    three_bad["sad"] = "Short."
+    three_bad["tense"] = "Also short."
+    three_bad["joyful"] = "Short too."
+
+    llm = StubLLM([_json_reply(two_bad), _json_reply(three_bad), _json_reply(three_bad)])
+    caps, attempts, rejects = generate_one(llm, "A child climbs.", max_attempts=3)
+
+    assert attempts == 3
+    assert len(rejects) == 2, f"kept the worse attempt: {rejects}"
+    assert caps["joyful"] != "Short too."
+
+
+def test_survives_a_transport_error_and_retries():
+    llm = StubLLM([RuntimeError("503"), _json_reply(_five())])
+    seen: list[int] = []
+    caps, attempts, rejects = generate_one(
+        llm, "A child climbs.", on_error=lambda e, a: seen.append(a)
+    )
+    assert seen == [1] and attempts == 2 and rejects == {}
+
+
+def test_gives_up_after_max_attempts():
+    bad = _json_reply({e: "Short." for e in EMOTIONS})
+    llm = StubLLM([bad, bad])
+    caps, attempts, rejects = generate_one(llm, "A child climbs.", max_attempts=2)
+    assert attempts == 2 and len(rejects) == 5
+
+
+# ── the append-only store ───────────────────────────────────────────────────
+
+
+def _rec(image_id="a.jpg", idx=0, caps=None):
+    return GenerationRecord(
+        image_id=image_id, caption_idx=idx, source_caption="A child climbs.",
+        captions=caps if caps is not None else _five(), model="stub",
+    )
+
+
+def test_store_is_append_only(tmp_path):
+    """Earlier bytes must never change. v1 rewrote a 35k-row CSV per image."""
+    p = tmp_path / "gen.jsonl"
+    append_record(p, _rec("a.jpg", 0))
+    first = p.read_bytes()
+    append_record(p, _rec("b.jpg", 0))
+    assert p.read_bytes().startswith(first)
+
+
+def test_resume_skips_completed_keys(tmp_path):
+    p = tmp_path / "gen.jsonl"
+    append_record(p, _rec("a.jpg", 0))
+    append_record(p, _rec("a.jpg", 1))
+    assert completed_keys(p) == {("a.jpg", 0), ("a.jpg", 1)}
+
+
+def test_incomplete_records_are_not_treated_as_done(tmp_path):
+    """A record missing an emotion must be retried, not silently accepted."""
+    p = tmp_path / "gen.jsonl"
+    partial = {e: GOOD for e in EMOTIONS if e != "tense"}
+    append_record(p, _rec("a.jpg", 0, caps=partial))
+    assert completed_keys(p) == set()
+    assert completed_keys(p, require_complete=False) == {("a.jpg", 0)}
+
+
+def test_truncated_final_line_is_tolerated(tmp_path):
+    """A 40k-call run will be interrupted mid-write at some point."""
+    p = tmp_path / "gen.jsonl"
+    append_record(p, _rec("a.jpg", 0))
+    with p.open("a", encoding="utf-8") as f:
+        f.write('{"image_id": "b.jpg", "caption_id')  # cut off
+    assert len(read_records(p)) == 1
+    assert completed_keys(p) == {("a.jpg", 0)}
+
+
+def test_missing_store_reads_as_empty(tmp_path):
+    assert read_records(tmp_path / "nope.jsonl") == []
+    assert completed_keys(tmp_path / "nope.jsonl") == set()
+
+
+# ── the runner ──────────────────────────────────────────────────────────────
+
+
+def test_run_generation_writes_one_record_per_row(tmp_path):
+    p = tmp_path / "gen.jsonl"
+    rows = [Row("a.jpg", i, f"Caption {i}.") for i in range(3)]
+    llm = StubLLM([_json_reply(_five())] * 3)
+
+    stats = run_generation(llm, rows, p, model="stub")
+
+    assert stats["written"] == 3 and stats["attempted"] == 3
+    assert completed_keys(p) == {("a.jpg", 0), ("a.jpg", 1), ("a.jpg", 2)}
+
+
+def test_run_generation_resumes_and_does_not_recall_the_api(tmp_path):
+    p = tmp_path / "gen.jsonl"
+    rows = [Row("a.jpg", i, f"Caption {i}.") for i in range(3)]
+
+    run_generation(StubLLM([_json_reply(_five())] * 3), rows, p, model="stub")
+    # Only one reply queued: a second call would raise "ran out of replies".
+    stats = run_generation(StubLLM([_json_reply(_five())]), rows, p, model="stub")
+
+    assert stats["already_done"] == 3
+    assert stats["attempted"] == 0
+
+
+def test_run_generation_honours_limit(tmp_path):
+    p = tmp_path / "gen.jsonl"
+    rows = [Row("a.jpg", i, f"Caption {i}.") for i in range(10)]
+    stats = run_generation(
+        StubLLM([_json_reply(_five())] * 2), rows, p, model="stub", limit=2
+    )
+    assert stats["attempted"] == 2 and stats["written"] == 2
+
+
+def test_run_generation_records_rejection_reasons(tmp_path):
+    """The audit needs to know *why* rows failed, per rule, not just how many."""
+    p = tmp_path / "gen.jsonl"
+    bad = _five()
+    bad["sad"] = "Short."
+    llm = StubLLM([_json_reply(bad)] * 3)
+    stats = run_generation(
+        StubLLM([_json_reply(bad)] * 3), [Row("a.jpg", 0, "c")], p,
+        model="stub", max_attempts=3,
+    )
+    assert stats["incomplete"] == 0
+    assert sum(stats["rejection_reasons"].values()) >= 1

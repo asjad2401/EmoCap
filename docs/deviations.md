@@ -26,6 +26,18 @@ Note that HF normalises by *full sequence* length; for Track B the prefix is not
 generated sequence, so the two agree. Verified by
 `tests/test_decode_vs_hf.py::test_matches_hf_beam_search`.
 
+### 2026-08-18 — generation store keyed by `(image_id, caption_idx)`, not `(…, emotion)`
+The plan named the key as `(image_id, caption_idx, emotion)`. One API call produces all five
+registers, so the store holds one JSONL record per `(image_id, caption_idx)` with a
+`captions: {emotion: text}` map. Resume is a set difference on that pair; a record missing
+any of the five is not counted as complete, so it is retried. Per-emotion regeneration is
+still possible by rewriting a record. Fewer lines, simpler resume, same granularity.
+
+### 2026-08-18 — v1 caption CSV stored gzipped in the archive
+`archive/v1-pilot/data/v1_emotion_captions.csv.gz`, 17 MB → 2.6 MB, verified byte-identical
+by sha256 before the original was removed. Also renamed from
+`emotion_captions (3) (1).csv`. Provenance is preserved; the repo stays clonable.
+
 ---
 
 ## Post-tag (real deviations)
