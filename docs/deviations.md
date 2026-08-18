@@ -69,6 +69,47 @@ human captions in the first place.
 The official lists cover 8,000 of the 8,091 valid images. The remaining 91 are assigned to
 train with `split_seed: 42`, so nothing leaks into val or test and no image is discarded.
 
+### 2026-08-18 — reference model is `gemini-3.6-flash`, chosen on price and task fit
+Costed the full run from measured per-call token counts against user-supplied prices
+(now in `configs/data.yaml` under `pricing`, dated and sourced):
+
+| plan | model | total |
+|---|---|---|
+| B (per image) | 3.1-flash-lite | **$12.32** |
+| A (per caption) | 3.1-flash-lite | $27.39 |
+| B | **3.6-flash** | **$35.77** |
+| B | 3.5-flash | $79.51 |
+| A | 3.6-flash | $92.63 |
+| A | 3.5-flash | **$192.36** |
+
+Halve all of it with the Batch API, which fits this workload exactly.
+
+`gemini-3.5-flash` is dropped as the reference: it costs 2x the input and 2.4x the
+output of the **newer** 3.6-flash, and is tuned for coding and reasoning, which this
+task does not use, while 3.6-flash is specifically stronger at visual reasoning, which
+it does. Kept in `probe_models` only as a quality ceiling.
+
+Three findings that shape the plan:
+
+* **Image tokens are a flat 1,064 per call at every resolution** — 224px, 384px, 512px
+  and native all cost identically (measured with the API's own counter; 0 with no image
+  attached, which also confirms the image really is being sent). So `--max-image-dim` is
+  **not a cost lever at all**, and resolution is now a pure quality decision.
+* **Batching is the only input-side lever**, worth a consistent 55-61%.
+* **Thinking is a 10-12% output surcharge that cannot be switched off** on the full
+  flash models. Only the lite models honour `thinking_budget=0`, which is part of why
+  3.1-flash-lite is 6x cheaper.
+
+3.6-flash's introductory rate **ends 2026-12-31** and then doubles to $1.50/$7.50, so a
+regeneration in 2027 costs twice as much — an argument for getting the prompt right
+before the full run rather than after. `scripts/cost_report.py --standard-rates` models
+that case.
+
+An earlier estimate in this conversation put the A-vs-B gap at "under four dollars"
+using guessed prices of $0.10/$0.40 per 1M. The real rates are 6-15x higher and the
+gap is 16x, not marginal. Recorded because the lesson is the general one: do not reason
+about cost from remembered prices.
+
 ### 2026-08-18 — listing is not usability; the whole 2.5 family is retired
 `models.list()` returns models this key **cannot call**. `gemini-2.5-flash` appeared in
 the listing and then returned `404 "no longer available to new users. Please update
