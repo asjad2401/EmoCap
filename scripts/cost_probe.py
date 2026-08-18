@@ -60,7 +60,7 @@ from emocap.data.quality import (  # noqa: E402
 from emocap.eval import cluster_bootstrap_mean, cluster_bootstrap_paired_diff, is_conclusive  # noqa: E402
 from emocap.runtime import Manifest, load_config  # noqa: E402
 
-OUT_DIR = ROOT / "results" / "probe"
+PROBE_ROOT = ROOT / "results" / "probe"
 
 
 def load_key() -> str:
@@ -167,7 +167,13 @@ def main() -> None:
     ap.add_argument("--throughput", type=int, default=0,
                     help="if >0, fire this many concurrent calls to measure achieved rate")
     ap.add_argument("--arms", default="A-text,A-224,A-384,A-512,B-384-schema,B-384-noschema",
-                    help="config arms, run at the reference model")
+                    help="comma-separated arms. Each runs at the reference model unless "
+                         "it carries its own '@model' suffix, e.g. "
+                         "'B-384-schema@gemini-3.1-flash-lite'.")
+    ap.add_argument("--out-tag", default=None,
+                    help="write to results/probe/<tag>/ instead of results/probe/. "
+                         "Required to avoid clobbering an earlier run: probe_raw.jsonl "
+                         "is opened in write mode.")
     args = ap.parse_args()
 
     cfg = load_config("data")
@@ -203,6 +209,9 @@ def main() -> None:
     full_calls_A = len(rows)                      # one call per (image, caption)
     full_calls_B = len({r.image_id for r in rows})  # one call per image
 
+    # Each run gets its own directory. probe_raw.jsonl is opened in write mode, so a
+    # second run into the same path would silently destroy the first run's results.
+    OUT_DIR = PROBE_ROOT / args.out_tag if args.out_tag else PROBE_ROOT
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     manifest = Manifest(run_id="stage02-probe", stage="02_probe",
                         config={"n": args.n, "n_batch": n_batch, "models": models,
@@ -210,14 +219,23 @@ def main() -> None:
     manifest.save(OUT_DIR)
 
     key = load_key()
+    # Build a client for every model any arm names, not just those in --models.
+    arm_models = {a.split("@")[1] for a in args.arms.split(",") if "@" in a}
     llms = {
         m: gemini_llm(key, model=m, max_output_tokens=4096,
                       thinking_budget=args.thinking_budget)
-        for m in models
+        for m in set(models) | arm_models
     }
     # Config arms at the reference model; each additional model compared at A-384.
-    arms = [f"{a.strip()}@{model}" for a in args.arms.split(",") if a.strip()]
-    arms += [f"A-384@{m}" for m in models[1:]]
+    # An arm may pin its own model with '@'; otherwise it runs at the reference.
+    arms = [
+        a.strip() if "@" in a else f"{a.strip()}@{model}"
+        for a in args.arms.split(",") if a.strip()
+    ]
+    # Additional --models are compared at A-384 unless already named explicitly.
+    for m in models[1:]:
+        if f"A-384@{m}" not in arms:
+            arms.append(f"A-384@{m}")
 
     print(f"models      : {', '.join(models)}  (reference: {model})")
     print(f"A arms      : {len(images)} images -> {len(images)*5} calls, "
@@ -252,23 +270,28 @@ def main() -> None:
                 for r in caps_rows:
                     rec = _call_A(llm, r, img_bytes, lo, hi, arm)
                     records.append(rec)
-                    raw_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
                     for e, c in rec["captions"].items():
                         flat[arm][(img_id, r.caption_idx, e)] = c
             else:
                 rec = _call_B(llm, img_id, caps_rows, img_bytes, lo, hi, arm, schema)
                 records.append(rec)
-                raw_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
                 for idx, caps in rec["matrix"].items():
                     for e, c in caps.items():
                         flat[arm][(img_id, int(idx), e)] = c
 
-        raw_f.flush()
         per_arm[arm] = records
         u = llm.usage[usage_before:]  # type: ignore[attr-defined]
         for rec, um in zip([r for r in records if not r.get("error")], u):
             rec.update({k: um.get(k) for k in
-                        ("prompt_tokens", "output_tokens", "latency_s", "finish_reason")})
+                        ("prompt_tokens", "output_tokens", "thinking_tokens",
+                         "latency_s", "finish_reason")})
+            rec["model"] = arm_model
+        # Write only after usage is attached, so probe_raw.jsonl carries the token
+        # counts. Writing inside the loop above left the raw file with no telemetry,
+        # which meant cost could not be recomputed from it without re-calling.
+        for rec in records:
+            raw_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+        raw_f.flush()
         done = sum(len([c for c in r.get("captions", {}).values() if c]) for r in records)
         print(f"   {len(records)} calls, {done}/{len(pool)*25} captions\n")
 
