@@ -6,10 +6,13 @@ data:
   neutral_source: human_annotations
   captions_per_image: 5
   references_per_cell: 5
-  split_ratios: {train: 0.80, val: 0.10, test: 0.10}
+  split_source: official_flickr8k      # Hodosh et al. 2013 train/dev/test lists
+  split_sizes: {train: 6000, val: 1000, test: 1000}
   split_by: image_id
-  split_seed: 42
+  split_seed: 42                        # only used for the 91 images outside the official lists
   generator_model: "gemini-2.0-flash"
+  generation_input: image_plus_human_captions
+  generator_multimodal: true
   target_caption_words: {min: 8, max: 24}
 
 # Operational only -- not pre-registered, safe to tune.

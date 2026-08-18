@@ -21,11 +21,20 @@ from typing import Iterable, NamedTuple
 __all__ = [
     "CaptionRow",
     "read_captions",
+    "read_image_list",
     "assign_splits",
+    "assign_official_splits",
     "write_splits",
     "read_splits",
     "caption_stats",
+    "MALFORMED_IMAGE_IDS",
+    "drop_malformed",
 ]
+
+#: Flickr8k.token.txt carries one corrupt entry: a filename with ".1" appended,
+#: giving 8,092 images and 40,460 captions instead of the canonical 8,091 / 40,455.
+#: Dropping it reconciles exactly with every other distribution of the dataset.
+MALFORMED_IMAGE_IDS = frozenset({"2258277193_586949ec62.jpg.1"})
 
 # "1000268201_693b08cb0e.jpg#0\tA child in a pink dress ..." (original release)
 _TOKEN_LINE = re.compile(r"^(?P<image>\S+?)#(?P<idx>\d+)\s+(?P<caption>.*)$")
@@ -81,6 +90,73 @@ def read_captions(path: str | Path) -> list[CaptionRow]:
     if not rows:
         raise ValueError(f"parsed no captions from {path}")
     return rows
+
+
+def drop_malformed(rows: Iterable[CaptionRow]) -> list[CaptionRow]:
+    """Remove the known-corrupt image entries. See ``MALFORMED_IMAGE_IDS``."""
+    return [r for r in rows if r.image_id not in MALFORMED_IMAGE_IDS]
+
+
+def read_image_list(path: str | Path) -> list[str]:
+    """Read one of the official ``Flickr_8k.{train,dev,test}Images.txt`` lists."""
+    lines = [l.strip() for l in Path(path).read_text(encoding="utf-8").splitlines()]
+    out = [l for l in lines if l]
+    if not out:
+        raise ValueError(f"{path} contains no image ids")
+    return out
+
+
+def assign_official_splits(
+    image_ids: Iterable[str],
+    *,
+    train_list: str | Path,
+    val_list: str | Path,
+    test_list: str | Path,
+    leftover_split: str = "train",
+    seed: int = 42,
+) -> dict[str, str]:
+    """Assign splits from the official Hodosh et al. 2013 lists.
+
+    These are the splits every published Flickr8k result uses, which is what makes
+    our BLEU and CIDEr comparable to the literature.
+
+    The official lists cover 8,000 of the 8,091 valid images. The remaining 91 go to
+    ``leftover_split`` (train by default) rather than being discarded, so no image is
+    wasted and nothing leaks into val or test. ``seed`` is accepted for manifest
+    symmetry; leftover assignment is deterministic and does not consume it.
+
+    Raises if an image appears in more than one official list.
+    """
+    train = set(read_image_list(train_list))
+    val = set(read_image_list(val_list))
+    test = set(read_image_list(test_list))
+
+    for a, b, name_a, name_b in ((train, val, "train", "val"),
+                                 (train, test, "train", "test"),
+                                 (val, test, "val", "test")):
+        overlap = a & b
+        if overlap:
+            raise ValueError(
+                f"official {name_a} and {name_b} lists overlap on {len(overlap)} images, "
+                f"e.g. {sorted(overlap)[:3]}"
+            )
+
+    if leftover_split not in ("train", "val", "test"):
+        raise ValueError(f"leftover_split must be train/val/test, got {leftover_split!r}")
+
+    out: dict[str, str] = {}
+    for img in sorted(set(image_ids)):
+        if img in train:
+            out[img] = "train"
+        elif img in val:
+            out[img] = "val"
+        elif img in test:
+            out[img] = "test"
+        else:
+            out[img] = leftover_split
+    if not out:
+        raise ValueError("no image ids to split")
+    return out
 
 
 def caption_stats(rows: Iterable[CaptionRow]) -> dict:

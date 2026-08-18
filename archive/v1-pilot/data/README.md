@@ -25,6 +25,32 @@ df = pandas.read_csv("archive/v1-pilot/data/v1_emotion_captions.csv.gz")
 | `emotion_caption` | Gemini rewrite. **One per (image, emotion)** — the single-reference problem. |
 | `quality_score` | the pilot's own heuristic. Mean 0.56, and unreliable — the pilot disabled filtering on it. |
 
+## `v1_moondream_factual_captions.csv.gz`
+
+The Moondream VLM descriptions that fed the pilot's generation prompt — the pilot's
+"neutral" captions. 8,091 rows, one per Flickr8k image. Gzipped 1.9 MB → 592 KB,
+sha256-verified byte-identical. Columns: `image_id`, `factual_caption`.
+
+Measured against Flickr8k's five human captions per image:
+
+| | Human (5 captions) | Moondream (1) |
+|---|---|---|
+| Unique content words per image | **20.1** | 18.1 |
+| Colour words per image | 1.37 | **2.46** |
+| Spatial-relation words per image | **0.81** | 0.30 |
+
+Moondream omits 68.4% of the content words the five humans mention, and 63.9% of its own
+content words appear in no human caption — unverifiable without the image. It loses actions
+("jumping onto a sled" becomes "is sledding"), contradicts human attribute descriptions, and
+**3.0% of its captions (241 images) are degenerate repetition loops** — the worst repeats
+"The flag is flying." 80 times, another "The dog is wearing a collar." 73 times, at up to 481
+words. It does carry more colour and small-object detail, which is the real gap in terse
+human captions.
+
+v2 supersedes this by giving Gemini the **image itself** plus the five human captions, which
+gets that atmospheric detail from a far stronger model with no intermediate hallucination
+layer to inherit. See `docs/deviations.md`.
+
 ## Why v2 does not use it
 
 1. **One reference per `(image, emotion)` cell.** BLEU-4 against a single 25-word ornate

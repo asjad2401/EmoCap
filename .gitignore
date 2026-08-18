@@ -20,3 +20,6 @@ runs/**/checkpoint*
 !/data/.gitkeep
 .DS_Store
 .ipynb_checkpoints/
+
+# Flickr8k source data — downloadable, not ours to redistribute
+/data/flickr8k/

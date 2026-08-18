@@ -22,6 +22,8 @@ data:
   split_by: image_id                       # never by row -- prevents leakage
   split_seed: 42
   generator_model: "gemini-2.0-flash"
+  generation_input: image_plus_human_captions   # multimodal; Moondream retired
+  generator_multimodal: true
   target_caption_words: {min: 8, max: 24}
 
 decode:                                    # identical for every variant and track

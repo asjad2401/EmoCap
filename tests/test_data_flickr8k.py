@@ -179,3 +179,102 @@ def test_split_file_header_is_validated(tmp_path):
     p.write_text("img,set\na.jpg,train\n", encoding="utf-8")
     with pytest.raises(ValueError, match="unexpected split file header"):
         read_splits(p)
+
+
+# ── the malformed entry ─────────────────────────────────────────────────────
+
+
+def test_drop_malformed_removes_the_known_corrupt_entry(tmp_path):
+    """Flickr8k.token.txt has one filename with ".1" appended, giving 8,092 images
+    and 40,460 captions instead of the canonical 8,091 / 40,455."""
+    from emocap.data import MALFORMED_IMAGE_IDS, drop_malformed
+
+    bad = sorted(MALFORMED_IMAGE_IDS)[0]
+    p = tmp_path / "t.txt"
+    p.write_text(
+        f"good.jpg#0\tA dog runs .\n{bad}#0\tA broken entry .\n", encoding="utf-8"
+    )
+    rows = read_captions(p)
+    assert len(rows) == 2
+    kept = drop_malformed(rows)
+    assert len(kept) == 1 and kept[0].image_id == "good.jpg"
+
+
+# ── official splits ─────────────────────────────────────────────────────────
+
+
+@pytest.fixture
+def official_lists(tmp_path):
+    from emocap.data import write_splits  # noqa: F401  (keeps import surface honest)
+
+    names = {}
+    for split, rng in (("train", range(0, 60)), ("dev", range(60, 70)), ("test", range(70, 80))):
+        p = tmp_path / f"Flickr_8k.{split}Images.txt"
+        p.write_text("\n".join(f"img_{i:05d}.jpg" for i in rng) + "\n", encoding="utf-8")
+        names[split] = p
+    return names
+
+
+def _official(ids, lists, **kw):
+    from emocap.data import assign_official_splits
+
+    return assign_official_splits(
+        ids, train_list=lists["train"], val_list=lists["dev"],
+        test_list=lists["test"], **kw
+    )
+
+
+def test_official_splits_are_honoured(official_lists):
+    s = _official(_ids(80), official_lists)
+    counts = {k: sum(1 for v in s.values() if v == k) for k in ("train", "val", "test")}
+    assert counts == {"train": 60, "val": 10, "test": 10}
+
+
+def test_images_outside_the_official_lists_go_to_train(official_lists):
+    """8,000 of Flickr8k's 8,091 valid images are listed. The other 91 must be kept,
+    not discarded, and must never land in val or test."""
+    s = _official(_ids(90), official_lists)  # 10 beyond the lists
+    counts = {k: sum(1 for v in s.values() if v == k) for k in ("train", "val", "test")}
+    assert counts == {"train": 70, "val": 10, "test": 10}
+    assert len(s) == 90
+
+
+def test_leftovers_can_be_routed_elsewhere(official_lists):
+    s = _official(_ids(90), official_lists, leftover_split="test")
+    assert sum(1 for v in s.values() if v == "test") == 20
+
+
+def test_bad_leftover_split_is_rejected(official_lists):
+    with pytest.raises(ValueError, match="leftover_split must be"):
+        _official(_ids(80), official_lists, leftover_split="holdout")
+
+
+def test_overlapping_official_lists_are_rejected(tmp_path):
+    """A silently overlapping list would leak test images into training."""
+    from emocap.data import assign_official_splits
+
+    tr = tmp_path / "tr.txt"; tr.write_text("a.jpg\nb.jpg\n")
+    dv = tmp_path / "dv.txt"; dv.write_text("c.jpg\n")
+    te = tmp_path / "te.txt"; te.write_text("b.jpg\n")  # b.jpg also in train
+    with pytest.raises(ValueError, match="train and test lists overlap"):
+        assign_official_splits(["a.jpg", "b.jpg", "c.jpg"],
+                               train_list=tr, val_list=dv, test_list=te)
+
+
+def test_official_split_is_order_independent(official_lists):
+    ids = _ids(80)
+    assert _official(ids, official_lists) == _official(list(reversed(ids)), official_lists)
+
+
+def test_empty_image_list_file_is_rejected(tmp_path):
+    from emocap.data import read_image_list
+
+    p = tmp_path / "empty.txt"; p.write_text("\n\n")
+    with pytest.raises(ValueError, match="no image ids"):
+        read_image_list(p)
+
+
+def test_official_splits_roundtrip_through_disk(tmp_path, official_lists):
+    s = _official(_ids(80), official_lists)
+    p = write_splits(s, tmp_path / "splits.csv")
+    assert read_splits(p) == s
