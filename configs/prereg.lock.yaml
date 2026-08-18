@@ -22,7 +22,11 @@ data:
   split_sizes: {train: 6000, val: 1000, test: 1000}
   split_by: image_id                       # never by row -- prevents leakage
   split_seed: 42                           # only for the 91 images outside the official lists
-  generator_model: "gemini-2.0-flash"
+  # PROVISIONAL until the stage-02 probe finalises it; pinned before the prereg-v1
+  # tag. gemini-2.0-flash (the pilot's model) has been retired and is no longer
+  # served -- the config named a model that no longer exists. Must always be an
+  # explicit version, never a moving alias, or the dataset's provenance is unknown.
+  generator_model: "gemini-2.5-flash"
   generation_input: image_plus_human_captions   # multimodal; Moondream retired
   generator_multimodal: true
   target_caption_words: {min: 8, max: 24}
