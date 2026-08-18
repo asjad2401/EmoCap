@@ -51,6 +51,19 @@ generation:
     - "gemini-3.6-flash"        # reference: 2.4 s/call, $0.75/$3.75
     - "gemini-3.1-flash-lite"   # cheapest: 1.4 s/call, $0.25/$1.50, honours thinking_budget=0
     - "gemini-3.5-flash"        # kept only as a quality ceiling reference; too dear to use
+  # ── decisions settled by the stage-02 probe, 2026-08-18 ──
+  # plan B: one call per image returning all 25 captions (5 human captions x 5
+  # registers). Measured 100% complete (1500/1500) with zero positional decay, and
+  # it costs $17.88 against $46.32 for one call per caption.
+  plan: B
+  # MANDATORY, not an option. With the schema: 1500/1500 captions. Without it:
+  # 1249/1500 (83.3%), losing roughly one register per caption at random -- the loss
+  # is uniform across output positions, so it is dropped keys, not model fatigue.
+  use_response_schema: true
+  # Arbitrary within 224-512. All three resolutions were indistinguishable on every
+  # per-arm metric AND cost identically: the image is a flat 1,064 tokens at any
+  # size, so downscaling buys nothing. Resolution is a non-decision.
+  image_max_dim: 384
   temperature: 0.9          # diversity across the 5 registers
   max_output_tokens: 4096   # Option B returns 25 captions in one response
   # Thinking tokens are billed as output AND count against max_output_tokens, so a

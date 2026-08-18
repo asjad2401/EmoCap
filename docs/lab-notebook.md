@@ -135,3 +135,76 @@ Fixed the lock, and closed the hole: `lock_violations(..., require_sections=("da
 treats a locked key *missing* from a config that owns that section as a violation. A dropped
 pre-registered setting is exactly as dangerous as a contradicting one. Two lessons: assert
 that an edit actually applied, and a guard that only checks agreement is not a guard.
+
+## 2026-08-18 (evening) — stage-02 probe: what is now settled
+
+Matrix 1: 8 arms, 30 images for the A arms and 60 for the B arms, ~1,020 calls, ~$4.40.
+Raw calls in `results/probe/probe_raw.jsonl`. The two model-comparison arms were still
+running when these were banked; everything below comes from completed arms.
+
+### Certain
+
+**Batching works, and the schema is what makes it work.** This was the largest open
+question -- $17.88 against $46.32 -- and it is settled.
+
+| position | with schema | without schema |
+|---|---|---|
+| 0 | 5.00 [5.00, 5.00] | 4.17 [3.67, 4.58] |
+| 1 | 5.00 | 4.17 |
+| 2 | 5.00 | 4.15 |
+| 3 | 5.00 | 4.17 |
+| 4 | 5.00 | 4.17 |
+| **overall** | **1500/1500 = 100%** | 1249/1500 = 83.3% |
+
+The feared failure mode -- a 25-field response degrading toward the end -- does not
+happen. And the loss without a schema is *uniform across positions*, so it is random
+key omission rather than the model tiring; a constrained schema removes it entirely.
+
+**Resolution is a non-decision.** 224 / 384 / 512 are indistinguishable on every
+per-arm metric (recall 0.820/0.830/0.829, novel 0.531/0.533/0.527, reg-sim
+0.337/0.341/0.345, words 18.1/18.5/18.1) *and* cost identically -- the image is a flat
+**1,064 tokens at any resolution**, measured with the API's own counter, and 0 with no
+image attached, which also confirms the image really is being sent. Downscaling saves
+nothing. Picked 384 arbitrarily.
+
+**The image earns its 1,064 tokens.** Text-only sticks closer to the source caption
+(recall 0.865 vs 0.83) but adds less (novel 0.416 vs 0.53), runs shorter (16.0 vs 18.3
+words), and crucially its **five registers are less distinguishable** (reg-sim 0.437 vs
+0.34). Register distinguishability is the property the whole study depends on: if the
+five emotions read as paraphrases, the ablation has nothing to detect.
+
+**The rewritten prompt works.** Rejection 1.1-1.3% across all four A arms, and 100% of
+captions inside the 8-24 word target with zero truncation. v1's failure mode was
+rampant figurative leakage; this is a different regime.
+
+### A metric I should not have trusted
+
+My pairwise config-divergence measure is **noise-dominated at temperature 0.9** and has
+no resolving power for config comparisons. Measured the noise floor directly by running
+one identical config twice: **self-similarity 0.457 [0.427, 0.487]**, with only 1.7% of
+captions identical. Every between-config number (A-224 vs A-384 = 0.4515, A-384 vs
+A-512 = 0.4706, A-text vs A-384 = 0.4304) sits *inside* that interval.
+
+The same prompt sampled twice gives two good captions with different wording, which
+scores low on content-word overlap. The metric measures caption *identity*, which is
+unstable under sampling; the per-arm aggregates measure caption *properties*, which are
+stable because the noise averages over 750 captions.
+
+Had the aggregates been silent and I leaned on divergence, I would have reported
+"resolution matters materially" -- for two near-identical configs. **Second time on this
+project a number looked informative and was not**, the first being per-token perplexity
+across vocab sizes. Same shape of error: a quantity that varies for reasons unrelated to
+what I was attributing it to. The general fix is to measure the noise floor *before*
+believing a difference.
+
+### Still open
+
+- Does 100% batching completion hold on 3.6-flash and 3.1-flash-lite? (matrix 2, n=15)
+- Model quality comparison, and whether lite is good enough to save $12 (matrix 1's
+  last two arms).
+
+### Operational
+
+Concurrency 24 sustains 3.37 calls/s with zero errors. The whole 2.5 model family is
+retired for this key, and `models.list()` still lists it -- **listing is not usability**,
+so `--validate-models` makes one real call per candidate.
