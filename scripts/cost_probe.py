@@ -54,8 +54,10 @@ from emocap.data.quality import (  # noqa: E402
     config_divergence,
     grounding_report,
     length_stats,
+    pairwise_similarity,
     register_divergence,
 )
+from emocap.eval import cluster_bootstrap_mean, cluster_bootstrap_paired_diff, is_conclusive  # noqa: E402
 from emocap.runtime import Manifest, load_config  # noqa: E402
 
 OUT_DIR = ROOT / "results" / "probe"
@@ -96,9 +98,27 @@ def summarise(records: list[dict], label: str, full_calls: int) -> dict:
     divs = [r["divergence"]["mean_similarity"] for r in ok
             if r.get("divergence") and r["divergence"].get("mean_similarity") is not None]
 
+    # Clustered by image: captions from one image share a picture and a call, so
+    # per-caption resampling would report intervals several times too narrow.
+    comp_vals, comp_cl, rej_vals, rej_cl = [], [], [], []
+    for r in ok:
+        img = r.get("image_id")
+        exp = r["expected_captions"]
+        got = len([c for c in r["captions"].values() if c])
+        comp_vals.append(got / exp if exp else 0.0)
+        comp_cl.append(img)
+        for e, c in r["captions"].items():
+            if c:
+                rej_vals.append(1.0 if e in r["rejects"] else 0.0)
+                rej_cl.append(img)
+    comp_ci = cluster_bootstrap_mean(comp_vals, comp_cl, n_resamples=4000)
+    rej_ci = cluster_bootstrap_mean(rej_vals, rej_cl, n_resamples=4000)
+
     out = {
         "arm": label,
         "calls": len(records),
+        "completion_ci": comp_ci,
+        "rejection_ci": rej_ci,
         "errors": len(records) - len(ok),
         "captions_returned": len(caps),
         "captions_expected": expected,
@@ -125,17 +145,33 @@ def summarise(records: list[dict], label: str, full_calls: int) -> dict:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--n", type=int, default=8, help="images to probe (each has 5 captions)")
-    ap.add_argument("--model", default=None)
+    ap.add_argument("--n", type=int, default=30,
+                    help="images for the A arms (each contributes 5 calls)")
+    ap.add_argument("--n-batch", type=int, default=None,
+                    help="images for the B arms; defaults to 2x --n because B's "
+                         "per-output-position statistics need more images")
+    ap.add_argument("--models", default=None,
+                    help="comma-separated model ids. The first is the reference; any "
+                         "others are compared at A-384 on identical inputs.")
+    ap.add_argument("--list-models", action="store_true",
+                    help="query the API for available models and exit")
+    ap.add_argument("--model", default=None, help="alias for a single --models entry")
     ap.add_argument("--in-price", type=float, default=None, help="USD / 1M input tokens")
     ap.add_argument("--out-price", type=float, default=None, help="USD / 1M output tokens")
     ap.add_argument("--throughput", type=int, default=0,
                     help="if >0, fire this many concurrent calls to measure achieved rate")
-    ap.add_argument("--arms", default="A-text,A-224,A-384,A-512,B-384-schema,B-384-noschema")
+    ap.add_argument("--arms", default="A-text,A-224,A-384,A-512,B-384-schema,B-384-noschema",
+                    help="config arms, run at the reference model")
     args = ap.parse_args()
 
     cfg = load_config("data")
-    model = args.model or cfg["generation"]["model"]
+    if args.list_models:
+        _list_models()
+        return
+    models = [m.strip() for m in (args.models or args.model
+                                  or cfg["generation"]["model"]).split(",") if m.strip()]
+    model = models[0]
+    n_batch = args.n_batch if args.n_batch is not None else args.n * 2
     images_dir = ROOT / cfg["paths"]["images_dir"]
     lo = cfg["data"]["target_caption_words"]["min"]
     hi = cfg["data"]["target_caption_words"]["max"]
@@ -150,7 +186,11 @@ def main() -> None:
         if r.image_id in train and (images_dir / r.image_id).exists():
             by_img[r.image_id].append(r)
     # Probe train images only: never spend val/test on calibration.
-    images = [i for i in sorted(by_img) if len(by_img[i]) == 5][: args.n]
+    eligible = [i for i in sorted(by_img) if len(by_img[i]) == 5]
+    images = eligible[: args.n]
+    # B's decisive statistic is completion *by output position*, with one observation
+    # per image per position -- so it needs more images than the A arms.
+    images_b = eligible[: n_batch]
     if not images:
         sys.exit("no probe images found")
 
@@ -159,14 +199,21 @@ def main() -> None:
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     manifest = Manifest(run_id="stage02-probe", stage="02_probe",
-                        config={"n": args.n, "model": model, "arms": args.arms})
+                        config={"n": args.n, "n_batch": n_batch, "models": models,
+                                "arms": args.arms})
     manifest.save(OUT_DIR)
 
-    llm = gemini_llm(load_key(), model=model, max_output_tokens=2048)
-    arms = [a.strip() for a in args.arms.split(",") if a.strip()]
+    key = load_key()
+    llms = {m: gemini_llm(key, model=m, max_output_tokens=4096) for m in models}
+    # Config arms at the reference model; each additional model compared at A-384.
+    arms = [f"{a.strip()}@{model}" for a in args.arms.split(",") if a.strip()]
+    arms += [f"A-384@{m}" for m in models[1:]]
 
-    print(f"model      : {model}")
-    print(f"probe       : {len(images)} images x 5 captions = {len(images)*5} captions per arm")
+    print(f"models      : {', '.join(models)}  (reference: {model})")
+    print(f"A arms      : {len(images)} images -> {len(images)*5} calls, "
+          f"{len(images)*25} captions each")
+    print(f"B arms      : {min(n_batch, len(images_b))} images -> "
+          f"{min(n_batch, len(images_b))} calls, {min(n_batch, len(images_b))*25} captions each")
     print(f"full run    : A={full_calls_A:,} calls   B={full_calls_B:,} calls")
     print(f"arms        : {', '.join(arms)}")
     print()
@@ -178,12 +225,14 @@ def main() -> None:
     flat: dict[str, dict[tuple, str]] = defaultdict(dict)
 
     for arm in arms:
-        kind, res, schema = _parse_arm(arm)
-        print(f"── {arm} ──")
+        kind, res, schema, arm_model = _parse_arm(arm)
+        llm = llms[arm_model]
+        pool = images if kind == "A" else images_b
+        print(f"── {arm} ({len(pool)} images) ──")
         records: list[dict] = []
         usage_before = len(llm.usage)  # type: ignore[attr-defined]
 
-        for img_id in images:
+        for img_id in pool:
             caps_rows = sorted(by_img[img_id], key=lambda r: r.caption_idx)
             img_bytes = None
             if res is not None:
@@ -210,16 +259,15 @@ def main() -> None:
         for rec, um in zip([r for r in records if not r.get("error")], u):
             rec.update({k: um.get(k) for k in
                         ("prompt_tokens", "output_tokens", "latency_s", "finish_reason")})
-        done = sum(len([c for c in r.get("captions", {}).values() if c]) or
-                   sum(len(v) for v in r.get("matrix", {}).values()) for r in records)
-        print(f"   {len(records)} calls, {done}/{len(images)*5} captions\n")
+        done = sum(len([c for c in r.get("captions", {}).values() if c]) for r in records)
+        print(f"   {len(records)} calls, {done}/{len(pool)*25} captions\n")
 
     raw_f.close()
 
     full_calls = {"A": full_calls_A, "B": full_calls_B}
     summaries = [summarise(per_arm[a], a, full_calls[_parse_arm(a)[0]]) for a in arms]
 
-    report = _render(summaries, per_arm, flat, arms, images, args, model,
+    report = _render(summaries, per_arm, flat, arms, images, images_b, args, models,
                      full_calls_A, full_calls_B, lo, hi)
     (OUT_DIR / "probe_report.md").write_text(report, encoding="utf-8")
     json.dump({"summaries": summaries}, (OUT_DIR / "probe_summary.json").open("w"), indent=2)
@@ -233,11 +281,37 @@ def main() -> None:
         _throughput(llm, images, by_img, images_dir, args.throughput, lo, hi)
 
 
-def _parse_arm(arm: str) -> tuple[str, int | None, bool]:
-    kind = arm.split("-")[0]
-    res = None if "text" in arm else int(arm.split("-")[1])
-    schema = "noschema" not in arm
-    return kind, res, schema
+def _parse_arm(arm: str) -> tuple[str, int | None, bool, str]:
+    """``A-384@gemini-2.0-flash`` -> ("A", 384, True, "gemini-2.0-flash")."""
+    spec, _, model = arm.partition("@")
+    kind = spec.split("-")[0]
+    res = None if "text" in spec else int(spec.split("-")[1])
+    schema = "noschema" not in spec
+    return kind, res, schema, model
+
+
+def _list_models() -> None:
+    """Ask the API what exists, rather than trusting a hardcoded list.
+
+    Model availability and naming change; picking from a stale recollection is how
+    a run fails 30,000 calls in.
+    """
+    from google import genai
+
+    client = genai.Client(api_key=load_key())
+    rows = []
+    for m in client.models.list():
+        methods = getattr(m, "supported_actions", None) or []
+        if methods and "generateContent" not in methods:
+            continue
+        rows.append((m.name.replace("models/", ""),
+                     getattr(m, "input_token_limit", "?"),
+                     getattr(m, "output_token_limit", "?")))
+    print(f"{'model':<44}{'in limit':>12}{'out limit':>12}")
+    for name, i, o in sorted(rows):
+        print(f"{name:<44}{str(i):>12}{str(o):>12}")
+    print(f"\n{len(rows)} models support generateContent. "
+          f"Pass a comma-separated subset to --models to compare them.")
 
 
 def _call_A(llm, row, img_bytes, lo, hi, arm) -> dict:
@@ -336,25 +410,47 @@ def _throughput(llm, images, by_img, images_dir, n, lo, hi) -> None:
         print("   ^ rate limits reached; lower concurrency for the full run")
 
 
-def _render(summaries, per_arm, flat, arms, images, args, model,
+def _resolve(spec: str, arms: list[str]) -> str | None:
+    """Match a bare arm spec (``A-384``) to the full arm name including its model."""
+    if spec in arms:
+        return spec
+    for a in arms:
+        if a.split("@")[0] == spec:
+            return a
+    return None
+
+
+def _render(summaries, per_arm, flat, arms, images, images_b, args, models,
             fa, fb, lo, hi) -> str:
     L: list[str] = []
     L.append("# Stage-02 Configuration Probe\n")
-    L.append(f"- model: `{model}`")
-    L.append(f"- probe: {len(images)} train images x 5 captions = {len(images)*5} captions per arm")
+    L.append(f"- models: {', '.join(f'`{m}`' for m in models)} (reference `{models[0]}`)")
+    L.append(f"- A arms: {len(images)} train images -> {len(images)*5} calls, "
+             f"{len(images)*25} captions")
+    L.append(f"- B arms: {len(images_b)} train images -> {len(images_b)} calls, "
+             f"{len(images_b)*25} captions "
+             f"(more images because per-position stats need them)")
     L.append(f"- full run: **A = {fa:,} calls**, **B = {fb:,} calls** (same {fa*5:,} target captions)")
     L.append(f"- word target: {lo}-{hi}; `max_attempts=1` so cost shown is base cost\n")
 
     L.append("## Per-arm results\n")
-    hdr = ("| arm | calls | complete | reject | trunc | in tok | out tok | lat s | "
-           "words | in-target | recall | novel | reg-sim |")
+    hdr = ("| arm | calls | complete (95% CI) | reject (95% CI) | trunc | in tok | "
+           "out tok | lat s | words | in-target | recall | novel | reg-sim |")
     L.append(hdr)
     L.append("|" + "---|" * 13)
+
+    def pct_ci(c: dict) -> str:
+        if c.get("mean") is None:
+            return "-"
+        if c.get("lo") is None:
+            return f"{c['mean']*100:.0f}%"
+        return f"{c['mean']*100:.0f}% [{c['lo']*100:.0f}-{c['hi']*100:.0f}]"
+
     for s in summaries:
         ln = s["length"]
         L.append(
-            f"| `{s['arm']}` | {s['calls']} | {s['completion_rate']*100:.0f}% | "
-            f"{s['rejection_rate']*100:.0f}% | {s['truncated']} | "
+            f"| `{s['arm']}` | {s['calls']} | {pct_ci(s['completion_ci'])} | "
+            f"{pct_ci(s['rejection_ci'])} | {s['truncated']} | "
             f"{s['input_tokens_mean'] or '-'} | {s['output_tokens_mean'] or '-'} | "
             f"{s['latency_mean_s'] or '-'} | {ln.get('mean','-')} | "
             f"{ln.get('in_target',0)*100:.0f}% | {s['content_recall_mean']} | "
@@ -388,38 +484,75 @@ def _render(summaries, per_arm, flat, arms, images, args, model,
             for k, v in (r.get("by_position") or {}).items():
                 pos[k].append(v["returned"])
                 rej[k].append(v["rejected"])
-        L.append(f"**`{arm}`**\n")
-        L.append("| caption index | returned /5 | rejected |")
+        L.append(f"**`{arm}`** ({len(per_arm[arm])} images, so {len(per_arm[arm])} "
+                 f"observations per position)\n")
+        L.append("| caption index | returned /5 (95% CI) | rejected /5 |")
         L.append("|---|---|---|")
         for k in sorted(pos, key=int):
-            L.append(f"| {k} | {stats.mean(pos[k]):.2f} | {stats.mean(rej[k]):.2f} |")
+            ci = cluster_bootstrap_mean(pos[k], list(range(len(pos[k]))), n_resamples=4000)
+            band = (f"{ci['mean']:.2f} [{ci['lo']:.2f}-{ci['hi']:.2f}]"
+                    if ci.get("lo") is not None else f"{ci['mean']:.2f}")
+            L.append(f"| {k} | {band} | {stats.mean(rej[k]):.2f} |")
         L.append("")
+        first, last = sorted(pos, key=int)[0], sorted(pos, key=int)[-1]
+        d = cluster_bootstrap_paired_diff(pos[first], pos[last],
+                                          list(range(len(pos[first]))), n_resamples=4000)
+        verdict = ("no detectable decay" if d.get("crosses_zero")
+                   else f"DECAY: position {last} returns {d['diff']:.2f} fewer than {first}")
+        L.append(f"- first-vs-last position difference: {d['diff']:.3f} "
+                 f"[{d['lo']}, {d['hi']}] -> **{verdict}**\n")
     if not any_b:
         L.append("_no B arms run_\n")
 
     L.append("## Paired comparisons\n")
     L.append("Same images, same captions, same registers -- so these isolate one factor.\n")
 
-    def cmp(a: str, b: str, question: str) -> None:
-        if a not in flat or b not in flat:
+    # SIMILARITY_SAME: above this, two configs are producing the same captions and
+    # the cheaper one wins. Chosen as a judgement call, stated so it can be argued with.
+    SAME = 0.85
+
+    def cmp(a_spec: str, b_spec: str, question: str) -> None:
+        a = _resolve(a_spec, arms)
+        b = _resolve(b_spec, arms)
+        if not a or not b:
             return
         keys = sorted(set(flat[a]) & set(flat[b]))
         if not keys:
             L.append(f"- **{a}** vs **{b}**: no overlapping captions\n")
             return
-        d = config_divergence([flat[a][k] for k in keys], [flat[b][k] for k in keys])
-        L.append(f"**{a}** vs **{b}** — _{question}_\n")
-        L.append(f"- paired captions: {d['n']}")
-        L.append(f"- identical strings: {d['identical_rate']*100:.1f}%")
-        L.append(f"- mean content similarity: {d['mean_similarity']}")
-        L.append(f"- fraction >0.8 similar: {d['frac_similarity_above_0.8']*100:.1f}%\n")
+        left = [flat[a][k] for k in keys]
+        right = [flat[b][k] for k in keys]
+        d = config_divergence(left, right)
+        sims = [pairwise_similarity(x, y) for x, y in zip(left, right)]
+        clusters = [k[0] for k in keys]          # cluster by image
+        ci = cluster_bootstrap_mean(sims, clusters, n_resamples=4000)
 
-    cmp("A-text", "A-384", "does the image change the output at all? "
-        "high similarity here means multimodal is not earning its 5x input cost")
+        L.append(f"**{a}** vs **{b}** — _{question}_\n")
+        L.append(f"- paired captions: {d['n']} over {ci['n_clusters']} images")
+        L.append(f"- identical strings: {d['identical_rate']*100:.1f}%")
+        band = (f"{ci['mean']} [{ci['lo']}, {ci['hi']}]"
+                if ci.get("lo") is not None else str(ci["mean"]))
+        L.append(f"- mean content similarity: {band}")
+        if ci.get("hi") is not None and ci["lo"] > SAME:
+            L.append(f"- **verdict: equivalent** (CI entirely above {SAME}) -> "
+                     f"prefer the cheaper option")
+        elif ci.get("hi") is not None and ci["hi"] < SAME:
+            L.append(f"- **verdict: materially different** (CI entirely below {SAME}) -> "
+                     f"choose on quality, not cost")
+        else:
+            L.append(f"- **verdict: inconclusive** (CI spans {SAME}) -> "
+                     f"raise --n before deciding")
+        L.append("")
+
+    cmp("A-text", "A-384", "does the image change the output at all? equivalence here "
+        "means multimodal is not earning its 5x input cost")
     cmp("A-224", "A-384", "does resolution matter?")
     cmp("A-384", "A-512", "does more resolution matter?")
     cmp("A-384", "B-384-schema", "does batching change caption content?")
     cmp("B-384-schema", "B-384-noschema", "does the schema change content, or only reliability?")
+    for m in models[1:]:
+        cmp(f"A-384@{models[0]}", f"A-384@{m}", f"does {m} produce different captions "
+            f"than {models[0]}?")
 
     L.append("## Cost extrapolation\n")
     L.append("| arm | full-run calls | input tok | output tok | cost |")
