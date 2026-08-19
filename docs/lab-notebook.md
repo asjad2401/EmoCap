@@ -436,3 +436,47 @@ precisely the kind of decision the tag exists to separate.
   where FlickrStyle10K supplies human romantic and humorous captions on Flickr images.
   §1-§3 would be rewritten under the alternative framing, so `prereg-v1` stays untagged
   until that is decided.
+
+### Ceiling at proper sample size: 0.737, and a correction
+
+Re-run on the generated test split (`runs/gate-check-test/result.json`), 24,925 cells over
+997 images, cross-validated by `image_id`:
+
+    lexical shortcut anchor        0.403   (no model at all)
+    TF-IDF + logistic regression   0.682
+    DistilRoBERTa                  0.737   folds 0.737 / 0.736 / 0.737
+    floor (labels shuffled)        0.198   PASS
+    artifact ablation gap         +0.000   PASS
+
+Per-fold spread of 0.001 across independent image splits, so this is settled. Against the
+audit's 0.612 on 1,225 cells, **the earlier figure was measuring sample size**, exactly as
+the learning curve suggested. The anchor moved only 0.394 -> 0.403, confirming the
+stereotypy measurement is a property of the captions rather than of 49 images.
+
+**Correction to an earlier claim in this notebook.** At 1,225 cells `romantic` had the
+worst classifier recall (0.494) and I reported three independent instruments agreeing it
+was the broken register. At 24,925 cells it recovers to 0.725 — mid-pack — and `sad`
+becomes weakest at 0.661:
+
+| register | 1,225 cells | 24,925 cells |
+|---|---|---|
+| humorous | 0.678 | 0.775 |
+| joyful | 0.722 | 0.769 |
+| tense | 0.645 | 0.755 |
+| romantic | 0.494 | 0.725 |
+| sad | 0.563 | **0.661** |
+
+So the convergence was **two** instruments, not three: the generator's strain report and
+the human judge still both rank `romantic` hardest, but the classifier no longer does once
+it has enough data. The claim was over-stated and is withdrawn to that extent. `sad` now
+leaks into `tense` (0.12) and `romantic` (0.13), which is consistent with the v5 prompt
+having stripped `sad` of "alone"/"empty" — its most distinctive markers — without giving it
+an equally separable replacement.
+
+Twice now a number on the 1,225-cell audit has pointed the wrong way. **The audit sample is
+adequate for measuring caption properties (defect rates, crutch words, the anchor) and
+inadequate for anything requiring a trained model.**
+
+The learning curve was killed before completing. It extrapolated from 25k cells to predict
+152k, which the train split measures directly — redundant once the corpus exists, and not
+worth the heat.

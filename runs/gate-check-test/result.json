@@ -1,0 +1,88 @@
+{
+  "store": "captions_raw.jsonl (test split)",
+  "cells": 24925,
+  "images": 997,
+  "chance": 0.2,
+  "ceiling_min": 0.85,
+  "lexical_shortcut": {
+    "accuracy": 0.403
+  },
+  "tfidf": {
+    "accuracy": 0.682
+  },
+  "floor_tfidf": {
+    "accuracy": 0.198
+  },
+  "artifact_ablation_tfidf": {
+    "accuracy": 0.682
+  },
+  "distilroberta": {
+    "accuracy": 0.737,
+    "n": 24925,
+    "folds": 3,
+    "epochs": 3,
+    "device": "mps",
+    "per_fold": [
+      0.737,
+      0.736,
+      0.737
+    ]
+  },
+  "confusion": {
+    "recall": {
+      "joyful": 0.769,
+      "sad": 0.661,
+      "tense": 0.755,
+      "romantic": 0.725,
+      "humorous": 0.775
+    },
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.77,
+        "sad": 0.08,
+        "tense": 0.04,
+        "romantic": 0.09,
+        "humorous": 0.02
+      },
+      "sad": {
+        "joyful": 0.04,
+        "sad": 0.66,
+        "tense": 0.12,
+        "romantic": 0.13,
+        "humorous": 0.04
+      },
+      "tense": {
+        "joyful": 0.05,
+        "sad": 0.11,
+        "tense": 0.76,
+        "romantic": 0.06,
+        "humorous": 0.02
+      },
+      "romantic": {
+        "joyful": 0.06,
+        "sad": 0.14,
+        "tense": 0.05,
+        "romantic": 0.72,
+        "humorous": 0.03
+      },
+      "humorous": {
+        "joyful": 0.03,
+        "sad": 0.09,
+        "tense": 0.05,
+        "romantic": 0.06,
+        "humorous": 0.78
+      }
+    }
+  },
+  "learning_curve": {
+    "status": "not run to completion -- killed deliberately",
+    "why": "it extrapolated from 25k cells to predict 152k, which the train split measures directly. Redundant once the corpus exists, and it was heating the machine for no decision-relevant gain."
+  },
+  "note": "Main 3-fold result complete and stable (per-fold spread 0.001). NOT the official \u00a76 gate, which trains on the train split and evaluates on test; this cross-validates within the test split by image_id.",
+  "ceiling": {
+    "accuracy": 0.737,
+    "instrument": "DistilRoBERTa",
+    "passes": false,
+    "margin_over_anchor": 0.334
+  }
+}
