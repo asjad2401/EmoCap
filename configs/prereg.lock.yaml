@@ -9,6 +9,16 @@
 study:
   name: "EmoCap: where should emotion enter a caption decoder?"
   emotions: [joyful, sad, tense, romantic, humorous]   # order fixes emotion_id
+  # PH-10 -- PENDING REWRITE. These three fields describe the SUPERSEDED design and are
+  # left in place only as the record of what was drafted. Do not treat them as current.
+  #   seeds      -> the evaluation regime changes to 5-fold CV over each arm (MDE 2.3 vs 6.5
+  #                 on a single 1k test split), so fold-to-fold spread replaces seed spread.
+  #   conditions -> collapse from five to two (unconditioned, best-conditioned).
+  #   tracks     -> A_lstm is DROPPED; 8,076 captions cannot train a decoder from scratch and
+  #                 architecture-dependence is no longer the claim.
+  # Replacement is three matched DATA arms; see RESEARCH-LOG.md Part 7. Applied in one pass
+  # with the tag.
+  study_design_status: SUPERSEDED_PENDING_REWRITE
   seeds: [42, 1337, 2024]
   conditions: [V0, V1, V2, V3, C]
   tracks: [A_lstm, B_clipcap]
@@ -127,8 +137,11 @@ gates:                                      # a run or the study halts if these 
   # Two limits on the human figure: it is measured at 4,486 cells, the largest the human
   # corpus supports under a 1:1 trait mapping, and it is 5-way -- NOT comparable to binary
   # style-accuracy numbers reported on FlickrStyle10K or SentiCap.
+  # PH-05 -- the replacement is DECIDED (a detectability criterion, not a level) and
+  # deliberately not applied yet; see RESEARCH-LOG.md Part 11 and docs/preregistration.md §6.
   ceiling_min: 0.85
-  ceiling_min_status: uncalibrated_pending_recalibration_before_tag
+  ceiling_min_status: SUPERSEDED_replacement_decided_not_yet_applied
+  ceiling_replacement: floor_to_ceiling_range_must_admit_smallest_effect_at_design_MDE
   ceiling_human_reference: 0.726
   visual_dependence_probe: required         # captions must change when features are zeroed
   truncation_rate_max: 0.02
