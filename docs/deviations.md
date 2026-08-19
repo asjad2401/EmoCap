@@ -264,3 +264,65 @@ reported.** Do not retrofit the prediction to the measurement.
 The `strain` field raises output tokens from ~32k to ~50k per 50 images. Full-corpus
 projection moves from ~$7.00 to **~$10.50** at the batch rate. Measured per-run costs are
 in each `runs/*/stats.json`.
+
+---
+
+## 2026-08-19 — three images excluded by generator safety refusal
+
+Three test-split images returned **zero output tokens** on every attempt, in the batch run
+and again at preflight. All three show young children in or near water, minimally clothed:
+
+| image | content |
+|---|---|
+| `2762301555_48a0d0aa24.jpg` | young child wrapped in a towel at a pool |
+| `3143982558_9e2d44c155.jpg` | baby on a sofa with an adult |
+| `3564312955_716e86c48b.jpg` | young child in a swimsuit in shallow water |
+
+The generator's child-safety filtering declines them. That is the filter working
+correctly, and **no attempt was made to work around it** — not by re-encoding the image,
+not by rewording the prompt. They are recorded in
+`data/generated/excluded_images.json` and skipped on subsequent runs.
+
+### Why this is a disclosed limitation, not attrition
+
+The exclusion is **not random**. It correlates with subject matter — children, water,
+swimwear — so the corpus is missing a systematically-defined slice rather than a random
+sample. At 3/1000 on the test split, expect roughly 20–25 images across the full 8,091.
+Small in magnitude, but a content-correlated gap belongs in the write-up's limitations
+rather than being averaged away silently.
+
+This is a **data-collection** exclusion and is deliberately kept separate from §7's run
+exclusion criteria, which govern training runs and remain unchanged.
+
+### Operational consequence, fixed
+
+Without a register such an image is never "done", so it is retried on every run — and
+because `run_stage02.py` preflights on the first pending image, one refused image aborted
+an otherwise healthy run before it submitted anything. The runner now skips registered
+exclusions, and a preflight refusal (zero output tokens) records the image and exits
+asking for a re-run rather than reporting a config error.
+
+### A duplicate-write bug this surfaced
+
+Investigating the gap found a latent bug in `run_batch_generation`. An image is selected
+as pending when **any** of its five `caption_idx` keys are missing, and the API cannot be
+asked for a single index — so a retry regenerates all 25 captions. The write loop appended
+all five records unconditionally, which would have added four duplicate
+`(image_id, caption_idx)` keys for every partially-returned image.
+
+It did not fire here (the three images had no records at all), but the train split is 6x
+larger and partial returns are likely. The loop now skips records already on disk and
+counts them as `records_already_present`. Regression test in `tests/test_batch.py`.
+
+### Cost estimate was understating by ~40%
+
+`run_stage02.py` estimated cost from hardcoded 2,152 input / 672 output tokens per image,
+constants predating both the prompt rewrite and the `strain` field. Measured on the v5
+audit: 4,472 / 1,019. The old constants would have quoted $0.77 for the test split while
+billing $1.32, and $6.25 for the corpus against ~$10.70. Now uses measured rates.
+
+### Manifests record the prompt
+
+The prompt has been through five measured versions; a manifest recording the model but
+not the prompt cannot answer "which prompt produced this caption". `run_stage02.py` now
+hashes the rendered batch prompt into `config.prompt_sha256` (v5 = `72133efaffddefa3`).

@@ -169,6 +169,7 @@ def run_batch_generation(
         "images_written": 0, "captions_written": 0,
         "captions_expected": 0, "images_skipped_no_file": 0,
         "rejections": 0, "rejection_reasons": {},
+        "records_already_present": 0,
         # counts of the model's own strain report: "0" natural, "1" strained,
         # "2" no honest reading exists. Recorded, not acted on.
         "strain": {},
@@ -221,6 +222,14 @@ def run_batch_generation(
             strain: dict[int, dict[str, int]] = {}
             matrix = parse_batch_response(inner.text or "", len(srcs), strain=strain)
             for idx, srctext in enumerate(srcs):
+                # An image is retried WHOLE, because the API cannot be asked for a
+                # single caption_idx -- but only the MISSING records may be written.
+                # Without this, topping up one absent record re-appends the four that
+                # already exist, and the store gains duplicate (image_id, caption_idx)
+                # keys that every downstream count then double-counts.
+                if (img_id, idx) in done:
+                    stats["records_already_present"] += 1
+                    continue
                 caps = matrix.get(idx, {})
                 rejects = validate_all(caps, min_words=min_words, max_words=max_words)
                 for reason in rejects.values():

@@ -220,3 +220,40 @@ def test_chunking_creates_multiple_jobs(tmp_path, imgdir):
                               images_dir=imgdir, chunk_size=1)
     assert st["jobs"] == 2
     assert [x["n"] for x in c.batches.created] == [1, 1]
+
+
+def test_topping_up_one_missing_record_does_not_duplicate_the_others(tmp_path):
+    """Regression: a partially-returned image is retried whole, but written selectively.
+
+    `run_batch_generation` selects an image as pending when ANY of its caption_idx keys
+    are absent, and the API cannot be asked for a single index -- so all 25 captions come
+    back. Writing all five records would re-append the four already on disk, giving the
+    store duplicate (image_id, caption_idx) keys.
+    """
+    import json
+
+    from emocap.data.generate import GenerationRecord, append_record, completed_keys
+
+    store = tmp_path / "captions.jsonl"
+    for idx in (0, 1, 2, 4):          # caption_idx 3 is the hole
+        append_record(store, GenerationRecord(
+            image_id="a.jpg", caption_idx=idx, source_caption=f"src {idx}",
+            captions={e: f"an existing {e} caption for this index" for e in EMOTIONS},
+            model="m",
+        ))
+    done = completed_keys(store)
+    assert ("a.jpg", 3) not in done and len(done) == 4
+
+    # Simulate the write loop's guard for a whole-image retry.
+    for idx in range(5):
+        if ("a.jpg", idx) in done:
+            continue
+        append_record(store, GenerationRecord(
+            image_id="a.jpg", caption_idx=idx, source_caption=f"src {idx}",
+            captions={e: f"the new {e} caption for the hole" for e in EMOTIONS},
+            model="m",
+        ))
+
+    recs = [json.loads(l) for l in store.read_text().splitlines() if l.strip()]
+    keys = [(r["image_id"], r["caption_idx"]) for r in recs]
+    assert len(keys) == len(set(keys)) == 5, "the store must gain exactly the missing key"

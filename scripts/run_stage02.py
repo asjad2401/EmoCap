@@ -29,6 +29,7 @@ from emocap.data import (  # noqa: E402
     read_captions,
 )
 from emocap.data.batch import run_batch_generation  # noqa: E402
+from emocap.data.exclusions import load_exclusions, record_exclusion  # noqa: E402
 from emocap.data.generate import completed_keys, read_records  # noqa: E402
 from emocap.runtime import Manifest, assert_matches_lock, load_config  # noqa: E402
 
@@ -61,6 +62,17 @@ def main() -> None:
     ap.add_argument("--dry-run", action="store_true",
                     help="report what would be generated and stop")
     args = ap.parse_args()
+
+    # The prompt has been through five measured versions; a manifest that records the
+    # model but not the prompt cannot answer "which prompt produced this caption". Hash
+    # the rendered prompt so every record's provenance is exact and comparable.
+    import hashlib
+
+    from emocap.data.prompt import build_batch_prompt
+
+    prompt_sha = hashlib.sha256(
+        build_batch_prompt(["provenance probe"] * 5, emphasise_distinctness=True).encode()
+    ).hexdigest()
 
     cfg = load_config("data")
     # The generation settings are pre-registered; drift must be deliberate.
@@ -97,21 +109,34 @@ def main() -> None:
         ids = [i for i in sorted(sources) if splits[i] == args.part]
 
     done = completed_keys(out_path)
-    pending = [i for i in ids if any((i, k) not in done for k in range(5))]
+    # Images the generator refuses are recorded, not retried. Without this an image the
+    # model will never process is pending forever, and preflighting on pending[0] aborts
+    # every subsequent run before it submits anything.
+    excluded = load_exclusions()
+    pending = [i for i in ids
+               if i not in excluded and any((i, k) not in done for k in range(5))]
 
     print(f"part          : {args.part}"
           + (f"  offset {args.audit_offset}" if args.part == "audit" else ""))
     print(f"model         : {gen['model']}   plan {gen['plan']}   "
           f"schema={gen['use_response_schema']}   thinking={gen['thinking_budget']}")
     print(f"images in part: {len(ids):,}")
-    print(f"already done  : {len(ids) - len(pending):,}")
+    n_excluded = sum(1 for i in ids if i in excluded)
+    print(f"already done  : {len(ids) - len(pending) - n_excluded:,}")
+    if n_excluded:
+        print(f"excluded      : {n_excluded:,}  (generator refusals; "
+              f"see data/generated/excluded_images.json)")
     print(f"to generate   : {len(pending):,} images -> {len(pending)*25:,} captions")
     print(f"chunk size    : {args.chunk_size}  ({-(-len(pending)//args.chunk_size)} jobs)")
     print(f"store         : {out_path}")
+    print(f"prompt sha256 : {prompt_sha[:16]}  (v{cfg['generation'].get('prompt_version','?')})")
 
     P = cfg["pricing"]["models"][gen["model"]]
-    est = (len(pending) * 2152 / 1e6 * P["input"]
-           + len(pending) * 672 / 1e6 * P["output"]) * (1 - cfg["pricing"]["batch_api_discount"])
+    # Per-image tokens MEASURED on the v5 audit run (49 images: 219,120 in / 49,957 out).
+    # The earlier 2152/672 constants predate both the prompt rewrite and the `strain`
+    # field, and understated the bill by ~40%.
+    est = (len(pending) * 4472 / 1e6 * P["input"]
+           + len(pending) * 1019 / 1e6 * P["output"]) * (1 - cfg["pricing"]["batch_api_discount"])
     print(f"est. cost     : ${est:.2f} (batch)")
 
     if args.dry_run or not pending:
@@ -143,6 +168,17 @@ def main() -> None:
     _u = _llm.usage[-1]
     print(f"  {_got}/25 captions   in={_u['prompt_tokens']} out={_u['output_tokens']} "
           f"think={_u['thinking_tokens']}   rejections={sum(len(v) for v in _rej.values())}")
+    if _got == 0 and _u["output_tokens"] == 0:
+        # Zero output tokens is a refusal, not a misconfiguration: the model returned
+        # nothing at all. Record the image and preflight on the next one rather than
+        # aborting a run over one unprocessable image.
+        record_exclusion(_probe_id, "generator_safety_refusal",
+                         "zero output tokens at preflight")
+        print(f"  {_probe_id}: refused (0 output tokens) -- recorded as excluded")
+        pending = [i for i in pending if i != _probe_id]
+        if not pending:
+            sys.exit("every pending image was refused")
+        sys.exit("preflight image was refused and is now registered; re-run to continue")
     if _got < 20:
         sys.exit(f"preflight returned only {_got}/25 captions -- fix the config before "
                  f"spending on a batch")
@@ -151,6 +187,7 @@ def main() -> None:
     run_dir = ROOT / "runs" / f"stage02-{args.part}-{time.strftime('%Y%m%d-%H%M%S')}"
     man = Manifest(run_id=run_dir.name, stage="02_captions_generate",
                    config={**gen, "part": args.part, "chunk_size": args.chunk_size,
+                           "prompt_sha256": prompt_sha,
                            "n_images": len(pending), "audit_offset": args.audit_offset,
                            "out_path": str(out_path.relative_to(ROOT)),
                            "image_ids": pending})

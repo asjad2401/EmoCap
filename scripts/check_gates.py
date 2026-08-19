@@ -199,10 +199,12 @@ def main() -> None:
         print("\nPASSES the ceiling on this sample. The generated captions carry "
               "separable tone.")
     else:
-        print(f"\nBELOW the pre-registered ceiling of {ceiling_min} on this sample.")
-        print("This is an early indicator on ~50 images, not the official gate -- but if "
-              "it holds\non the full test split, §6 halts the study. Worth resolving "
-              "before generating 202k captions.")
+        n_img = len(set(images))
+        print(f"\nBELOW the pre-registered ceiling of {ceiling_min} on this sample "
+              f"({n_img:,} images, {len(texts):,} cells).")
+        print("Not the official gate, which trains on the full train split. Read the "
+              "learning curve\nbefore concluding: at this size the classifier may still "
+              "be data-limited.")
     print(f"\nNot runnable until a model exists: manipulation check (V0 <= {v0_max}), "
           f"negative\ncontrol (condition C), visual-dependence probe.")
     result["ceiling"] = {"accuracy": acc, "instrument": ceiling_label,

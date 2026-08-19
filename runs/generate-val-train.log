@@ -1,0 +1,149 @@
+Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+part          : val
+model         : gemini-3.1-flash-lite   plan B   schema=True   thinking=0
+images in part: 1,000
+already done  : 0
+to generate   : 1,000 images -> 25,000 captions
+chunk size    : 250  (4 jobs)
+store         : /Users/asjad/Documents/GitHub/EmoCap/data/generated/captions_raw.jsonl
+prompt sha256 : 72133efaffddefa3  (vv5)
+est. cost     : $1.32 (batch)
+
+preflight: one live call with this exact config...
+  25/25 captions   in=4397 out=1036 think=0   rejections=0
+  preflight OK
+
+    emocap-stage02-000  JOB_STATE_RUNNING  1s
+    emocap-stage02-000  JOB_STATE_RUNNING  22s
+    emocap-stage02-000  JOB_STATE_RUNNING  43s
+    emocap-stage02-000  JOB_STATE_RUNNING  64s
+    emocap-stage02-000  JOB_STATE_RUNNING  85s
+    emocap-stage02-000  JOB_STATE_RUNNING  106s
+    emocap-stage02-000  JOB_STATE_RUNNING  127s
+    emocap-stage02-000  JOB_STATE_RUNNING  148s
+    emocap-stage02-000  JOB_STATE_RUNNING  169s
+    emocap-stage02-000  JOB_STATE_RUNNING  190s
+    emocap-stage02-000  JOB_STATE_RUNNING  212s
+    emocap-stage02-000  JOB_STATE_RUNNING  233s
+    emocap-stage02-000  JOB_STATE_RUNNING  254s
+    emocap-stage02-000  JOB_STATE_RUNNING  275s
+    emocap-stage02-000  JOB_STATE_RUNNING  296s
+    emocap-stage02-000  JOB_STATE_RUNNING  317s
+    emocap-stage02-000  JOB_STATE_RUNNING  339s
+    emocap-stage02-000  JOB_STATE_RUNNING  360s
+  emocap-stage02-000 done in 938s  images 250  captions 6250  rejections 86
+    emocap-stage02-001  JOB_STATE_RUNNING  1s
+    emocap-stage02-001  JOB_STATE_RUNNING  23s
+    emocap-stage02-001  JOB_STATE_RUNNING  44s
+    emocap-stage02-001  JOB_STATE_RUNNING  65s
+    emocap-stage02-001  JOB_STATE_RUNNING  89s
+    emocap-stage02-001  JOB_STATE_RUNNING  110s
+    emocap-stage02-001  JOB_STATE_RUNNING  131s
+    emocap-stage02-001  JOB_STATE_RUNNING  153s
+    emocap-stage02-001  JOB_STATE_RUNNING  174s
+    emocap-stage02-001  JOB_STATE_RUNNING  194s
+    emocap-stage02-001  JOB_STATE_RUNNING  216s
+  emocap-stage02-001 done in 249s  images 500  captions 12500  rejections 163
+Traceback (most recent call last):
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 126, in read
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadError: [Errno 32] Broken pipe
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/asjad/Documents/GitHub/EmoCap/scripts/run_stage02.py", line 250, in <module>
+    main()
+  File "/Users/asjad/Documents/GitHub/EmoCap/scripts/run_stage02.py", line 206, in main
+    stats = run_batch_generation(
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/src/emocap/data/batch.py", line 194, in run_batch_generation
+    job, wall = submit_and_wait(
+                ^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/src/emocap/data/batch.py", line 107, in submit_and_wait
+    job = client.batches.create(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/google/genai/batches.py", line 2336, in create
+    return self._create(model=model, src=src, config=config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/google/genai/batches.py", line 1847, in _create
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/google/genai/_api_client.py", line 1747, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/google/genai/_api_client.py", line 1534, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/google/genai/_api_client.py", line 1510, in _request_once
+    response = self._httpx_client.send(httpx_request, stream=stream)  # type: ignore[union-attr, arg-type]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asjad/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/Users/asjad/Documents/GitHub/EmoCap/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadError: [Errno 32] Broken pipe

@@ -1,0 +1,35 @@
+{
+  "images_already_done": 0,
+  "images_pending": 1000,
+  "jobs": 4,
+  "jobs_failed": 0,
+  "images_written": 1000,
+  "captions_written": 24925,
+  "captions_expected": 25000,
+  "images_skipped_no_file": 0,
+  "rejections": 421,
+  "rejection_reasons": {
+    "figurative/abstract phrasing": 312,
+    "names the emotion with \"tenderly\"": 4,
+    "names the emotion with \"cheerfully\"": 2,
+    "names the emotion with \"gleefully\"": 1,
+    "7 words": 12,
+    "identical to the joyful rewrite": 4,
+    "names the emotion with \"joyfully\"": 6,
+    "6 words": 2,
+    "empty": 75,
+    "identical to the sad rewrite": 3
+  },
+  "strain": {
+    "0": 7860,
+    "1": 15444,
+    "2": 1621
+  },
+  "wall_seconds": 1360.5733721256256,
+  "usage": {
+    "prompt": 4399078,
+    "output": 1017259,
+    "thinking": 0
+  },
+  "measured_cost_usd": 1.3128
+}
