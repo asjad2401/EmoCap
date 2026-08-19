@@ -480,3 +480,91 @@ inadequate for anything requiring a trained model.**
 The learning curve was killed before completing. It extrapolated from 25k cells to predict
 152k, which the train split measures directly — redundant once the corpus exists, and not
 worth the heat.
+
+---
+
+## 2026-08-19 (later) — three claims retracted, and the estimator bug behind them
+
+A second review asked how the 25 keywords were chosen. The audit that followed invalidated
+three findings recorded earlier today. All three failed the same way.
+
+### The bug: the anchor is strongly sample-size dependent
+
+Measured on the same generated captions, `keyword_rule_curve`:
+
+    2,000 cells   0.441      25,000 cells   0.405
+    5,000 cells   0.445      50,000 cells   0.371
+   10,000 cells   0.427     100,000 cells   0.351
+
+A keyword rule fitted on few images transfers well to held-out images from that narrow
+pool; widen the pool and it degrades. So the anchor **falls ~9 points** across this range.
+
+I had compared our anchor measured on one ~4,500-cell subsample against the human anchor
+on 4,486 cells, and separately quoted our anchor at 24,925 cells, without noticing the two
+were not comparable. Worse, the single subsample I used returned 0.419 where the mean over
+ten image-disjoint subsamples is **0.440 (sd 0.007, range 0.427-0.449)**. The claim rested
+on one unlucky draw.
+
+### What was retracted
+
+| claim as recorded earlier | corrected |
+|---|---|
+| "72% of the human-data advantage is keyword-recoverable" | **25%** |
+| "the margins are identical, differing by 1.2 points" | they differ by **3.2 points** |
+| "careful prompting made ours less stereotyped than human writing" | **not supported** — 0.440 vs 0.450 is 1.5 pooled sd |
+
+### Corrected comparison, matched at 4,486 cells
+
+|  | accuracy | anchor | margin |
+|---|---|---|---|
+| human | 0.726 | 0.450 | 0.276 |
+| ours | 0.683 | 0.440 (sd 0.007) | 0.244 |
+| difference | −0.043 | −0.011 | **−0.032** |
+
+**The accuracy gap largely survives the anchor correction.** So it is mostly a real
+difference in register signal, not a metric artifact — which points the *opposite* way from
+the thesis drafted this morning. P2 ("the margins are the same") is not supportable as
+written.
+
+### The decline is estimator-wide, not corpus-specific
+
+Same mapping, two sizes, so the mapping cannot explain it:
+
+    4,486 -> 20,000 cells:   human -0.034      ours -0.031
+
+Both corpora decline at the same rate. Two consequences: matched-n comparison **is** valid
+because the bias is shared, and the inflation is a property of the estimator that would
+affect anyone using a keyword baseline. FlickrStyle10K is 7K images and SentiCap 2,360 --
+exactly the scale where the inflation is largest and exactly where such baselines are
+computed. That is a genuine methodological finding, measured across two orders of
+magnitude, and it is more solid than the claim it replaces.
+
+### A second, worse problem: the anchor comparison is not identifiable
+
+Our anchor does not depend on the trait mapping; the human anchor does, heavily. At 4,486
+cells:
+
+    strict mapping (1 trait per register)    human 0.450   ours 0.440   ours LESS stereotyped
+    grouped mapping (traits merged)          human 0.352   ours 0.441   ours MORE stereotyped
+
+**The sign of the difference flips with an arbitrary choice.** Grouping merges
+heterogeneous traits and destroys the human classes' keyword coherence. There is no
+principled unique grouping, so "which corpus is more lexically stereotyped" is not
+answerable from this data. The strict 1:1 mapping is the more defensible of the two and is
+what the paper will privilege, with this sensitivity reported rather than buried.
+
+### Fixes applied
+
+* `keyword_rule_matched` requires `n_subsamples >= 2` and returns mean, sd, min, max and
+  every value. A bare point estimate is no longer obtainable when comparing corpora.
+* `keyword_rule_curve` reports the anchor against n, so the dependence is visible by
+  construction rather than discovered after a claim is built on it.
+* Both documented at the top of `anchors.py`, with the retraction referenced.
+
+### The pattern, now four for four
+
+Per-token perplexity across vocab sizes; register divergence inside its own noise floor;
+the 0.612 ceiling; and now the anchor. **Every one was a point estimate quoted before its
+sampling distribution was checked.** The procedural fix is the code change above: the
+functions that feed claims now return distributions, because remembering to check has
+failed four times.

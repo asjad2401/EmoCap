@@ -22,6 +22,29 @@ Measured on the Part 0 audit sets (chance is 0.200):
 
 An earlier 0.539 in the lock came from a different, undocumented estimator and is not
 comparable to any of these -- which is the reason this module exists.
+
+**THE ANCHOR IS STRONGLY SAMPLE-SIZE DEPENDENT. A POINT ESTIMATE IS MEANINGLESS WITHOUT
+ITS n.** Measured on the same generated captions:
+
+    4,500 cells      0.443 +/- 0.010   (SD over 10 image-disjoint subsamples)
+    124,750 cells    0.344
+
+A keyword rule fitted on few images transfers well to held-out images drawn from that same
+narrow pool; widen the pool and it degrades. The anchor therefore *falls* by ~10 points as
+n grows, and comparing two corpora at different n is invalid. Three claims on this project
+were retracted for exactly that error (see docs/lab-notebook.md, 2026-08-19).
+
+Two consequences, enforced below rather than left to discipline:
+
+* :func:`keyword_rule_accuracy` requires an explicit ``n_cells`` whenever the result will
+  be compared against another corpus, and returns the SD across image-disjoint subsamples
+  rather than a single number.
+* :func:`keyword_rule_curve` reports the anchor as a function of n, so its dependence is
+  visible by construction instead of discovered later.
+
+This also matters beyond this project: FlickrStyle10K is 7K images and SentiCap 2,360 --
+precisely the scale at which a keyword baseline is most inflated, and precisely where such
+baselines are computed.
 """
 
 from __future__ import annotations
@@ -33,7 +56,14 @@ from typing import Iterable, Mapping, Sequence
 
 from emocap.data.prompt import EMOTIONS
 
-__all__ = ["ESTIMATOR_ID", "STOPWORDS", "keyword_rule_accuracy", "top_keywords"]
+__all__ = [
+    "ESTIMATOR_ID",
+    "STOPWORDS",
+    "keyword_rule_accuracy",
+    "keyword_rule_matched",
+    "keyword_rule_curve",
+    "top_keywords",
+]
 
 #: Must equal `anchors.lexical_shortcut_estimator` in configs/prereg.lock.yaml. Any
 #: change to the procedure below requires a new id and a deviations.md entry, because
@@ -159,3 +189,108 @@ def keyword_rule_accuracy(
         "folds": folds,
         "seeds": list(seeds),
     }
+
+
+def _subsample_by_image(
+    records: Sequence[Mapping], n_cells: int, seed: int
+) -> list[Mapping]:
+    """Take whole images until ``n_cells`` cells are collected.
+
+    Whole images, never individual cells: a partial image would put its remaining cells
+    nowhere, and the fold discipline in :func:`keyword_rule_accuracy` assumes an image is
+    wholly present or wholly absent.
+    """
+    by_image: dict[str, list[Mapping]] = {}
+    for r in records:
+        by_image.setdefault(str(r["image_id"]), []).append(r)
+    order = sorted(by_image)
+    random.Random(seed).shuffle(order)
+    out: list[Mapping] = []
+    cells = 0
+    for img in order:
+        out.extend(by_image[img])
+        cells += sum(len(r.get("captions") or {}) for r in by_image[img])
+        if cells >= n_cells:
+            break
+    return out
+
+
+def keyword_rule_matched(
+    records: Sequence[Mapping],
+    *,
+    n_cells: int,
+    n_subsamples: int = 10,
+    top_k: int = 25,
+    min_doc_freq: int = 4,
+    folds: int = 5,
+) -> dict:
+    """The anchor at a FIXED cell count, with its spread across subsamples.
+
+    **Use this, not :func:`keyword_rule_accuracy`, whenever two corpora are compared.**
+    The anchor moves ~10 points between 4.5k and 125k cells, so an unmatched comparison
+    measures the size difference rather than the corpora. Reporting the SD alongside is
+    equally load-bearing: a single subsample of our captions gave 0.419 where the mean is
+    0.443, and a claim was built on that draw before the spread was checked.
+
+    Returns mean, SD, min, max and every subsample value.
+    """
+    if n_subsamples < 2:
+        raise ValueError(
+            "n_subsamples must be >= 2 -- the point of this function is the spread, and "
+            "one draw is what produced the retracted 0.419"
+        )
+    values: list[float] = []
+    for seed in range(n_subsamples):
+        sub = _subsample_by_image(records, n_cells, seed)
+        got = sum(len(r.get("captions") or {}) for r in sub)
+        if got < n_cells * 0.9:
+            raise ValueError(
+                f"only {got} cells available, asked for {n_cells}; this corpus cannot "
+                f"support the requested matched size"
+            )
+        values.append(
+            keyword_rule_accuracy(sub, top_k=top_k, min_doc_freq=min_doc_freq,
+                                  folds=folds)["accuracy"]
+        )
+    mean = sum(values) / len(values)
+    var = sum((v - mean) ** 2 for v in values) / (len(values) - 1)
+    return {
+        "estimator": ESTIMATOR_ID,
+        "n_cells": n_cells,
+        "n_subsamples": n_subsamples,
+        "mean": round(mean, 4),
+        "sd": round(var ** 0.5, 4),
+        "min": round(min(values), 4),
+        "max": round(max(values), 4),
+        "values": [round(v, 4) for v in values],
+        "chance": round(1 / len(EMOTIONS), 4),
+        "top_k": top_k,
+        "min_doc_freq": min_doc_freq,
+    }
+
+
+def keyword_rule_curve(
+    records: Sequence[Mapping],
+    *,
+    cell_counts: Sequence[int] = (2000, 5000, 10000, 25000, 50000, 100000),
+    n_subsamples: int = 3,
+    top_k: int = 25,
+    min_doc_freq: int = 4,
+) -> list[dict]:
+    """The anchor as a function of n, so its dependence is visible rather than latent.
+
+    Any ``cell_counts`` entry the corpus cannot supply is skipped rather than silently
+    truncated to the corpus size, which would report a smaller n's value under a larger
+    n's label.
+    """
+    total = sum(len(r.get("captions") or {}) for r in records)
+    out: list[dict] = []
+    for n in sorted(cell_counts):
+        if n > total:
+            continue
+        r = keyword_rule_matched(records, n_cells=n, n_subsamples=n_subsamples,
+                                 top_k=top_k, min_doc_freq=min_doc_freq)
+        out.append({"n_cells": n, "mean": r["mean"], "sd": r["sd"]})
+    if not out:
+        raise ValueError(f"corpus has {total} cells, fewer than the smallest requested")
+    return out
