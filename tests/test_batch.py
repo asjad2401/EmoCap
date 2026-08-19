@@ -257,3 +257,61 @@ def test_topping_up_one_missing_record_does_not_duplicate_the_others(tmp_path):
     recs = [json.loads(l) for l in store.read_text().splitlines() if l.strip()]
     keys = [(r["image_id"], r["caption_idx"]) for r in recs]
     assert len(keys) == len(set(keys)) == 5, "the store must gain exactly the missing key"
+
+
+def test_transient_transport_faults_are_retried_then_succeed():
+    """A dropped connection must not abandon a job that is running fine on the server.
+
+    Three failures in ten job submissions on 2026-08-19 -- once mid-submit, twice while
+    polling. Each time the work was unaffected: a submitted batch runs and bills whether
+    or not this process is watching, so giving up on a blip discards paid-for captions.
+    """
+    from emocap.data.batch import _with_retry
+
+    class ReadError(Exception):      # mimics httpx.ReadError by class name
+        pass
+
+    calls = {"n": 0}
+
+    def flaky():
+        calls["n"] += 1
+        if calls["n"] < 3:
+            raise ReadError("[Errno 32] Broken pipe")
+        return "ok"
+
+    seen = []
+    assert _with_retry(flaky, what="submit", attempts=5,
+                       on_retry=lambda *a: seen.append(a)) == "ok"
+    assert calls["n"] == 3 and len(seen) == 2
+
+
+def test_a_real_api_error_raises_immediately_without_retrying():
+    """A bad model id fails every attempt identically; retrying it wastes 60s and hides
+    the cause behind a timeout. Only transport faults are transient."""
+    from emocap.data.batch import _with_retry
+
+    calls = {"n": 0}
+
+    def broken():
+        calls["n"] += 1
+        raise ValueError("400 INVALID_ARGUMENT: unknown model")
+
+    with pytest.raises(ValueError):
+        _with_retry(broken, what="submit", attempts=5)
+    assert calls["n"] == 1, "a non-transient error must not be retried"
+
+
+def test_a_transport_fault_wrapped_in_another_exception_is_still_transient():
+    """httpx raises its own error `from` the httpcore one, so the chain must be walked."""
+    from emocap.data.batch import _is_transient
+
+    class ReadError(Exception):
+        pass
+
+    try:
+        try:
+            raise ReadError("broken pipe")
+        except ReadError as inner:
+            raise RuntimeError("submit failed") from inner
+    except RuntimeError as outer:
+        assert _is_transient(outer)

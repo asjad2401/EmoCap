@@ -94,6 +94,47 @@ def build_requests(chunk: BatchChunk, *, images_dir: str | Path, image_max_dim: 
     return reqs, kept
 
 
+#: Transport-level faults, as class names so the httpx/httpcore import stays out of here.
+#: The connection to Google dropped three times in ten job submissions on 2026-08-19 --
+#: once mid-submit, twice while polling -- and each time the WORK was fine: a submitted
+#: job runs and bills on the server whether or not this process is watching. Retrying a
+#: network blip is therefore free, while giving up on one abandons paid-for captions.
+#: Only transport faults are retried; a real API error (bad model, bad argument) must
+#: still raise immediately rather than being attempted eight times.
+_TRANSIENT = (
+    "RemoteProtocolError", "ReadError", "WriteError", "ConnectError",
+    "ConnectTimeout", "ReadTimeout", "WriteTimeout", "PoolTimeout",
+    "ServerDisconnectedError", "IncompleteRead", "ProtocolError",
+)
+
+
+def _is_transient(exc: BaseException) -> bool:
+    seen = set()
+    cur: BaseException | None = exc
+    while cur is not None and id(cur) not in seen:
+        seen.add(id(cur))
+        if type(cur).__name__ in _TRANSIENT:
+            return True
+        cur = cur.__cause__ or cur.__context__
+    return False
+
+
+def _with_retry(fn, *, what: str, attempts: int = 6, on_retry=None):
+    """Call ``fn``, retrying transport faults with exponential backoff."""
+    delay = 3.0
+    for attempt in range(1, attempts + 1):
+        try:
+            return fn()
+        except Exception as exc:  # noqa: BLE001
+            if not _is_transient(exc) or attempt == attempts:
+                raise
+            if on_retry:
+                on_retry(what, type(exc).__name__, attempt, delay)
+            time.sleep(delay)
+            delay = min(delay * 2, 60)
+    raise RuntimeError("unreachable")
+
+
 def submit_and_wait(client, model: str, requests, *, display_name: str,
                     poll_seconds: int = 20, timeout_seconds: int = 7200,
                     on_poll: Callable[[str, float], None] | None = None):
@@ -104,13 +145,21 @@ def submit_and_wait(client, model: str, requests, *, display_name: str,
     """
     from google.genai import types
 
-    job = client.batches.create(
-        model=model, src=requests,
-        config=types.CreateBatchJobConfig(display_name=display_name),
+    def _retried(what, kind, attempt, delay):
+        if on_poll:
+            on_poll(f"{what} transport fault ({kind}), retry {attempt} in {delay:.0f}s", 0.0)
+
+    job = _with_retry(
+        lambda: client.batches.create(
+            model=model, src=requests,
+            config=types.CreateBatchJobConfig(display_name=display_name),
+        ),
+        what="submit", on_retry=_retried,
     )
     t0 = time.time()
     while True:
-        job = client.batches.get(name=job.name)
+        job = _with_retry(lambda: client.batches.get(name=job.name),
+                          what="poll", on_retry=_retried)
         state = str(job.state).rsplit(".", 1)[-1]
         if any(state.endswith(t) for t in _TERMINAL):
             break
