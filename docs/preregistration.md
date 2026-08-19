@@ -75,9 +75,16 @@ mitigations, all reported:
    nearly two-thirds of the primary metric available from vocabulary alone — driven by
    "alone"/"empty" in 36% of sad captions, "soft"/"gentle" in 41% of romantic and
    "bright" in 31% of joyful. The prompt was rewritten (see `docs/deviations.md`,
-   2026-08-19); under the final v5 prompt the rule reaches **0.394**, with those rates
-   at 1%, 6% and 14%. Classifier accuracy is always reported alongside this baseline,
-   recomputed by `scripts/audit_captions.py` under the estimator named in the lock.
+   2026-08-19); under v5 those rates fall to 1%, 6% and 14%.
+
+   **The anchor is sample-size dependent and is never quoted as a bare number.** On the
+   generated corpus it falls from 0.440 at 4,486 cells to 0.403 at 24,925 and **0.332 at
+   the full 201,900** — a keyword rule fitted on few images transfers well within that
+   narrow pool and degrades as the pool widens. The decline is a property of the
+   estimator rather than of one corpus: the human comparison corpus falls 0.034 over the
+   same span where ours falls 0.031. The anchor is therefore **recomputed on whatever
+   evaluation set the primary metric is measured on, at that set's own n**, and reported
+   beside it. Three findings were retracted on 2026-08-19 for violating exactly that.
    This threatens *construct* validity, not internal validity: stereotypy affects every
    condition equally, so it cannot explain V0 vs V2, but it does mean "emotion accuracy"
    partly measures keyword emission rather than register.
@@ -96,12 +103,31 @@ mitigations, all reported:
 
 | Check | Expectation | If it fails |
 |---|---|---|
-| Ceiling — accuracy on the reference captions | ≥ 0.85 | The generated data lacks separable tone. **Halt the study.** |
+| Ceiling — accuracy on the reference captions | ≥ 0.85 as originally registered, **but see below** | The generated data lacks separable tone. **Halt the study.** |
 | Floor — accuracy with randomly reassigned labels | ≈ 0.20 | The metric is broken. |
-| **Lexical shortcut** — top-25-keyword-per-register rule | measured **0.394** | Not a failure, a correction: this much of the primary metric needs no emotional register at all. The model's contribution is the margin above it. |
+| **Lexical shortcut** — top-25-keyword-per-register rule | recomputed per evaluation set at its own n (0.332 on the full corpus) | Not a failure, a correction: this much of the primary metric needs no emotional register at all. The model's contribution is the margin above it. |
 | Manipulation check — V0 accuracy | ≤ 0.25 | The classifier reads something other than tone. **Results not interpretable.** |
 | Negative control — condition C | indistinguishable from V0 | Conditioning is not doing the work. |
 | Visual-dependence probe — zero the features | captions change substantially | The run collapsed to a language prior. **Exclude the run.** |
+
+### The 0.85 ceiling is not calibrated, and human text does not reach it
+
+0.85 was set a priori with nothing calibrating it. Measured with the identical instrument
+at matched sample size, **human-written style-conditioned captions reach 0.726**
+(Personality-Captions, 4,486 cells, DistilRoBERTa, folds by image) — so the gate as
+written would halt a study on data matching human performance. That is a miscalibrated
+instrument, not a finding about the corpus.
+
+Recalibrating the threshold against the measured human ceiling is legitimate **pre-tag,
+with the reasoning logged**, and indefensible afterwards. The final value is set before
+`prereg-v1` is applied; until then 0.85 stands as registered and the measured human number
+is recorded here so the change is visible rather than silent.
+
+Two limits on the human figure, both stated because they bound the claim:
+it is measured at 4,486 cells (the largest the human corpus supports under a 1:1 trait
+mapping) and the anchor-style sample-size dependence means the level may rise with n; and
+the comparison is 5-way, so it is **not** comparable to binary style-accuracy figures
+reported on FlickrStyle10K or SentiCap.
 
 ### A pre-registered prediction the data already contradicts
 

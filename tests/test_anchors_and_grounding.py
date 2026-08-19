@@ -7,6 +7,8 @@ unreproducible from the repo; these tests pin the properties that make them mean
 
 from __future__ import annotations
 
+import re
+
 import pytest
 
 from emocap.data.grounding import caption_defects, defect_counts
@@ -49,22 +51,59 @@ def test_estimator_id_matches_the_preregistration_lock():
     )
 
 
-def test_recorded_anchor_value_is_reproducible_from_the_committed_store():
-    """The number in the lock must come out of the committed code and data."""
+def test_lock_stores_a_recompute_rule_not_a_bare_anchor_value():
+    """Regression guard for the 2026-08-19 retractions.
+
+    The lock used to store `lexical_shortcut_value: 0.394` as though the anchor were a
+    single number. It is not: it falls from 0.440 at 4,486 cells to 0.332 at 201,900,
+    because a keyword rule fitted on few images transfers well inside that narrow pool and
+    degrades as the pool widens. Three findings were retracted for comparing an anchor at
+    one n against accuracy at another. The lock now stores a RULE, and a bare value must
+    never come back.
+    """
+    from emocap.runtime import load_config
+
+    anchors = load_config("prereg.lock")["anchors"]
+    assert "lexical_shortcut_value" not in anchors, (
+        "a bare anchor value is back in the lock; it is meaningless without its n"
+    )
+    assert anchors["lexical_shortcut_rule"] == (
+        "recompute_on_each_evaluation_set_at_its_own_n"
+    )
+    assert anchors["lexical_shortcut_estimator"] == ESTIMATOR_ID
+
+
+def test_every_reference_anchor_is_labelled_with_its_sample_size():
+    """A reference figure without its n is the exact error that caused the retractions."""
+    from emocap.runtime import load_config
+
+    refs = load_config("prereg.lock")["anchors"]["lexical_shortcut_reference"]
+    assert refs, "reference values should be recorded for context"
+    for key, value in refs.items():
+        assert re.search(r"\d", key), f"reference {key!r} does not state its sample size"
+        assert 0.2 <= value <= 1.0, f"{key} = {value} is not a plausible accuracy"
+
+
+def test_the_anchor_falls_as_the_sample_grows():
+    """The property that invalidated three claims, pinned so it cannot be forgotten."""
     import json
     from pathlib import Path
 
-    from emocap.runtime import load_config
-
     root = Path(__file__).resolve().parents[1]
-    store = root / "data/generated/captions_audit_v5.jsonl"
+    store = root / "data/generated/captions_raw.jsonl"
     if not store.exists():
-        pytest.skip("v5 audit store not present")
+        pytest.skip("corpus not present")
     records = [json.loads(l) for l in store.read_text().splitlines() if l.strip()]
-    got = keyword_rule_accuracy(records)["accuracy"]
-    want = load_config("prereg.lock")["anchors"]["lexical_shortcut_value"]
-    assert got == pytest.approx(want, abs=0.001), (
-        f"anchor drift: lock says {want}, code produces {got}"
+    if sum(len(r.get("captions") or {}) for r in records) < 60000:
+        pytest.skip("corpus too small to show the effect")
+
+    from emocap.eval.anchors import keyword_rule_matched
+
+    small = keyword_rule_matched(records, n_cells=4000, n_subsamples=2)
+    large = keyword_rule_matched(records, n_cells=50000, n_subsamples=2)
+    assert large["mean"] < small["mean"] - 0.02, (
+        f"anchor did not fall with n ({small['mean']} -> {large['mean']}); the estimator's "
+        f"sample-size dependence is the basis of a reported finding"
     )
 
 

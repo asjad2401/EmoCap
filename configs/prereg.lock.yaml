@@ -57,30 +57,49 @@ metrics:
   multiple_comparisons: holm_bonferroni     # 3 comparisons per track
 
 anchors:
-  ceiling: reference_captions               # expect >= 0.85 emotion accuracy
+  # UNCALIBRATED as registered -- see gates.ceiling_min below and §6 of the
+  # preregistration. Human style-conditioned captions measure 0.726, not 0.85.
+  ceiling: reference_captions
   floor: shuffled_emotion_labels            # expect ~0.20 (chance)
-  # Third anchor, added 2026-08-18 after auditing the Part 0 sample. The generated
-  # registers carry stereotyped vocabulary -- "bright" in 31% of joyful captions,
-  # "alone" in 21% of sad, "soft" in 26% of romantic -- and a trivial rule using the
-  # top 25 keywords per register classifies at 53.9% against 20% chance.
+  # Third anchor, added 2026-08-18 after auditing the Part 0 sample, then substantially
+  # revised on 2026-08-19. The rates and the value quoted here originally -- "bright" in
+  # 31% of joyful, "alone" in 21% of sad, "soft" in 26% of romantic, and a keyword rule at
+  # 53.9% -- were measured on the *v1 prompt*, which has since been replaced. Under the
+  # final v5 prompt those rates are 14%, 1% and 6%. Do not quote the v1 figures as if they
+  # described this corpus.
   #
   # So a large share of the PRIMARY metric is available without any emotional
   # register at all. Reporting the classifier alone would credit the captioning model
   # for keyword emission. This anchor makes that share explicit: the model's real
   # contribution is the margin above it, not the raw accuracy.
-  # Estimator, fixed so figures stay comparable: top-25 keywords per register, 5-fold
-  # cross-validated by image_id, averaged over 3 seeds, ties credited fractionally.
-  # Chance is 0.200. An earlier 0.539 in this file used a DIFFERENT estimator and is not
-  # comparable -- see docs/deviations.md, 2026-08-19.
+  # THE ANCHOR IS SAMPLE-SIZE DEPENDENT AND MUST NOT BE STORED AS A SINGLE NUMBER.
+  # Measured on the generated corpus with the estimator below:
   #
-  # Measured 0.394 under the v5 prompt, against 0.641 under the original.
-  # Recompute with: uv run python scripts/audit_captions.py <store> So under half
-  # of the primary metric is obtainable by keyword spotting alone, against two-thirds
-  # before. The model's real contribution is the margin above this anchor, never the raw
-  # accuracy.
+  #     4,486 cells   0.440 (sd 0.007 over 10 image-disjoint subsamples)
+  #    24,925 cells   0.403
+  #   201,900 cells   0.332 (per-seed .3320 / .3324 / .3327)
+  #
+  # A keyword rule fitted on few images transfers well to held-out images from that same
+  # narrow pool and degrades as the pool widens, so the anchor FALLS ~11 points across
+  # this range. The decline is a property of the estimator, not of one corpus: the human
+  # comparison corpus falls -0.034 over the same span where ours falls -0.031.
+  #
+  # RULE, so the two cannot be mismatched again: the anchor is RECOMPUTED on whatever
+  # evaluation set the primary metric is measured on, at that set's own n, and reported
+  # beside it. It is never read from a stored constant. Three claims were retracted on
+  # 2026-08-19 for comparing an anchor at one n against accuracy at another -- see
+  # docs/lab-notebook.md and docs/deviations.md.
   lexical_shortcut: top25_keyword_rule
-  lexical_shortcut_value: 0.394
   lexical_shortcut_estimator: cv5_by_image_id_3seeds_fractional_ties
+  lexical_shortcut_rule: recompute_on_each_evaluation_set_at_its_own_n
+  # Reference values, for context only -- NOT thresholds. Prompt v1 vs v5 at matched n
+  # (1,225-cell audit sets) shows what the prompt rewrite bought: 0.641 -> 0.394.
+  lexical_shortcut_reference:
+    full_corpus_201900_cells: 0.332
+    test_split_24925_cells: 0.403
+    matched_4486_cells: 0.440
+    v1_prompt_1225_cells: 0.641
+    human_corpus_4486_cells: 0.450
   # Pre-registered expectation, so it is not discovered after the fact: `tense` and
   # `humorous` have the weakest lexical markers (grips/edge 12%; seemingly/quite 6%)
   # and should dominate the classifier's confusion matrix.
@@ -95,7 +114,22 @@ anchors:
 gates:                                      # a run or the study halts if these fail
   manipulation_check:
     v0_emotion_accuracy_max: 0.25
+  # 0.85 was set a priori with NOTHING CALIBRATING IT, and it is very likely wrong.
+  # Measured with the identical instrument at matched sample size, human-written
+  # style-conditioned captions (Personality-Captions, 4,486 cells) reach only 0.726 -- so
+  # this gate as written would halt a study on data matching human performance. That is a
+  # miscalibrated instrument, not a finding about the corpus.
+  #
+  # Recalibrating against the measured human ceiling is legitimate PRE-TAG with the
+  # reasoning logged, and indefensible afterwards. The value MUST be settled before
+  # `prereg-v1` is applied. Until then 0.85 stands as registered.
+  #
+  # Two limits on the human figure: it is measured at 4,486 cells, the largest the human
+  # corpus supports under a 1:1 trait mapping, and it is 5-way -- NOT comparable to binary
+  # style-accuracy numbers reported on FlickrStyle10K or SentiCap.
   ceiling_min: 0.85
+  ceiling_min_status: uncalibrated_pending_recalibration_before_tag
+  ceiling_human_reference: 0.726
   visual_dependence_probe: required         # captions must change when features are zeroed
   truncation_rate_max: 0.02
 
