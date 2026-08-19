@@ -46,6 +46,7 @@ __all__ = [
     "read_records",
     "run_generation",
     "gemini_llm",
+    "vertex_client",
 ]
 
 #: A generation backend: ``llm(prompt, image_bytes=None, response_schema=None) -> raw_text``.
@@ -638,8 +639,38 @@ def _is_retryable(exc: Exception) -> bool:
     ) and "no longer available" not in text.lower()
 
 
+def vertex_client(project: str, location: str = "us-central1",
+                  service_account_file: str | Path | None = None):
+    """A genai client routed through Vertex AI rather than AI Studio.
+
+    Vertex bills to a Google Cloud project, so promotional GCP credits apply. Two ways
+    to authenticate, and the service-account route is used here because it needs no
+    `gcloud` install and no browser:
+
+    * ``service_account_file`` -- a JSON key. Long-lived, so it MUST stay out of the
+      repository; `.gitignore` covers `*.json` under `secrets/`.
+    * otherwise Application Default Credentials, which is what
+      `gcloud auth application-default login` writes.
+
+    Note the model catalogue differs from AI Studio's: names and availability are not
+    the same, so validate before committing a run. `gemini-2.5-flash` for instance is
+    refused by AI Studio for new projects but may exist on Vertex.
+    """
+    from google import genai
+
+    creds = None
+    if service_account_file:
+        from google.oauth2 import service_account
+        creds = service_account.Credentials.from_service_account_file(
+            str(service_account_file),
+            scopes=["https://www.googleapis.com/auth/cloud-platform"],
+        )
+    return genai.Client(vertexai=True, project=project, location=location,
+                        credentials=creds)
+
+
 def gemini_llm(
-    api_key: str,
+    api_key: str | None = None,
     *,
     model: str,
     temperature: float = 0.9,
@@ -647,6 +678,7 @@ def gemini_llm(
     thinking_budget: int | None = 0,
     max_retries: int = 4,
     base_delay: float = 2.0,
+    client=None,
 ) -> LLM:
     """A multimodal ``llm(prompt, image_bytes=None) -> str`` over Gemini.
 
@@ -654,11 +686,18 @@ def gemini_llm(
     with ``prompt_tokens``, ``output_tokens`` and ``total_tokens`` read from the
     API's own ``usage_metadata``. That is what makes the cost of a full run
     measurable from a small probe batch instead of estimated from list prices.
+
+    Pass ``client`` to supply a pre-built client -- e.g. :func:`vertex_client` -- so the
+    same generation code runs against AI Studio or Vertex without duplicating it. Exactly
+    one of ``api_key`` or ``client`` is required.
     """
     from google import genai
     from google.genai import types
 
-    client = genai.Client(api_key=api_key)
+    if client is None:
+        if not api_key:
+            raise ValueError("pass either api_key or client")
+        client = genai.Client(api_key=api_key)
     usage: list[dict] = []
 
     def call(

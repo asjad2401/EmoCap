@@ -35,8 +35,15 @@ runs/*.log
 # The exclusion register is provenance, not data: a few hundred bytes naming the images
 # the generator refuses and why. docs/deviations.md cites it, so it must be in the repo.
 !/data/generated/excluded_images.json
+# Vertex comparison arms: small, non-reproducible at temperature 0.9, and the evidence
+# for the generator-capability comparison. Same rationale as the audit sets.
+!/data/generated/captions_vertex_*.jsonl
 .DS_Store
 .ipynb_checkpoints/
 
 # Flickr8k source data — downloadable, not ours to redistribute
 /data/flickr8k/
+
+# GCP service-account keys -- long-lived credentials, never committed
+secrets/
+*-service-account*.json

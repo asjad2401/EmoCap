@@ -1,0 +1,15 @@
+{
+  "images": 76,
+  "captions": 1900,
+  "expected": 2500,
+  "rejections": 25,
+  "errors": 24,
+  "refused": 0,
+  "usage": {
+    "prompt": 491270,
+    "output": 77578,
+    "thinking": 0
+  },
+  "measured_cost_usd": 0.2392,
+  "wall_seconds": 132.2
+}
