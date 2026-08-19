@@ -1,0 +1,20 @@
+{
+  "note": "Images the generator will not process. See src/emocap/data/exclusions.py for why these are recorded rather than retried, and docs/deviations.md for the study implications.",
+  "excluded": {
+    "2762301555_48a0d0aa24.jpg": {
+      "reason": "generator_safety_refusal",
+      "detail": "young child wrapped in a towel at a pool",
+      "recorded": "2026-08-19"
+    },
+    "3143982558_9e2d44c155.jpg": {
+      "reason": "generator_safety_refusal",
+      "detail": "baby on a sofa with an adult",
+      "recorded": "2026-08-19"
+    },
+    "3564312955_716e86c48b.jpg": {
+      "reason": "generator_safety_refusal",
+      "detail": "young child in a swimsuit in shallow water",
+      "recorded": "2026-08-19"
+    }
+  }
+}

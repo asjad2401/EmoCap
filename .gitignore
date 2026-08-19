@@ -16,6 +16,9 @@ kaggle.json
 *.pth
 *.safetensors
 runs/**/checkpoint*
+# Console logs churn while a run is in flight and duplicate what the record already
+# holds: manifest.json has the config and provenance, stats.json the metrics and timings.
+runs/*.log
 # Git cannot re-include a file whose parent directory is excluded, so the data tree is
 # excluded level by level rather than with a blanket /data/.
 /data/*
@@ -29,6 +32,9 @@ runs/**/checkpoint*
 # total. The full corpus is ~28 MB and deliberately stays out.
 !/data/generated/captions_audit_*.jsonl
 !/data/generated/captions_reference_*.jsonl
+# The exclusion register is provenance, not data: a few hundred bytes naming the images
+# the generator refuses and why. docs/deviations.md cites it, so it must be in the repo.
+!/data/generated/excluded_images.json
 .DS_Store
 .ipynb_checkpoints/
 
