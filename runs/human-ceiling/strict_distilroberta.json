@@ -1,0 +1,30 @@
+{
+  "design": "strict",
+  "human_source": "personality_captions_strict",
+  "length_band": null,
+  "instrument": "distilroberta-base",
+  "cells_each_side": 4485,
+  "ours_synthetic": {
+    "accuracy": 0.6827,
+    "n": 4485,
+    "recall": {
+      "joyful": 0.701,
+      "sad": 0.757,
+      "tense": 0.621,
+      "romantic": 0.579,
+      "humorous": 0.756
+    }
+  },
+  "human": {
+    "accuracy": 0.7264,
+    "n": 4462,
+    "recall": {
+      "joyful": 0.811,
+      "sad": 0.737,
+      "tense": 0.738,
+      "romantic": 0.718,
+      "humorous": 0.628
+    }
+  },
+  "gap_ours_minus_human": -0.0437
+}

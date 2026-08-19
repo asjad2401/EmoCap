@@ -1,0 +1,85 @@
+{
+  "instrument": "distilroberta-base",
+  "folds": 5,
+  "epochs": 3,
+  "raw": {
+    "human": 0.7379,
+    "ours": 0.7004
+  },
+  "linear": {
+    "coef_clipscore": -0.42,
+    "coef_corpus_ours": -0.0962
+  },
+  "quadratic": {
+    "coef_clipscore": 0.0841,
+    "coef_clipscore_sq": -0.3845,
+    "coef_corpus_ours": -0.0915,
+    "corpus_coef_shift": 0.0047
+  },
+  "fitted_curve": [
+    {
+      "clipscore": 0.5,
+      "human": 0.7442,
+      "ours": 0.7255,
+      "gap": -0.0187,
+      "n_human": 790,
+      "n_ours": 4
+    },
+    {
+      "clipscore": 0.55,
+      "human": 0.7402,
+      "ours": 0.7212,
+      "gap": -0.0189,
+      "n_human": 1006,
+      "n_ours": 16
+    },
+    {
+      "clipscore": 0.6,
+      "human": 0.7361,
+      "ours": 0.717,
+      "gap": -0.0191,
+      "n_human": 953,
+      "n_ours": 72
+    },
+    {
+      "clipscore": 0.65,
+      "human": 0.732,
+      "ours": 0.7127,
+      "gap": -0.0193,
+      "n_human": 715,
+      "n_ours": 238
+    },
+    {
+      "clipscore": 0.7,
+      "human": 0.7279,
+      "ours": 0.7084,
+      "gap": -0.0195,
+      "n_human": 384,
+      "n_ours": 547
+    },
+    {
+      "clipscore": 0.75,
+      "human": 0.7237,
+      "ours": 0.7041,
+      "gap": -0.0196,
+      "n_human": 150,
+      "n_ours": 969
+    },
+    {
+      "clipscore": 0.8,
+      "human": 0.7195,
+      "ours": 0.6997,
+      "gap": -0.0198,
+      "n_human": 38,
+      "n_ours": 1170
+    },
+    {
+      "clipscore": 0.85,
+      "human": 0.7152,
+      "ours": 0.6952,
+      "gap": -0.02,
+      "n_human": 4,
+      "n_ours": 848
+    }
+  ]
+}

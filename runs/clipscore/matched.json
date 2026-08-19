@@ -1,0 +1,23 @@
+{
+  "instrument": "DistilRoBERTa",
+  "bin_width": 0.02,
+  "matched_n_per_side": 873,
+  "matched": {
+    "human": 0.669,
+    "ours": 0.5647,
+    "diff": -0.1043
+  },
+  "unmatched_clipscore": {
+    "human": 0.5783,
+    "ours": 0.7908
+  },
+  "regression": {
+    "coef_clipscore": -0.6234,
+    "coef_corpus_ours": 0.0558,
+    "at_common_clipscore": 0.6846,
+    "predicted_human": 0.597,
+    "predicted_ours": 0.6104,
+    "adjusted_gap_ours_minus_human": 0.0133,
+    "n": 8972
+  }
+}

@@ -150,38 +150,56 @@ def main() -> None:
     # Preflight: one real realtime call with the exact config, before committing a
     # whole batch to it. A dry run caught the config still naming gemini-3.6-flash,
     # which 400s on thinking_budget=0 -- every request in the job would have failed.
-    print("\npreflight: one live call with this exact config...")
+    # Preflight: one real realtime call with the exact config, before committing a
+    # whole batch to it. A dry run once caught the config still naming gemini-3.6-flash,
+    # which 400s on thinking_budget=0 -- every request in the job would have failed.
+    #
+    # It walks the pending list rather than testing only the first image: a refusal (zero
+    # output tokens) is a property of that image, not of the config, so it is registered
+    # and the next candidate tried. Testing only pending[0] meant one refused image needed
+    # one whole invocation to record, and 12 of them needed 12.
+    print("\npreflight: live call(s) with this exact config...")
     from emocap.data.generate import gemini_llm, generate_image_batch, load_image_bytes
-    _probe_id = pending[0]
     _llm = gemini_llm(load_key(), model=gen["model"], temperature=gen["temperature"],
                       max_output_tokens=gen["max_output_tokens"],
                       thinking_budget=gen["thinking_budget"], max_retries=2)
-    _m, _, _rej = generate_image_batch(
-        _llm, sources[_probe_id],
-        image_bytes=load_image_bytes(images_dir / _probe_id, max_dim=gen["image_max_dim"]),
-        min_words=cfg["data"]["target_caption_words"]["min"],
-        max_words=cfg["data"]["target_caption_words"]["max"],
-        max_attempts=1, use_schema=gen["use_response_schema"],
-        emphasise_distinctness=True,
-    )
-    _got = sum(len(v) for v in _m.values())
-    _u = _llm.usage[-1]
-    print(f"  {_got}/25 captions   in={_u['prompt_tokens']} out={_u['output_tokens']} "
-          f"think={_u['thinking_tokens']}   rejections={sum(len(v) for v in _rej.values())}")
-    if _got == 0 and _u["output_tokens"] == 0:
-        # Zero output tokens is a refusal, not a misconfiguration: the model returned
-        # nothing at all. Record the image and preflight on the next one rather than
-        # aborting a run over one unprocessable image.
-        record_exclusion(_probe_id, "generator_safety_refusal",
-                         "zero output tokens at preflight")
-        print(f"  {_probe_id}: refused (0 output tokens) -- recorded as excluded")
-        pending = [i for i in pending if i != _probe_id]
-        if not pending:
-            sys.exit("every pending image was refused")
-        sys.exit("preflight image was refused and is now registered; re-run to continue")
-    if _got < 20:
+    _refused: list[str] = []
+    _ok = False
+    for _probe_id in list(pending)[:25]:
+        _m, _, _rej = generate_image_batch(
+            _llm, sources[_probe_id],
+            image_bytes=load_image_bytes(images_dir / _probe_id,
+                                         max_dim=gen["image_max_dim"]),
+            min_words=cfg["data"]["target_caption_words"]["min"],
+            max_words=cfg["data"]["target_caption_words"]["max"],
+            max_attempts=1, use_schema=gen["use_response_schema"],
+            emphasise_distinctness=True,
+        )
+        _got = sum(len(v) for v in _m.values())
+        _u = _llm.usage[-1]
+        print(f"  {_probe_id}: {_got}/25 captions  in={_u['prompt_tokens']} "
+              f"out={_u['output_tokens']} think={_u['thinking_tokens']}", flush=True)
+        if _got == 0 and _u["output_tokens"] == 0:
+            # Zero output tokens is a refusal, not a misconfiguration: the model returned
+            # nothing at all. Register it and try the next image.
+            record_exclusion(_probe_id, "generator_safety_refusal",
+                             "zero output tokens at preflight")
+            _refused.append(_probe_id)
+            continue
+        if _got >= 20:
+            _ok = True
+            break
         sys.exit(f"preflight returned only {_got}/25 captions -- fix the config before "
                  f"spending on a batch")
+
+    if _refused:
+        print(f"  registered {len(_refused)} refusal(s) as excluded")
+        pending = [i for i in pending if i not in set(_refused)]
+    if not _ok:
+        if not pending:
+            print("\nevery pending image was refused; nothing left to generate")
+            return
+        sys.exit("preflight exhausted 25 candidates without a success -- check the config")
     print("  preflight OK\n")
 
     run_dir = ROOT / "runs" / f"stage02-{args.part}-{time.strftime('%Y%m%d-%H%M%S')}"

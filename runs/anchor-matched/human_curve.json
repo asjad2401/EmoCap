@@ -1,0 +1,120 @@
+{
+  "human": {
+    "4486": {
+      "estimator": "cv5_by_image_id_3seeds_fractional_ties",
+      "n_cells": 4486,
+      "n_subsamples": 5,
+      "mean": 0.3518,
+      "sd": 0.0079,
+      "min": 0.3395,
+      "max": 0.3608,
+      "values": [
+        0.3557,
+        0.3521,
+        0.3608,
+        0.3509,
+        0.3395
+      ],
+      "chance": 0.2,
+      "top_k": 25,
+      "min_doc_freq": 4
+    },
+    "10000": {
+      "estimator": "cv5_by_image_id_3seeds_fractional_ties",
+      "n_cells": 10000,
+      "n_subsamples": 5,
+      "mean": 0.3348,
+      "sd": 0.0035,
+      "min": 0.3321,
+      "max": 0.3398,
+      "values": [
+        0.3326,
+        0.3374,
+        0.3321,
+        0.3398,
+        0.3323
+      ],
+      "chance": 0.2,
+      "top_k": 25,
+      "min_doc_freq": 4
+    },
+    "20000": {
+      "estimator": "cv5_by_image_id_3seeds_fractional_ties",
+      "n_cells": 20000,
+      "n_subsamples": 5,
+      "mean": 0.3182,
+      "sd": 0.0003,
+      "min": 0.318,
+      "max": 0.3185,
+      "values": [
+        0.3182,
+        0.318,
+        0.318,
+        0.3185,
+        0.3185
+      ],
+      "chance": 0.2,
+      "top_k": 25,
+      "min_doc_freq": 4
+    }
+  },
+  "ours": {
+    "4486": {
+      "estimator": "cv5_by_image_id_3seeds_fractional_ties",
+      "n_cells": 4486,
+      "n_subsamples": 5,
+      "mean": 0.4407,
+      "sd": 0.0053,
+      "min": 0.4349,
+      "max": 0.4489,
+      "values": [
+        0.4413,
+        0.4414,
+        0.4489,
+        0.4372,
+        0.4349
+      ],
+      "chance": 0.2,
+      "top_k": 25,
+      "min_doc_freq": 4
+    },
+    "10000": {
+      "estimator": "cv5_by_image_id_3seeds_fractional_ties",
+      "n_cells": 10000,
+      "n_subsamples": 5,
+      "mean": 0.4243,
+      "sd": 0.0079,
+      "min": 0.4151,
+      "max": 0.4346,
+      "values": [
+        0.4151,
+        0.4346,
+        0.43,
+        0.4193,
+        0.4223
+      ],
+      "chance": 0.2,
+      "top_k": 25,
+      "min_doc_freq": 4
+    },
+    "20000": {
+      "estimator": "cv5_by_image_id_3seeds_fractional_ties",
+      "n_cells": 20000,
+      "n_subsamples": 5,
+      "mean": 0.4097,
+      "sd": 0.0045,
+      "min": 0.4038,
+      "max": 0.4161,
+      "values": [
+        0.4038,
+        0.4161,
+        0.4116,
+        0.4082,
+        0.4087
+      ],
+      "chance": 0.2,
+      "top_k": 25,
+      "min_doc_freq": 4
+    }
+  }
+}

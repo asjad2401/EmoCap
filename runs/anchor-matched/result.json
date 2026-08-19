@@ -1,0 +1,85 @@
+{
+  "matched_n": 4486,
+  "human": {
+    "estimator": "cv5_by_image_id_3seeds_fractional_ties",
+    "n_cells": 4486,
+    "n_subsamples": 10,
+    "mean": 0.4501,
+    "sd": 0.0,
+    "min": 0.4501,
+    "max": 0.4501,
+    "values": [
+      0.4501,
+      0.4501,
+      0.4501,
+      0.4501,
+      0.4501,
+      0.4501,
+      0.4501,
+      0.4501,
+      0.4501,
+      0.4501
+    ],
+    "chance": 0.2,
+    "top_k": 25,
+    "min_doc_freq": 4
+  },
+  "ours": {
+    "estimator": "cv5_by_image_id_3seeds_fractional_ties",
+    "n_cells": 4486,
+    "n_subsamples": 10,
+    "mean": 0.4395,
+    "sd": 0.007,
+    "min": 0.4272,
+    "max": 0.4489,
+    "values": [
+      0.4413,
+      0.4414,
+      0.4489,
+      0.4372,
+      0.4349,
+      0.4441,
+      0.4482,
+      0.4313,
+      0.44,
+      0.4272
+    ],
+    "chance": 0.2,
+    "top_k": 25,
+    "min_doc_freq": 4
+  },
+  "accuracy_human": 0.726,
+  "accuracy_ours": 0.683,
+  "curve_ours": [
+    {
+      "n_cells": 2000,
+      "mean": 0.4406,
+      "sd": 0.0166
+    },
+    {
+      "n_cells": 5000,
+      "mean": 0.4449,
+      "sd": 0.0021
+    },
+    {
+      "n_cells": 10000,
+      "mean": 0.4266,
+      "sd": 0.0102
+    },
+    {
+      "n_cells": 25000,
+      "mean": 0.4046,
+      "sd": 0.0018
+    },
+    {
+      "n_cells": 50000,
+      "mean": 0.3712,
+      "sd": 0.0046
+    },
+    {
+      "n_cells": 100000,
+      "mean": 0.351,
+      "sd": 0.0013
+    }
+  ]
+}

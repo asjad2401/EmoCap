@@ -1,0 +1,129 @@
+{
+  "note": "ACC values are the measured DistilRoBERTa accuracies at these sample sizes; only the anchor is swept.",
+  "accuracies": {
+    "ours": 0.683,
+    "human": 0.726
+  },
+  "sweep": [
+    {
+      "top_k": 10,
+      "min_doc_freq": 2,
+      "anchor_ours": 0.3629,
+      "anchor_human": 0.3692,
+      "margin_ours": 0.3201,
+      "margin_human": 0.3568,
+      "margin_diff": 0.0367,
+      "pct_of_gap_explained_by_anchor": 14.7
+    },
+    {
+      "top_k": 10,
+      "min_doc_freq": 4,
+      "anchor_ours": 0.3629,
+      "anchor_human": 0.3692,
+      "margin_ours": 0.3201,
+      "margin_human": 0.3568,
+      "margin_diff": 0.0367,
+      "pct_of_gap_explained_by_anchor": 14.7
+    },
+    {
+      "top_k": 10,
+      "min_doc_freq": 8,
+      "anchor_ours": 0.3688,
+      "anchor_human": 0.3754,
+      "margin_ours": 0.3142,
+      "margin_human": 0.3506,
+      "margin_diff": 0.0364,
+      "pct_of_gap_explained_by_anchor": 15.3
+    },
+    {
+      "top_k": 25,
+      "min_doc_freq": 2,
+      "anchor_ours": 0.4466,
+      "anchor_human": 0.4483,
+      "margin_ours": 0.2364,
+      "margin_human": 0.2777,
+      "margin_diff": 0.0413,
+      "pct_of_gap_explained_by_anchor": 4.0
+    },
+    {
+      "top_k": 25,
+      "min_doc_freq": 4,
+      "anchor_ours": 0.4494,
+      "anchor_human": 0.4501,
+      "margin_ours": 0.2336,
+      "margin_human": 0.2759,
+      "margin_diff": 0.0423,
+      "pct_of_gap_explained_by_anchor": 1.6
+    },
+    {
+      "top_k": 25,
+      "min_doc_freq": 8,
+      "anchor_ours": 0.4656,
+      "anchor_human": 0.4673,
+      "margin_ours": 0.2174,
+      "margin_human": 0.2587,
+      "margin_diff": 0.0413,
+      "pct_of_gap_explained_by_anchor": 4.0
+    },
+    {
+      "top_k": 50,
+      "min_doc_freq": 2,
+      "anchor_ours": 0.5204,
+      "anchor_human": 0.4946,
+      "margin_ours": 0.1626,
+      "margin_human": 0.2314,
+      "margin_diff": 0.0688,
+      "pct_of_gap_explained_by_anchor": -60.0
+    },
+    {
+      "top_k": 50,
+      "min_doc_freq": 4,
+      "anchor_ours": 0.52,
+      "anchor_human": 0.4999,
+      "margin_ours": 0.163,
+      "margin_human": 0.2261,
+      "margin_diff": 0.0631,
+      "pct_of_gap_explained_by_anchor": -46.7
+    },
+    {
+      "top_k": 50,
+      "min_doc_freq": 8,
+      "anchor_ours": 0.495,
+      "anchor_human": 0.4965,
+      "margin_ours": 0.188,
+      "margin_human": 0.2295,
+      "margin_diff": 0.0415,
+      "pct_of_gap_explained_by_anchor": 3.5
+    },
+    {
+      "top_k": 100,
+      "min_doc_freq": 2,
+      "anchor_ours": 0.5438,
+      "anchor_human": 0.5187,
+      "margin_ours": 0.1392,
+      "margin_human": 0.2073,
+      "margin_diff": 0.0681,
+      "pct_of_gap_explained_by_anchor": -58.4
+    },
+    {
+      "top_k": 100,
+      "min_doc_freq": 4,
+      "anchor_ours": 0.525,
+      "anchor_human": 0.5165,
+      "margin_ours": 0.158,
+      "margin_human": 0.2095,
+      "margin_diff": 0.0515,
+      "pct_of_gap_explained_by_anchor": -19.8
+    },
+    {
+      "top_k": 100,
+      "min_doc_freq": 8,
+      "anchor_ours": 0.4816,
+      "anchor_human": 0.4897,
+      "margin_ours": 0.2014,
+      "margin_human": 0.2363,
+      "margin_diff": 0.0349,
+      "pct_of_gap_explained_by_anchor": 18.8
+    }
+  ]
+}

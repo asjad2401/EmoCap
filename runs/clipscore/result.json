@@ -1,0 +1,101 @@
+{
+  "clip_w": 2.5,
+  "n_requested": 4486,
+  "device": "mps",
+  "corpora": {
+    "human": {
+      "n_scored": 4486,
+      "clipscore_mean": 0.5783,
+      "clipscore_sd": 0.0829,
+      "stratified": [
+        {
+          "quartile": 1,
+          "n": 1121,
+          "clipscore_mean": 0.4759,
+          "clipscore_range": [
+            0.2645,
+            0.5194
+          ],
+          "accuracy": 0.545
+        },
+        {
+          "quartile": 2,
+          "n": 1122,
+          "clipscore_mean": 0.5464,
+          "clipscore_range": [
+            0.5194,
+            0.5753
+          ],
+          "accuracy": 0.5125
+        },
+        {
+          "quartile": 3,
+          "n": 1121,
+          "clipscore_mean": 0.604,
+          "clipscore_range": [
+            0.5754,
+            0.6358
+          ],
+          "accuracy": 0.5317
+        },
+        {
+          "quartile": 4,
+          "n": 1122,
+          "clipscore_mean": 0.6868,
+          "clipscore_range": [
+            0.6358,
+            0.9573
+          ],
+          "accuracy": 0.4875
+        }
+      ]
+    },
+    "ours": {
+      "n_scored": 4486,
+      "clipscore_mean": 0.7917,
+      "clipscore_sd": 0.0785,
+      "stratified": [
+        {
+          "quartile": 1,
+          "n": 1121,
+          "clipscore_mean": 0.6911,
+          "clipscore_range": [
+            0.524,
+            0.7404
+          ],
+          "accuracy": 0.488
+        },
+        {
+          "quartile": 2,
+          "n": 1122,
+          "clipscore_mean": 0.7686,
+          "clipscore_range": [
+            0.7404,
+            0.7944
+          ],
+          "accuracy": 0.4652
+        },
+        {
+          "quartile": 3,
+          "n": 1121,
+          "clipscore_mean": 0.8177,
+          "clipscore_range": [
+            0.7945,
+            0.8426
+          ],
+          "accuracy": 0.4603
+        },
+        {
+          "quartile": 4,
+          "n": 1122,
+          "clipscore_mean": 0.8894,
+          "clipscore_range": [
+            0.8427,
+            1.075
+          ],
+          "accuracy": 0.4599
+        }
+      ]
+    }
+  }
+}

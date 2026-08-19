@@ -70,6 +70,12 @@ def main() -> None:
     ap.add_argument("--folds", type=int, default=5)
     ap.add_argument("--epochs", type=int, default=4)
     ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--fold-pause", type=float, default=0.0,
+                    help="seconds to idle between folds, for a real cool-down window")
+    ap.add_argument("--duty", type=float, default=1.0,
+                    help="GPU duty cycle. 0.33 = compute a third of the time, so ~3x the "
+                         "wall clock at ~1/3 the sustained thermal load. The result is "
+                         "bit-identical; only the spacing changes.")
     ap.add_argument("--out", help="write the full result as JSON here")
     ap.add_argument("--learning-curve", action="store_true",
                     help="train on 25/50/75/100%% of images and report the slope. Decides "
@@ -135,7 +141,9 @@ def main() -> None:
                   flush=True)
 
         ft = finetune_classifier(texts, labels, images, folds=args.folds,
-                                 seed=args.seed, epochs=args.epochs, progress=show)
+                                 seed=args.seed, epochs=args.epochs,
+                                 duty=args.duty, fold_pause=args.fold_pause,
+                                 progress=show)
         result["distilroberta"] = {k: v for k, v in ft.items() if k != "pairs"}
         print(f"\nDistilRoBERTa (pre-registered instrument)  {ft['accuracy']:.3f}   "
               f"n={ft['n']}  device={ft['device']}")

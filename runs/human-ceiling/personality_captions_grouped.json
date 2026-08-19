@@ -1,0 +1,30 @@
+{
+  "design": "grouped",
+  "human_source": "personality_captions_grouped",
+  "length_band": null,
+  "instrument": "tfidf",
+  "cells_each_side": 20515,
+  "ours_synthetic": {
+    "accuracy": 0.6718,
+    "n": 20515,
+    "recall": {
+      "joyful": 0.714,
+      "sad": 0.582,
+      "tense": 0.652,
+      "romantic": 0.651,
+      "humorous": 0.759
+    }
+  },
+  "human": {
+    "accuracy": 0.5285,
+    "n": 19456,
+    "recall": {
+      "joyful": 0.525,
+      "sad": 0.516,
+      "tense": 0.573,
+      "romantic": 0.552,
+      "humorous": 0.477
+    }
+  },
+  "gap_ours_minus_human": 0.1433
+}

@@ -326,3 +326,39 @@ billing $1.32, and $6.25 for the corpus against ~$10.70. Now uses measured rates
 The prompt has been through five measured versions; a manifest recording the model but
 not the prompt cannot answer "which prompt produced this caption". `run_stage02.py` now
 hashes the rendered batch prompt into `config.prompt_sha256` (v5 = `72133efaffddefa3`).
+
+---
+
+## 2026-08-19 — final exclusion count: 15 images, all photographs of children
+
+The corpus is complete: **8,076 of 8,091 images, 201,900 of 201,900 cells (100%)**.
+Fifteen images are excluded, every one confirmed by a live call returning **zero output
+tokens** — the generator declining, not a transport failure or a parse error.
+
+The content pattern is unambiguous. All fifteen are photographs of young children, and
+most involve minimal clothing or bathing contexts. From their human captions:
+*"a little girl in only socks and a necklace"*, *"a group of mostly nude children"*,
+*"a girl in a red polka dot bikini"*, *"a little girl in a red swimsuit"*, *"a man is
+lifting a little girl above his head"*, *"a child sleeping with a pacifier"*.
+
+**No attempt was made to circumvent this**, at any point — not by re-encoding images, not
+by rewording the prompt, not by trying a different model. Each refusal is registered in
+`data/generated/excluded_images.json` and skipped on subsequent runs.
+
+### For the write-up
+
+The gap is **0.19% (15/8,091) and content-correlated, not random**. The corpus therefore
+under-represents photographs of children in bathing or swimwear contexts relative to
+Flickr8k. That belongs in the limitations: a reader should know the exclusion has a
+subject-matter signature rather than assuming attrition was arbitrary.
+
+This is a **data-collection** exclusion and remains deliberately separate from §7's run
+exclusion criteria, which govern training runs and are unchanged.
+
+### Tooling change this forced
+
+`run_stage02.py`'s preflight tested only `pending[0]`, so each refused image consumed one
+whole invocation to register — twelve images would have needed twelve runs. The preflight
+now walks up to 25 candidates, registering refusals as it goes and proceeding on the first
+success. If every candidate is refused it reports that and exits cleanly rather than
+claiming a config error.

@@ -1,0 +1,323 @@
+{
+  "icc": {
+    "icc": 0.0702,
+    "clusters": 4990,
+    "cells": 124750,
+    "mean_cluster_size": 25.0,
+    "ms_between": 0.520426,
+    "ms_within": 0.180155,
+    "mean_correct": 0.7371
+  },
+  "design_effect": 2.685,
+  "p_assumed": 0.72,
+  "cases": [
+    {
+      "comparison": "unpaired arms, 1k-image test split",
+      "cells_per_arm": 1000,
+      "cluster_size": 1.0,
+      "rows": [
+        {
+          "mde": 0.065,
+          "se_of_difference": 0.02008,
+          "design_effect": 1.0,
+          "effective_n_per_arm": 1000.0,
+          "cells_per_arm": 1000,
+          "icc": 0.0702,
+          "power": 0.8,
+          "alpha_per_comparison": 0.01667,
+          "n_comparisons": 3,
+          "seed_sd": 0.0,
+          "n_seeds": 3,
+          "eval_share_of_variance": 1.0
+        },
+        {
+          "mde": 0.0663,
+          "se_of_difference": 0.02049,
+          "design_effect": 1.0,
+          "effective_n_per_arm": 1000.0,
+          "cells_per_arm": 1000,
+          "icc": 0.0702,
+          "power": 0.8,
+          "alpha_per_comparison": 0.01667,
+          "n_comparisons": 3,
+          "seed_sd": 0.005,
+          "n_seeds": 3,
+          "eval_share_of_variance": 0.96
+        },
+        {
+          "mde": 0.0701,
+          "se_of_difference": 0.02168,
+          "design_effect": 1.0,
+          "effective_n_per_arm": 1000.0,
+          "cells_per_arm": 1000,
+          "icc": 0.0702,
+          "power": 0.8,
+          "alpha_per_comparison": 0.01667,
+          "n_comparisons": 3,
+          "seed_sd": 0.01,
+          "n_seeds": 3,
+          "eval_share_of_variance": 0.858
+        },
+        {
+          "mde": 0.0837,
+          "se_of_difference": 0.02588,
+          "design_effect": 1.0,
+          "effective_n_per_arm": 1000.0,
+          "cells_per_arm": 1000,
+          "icc": 0.0702,
+          "power": 0.8,
+          "alpha_per_comparison": 0.01667,
+          "n_comparisons": 3,
+          "seed_sd": 0.02,
+          "n_seeds": 3,
+          "eval_share_of_variance": 0.602
+        },
+        {
+          "mde": 0.1025,
+          "se_of_difference": 0.03167,
+          "design_effect": 1.0,
+          "effective_n_per_arm": 1000.0,
+          "cells_per_arm": 1000,
+          "icc": 0.0702,
+          "power": 0.8,
+          "alpha_per_comparison": 0.01667,
+          "n_comparisons": 3,
+          "seed_sd": 0.03,
+          "n_seeds": 3,
+          "eval_share_of_variance": 0.402
+        }
+      ]
+    },
+    {
+      "comparison": "unpaired arms, 30% test split",
+      "cells_per_arm": 2426,
+      "cluster_size": 1.0,
+      "rows": [
+        {
+          "mde": 0.0417,
+          "se_of_difference": 0.01289,
+          "design_effect": 1.0,
+          "effective_n_per_arm": 2426.0,
+          "cells_per_arm": 2426,
+          "icc": 0.0702,
+          "power": 0.8,
+          "alpha_per_comparison": 0.01667,
+          "n_comparisons": 3,
+          "seed_sd": 0.0,
+          "n_seeds": 3,
+          "eval_share_of_variance": 1.0
+        },
+        {
+          "mde": 0.0438,
+          "se_of_difference": 0.01352,
+          "design_effect": 1.0,
+          "effective_n_per_arm": 2426.0,
+          "cells_per_arm": 2426,
+          "icc": 0.0702,
+          "power": 0.8,
+          "alpha_per_comparison": 0.01667,
+          "n_comparisons": 3,
+          "seed_sd": 0.005,
+          "n_seeds": 3,
+          "eval_share_of_variance": 0.909
+        },
+        {
+          "mde": 0.0494,
+          "se_of_difference": 0.01526,
+          "design_effect": 1.0,
+          "effective_n_per_arm": 2426.0,
+          "cells_per_arm": 2426,
+          "icc": 0.0702,
+          "power": 0.8,
+          "alpha_per_comparison": 0.01667,
+          "n_comparisons": 3,
+          "seed_sd": 0.01,
+          "n_seeds": 3,
+          "eval_share_of_variance": 0.714
+        },
+        {
+          "mde": 0.0673,
+          "se_of_difference": 0.02081,
+          "design_effect": 1.0,
+          "effective_n_per_arm": 2426.0,
+          "cells_per_arm": 2426,
+          "icc": 0.0702,
+          "power": 0.8,
+          "alpha_per_comparison": 0.01667,
+          "n_comparisons": 3,
+          "seed_sd": 0.02,
+          "n_seeds": 3,
+          "eval_share_of_variance": 0.384
+        },
+        {
+          "mde": 0.0896,
+          "se_of_difference": 0.02768,
+          "design_effect": 1.0,
+          "effective_n_per_arm": 2426.0,
+          "cells_per_arm": 2426,
+          "icc": 0.0702,
+          "power": 0.8,
+          "alpha_per_comparison": 0.01667,
+          "n_comparisons": 3,
+          "seed_sd": 0.03,
+          "n_seeds": 3,
+          "eval_share_of_variance": 0.217
+        }
+      ]
+    },
+    {
+      "comparison": "unpaired arms, 5-fold CV over the arm",
+      "cells_per_arm": 8088,
+      "cluster_size": 1.0,
+      "rows": [
+        {
+          "mde": 0.0228,
+          "se_of_difference": 0.00706,
+          "design_effect": 1.0,
+          "effective_n_per_arm": 8088.0,
+          "cells_per_arm": 8088,
+          "icc": 0.0702,
+          "power": 0.8,
+          "alpha_per_comparison": 0.01667,
+          "n_comparisons": 3,
+          "seed_sd": 0.0,
+          "n_seeds": 3,
+          "eval_share_of_variance": 1.0
+        },
+        {
+          "mde": 0.0264,
+          "se_of_difference": 0.00816,
+          "design_effect": 1.0,
+          "effective_n_per_arm": 8088.0,
+          "cells_per_arm": 8088,
+          "icc": 0.0702,
+          "power": 0.8,
+          "alpha_per_comparison": 0.01667,
+          "n_comparisons": 3,
+          "seed_sd": 0.005,
+          "n_seeds": 3,
+          "eval_share_of_variance": 0.749
+        },
+        {
+          "mde": 0.0349,
+          "se_of_difference": 0.01079,
+          "design_effect": 1.0,
+          "effective_n_per_arm": 8088.0,
+          "cells_per_arm": 8088,
+          "icc": 0.0702,
+          "power": 0.8,
+          "alpha_per_comparison": 0.01667,
+          "n_comparisons": 3,
+          "seed_sd": 0.01,
+          "n_seeds": 3,
+          "eval_share_of_variance": 0.428
+        },
+        {
+          "mde": 0.0576,
+          "se_of_difference": 0.01779,
+          "design_effect": 1.0,
+          "effective_n_per_arm": 8088.0,
+          "cells_per_arm": 8088,
+          "icc": 0.0702,
+          "power": 0.8,
+          "alpha_per_comparison": 0.01667,
+          "n_comparisons": 3,
+          "seed_sd": 0.02,
+          "n_seeds": 3,
+          "eval_share_of_variance": 0.158
+        },
+        {
+          "mde": 0.0825,
+          "se_of_difference": 0.02549,
+          "design_effect": 1.0,
+          "effective_n_per_arm": 8088.0,
+          "cells_per_arm": 8088,
+          "icc": 0.0702,
+          "power": 0.8,
+          "alpha_per_comparison": 0.01667,
+          "n_comparisons": 3,
+          "seed_sd": 0.03,
+          "n_seeds": 3,
+          "eval_share_of_variance": 0.077
+        }
+      ]
+    },
+    {
+      "comparison": "S-paired, 1k-image test split",
+      "cells_per_arm": 25000,
+      "cluster_size": 25.0,
+      "rows": [
+        {
+          "mde": 0.0213,
+          "se_of_difference": 0.00658,
+          "design_effect": 2.685,
+          "effective_n_per_arm": 9311.7,
+          "cells_per_arm": 25000,
+          "icc": 0.0702,
+          "power": 0.8,
+          "alpha_per_comparison": 0.01667,
+          "n_comparisons": 3,
+          "seed_sd": 0.0,
+          "n_seeds": 3,
+          "eval_share_of_variance": 1.0
+        },
+        {
+          "mde": 0.0251,
+          "se_of_difference": 0.00774,
+          "design_effect": 2.685,
+          "effective_n_per_arm": 9311.7,
+          "cells_per_arm": 25000,
+          "icc": 0.0702,
+          "power": 0.8,
+          "alpha_per_comparison": 0.01667,
+          "n_comparisons": 3,
+          "seed_sd": 0.005,
+          "n_seeds": 3,
+          "eval_share_of_variance": 0.722
+        },
+        {
+          "mde": 0.0339,
+          "se_of_difference": 0.01049,
+          "design_effect": 2.685,
+          "effective_n_per_arm": 9311.7,
+          "cells_per_arm": 25000,
+          "icc": 0.0702,
+          "power": 0.8,
+          "alpha_per_comparison": 0.01667,
+          "n_comparisons": 3,
+          "seed_sd": 0.01,
+          "n_seeds": 3,
+          "eval_share_of_variance": 0.394
+        },
+        {
+          "mde": 0.057,
+          "se_of_difference": 0.01761,
+          "design_effect": 2.685,
+          "effective_n_per_arm": 9311.7,
+          "cells_per_arm": 25000,
+          "icc": 0.0702,
+          "power": 0.8,
+          "alpha_per_comparison": 0.01667,
+          "n_comparisons": 3,
+          "seed_sd": 0.02,
+          "n_seeds": 3,
+          "eval_share_of_variance": 0.14
+        },
+        {
+          "mde": 0.0821,
+          "se_of_difference": 0.02536,
+          "design_effect": 2.685,
+          "effective_n_per_arm": 9311.7,
+          "cells_per_arm": 25000,
+          "icc": 0.0702,
+          "power": 0.8,
+          "alpha_per_comparison": 0.01667,
+          "n_comparisons": 3,
+          "seed_sd": 0.03,
+          "n_seeds": 3,
+          "eval_share_of_variance": 0.067
+        }
+      ]
+    }
+  ]
+}

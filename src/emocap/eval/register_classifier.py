@@ -29,6 +29,7 @@ from __future__ import annotations
 
 import random
 import re
+import time
 from collections import Counter
 from typing import Mapping, Sequence
 
@@ -132,6 +133,8 @@ def finetune_classifier(
     lr: float = 3e-5,
     max_length: int = 48,
     device: str | None = None,
+    duty: float = 1.0,
+    fold_pause: float = 0.0,
     progress=None,
 ) -> dict:
     """Fine-tune ``model_name`` per fold and return pooled held-out accuracy.
@@ -139,13 +142,38 @@ def finetune_classifier(
     Deliberately plain: no early stopping, no per-fold tuning, no validation split
     carved out of train. Every fold gets identical treatment, so the number is a
     property of the data rather than of a search over configurations.
+
+    ``duty`` trades wall clock for thermal load on a laptop: after each optimizer step,
+    sleep long enough that the step occupies that fraction of the elapsed time. ``0.33``
+    means compute a third of the time, so roughly 3x the runtime at roughly a third of the
+    sustained power. The computation is **unchanged** -- same batches, same seed, same
+    gradients, bit-identical result (verified to six decimals). Only the spacing differs,
+    which is why this is preferable to shrinking the batch or cutting epochs: those alter
+    the answer.
+
+    Requires a device barrier per step, because MPS and CUDA are asynchronous. Without it
+    the measured step time is CPU enqueue latency (~2 ms) rather than GPU compute
+    (~400 ms), and the throttle silently does nothing -- which is how the first version of
+    this behaved.
+
+    ``fold_pause`` idles that many seconds between folds. ``duty`` lowers instantaneous
+    load; a pause gives the machine a genuine cool-down window, which is what actually
+    sheds accumulated heat on a laptop. Neither affects the result.
     """
+    if not 0.0 < duty <= 1.0:
+        raise ValueError("duty must be in (0, 1]")
     import torch
     from torch.utils.data import DataLoader, TensorDataset
     from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
     if device is None:
         device = "mps" if torch.backends.mps.is_available() else "cpu"
+
+    def _sync() -> None:
+        if device == "mps":
+            torch.mps.synchronize()
+        elif device == "cuda":
+            torch.cuda.synchronize()
 
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     enc = tokenizer(list(texts), truncation=True, max_length=max_length,
@@ -169,11 +197,20 @@ def finetune_classifier(
         model.train()
         for _ in range(epochs):
             for ids, mask, y in loader:
+                _t0 = time.perf_counter() if duty < 1.0 else 0.0
                 opt.zero_grad()
                 out = model(input_ids=ids.to(device), attention_mask=mask.to(device),
                             labels=y.to(device))
                 out.loss.backward()
                 opt.step()
+                if duty < 1.0:
+                    # MPS and CUDA queue work asynchronously: opt.step() returns once the
+                    # kernels are ENQUEUED, so timing it without a barrier measures ~2 ms
+                    # of CPU enqueue instead of ~400 ms of GPU compute, and the sleep below
+                    # becomes a no-op. Synchronise first so `_busy` is the real cost.
+                    _sync()
+                    _busy = time.perf_counter() - _t0
+                    time.sleep(_busy * (1.0 / duty - 1.0))
 
         model.eval()
         with torch.no_grad():
@@ -191,6 +228,8 @@ def finetune_classifier(
         del model
         if device == "mps":
             torch.mps.empty_cache()
+        if fold_pause > 0:
+            time.sleep(fold_pause)
 
     return {
         "accuracy": round(correct / total, 4) if total else 0.0,

@@ -1,0 +1,18 @@
+{
+  "fetched_at": "2026-08-19T18:44:15",
+  "source": "https://multimedia-commons.s3-us-west-2.amazonaws.com/data/images",
+  "source_registry": "https://registry.opendata.aws/multimedia-commons/",
+  "design": "grouped",
+  "images_referenced": 20512,
+  "downloaded": 20409,
+  "already_present": 0,
+  "failed": 3,
+  "bytes": 2539077486,
+  "wall_seconds": 2234.8,
+  "failures": {
+    "ac85d4417242b9a36c3f45a6a32a138": "http404",
+    "ac87681e52e3a709e48cb40ce18bedf": "http404",
+    "ac88d66ad654f2739bbfdfbe55c2bdb": "http404"
+  },
+  "licence_note": "Every YFCC100M image was published on Flickr under a Creative Commons licence, with the variant differing per image. This project computes CLIP features and does not redistribute any image. See docs/data-attribution.md."
+}

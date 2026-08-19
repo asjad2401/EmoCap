@@ -15,6 +15,66 @@
       "reason": "generator_safety_refusal",
       "detail": "young child in a swimsuit in shallow water",
       "recorded": "2026-08-19"
+    },
+    "497122685_a51b29dc46.jpg": {
+      "reason": "generator_safety_refusal",
+      "detail": "zero output tokens at preflight",
+      "recorded": "2026-08-19"
+    },
+    "1231229740_8dcbf80bfb.jpg": {
+      "reason": "generator_safety_refusal",
+      "detail": "zero output tokens at preflight",
+      "recorded": "2026-08-19"
+    },
+    "1398613231_18de248606.jpg": {
+      "reason": "generator_safety_refusal",
+      "detail": "zero output tokens at preflight",
+      "recorded": "2026-08-19"
+    },
+    "1453366750_6e8cf601bf.jpg": {
+      "reason": "generator_safety_refusal",
+      "detail": "zero output tokens at preflight",
+      "recorded": "2026-08-19"
+    },
+    "1994416869_4dd769a806.jpg": {
+      "reason": "generator_safety_refusal",
+      "detail": "zero output tokens at preflight",
+      "recorded": "2026-08-19"
+    },
+    "2192802444_b14bb87b95.jpg": {
+      "reason": "generator_safety_refusal",
+      "detail": "zero output tokens at preflight",
+      "recorded": "2026-08-19"
+    },
+    "2755314937_1e974bf2b5.jpg": {
+      "reason": "generator_safety_refusal",
+      "detail": "zero output tokens at preflight",
+      "recorded": "2026-08-19"
+    },
+    "3143978284_ac086be9a3.jpg": {
+      "reason": "generator_safety_refusal",
+      "detail": "zero output tokens at preflight",
+      "recorded": "2026-08-19"
+    },
+    "3194134352_bc1b2a25d7.jpg": {
+      "reason": "generator_safety_refusal",
+      "detail": "zero output tokens at preflight",
+      "recorded": "2026-08-19"
+    },
+    "322103537_184367bf88.jpg": {
+      "reason": "generator_safety_refusal",
+      "detail": "zero output tokens at preflight",
+      "recorded": "2026-08-19"
+    },
+    "667626_18933d713e.jpg": {
+      "reason": "generator_safety_refusal",
+      "detail": "zero output tokens at preflight",
+      "recorded": "2026-08-19"
+    },
+    "862054277_34b5a6f401.jpg": {
+      "reason": "generator_safety_refusal",
+      "detail": "zero output tokens at preflight",
+      "recorded": "2026-08-19"
     }
   }
 }
