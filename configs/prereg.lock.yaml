@@ -40,12 +40,29 @@ data:
   generation_input: image_plus_human_captions   # multimodal; Moondream retired
   generator_multimodal: true
   # Each register also returns a self-reported fit: 0 natural, 1 strained, 2 no honest
-  # reading of this register exists for this caption. RECORDED ONLY -- it does not
-  # predict which cells contain invented detail (defect rate 1.6/2.6/2.4% by level,
-  # flat), so it is not a filter. Excluding strain-2 cells from training would be a new
-  # pre-registered exclusion and has NOT been decided. Absent on pre-2026-08-19
-  # records, where a missing value means unknown, never 0.
+  # reading of this register exists for this caption.
+  #
+  # DECIDED 2026-08-20: RECORDED, NEVER FILTERED ON. Two reasons, the second decisive.
+  #
+  # 1. The flag does not do what filtering on it would assume. It was proposed as a way
+  #    to find invented cells and fails: defect rate by strain level is 1.6% / 2.6% /
+  #    2.4% -- flat. A cell marked "no honest reading exists" is no likelier to contain a
+  #    grounding defect than one marked "natural".
+  #
+  # 2. Excluding strain-2 would wreck class balance. The corpus is perfectly even at
+  #    40,380 cells per register; strain-2 is not:
+  #        joyful 132 (0.3%) | tense 1,073 (2.7%) | sad 2,006 (5.0%)
+  #        humorous 3,223 (8.0%) | romantic 6,942 (17.2%)
+  #    Dropping them leaves 33,438-40,248 per register, a 16.9% imbalance concentrated
+  #    exactly where the study is most delicate -- romantic would lose 52x as much data as
+  #    joyful. Any later finding that romantic is harder would then be inseparable from
+  #    romantic having less training data. A self-inflicted confound.
+  #
+  # It IS retained as a register-difficulty measure, which is analysis rather than
+  # filtering. Absent on pre-2026-08-19 records, where a missing value means unknown,
+  # never 0.
   generator_reports_strain: true
+  strain_used_as_exclusion: false
   target_caption_words: {min: 8, max: 24}
 
 decode:                                    # identical for every variant and track

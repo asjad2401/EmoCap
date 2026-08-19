@@ -362,3 +362,55 @@ whole invocation to register — twelve images would have needed twelve runs. Th
 now walks up to 25 candidates, registering refusals as it goes and proceeding on the first
 success. If every candidate is refused it reports that and exits cleanly rather than
 claiming a config error.
+
+---
+
+## 2026-08-20 — three decisions taken before the tag
+
+### `strain` is recorded, never filtered on
+
+The generator self-reports 0/1/2 per caption cell for register fit. **Decision: record, do
+not exclude.** Two reasons, the second decisive.
+
+The flag fails at what filtering assumes — defect rate by strain level is **1.6% / 2.6% /
+2.4%**, flat, so a cell marked "no honest reading exists" is no likelier to contain a
+grounding defect than one marked "natural".
+
+And excluding would wreck class balance:
+
+| register | cells | strain-2 | % lost |
+|---|---|---|---|
+| joyful | 40,380 | 132 | 0.3% |
+| tense | 40,380 | 1,073 | 2.7% |
+| sad | 40,380 | 2,006 | 5.0% |
+| humorous | 40,380 | 3,223 | 8.0% |
+| **romantic** | 40,380 | **6,942** | **17.2%** |
+
+The corpus is perfectly even at 40,380 per register. Excluding leaves 33,438–40,248 — a
+**16.9% imbalance**, and `romantic` loses **52× as much data as `joyful`**. Any subsequent
+finding that `romantic` is harder would be inseparable from it having had less data. A
+self-inflicted confound, so declined.
+
+Recorded in the lock as `strain_used_as_exclusion: false` and named in §7.
+
+### `romantic`'s definition is unchanged
+
+Considered redefining it — it is the hardest register by the generator's strain report (1.11)
+and the independent human judge singled it out. **Declined.** The corpus was generated under
+the current definition, so changing it would leave the data not matching the registration
+unless ~$10.70 were spent regenerating. Renaming the label was also declined: it would
+propagate through `emotion_id` everywhere for no gain in the data.
+
+Note as a factual consequence, not a re-litigation: §4 requires the confusion matrix be
+reported always, so `romantic`'s per-register recall will appear in it regardless of whether
+the difficulty is discussed in prose.
+
+### Training runs as Kaggle notebooks
+
+Confirmed: one notebook per pipeline stage, executed as **Save & Run All**, with everything
+produced during a run preserved for export. No stage may depend on a session surviving, so no
+checkpointing is required — which is why the corpus generation was built append-only in the
+first place. Outputs must be written where Kaggle actually exports them.
+
+This makes `notebooks/` a real directory rather than the aspirational one the README has
+described since the start (see PH-09).

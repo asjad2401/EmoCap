@@ -20,8 +20,11 @@ data:
   generator_model: "gemini-3.1-flash-lite"
   generation_input: image_plus_human_captions
   generator_multimodal: true
-  # See configs/prereg.lock.yaml: recorded only, not a filter, not yet a study variable.
+  # See configs/prereg.lock.yaml: recorded only, never filtered on. Decided 2026-08-20 --
+  # the flag does not predict grounding defects, and excluding strain-2 would take the
+  # corpus from perfectly balanced to a 16.9% imbalance concentrated in `romantic`.
   generator_reports_strain: true
+  strain_used_as_exclusion: false
   target_caption_words: {min: 8, max: 24}
 
 # Operational only -- not pre-registered, safe to tune.

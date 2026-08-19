@@ -238,6 +238,15 @@ visual-dependence probe.
 **Poor metric performance is never grounds for exclusion.** Stating this before seeing any
 results is most of what this document buys.
 
+**Nor is a high self-reported `strain` value.** The generator marks each caption cell 0/1/2
+for how well the register fits the scene, and 13,376 cells (6.6%) are marked 2, "no honest
+reading exists". Those cells are **recorded and retained, never filtered**. Decided
+2026-08-20, before the tag, for two reasons: the flag does not predict grounding defects
+(rate by level is 1.6% / 2.6% / 2.4%, flat), and excluding it would take the corpus from
+perfectly balanced at 40,380 cells per register to a 16.9% imbalance concentrated in
+`romantic`, which would lose 52× as much data as `joyful` — making any later finding about
+`romantic` inseparable from it having had less training data.
+
 ## 8. What a null result looks like
 
 If H1 is falsified — no conditioning strategy beats the unconditioned baseline by the

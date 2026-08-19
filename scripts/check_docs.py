@@ -142,9 +142,12 @@ def main() -> None:
         tracked = set(re.findall(r"^## (PH-\d\d)", docs["PLACEHOLDERS.md"], re.M))
         for ph in sorted(used - tracked):
             findings.append(f"{ph} appears in a tracked doc but has no PLACEHOLDERS.md entry")
-        for ph in sorted(tracked - used):
+        cleared = set(re.findall(r"^## (PH-\d\d).*CLEARED", docs["PLACEHOLDERS.md"], re.M))
+        for ph in sorted(tracked - used - cleared):
             findings.append(f"{ph} has a tracker entry but appears in no tracked doc "
-                            f"(already cleared? remove it)")
+                            f"(already cleared? mark it CLEARED or remove it)")
+        if cleared:
+            print(f"   {len(cleared)} cleared: {', '.join(sorted(cleared))}")
         if not (used - tracked) and not (tracked - used):
             print(f"   {len(used)} placeholders, all tracked both ways")
         _report(findings[before:], "consistent")

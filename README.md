@@ -47,7 +47,9 @@ three data arms, evaluated by 5-fold CV rather than three seeds.
 src/emocap/     the package — all logic, unit-tested on CPU
 tests/          run with `uv run pytest`, no GPU, no Kaggle, seconds
 configs/        every threshold and hyperparameter; prereg.lock.yaml is frozen
-notebooks/      thin Kaggle runners, one pipeline stage each — PH-09: NOT YET WRITTEN
+notebooks/      thin Kaggle runners, one per pipeline stage — PLANNED, not yet written.
+                Confirmed design: Save & Run All, every run output preserved for export,
+                no stage depending on a session surviving (hence no checkpointing).
 docs/           preregistration, deviations log, lab notebook, postmortem
 runs/           one directory per run — manifest, metrics, generations. Never overwritten.
 results/        final tables and figures, regenerable from runs/
