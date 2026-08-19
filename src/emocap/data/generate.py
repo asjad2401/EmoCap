@@ -104,6 +104,12 @@ class GenerationRecord:
     model: str
     attempts: int = 1
     rejected: dict[str, str] = field(default_factory=dict)
+    #: emotion -> the model's own report of how well the register fits this scene:
+    #: 0 natural, 1 strained, 2 no honest reading exists. RECORDED ONLY. Whether
+    #: strain-2 cells are excluded from training is a pre-registration decision and
+    #: has not been made -- see docs/deviations.md. Absent on records generated
+    #: before 2026-08-19, so always treat a missing key as "unknown", never as 0.
+    strain: dict[str, int] = field(default_factory=dict)
     created_at: str = field(default_factory=lambda: time.strftime("%Y-%m-%dT%H:%M:%S"))
 
     @property
@@ -175,11 +181,42 @@ def validate_all(
 # ── response parsing ────────────────────────────────────────────────────────
 
 
-def parse_response(raw: str) -> dict[str, str]:
+def _cell(value: object) -> tuple[str, int | None]:
+    """Read one register's output, which comes in either of two shapes.
+
+    A bare string is the original schema. ``{"text": ..., "strain": 0|1|2}`` is the
+    schema from 2026-08-19 onward, where the model also reports how well the register
+    fits the scene. Both are accepted so that a schema change cannot silently discard
+    captions, and so records written under either shape stay readable.
+    """
+    if isinstance(value, dict):
+        text = str(value.get("text") or "").strip()
+        raw = value.get("strain")
+        strain: int | None = None
+        if isinstance(raw, bool):
+            strain = int(raw)
+        elif isinstance(raw, (int, float)):
+            strain = int(raw)
+        elif isinstance(raw, str) and raw.strip().lstrip("-").isdigit():
+            strain = int(raw.strip())
+        if strain is not None and strain not in (0, 1, 2):
+            strain = None          # out-of-range is unknown, not clamped to a value
+        return text, strain
+    return str(value or "").strip(), None
+
+
+def parse_response(
+    raw: str, *, strain: dict[str, int] | None = None
+) -> dict[str, str]:
     """Extract the five captions from a model response.
 
     Tolerates a ```json fence, prose around the object, and single-key-per-line
     output. Returns whatever it found -- validation decides if that is enough.
+
+    ``strain``, if given, is filled in as a side channel: emotion -> 0|1|2 for every
+    register that reported one. It is a side channel rather than part of the return
+    value so that every existing caller and test keeps working unchanged; the captions
+    remain the function's contract.
     """
     if not raw:
         return {}
@@ -195,8 +232,19 @@ def parse_response(raw: str) -> dict[str, str]:
         except (json.JSONDecodeError, TypeError):
             continue
         if isinstance(data, dict):
-            found = {e: str(data[e]).strip() for e in EMOTIONS if data.get(e)}
+            found: dict[str, str] = {}
+            got: dict[str, int] = {}
+            for e in EMOTIONS:
+                if data.get(e) is None:
+                    continue
+                t, s = _cell(data[e])
+                if t:
+                    found[e] = t
+                    if s is not None:
+                        got[e] = s
             if found:
+                if strain is not None:
+                    strain.update(got)
                 return found
 
     # Last resort: pull "key": "value" pairs out of malformed JSON.
@@ -211,7 +259,9 @@ def parse_response(raw: str) -> dict[str, str]:
 # ── one call, with retry-and-feedback ───────────────────────────────────────
 
 
-def parse_batch_response(raw: str, n_sources: int) -> dict[int, dict[str, str]]:
+def parse_batch_response(
+    raw: str, n_sources: int, *, strain: dict[int, dict[str, int]] | None = None
+) -> dict[int, dict[str, str]]:
     """Extract an ``{caption_idx: {emotion: text}}`` matrix from a batch response.
 
     Missing indices and missing registers are simply absent from the result -- the
@@ -243,9 +293,20 @@ def parse_batch_response(raw: str, n_sources: int) -> dict[int, dict[str, str]]:
         block = data.get(str(i), data.get(i))
         if not isinstance(block, dict):
             continue
-        caps = {e: str(block[e]).strip() for e in EMOTIONS if block.get(e)}
+        caps: dict[str, str] = {}
+        got: dict[str, int] = {}
+        for e in EMOTIONS:
+            if block.get(e) is None:
+                continue
+            text, s_ = _cell(block[e])
+            if text:
+                caps[e] = text
+                if s_ is not None:
+                    got[e] = s_
         if caps:
             out[i] = caps
+            if strain is not None and got:
+                strain[i] = got
     return out
 
 

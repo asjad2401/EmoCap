@@ -169,6 +169,9 @@ def run_batch_generation(
         "images_written": 0, "captions_written": 0,
         "captions_expected": 0, "images_skipped_no_file": 0,
         "rejections": 0, "rejection_reasons": {},
+        # counts of the model's own strain report: "0" natural, "1" strained,
+        # "2" no honest reading exists. Recorded, not acted on.
+        "strain": {},
         "wall_seconds": 0.0, "usage": {"prompt": 0, "output": 0, "thinking": 0},
     }
 
@@ -215,7 +218,8 @@ def run_batch_generation(
                 stats["usage"]["output"] += getattr(um, "candidates_token_count", 0) or 0
                 stats["usage"]["thinking"] += getattr(um, "thoughts_token_count", 0) or 0
 
-            matrix = parse_batch_response(inner.text or "", len(srcs))
+            strain: dict[int, dict[str, int]] = {}
+            matrix = parse_batch_response(inner.text or "", len(srcs), strain=strain)
             for idx, srctext in enumerate(srcs):
                 caps = matrix.get(idx, {})
                 rejects = validate_all(caps, min_words=min_words, max_words=max_words)
@@ -229,8 +233,11 @@ def run_batch_generation(
                 append_record(out_path, GenerationRecord(
                     image_id=img_id, caption_idx=idx, source_caption=srctext,
                     captions=caps, model=model, attempts=1, rejected=rejects,
+                    strain=strain.get(idx, {}),
                 ))
                 stats["captions_written"] += len([c for c in caps.values() if c])
+                for v in strain.get(idx, {}).values():
+                    stats["strain"][str(v)] = stats["strain"].get(str(v), 0) + 1
             stats["images_written"] += 1
 
         if progress:

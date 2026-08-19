@@ -175,3 +175,87 @@ reported as a batching quality problem rather than a config error.
 ## Post-tag (real deviations)
 
 *None yet.*
+
+---
+
+## 2026-08-19 — generation prompt v5, and the frozen generation config
+
+Still pre-tag: `prereg-v1` has not been applied, so `configs/prereg.lock.yaml` remains
+editable. Everything below is a **pre-tag decision**, recorded here so the reasoning
+survives. Rationale and measurements are in `docs/lab-notebook.md`.
+
+### What changed in the prompt, and why
+
+| # | change | reason |
+|---|---|---|
+| 1 | `REGISTERS` rewritten from *content to lead with* → *manner of writing* | the old table instructed the crutch words it produced: "alone" 36% of sad, "soft" 41% of romantic |
+| 2 | five named forbidden shortcuts with shown BAD examples | solitude · pace · contact · light/weather/time · posture/gaze/grip. A flat "do not invent" did not hold |
+| 3 | five legitimate devices, incl. stance-toward-the-scene | prohibition alone flattened sad/romantic/tense into neutral restatement |
+| 4 | `USE THE IMAGE FOR MOOD` rewritten | it granted "light, weather, posture, expression" while another section forbade adding them; the model resolved the contradiction by adding light |
+| 5 | BAD-example parentheticals critique the sentence, never the photo | they asserted facts ("two people are visibly setting it up") about images not attached to 8,090 of 8,091 calls |
+| 6 | every GOOD example adds no noun, adjective or intent absent from its caption | six of them violated the prompt's own faithfulness rule |
+| 7 | `NEVER PAD` with eight banned filler phrases | the 8-word floor was met with "they are present", "in this portrait" |
+| 8 | dignity rule on `humorous` | ~40,000 deadpan captions about photographed people, many children, with nothing forbidding mockery of appearance |
+| 9 | self-revision block **deleted** | inert: `thinking_budget: 0` plus a constrained JSON schema leaves no scratchpad and no way to revise an emitted cell. It occupied the highest-attention position |
+| 10 | `strain` field added to the response schema | see below |
+
+### The `strain` field — RECORDED, NOT ACTED ON
+
+Every register now returns `{"text": ..., "strain": 0|1|2}`: 0 the register fits
+naturally, 1 strained, 2 no honest reading of this register exists for this caption.
+
+**It is recorded only.** It was proposed as a way to identify invented cells and it
+fails at that (defect rate 1.6% / 2.6% / 2.4% by strain level — flat). It is retained
+because it measures register *difficulty*, which is a reportable result. **Any decision
+to exclude strain-2 cells from training is a pre-registration decision and has not been
+made.** `GenerationRecord.strain` is absent on records written before 2026-08-19, so a
+missing key means *unknown* and must never be read as 0.
+
+### Anchor correction
+
+`anchors.lexical_shortcut` recorded **0.539**. That figure and the ones now quoted come
+from different estimators and must not be compared. Under one estimator — top-25
+keywords per register, 5-fold cross-validated by `image_id`, averaged over 3 seeds,
+ties credited fractionally — the measurements are:
+
+| prompt | keyword-rule accuracy | chance |
+|---|---|---|
+| v1 (original) | 0.639 | 0.200 |
+| v3 | 0.431 | 0.200 |
+| v4 | 0.468 | 0.200 |
+| **v5 (final)** | **0.395** | 0.200 |
+| Sonnet reference | 0.347 | 0.200 |
+
+The lock file now carries 0.395 with the estimator named. Under the original prompt,
+two-thirds of the primary metric was obtainable by keyword spotting; under v5 it is
+under half.
+
+### Pre-registered prediction that the data contradicts
+
+`anchors.expected_hardest_registers: [tense, humorous]`. Measured difficulty ordering is
+**romantic (1.05) > humorous (0.90) > sad (0.89) > tense (0.85) > joyful (0.15)**. Tense
+is not among the hardest. **The prediction is left as registered and the disagreement is
+reported.** Do not retrofit the prediction to the measurement.
+
+### Operational config changes (not pre-registered)
+
+* `scripts/run_stage02.py` gains `--audit-offset` and `--out`, so a second audit lands on
+  images the first never saw and does not pool with the main corpus. The manifest now
+  records `image_ids`, `audit_offset` and `out_path`.
+* `scripts/recover_batch.py` added. A submitted batch job bills whether or not the
+  process is watching; two runs lost their connection and one succeeded unclaimed. This
+  attaches to a job by name, matches responses positionally against the manifest's
+  `image_ids`, refuses to write on a count mismatch, and retries transport faults.
+* `data/generated/captions_raw.jsonl` renamed to `captions_audit_v1.jsonl`. It held 250
+  records generated under the v1 prompt; leaving it at the production store path would
+  have made `completed_keys` skip those 50 images, silently baking the broken prompt into
+  the corpus. **The production store must be empty before the full run.**
+* `.gitignore` now tracks `captions_audit_*.jsonl` and `captions_reference_*.jsonl`.
+  Generation runs at temperature 0.9 against a hosted model, so a caption set cannot be
+  regenerated byte-identically: these are primary evidence, not build artifacts.
+
+### Cost
+
+The `strain` field raises output tokens from ~32k to ~50k per 50 images. Full-corpus
+projection moves from ~$7.00 to **~$10.50** at the batch rate. Measured per-run costs are
+in each `runs/*/stats.json`.

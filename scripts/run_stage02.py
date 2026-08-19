@@ -51,6 +51,12 @@ def main() -> None:
                     choices=["audit", "train", "val", "test"],
                     help="'audit' is 50 train images for the pre-registered hand audit")
     ap.add_argument("--limit", type=int, default=None, help="cap images this invocation")
+    ap.add_argument("--audit-offset", type=int, default=0,
+                    help="skip this many train images before taking the audit slice, so a "
+                         "second audit lands on images the first never saw")
+    ap.add_argument("--out", default=None,
+                    help="override the caption store path; use a separate file when the run "
+                         "is not meant to be pooled with the main corpus (e.g. a prompt A/B)")
     ap.add_argument("--chunk-size", type=int, default=250)
     ap.add_argument("--dry-run", action="store_true",
                     help="report what would be generated and stop")
@@ -63,7 +69,10 @@ def main() -> None:
 
     captions = ROOT / "data/flickr8k/Flickr8k.token.txt"
     images_dir = ROOT / cfg["paths"]["images_dir"]
-    out_path = ROOT / cfg["paths"]["raw_generations"]
+    out_path = Path(args.out) if args.out else ROOT / cfg["paths"]["raw_generations"]
+    if not out_path.is_absolute():
+        out_path = ROOT / out_path
+    out_path.parent.mkdir(parents=True, exist_ok=True)
 
     rows = drop_malformed(read_captions(captions))
     sources: dict[str, list[str]] = {}
@@ -81,14 +90,17 @@ def main() -> None:
     )
 
     if args.part == "audit":
-        ids = [i for i in sorted(sources) if splits[i] == "train"][: gen["audit_sample"] // 4]
+        n = gen["audit_sample"] // 4
+        train_ids = [i for i in sorted(sources) if splits[i] == "train"]
+        ids = train_ids[args.audit_offset: args.audit_offset + n]
     else:
         ids = [i for i in sorted(sources) if splits[i] == args.part]
 
     done = completed_keys(out_path)
     pending = [i for i in ids if any((i, k) not in done for k in range(5))]
 
-    print(f"part          : {args.part}")
+    print(f"part          : {args.part}"
+          + (f"  offset {args.audit_offset}" if args.part == "audit" else ""))
     print(f"model         : {gen['model']}   plan {gen['plan']}   "
           f"schema={gen['use_response_schema']}   thinking={gen['thinking_budget']}")
     print(f"images in part: {len(ids):,}")
@@ -139,7 +151,9 @@ def main() -> None:
     run_dir = ROOT / "runs" / f"stage02-{args.part}-{time.strftime('%Y%m%d-%H%M%S')}"
     man = Manifest(run_id=run_dir.name, stage="02_captions_generate",
                    config={**gen, "part": args.part, "chunk_size": args.chunk_size,
-                           "n_images": len(pending)})
+                           "n_images": len(pending), "audit_offset": args.audit_offset,
+                           "out_path": str(out_path.relative_to(ROOT)),
+                           "image_ids": pending})
     man.save(run_dir)
 
     def progress(ev: dict) -> None:

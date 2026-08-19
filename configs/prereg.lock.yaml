@@ -29,6 +29,13 @@ data:
   generator_model: "gemini-3.1-flash-lite"
   generation_input: image_plus_human_captions   # multimodal; Moondream retired
   generator_multimodal: true
+  # Each register also returns a self-reported fit: 0 natural, 1 strained, 2 no honest
+  # reading of this register exists for this caption. RECORDED ONLY -- it does not
+  # predict which cells contain invented detail (defect rate 1.6/2.6/2.4% by level,
+  # flat), so it is not a filter. Excluding strain-2 cells from training would be a new
+  # pre-registered exclusion and has NOT been decided. Absent on pre-2026-08-19
+  # records, where a missing value means unknown, never 0.
+  generator_reports_strain: true
   target_caption_words: {min: 8, max: 24}
 
 decode:                                    # identical for every variant and track
@@ -61,10 +68,27 @@ anchors:
   # register at all. Reporting the classifier alone would credit the captioning model
   # for keyword emission. This anchor makes that share explicit: the model's real
   # contribution is the margin above it, not the raw accuracy.
-  lexical_shortcut: top25_keyword_rule      # measured 0.539 on the Part 0 sample
+  # Estimator, fixed so figures stay comparable: top-25 keywords per register, 5-fold
+  # cross-validated by image_id, averaged over 3 seeds, ties credited fractionally.
+  # Chance is 0.200. An earlier 0.539 in this file used a DIFFERENT estimator and is not
+  # comparable -- see docs/deviations.md, 2026-08-19.
+  #
+  # Measured 0.395 under the v5 prompt, against 0.639 under the original. So under half
+  # of the primary metric is obtainable by keyword spotting alone, against two-thirds
+  # before. The model's real contribution is the margin above this anchor, never the raw
+  # accuracy.
+  lexical_shortcut: top25_keyword_rule
+  lexical_shortcut_value: 0.395
+  lexical_shortcut_estimator: cv5_by_image_id_3seeds_fractional_ties
   # Pre-registered expectation, so it is not discovered after the fact: `tense` and
   # `humorous` have the weakest lexical markers (grips/edge 12%; seemingly/quite 6%)
   # and should dominate the classifier's confusion matrix.
+  #
+  # LEFT AS REGISTERED, AND CONTRADICTED. Measured difficulty on the v5 Part 0 sample
+  # (the model's own strain report over 1,225 cells) orders them romantic 1.05 >
+  # humorous 0.90 > sad 0.89 > tense 0.85 > joyful 0.15. `tense` is NOT among the
+  # hardest; `romantic` is, which the independent human judge found as well. The
+  # prediction is not retrofitted -- the disagreement is the result.
   expected_hardest_registers: [tense, humorous]
 
 gates:                                      # a run or the study halts if these fail

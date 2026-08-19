@@ -40,12 +40,25 @@ BANNED_ADVERBS = (
     "wistfully", "gleefully", "sorrowfully", "nervously", "affectionately",
 )
 
+# Each register is defined by HOW to write, never by what content to lead with.
+#
+# The first version of this table said what each register should "lead with" -- sad
+# with "what is alone or worn", romantic with "touch ... warmth between subjects",
+# tense with "grip, edges", joyful with "colour". Measured on the 1,250-caption Part 0
+# sample, that produced exactly those words as fillers: "alone" or "empty" in 36% of
+# sad captions, "soft/gentle/graceful" in 41% of romantic, "bright" in 31% of joyful,
+# "grips"/"edge" in 12% of tense. Worse, the model invented the content when the scene
+# did not supply it -- asserting solitude over two visible people, and turning five
+# people on a wall into "a couple ... leaning into each other".
+#
+# A content instruction is an invitation to invent that content. A manner instruction
+# is not, so these describe rhythm, verb choice and restraint only.
 REGISTERS = {
-    "joyful": "brisk, warm, light. Leads with motion, colour, or openness.",
-    "sad": "slow, plain, spare. Leads with stillness, distance, or what is alone or worn.",
-    "tense": "clipped, urgent. Leads with proximity, grip, edges, or what is about to happen.",
-    "romantic": "soft, unhurried, close. Leads with touch, gaze, or warmth between subjects.",
-    "humorous": "dry, deadpan, understated. Notices something faintly absurd that is genuinely there.",
+    "joyful": "brisk and warm. Short clauses, active verbs; put the energy in the verb, not in added adjectives.",
+    "sad": "slow and plain. Spare wording, flat rhythm, no intensifiers -- the weight comes from restraint, never from adding isolation or emptiness.",
+    "tense": "clipped and immediate. Short front-loaded clauses, present tense -- never from adding danger, threat or weather that is not there.",
+    "romantic": "unhurried and attentive, the way someone fond of the subject would describe it -- the warmth is in the care of the description, never in added touching, closeness, or a relationship between people.",
+    "humorous": "dry and deadpan. Understates something faintly absurd in the situation -- never at the expense of how a person looks.",
 }
 
 _WORKED_EXAMPLES = """\
@@ -55,16 +68,172 @@ Worked examples, on the caption "A child in a pink dress is climbing up a set of
     BAD   A child joyfully climbs the stairs.                        <- names the feeling
     BAD   A child ascends a staircase of small dreams.               <- metaphor
     BAD   A child climbs the stairs as warm sunlight dances.         <- invents sunlight; not in the caption
-    GOOD  A child in a pink dress bounds up the entryway stairs, one hand out for balance.
+    GOOD  A child in a pink dress bounds up the entryway stairs of the wooden house.
 
   sad
     BAD   The stairs, a quiet witness to her small ascent.           <- personification, abstraction
     BAD   A child climbs the stairs, sadly alone.                    <- names the feeling
-    GOOD  A child in a pink dress climbs the entryway stairs slowly, one step at a time, alone.
+    BAD   A child climbs slowly toward the dark, empty opening.      <- invents solitude, pace and gloom
+    GOOD  A child in a pink dress climbs the entryway stairs, one step, then another.
+
+  romantic
+    BAD   A child ascends softly toward the waiting threshold.       <- "softly"/"waiting" as filler; nothing is soft
+    GOOD  A child in a pink dress makes her way up the stairs of the entry way.
 
   humorous
     BAD   She is clearly plotting something.                         <- invents intent; drops the picture
-    GOOD  A child in a pink dress takes the entryway stairs one at a time, with real commitment.
+    GOOD  A child in a pink dress takes the entryway stairs one entire stair at a time.
+"""
+
+
+#: The five failure classes measured across the Part 0 prompt iterations (2026-08-19).
+#: Classes 4 and 5 were introduced BY the fix for 1-3: closing the solitude/pace/contact
+#: shortcuts and pushing for register signal made the model reach for atmosphere and
+#: body language instead -- added light/weather went 0.8% -> 2.9%, posture 0.2% -> 0.9%.
+#: All five are register shortcuts: ways to reach a target mood by changing the scene instead of
+#: changing the prose. Named explicitly and shown, because a flat prohibition did not
+#: hold -- the earlier prompt already said "you may not add, invent, imply" and every
+#: example below still shipped.
+_NO_INVENTION = """\
+THE FIVE FORBIDDEN SHORTCUTS
+These are the tempting ways to reach a register by altering the scene. All banned.
+
+  1. COMPANY OR SOLITUDE.
+     Never write "alone", "single", "lone", "solitary", "by himself", "empty", or
+     "in silence" to reach a mood. If two or more subjects are present, no rewrite
+     may imply one is by itself.
+       BAD   A single tent sits alone on the vast ice, waiting to be set up.
+             (asserts solitude, and reverses "is being set up" into "waiting")
+       BAD   Two workers sit on a beam, taking a quiet break alone.
+             ("alone" contradicts the "two" in its own sentence)
+
+  2. PACE AND MANNER OF MOTION.
+     Whatever the subject is doing, it does it at the same speed in all five
+     rewrites. Never downshift to "slowly", "calmly", "gracefully", "gently",
+     "lingers", "drifts", "glides" to reach a softer register.
+       BAD   A light-coloured dog moves slowly across the sand.
+       BAD   The dog moves gracefully, its coat glowing.
+             (both re-pace a caption that said the dog was running)
+
+  3. CONTACT AND RELATIONSHIP.
+     Never add touching, leaning, holding or embracing, and never turn people into
+     "a couple", "lovers", or "friends", unless the caption says so.
+       BAD   A couple of friends lean into each other on the ledge.
+             (invents contact, and a relationship, from "several people sitting")
+
+  4. LIGHT, WEATHER AND TIME OF DAY.
+     Never name them to reach a mood, even if you can see them. They belong in your
+     word choice, not in your sentence.
+       BAD   The ball hovers, and a big dog reaches for it with its nose as the light
+             fades.
+       BAD   ... under an overcast sky / in the warm evening glow / in the fading light
+
+  5. POSTURE, GAZE AND GRIP YOU CANNOT SEE.
+     A visible expression or posture may be named. An inferred one may not, and a
+     tightened body is the commonest invention.
+       BAD   Two men sit on the ground, their heads bowed low.
+       BAD   Two men sit on the ground, hands gripped tight, going through backpacks.
+       BAD   A blond woman rests her head near a person in a pink costume.
+             (invents contact from "poses with")
+
+A rewrite that needs any of these to carry its register has failed. Carry it with
+verbs, rhythm and word choice instead, or let the register be subtle.
+"""
+
+
+#: The other half of the forbidden-shortcuts block. Prohibition alone over-corrects:
+#: with the shortcuts closed and no legitimate technique offered, `sad`, `romantic` and
+#: `tense` collapsed into neutral restatement on images that do not support them ("The
+#: yard holds a bulldog, a sheep dog, and a boxer standing there"). Register similarity
+#: rose from 0.339 [0.320, 0.359] to 0.426 [0.398, 0.454] -- the registers stopped
+#: being registers. These are the devices that carry a register without touching a
+#: single fact.
+_HONEST_DEVICES = """\
+HOW TO CARRY A REGISTER WITHOUT CHANGING THE SCENE
+Five devices. All keep every fact intact, and they are the only tools you need.
+
+  1. WHAT YOU PUT FIRST, AND WHAT YOU LEAVE OUT.
+     Five rewrites of one caption may each foreground a different true element and
+     omit different ones. That alone separates them.
+
+  2. VERB AND NOUN PRECISION.
+     "grins", "smiles", "keeps his mouth curved" are all true of the same face and
+     carry different weight. Choose the truest word that also leans your way.
+
+  3. THE SUBJECT'S OWN VISIBLE AFFECT IS FAIR GAME.
+     A smile, a slack posture, a fixed stare, a turned-away head -- if it is in the
+     picture you may name it and lead with it. That is description, not invention.
+
+  4. SENTENCE SHAPE.
+     Short flat clauses read plainer; one continuous clause reads warmer; a clipped
+     front-loaded clause reads more urgent. Same facts, different rhythm.
+
+  5. STANCE TOWARD THE SCENE, WITHOUT ADDING TO IT.
+     A still scene can read tense because nobody in it yields. A plain scene can read
+     sad because it is stated baldly and left there. A coincidence can read funny
+     because you note, drily, that it is one. None of these add an object, a person,
+     an action or an attribute -- the stance is in how you frame what is already
+     there. This is the most useful of the five devices and the least used: reach for
+     it before you reach for an adjective.
+
+WHEN THE PICTURE RESISTS THE REGISTER, SAY SO
+Some scenes have no strong sad reading. Some have no romantic one. A posed portrait
+may have nothing tense in it; a photograph in which nothing is absurd has nothing
+humorous in it. This is expected and it is not your fault.
+
+You have a legal way out, and you must use it instead of inventing. Every register
+returns a `strain` value alongside its text:
+
+    0  the register fits this scene naturally
+    1  reachable, but strained -- you had to work for it
+    2  no honest reading of this register exists for this caption
+
+At strain 2, still write the sentence: give the plainest faithful version of the
+caption, with the register carried by sentence shape alone and nothing added. Then
+mark it 2. A faithful sentence marked 2 is a correct answer and is more useful to us
+than a vivid sentence that invented something. An invented detail marked 0 is the
+worst possible answer.
+
+Be honest with this number. Do not mark everything 0 to look competent, and do not
+mark everything 2 to avoid the work. We expect most cells at 0, a minority at 1, and
+`romantic` and `tense` to carry more 2s than the others.
+
+NEVER PAD. If a rewrite is short, add a true detail from the caption or the image --
+never an empty phrase. These add words and no register, and are banned outright:
+  "for the camera frame", "in this portrait", "within its wide view", "in this
+  captured moment", "they are present", "they appear to congregate", "for the
+  capture", "as they hold their positions".
+Being plain is allowed and often right; being empty is not. "and that is the whole of
+it" is plain and carries the register. "they are present" is empty and carries nothing.
+
+  Caption: "A little boy sticks his tongue out for the camera. Another boy looks on."
+    sad
+      BAD   One boy sticks his tongue out as the other remains in the frame.
+            (neutral restatement -- no register at all)
+      BAD   A boy pulls a face while the other watches, alone in the corner.
+            (invents isolation)
+      GOOD  A boy pushes his tongue out at the camera; the other only watches.
+
+  Caption: "Two boys make faces."
+    sad
+      BAD   Two boys make faces as they hold their positions for the camera frame.
+            (padding; "for the camera frame" is filler)
+      GOOD  Two boys make faces, and that is the whole of it.
+    tense
+      BAD   Two boys make faces; their features are contorted toward the camera lens.
+            (strains for tension by over-describing)
+      GOOD  Two boys make faces, and neither one of them breaks first.
+
+  Caption: "A bulldog, a sheep dog, and a boxer standing in a yard."
+    tense
+      BAD   A sheep dog, a boxer, and a bulldog stand in the yard; they are present.
+            (empty -- "they are present" says nothing)
+      GOOD  Bulldog, sheep dog, and boxer stand in one yard, none of them giving
+            ground.
+    romantic
+      BAD   Within the yard, a boxer, a sheep dog, and a bulldog stand together.
+            (neutral -- "together" is doing no work)
+      GOOD  A bulldog, a sheep dog and a boxer share one yard between the three of them.
 """
 
 
@@ -75,13 +244,25 @@ Worked examples, on the caption "A child in a pink dress is climbing up a set of
 #: teaches confident invention, because the loss rewards producing those words.
 _GROUNDING_STEER = """\
 USE THE IMAGE FOR MOOD, THE CAPTION FOR CONTENT
-The caption fixes what is in the scene. The image tells you how it *feels* -- light,
-weather, colour, crowding, posture, expression, how open or closed the space is.
+The caption fixes what is in the scene. Looking at the image should change HOW YOU
+WRITE -- which words you reach for, how warm or cool or clipped the sentence is. It
+must not add anything to WHAT YOU SAY.
 
-Draw on the image only for those broad properties. Do NOT inventory small objects
-you can see but the caption does not mention: no "a wire mesh screen", no "two
-buckets near the base", no background signage or brand names. Broad and true beats
-specific and unverifiable.
+So: a grey, flat photograph licenses plainer, cooler wording. It does not license the
+words "as the light fades", "in the fading light", or "under an overcast sky". A bright
+photograph licenses brisker wording, not the word "sunlit". The light you can see
+belongs in your word choice, never in your sentence.
+
+Draw on the image only for that. Do NOT inventory small objects you can see but the
+caption does not mention: no "a wire mesh screen", no "two buckets near the base", no
+background signage or brand names. Broad and true beats specific and unverifiable.
+
+WHERE THEY CONFLICT, THE IMAGE WINS
+Human captions are sometimes loose or plainly wrong. If the caption says "a couple of
+several people" and the image shows five people sitting apart, there is no couple --
+write what the image shows. Count subjects from the image, not from the caption's
+phrasing, and never let an odd turn of phrase in the caption license a detail the
+picture contradicts.
 """
 
 
@@ -122,7 +303,9 @@ def build_prompt(
 ORIGINAL CAPTION: "{source_caption.strip()}"
 
 Rewrite it five times, once per register. Return ONLY a JSON object with exactly \
-these five keys: {keys}.
+these five keys: {keys}. Each maps to an object with two fields:
+  "text"    the rewrite
+  "strain"  0, 1 or 2 -- how well this register fits the scene (see below)
 
 WHAT MUST STAY TRUE
 Every person, object, action and attribute you write must be present in the original \
@@ -136,15 +319,22 @@ Word choice, sentence rhythm, and which detail you put first. Never from naming 
 feeling, and never from figurative language.
 
 {_GROUNDING_STEER if multimodal else ""}
+{_NO_INVENTION}
+{_HONEST_DEVICES}
 {_WORKED_EXAMPLES}
 HARD RULES
-  1. Between {min_words} and {max_words} words. Count before finalising.
+  1. Between {min_words} and {max_words} words. Count before finalising. {min_words} is a HARD floor, not a target -- being spare never means going under it, and a rewrite that lands short must be expanded with a true detail from the caption.
   2. Exactly one sentence per register.
   3. No metaphor, simile, or personification. No abstraction such as "a testament to", \
 "a reminder of", "an echo of", "a symphony of", "a dance of".
   4. No adverb that names the emotion: {", ".join(BANNED_ADVERBS[:8])}, and similar.
   5. "humorous" means dry and observational about something actually in the caption -- \
 not a joke about something absent.
+  7. NEVER at a person's expense. The humour is in a situation, never in how someone \
+looks. No remark on anyone's body, weight, face, clothing, age or ability, and nothing \
+that reads as mockery of a person -- most of these photographs are of ordinary people \
+and many are of children. If the only available joke is about how someone looks, there \
+is no joke: write the plainest faithful sentence and mark its strain 2.
   6. The five rewrites must be clearly distinguishable from one another.
 
 REGISTERS
@@ -246,7 +436,9 @@ anything about what is in the picture.
 
 Return ONLY a JSON object whose keys are the caption indices \
 ({", ".join(f'"{i}"' for i in range(len(source_captions)))}), each mapping to an \
-object with exactly these five keys: {keys}.
+object with exactly these five keys: {keys}. Each register maps to an object with \
+two fields: "text" (the rewrite) and "strain" (0, 1 or 2 -- how well that register \
+fits the scene; see WHEN THE PICTURE RESISTS THE REGISTER below).
 
 {rules}
 Rewrite every caption index. Do not omit any. Keep each rewrite anchored to its own \
@@ -259,11 +451,31 @@ Return only the JSON object, with no surrounding text or code fence.
 # ── response schemas, for constrained structured output ─────────────────────
 
 
+#: Each register returns its sentence plus the model's own report of how well the
+#: register fits the scene. The flag exists because the prompt cannot make an
+#: impossible cell possible: on a cheerful photograph asked for `sad`, a model given no
+#: legal way out invents one, and that invention is silent. Measured across the Part 0
+#: iterations, closing one invention route just opened the next -- solitude, then pace,
+#: then light and posture. A declared strain converts that into a filterable signal.
+#:
+#: RECORDED ONLY at this stage. Whether strain-2 cells are dropped from training is a
+#: pre-registration decision that has not been made.
+_CELL_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "text": {"type": "string"},
+        "strain": {"type": "integer"},
+    },
+    "required": ["text", "strain"],
+    "propertyOrdering": ["text", "strain"],
+}
+
+
 def single_response_schema() -> dict:
     """Schema for one caption's five registers. Guarantees all keys are present."""
     return {
         "type": "object",
-        "properties": {e: {"type": "string"} for e in EMOTIONS},
+        "properties": {e: dict(_CELL_SCHEMA) for e in EMOTIONS},
         "required": list(EMOTIONS),
         "propertyOrdering": list(EMOTIONS),
     }

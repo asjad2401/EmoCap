@@ -20,6 +20,8 @@ data:
   generator_model: "gemini-3.1-flash-lite"
   generation_input: image_plus_human_captions
   generator_multimodal: true
+  # See configs/prereg.lock.yaml: recorded only, not a filter, not yet a study variable.
+  generator_reports_strain: true
   target_caption_words: {min: 8, max: 24}
 
 # Operational only -- not pre-registered, safe to tune.
@@ -78,6 +80,13 @@ generation:
   max_attempts: 3           # per (image, caption) before giving up
   concurrency: 24           # 3.37 calls/s measured, zero errors (2026-08-18)
   audit_sample: 200         # read this many by hand before the full run
+  # Prompt version in src/emocap/data/prompt.py, settled 2026-08-19 after five measured
+  # iterations over 250 audit images. Final: manner-based register definitions, five
+  # named forbidden shortcuts, five legitimate devices, a per-register `strain` report,
+  # and no self-revision block. Measurements and the reasoning for each change are in
+  # docs/lab-notebook.md and docs/deviations.md; the audit sets are in
+  # data/generated/captions_audit_v*.jsonl.
+  prompt_version: v5
 
 # USD per 1M tokens. USER-SUPPLIED, from the Google AI pricing page on 2026-08-18.
 # Not authoritative and not stable -- re-check before any run that matters, and note

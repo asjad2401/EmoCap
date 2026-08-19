@@ -16,8 +16,19 @@ kaggle.json
 *.pth
 *.safetensors
 runs/**/checkpoint*
-/data/
+# Git cannot re-include a file whose parent directory is excluded, so the data tree is
+# excluded level by level rather than with a blanket /data/.
+/data/*
 !/data/.gitkeep
+!/data/generated/
+/data/generated/*
+# ...except the small, NON-REPRODUCIBLE evidence files. Generation runs at
+# temperature 0.9 against a hosted model, so a caption set cannot be regenerated
+# byte-identically and is therefore primary evidence, not a build artifact. These are
+# the prompt-iteration audits (5 x 50 images) and the Sonnet reference set, ~1.1 MB
+# total. The full corpus is ~28 MB and deliberately stays out.
+!/data/generated/captions_audit_*.jsonl
+!/data/generated/captions_reference_*.jsonl
 .DS_Store
 .ipynb_checkpoints/
 

@@ -208,3 +208,144 @@ believing a difference.
 Concurrency 24 sustains 3.37 calls/s with zero errors. The whole 2.5 model family is
 retired for this key, and `models.list()` still lists it -- **listing is not usability**,
 so `--validate-models` makes one real call per candidate.
+
+---
+
+## 2026-08-19 — Part 0 prompt iteration: five versions, 250 images, $0.29
+
+Part 0 (50 train images, 1,250 captions) came back at 100% completion, so the pipeline
+was sound. The **captions** were not. Five prompt versions later the corpus is
+measurably better on every axis that matters, and the reason the first one failed is
+the most useful thing recorded here.
+
+### The register table was writing the failures
+
+An independent Sonnet agent, asked to judge 10 images by eye with no metrics, found
+captions that contradicted their own photographs: a tent being set up by two visible
+people described as *"A single tent sits alone on the vast ice, waiting to be set up"*;
+five people sitting apart on a wall as *"A couple of friends lean into each other."* I
+verified both against the images.
+
+Measuring the whole 1,250-caption sample found the pattern was systematic — "alone" or
+"empty" in **36%** of sad captions, "soft/gentle/graceful" in **41%** of romantic,
+"bright" in 31% of joyful, "grips"/"edge" in 12% of tense.
+
+Then the cause, in `prompt.py`'s own register table:
+
+| register | what the prompt instructed | what came out |
+|---|---|---|
+| sad | "Leads with … what is **alone** or worn" | alone/empty, 36% |
+| romantic | "Leads with **touch** … warmth **between subjects**" | soft/gentle 41%, invented couples |
+| tense | "Leads with … **grip, edges**" | grips 12%, edge 12% |
+| joyful | "Leads with motion, **colour**" | bright 31% |
+
+And the few-shot example for `sad` read *"climbs the entryway stairs slowly, one step at
+a time, alone"* — demonstrating both crutches as correct, on an image where neither is
+true. **The model was complying.** Not laziness, not capability: my instructions.
+
+**The rule extracted:** a register defined by *what content to lead with* is an
+invitation to invent that content when the scene does not supply it. A register defined
+by *manner* — rhythm, verb choice, restraint — is not. The whole table was rewritten as
+manner.
+
+### Each fix opened the next failure class
+
+This is the part worth remembering, because it happened four times in a row.
+
+1. **v2** closed solitude/pace/contact with named shortcuts and shown examples.
+   Grounding lies 5.0% → 0.2%. But the registers went flat: *"The yard holds a bulldog,
+   a sheep dog, and a boxer standing there."* Overlap rose 0.339 → 0.426.
+2. **v3** added legitimate devices (foregrounding, verb precision, visible affect,
+   sentence shape). Recovered distinctness, paired −0.036 [−0.060, −0.013].
+3. **v4** added a stance device and banned padding. Distinctness improved again — and
+   invented **light** (0.8% → 2.9%) and **posture** (0.2% → 0.9%) appeared instead:
+   *"as the light fades"*, *"their heads bowed low"*, *"hands gripped tight"*.
+4. **v5** closed those two. Defects 4.3% → 2.3%, best content recall of any version.
+
+Root cause of the v4 regression, found by a blind Opus review of the prompt text: two
+sections contradicted each other. `USE THE IMAGE FOR MOOD` granted the model "light,
+weather, colour, crowding, posture, expression"; `WHAT MUST STAY TRUE` forbade adding
+"weather, light, time of day, emotion on a face". **The model resolved my contradiction
+by adding light.** Rewritten so the image informs word choice and never named content.
+
+### The overlap metric was misleading on its own
+
+Overlap kept rising as the captions got more honest, which read as a loss until the
+Sonnet reference landed: **overlap 0.411 with keyword-rule 0.347**. High overlap, low
+keyword-detectability is the *good* regime — registers separated by structure rather
+than vocabulary, which is exactly what the study needs. v5 at **0.418 / 0.395** is in
+that same regime. Read either number alone and you draw the wrong conclusion. **Third
+time on this project a number looked informative in isolation and was not** (after
+per-token perplexity and register divergence).
+
+### Sonnet is not a viable generator, and that is settled
+
+Measured: **45 minutes and 234k tokens for 10 images.** Scaled to 8,091 that is ~607
+hours and ~190M tokens against **~$10.50** on Gemini batch. Images are only 4% of those
+tokens, so nothing about resizing helps; the driver is turn count × accumulated
+transcript, which makes *small* batches worse. On quality it was near-parity with
+Flash-Lite on averages and clearly better only on hard cells, and two of its three
+self-nominated best captions were near-verbatim reuse of worked examples from the
+prompt. Its real value was as a distillation source and a reference ceiling.
+
+### The strain flag: failed its own test, then measured something else
+
+v5 asks the model to report, per register, how well that register fits the scene
+(0 natural / 1 strained / 2 no honest reading exists). It was proposed as a way to turn
+silent invention into a filterable signal. **It does not do that.** Defect rate by
+self-reported strain: **1.6% at 0, 2.6% at 1, 2.4% at 2** — flat, no monotonic
+relationship. On the criterion set in advance, it does not earn a place as a filter.
+
+It does measure register difficulty, and that ordering is structured and corroborated:
+
+| register | mean strain | strain-2 cells |
+|---|---|---|
+| joyful | 0.15 | 0 |
+| tense | 0.85 | 12 |
+| sad | 0.89 | 12 |
+| humorous | 0.90 | 28 |
+| romantic | **1.05** | **30** |
+
+Romantic hardest, joyful trivial. That independently agrees with the human judge, which
+said romantic "never actually reads as romantic in any of the 10 images". It also
+**disagrees with the pre-registration**, which predicted `[tense, humorous]` as hardest;
+tense is measurably not among the hardest. The prediction stands as registered and the
+disagreement is reported — that is the mechanism working.
+
+Caveat: 64% of cells came back strain 1, which smells like middle-anchoring. Trust the
+ordering between registers, not the absolute levels.
+
+### Moondream's v1 captions are useful after all — as a checker, not an input
+
+The archived `v1_moondream_factual_captions.csv.gz` covers all 8,091 images with zero
+missing and zero empty rows, mean 42 words. Verified against the images, it is reliable
+on **subject count, identity, primary action, setting** and unreliable on **accessories,
+small-object colour, and inferred activity** (it put a "red collar" and "black harness"
+on a collarless dog). That split is exactly right for the failures that mattered — all
+of which were core-fact failures — and it caught 5 of 5 of the judge's grounding errors.
+
+Used only as an offline contradiction detector for the tables above. **Not** as prompt
+input: that would put a VLM's output into the dataset, which is what
+`neutral_source: human_annotations  # NOT a VLM` exists to prevent, and would leak its
+hallucinated accessories into the captions.
+
+### Operational: a dropped connection was discarding paid-for work
+
+Two runs died with `httpx.RemoteProtocolError: Server disconnected` — once during batch
+submission, once while polling. In both cases **the job was already submitted and
+billing on Google's side**; only the collection was lost. I initially reported one of
+these as having cost nothing, which was wrong: the job succeeded and its output sat
+unclaimed. `scripts/recover_batch.py` now attaches to a job by name, matches responses
+positionally against `config.image_ids` in the manifest (refusing to write on a count
+mismatch), and retries transport faults with backoff. The 33-job full run will hit this.
+
+### Still open
+
+- **Impossible cells.** Some image × register pairs may have no faithful answer. v5
+  gives the model a legal way to say so, but the flag does not identify *invention*, so
+  the underlying question is unresolved and is a study-design decision, not a prompt one.
+- **`romantic`'s definition.** Hardest register by every measure taken. Whether it is
+  redefined or renamed touches the `emotions` list and therefore `emotion_id`.
+- Five cells in v5 were rejected as "identical to the joyful rewrite" — a duplication
+  mode that did not appear in v1–v4.
+- One v5 image's response failed entirely (49/50 images, 1,225/1,250 captions).

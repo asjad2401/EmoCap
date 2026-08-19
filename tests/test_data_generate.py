@@ -556,3 +556,107 @@ def test_single_call_path_also_sends_a_schema():
     generate_one(llm, "A child climbs the stairs.")
     assert llm.schemas[0] is not None
     assert llm.schemas[0]["required"] == list(EMOTIONS)
+
+
+# ── the strain flag (added 2026-08-19) ──────────────────────────────────────
+#
+# The model reports, per register, how well that register fits the scene: 0 natural,
+# 1 strained, 2 no honest reading exists. It exists because the prompt cannot make an
+# impossible cell possible -- closing one invention route only opened the next -- so a
+# declared strain turns a silent invention into a filterable signal.
+#
+# Both response shapes must parse: a bare string (pre-2026-08-19 records and any model
+# that ignores the schema) and {"text": ..., "strain": n}. A schema change must never
+# silently discard captions.
+
+
+def _cell_reply(**caps) -> str:
+    import json as _json
+    return _json.dumps({e: {"text": t, "strain": s} for e, (t, s) in caps.items()})
+
+
+def test_parse_response_reads_text_and_strain_from_the_object_shape():
+    from emocap.data.generate import parse_response
+
+    raw = _cell_reply(joyful=("a bright thing happens here today", 0),
+                      sad=("a dim thing happens here today", 2))
+    strain: dict[str, int] = {}
+    caps = parse_response(raw, strain=strain)
+    assert caps == {"joyful": "a bright thing happens here today",
+                    "sad": "a dim thing happens here today"}
+    assert strain == {"joyful": 0, "sad": 2}
+
+
+def test_parse_response_still_reads_bare_strings_and_reports_no_strain():
+    from emocap.data.generate import parse_response
+
+    strain: dict[str, int] = {}
+    caps = parse_response('{"joyful": "a bright thing", "sad": "a dim thing"}', strain=strain)
+    assert caps == {"joyful": "a bright thing", "sad": "a dim thing"}
+    assert strain == {}, "a bare string reports no strain; it must not default to 0"
+
+
+def test_strain_is_absent_not_zero_when_the_model_omits_it():
+    from emocap.data.generate import parse_response
+
+    strain: dict[str, int] = {}
+    parse_response('{"joyful": {"text": "a bright thing happens today"}}', strain=strain)
+    assert strain == {}, "missing strain is unknown, never 0"
+
+
+def test_out_of_range_strain_is_treated_as_unknown():
+    from emocap.data.generate import parse_response
+
+    strain: dict[str, int] = {}
+    caps = parse_response('{"joyful": {"text": "a bright thing happens today", "strain": 7}}',
+                          strain=strain)
+    assert caps["joyful"] == "a bright thing happens today", "the caption survives"
+    assert strain == {}, "7 is not a strain level; it must not be clamped to 2"
+
+
+def test_parse_batch_response_collects_strain_per_caption_index():
+    import json as _json
+
+    from emocap.data.generate import parse_batch_response
+
+    raw = _json.dumps({
+        "0": {e: {"text": f"caption zero for {e} register here", "strain": 0} for e in EMOTIONS},
+        "1": {e: {"text": f"caption one for {e} register here", "strain": 2} for e in EMOTIONS},
+    })
+    strain: dict[int, dict[str, int]] = {}
+    m = parse_batch_response(raw, 2, strain=strain)
+    assert len(m) == 2
+    assert strain[0]["joyful"] == 0
+    assert strain[1]["sad"] == 2
+
+
+def test_generation_record_round_trips_strain():
+    import json as _json
+
+    from emocap.data.generate import GenerationRecord
+
+    rec = GenerationRecord(image_id="a.jpg", caption_idx=0, source_caption="x",
+                           captions={"joyful": "y"}, model="m", strain={"joyful": 1})
+    assert _json.loads(rec.to_json())["strain"] == {"joyful": 1}
+
+
+def test_a_record_written_before_the_strain_field_still_loads():
+    from emocap.data.generate import read_records
+
+    import json as _json
+    from pathlib import Path as _P
+    import tempfile
+
+    with tempfile.TemporaryDirectory() as d:
+        p = _P(d) / "old.jsonl"
+        p.write_text(_json.dumps({
+            "image_id": "a.jpg", "caption_idx": 0, "source_caption": "x",
+            "captions": {"joyful": "y"}, "model": "m", "attempts": 1,
+            "rejected": {}, "created_at": "2026-08-18T00:00:00",
+        }) + "\n")
+        recs = read_records(p)
+    # read_records yields plain dicts, so an older record simply has no "strain" key.
+    # Every consumer must therefore use .get("strain", {}) -- never ["strain"].
+    assert len(recs) == 1
+    assert "strain" not in recs[0]
+    assert recs[0].get("strain", {}) == {}
