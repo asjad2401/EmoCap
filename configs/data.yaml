@@ -26,11 +26,16 @@ data:
 
 # Operational only -- not pre-registered, safe to tune.
 paths:
-  captions_file: "data/flickr8k/captions.txt"
+  # The Flickr8k distribution names this Flickr8k.token.txt. This key said
+  # "captions.txt" until 2026-08-20 -- a file that does not exist. It went unnoticed
+  # because run_stage02.py reads the token file by name rather than through this key,
+  # but a config pointing at a missing file is a landmine for the next reader.
+  captions_file: "data/flickr8k/Flickr8k.token.txt"
   images_dir: "data/flickr8k/Images"
   raw_generations: "data/generated/captions_raw.jsonl"
-  clean_captions: "data/generated/captions.parquet"
-  splits_file: "data/splits.csv"
+  # NOT YET GENERATED -- these are planned outputs of stages 03 and 01, not stale paths.
+  clean_captions: "data/generated/captions.parquet"   # stage 03 output, does not exist yet
+  splits_file: "data/splits.csv"                      # stage 01 output, does not exist yet
 
 generation:
   model: "gemini-3.1-flash-lite"
