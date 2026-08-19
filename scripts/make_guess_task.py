@@ -150,7 +150,7 @@ document.getElementById('exp').onclick = () => {
     exported_at:new Date().toISOString(), answers:S.answers};
   const b = new Blob([JSON.stringify(out,null,2)], {type:'application/json'});
   const a = document.createElement('a');
-  a.href = URL.createObjectURL(b); a.download = `emocap-guess-${D.mode}.json`; a.click();
+  a.href = URL.createObjectURL(b); a.download = `emocap-guess-${D.mode}-${D.seed}.json`; a.click();
 };
 if (Object.keys(S.answers).length || S.i) render(); else intro();
 </script></body></html>
@@ -163,7 +163,16 @@ def main() -> None:
     ap.add_argument("--n", type=int, default=100, help="items; rounded down to a multiple of 5")
     ap.add_argument("--store", default=None, help="caption store (default: the v5 corpus)")
     ap.add_argument("--seed", type=int, default=None)
+    ap.add_argument("--exclude-images", default=None,
+                    help="JSON list of image_ids to keep OUT of the task. Use this whenever "
+                         "the guesser has already seen those images WITH their labels in a "
+                         "quality audit -- otherwise the task measures recall of the audit "
+                         "rather than legibility of the caption.")
     ap.add_argument("--out", default=None)
+    ap.add_argument("--key", default=None,
+                    help="where the answer key goes; default runs/guess/{mode}_key.json. "
+                         "Set it when building a SECOND task in the same mode, or the first "
+                         "task's key is overwritten and its export becomes unscoreable.")
     args = ap.parse_args()
 
     cfg = load_config("data")
@@ -171,6 +180,17 @@ def main() -> None:
     if not store.is_absolute():
         store = ROOT / store
     recs = [json.loads(l) for l in store.read_text().splitlines() if l.strip()]
+
+    blocked: set[str] = set()
+    if args.exclude_images:
+        bp = Path(args.exclude_images)
+        if not bp.is_absolute():
+            bp = ROOT / bp
+        blocked = set(json.loads(bp.read_text()))
+        before = len({r["image_id"] for r in recs})
+        recs = [r for r in recs if r["image_id"] not in blocked]
+        after = len({r["image_id"] for r in recs})
+        print(f"excluded {before - after} already-seen images -> {after} available")
 
     seed = args.seed if args.seed is not None else (20260820 if args.mode == "text" else 20260821)
     per = args.n // len(EMOTIONS)
@@ -200,6 +220,12 @@ def main() -> None:
             taken += 1
             if taken >= per:
                 break
+        if taken < per:
+            raise SystemExit(
+                f"only {taken} unique-image captions available for '{e}', need {per}. "
+                f"The one-image-per-item rule is not negotiable -- an image seen twice hands "
+                f"the guesser a free comparison. Lower --n or generate more images."
+            )
     rng.shuffle(items)
 
     # The answer key goes to a SEPARATE file the page never loads.
@@ -214,10 +240,10 @@ def main() -> None:
     out = ROOT / (args.out or f"GUESS-{args.mode.upper()}.html")
     out.write_text(PAGE.replace("__DATA__", json.dumps(data)).replace("__TITLE__", title),
                    encoding="utf-8")
-    kp = ROOT / f"runs/guess/{args.mode}_key.json"
+    kp = ROOT / (args.key or f"runs/guess/{args.mode}_key.json")
     kp.parent.mkdir(parents=True, exist_ok=True)
     kp.write_text(json.dumps({"mode": args.mode, "seed": seed, "source": store.name,
-                              "key": key}, indent=2))
+                              "excluded_images": sorted(blocked), "key": key}, indent=2))
 
     print(f"wrote {out}  ({out.stat().st_size/1024:.0f} KB)")
     print(f"  {len(items)} items, {per} per register, from {store.name}")
