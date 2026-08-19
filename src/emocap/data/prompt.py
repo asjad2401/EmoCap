@@ -13,6 +13,16 @@ of the red wooden house"*. Two changes here:
 
 Emotion comes from diction, rhythm, and which detail leads -- never from naming the
 feeling. That is the whole design.
+
+**v6 (2026-08-20)** turns v5's prohibitions into verification tests. A hand audit of 200 v5
+captions found only 1.0% were untrue of their photograph but **30.5% did not convey their
+register to a reader**, and `sad` failed 52% of the time. v5 had banned light, weather,
+posture, gaze and pace -- which is the entire palette prose uses for mood -- because the
+model was fabricating them. The fix is not prohibition but verification: use them, and check
+they are true of the image. Failures also clustered by image (three of forty resisted every
+register), and the model could NOT self-identify those cases: correlation between its own
+`strain` flags and the auditor's failures was +0.066. So there is no filter, only better
+technique -- see "WHEN THE EVENT RESISTS THE REGISTER".
 """
 
 from __future__ import annotations
@@ -53,12 +63,30 @@ BANNED_ADVERBS = (
 #
 # A content instruction is an invitation to invent that content. A manner instruction
 # is not, so these describe rhythm, verb choice and restraint only.
+# v6 (2026-08-20): each definition now carries TECHNIQUE, not just prohibitions. A hand
+# audit of 200 v5 captions found 30.5% did not convey their register to a reader at all --
+# sad failed 52% of the time and romantic 42% -- while only 1.0% were untrue of the image.
+# v5 bought near-perfect faithfulness at the cost of the thing the study measures. The
+# definitions below say what to DO; the prohibitions moved to verification tests.
 REGISTERS = {
-    "joyful": "brisk and warm. Short clauses, active verbs; put the energy in the verb, not in added adjectives.",
-    "sad": "slow and plain. Spare wording, flat rhythm, no intensifiers -- the weight comes from restraint, never from adding isolation or emptiness.",
-    "tense": "clipped and immediate. Short front-loaded clauses, present tense -- never from adding danger, threat or weather that is not there.",
-    "romantic": "unhurried and attentive, the way someone fond of the subject would describe it -- the warmth is in the care of the description, never in added touching, closeness, or a relationship between people.",
-    "humorous": "dry and deadpan. Understates something faintly absurd in the situation -- never at the expense of how a person looks.",
+    "joyful": "brisk and warm. Short clauses, active verbs, the energy in the verb itself. "
+              "Look for motion, colour, light, openness -- and say which one you found.",
+    "sad": "slow and plain. Find what the scene has LESS of -- space, company, colour, "
+           "motion, warmth -- and let the sentence rest there. Flat light, bare ground, a "
+           "wide empty background all do real work. The weight comes from restraint and "
+           "from what you choose to notice, never from claiming an isolation that is not "
+           "in the frame.",
+    "tense": "clipped and immediate. Short front-loaded clauses, present tense. Look for "
+             "what is unresolved in the frame -- a held position, an edge, something "
+             "mid-air, two things about to meet. Never invented danger or weather.",
+    "romantic": "unhurried and attentive, the way someone fond of the subject would "
+                "describe it. Slow the sentence down. Notice ONE thing carefully rather "
+                "than everything briefly -- warm light, a texture, a small gesture. The "
+                "warmth lives in the quality of the attention, never in invented closeness "
+                "between people.",
+    "humorous": "dry and deadpan. Understate something faintly absurd that is genuinely "
+                "in the frame -- a mismatch of scale, an object out of place, an "
+                "over-committed effort. Never at the expense of how a person looks.",
 }
 
 _WORKED_EXAMPLES = """\
@@ -67,13 +95,17 @@ Worked examples, on the caption "A child in a pink dress is climbing up a set of
   joyful
     BAD   A child joyfully climbs the stairs.                        <- names the feeling
     BAD   A child ascends a staircase of small dreams.               <- metaphor
-    BAD   A child climbs the stairs as warm sunlight dances.         <- invents sunlight; not in the caption
+    BAD   A child climbs the stairs as warm sunlight dances.         <- "dances" is metaphor. Naming
+                                                                    the light is fine when it is
+                                                                    there -- check the photo first
     GOOD  A child in a pink dress bounds up the entryway stairs of the wooden house.
 
   sad
     BAD   The stairs, a quiet witness to her small ascent.           <- personification, abstraction
     BAD   A child climbs the stairs, sadly alone.                    <- names the feeling
-    BAD   A child climbs slowly toward the dark, empty opening.      <- invents solitude, pace and gloom
+    BAD   A child climbs slowly toward the dark, empty opening.      <- "slowly" changes the pace and
+                                                                    "empty" contradicts the photo.
+                                                                    "dark" would be fine if it were
     GOOD  A child in a pink dress climbs the entryway stairs, one step, then another.
 
   romantic
@@ -95,49 +127,40 @@ Worked examples, on the caption "A child in a pink dress is climbing up a set of
 #: hold -- the earlier prompt already said "you may not add, invent, imply" and every
 #: example below still shipped.
 _NO_INVENTION = """\
-THE FIVE FORBIDDEN SHORTCUTS
-These are the tempting ways to reach a register by altering the scene. All banned.
+THE FIVE THINGS TO VERIFY BEFORE YOU WRITE THEM
+These are not banned words. They are the details most often INVENTED to reach a register,
+so each one carries a test. Pass the test and use it freely -- these are exactly the
+details that carry mood.
 
-  1. COMPANY OR SOLITUDE.
-     Never write "alone", "single", "lone", "solitary", "by himself", "empty", or
-     "in silence" to reach a mood. If two or more subjects are present, no rewrite
-     may imply one is by itself.
-       BAD   A single tent sits alone on the vast ice, waiting to be set up.
-             (asserts solitude, and reverses "is being set up" into "waiting")
-       BAD   Two workers sit on a beam, taking a quiet break alone.
-             ("alone" contradicts the "two" in its own sentence)
+  1. COMPANY. Count the subjects in the photograph, then never contradict the count.
+     One subject may be described as alone. Two may not, however lonely the scene feels.
+       WRITE   A single tent on the ice, the lake bare in every direction.   (one tent visible)
+       DO NOT  A single tent sits alone on the vast ice.                     (two people are setting it up)
 
-  2. PACE AND MANNER OF MOTION.
-     Whatever the subject is doing, it does it at the same speed in all five
-     rewrites. Never downshift to "slowly", "calmly", "gracefully", "gently",
-     "lingers", "drifts", "glides" to reach a softer register.
-       BAD   A light-coloured dog moves slowly across the sand.
-       BAD   The dog moves gracefully, its coat glowing.
-             (both re-pace a caption that said the dog was running)
+  2. PACE. Whatever the subject is doing, it does at the same speed in all five rewrites.
+     Describe the speed you can see -- a sprint is a sprint in the sad rewrite too.
+       WRITE   The dog runs the length of the wet sand, mouth open.
+       DO NOT  The dog moves slowly across the sand.                         (it is at a full sprint)
 
-  3. CONTACT AND RELATIONSHIP.
-     Never add touching, leaning, holding or embracing, and never turn people into
-     "a couple", "lovers", or "friends", unless the caption says so.
-       BAD   A couple of friends lean into each other on the ledge.
-             (invents contact, and a relationship, from "several people sitting")
+  3. CONTACT AND RELATIONSHIP. ABSOLUTE -- never inferred, ever. No touching, leaning,
+     holding or embracing that is not visible, and never "a couple", "lovers", "friends"
+     unless the caption says so.
+       DO NOT  A couple of friends lean into each other on the ledge.        (five people, not touching)
 
-  4. LIGHT, WEATHER AND TIME OF DAY.
-     Never name them to reach a mood, even if you can see them. They belong in your
-     word choice, not in your sentence.
-       BAD   The ball hovers, and a big dog reaches for it with its nose as the light
-             fades.
-       BAD   ... under an overcast sky / in the warm evening glow / in the fading light
+  4. LIGHT AND WEATHER. Name the light you can SEE. Grey overcast, hard midday sun, deep
+     shade, long shadows -- all fair, all useful, and for `sad` and `romantic` often the
+     best material in the frame.
+       WRITE   The pair stand in flat grey light, the water behind them still.
+       DO NOT  ...as the light fades.                                        (invented; a bright photo)
 
-  5. POSTURE, GAZE AND GRIP YOU CANNOT SEE.
-     A visible expression or posture may be named. An inferred one may not, and a
-     tightened body is the commonest invention.
-       BAD   Two men sit on the ground, their heads bowed low.
-       BAD   Two men sit on the ground, hands gripped tight, going through backpacks.
-       BAD   A blond woman rests her head near a person in a pink costume.
-             (invents contact from "poses with")
+  5. POSTURE AND GAZE. Name the posture you can SEE. A slumped shoulder, a turned-away
+     head, a fixed stare, hands in pockets. Do not infer a feeling from a face too small
+     or too blurred to read.
+       WRITE   He stands with his shoulders drawn in, looking past the camera.
+       DO NOT  ...his eyes full of regret.                                   (unreadable at this size)
 
-A rewrite that needs any of these to carry its register has failed. Carry it with
-verbs, rhythm and word choice instead, or let the register be subtle.
+Reversing what the caption says happened is a failure regardless of register: "is being set
+up" must not become "waiting to be set up".
 """
 
 
@@ -176,7 +199,36 @@ Five devices. All keep every fact intact, and they are the only tools you need.
      there. This is the most useful of the five devices and the least used: reach for
      it before you reach for an adjective.
 
-WHEN THE PICTURE RESISTS THE REGISTER, SAY SO
+WHEN THE EVENT RESISTS THE REGISTER, LOOK AWAY FROM THE EVENT
+This is the single most common way a rewrite fails, and it is fixable every time.
+
+The register does NOT have to come from what the subject is doing or feeling. It can come
+from anything visible: the light, the weather, how much empty space there is, what sits at
+the edge of the frame, what is worn or bare or crowded or still.
+
+People laughing in a photograph do not make a `sad` rewrite dishonest. They make it a
+rewrite about the grey light, or the empty street behind them, or how small they are in a
+wide frame. **Attend to a different true thing.**
+
+  Caption: "A man with a white hat and plaid shirt behind a woman with a red headdress."
+    sad
+      BAD   A man in a white hat and plaid shirt is positioned behind a woman with a red
+            headdress.
+            (the caption restated -- the event had no sadness so nothing was attempted)
+      GOOD  Behind the woman's red headdress the man waits, the wall past them bare and grey.
+            (the register comes from the wall and the light, both visible)
+
+  Caption: "A man sits on a rock next to a folding deck chair and a fishing pole."
+    romantic
+      BAD   The man sits on a rock, accompanied by a fishing pole and a folding deck chair.
+            (a list; "accompanied by" is doing no work)
+      GOOD  He has set the chair and the rod down beside him and taken the rock instead.
+            (one noticed choice, unhurried -- attention, not invented warmth)
+
+**If you find yourself writing the caption back with one word changed, you have looked only
+at the event.** Widen your attention until you find something the register can rest on.
+
+WHEN A REGISTER STILL WILL NOT FIT
 Some scenes have no strong sad reading. Some have no romantic one. A posed portrait
 may have nothing tense in it; a photograph in which nothing is absurd has nothing
 humorous in it. This is expected and it is not your fault.
@@ -308,11 +360,28 @@ these five keys: {keys}. Each maps to an object with two fields:
   "strain"  0, 1 or 2 -- how well this register fits the scene (see below)
 
 WHAT MUST STAY TRUE
-Every person, object, action and attribute you write must be present in the original \
-caption. You may omit details to fit the word limit. You may not add, invent, imply, \
-rename or generalise anything. If the original says "a wooden bench", do not write \
-"a seat", and do not add weather, light, time of day, emotion on a face, or intent \
-that the caption does not state.
+**Nothing you write may be FALSE of the photograph. That is the whole constraint on
+content.**
+
+You are looking at the image, not only at the caption. DESCRIBE WHAT YOU CAN SEE -- the
+light, the weather, posture, expression, how fast something is moving, how open or crowded
+the space is, what is at the edge of the frame. These are the raw material of mood and you
+are expected to use them.
+
+The caption tells you what the scene is. The photograph tells you everything else. Where
+the caption is silent, look. Where the caption is wrong, the photograph wins.
+
+The test for any detail is one question: WOULD SOMEONE LOOKING AT THIS PHOTOGRAPH AGREE?
+If yes, write it. If you are guessing, leave it out.
+
+You may omit anything. You are never required to mention every element of the caption --
+five rewrites that each keep a different subset are five different sentences, which is the
+point.
+
+YOU ARE ALLOWED TO INTERPRET
+A scene has an atmosphere, and saying what it is counts as description. "The field is empty
+behind them" is interpretation and is fine. "They are lonely" is invention and is not. The
+line is whether the photograph supports it, not whether the caption stated it.
 
 WHERE THE EMOTION COMES FROM
 Word choice, sentence rhythm, and which detail you put first. Never from naming the \
@@ -323,7 +392,8 @@ feeling, and never from figurative language.
 {_HONEST_DEVICES}
 {_WORKED_EXAMPLES}
 HARD RULES
-  1. Between {min_words} and {max_words} words. Count before finalising. {min_words} is a HARD floor, not a target -- being spare never means going under it, and a rewrite that lands short must be expanded with a true detail from the caption.
+  1. Between {min_words} and {max_words} words. Count before finalising. {min_words} is a HARD floor, not a target -- being spare never means going under it, and a rewrite that lands short must be expanded with a true detail from the caption OR from the \
+photograph -- the image is full of them.
   2. Exactly one sentence per register.
   3. No metaphor, simile, or personification. No abstraction such as "a testament to", \
 "a reminder of", "an echo of", "a symphony of", "a dance of".
@@ -335,7 +405,11 @@ looks. No remark on anyone's body, weight, face, clothing, age or ability, and n
 that reads as mockery of a person -- most of these photographs are of ordinary people \
 and many are of children. If the only available joke is about how someone looks, there \
 is no joke: write the plainest faithful sentence and mark its strain 2.
-  6. The five rewrites must be clearly distinguishable from one another.
+  6. THE SORTING TEST. Strip the register labels off your five sentences and hand them to \
+a stranger. They must be able to sort them back. If two could swap labels without anyone \
+noticing, BOTH have failed -- however well each reads alone. Two rewrites sharing their main \
+clause is the commonest failure: change the verb, change what the sentence is about, change \
+where it starts. A different adjective on the same sentence is not a different sentence.
 
 REGISTERS
 {registers}

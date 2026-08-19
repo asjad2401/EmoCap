@@ -1,0 +1,38 @@
+{
+  "store": "captions_raw.jsonl (FULL CORPUS, v5 prompt)",
+  "cells": 201900,
+  "images": 8076,
+  "chance": 0.2,
+  "lexical_shortcut": {
+    "accuracy": 0.332
+  },
+  "tfidf": {
+    "accuracy": 0.744
+  },
+  "floor_tfidf": {
+    "accuracy": 0.201
+  },
+  "artifact_ablation_tfidf": {
+    "accuracy": 0.744
+  },
+  "distilroberta": {
+    "folds_completed": 2,
+    "folds_planned": 3,
+    "per_fold": [
+      0.773,
+      0.777
+    ],
+    "device": "mps",
+    "duty": 0.5,
+    "fold_pause": 600
+  },
+  "status": "STOPPED DELIBERATELY after fold 1 of 3",
+  "why_stopped": "The 200-caption hand audit found 30.5% of v5 captions fail to convey their register to a reader, so the v5 corpus is being discarded and regenerated with prompt v6 on gemini-3.5-flash. This gate was measuring data that will not be used. Fold 1 had already settled the question it existed to answer: with floor 0.201 and ceiling 0.773 the floor-to-ceiling range is 57 points against an MDE of 2.3 under 5-fold CV, so the detectability criterion passes comfortably. Folds 2 and 3 would have refined the third decimal and produced a full-corpus confusion matrix -- a paper artifact, not a decision input.",
+  "ceiling": {
+    "accuracy": 0.773,
+    "instrument": "DistilRoBERTa",
+    "n_folds": 2,
+    "note": "single fold; treat as approximate"
+  },
+  "retained_because": "The v5 -> v6 comparison is part of the write-up, so the abandoned corpus's ceiling is worth having on record rather than deleted."
+}

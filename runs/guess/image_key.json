@@ -1,0 +1,307 @@
+{
+  "mode": "image",
+  "seed": 20260821,
+  "source": "captions_raw.jsonl",
+  "key": {
+    "t6_3673032164": {
+      "truth": "tense",
+      "image_id": "3673032164_6c6843de87.jpg",
+      "text": "Two girls arm wrestle, locked in place, as a third girl intently observes."
+    },
+    "j2_3033741581": {
+      "truth": "joyful",
+      "image_id": "3033741581_136889ac73.jpg",
+      "text": "A boy stands in the pool, enjoying the sun and the refreshing water outside."
+    },
+    "r9_237953705_": {
+      "truth": "romantic",
+      "image_id": "237953705_cfe6999307.jpg",
+      "text": "Three young children play with rolls of toilet paper, moving together across the wide expanse of grass."
+    },
+    "r11_3420469425": {
+      "truth": "romantic",
+      "image_id": "3420469425_2980b4cd30.jpg",
+      "text": "The woman cradles the baby, while a man observes, and a second man watches the scene."
+    },
+    "h10_3487979741": {
+      "truth": "humorous",
+      "image_id": "3487979741_5f244c0c4b.jpg",
+      "text": "That person in the green shirt is riding a bike at an angle approaching horizontal."
+    },
+    "r2_426065353_": {
+      "truth": "romantic",
+      "image_id": "426065353_e9a604a01f.jpg",
+      "text": "Three men in dress shirts occupy the bar with a woman reclining there."
+    },
+    "t10_3722507770": {
+      "truth": "tense",
+      "image_id": "3722507770_0d6cb7420e.jpg",
+      "text": "Arms extended, the young biker maintains control of his bike throughout this mid-air trick."
+    },
+    "t0_3403263046": {
+      "truth": "tense",
+      "image_id": "3403263046_3cc701a07a.jpg",
+      "text": "An arm attempts to block as a female basketball player in red holds the ball, gazing upward."
+    },
+    "j6_1663751778": {
+      "truth": "joyful",
+      "image_id": "1663751778_90501966f0.jpg",
+      "text": "A person makes progress, climbing up the side of a large rock."
+    },
+    "t3_3443030942": {
+      "truth": "tense",
+      "image_id": "3443030942_f409586258.jpg",
+      "text": "Snow flies behind as the person skis, fighting for balance on the steep white slope."
+    },
+    "h11_1286408831": {
+      "truth": "humorous",
+      "image_id": "1286408831_05282582ed.jpg",
+      "text": "A child scales the ladder, seemingly attempting to assist his climb with his tongue."
+    },
+    "t4_3520199925": {
+      "truth": "tense",
+      "image_id": "3520199925_ca18d0f41e.jpg",
+      "text": "The curly haired woman stands firm as she plays the violin."
+    },
+    "j0_2343525685": {
+      "truth": "joyful",
+      "image_id": "2343525685_3eba3b6686.jpg",
+      "text": "A dark-haired man in a brown shirt grips the grey stone and climbs up."
+    },
+    "h2_3134586018": {
+      "truth": "humorous",
+      "image_id": "3134586018_ae03ba20a0.jpg",
+      "text": "A man and woman pose for a picture together, and neither one manages a smile."
+    },
+    "t2_3196100539": {
+      "truth": "tense",
+      "image_id": "3196100539_102fe877b3.jpg",
+      "text": "A wrestler claims the win, his arms raised high as the match abruptly stops."
+    },
+    "j10_2800758232": {
+      "truth": "joyful",
+      "image_id": "2800758232_d7fa598065.jpg",
+      "text": "A young couple stands near the shore, eyes bright as they face the vast ocean."
+    },
+    "t5_2393410666": {
+      "truth": "tense",
+      "image_id": "2393410666_b8c20fff61.jpg",
+      "text": "The black greyhound, clad in a blue jacket, powers its legs across the green grass."
+    },
+    "j8_94232465_a": {
+      "truth": "joyful",
+      "image_id": "94232465_a135df2711.jpg",
+      "text": "A lady skates across the ice and pulls her young child in a small buggy."
+    },
+    "h5_3322200641": {
+      "truth": "humorous",
+      "image_id": "3322200641_c2e51ff37b.jpg",
+      "text": "The black dog treats the tire tracks in the snow like a grand hurdle ."
+    },
+    "h1_1096165011": {
+      "truth": "humorous",
+      "image_id": "1096165011_cc5eb16aa6.jpg",
+      "text": "The boy smiles underwater at the pool, seemingly pleased with his choice of venue."
+    },
+    "t1_2327088022": {
+      "truth": "tense",
+      "image_id": "2327088022_478dbd2c17.jpg",
+      "text": "Using a pick , a man scales an icy glacier , inching his way upward ."
+    },
+    "r5_271637337_": {
+      "truth": "romantic",
+      "image_id": "271637337_0700f307cf.jpg",
+      "text": "The furry dog jumps over a hurdle, moving through the air with a steady, sure intent."
+    },
+    "s3_3350785999": {
+      "truth": "sad",
+      "image_id": "3350785999_462f333c44.jpg",
+      "text": "People from an African village sit on the ground as the group remains still."
+    },
+    "r8_3003011417": {
+      "truth": "romantic",
+      "image_id": "3003011417_79b49ff384.jpg",
+      "text": "Young children paddle their craft, sharing the simple experience of being on the water."
+    },
+    "r1_2693425189": {
+      "truth": "romantic",
+      "image_id": "2693425189_47740c22ed.jpg",
+      "text": "A little boy in blue shorts holds a yellow noodle with care over the pool."
+    },
+    "t7_3057618932": {
+      "truth": "tense",
+      "image_id": "3057618932_3b80ae85de.jpg",
+      "text": "Down the concrete stairway the cyclist is biking, focused on the path ."
+    },
+    "t11_1420060020": {
+      "truth": "tense",
+      "image_id": "1420060020_7a6984e2ea.jpg",
+      "text": "Practicing combat, the person in a black and red outfit maintains a rigid posture."
+    },
+    "j3_3025495499": {
+      "truth": "joyful",
+      "image_id": "3025495499_b15797b452.jpg",
+      "text": "The tennis player makes a determined face as she connects with the ball."
+    },
+    "r7_497579819_": {
+      "truth": "romantic",
+      "image_id": "497579819_f91b26f7d3.jpg",
+      "text": "A dog wanders through the open grassy area, tethered by a simple, long leash."
+    },
+    "r6_3741827382": {
+      "truth": "romantic",
+      "image_id": "3741827382_71e93298d0.jpg",
+      "text": "The boy in the green shirt climbs the blue inflatable, focused on his path."
+    },
+    "r4_260520547_": {
+      "truth": "romantic",
+      "image_id": "260520547_944f9f4c91.jpg",
+      "text": "Walking the waterfront, the couple follows the path with the city set behind their steps ."
+    },
+    "s4_1408958345": {
+      "truth": "sad",
+      "image_id": "1408958345_68eea9a4e4.jpg",
+      "text": "Running across the beach in a flower swimsuit, a little girl has waves behind her."
+    },
+    "s10_3745451546": {
+      "truth": "sad",
+      "image_id": "3745451546_fc8ec70cbd.jpg",
+      "text": "A person makes a way up the hill, step by step."
+    },
+    "t8_249394748_": {
+      "truth": "tense",
+      "image_id": "249394748_2e4acfbbb5.jpg",
+      "text": "Two white dogs are running, and their rigid posture suggests they are locked onto a target."
+    },
+    "h9_3312096605": {
+      "truth": "humorous",
+      "image_id": "3312096605_f458757418.jpg",
+      "text": "Two people occupy a dock, choosing to sit exactly where the wood meets the water."
+    },
+    "r3_2558911884": {
+      "truth": "romantic",
+      "image_id": "2558911884_856dfc3951.jpg",
+      "text": "Three young boys play outside where the trees provide a quiet backdrop."
+    },
+    "j7_965444691_": {
+      "truth": "joyful",
+      "image_id": "965444691_fe7e85bf0e.jpg",
+      "text": "A man holds a baby near a carnival game, both looking toward the bright lights."
+    },
+    "j9_309049466_": {
+      "truth": "joyful",
+      "image_id": "309049466_1d7e7d5fc2.jpg",
+      "text": "The dog excitedly retrieves the Frisbee as it leaps through the deep snow."
+    },
+    "r10_1716445442": {
+      "truth": "romantic",
+      "image_id": "1716445442_9cf3528342.jpg",
+      "text": "A woman is picking up a large rock while the environment remains still and quiet."
+    },
+    "t9_2795352290": {
+      "truth": "tense",
+      "image_id": "2795352290_9209b214f3.jpg",
+      "text": "With bows in her hair, a little girl screams, her face held in a tight grimace."
+    },
+    "s5_2457052334": {
+      "truth": "sad",
+      "image_id": "2457052334_b5a1d99048.jpg",
+      "text": "A man stands below the rock face, watching while another man climbs upward, away from the ground."
+    },
+    "s9_1515883224": {
+      "truth": "sad",
+      "image_id": "1515883224_14e36a53c7.jpg",
+      "text": "A woman in a blue shirt too small for her remains among the crowd."
+    },
+    "s0_2688102742": {
+      "truth": "sad",
+      "image_id": "2688102742_885e578a3f.jpg",
+      "text": "A girl in a short skirt stands on the sidewalk, looking at a rack of magazines."
+    },
+    "h8_1413956047": {
+      "truth": "humorous",
+      "image_id": "1413956047_c826f90c8b.jpg",
+      "text": "Three men stand on a mountain, and none of them have sat down yet."
+    },
+    "h3_811663364_": {
+      "truth": "humorous",
+      "image_id": "811663364_4b350a62ce.jpg",
+      "text": "Eyes shut, a little girl in a swimsuit hopes to clear the garden sprinkler safely."
+    },
+    "s11_3710353645": {
+      "truth": "sad",
+      "image_id": "3710353645_8fbfaa4175.jpg",
+      "text": "A girl in a pink dress is suspended in the air over a large yellow object."
+    },
+    "h7_429174232_": {
+      "truth": "humorous",
+      "image_id": "429174232_ddd4ff5e0b.jpg",
+      "text": "Several pairs of legs walk past the alley, seemingly detached from any human heads."
+    },
+    "r0_440190907_": {
+      "truth": "romantic",
+      "image_id": "440190907_bf8b7ba8ef.jpg",
+      "text": "Many people walk through the store, framed by the warm glow of the hanging lights."
+    },
+    "j4_174466741_": {
+      "truth": "joyful",
+      "image_id": "174466741_329a52b2fe.jpg",
+      "text": "A girl in a pink tank top and green pants sprints across a field of tall flowers."
+    },
+    "s6_2394922193": {
+      "truth": "sad",
+      "image_id": "2394922193_310166d6af.jpg",
+      "text": "The woman is skating in the park, surrounded by the quiet and sprawling grounds."
+    },
+    "s7_320093980_": {
+      "truth": "sad",
+      "image_id": "320093980_5388cb3733.jpg",
+      "text": "A black dog licks the woman in the black scarf, and she makes no move."
+    },
+    "j1_269650644_": {
+      "truth": "joyful",
+      "image_id": "269650644_059a84ece5.jpg",
+      "text": "A lively group of people zip across the ice in the heart of the city."
+    },
+    "s1_506343925_": {
+      "truth": "sad",
+      "image_id": "506343925_b30a235de6.jpg",
+      "text": "A brown, white, and black dog runs across the sand, leaving the space behind."
+    },
+    "s8_293151893_": {
+      "truth": "sad",
+      "image_id": "293151893_ee7249eccb.jpg",
+      "text": "Two dogs run upon the land, moving steadily along the edge of the water."
+    },
+    "h0_381239475_": {
+      "truth": "humorous",
+      "image_id": "381239475_044cbffa2b.jpg",
+      "text": "A black dog swims in the water, seemingly very proud of the tennis ball in its mouth."
+    },
+    "h4_3226796100": {
+      "truth": "humorous",
+      "image_id": "3226796100_08c49cfa5c.jpg",
+      "text": "A small child is equipped with a toy golf club on the dry ground."
+    },
+    "s2_3211453055": {
+      "truth": "sad",
+      "image_id": "3211453055_05cbfe37cd.jpg",
+      "text": "A skier in black and a skier in pink sit motionless on the bench of a ski lift."
+    },
+    "j5_2271667421": {
+      "truth": "joyful",
+      "image_id": "2271667421_7b21fc23b8.jpg",
+      "text": "Several cross-country skiers move with energy along the trail beneath the bright, open sky."
+    },
+    "h6_1339596997": {
+      "truth": "humorous",
+      "image_id": "1339596997_8ac29c1841.jpg",
+      "text": "Three women in head scarves surround a single camera, as if it were a rare object."
+    },
+    "j11_2789350645": {
+      "truth": "joyful",
+      "image_id": "2789350645_96a2535b4d.jpg",
+      "text": "A dog leaps into the air and catches its chew toy with a quick snap."
+    }
+  }
+}

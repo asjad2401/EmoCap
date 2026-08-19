@@ -88,13 +88,20 @@ generation:
   max_attempts: 3           # per (image, caption) before giving up
   concurrency: 24           # 3.37 calls/s measured, zero errors (2026-08-18)
   audit_sample: 200         # read this many by hand before the full run
-  # Prompt version in src/emocap/data/prompt.py, settled 2026-08-19 after five measured
-  # iterations over 250 audit images. Final: manner-based register definitions, five
-  # named forbidden shortcuts, five legitimate devices, a per-register `strain` report,
-  # and no self-revision block. Measurements and the reasoning for each change are in
-  # docs/lab-notebook.md and docs/deviations.md; the audit sets are in
-  # data/generated/captions_audit_v*.jsonl.
-  prompt_version: v5
+  # Prompt version in src/emocap/data/prompt.py.
+  #
+  # v6 (2026-08-20) after a 200-caption HAND audit of v5 found only 1.0% of captions untrue
+  # of their photograph but 30.5% failing to convey their register to a reader -- sad 52%,
+  # romantic 42%. v5 had bought near-perfect faithfulness at the cost of the thing the study
+  # measures, by banning light, weather, posture, gaze and pace: the whole palette prose uses
+  # for mood. v6 converts those bans into verification tests (use them, check they are true
+  # of the image), permits interpretation, adds a sorting test for distinctness, and adds
+  # "look away from the event" for registers the subject matter resists.
+  #
+  # gemini-3.5-flash on the IDENTICAL v5 prompt was measured and did NOT help -- register
+  # overlap 0.4007 -> 0.4175, WORSE, because its higher content recall (0.85 vs 0.78) hugs
+  # the source caption even closer. The bottleneck was the prompt, not the model.
+  prompt_version: v6
 
 # USD per 1M tokens. USER-SUPPLIED, from the Google AI pricing page on 2026-08-18.
 # Not authoritative and not stable -- re-check before any run that matters, and note
