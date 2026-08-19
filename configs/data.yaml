@@ -110,9 +110,20 @@ generation:
 # thinking_billed_as_output: thinking tokens are charged at the output rate and are
 # NOT included in candidates_token_count, so they are a surcharge on top of the
 # visible output. Only the lite models honour thinking_budget=0.
+# WARNING (2026-08-20): these are AI STUDIO prices and they do NOT appear to apply to
+# Vertex. Computing Vertex spend with them gave $20.30 where the GCP console showed $13 --
+# 36% over. Backing out from the console implies roughly $0.96/1M input and $5.76/1M output
+# for gemini-3.5-flash, against the $1.50/$9.00 below. Two possible causes, not yet
+# separated: Vertex publishes different prices, or GCP billing lags (it can trail 24h).
+#
+# Until that is resolved: use these for AI STUDIO batch estimates only, and treat the GCP
+# console as ground truth for anything run through Vertex. Any Vertex cost projection built
+# on this block should be quoted as an UPPER BOUND, not an estimate.
 pricing:
   as_of: "2026-08-18"
-  source: "user-supplied from Google AI pricing page"
+  source: "user-supplied from Google AI pricing page (AI Studio; NOT verified for Vertex)"
+  vertex_prices_verified: false
+  vertex_observed_2026_08_20: {computed: 20.30, console: 13.00, ratio: 0.64}
   thinking_billed_as_output: true
   batch_api_discount: 0.50   # 50% off for non-realtime batch submission
   models:
