@@ -349,3 +349,90 @@ mismatch), and retries transport faults with backoff. The 33-job full run will h
 - Five cells in v5 were rejected as "identical to the joyful rewrite" — a duplication
   mode that did not appear in v1–v4.
 - One v5 image's response failed entirely (49/50 images, 1,225/1,250 captions).
+
+---
+
+## 2026-08-19 — the ceiling gate, tested early on 1,225 captions
+
+§6 halts the study if the register classifier cannot recover the intended emotion from
+the generated captions at >= 0.85. That assumption otherwise stays untested until the
+corpus exists and both model tracks are built, so it was run on the v5 audit sample
+(`scripts/check_gates.py`, 49 images, 1,225 cells, cross-validated by `image_id`).
+
+    lexical shortcut anchor        0.394   (no model at all)
+    TF-IDF + logistic regression   0.514
+    DistilRoBERTa                  0.620   pre-registered ceiling >= 0.85
+    floor (labels shuffled)        0.192   expected ~0.20  PASS
+    artifact ablation gap         +0.000   PASS -- reads words, not punctuation
+
+**The gate is undetermined, not failed.** Each fold fine-tunes DistilRoBERTa on ~980
+examples across five classes; the pre-registered ceiling trains on the full 6,000-image
+split, roughly 150,000 captions. A learning curve confirms the sample is the binding
+constraint rather than the data:
+
+    300 cells   0.410
+    600 cells   0.480   (+0.070)
+    900 cells   0.591   (+0.111)
+    1,225 cells 0.612   (+0.021)
+
++0.202 for 4.1x the data. The final step decelerates, but with three folds over 12-49
+images that is inside the noise, and 122x more data is still to come. **Log-linear
+extrapolation of a four-point curve is not evidence** -- the honest statement is that
+0.612 is a data-starved floor and the gate cannot be decided from this sample.
+
+### Three independent instruments agree on which registers are broken
+
+| register | classifier recall | generator strain | human judge |
+|---|---|---|---|
+| joyful | 0.722 | 0.15 (easiest) | "nails it" |
+| humorous | 0.678 | 0.90 | "lands well" |
+| tense | 0.645 | 0.85 | "lands cleanly" |
+| sad | 0.563 | 0.89 | crutch-driven |
+| romantic | **0.494** | **1.05 (hardest)** | "never reads as romantic" |
+
+A trained classifier, the generator's own self-report, and a human-style judge shown only
+images and text produce the same ordering. That is convergent validity, and it makes
+"`romantic` is broken" a finding rather than an impression. The confusion matrix adds the
+mechanism: `romantic` distributes 35% of its mass onto joyful (0.17) and sad (0.18), and
+`sad`/`tense` swap at 0.20/0.18 -- exactly the taxonomy collapse §4.3 said to look for.
+
+### The anchor and the ceiling are in direct tension, and the prereg does not say so
+
+Under the v1 prompt the keyword rule alone reached **0.641** -- higher than what a trained
+transformer extracts from v5 captions (0.620). A naive pipeline would therefore have
+reported *better* emotion accuracy from *worse* data: 8.3% grounding defects, captions
+asserting solitude over two visible people.
+
+So the two pre-registered checks pull against each other. Suppressing stereotyped register
+vocabulary is required for construct validity and it removes classifier-recoverable signal
+at the same time. A caption set scoring 0.95 on the ceiling *and* 0.20 on the shortcut
+anchor may not exist. **Nothing in the preregistration acknowledges this**, and it should,
+because as written a pipeline is rewarded for stereotypy.
+
+Stated against my own interest: I rewrote the prompt to suppress stereotypy, so presenting
+the resulting drop in classifiability as a finding risks motivated interpretation. The
+defence is that the trade-off is measured across five committed caption sets under a pinned
+estimator, and that the v1 -> v5 comparison runs in the direction that makes my own work
+look worse on the primary metric.
+
+### Is 0.85 the right threshold?
+
+It was set a priori with nothing calibrating it. For five-way affective classification of
+one-sentence captions, 0.85 may exceed human-human agreement -- ArtEmis reports modest
+inter-annotator agreement on emotion categories over a comparable label set. A gate no
+achievable dataset can pass is a miscalibrated gate, not a finding about the data.
+
+Recalibrating it against a human-agreement benchmark is legitimate **now**, pre-tag, with
+the rationale logged. Doing it after seeing model results would be indefensible. This is
+precisely the kind of decision the tag exists to separate.
+
+### Still open
+
+- The decisive curve point is **25,000 cells**, obtainable by generating one 1,000-image
+  split for ~$1.30. It is needed for the study under either framing, so it is the cheapest
+  way to settle the gate. At ~0.75 the gate is plausibly reachable; at ~0.65 it is not.
+- Whether the study's primary question changes (see the reviewer critiques): a conditioning
+  ablation over an LSTM and ClipCap is well-covered ground, and the targets are synthetic
+  where FlickrStyle10K supplies human romantic and humorous captions on Flickr images.
+  §1-§3 would be rewritten under the alternative framing, so `prereg-v1` stays untagged
+  until that is decided.

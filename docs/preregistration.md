@@ -69,10 +69,15 @@ mitigations, all reported:
    is the instrument's real measurement error.
 3. **Confusion matrix**, always. If *romantic* and *sad* collapse into each other, that is
    a finding about the taxonomy, not noise to average away.
-4. **Report against the lexical-shortcut anchor.** Auditing the Part 0 captions showed
-   stereotyped register vocabulary ("bright" in 31% of joyful, "alone" in 21% of sad,
-   "soft" in 26% of romantic); a 25-keyword-per-register rule reaches 53.9% against 20%
-   chance. Classifier accuracy is therefore always reported alongside that baseline.
+4. **Report against the lexical-shortcut anchor.** Auditing Part 0 found stereotyped
+   register vocabulary that a 25-keyword-per-register rule can exploit with no model at
+   all. Under the original prompt that rule reached **0.641** against 0.200 chance —
+   nearly two-thirds of the primary metric available from vocabulary alone — driven by
+   "alone"/"empty" in 36% of sad captions, "soft"/"gentle" in 41% of romantic and
+   "bright" in 31% of joyful. The prompt was rewritten (see `docs/deviations.md`,
+   2026-08-19); under the final v5 prompt the rule reaches **0.394**, with those rates
+   at 1%, 6% and 14%. Classifier accuracy is always reported alongside this baseline,
+   recomputed by `scripts/audit_captions.py` under the estimator named in the lock.
    This threatens *construct* validity, not internal validity: stereotypy affects every
    condition equally, so it cannot explain V0 vs V2, but it does mean "emotion accuracy"
    partly measures keyword emission rather than register.
@@ -93,10 +98,23 @@ mitigations, all reported:
 |---|---|---|
 | Ceiling — accuracy on the reference captions | ≥ 0.85 | The generated data lacks separable tone. **Halt the study.** |
 | Floor — accuracy with randomly reassigned labels | ≈ 0.20 | The metric is broken. |
-| **Lexical shortcut** — top-25-keyword-per-register rule | measured **0.539** | Not a failure, a correction: this much of the primary metric needs no emotional register at all. The model's contribution is the margin above it. |
+| **Lexical shortcut** — top-25-keyword-per-register rule | measured **0.394** | Not a failure, a correction: this much of the primary metric needs no emotional register at all. The model's contribution is the margin above it. |
 | Manipulation check — V0 accuracy | ≤ 0.25 | The classifier reads something other than tone. **Results not interpretable.** |
 | Negative control — condition C | indistinguishable from V0 | Conditioning is not doing the work. |
 | Visual-dependence probe — zero the features | captions change substantially | The run collapsed to a language prior. **Exclude the run.** |
+
+### A pre-registered prediction the data already contradicts
+
+`anchors.expected_hardest_registers` was registered as `[tense, humorous]`, on the
+reasoning that those two have the weakest lexical markers. Measured register difficulty
+on the v5 Part 0 sample — the generator's own strain report over 1,225 cells — orders
+them **romantic 1.05 > humorous 0.90 > sad 0.89 > tense 0.85 > joyful 0.15**. `tense` is
+not among the hardest; `romantic` is, which the independent human judge found as well
+(`docs/part0-human-judge-notes.md`).
+
+The prediction is **left as registered and the disagreement reported**. It is recorded
+here before any model is trained, so it also functions as a prior on where the confusion
+matrix in §4.3 should concentrate.
 
 ## 7. Exclusion criteria
 

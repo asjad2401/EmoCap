@@ -154,3 +154,65 @@ def test_defect_counts_reports_rate_and_class_breakdown():
     assert out["by_class"]["contact"] == 1 and out["by_class"]["light"] == 1
     assert out["by_register"]["sad"] == 2 and "joyful" not in out["by_register"]
     assert out["rate"] == pytest.approx(1.0)
+
+
+# ── the register classifier, as an instrument ───────────────────────────────
+
+
+def test_folds_never_split_one_image_across_the_boundary():
+    """The property the ceiling number depends on: no near-duplicate leakage.
+
+    The 25 cells of one image are rewrites of five near-identical source captions. If a
+    fold puts some on each side, the classifier sees the test text during training and
+    every accuracy here is inflated.
+    """
+    from emocap.eval.register_classifier import folds_by_image
+
+    images = [f"img{i // 5}.jpg" for i in range(50)]
+    for train, test in folds_by_image(images, folds=5, seed=1):
+        train_images = {images[i] for i in train}
+        test_images = {images[i] for i in test}
+        assert not (train_images & test_images)
+
+
+def test_every_image_is_held_out_exactly_once():
+    from emocap.eval.register_classifier import folds_by_image
+
+    images = [f"img{i}.jpg" for i in range(20)]
+    held = [img for _, test in folds_by_image(images, folds=5, seed=1)
+            for img in {images[i] for i in test}]
+    assert sorted(held) == sorted(set(images))
+
+
+def test_build_dataset_uses_the_locked_emotion_order():
+    from emocap.eval.register_classifier import build_dataset
+
+    recs = [{"image_id": "a.jpg", "source_caption": "x",
+             "captions": {e: f"caption for {e}" for e in EMOTIONS}}]
+    texts, labels, images = build_dataset(recs)
+    assert [EMOTIONS[l] for l in labels] == [e for e in EMOTIONS if e in recs[0]["captions"]]
+    assert images == ["a.jpg"] * len(texts)
+
+
+def test_build_dataset_skips_blank_and_unknown_registers():
+    from emocap.eval.register_classifier import build_dataset
+
+    recs = [{"image_id": "a.jpg", "source_caption": "x",
+             "captions": {"joyful": "a real caption", "sad": "   ", "bogus": "ignore me"}}]
+    texts, labels, _ = build_dataset(recs)
+    assert texts == ["a real caption"] and len(labels) == 1
+
+
+def test_strip_artifacts_removes_punctuation_and_case():
+    from emocap.eval.register_classifier import strip_artifacts
+
+    assert strip_artifacts("A Dog runs -- fast!") == "a dog runs fast"
+
+
+def test_confusion_matrix_rows_sum_to_one_and_report_recall():
+    from emocap.eval.register_classifier import confusion_matrix
+
+    pairs = [(0, 0), (0, 0), (0, 1), (1, 1), (1, 0)]
+    cm = confusion_matrix(pairs)
+    assert cm["recall"]["joyful"] == pytest.approx(2 / 3, abs=0.01)
+    assert sum(cm["row_normalised"]["joyful"].values()) == pytest.approx(1.0, abs=0.01)

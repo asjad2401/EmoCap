@@ -571,6 +571,7 @@ dependencies = [
     { name = "numpy", version = "2.5.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
     { name = "pandas" },
     { name = "pyyaml" },
+    { name = "scikit-learn" },
     { name = "torch" },
     { name = "transformers" },
 ]
@@ -608,6 +609,7 @@ requires-dist = [
     { name = "pillow", marker = "extra == 'vision'", specifier = ">=10.2" },
     { name = "pycocoevalcap", marker = "extra == 'eval'", specifier = ">=1.2" },
     { name = "pyyaml", specifier = ">=6.0" },
+    { name = "scikit-learn", specifier = ">=1.9.0" },
     { name = "scikit-learn", marker = "extra == 'eval'", specifier = ">=1.4" },
     { name = "tenacity", marker = "extra == 'gen'", specifier = ">=8.2" },
     { name = "torch", specifier = ">=2.2" },

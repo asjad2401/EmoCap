@@ -1,0 +1,100 @@
+{
+  "store": "captions_audit_v5.jsonl",
+  "cells": 1225,
+  "images": 49,
+  "chance": 0.2,
+  "ceiling_min": 0.85,
+  "lexical_shortcut": {
+    "estimator": "cv5_by_image_id_3seeds_fractional_ties",
+    "accuracy": 0.3942,
+    "per_seed": [
+      0.3935,
+      0.3968,
+      0.3923
+    ],
+    "chance": 0.2,
+    "n_images": 49,
+    "n_cells": 1225,
+    "top_k": 25,
+    "folds": 5,
+    "seeds": [
+      0,
+      1,
+      2
+    ]
+  },
+  "tfidf": {
+    "accuracy": 0.5143,
+    "n": 1225
+  },
+  "floor_tfidf": {
+    "accuracy": 0.1918,
+    "n": 1225
+  },
+  "artifact_ablation_tfidf": {
+    "accuracy": 0.5143
+  },
+  "distilroberta": {
+    "accuracy": 0.6204,
+    "n": 1225,
+    "model": "distilroberta-base",
+    "device": "mps",
+    "epochs": 4
+  },
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.722,
+        "sad": 0.114,
+        "tense": 0.057,
+        "romantic": 0.098,
+        "humorous": 0.008
+      },
+      "sad": {
+        "joyful": 0.106,
+        "sad": 0.563,
+        "tense": 0.204,
+        "romantic": 0.086,
+        "humorous": 0.041
+      },
+      "tense": {
+        "joyful": 0.049,
+        "sad": 0.176,
+        "tense": 0.645,
+        "romantic": 0.069,
+        "humorous": 0.061
+      },
+      "romantic": {
+        "joyful": 0.171,
+        "sad": 0.184,
+        "tense": 0.114,
+        "romantic": 0.494,
+        "humorous": 0.037
+      },
+      "humorous": {
+        "joyful": 0.078,
+        "sad": 0.114,
+        "tense": 0.098,
+        "romantic": 0.033,
+        "humorous": 0.678
+      }
+    },
+    "recall": {
+      "joyful": 0.722,
+      "sad": 0.563,
+      "tense": 0.645,
+      "romantic": 0.494,
+      "humorous": 0.678
+    }
+  },
+  "manipulation_proxy": {
+    "n_human_captions": 245,
+    "note": "human Flickr8k captions carry no register; a real V0 check needs a trained unconditioned model, which does not exist yet"
+  },
+  "ceiling": {
+    "accuracy": 0.6204,
+    "instrument": "DistilRoBERTa",
+    "passes": false,
+    "margin_over_anchor": 0.2262
+  }
+}
