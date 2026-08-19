@@ -1,0 +1,18 @@
+{
+  "images": 49,
+  "captions": 1225,
+  "expected": 1250,
+  "rejections": 24,
+  "errors": 1,
+  "refused": 0,
+  "error_kinds": {
+    "RuntimeError: all 1 attempt(s) failed with no response: Gemini call failed after": 1
+  },
+  "usage": {
+    "prompt": 353913,
+    "output": 51037,
+    "thinking": 0
+  },
+  "measured_cost_usd": 0.9902,
+  "wall_seconds": 751.8
+}
