@@ -220,13 +220,18 @@ ties credited fractionally — the measurements are:
 
 | prompt | keyword-rule accuracy | chance |
 |---|---|---|
-| v1 (original) | 0.639 | 0.200 |
+| v1 (original) | 0.641 | 0.200 |
 | v3 | 0.431 | 0.200 |
-| v4 | 0.468 | 0.200 |
-| **v5 (final)** | **0.395** | 0.200 |
-| Sonnet reference | 0.347 | 0.200 |
+| v4 | 0.466 | 0.200 |
+| **v5 (final)** | **0.394** | 0.200 |
+| Sonnet reference | 0.342 | 0.200 |
 
-The lock file now carries 0.395 with the estimator named. Under the original prompt,
+The lock file carries **0.394** with the estimator named, and the estimator is now
+implemented in `src/emocap/eval/anchors.py` with `ESTIMATOR_ID` required to match the
+lock's `lexical_shortcut_estimator`. These figures are ~0.005 off the ones first
+recorded, because the ad-hoc script had no deterministic tie-break when selecting
+keywords; `anchors.py` sorts by `(-score, word)`. The committed code is authoritative
+and `scripts/audit_captions.py` recomputes every figure in this table. Under the original prompt,
 two-thirds of the primary metric was obtainable by keyword spotting; under v5 it is
 under half.
 

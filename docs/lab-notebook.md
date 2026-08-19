@@ -260,7 +260,7 @@ This is the part worth remembering, because it happened four times in a row.
 3. **v4** added a stance device and banned padding. Distinctness improved again — and
    invented **light** (0.8% → 2.9%) and **posture** (0.2% → 0.9%) appeared instead:
    *"as the light fades"*, *"their heads bowed low"*, *"hands gripped tight"*.
-4. **v5** closed those two. Defects 4.3% → 2.3%, best content recall of any version.
+4. **v5** closed those two. Defects 4.3% → 2.4%, best content recall of any version.
 
 Root cause of the v4 regression, found by a blind Opus review of the prompt text: two
 sections contradicted each other. `USE THE IMAGE FOR MOOD` granted the model "light,
@@ -271,9 +271,9 @@ by adding light.** Rewritten so the image informs word choice and never named co
 ### The overlap metric was misleading on its own
 
 Overlap kept rising as the captions got more honest, which read as a loss until the
-Sonnet reference landed: **overlap 0.411 with keyword-rule 0.347**. High overlap, low
+Sonnet reference landed: **overlap 0.411 with keyword-rule 0.342**. High overlap, low
 keyword-detectability is the *good* regime — registers separated by structure rather
-than vocabulary, which is exactly what the study needs. v5 at **0.418 / 0.395** is in
+than vocabulary, which is exactly what the study needs. v5 at **0.418 / 0.394** is in
 that same regime. Read either number alone and you draw the wrong conclusion. **Third
 time on this project a number looked informative in isolation and was not** (after
 per-token perplexity and register divergence).

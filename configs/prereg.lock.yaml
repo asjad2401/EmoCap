@@ -73,12 +73,13 @@ anchors:
   # Chance is 0.200. An earlier 0.539 in this file used a DIFFERENT estimator and is not
   # comparable -- see docs/deviations.md, 2026-08-19.
   #
-  # Measured 0.395 under the v5 prompt, against 0.639 under the original. So under half
+  # Measured 0.394 under the v5 prompt, against 0.641 under the original.
+  # Recompute with: uv run python scripts/audit_captions.py <store> So under half
   # of the primary metric is obtainable by keyword spotting alone, against two-thirds
   # before. The model's real contribution is the margin above this anchor, never the raw
   # accuracy.
   lexical_shortcut: top25_keyword_rule
-  lexical_shortcut_value: 0.395
+  lexical_shortcut_value: 0.394
   lexical_shortcut_estimator: cv5_by_image_id_3seeds_fractional_ties
   # Pre-registered expectation, so it is not discovered after the fact: `tense` and
   # `humorous` have the weakest lexical markers (grips/edge 12%; seemingly/quite 6%)
