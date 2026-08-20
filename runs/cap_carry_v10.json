@@ -5,25 +5,24 @@
   "open",
   "wide",
   "happ",
-  "play",
-  "energ",
+  "sky",
+  "blue",
+  "smil",
   "leap"
  ],
  "romantic": [
   "soft",
   "quiet",
   "light",
-  "gent",
-  "close"
+  "gent"
  ],
  "sad": [
   "empt",
   "cold",
-  "dark",
   "grey"
  ],
  "tense": [
   "mid",
-  "hold"
+  "keep"
  ]
 }

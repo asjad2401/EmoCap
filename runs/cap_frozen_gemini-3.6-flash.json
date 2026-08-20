@@ -7,23 +7,36 @@
   "happ",
   "play",
   "energ",
-  "leap"
+  "leap",
+  "togeth",
+  "way",
+  "splash"
  ],
  "romantic": [
   "soft",
   "quiet",
   "light",
   "gent",
-  "close"
+  "close",
+  "rest",
+  "warm",
+  "sunlight",
+  "leav",
+  "catch"
  ],
  "sad": [
   "empt",
   "cold",
   "dark",
-  "grey"
+  "grey",
+  "sits",
+  "alone"
  ],
  "tense": [
   "mid",
-  "hold"
+  "hold",
+  "lock",
+  "hand",
+  "tight"
  ]
 }

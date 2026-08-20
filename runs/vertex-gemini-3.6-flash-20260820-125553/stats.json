@@ -1,0 +1,257 @@
+{
+  "images": 10,
+  "captions": 250,
+  "expected": 250,
+  "rejections": 7,
+  "errors": 0,
+  "refused": 0,
+  "error_kinds": {},
+  "strain": {
+    "0": 155,
+    "1": 82,
+    "2": 13
+  },
+  "usage": {
+    "prompt": 75937,
+    "output": 11026,
+    "thinking": 0
+  },
+  "measured_cost_usd": 0.0983,
+  "wall_seconds": 32.6,
+  "vocab_cap": {
+    "final_ban_list": {
+      "joyful": [
+        "bright",
+        "high",
+        "open",
+        "wide",
+        "happ",
+        "play",
+        "energ",
+        "leap",
+        "togeth",
+        "way",
+        "splash"
+      ],
+      "sad": [
+        "empt",
+        "cold",
+        "dark",
+        "grey",
+        "sits",
+        "alone"
+      ],
+      "tense": [
+        "mid",
+        "hold",
+        "lock",
+        "hand",
+        "tight"
+      ],
+      "romantic": [
+        "soft",
+        "quiet",
+        "light",
+        "gent",
+        "close",
+        "rest",
+        "warm",
+        "sunlight",
+        "leav",
+        "catch"
+      ]
+    },
+    "cap_seed": null,
+    "detail": [
+      {
+        "register": "joyful",
+        "word": "bright",
+        "share": 0.24,
+        "elsewhere": 0.04,
+        "lift": 6.0,
+        "cap": 0.08,
+        "n_captions": 50
+      },
+      {
+        "register": "romantic",
+        "word": "quiet",
+        "share": 0.2,
+        "elsewhere": 0.1,
+        "lift": 2.0,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "tense",
+        "word": "hold",
+        "share": 0.2,
+        "elsewhere": 0.08,
+        "lift": 2.5,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "tense",
+        "word": "mid",
+        "share": 0.2,
+        "elsewhere": 0.08,
+        "lift": 2.5,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "romantic",
+        "word": "rest",
+        "share": 0.16,
+        "elsewhere": 0.04,
+        "lift": 4.0,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "sad",
+        "word": "alone",
+        "share": 0.16,
+        "elsewhere": 0.0,
+        "lift": null,
+        "cap": 0.15,
+        "n_captions": 50
+      },
+      {
+        "register": "sad",
+        "word": "sits",
+        "share": 0.16,
+        "elsewhere": 0.08,
+        "lift": 2.0,
+        "cap": 0.15,
+        "n_captions": 50
+      },
+      {
+        "register": "joyful",
+        "word": "open",
+        "share": 0.14,
+        "elsewhere": 0.06,
+        "lift": 2.33,
+        "cap": 0.08,
+        "n_captions": 50
+      },
+      {
+        "register": "romantic",
+        "word": "gent",
+        "share": 0.14,
+        "elsewhere": 0.0,
+        "lift": null,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "romantic",
+        "word": "soft",
+        "share": 0.14,
+        "elsewhere": 0.0,
+        "lift": null,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "tense",
+        "word": "lock",
+        "share": 0.14,
+        "elsewhere": 0.02,
+        "lift": 7.0,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "tense",
+        "word": "hand",
+        "share": 0.14,
+        "elsewhere": 0.04,
+        "lift": 3.5,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "romantic",
+        "word": "warm",
+        "share": 0.12,
+        "elsewhere": 0.04,
+        "lift": 3.0,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "tense",
+        "word": "tight",
+        "share": 0.12,
+        "elsewhere": 0.02,
+        "lift": 6.0,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "joyful",
+        "word": "togeth",
+        "share": 0.1,
+        "elsewhere": 0.04,
+        "lift": 2.5,
+        "cap": 0.08,
+        "n_captions": 50
+      },
+      {
+        "register": "joyful",
+        "word": "happ",
+        "share": 0.1,
+        "elsewhere": 0.0,
+        "lift": null,
+        "cap": 0.08,
+        "n_captions": 50
+      },
+      {
+        "register": "romantic",
+        "word": "sunlight",
+        "share": 0.1,
+        "elsewhere": 0.04,
+        "lift": 2.5,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "romantic",
+        "word": "catch",
+        "share": 0.1,
+        "elsewhere": 0.04,
+        "lift": 2.5,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "romantic",
+        "word": "leav",
+        "share": 0.1,
+        "elsewhere": 0.02,
+        "lift": 5.0,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "joyful",
+        "word": "way",
+        "share": 0.08,
+        "elsewhere": 0.02,
+        "lift": 4.0,
+        "cap": 0.08,
+        "n_captions": 50
+      },
+      {
+        "register": "joyful",
+        "word": "splash",
+        "share": 0.08,
+        "elsewhere": 0.02,
+        "lift": 4.0,
+        "cap": 0.08,
+        "n_captions": 50
+      }
+    ]
+  }
+}

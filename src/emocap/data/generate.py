@@ -24,6 +24,7 @@ from typing import Callable, Iterable, Mapping, Sequence
 
 from emocap.data.prompt import (
     BANNED_ADVERBS,
+    SLOT_PREFIX,
     EMOTIONS,
     batch_response_schema,
     build_batch_prompt,
@@ -296,6 +297,12 @@ def parse_batch_response(
     caller reports the completion rate rather than this function guessing. That
     per-position completeness is the measurement that decides whether batching is
     safe, so it must not be papered over here.
+
+    **Two key shapes are accepted.** Responses generated from 2026-08-20 use
+    ``slot_0``..``slot_N``; everything before it used bare ``"0"``..``"N"``. The rename was
+    forced by Vertex batch coercing numeric keys to integers (see
+    :data:`~emocap.data.prompt.SLOT_PREFIX`), and 205,000 captions already exist in the old
+    shape, so dropping the fallback would make them unreadable.
     """
     if not raw:
         return {}
@@ -318,7 +325,9 @@ def parse_batch_response(
 
     out: dict[int, dict[str, str]] = {}
     for i in range(n_sources):
-        block = data.get(str(i), data.get(i))
+        block = data.get(f"{SLOT_PREFIX}{i}")
+        if block is None:                       # pre-2026-08-20 shape
+            block = data.get(str(i), data.get(i))
         if not isinstance(block, dict):
             continue
         caps: dict[str, str] = {}

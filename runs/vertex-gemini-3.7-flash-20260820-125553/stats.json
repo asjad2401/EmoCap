@@ -1,0 +1,301 @@
+{
+  "images": 10,
+  "captions": 250,
+  "expected": 250,
+  "rejections": 1,
+  "errors": 0,
+  "refused": 0,
+  "error_kinds": {},
+  "strain": {
+    "0": 145,
+    "1": 91,
+    "2": 14
+  },
+  "usage": {
+    "prompt": 75937,
+    "output": 10757,
+    "thinking": 991
+  },
+  "wall_seconds": 32.0,
+  "vocab_cap": {
+    "final_ban_list": {
+      "joyful": [
+        "bright",
+        "high",
+        "open",
+        "wide",
+        "happ",
+        "play",
+        "energ",
+        "leap",
+        "right",
+        "upward",
+        "step",
+        "way",
+        "flying",
+        "bound"
+      ],
+      "sad": [
+        "empt",
+        "cold",
+        "dark",
+        "grey"
+      ],
+      "tense": [
+        "mid",
+        "hold",
+        "tight",
+        "lock",
+        "hand",
+        "grip",
+        "eyes",
+        "edge",
+        "both"
+      ],
+      "romantic": [
+        "soft",
+        "quiet",
+        "light",
+        "gent",
+        "close",
+        "wood",
+        "coat",
+        "warm",
+        "stead",
+        "rest",
+        "catch"
+      ],
+      "humorous": [
+        "entir"
+      ]
+    },
+    "cap_seed": null,
+    "detail": [
+      {
+        "register": "tense",
+        "word": "mid",
+        "share": 0.24,
+        "elsewhere": 0.06,
+        "lift": 4.0,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "joyful",
+        "word": "bright",
+        "share": 0.2,
+        "elsewhere": 0.06,
+        "lift": 3.33,
+        "cap": 0.08,
+        "n_captions": 50
+      },
+      {
+        "register": "tense",
+        "word": "tight",
+        "share": 0.18,
+        "elsewhere": 0.02,
+        "lift": 9.0,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "tense",
+        "word": "lock",
+        "share": 0.16,
+        "elsewhere": 0.0,
+        "lift": null,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "humorous",
+        "word": "entir",
+        "share": 0.14,
+        "elsewhere": 0.02,
+        "lift": 7.0,
+        "cap": 0.14,
+        "n_captions": 50
+      },
+      {
+        "register": "joyful",
+        "word": "right",
+        "share": 0.12,
+        "elsewhere": 0.04,
+        "lift": 3.0,
+        "cap": 0.08,
+        "n_captions": 50
+      },
+      {
+        "register": "joyful",
+        "word": "leap",
+        "share": 0.12,
+        "elsewhere": 0.04,
+        "lift": 3.0,
+        "cap": 0.08,
+        "n_captions": 50
+      },
+      {
+        "register": "romantic",
+        "word": "wood",
+        "share": 0.12,
+        "elsewhere": 0.04,
+        "lift": 3.0,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "romantic",
+        "word": "coat",
+        "share": 0.12,
+        "elsewhere": 0.0,
+        "lift": null,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "tense",
+        "word": "hand",
+        "share": 0.12,
+        "elsewhere": 0.06,
+        "lift": 2.0,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "joyful",
+        "word": "step",
+        "share": 0.1,
+        "elsewhere": 0.04,
+        "lift": 2.5,
+        "cap": 0.08,
+        "n_captions": 50
+      },
+      {
+        "register": "joyful",
+        "word": "upward",
+        "share": 0.1,
+        "elsewhere": 0.02,
+        "lift": 5.0,
+        "cap": 0.08,
+        "n_captions": 50
+      },
+      {
+        "register": "romantic",
+        "word": "rest",
+        "share": 0.1,
+        "elsewhere": 0.04,
+        "lift": 2.5,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "romantic",
+        "word": "warm",
+        "share": 0.1,
+        "elsewhere": 0.0,
+        "lift": null,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "romantic",
+        "word": "stead",
+        "share": 0.1,
+        "elsewhere": 0.0,
+        "lift": null,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "romantic",
+        "word": "soft",
+        "share": 0.1,
+        "elsewhere": 0.0,
+        "lift": null,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "romantic",
+        "word": "catch",
+        "share": 0.1,
+        "elsewhere": 0.02,
+        "lift": 5.0,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "romantic",
+        "word": "light",
+        "share": 0.1,
+        "elsewhere": 0.04,
+        "lift": 2.5,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "tense",
+        "word": "eyes",
+        "share": 0.1,
+        "elsewhere": 0.02,
+        "lift": 5.0,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "tense",
+        "word": "edge",
+        "share": 0.1,
+        "elsewhere": 0.0,
+        "lift": null,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "tense",
+        "word": "both",
+        "share": 0.1,
+        "elsewhere": 0.02,
+        "lift": 5.0,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "tense",
+        "word": "grip",
+        "share": 0.1,
+        "elsewhere": 0.0,
+        "lift": null,
+        "cap": 0.1,
+        "n_captions": 50
+      },
+      {
+        "register": "joyful",
+        "word": "flying",
+        "share": 0.08,
+        "elsewhere": 0.02,
+        "lift": 4.0,
+        "cap": 0.08,
+        "n_captions": 50
+      },
+      {
+        "register": "joyful",
+        "word": "bound",
+        "share": 0.08,
+        "elsewhere": 0.0,
+        "lift": null,
+        "cap": 0.08,
+        "n_captions": 50
+      },
+      {
+        "register": "joyful",
+        "word": "way",
+        "share": 0.08,
+        "elsewhere": 0.02,
+        "lift": 4.0,
+        "cap": 0.08,
+        "n_captions": 50
+      }
+    ]
+  }
+}

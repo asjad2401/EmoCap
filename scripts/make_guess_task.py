@@ -71,6 +71,11 @@ main{flex:1;display:flex;flex-direction:column;align-items:center;justify-conten
 .opts button:hover{border-color:var(--acc);background:var(--acc);color:#fff}
 .opts button b{display:block;font-size:11px;color:var(--mut);font-weight:400;margin-top:3px}
 .opts button:hover b{color:#fff;opacity:.8}
+.neutral{margin-top:18px;text-align:center}
+.neutral button{font:inherit;font-size:14px;padding:10px 20px;border:1px dashed var(--line);
+  border-radius:10px;background:transparent;color:var(--mut);cursor:pointer}
+.neutral button:hover{border-color:var(--acc);border-style:solid;color:var(--acc)}
+.neutral p{font-size:12px;color:var(--mut);margin:7px 0 0}
 footer{border-top:1px solid var(--line);padding:12px 18px;display:flex;gap:14px;
   align-items:center;justify-content:center}
 button.sec{font:inherit;padding:7px 15px;border:1px solid var(--line);border-radius:8px;
@@ -93,7 +98,10 @@ kbd{font:12px ui-monospace,monospace;border:1px solid var(--line);border-radius:
 </footer>
 <script>
 const D = __DATA__;
-const KEY = 'emocap-guess-' + D.mode + '-' + D.seed;
+// The suffix is the ANSWER-SCHEMA version, not the task version. Adding the neutral
+// option changed what an answer means, so answers recorded before it must not be resumed
+// into the new task -- they were forced choices and are not comparable.
+const KEY = 'emocap-guess-' + D.mode + '-' + D.seed + '-v2';
 let S = JSON.parse(localStorage.getItem(KEY) || '{"answers":{},"i":0}');
 const save = () => localStorage.setItem(KEY, JSON.stringify(S));
 const M = document.getElementById('main');
@@ -109,7 +117,12 @@ function intro(){
     <p><b>Go on instinct.</b> First reaction is the measurement &mdash; deliberating changes what
     is being tested. There is no feedback, deliberately: knowing whether you were right would
     train you mid-task.</p>
-    <p>Keys <kbd>1</kbd>&ndash;<kbd>5</kbd> work. Roughly ${Math.ceil(D.items.length/10)} minutes.</p>
+    <p>If a caption reads as <b>plain description with no emotional colouring</b>, press
+    <kbd>0</kbd> for &ldquo;no register&rdquo;. That is a real answer, not a skip: the share of
+    captions nobody can place is exactly what this corpus needs to know. <b>Do not use it when
+    you are torn between two registers</b> &mdash; guess in that case, because a caption that
+    suggests two is doing something different from one that suggests none.</p>
+    <p>Keys <kbd>1</kbd>&ndash;<kbd>5</kbd>, plus <kbd>0</kbd>. Roughly ${Math.ceil(D.items.length/10)} minutes.</p>
     <p style="margin-top:20px"><button class="sec pri" onclick="go()">Start</button></p></div>`;
 }
 function go(){ render(); }
@@ -123,7 +136,10 @@ function render(){
     (D.mode === 'image' ? `<img id="img" src="${esc(it.rel)}" style="display:block" alt="">` : '')
     + `<p id="cap">&ldquo;${esc(it.text)}&rdquo;</p><div class="opts">`
     + D.registers.map(r => `<button data-r="${r}">${r}<b>${HINT[r]}</b></button>`).join('')
-    + `</div>`;
+    + `</div>`
+    + `<div class="neutral"><button data-r="neutral">no register &mdash; this reads neutral<b>0</b></button>
+       <p>Use this when the caption carries no emotional register at all &mdash;
+       not when you are torn between two.</p></div>`;
   M.querySelectorAll('[data-r]').forEach(b => b.onclick = () => answer(b.dataset.r));
 }
 function answer(r){
@@ -132,7 +148,8 @@ function answer(r){
 function finish(){
   document.getElementById('fill').style.width = '100%';
   const n = Object.keys(S.answers).length;
-  M.innerHTML = `<div class="done"><h2>Done &mdash; ${n} answered</h2>
+  const nn = Object.values(S.answers).filter(x => x === 'neutral').length;
+  M.innerHTML = `<div class="done"><h2>Done &mdash; ${n} answered${nn ? `, ${nn} marked neutral` : ''}</h2>
     <p style="color:var(--mut)">Press <b>Export results</b> and hand the file back.
     Your score is not shown here: computing it needs the answer key, which this page
     deliberately does not contain.</p></div>`;
@@ -142,11 +159,15 @@ document.getElementById('skip').onclick = () => { S.i++; save(); render(); };
 document.addEventListener('keydown', e => {
   const k = ['1','2','3','4','5'].indexOf(e.key);
   if (k >= 0 && S.i < D.items.length) answer(D.registers[k]);
+  if (e.key === '0' && S.i < D.items.length) answer('neutral');
   if (e.key === 'ArrowLeft') document.getElementById('back').click();
 });
 document.getElementById('exp').onclick = () => {
+  const A = Object.values(S.answers);
   const out = {tool:'make_guess_task.py', mode:D.mode, seed:D.seed, source:D.source,
-    n_items:D.items.length, answered:Object.keys(S.answers).length,
+    n_items:D.items.length, answered:A.length,
+    n_neutral:A.filter(x => x === 'neutral').length,
+    has_neutral_option:true,
     exported_at:new Date().toISOString(), answers:S.answers};
   const b = new Blob([JSON.stringify(out,null,2)], {type:'application/json'});
   const a = document.createElement('a');

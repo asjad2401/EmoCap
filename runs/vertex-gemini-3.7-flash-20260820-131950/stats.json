@@ -1,0 +1,54 @@
+{
+  "images": 57,
+  "captions": 1425,
+  "expected": 1425,
+  "rejections": 43,
+  "errors": 0,
+  "refused": 0,
+  "error_kinds": {},
+  "strain": {
+    "0": 811,
+    "1": 558,
+    "2": 56
+  },
+  "usage": {
+    "prompt": 441216,
+    "output": 58534,
+    "thinking": 2698
+  },
+  "measured_cost_usd": 0.5605,
+  "wall_seconds": 302.1,
+  "vocab_cap": {
+    "final_ban_list": {
+      "joyful": [
+        "bright",
+        "high",
+        "open",
+        "wide",
+        "happ",
+        "play",
+        "energ",
+        "leap"
+      ],
+      "sad": [
+        "empt",
+        "cold",
+        "dark",
+        "grey"
+      ],
+      "tense": [
+        "mid",
+        "hold"
+      ],
+      "romantic": [
+        "soft",
+        "quiet",
+        "light",
+        "gent",
+        "close"
+      ]
+    },
+    "cap_seed": "data/generated/captions_v9.jsonl",
+    "detail": []
+  }
+}

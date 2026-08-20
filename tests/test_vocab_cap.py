@@ -236,3 +236,51 @@ def test_config_caps_match_the_code_defaults():
     assert cfg["min_lift"] == 2.0
     assert cfg["max_per_register"] == 12
     assert cfg["min_support"] == 40
+
+
+# ── batch schema key rename (Vertex batch coerces numeric keys) ─────────────
+
+
+def test_batch_schema_keys_are_not_numeric():
+    """Vertex batch coerces numeric-looking object keys to integers.
+
+    `propertyOrdering` is a `repeated string`, so a coerced key arrives as `0` where the
+    proto requires `"0"` and EVERY row of the job fails. Realtime accepts the same schema,
+    which is what made it hard to find.
+    """
+    from emocap.data.prompt import batch_response_schema
+
+    sch = batch_response_schema(5)
+    for k in sch["propertyOrdering"]:
+        assert not k.isdigit(), f"{k!r} would be coerced by the batch parser"
+        assert k in sch["properties"] and k in sch["required"]
+
+
+def test_parse_batch_response_reads_both_key_shapes():
+    """205,000 captions exist under the OLD numeric keys; they must stay readable."""
+    import json as _json
+
+    from emocap.data.generate import parse_batch_response
+
+    def payload(fmt):
+        return _json.dumps({fmt(i): {e: {"text": f"caption number {i} for {e} register",
+                                         "strain": 0} for e in EMOTIONS}
+                            for i in range(3)})
+
+    new = parse_batch_response(payload(lambda i: f"slot_{i}"), 3)
+    old = parse_batch_response(payload(str), 3)
+    assert set(new) == set(old) == {0, 1, 2}
+    assert new[0]["joyful"] == old[0]["joyful"]
+
+
+def test_parse_batch_response_carries_strain_under_both_shapes():
+    import json as _json
+
+    from emocap.data.generate import parse_batch_response
+
+    for fmt in (lambda i: f"slot_{i}", str):
+        raw = _json.dumps({fmt(0): {"joyful": {"text": "a caption of sufficient length here",
+                                               "strain": 2}}})
+        strain: dict = {}
+        parse_batch_response(raw, 1, strain=strain)
+        assert strain == {0: {"joyful": 2}}, fmt(0)

@@ -92,6 +92,11 @@ def main() -> None:
                          "run permitted it and the model went straight back (19.6%%).")
     ap.add_argument("--cap-refresh", type=int, default=25,
                     help="images between recomputations of the ban list")
+    ap.add_argument("--only-store", default=None,
+                    help="generate EXACTLY the images present in this store (or JSON id "
+                         "list), ignoring --n and the shuffled pool. Use this to re-run the "
+                         "same images on another model: a model comparison on different "
+                         "images measures the images.")
     ap.add_argument("--exclude-store", default=None,
                     help="skip these images. Accepts either a caption store (JSONL) or a "
                          "plain JSON list of image_ids. Needed when writing "
@@ -142,6 +147,16 @@ def main() -> None:
                   if i in existing and i not in excluded and i not in skip)
     random.Random(args.seed).shuffle(pool)
     chosen = pool[: args.n]
+
+    if args.only_store:
+        q = Path(args.only_store)
+        q = q if q.is_absolute() else ROOT / q
+        raw = q.read_text().strip()
+        want = (set(json.loads(raw)) if raw.startswith("[")
+                else {json.loads(l)["image_id"] for l in raw.splitlines() if l.strip()})
+        chosen = sorted(i for i in want if i in sources)
+        if args.n and args.n < len(chosen):
+            chosen = chosen[: args.n]
 
     done = completed_keys(out_path)
     pending = [i for i in chosen if any((i, k) not in done for k in range(5))]

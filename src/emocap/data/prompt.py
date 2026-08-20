@@ -37,6 +37,7 @@ __all__ = [
     "build_batch_prompt",
     "single_response_schema",
     "batch_response_schema",
+    "SLOT_PREFIX",
 ]
 
 #: Order fixes emotion_id everywhere. Locked in configs/prereg.lock.yaml.
@@ -426,30 +427,15 @@ feeling, and never from figurative language.
 {_HONEST_DEVICES}
 {_WORKED_EXAMPLES}
 HARD RULES
-  1. Between {min_words} and {max_words} words. {min_words} is a HARD floor -- a rewrite \
-that lands short must be expanded with a true detail from the caption OR from the \
-photograph. But do NOT aim for the middle: the five rewrites of one image should NOT all \
-come out the same length. A register that wants six words should get six; one that wants \
-twenty-eight should get twenty-eight.
-  2. At most two sentences. One is fine. Two is better when the register lives in the \
-break between them -- a flat observation and then the thing that undercuts it. Fragments \
-are allowed. A question is allowed.
-  2b. THE FIVE MUST DIFFER IN SHAPE, NOT ONLY IN WORDS. This is the rule most often \
-failed. If all five are one declarative sentence of the same length starting the same way, \
-then the ONLY thing carrying the register is word choice -- and swapped adjectives are \
-exactly what makes two rewrites interchangeable. Vary: how long the sentence is, how many \
-sentences, what the first word is, whether it states or asks, whether it runs on or stops \
-short. The shape of a sentence carries mood before any of its adjectives do.
+  1. Between {min_words} and {max_words} words. Count before finalising. {min_words} is a HARD floor, not a target -- being spare never means going under it, and a rewrite that lands short must be expanded with a true detail from the caption OR from the \
+photograph -- the image is full of them.
+  2. Exactly one sentence per register.
   2c. NAME NOTHING THAT IS NOT THERE. Describing what is in the photograph is the whole \
 job; introducing a thing is not. If the caption says "an electronic device", it is not a \
 phone. "In red" is not "a red suit". A vest is not a "highway safety vest". Above all, do \
 NOT add an object, an animal or an audience to make a joke land -- no ducks listening, no \
 swing that is not in the picture, no crowd. A joke about something absent is the single \
 commonest way this task fails.
-  2d. FACES ARE EVIDENCE, NOT DECORATION. Do not assert a smile, a grin, a frown or a \
-gaze unless you can genuinely see it. "Smiling" is not a way to make a caption joyful. If \
-the joy has to come from an expression you supplied, it is not in the photograph and you \
-must find it somewhere else -- or mark the strain honestly.
   3. No metaphor, simile, or personification. No abstraction such as "a testament to", \
 "a reminder of", "an echo of", "a symphony of", "a dance of".
   4. No adverb that names the emotion: {", ".join(BANNED_ADVERBS[:8])}, and similar.
@@ -464,8 +450,7 @@ is no joke: write the plainest faithful sentence and mark its strain 2.
 a stranger. They must be able to sort them back. If two could swap labels without anyone \
 noticing, BOTH have failed -- however well each reads alone. Two rewrites sharing their main \
 clause is the commonest failure: change the verb, change what the sentence is about, change \
-where it starts, change how long it runs. A different adjective on the same sentence is not \
-a different sentence.
+where it starts. A different adjective on the same sentence is not a different sentence.
 
 {banned_block}REGISTERS
 {registers}
@@ -612,15 +597,32 @@ def single_response_schema() -> dict:
     }
 
 
+#: Prefix for the per-caption keys of :func:`batch_response_schema`.
+#:
+#: **It must not be numeric.** Vertex *batch* prediction deserialises each row against an
+#: internal proto with a stricter JSON engine than the realtime endpoint, and it coerces
+#: numeric-looking object keys to integers -- after which ``propertyOrdering`` (a
+#: ``repeated string``) is handed ``0`` where it requires ``"0"`` and every row of the job
+#: fails with ``unexpected character: '0'; expected '"'``. The same schema is accepted by
+#: realtime without complaint, which is what made this take a day to find.
+#:
+#: Captions generated before 2026-08-20 used bare ``"0"``-``"4"``, so
+#: :func:`~emocap.data.generate.parse_batch_response` reads BOTH forms; changing this
+#: prefix without keeping that fallback would silently orphan 205,000 existing captions.
+SLOT_PREFIX = "slot_"
+
+
 def batch_response_schema(n_sources: int) -> dict:
     """Schema for ``n_sources`` captions x five registers.
 
     Constraining the shape is the main mitigation for Option B's 25-field response:
     without it, a dropped or renamed key is silent, and we would only discover it as
     a missing-caption rate after paying for the run.
+
+    Keys are ``slot_0``..``slot_N`` rather than ``0``..``N`` -- see :data:`SLOT_PREFIX`.
     """
     inner = single_response_schema()
-    keys = [str(i) for i in range(n_sources)]
+    keys = [f"{SLOT_PREFIX}{i}" for i in range(n_sources)]
     return {
         "type": "object",
         "properties": {k: inner for k in keys},

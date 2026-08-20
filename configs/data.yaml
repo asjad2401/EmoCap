@@ -126,11 +126,18 @@ pricing:
   vertex_observed_2026_08_20: {computed: 20.30, console: 13.00, ratio: 0.64}
   thinking_billed_as_output: true
   batch_api_discount: 0.50   # 50% off for non-realtime batch submission
+  # CORRECTED 2026-08-20 from Google's Vertex AI documentation, via the researcher's GCP
+  # agent. The earlier block attached the introductory discount to 3.6-flash; it belongs to
+  # 3.7-flash. 3.6-flash is NOT discounted and is only 17% cheaper than 3.5-flash.
   models:
     gemini-3.5-flash:      {input: 1.50, output: 9.00}
-    gemini-3.6-flash:      {input: 0.75, output: 3.75, intro_until: "2026-12-31",
+    gemini-3.6-flash:      {input: 1.50, output: 7.50}
+    gemini-3.7-flash:      {input: 0.75, output: 3.75, intro_until: "2026-12-31",
                             standard: {input: 1.50, output: 7.50}}
     gemini-3.1-flash-lite: {input: 0.25, output: 1.50}
+  # Vertex discounts, documented: batch submission halves the token rate, and a context
+  # cache READ costs 10% of the base input rate (plus storage per Mtoken-hour).
+  context_cache_read_multiplier: 0.10
 
 # Corpus-level vocabulary cap (src/emocap/data/vocab_cap.py). A PRE-REGISTERED
 # corpus-construction rule: no content word may exceed its register's document-frequency

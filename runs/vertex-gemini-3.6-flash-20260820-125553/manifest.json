@@ -1,0 +1,70 @@
+{
+  "run_id": "vertex-gemini-3.6-flash-20260820-125553",
+  "stage": "02b_vertex_generation",
+  "config": {
+    "model": "gemini-3.6-flash",
+    "probe_models": [
+      "gemini-3.6-flash",
+      "gemini-3.1-flash-lite",
+      "gemini-3.5-flash"
+    ],
+    "plan": "B",
+    "use_response_schema": true,
+    "image_max_dim": 384,
+    "temperature": 0.9,
+    "max_output_tokens": 4096,
+    "thinking_budget": 0,
+    "max_attempts": 3,
+    "concurrency": 24,
+    "audit_sample": 200,
+    "prompt_version": "v6",
+    "platform": "vertex",
+    "location": "global",
+    "n_images": 10,
+    "vocab_cap": true,
+    "min_words": 6,
+    "max_words": 30,
+    "max_sentences": 2,
+    "cap_refresh": 999,
+    "out_path": "data/generated/cmp_gemini-3.6-flash.jsonl",
+    "image_ids": [
+      "1056359656_662cee0814.jpg",
+      "1082252566_8c79beef93.jpg",
+      "1096395242_fc69f0ae5a.jpg",
+      "1110208841_5bb6806afe.jpg",
+      "111537217_082a4ba060.jpg",
+      "1130369873_d80a1aa59c.jpg",
+      "1164131282_b30926f332.jpg",
+      "136644885_f7d2bbf546.jpg",
+      "1388373425_3c72b56639.jpg",
+      "1420060118_aed262d606.jpg"
+    ]
+  },
+  "seed": null,
+  "notes": "",
+  "git_sha": "a68ba56dc822dde9ab7ce21e3b0863d40345fd2c-dirty",
+  "packages": {
+    "torch": "2.13.0",
+    "transformers": "5.15.0",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "scikit-learn": "1.9.0"
+  },
+  "accelerator": {
+    "device": "cpu",
+    "n_devices": 0
+  },
+  "python": "3.12.14",
+  "platform": "macOS-26.5-arm64-arm-64bit",
+  "started_at": 1787212554.161456,
+  "finished_at": 1787212586.740261,
+  "status": "complete",
+  "checks": {
+    "all_captions_returned": {
+      "passed": true,
+      "detail": "250/250"
+    }
+  },
+  "config_hash": "1a1dd6bd21218c4d",
+  "wall_seconds": 32.5788049697876
+}

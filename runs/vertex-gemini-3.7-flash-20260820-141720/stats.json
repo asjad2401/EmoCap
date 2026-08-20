@@ -1,0 +1,54 @@
+{
+  "images": 137,
+  "captions": 3425,
+  "expected": 3750,
+  "rejections": 119,
+  "errors": 13,
+  "refused": 0,
+  "error_kinds": {
+    "RuntimeError: all 1 attempt(s) failed with no response: Gemini call failed after": 13
+  },
+  "strain": {
+    "0": 1950,
+    "1": 1289,
+    "2": 186
+  },
+  "usage": {
+    "prompt": 1021081,
+    "output": 141157,
+    "thinking": 11760
+  },
+  "measured_cost_usd": 1.3392,
+  "wall_seconds": 779.2,
+  "vocab_cap": {
+    "final_ban_list": {
+      "joyful": [
+        "bright",
+        "high",
+        "open",
+        "wide",
+        "happ"
+      ],
+      "sad": [
+        "empt",
+        "cold",
+        "stand",
+        "alone"
+      ],
+      "tense": [
+        "mid",
+        "forward",
+        "lock"
+      ],
+      "romantic": [
+        "soft",
+        "quiet",
+        "light",
+        "gent",
+        "rest"
+      ]
+    },
+    "cap_seed": null,
+    "detail": []
+  }
+}

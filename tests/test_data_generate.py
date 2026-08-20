@@ -497,8 +497,10 @@ def test_generate_image_batch_passes_the_schema_when_enabled():
     generate_image_batch(llm, SOURCES, max_attempts=1, use_schema=True)
     schema = llm.schemas[0]
     assert schema is not None
-    assert schema["required"] == ["0", "1", "2", "3", "4"]
-    assert schema["properties"]["0"]["required"] == list(EMOTIONS)
+    # slot_N, not 0..N: Vertex BATCH coerces numeric object keys to integers and then
+    # rejects every row. See emocap.data.prompt.SLOT_PREFIX.
+    assert schema["required"] == ["slot_0", "slot_1", "slot_2", "slot_3", "slot_4"]
+    assert schema["properties"]["slot_0"]["required"] == list(EMOTIONS)
 
 
 def test_generate_image_batch_omits_the_schema_when_disabled():

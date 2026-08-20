@@ -197,9 +197,14 @@
   "python": "3.12.14",
   "platform": "macOS-26.5-arm64-arm-64bit",
   "started_at": 1787210791.300969,
-  "finished_at": null,
-  "status": "running",
-  "checks": {},
+  "finished_at": 1787212524.0027,
+  "status": "complete_with_failed_checks",
+  "checks": {
+    "all_captions_returned": {
+      "passed": false,
+      "detail": "3675/3750"
+    }
+  },
   "config_hash": "7f813729fa1293eb",
-  "wall_seconds": null
+  "wall_seconds": 1732.7017312049866
 }

@@ -4,26 +4,24 @@
   "high",
   "open",
   "wide",
-  "happ",
-  "play",
-  "energ",
-  "leap"
+  "happ"
  ],
  "romantic": [
   "soft",
   "quiet",
   "light",
   "gent",
-  "close"
+  "rest"
  ],
  "sad": [
   "empt",
   "cold",
-  "dark",
-  "grey"
+  "stand",
+  "alone"
  ],
  "tense": [
   "mid",
-  "hold"
+  "forward",
+  "lock"
  ]
 }
