@@ -20,7 +20,7 @@ import re
 import time
 from dataclasses import dataclass, asdict, field
 from pathlib import Path
-from typing import Callable, Iterable, Sequence
+from typing import Callable, Iterable, Mapping, Sequence
 
 from emocap.data.prompt import (
     BANNED_ADVERBS,
@@ -128,11 +128,19 @@ class GenerationRecord:
 # ── validation ──────────────────────────────────────────────────────────────
 
 
-def validate_caption(text: str, *, min_words: int = 8, max_words: int = 24) -> str | None:
+def validate_caption(text: str, *, min_words: int = 8, max_words: int = 24,
+                     max_sentences: int = 1) -> str | None:
     """Return a rejection reason, or ``None`` if the caption passes.
 
     Deterministic checks only. Grounding and register quality need the source
     caption and a judge, and live in stage 03.
+
+    ``max_sentences`` defaults to 1, which is the v5-v7 rule. Prompt v8 raises it to 2:
+    the v1 pilot carried its register largely in sentence FORM -- length sd 6.01 against
+    our 1.55 at matched n, 1.44 sentences against our 1.00, 20.6% of captions using a
+    question or exclamation against our 0%. Forbidding that left word choice as the only
+    axis for differentiation, which is how `bright` reached 34% of joyful captions. The
+    limit stays low because these are still captions, not paragraphs.
     """
     if not text or not text.strip():
         return "empty"
@@ -150,23 +158,42 @@ def validate_caption(text: str, *, min_words: int = 8, max_words: int = 24) -> s
     if m := _ABSTRACTION_RE.search(text):
         return f'figurative/abstract phrasing: "{m.group(0)}"'
 
-    # One sentence: at most one terminal punctuation run, and it must be at the end.
+    # At most `max_sentences` terminal punctuation runs, and the last must end the text
+    # (so a trailing clause with no stop is still caught).
     ends = list(_SENTENCE_END_RE.finditer(text))
-    if len(ends) > 1 or (ends and ends[0].end() != len(text)):
-        return "more than one sentence"
+    if len(ends) > max_sentences:
+        return (f"more than one sentence" if max_sentences == 1
+                else f"more than {max_sentences} sentences")
+    if ends and ends[-1].end() != len(text):
+        return "text continues after the final sentence end"
 
     return None
 
 
 def validate_all(
-    captions: dict[str, str], *, min_words: int = 8, max_words: int = 24
+    captions: dict[str, str], *, min_words: int = 8, max_words: int = 24,
+    max_sentences: int = 1,
+    banned_by_register: "Mapping[str, Sequence[str]] | None" = None,
 ) -> dict[str, str]:
-    """Rejection reasons per emotion. Empty dict means everything passed."""
+    """Rejection reasons per emotion. Empty dict means everything passed.
+
+    ``banned_by_register`` carries the corpus-level vocabulary cap (see
+    :mod:`emocap.data.vocab_cap`). The prompt already asks the model to avoid these
+    words; enforcing them here too is what makes the cap a guarantee rather than a
+    request, and the reason text feeds the retry so the model is told which word to drop.
+    """
     out: dict[str, str] = {}
     for emotion in EMOTIONS:
         text = captions.get(emotion, "")
-        if (reason := validate_caption(text, min_words=min_words, max_words=max_words)):
+        if (reason := validate_caption(text, min_words=min_words, max_words=max_words,
+                                       max_sentences=max_sentences)):
             out[emotion] = reason
+            continue
+        words = (banned_by_register or {}).get(emotion, ())
+        if words:  # cap enforcement, inflections included
+            from emocap.data.vocab_cap import banned_hit
+            if (hit := banned_hit(text, words)) is not None:
+                out[emotion] = f'over-used word for this register: "{hit}"'
 
     # Rule 6: the five rewrites must be distinguishable.
     seen: dict[str, str] = {}
@@ -398,7 +425,10 @@ def generate_image_batch(
     max_words: int = 24,
     max_attempts: int = 1,
     use_schema: bool = True,
+    max_sentences: int = 1,
     emphasise_distinctness: bool = False,
+    banned_by_register: Mapping[str, Sequence[str]] | None = None,
+    strain_out: dict[int, dict[str, int]] | None = None,
     on_error: Callable[[Exception, int], None] | None = None,
 ) -> tuple[dict[int, dict[str, str]], int, dict[int, dict[str, str]]]:
     """Option B: rewrite every source caption of one image in a single call.
@@ -409,6 +439,13 @@ def generate_image_batch(
     Retries request the whole matrix again -- there is no partial-repair path here on
     purpose. Repairing one register of one caption is what Option A is for, and the
     probe measures whether that fallback is needed often enough to matter.
+
+    ``strain_out``, if given, is FILLED with the model's own register-fit report
+    (``{caption_idx: {emotion: 0|1|2}}``). It is an out-parameter to match
+    :func:`parse_batch_response`. **Omitting it silently discards strain**, which is how
+    every Vertex run from 2026-08-19 onward recorded 0% strain while the AI Studio batch
+    path recorded 100% -- the field is a pre-registered instrument, so losing it loses the
+    analysis, not just a column.
     """
     n = len(source_captions)
     best: dict[int, dict[str, str]] = {}
@@ -426,6 +463,7 @@ def generate_image_batch(
             source_captions, min_words=min_words, max_words=max_words,
             multimodal=image_bytes is not None,
             emphasise_distinctness=emphasise_distinctness,
+            banned_by_register=banned_by_register,
         )
         schema = batch_response_schema(n) if use_schema else None
         try:
@@ -436,16 +474,23 @@ def generate_image_batch(
                 on_error(exc, attempt)
             continue
 
-        matrix = parse_batch_response(raw, n)
+        attempt_strain: dict[int, dict[str, int]] = {}
+        matrix = parse_batch_response(raw, n, strain=attempt_strain)
         rejects: dict[int, dict[str, str]] = {}
         for i in range(n):
             caps = matrix.get(i, {})
-            bad = validate_all(caps, min_words=min_words, max_words=max_words)
+            bad = validate_all(caps, min_words=min_words, max_words=max_words,
+                               max_sentences=max_sentences,
+                               banned_by_register=banned_by_register)
             if bad:
                 rejects[i] = bad
 
         if n_bad(rejects) < n_bad(best_rejects):
             best, best_rejects = matrix, rejects
+            if strain_out is not None:
+                # keep the strain of the attempt we are KEEPING, not the last one tried
+                strain_out.clear()
+                strain_out.update(attempt_strain)
         if not rejects:
             break
 

@@ -131,3 +131,33 @@ pricing:
     gemini-3.6-flash:      {input: 0.75, output: 3.75, intro_until: "2026-12-31",
                             standard: {input: 1.50, output: 7.50}}
     gemini-3.1-flash-lite: {input: 0.25, output: 1.50}
+
+# Corpus-level vocabulary cap (src/emocap/data/vocab_cap.py). A PRE-REGISTERED
+# corpus-construction rule: no content word may exceed its register's document-frequency
+# cap when it is also >= min_lift times more common there than in any other register.
+#
+# Why it exists: prompt v6 turned technique into a template. `bright` reached 34% of
+# joyful captions against 3% elsewhere; 28 words cleared 6% with >=2x lift, against 5 for
+# v5. Masking them dropped the lexical anchor 0.638 -> 0.504, so ~70% of v6's anchor rise
+# was template vocabulary. A decoder trained on that learns "joyful -> bright".
+#
+# Why the caps differ per register: classifier accuracy minus the human blind-guess score
+# is +0.458 for joyful (the model uses `bright`, a reader does not) and +0.164 for sad
+# (`empty`/`cold` genuinely read as sad). A wide gap means shortcut, so it is capped
+# hardest; a narrow gap means real signal, so it is capped most gently.
+#
+# CAPS MUST BE FIXED BEFORE THE CORPUS IS BUILT. Tuning them after seeing the anchor is
+# fitting the instrument to the result.
+vocab_cap:
+  enabled: true
+  min_lift: 2.0          # in-register share / max share in any other register
+  min_support: 40        # captions per register before anything is banned
+  max_per_register: 12   # an unbounded ban list is how v5's registers collapsed
+  refresh_every: 25      # images between recomputations during generation
+  caps:
+    joyful: 0.08
+    tense: 0.10
+    romantic: 0.10
+    humorous: 0.14
+    sad: 0.15
+

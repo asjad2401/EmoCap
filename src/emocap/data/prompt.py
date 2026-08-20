@@ -27,7 +27,7 @@ technique -- see "WHEN THE EVENT RESISTS THE REGISTER".
 
 from __future__ import annotations
 
-from typing import Sequence
+from typing import Mapping, Sequence
 
 __all__ = [
     "EMOTIONS",
@@ -318,6 +318,31 @@ picture contradicts.
 """
 
 
+def _banned_block(banned_by_register: Mapping[str, Sequence[str]] | None) -> str:
+    """The over-used-vocabulary section, or "" when nothing is over cap.
+
+    Phrased as "already used too often" rather than "forbidden" on purpose. A bare
+    prohibition is what v5 did, and v5's registers became interchangeable because a model
+    denied every way of signalling a register stops signalling it. Naming the reason and
+    demanding the register still land keeps the requirement positive.
+    """
+    if not banned_by_register:
+        return ""
+    lines = [f"  {r:<9} {', '.join(ws)}"
+             for r, ws in banned_by_register.items() if ws]
+    if not lines:
+        return ""
+    return (
+        "ALREADY USED TOO OFTEN -- do not use these words in these registers:\n"
+        + "\n".join(lines)
+        + "\nThese are not wrong, they are worn out: this corpus has leaned on them so "
+          "heavily that they have become labels rather than descriptions. Convey the same "
+          "register through what the sentence is ABOUT -- its subject, its verb, what it "
+          "notices and what it leaves out. The register must still land without them; "
+          "writing a flatter sentence to avoid a word is a worse failure than using it.\n\n"
+    )
+
+
 def build_prompt(
     source_caption: str,
     *,
@@ -325,6 +350,7 @@ def build_prompt(
     max_words: int = 24,
     failures: dict[str, tuple[str, str]] | None = None,
     multimodal: bool = True,
+    banned_by_register: Mapping[str, Sequence[str]] | None = None,
 ) -> str:
     """Build the generation prompt for one human caption.
 
@@ -336,9 +362,17 @@ def build_prompt(
     ``failures`` maps emotion -> (previous attempt, why it was rejected), and is
     appended on a retry so the model is told exactly what to fix. v1 did this for
     word count only; here it carries every validation reason.
+
+    ``banned_by_register`` maps emotion -> words this register is currently over-using
+    corpus-wide (see :mod:`emocap.data.vocab_cap`). It is stated in the prompt rather
+    than only enforced by the validator so the model routes around the word from the
+    start instead of being rejected and retried. **The list is derived from the corpus,
+    so this prompt is not a pure function of its arguments** -- the run manifest records
+    the final lists, and the v6 base text is unchanged either way.
     """
     registers = "\n".join(f"  {e:<9} {REGISTERS[e]}" for e in EMOTIONS)
     keys = ", ".join(f'"{e}"' for e in EMOTIONS)
+    banned_block = _banned_block(banned_by_register)
 
     opening = (
         "You are shown an image and one human-written caption of it. Rewrite that "
@@ -392,9 +426,30 @@ feeling, and never from figurative language.
 {_HONEST_DEVICES}
 {_WORKED_EXAMPLES}
 HARD RULES
-  1. Between {min_words} and {max_words} words. Count before finalising. {min_words} is a HARD floor, not a target -- being spare never means going under it, and a rewrite that lands short must be expanded with a true detail from the caption OR from the \
-photograph -- the image is full of them.
-  2. Exactly one sentence per register.
+  1. Between {min_words} and {max_words} words. {min_words} is a HARD floor -- a rewrite \
+that lands short must be expanded with a true detail from the caption OR from the \
+photograph. But do NOT aim for the middle: the five rewrites of one image should NOT all \
+come out the same length. A register that wants six words should get six; one that wants \
+twenty-eight should get twenty-eight.
+  2. At most two sentences. One is fine. Two is better when the register lives in the \
+break between them -- a flat observation and then the thing that undercuts it. Fragments \
+are allowed. A question is allowed.
+  2b. THE FIVE MUST DIFFER IN SHAPE, NOT ONLY IN WORDS. This is the rule most often \
+failed. If all five are one declarative sentence of the same length starting the same way, \
+then the ONLY thing carrying the register is word choice -- and swapped adjectives are \
+exactly what makes two rewrites interchangeable. Vary: how long the sentence is, how many \
+sentences, what the first word is, whether it states or asks, whether it runs on or stops \
+short. The shape of a sentence carries mood before any of its adjectives do.
+  2c. NAME NOTHING THAT IS NOT THERE. Describing what is in the photograph is the whole \
+job; introducing a thing is not. If the caption says "an electronic device", it is not a \
+phone. "In red" is not "a red suit". A vest is not a "highway safety vest". Above all, do \
+NOT add an object, an animal or an audience to make a joke land -- no ducks listening, no \
+swing that is not in the picture, no crowd. A joke about something absent is the single \
+commonest way this task fails.
+  2d. FACES ARE EVIDENCE, NOT DECORATION. Do not assert a smile, a grin, a frown or a \
+gaze unless you can genuinely see it. "Smiling" is not a way to make a caption joyful. If \
+the joy has to come from an expression you supplied, it is not in the photograph and you \
+must find it somewhere else -- or mark the strain honestly.
   3. No metaphor, simile, or personification. No abstraction such as "a testament to", \
 "a reminder of", "an echo of", "a symphony of", "a dance of".
   4. No adverb that names the emotion: {", ".join(BANNED_ADVERBS[:8])}, and similar.
@@ -409,9 +464,10 @@ is no joke: write the plainest faithful sentence and mark its strain 2.
 a stranger. They must be able to sort them back. If two could swap labels without anyone \
 noticing, BOTH have failed -- however well each reads alone. Two rewrites sharing their main \
 clause is the commonest failure: change the verb, change what the sentence is about, change \
-where it starts. A different adjective on the same sentence is not a different sentence.
+where it starts, change how long it runs. A different adjective on the same sentence is not \
+a different sentence.
 
-REGISTERS
+{banned_block}REGISTERS
 {registers}
 """
 
@@ -457,6 +513,7 @@ def build_batch_prompt(
     max_words: int = 24,
     multimodal: bool = True,
     emphasise_distinctness: bool = False,
+    banned_by_register: Mapping[str, Sequence[str]] | None = None,
 ) -> str:
     """One prompt covering every source caption for one image.
 
@@ -471,7 +528,7 @@ def build_batch_prompt(
     """
     base = build_prompt(
         source_captions[0], min_words=min_words, max_words=max_words,
-        multimodal=multimodal,
+        multimodal=multimodal, banned_by_register=banned_by_register,
     )
     # Reuse the rules and worked examples verbatim; swap the task framing.
     head, _, rules = base.partition("Rewrite it five times, once per register.")
