@@ -640,7 +640,8 @@ def _is_retryable(exc: Exception) -> bool:
 
 
 def vertex_client(project: str, location: str = "us-central1",
-                  service_account_file: str | Path | None = None):
+                  service_account_file: str | Path | None = None,
+                  timeout_s: float = 180.0):
     """A genai client routed through Vertex AI rather than AI Studio.
 
     Vertex bills to a Google Cloud project, so promotional GCP credits apply. Two ways
@@ -655,6 +656,13 @@ def vertex_client(project: str, location: str = "us-central1",
     Note the model catalogue differs from AI Studio's: names and availability are not
     the same, so validate before committing a run. `gemini-2.5-flash` for instance is
     refused by AI Studio for new projects but may exist on Vertex.
+
+    ``timeout_s`` is **not optional in practice.** With no client timeout the SDK inherits
+    no socket deadline, so a connection dropped mid-request never returns and never raises.
+    The retry wrapper in :func:`gemini_llm` classifies *exceptions*, so a call that hangs
+    is invisible to it: a run stalled for six hours at 139/170 images with 0.03s of CPU
+    consumed and no error in the log, and only a stale file mtime revealed it. A request
+    that has produced nothing in three minutes is dead; failing it lets the retry work.
     """
     from google import genai
 
@@ -665,8 +673,12 @@ def vertex_client(project: str, location: str = "us-central1",
             str(service_account_file),
             scopes=["https://www.googleapis.com/auth/cloud-platform"],
         )
+    from google.genai import types as _gt
+
     return genai.Client(vertexai=True, project=project, location=location,
-                        credentials=creds)
+                        credentials=creds,
+                        # milliseconds, per the SDK's HttpOptions contract
+                        http_options=_gt.HttpOptions(timeout=int(timeout_s * 1000)))
 
 
 def gemini_llm(
