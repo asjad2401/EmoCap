@@ -533,3 +533,42 @@ flipped the sign of a human-vs-synthetic comparison. §2 requires its sensitivit
 **Availability verified:** 19,991 Personality-Captions rows have their YFCC image on disk
 across 19,987 distinct images — ample for an 8,076-caption arm balanced at 1,615 per register,
 with `romantic` the scarcest at 2,608 available.
+
+### The MDE was recomputed for six arms — and two criteria were unreachable
+
+Caught during the pre-tag feasibility check, **before** the tag.
+
+The MDE of **2.3 points** quoted in the first draft of this rewrite was computed for the
+*three*-arm design and assumed **zero seed noise**. Neither holds:
+
+- Six arms give 15 pairwise combinations, not 6, and Holm over 15 is stricter.
+- Seed noise is a real variance component that the 2.3 figure omitted entirely.
+
+Recomputed for the limiting comparison (1-caption-per-image arms, ~8,048 cells):
+
+| seed SD | 0.000 | 0.005 | 0.010 | 0.020 | 0.030 |
+|---|---|---|---|---|---|
+| MDE, 6 confirmatory comparisons | 2.7 | 2.9 | 3.5 | **5.2** | 7.1 |
+| MDE, all 15 corrected | 2.9 | 3.1 | 3.8 | **5.6** | 7.7 |
+
+**P2, P3b and P6 were registered at ≥3 points against an MDE of 5.2 — unreachable.** Raised
+to **≥6 points**, which clears the MDE at seed SD 0.02.
+
+**Three structural changes followed:**
+
+1. **Confirmatory/exploratory split.** Six comparisons carry hypotheses and Holm correction;
+   the other nine are exploratory, uncorrected and labelled. Correcting over all 15 costs 0.4
+   points of MDE for comparisons that test no prediction.
+2. **An underpowered-reporting rule is ADDED.** A comparison whose observed fold spread
+   implies an MDE above its criterion is reported as **underpowered, not as a null**. This is
+   the specific failure that damaged an earlier pre-registered study in this line of work:
+   numbers were registered that the design could not reach, and the resulting nulls were
+   reported as findings.
+3. **P1 carries a stated caveat.** Its expected effect is 4.3 points against an MDE of 5.2 at
+   seed SD 0.02, so a null on P1 is underpowered unless the observed spread brings the MDE
+   below 4.3. Registered as such rather than discovered afterwards.
+
+The MDE is registered **as a curve over seed SD** (`study.mde_curve_by_seed_sd`) rather than
+as a single number, because seed noise cannot be known before models exist. The only
+comparable spread measured so far — the register classifier across three matched subsamples,
+SD 0.0076 — suggests seed SD ≈ 0.01, making 0.02 the conservative case.

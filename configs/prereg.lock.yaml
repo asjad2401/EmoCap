@@ -25,7 +25,26 @@ study:
   fold_split_by: image_id                 # NEVER by caption: one image's 5 cells are dependent
   negative_control: shuffled_emotion_labels_per_arm
   runs: 36                                # 6 arms x 5 folds + 6 negative controls (1 fold each)
-  comparisons: 15                         # pairwise; Holm-adjusted
+  # SIX comparisons are confirmatory and Holm-corrected; the other nine pairwise
+  # combinations are exploratory, reported uncorrected and carrying no hypothesis.
+  # Correcting over all 15 raises the MDE from 5.2 to 5.6 points at seed SD 0.02 and buys
+  # nothing, because nine of them test no prediction.
+  confirmatory_comparisons:
+    - [H_unpaired, S_unpaired]        # P1, P2
+    - [S_paired25, S_unpaired]        # P3a, P3b
+    - [S_unpaired, V1_unpaired]       # P6
+    - [H_unpaired, V1_unpaired]       # P6
+    - [S_paired5, V1_paired5]         # v10 vs v1 at matched shape
+    - [S_paired25, H_unpaired]        # the "better data" route
+  exploratory_comparisons: all_remaining_pairs
+  # MDE is a FUNCTION of seed noise, which cannot be known before models exist. Registered
+  # as a curve for the limiting comparison (1-caption-per-image arms, ~8,048 cells):
+  #   seed SD  0.000 0.005 0.010 0.020 0.030
+  #   MDE      2.7   2.9   3.5   5.2   7.1   (points, 6 comparisons, 80% power)
+  # Criteria are set at >=6 points so they clear the MDE at seed SD 0.02.
+  mde_curve_by_seed_sd: {0.0: 0.027, 0.005: 0.029, 0.01: 0.035, 0.02: 0.052, 0.03: 0.071}
+  criterion_points: 0.06
+  underpowered_rule: report_as_underpowered_if_observed_spread_implies_MDE_above_criterion
   # The v1 pilot corpus is an arm because it is the high-stereotypy end of the study's axis
   # (anchor 0.724 against 0.510 for ours and 0.342 for human text) AND because the pilot's
   # decoder faults are fixed here, so its data can be tested apart from its code.
@@ -188,7 +207,7 @@ gates:                                      # a run or the study halts if these 
   # number to threshold. Replaced by a detectability criterion.
   gate: floor_to_ceiling_range_must_admit_smallest_effect_at_design_MDE
   smallest_effect_of_interest: 0.10
-  mde_under_5fold_cv: 0.023
+  mde_under_5fold_cv_at_seed_sd_0.02: 0.052
   human_legibility_gate: human_blind_guess_must_exceed_same_corpus_anchor
   superseded_2026_08_21:
     ceiling_min: 0.85

@@ -151,21 +151,60 @@ decode settings; trainable parameter count matched within ±5% per track.
 ## 3. Hypotheses
 
 Every criterion below is stated **in points of accuracy** and every one has been checked
-against the minimum detectable effect **before** registration. Under 5-fold CV over a whole
-arm the MDE is **2.3 points** (80% power, α 0.05 Holm-adjusted over 15 comparisons, ICC 0.070,
-design effect 2.69 on the paired arm). **No criterion below sits under 2.3.** This check is
-not decorative: the first draft of P2 used a 5-point criterion against an MDE of 6.5, which
-made it unfalsifiable, and that was caught by computing the MDE rather than by review.
+against the minimum detectable effect **before** registration.
+
+### The MDE, honestly
+
+The MDE has two components and **only one is knowable before training**. Evaluation noise is
+measurable now (ICC 0.070 on per-cell correctness, cluster size 1/5/25 by arm, so design
+effects 1.00 / 1.28 / 2.68). **Seed noise is not knowable until models exist.** So the MDE is
+registered as a function of it, for the limiting comparison — the 1-caption-per-image arms at
+~8,048 cells each:
+
+| seed SD → | 0.000 | 0.005 | 0.010 | 0.020 | 0.030 |
+|---|---|---|---|---|---|
+| **MDE, 6 confirmatory comparisons** | 2.7 | 2.9 | **3.5** | **5.2** | 7.1 |
+
+The only comparable spread we have measured is the register classifier across three matched
+subsamples of one corpus: 0.688 / 0.674 / 0.676, **SD 0.0076**. That is subsample rather than
+seed noise, but it is the right order for this pipeline, so seed SD ≈ 0.01 is the expectation
+and 0.02 the conservative case.
+
+**Criteria are therefore set at ≥6 points**, which is reachable at seed SD 0.02 and above the
+MDE at every plausible value below it.
+
+### Two rules that make a null mean something
+
+1. **A comparison whose observed fold spread implies an MDE above its criterion is reported
+   as UNDERPOWERED, not as a null.** This is the rule this study exists to obey: a previous
+   pre-registration in this line of work committed to numbers that were not statistically
+   reachable, and reporting those as nulls is what cost it credibility.
+2. **A gap smaller than the observed fold spread is reported as null regardless of its
+   p-value.** Unchanged from the original registration.
+
+### Confirmatory vs exploratory
+
+**Six comparisons are confirmatory** and carry Holm correction: H vs S (unpaired),
+S-paired25 vs S-unpaired, S-unpaired vs V1-unpaired, H-unpaired vs V1-unpaired, S-paired5 vs
+V1-paired5, and S-paired25 vs H-unpaired. The remaining nine pairwise comparisons are
+**exploratory**: reported uncorrected, explicitly labelled, and **no hypothesis is registered
+on them**. Correcting over all 15 would push the MDE to 5.6 points at seed SD 0.02 and buy
+nothing, since nine of them test no prediction.
+
+**P1 carries a caveat that must be reported with it.** Its expected effect is 4.3 points,
+measured on training data. At seed SD 0.02 the MDE is 5.2 — *above* that. So a null on P1 is
+**underpowered unless the observed spread is small enough to bring the MDE below 4.3**, and it
+will be reported that way rather than as evidence of no difference.
 
 | | Prediction | Falsified if | margin over MDE |
 |---|---|---|---|
-| **P1** | H-unpaired beats S-unpaired on raw emotion accuracy | S-unpaired ≥ H-unpaired, or the difference straddles zero | 4.3 pt effect vs 2.3 |
-| **P2** | The gap is **not** fully explained by lexical stereotypy: H's margin over its own keyword anchor exceeds S's margin over its own, by ≥3 points | margin difference ≤ 0 | 3.0 vs 2.3 |
+| **P1** | H-unpaired beats S-unpaired on raw emotion accuracy | S-unpaired ≥ H-unpaired, or the difference straddles zero | 4.3 pt effect — **near the MDE, see caveat above** |
+| **P2** | The gap is **not** fully explained by lexical stereotypy: H's margin over its own keyword anchor exceeds S's margin over its own, by **≥6 points** | margin difference ≤ 0 | 6.0 vs MDE 5.2 at seed SD .02 |
 | **P3a** | S-paired beats S-unpaired on raw accuracy (sanity check on the extra data) | S-paired ≤ S-unpaired | — |
-| **P3b** | That improvement **also** appears in the margin over the anchor, by ≥3 points | margin flat (≤0) — meaning per-image register contrast teaches vocabulary and nothing else | 3.0 vs 2.3 |
+| **P3b** | That improvement **also** appears in the margin over the anchor, by **≥6 points** | margin flat (≤0) — meaning per-image register contrast teaches vocabulary and nothing else | 6.0 vs MDE 5.2 |
 | **P4** | Models trained on S score lower under an H-trained judge than H-trained models do under an S-trained judge (asymmetric transfer) | symmetric, or reversed | — |
 | **P5** | No model exceeds the **human** blind-guess score on its own corpus | — (a bound, not a hypothesis; reported either way) | — |
-| **P6** | **Emotion accuracy tracks the corpus's keyword anchor, not its human legibility.** Across the three provenances at matched structure, accuracy correlates with the anchor (v1 0.724 > ours 0.510 > human 0.342), so V1-unpaired scores **highest** on raw accuracy and lowest on the margin over its own anchor | accuracy does not rank with the anchor, or V1-unpaired's margin is not the smallest | ≥3 pts vs 2.3 |
+| **P6** | **Emotion accuracy tracks the corpus's keyword anchor, not its human legibility.** Across the three provenances at matched structure, accuracy ranks with the anchor (v1 0.724 > ours 0.510 > human 0.342), so V1-unpaired scores **highest** on raw accuracy and lowest on the margin over its own anchor, **each step ≥6 points** | accuracy does not rank with the anchor, or V1-unpaired's margin is not the smallest | **≥6 pts** vs MDE 5.2 |
 
 **P6 is what the v1 arm buys.** With three corpora whose anchors span 0.342 to 0.724, the
 prediction is falsifiable in a way no two-corpus comparison could be: if raw accuracy ranks
@@ -256,15 +295,16 @@ mitigations, all reported:
 - Each arm compared to every other on the primary metric, and each to its own negative control.
 - Paired bootstrap over test **images** (clustered — the five emotion cells of one image
   are not independent), 10,000 resamples, 95% CIs.
-- Holm–Bonferroni across the 15 pairwise arm comparisons.
+- Holm–Bonferroni across the **6 confirmatory** arm comparisons. The other 9 pairwise
+  comparisons are exploratory, reported uncorrected and labelled as such.
 - **Evaluation regime: 5-fold CV over each arm, folds split by `image_id`.** Never by
   caption — the five register cells of one photograph are not independent, and splitting by
   caption leaks the image across the split. Fold-to-fold spread absorbs both data and
   initialisation variance, replacing the earlier "spread across three seeds".
 
   This changed because the MDE on a single 1,000-cell test split is **6.5 points** against
-  **2.3** under CV, and a 5-point criterion was registered against the former — i.e. it could
-  not have been falsified. Logged as a pre-tag deviation in `docs/deviations.md`.
+  **2.7–5.2** under CV depending on seed noise, and a 5-point criterion was registered against
+  the former — i.e. it could not have been falsified. Logged as a pre-tag deviation in `docs/deviations.md`.
 
 - **A gap smaller than the observed fold spread is reported as null regardless of its
   p-value.** This rule is unchanged and is not weakened by the regime change. It exists
@@ -276,7 +316,7 @@ mitigations, all reported:
 
 | Check | Expectation | If it fails |
 |---|---|---|
-| **Detectability** — floor-to-ceiling range vs the design's MDE | the range must admit the smallest effect of interest (+10 pts) at the MDE. Currently floor 0.201, ceiling 0.773, range 57 pts, MDE 2.3 → **passes** | The design cannot resolve the effect it claims to test. **Halt the study.** |
+| **Detectability** — floor-to-ceiling range vs the design's MDE | the range must admit the smallest effect of interest (+10 pts) at the MDE. Currently floor 0.201, ceiling 0.773, range 57 pts, MDE ≤7.1 at any plausible seed SD → **passes** | The design cannot resolve the effect it claims to test. **Halt the study.** |
 | **Human legibility** — blind register guess on the corpus, caption only | reported with its neutral rate, beside the anchor for the same corpus. Currently **0.592 human vs 0.510 anchor** | A corpus a reader cannot decode above its own keyword anchor is not measuring register. **Halt.** |
 | Floor — accuracy with randomly reassigned labels | ≈ 0.20 | The metric is broken. |
 | **Lexical shortcut** — top-25-keyword-per-register rule | recomputed per evaluation set at its own n (0.332 on the full corpus) | Not a failure, a correction: this much of the primary metric needs no emotional register at all. The model's contribution is the margin above it. |
@@ -372,9 +412,9 @@ commonly reported does not mean what it appears to mean. **This is the outcome t
 built to be able to detect.**
 
 **If the arms are indistinguishable at the design's MDE**, that is reported as such and not
-resolved by adding comparisons after the fact. The MDE is 2.3 points under 5-fold CV; a
-difference smaller than the observed fold spread is reported as null regardless of its
-p-value.
+resolved by adding comparisons after the fact. A difference smaller than the observed fold spread is reported as null regardless of its
+p-value, and a comparison whose spread implies an MDE above its criterion is reported as
+underpowered rather than null.
 
 **If the v1 arms match the v10 arms**, the pilot's failure was its code and not its data —
 which reverses the post-mortem's emphasis and is worth reporting plainly, including that the
