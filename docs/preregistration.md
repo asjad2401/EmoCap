@@ -52,23 +52,67 @@ emotion accuracy alone can be entirely valid internally and still measure the wr
 
 ## 2. Design
 
-**Six data arms, one architecture.** Every arm trains the same decoder on the same images
-with the same schedule; only the captions differ.
+**Six data arms, one decoder.** Every arm trains the same architecture with the same
+schedule; only the captions differ.
 
-| arm | captions from | structure | captions |
-|---|---|---|---|
-| **S-paired25** | ours — prompt v10, gemini-3.7-flash | 25/image (5 registers × 5 source captions) | 201,900 |
-| **S-paired5** | ours — same corpus, 1 source caption | 5/image, all 5 registers | 40,380 |
-| **S-unpaired** | ours — same corpus, subsampled | 1/image, 1 register | 8,076 |
-| **V1-paired5** | the retired v1 pilot corpus | 5/image, all 5 registers | 40,240 |
-| **V1-unpaired** | the v1 pilot, subsampled | 1/image, 1 register | 8,048 |
-| **H-unpaired** | Personality-Captions (human-written) | 1/image, 1 style | 8,076 |
+| arm | captions from | images | structure | captions |
+|---|---|---|---|---|
+| **S-paired25** | ours — prompt v10, gemini-3.7-flash | Flickr8k | 25/image | 201,900 |
+| **S-paired5** | ours, 1 source caption | Flickr8k | 5/image | 40,240 |
+| **S-unpaired** | ours, subsampled | Flickr8k | 1/image | 4,390 |
+| **V1-paired5** | the retired v1 pilot corpus | Flickr8k | 5/image | 40,240 |
+| **V1-unpaired** | the v1 pilot, subsampled | Flickr8k | 1/image | 4,390 |
+| **H-unpaired** | Personality-Captions (human) | **YFCC100M** | 1/image | 4,390 |
 
-Three structure classes, so provenance is compared at matched shape and never across it:
+> **The S and V1 corpora do not exist yet.** They are generated from the registered
+> configuration *after* this tag. Only the v1 pilot corpus and Personality-Captions are on
+> disk today. Figures above are the planned sizes; the realised counts are reported with the
+> results.
 
-- **1/image** — S-unpaired vs V1-unpaired vs H-unpaired
-- **5/image** — S-paired5 vs V1-paired5
-- **25/image** — S-paired25, which only our corpus can supply
+### The image sets are not shared, and that governs which comparisons are confirmatory
+
+The human arm is Personality-Captions, whose captions describe **YFCC100M** photographs. Every
+other arm is **Flickr8k**. **The image sets do not intersect.** Any human-vs-synthetic
+comparison therefore varies provenance, image distribution and groundedness at once —
+CLIPScore is **0.578 for the human captions against 0.792 for ours**, 2.64 SD apart.
+
+This is why the confirmatory set is defined by matched images, not by interest:
+
+| | comparisons | images |
+|---|---|---|
+| **Confirmatory** | S-unpaired vs V1-unpaired · S-paired5 vs V1-paired5 · S-paired25 vs S-unpaired · S-paired25 vs S-paired5 | **identical Flickr8k images** |
+| **Reference** | H-unpaired vs S-unpaired (P1, P2) · H-unpaired vs V1-unpaired | **cross-dataset — confounded** |
+
+**P1 and P2 are registered as reference comparisons and are not claimed to isolate
+provenance.** `scripts/clipscore_matched.py` already states the live alternative explanation:
+*"the human corpus's 4.3-point accuracy advantage is bought by being allowed to ignore the
+image, not by being human-written."* That reading is registered here as the rival hypothesis,
+not discovered afterwards.
+
+**A groundedness-matched secondary analysis is registered with its weakness stated.** The two
+CLIPScore distributions overlap **18.6%**, so a matched subsample of a 4,390-caption arm
+retains roughly **816 captions** — far too few to confirm anything. It is registered as
+directional evidence only, and its MDE is reported alongside it.
+
+**Generating our captions on the YFCC images was considered and rejected.**
+Personality-Captions supplies no neutral caption to rewrite, so it would require inventing one
+with a VLM — which is exactly the v1 pilot's fatal design, where Moondream hallucinated and
+every rewrite inherited the error.
+
+### Why the 1-caption-per-image arms are 4,390 and not 8,076
+
+The trait mapping is **strict 1:1** (one Personality-Captions trait per register), which yields
+4,486 usable cells, so the balanced arm is 878 × 5 = **4,390**. All three 1/image arms are cut
+to that size: matching provenance while leaving the human arm half as large would confound P1
+with data volume.
+
+The grouped mapping would have supplied 8,076, and was rejected. `lab-notebook.md` records
+that **the sign of the stereotypy comparison flips between the two mappings** — strict: human
+0.450 vs ours 0.440; grouped: human 0.352 vs ours 0.441 — and concludes *"the strict 1:1
+mapping is the more defensible of the two and is what the paper will privilege."* Grouped had
+also never been run through any instrument; every human number in this repo was computed under
+strict. Choosing the unmeasured mapping because it supplied the arm size we wanted is exactly
+the decision this registration exists to prevent. **Cost: 0.4 points of MDE at seed SD 0.02.**
 
 ### Why the v1 pilot corpus is an arm
 
@@ -82,11 +126,11 @@ corrected pipeline therefore separates two explanations that were previously ent
 It is also the most useful point on this study's central axis. Measured with the same
 instrument at matched n, the keyword anchor is:
 
-| corpus | anchor | names its own emotion | fails the deterministic validator |
+| corpus | anchor **@ 4,486 cells** | names its own emotion | fails the deterministic validator |
 |---|---|---|---|
-| **v1 pilot** | **0.724** | **24.2%** | **42.4%** |
-| ours (v10) | 0.510 | 3.5% | 2.4% |
-| Personality-Captions (human) | 0.342 | — | — |
+| **v1 pilot** | **0.718** | **24.2%** | **42.4%** |
+| ours (v10) | 0.507 | 3.5% | 2.4% |
+| Personality-Captions (human), strict mapping | 0.450 | — | — |
 
 That is a **three-point gradient in lexical stereotypy**, from a corpus that names the emotion
 outright to human text that does not. P2 asks whether emotion-conditioning accuracy tracks the
@@ -102,11 +146,9 @@ gradient is what it is.
 and having *every register for the same photograph*. Without it, any S-paired advantage could
 be either.
 
-**H-unpaired is matched to S-unpaired** on images, caption count, structure and class count,
-so the arms differ in provenance and not in shape. Personality-Captions styles are mapped to
-our five registers; the mapping is fixed in `configs/prereg.lock.yaml` before training and
-**the mapping's sensitivity is reported**, because an earlier mapping choice flipped the sign
-of a human-vs-synthetic comparison.
+**H-unpaired is matched to S-unpaired on caption count, structure and class count** — 4,390
+captions, 1 per image, 5 balanced classes. It is **not** matched on images, and cannot be; see
+above.
 
 ### Architecture (control, not contribution)
 
@@ -115,7 +157,7 @@ prefix slot. Chosen because it is standard, trains on 8,076 images, and is not t
 study. **No conditioning-placement variants**: that comparison is dropped, and with it the
 five-condition, two-track, 30-run design.
 
-**Held constant by config, not by discipline:** images and splits, data order per seed,
+**Held constant by config, not by discipline:** splits, data order per seed,
 pre-extracted CLIP features, optimizer, schedule, epochs, batch size, early stopping, decode
 settings, and trainable parameter count matched within ±5%.
 
@@ -156,22 +198,33 @@ against the minimum detectable effect **before** registration.
 ### The MDE, honestly
 
 The MDE has two components and **only one is knowable before training**. Evaluation noise is
-measurable now (ICC 0.070 on per-cell correctness, cluster size 1/5/25 by arm, so design
-effects 1.00 / 1.28 / 2.68). **Seed noise is not knowable until models exist.** So the MDE is
-registered as a function of it, for the limiting comparison — the 1-caption-per-image arms at
-~8,048 cells each:
+measurable now; **seed noise is not knowable until models exist**. So the MDE is registered as
+a curve over seed SD, computed with this repository's own estimator
+(`emocap.eval.power.mde_two_arms`) on its own measured inputs — **ICC 0.0722, p = 0.72**, from
+`runs/mde/result.json`. Both figures come from the v5 corpus, which the study will not use;
+ICC is a property of caption clustering and is not expected to move much, but that is an
+assumption and it is stated rather than buried.
 
-| seed SD → | 0.000 | 0.005 | 0.010 | 0.020 | 0.030 |
+For the limiting comparison — the 1-caption-per-image arms at **4,390 cells** each:
+
+| seed SD → | 0.000 | 0.005 | 0.010 | **0.020** | 0.030 |
 |---|---|---|---|---|---|
-| **MDE, 6 confirmatory comparisons** | 2.7 | 2.9 | **3.5** | **5.2** | 7.1 |
+| **MDE, 4 confirmatory comparisons, 3 runs averaged** *(governing)* | 3.2 | 3.5 | 4.2 | **6.3** | 8.8 |
+| MDE, same but 5 runs averaged | 3.2 | 3.4 | 3.8 | 5.3 | 7.1 |
 
-The only comparable spread we have measured is the register classifier across three matched
-subsamples of one corpus: 0.688 / 0.674 / 0.676, **SD 0.0076**. That is subsample rather than
-seed noise, but it is the right order for this pipeline, so seed SD ≈ 0.01 is the expectation
-and 0.02 the conservative case.
+**The 3-run row governs.** Folds partition one dataset rather than drawing independently, so
+averaging five of them cannot be assumed to cut noise by √5. Registering against the
+optimistic row is the mistake this section exists to avoid.
 
-**Criteria are therefore set at ≥6 points**, which is reachable at seed SD 0.02 and above the
-MDE at every plausible value below it.
+The only comparable spread measured so far — the register classifier across three matched
+subsamples of one corpus, **SD 0.0076** — puts the expectation near seed SD 0.01, making 0.02
+the conservative case.
+
+Reproduce every cell with **`uv run python scripts/compute_mde.py`**, which writes
+`runs/mde/result.json`.
+
+**Criteria are therefore set at ≥7 points**, which clears the governing MDE at seed SD 0.02
+(6.3) with margin, and clears it at every smaller value.
 
 ### Two rules that make a null mean something
 
@@ -199,14 +252,14 @@ will be reported that way rather than as evidence of no difference.
 | | Prediction | Falsified if | margin over MDE |
 |---|---|---|---|
 | **P1** | H-unpaired beats S-unpaired on raw emotion accuracy | S-unpaired ≥ H-unpaired, or the difference straddles zero | 4.3 pt effect — **near the MDE, see caveat above** |
-| **P2** | The gap is **not** fully explained by lexical stereotypy: H's margin over its own keyword anchor exceeds S's margin over its own, by **≥6 points** | margin difference ≤ 0 | 6.0 vs MDE 5.2 at seed SD .02 |
+| **P2** | The gap is **not** fully explained by lexical stereotypy: H's margin over its own keyword anchor exceeds S's margin over its own, by **≥7 points** | margin difference ≤ 0 | 7.0 vs MDE 6.3 at seed SD .02 |
 | **P3a** | S-paired beats S-unpaired on raw accuracy (sanity check on the extra data) | S-paired ≤ S-unpaired | — |
-| **P3b** | That improvement **also** appears in the margin over the anchor, by **≥6 points** | margin flat (≤0) — meaning per-image register contrast teaches vocabulary and nothing else | 6.0 vs MDE 5.2 |
+| **P3b** | That improvement **also** appears in the margin over the anchor, by **≥7 points** | margin flat (≤0) — meaning per-image register contrast teaches vocabulary and nothing else | 7.0 vs MDE 6.3 |
 | **P4** | Models trained on S score lower under an H-trained judge than H-trained models do under an S-trained judge (asymmetric transfer) | symmetric, or reversed | — |
 | **P5** | No model exceeds the **human** blind-guess score on its own corpus | — (a bound, not a hypothesis; reported either way) | — |
-| **P6** | **Emotion accuracy tracks the corpus's keyword anchor, not its human legibility.** Across the three provenances at matched structure, accuracy ranks with the anchor (v1 0.724 > ours 0.510 > human 0.342), so V1-unpaired scores **highest** on raw accuracy and lowest on the margin over its own anchor, **each step ≥6 points** | accuracy does not rank with the anchor, or V1-unpaired's margin is not the smallest | **≥6 pts** vs MDE 5.2 |
+| **P6** | **Emotion accuracy tracks the corpus's keyword anchor, not its human legibility.** Across the three provenances at matched structure, accuracy ranks with the anchor (v1 0.718 > ours 0.507 > human 0.450), so V1-unpaired scores **highest** on raw accuracy and lowest on the margin over its own anchor, **each step ≥7 points** | accuracy does not rank with the anchor, or V1-unpaired's margin is not the smallest | **≥7 pts** vs MDE 6.3 |
 
-**P6 is what the v1 arm buys.** With three corpora whose anchors span 0.342 to 0.724, the
+**P6 is what the v1 arm buys.** With three corpora whose anchors span 0.450 to 0.718, the
 prediction is falsifiable in a way no two-corpus comparison could be: if raw accuracy ranks
 with stereotypy while the margin over the anchor ranks the other way, then "emotion accuracy"
 is substantially a measure of lexical provenance. **P6 failing is as informative as P6
@@ -286,7 +339,7 @@ mitigations, all reported:
    This threatens *construct* validity, not internal validity. Stereotypy cannot explain an
    arm's advantage over its own negative control, since both share a corpus — but it very
    much can explain one arm beating another, because **the arms differ in exactly how
-   stereotyped they are** (anchor 0.724 for v1, 0.510 for ours, 0.342 for human text). That
+   stereotyped they are** (anchor 0.718 for v1, 0.507 for ours, 0.450 for human text). That
    is why every arm comparison is reported as the margin over *that arm's own* anchor, and
    why P2 is the study's real claim rather than P1.
 
@@ -310,19 +363,40 @@ mitigations, all reported:
   p-value.** This rule is unchanged and is not weakened by the regime change. It exists
   because a 9.6-point gap once survived a 4-SE check and was still a small-sample artifact:
   **fold variance rules out noise, not bias.**
-- Smallest effect of interest fixed at **+10 percentage points** of emotion accuracy.
+- **Smallest effect of interest: +7 percentage points**, matching the falsification criteria
+  in §3. The earlier value of +10 was inherited from the dropped conditioning design and would
+  have made a 7-point effect simultaneously confirmatory and below the threshold of interest.
+  The detectability gate uses the same +7.
 
 ## 6. Anchors and gates
 
 | Check | Expectation | If it fails |
 |---|---|---|
-| **Detectability** — floor-to-ceiling range vs the design's MDE | the range must admit the smallest effect of interest (+10 pts) at the MDE. Currently floor 0.201, ceiling 0.773, range 57 pts, MDE ≤7.1 at any plausible seed SD → **passes** | The design cannot resolve the effect it claims to test. **Halt the study.** |
-| **Human legibility** — blind register guess on the corpus, caption only | reported with its neutral rate, beside the anchor for the same corpus. Currently **0.592 human vs 0.510 anchor** | A corpus a reader cannot decode above its own keyword anchor is not measuring register. **Halt.** |
+| **Detectability** — floor-to-ceiling range vs the design's MDE | the range must admit the smallest effect of interest (+7 pts) at the MDE. Currently floor 0.201, ceiling 0.773, range 57 pts, MDE ≤7.1 at any plausible seed SD → **passes** | The design cannot resolve the effect it claims to test. **Halt the study.** |
+| **Human legibility** — blind register guess on the corpus, caption only | reported with its neutral rate and CI, beside the anchor for the same corpus at the same n. Pilot: **0.592 ±0.049 (n=100) vs anchor 0.507 (n=5,625)** — a margin of ~1.7 SE, and see the caveat below | A corpus a reader cannot decode above its own keyword anchor is not measuring register. **Halt.** |
 | Floor — accuracy with randomly reassigned labels | ≈ 0.20 | The metric is broken. |
 | **Lexical shortcut** — top-25-keyword-per-register rule | recomputed per evaluation set at its own n (0.332 on the full corpus) | Not a failure, a correction: this much of the primary metric needs no emotional register at all. The model's contribution is the margin above it. |
 | Manipulation check — negative control accuracy | ≤ 0.25 | The classifier reads something other than the requested register. **Results not interpretable.** |
 | Negative control — shuffled emotion labels, per arm | ≈ floor | The conditioning is not doing the work. |
 | Visual-dependence probe — zero the features | captions change substantially | The run collapsed to a language prior. **Exclude the run.** |
+
+### Two things the gates rest on that are weaker than they look
+
+**The legibility gate's pilot value is one unblinded self-measurement.** 100 items, scored by
+the study's author, binomial SE ≈0.049, so the +0.082 margin is about **1.7 SE**. It is also
+not like-for-like: the anchor is a *trained* rule doing 5-fold CV over thousands of cells,
+while the reader was zero-shot on 100 items. **"Keywords beat a human" is therefore not by
+itself proof of leakage**, and the gate is registered with that stated. Before the gate is
+applied to the finished corpus the human sample is widened to ≥300 items and reported with
+its CI.
+
+**Every anchor in this document is provisional until the corpus exists.** The three-corpus
+gradient (0.718 / 0.507 / 0.450) is measured at **4,486 cells**. This project's own central
+finding is that this estimator falls ~11 points from 4.5k to 200k cells — the v5 corpus went
+0.440 → 0.332 over exactly that span. The finished 201,900-cell corpus will therefore sit well
+below 0.507, and so will the v1 arm at 40,240. §4's rule governs: **the anchor is recomputed on
+whatever evaluation set the metric is measured on, at that set's own n.** The gradient's
+*ordering* is the registered prediction; its *values* are not.
 
 ### Why the ceiling gate is a detectability criterion, not a level
 
@@ -333,7 +407,7 @@ things falsify it as written:
 2. **Neither does human-written text.** Measured with the identical instrument at matched n,
    Personality-Captions reaches **0.726**. A gate that halts a study on data matching human
    performance is a miscalibrated instrument, not a finding.
-3. **The ceiling is sample-size dependent**: 0.612 at 1,225 cells → 0.737 at 24,925 → 0.773
+3. **The ceiling is sample-size dependent**: 0.620 at 1,225 cells → 0.737 at 24,925 → 0.773
    at 201,900. There is no single number to threshold.
 
 **The replacement:** the study proceeds if the floor-to-ceiling range leaves room for the

@@ -14,9 +14,9 @@ above this anchor rather than the raw accuracy.
 
 Measured on the Part 0 audit sets (chance is 0.200):
 
-    v1 (original prompt)   0.639
+    v1 (original prompt)   0.641
     v3                     0.431
-    v4                     0.468
+    v4                     0.466
     v5 (final)             0.395
     Sonnet reference       0.347
 
@@ -26,8 +26,8 @@ comparable to any of these -- which is the reason this module exists.
 **THE ANCHOR IS STRONGLY SAMPLE-SIZE DEPENDENT. A POINT ESTIMATE IS MEANINGLESS WITHOUT
 ITS n.** Measured on the same generated captions:
 
-    4,500 cells      0.443 +/- 0.010   (SD over 10 image-disjoint subsamples)
-    124,750 cells    0.344
+    4,486 cells      0.440 +/- 0.010   (SD over 10 image-disjoint subsamples)
+    201,900 cells    0.332
 
 A keyword rule fitted on few images transfers well to held-out images drawn from that same
 narrow pool; widen the pool and it degrades. The anchor therefore *falls* by ~10 points as

@@ -32,7 +32,10 @@
     "accuracy": 0.773,
     "instrument": "DistilRoBERTa",
     "n_folds": 2,
-    "note": "single fold; treat as approximate"
+    "note": "single fold; treat as approximate",
+    "n_folds_completed": 2
   },
-  "retained_because": "The v5 -> v6 comparison is part of the write-up, so the abandoned corpus's ceiling is worth having on record rather than deleted."
+  "retained_because": "The v5 -> v6 comparison is part of the write-up, so the abandoned corpus's ceiling is worth having on record rather than deleted.",
+  "record_note": "Fields disagreed: status said 'after fold 1 of 3' while ceiling.n_folds was 2. Two folds completed before the run was stopped; the ceiling here is a two-fold mean and approximate. Corrected 2026-08-21, values untouched.",
+  "superseded_note": " MDE 2.3 superseded."
 }

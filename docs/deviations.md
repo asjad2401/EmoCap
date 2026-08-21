@@ -510,7 +510,7 @@ Two reasons, decided 2026-08-21 before the tag:
    incomplete diagnosis — and that is worth reporting.
 
 2. **It is the extreme point of the study's central axis.** Keyword anchors at matched n:
-   **v1 0.724**, ours 0.510, human 0.342. A three-point gradient in lexical stereotypy makes
+   **v1 0.718**, ours 0.507, human 0.450. A three-point gradient in lexical stereotypy makes
    **P6** falsifiable in a way no two-corpus comparison could be.
 
 **It is a contrast arm, not a rehabilitation.** The v1 captions are known to be worse — 24.2%
@@ -525,23 +525,24 @@ on disk. No duplicate `(image, emotion)` cells.
 
 ### The Personality-Captions trait mapping is FROZEN
 
-24 traits map to the five registers; `Breezy (Relaxed, Informal)` is dropped because only one
+23 traits are available; the strict 1:1 mapping uses 5 of them; `Breezy (Relaxed, Informal)` is dropped because only one
 usable row survives the image download. The mapping is in `configs/prereg.lock.yaml`
 (`study.personality_map`) and fixed **before** training, because an earlier mapping choice
 flipped the sign of a human-vs-synthetic comparison. §2 requires its sensitivity be reported.
 
-**Availability verified:** 19,991 Personality-Captions rows have their YFCC image on disk
-across 19,987 distinct images — ample for an 8,076-caption arm balanced at 1,615 per register,
+**Availability verified:** 19,990 Personality-Captions rows have their YFCC image on disk
+across 19,987 distinct images — ample for an 8,076-caption arm balanced at 878 per register (4,390 = 878 x 5, exact),
 with `romantic` the scarcest at 2,608 available.
 
-### The MDE was recomputed for six arms — and two criteria were unreachable
+### The MDE was recomputed for six arms — and three criteria were unreachable
 
 Caught during the pre-tag feasibility check, **before** the tag.
 
 The MDE of **2.3 points** quoted in the first draft of this rewrite was computed for the
 *three*-arm design and assumed **zero seed noise**. Neither holds:
 
-- Six arms give 15 pairwise combinations, not 6, and Holm over 15 is stricter.
+- Six arms give 15 pairwise combinations against the previous design's 3, and the stored
+  MDE used `n_comparisons=3`.
 - Seed noise is a real variance component that the 2.3 figure omitted entirely.
 
 Recomputed for the limiting comparison (1-caption-per-image arms, ~8,048 cells):
@@ -572,3 +573,102 @@ The MDE is registered **as a curve over seed SD** (`study.mde_curve_by_seed_sd`)
 as a single number, because seed noise cannot be known before models exist. The only
 comparable spread measured so far — the register classifier across three matched subsamples,
 SD 0.0076 — suggests seed SD ≈ 0.01, making 0.02 the conservative case.
+
+---
+
+## 2026-08-21 (later) — an external audit found seven blockers; all fixed pre-tag
+
+An independent audit recomputed every registered figure against this repository's own
+estimators rather than reading them off the documents. It found seven blockers, and **all
+seven were real**. Recorded here because the errors are instructive, not because they are
+flattering.
+
+### The audit's own lesson
+
+The internal feasibility check that ran an hour earlier passed 23 assertions — because it was
+written against the numbers already registered rather than against
+`emocap.eval.power` and `emocap.eval.anchors`. **It verified internal consistency and called
+that validation.** Same failure class as the retracted anchors: checking that nothing
+complained instead of checking that something is true.
+
+### B1 — a corpus described in the present tense that does not exist
+
+The arm table listed S-paired25 at 201,900 captions as though on disk; the real figure was 240
+of 8,076 images. Registering before collecting is normal; describing uncollected data as
+existing is not. §2 now says so explicitly, and the gates note which corpus produced them.
+
+### B2 — the MDE was not reproducible, and the criteria did not clear it
+
+The commit that "recomputed the MDE" changed three documentation files and no code.
+`scripts/compute_mde.py` still used `n_comparisons=3`, and the curve had nothing behind it. The
+figures were also computed with invented inputs (p 0.60, ICC 0.070) rather than the repo's
+measured ones (**p 0.72, ICC 0.0722**).
+
+Recomputed on the registered design — 4 confirmatory comparisons, 4,390-cell limiting arm, 3
+runs averaged — the MDE is **3.2 / 3.5 / 4.2 / 6.3 / 8.8** points at seed SD 0 / .005 / .01 /
+.02 / .03. **The ≥6-point criteria did not clear 6.3.** Criteria raised to **≥7**, and
+`compute_mde.py` now emits the registered curve so it is reproducible by command.
+
+### B3 — the human anchor belonged to a different corpus
+
+**0.342 is the Sonnet reference set's anchor**, recorded as such in `lab-notebook.md:274` and
+in this file's own table. It was attributed to Personality-Captions in the arm table, P6, §4,
+the README and the lock. The strict-mapping human anchor is **0.450**. The gradient still runs
+0.718 > 0.507 > 0.450, so P6 survives, but every anchor now carries its n and is marked
+provisional (see S4).
+
+### B4/B5 — the frozen trait mapping was unmeasured and flipped the sign
+
+The lock froze the **grouped** mapping. `lab-notebook.md` records that the sign of the
+stereotypy comparison flips between mappings and concludes *"the strict 1:1 mapping is the more
+defensible of the two"*. Worse, grouped had never been run through any instrument — every human
+number in the repo came from `compare_human_ceiling.py`, which uses strict, and the two
+disagreed even internally (`Sentimental` in `sad` versus `romantic`).
+
+**Switched to strict.** Cost: strict yields 4,486 cells, so all three 1-caption-per-image arms
+drop from 8,076 to **4,390** (878 × 5, exact). That raises the MDE by 0.4 points at seed SD
+0.02 — paid to avoid registering an instrument no measurement had used, chosen because it
+supplied the arm size we wanted.
+
+### B6 — the lock pinned the retired generator, and v10 existed nowhere
+
+`generator_model: gemini-3.1-flash-lite` sat in both configs while a newly added
+`generation_model: gemini-3.7-flash` sat 98 lines below it — two keys one letter apart naming
+different models, the frozen one naming the v5 generator. And `prompt_version: v10` was a
+config string with no definition: `prompt.py` documented v6, and the producing run's manifest
+recorded v6.
+
+Fixed: one `generator_model`, `PROMPT_VERSION = "v10"` in `emocap.data.prompt` with its version
+history, and two tests that fail if either drifts again.
+
+### B7 — the arms cannot share images, and the document said three times that they did
+
+H-unpaired is Personality-Captions over **YFCC100M**; every other arm is **Flickr8k**. The
+image sets do not intersect, so P1 and P2 varied provenance, image distribution and
+groundedness at once — CLIPScore **0.578 human against 0.792 ours**, 2.64 SD apart — while §2
+claimed they isolated provenance.
+
+**The confirmatory set is now defined by matched images:** S vs V1 at 1/image and 5/image, and
+the two structure comparisons within our own corpus. **P1 and P2 are reference comparisons**,
+reported with the confound stated and with the rival explanation registered from
+`clipscore_matched.py`: *"the human corpus's advantage is bought by being allowed to ignore the
+image, not by being human-written."*
+
+Two alternatives were considered and rejected. Generating our captions on the YFCC images is
+impossible without inventing neutral captions with a VLM — the v1 pilot's fatal design.
+A groundedness-matched subsample survives only 18.6% distribution overlap, ~816 captions, so it
+is registered as **directional secondary evidence** with its MDE stated, not as an arm.
+
+**A side effect worth naming: the v1 arm is now the study's cleanest confirmatory test** —
+same images, same structure, same pipeline, a 21-point anchor gap.
+
+### Softer findings, all applied
+
+**S3** the legibility gate now carries its CI (0.592 ±0.049, ~1.7 SE) and the non-equivalence
+between a trained anchor and a zero-shot reader, with the human sample to widen to ≥300 before
+the gate is applied. **S4** every anchor carries its n and the gradient is marked provisional,
+since this estimator falls ~11 points from 4.5k to 200k cells. **S5** 57 duplicated README
+lines removed. **M1–M12** stale V0/track keys retired, ICC corrected to 0.0722 (design effects
+1.00 / 1.29 / 2.73), the 1,225-cell ceiling corrected to 0.620, the smallest effect of interest
+brought to +7 to match the criteria, 23-not-24 traits, 19,990 rows, and the superseded
+thresholds in tracked run records annotated rather than rewritten.

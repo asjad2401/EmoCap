@@ -96,5 +96,6 @@
     "instrument": "DistilRoBERTa",
     "passes": false,
     "margin_over_anchor": 0.2262
-  }
+  },
+  "superseded_note": "ceiling_min 0.85 was retired pre-tag and replaced by a detectability criterion; any 2.3-point MDE quoted here is the three-arm figure, superseded by the registered curve."
 }

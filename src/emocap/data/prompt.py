@@ -45,6 +45,18 @@ EMOTIONS = ("joyful", "sad", "tense", "romantic", "humorous")
 
 #: Adverbs that name the emotion instead of conveying it. Rejected in validation,
 #: not merely discouraged in the prompt.
+#: The prompt version this module defines. **Must match `generation.prompt_version` in
+#: configs/data.yaml and `study.prompt_version` in configs/prereg.lock.yaml** -- a test
+#: enforces it. Before 2026-08-21 the config said v10 while this module documented v6 and
+#: the producing run's manifest recorded v6, so the registered generator was not
+#: reproducible from the repo.
+#:
+#: v7  vocabulary cap wired in (no prompt text change)
+#: v8  form relaxation: 6-30 words, two sentences, rule 2b   -- REVERTED
+#: v9  grounding rules 2c (invent nothing) and 2d (faces)     -- 2d REVERTED
+#: v10 = v6 register text + rule 2c + the 12-word cap, 8-24 words, one sentence
+PROMPT_VERSION = "v10"
+
 BANNED_ADVERBS = (
     "joyfully", "sadly", "tensely", "romantically", "humorously",
     "tenderly", "cheerfully", "mournfully", "anxiously", "lovingly",

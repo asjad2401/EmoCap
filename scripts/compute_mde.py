@@ -16,7 +16,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from emocap.eval.power import design_effect, icc_from_clusters, mde_table  # noqa: E402
+from emocap.eval.power import design_effect, icc_from_clusters, mde_table, mde_two_arms  # noqa: E402
 from emocap.eval.register_classifier import build_dataset, folds_by_image, tfidf_baseline  # noqa: E402
 
 recs = [json.loads(l) for l in (ROOT / "data/generated/captions_raw.jsonl").read_text().splitlines() if l.strip()]
@@ -70,7 +70,24 @@ print(f"\nMDE at 80% power, alpha 0.05 split over 3 comparisons (Bonferroni,")
 print(f"conservative vs the registered Holm), accuracy region p={P}\n")
 print(f"{'comparison':<40}{'cells':>7}{'DEFF':>6}{'seed SD':>9}{'MDE':>8}")
 print("-" * 70)
-out = {"icc": stats, "design_effect": round(deff, 3), "p_assumed": P, "cases": []}
+# The REGISTERED curve: 4 confirmatory comparisons, limiting arm 4,390 cells (the
+# 1-caption-per-image arms under the strict trait mapping), 3 runs averaged. The 3-run
+# model governs because folds partition one dataset rather than drawing independently,
+# so averaging 5 cannot be assumed to cut noise by sqrt(5).
+registered = {"n_comparisons": 4, "n_cells": 4390, "cluster_size": 1.0,
+              "criterion_points": 0.07, "curve": {}, "curve_5runs": {}}
+for _sd in (0.0, 0.005, 0.01, 0.02, 0.03):
+    for _ns, _k in ((3, "curve"), (5, "curve_5runs")):
+        registered[_k][str(_sd)] = round(mde_two_arms(
+            P, 4390, icc=stats["icc"], cluster_size=1.0, n_comparisons=4,
+            seed_sd=_sd, n_seeds=_ns)["mde"], 4)
+print("\nREGISTERED curve (4 comparisons, n=4,390, 3 runs):")
+for _sd, _m in registered["curve"].items():
+    print(f"  seed SD {_sd:>5}  MDE {_m*100:5.1f} pts"
+          + ("   <- criterion 7.0 clears" if 0.07 > _m else "   <- UNDERPOWERED by rule"))
+
+out = {"icc": stats, "design_effect": round(deff, 3), "p_assumed": P,
+       "registered": registered, "cases": []}
 for name, n, csize in CASES:
     rows = mde_table(P, n, icc=stats["icc"], cluster_size=csize,
                      n_comparisons=3, power=0.80, n_seeds=3)

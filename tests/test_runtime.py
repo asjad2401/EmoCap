@@ -247,3 +247,31 @@ def test_finalise_still_flags_a_genuinely_failed_check(tmp_path):
     m.record_check("real_gate", passed=False, detail="nope")
     m.finalise(tmp_path)
     assert Manifest.load(tmp_path)["status"] == "complete_with_failed_checks"
+
+
+def test_prompt_version_matches_both_configs():
+    """The registered generator must be reproducible from the repo.
+
+    Before 2026-08-21 `configs/data.yaml` said `prompt_version: v10` while
+    `emocap.data.prompt` documented v6 and the producing run's manifest recorded v6 — so
+    the prompt the corpus was registered under had no definition anywhere in the code.
+    """
+    from emocap.data.prompt import PROMPT_VERSION
+
+    assert load_config("data")["generation"]["prompt_version"] == PROMPT_VERSION
+    assert load_config("prereg.lock")["study"]["prompt_version"] == PROMPT_VERSION
+
+
+def test_one_generator_key_and_it_matches_across_configs():
+    """Two keys one letter apart named different models for a day.
+
+    `generator_model` in the lock said `gemini-3.1-flash-lite` (the retired v5 generator)
+    while a newly added `generation_model` in data.yaml said `gemini-3.7-flash`.
+    """
+    data = load_config("data")
+    lock = load_config("prereg.lock")
+    gens = {v["generator_model"] for cfg in (data, lock) for v in cfg.values()
+            if isinstance(v, dict) and "generator_model" in v}
+    assert gens == {"gemini-3.7-flash"}, gens
+    assert not any("generation_model" in v for cfg in (data, lock)
+                   for v in cfg.values() if isinstance(v, dict))
