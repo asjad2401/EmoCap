@@ -237,12 +237,17 @@ Reproduce every cell with **`uv run python scripts/compute_mde.py`**, which writ
 
 ### Confirmatory vs exploratory
 
-**Six comparisons are confirmatory** and carry Holm correction: H vs S (unpaired),
-S-paired25 vs S-unpaired, S-unpaired vs V1-unpaired, H-unpaired vs V1-unpaired, S-paired5 vs
-V1-paired5, and S-paired25 vs H-unpaired. The remaining nine pairwise comparisons are
+**Four comparisons are confirmatory** and carry Holm correction — the same four listed in
+§2 and frozen in `configs/prereg.lock.yaml`, all of them **matched on images**:
+S-unpaired vs V1-unpaired, S-paired5 vs V1-paired5, S-paired25 vs S-unpaired, and
+S-paired25 vs S-paired5. The two cross-dataset comparisons (H vs S, H vs V1) are
+**reference**, and the remaining nine pairwise comparisons are
 **exploratory**: reported uncorrected, explicitly labelled, and **no hypothesis is registered
-on them**. Correcting over all 15 would push the MDE to 5.6 points at seed SD 0.02 and buy
-nothing, since nine of them test no prediction.
+on them**. Correcting over all 15 would push the MDE to **7.1 points** at seed SD 0.02 — **above the
+7.0 criterion**, which would make every criterion unreachable. An earlier draft of this
+paragraph said 5.6 and called the difference immaterial; 5.6 was a stale figure from the
+superseded 8,048-cell curve, and the claim understated the cost of full correction rather
+than disclosing it. Recomputed: 4 comparisons 6.3, 6 comparisons 6.6, 15 comparisons 7.1.
 
 **P1 carries a caveat that must be reported with it.** Its expected effect is 4.3 points,
 measured on training data. At seed SD 0.02 the MDE is 5.2 — *above* that. So a null on P1 is
@@ -390,8 +395,8 @@ mitigations, all reported:
 
 | Check | Expectation | If it fails |
 |---|---|---|
-| **Detectability** — floor-to-ceiling range vs the design's MDE | the range must admit the smallest effect of interest (+7 pts) at the MDE. Currently floor 0.201, ceiling 0.773, range 57 pts, MDE ≤7.1 at any plausible seed SD → **passes** | The design cannot resolve the effect it claims to test. **Halt the study.** |
-| **Human legibility** — blind register guess on the corpus, caption only | reported with its neutral rate and CI, beside the anchor for the same corpus at the same n. Pilot: **0.592 ±0.049 (n=100) vs anchor 0.507 (n=5,625)** — a margin of ~1.7 SE, and see the caveat below | A corpus a reader cannot decode above its own keyword anchor is not measuring register. **Halt.** |
+| **Detectability** — floor-to-ceiling range vs the design's MDE | the range must admit the smallest effect of interest (+7 pts) at the MDE. Currently floor 0.201, ceiling 0.773, range 57 pts, MDE 6.3 at seed SD 0.02 on the governing 3-run row → **passes** | The design cannot resolve the effect it claims to test. **Halt the study.** |
+| **Human legibility** — blind register guess on the corpus, caption only | reported with its neutral rate and CI, beside the anchor for the same corpus at the same n. Pilot: **0.592 ±0.049 (n=100) vs anchor 0.507 (matched at n=4,486 cells)** — a margin of ~1.7 SE, and see the caveat below | A corpus a reader cannot decode above its own keyword anchor is not measuring register. **Halt.** |
 | Floor — accuracy with randomly reassigned labels | ≈ 0.20 | The metric is broken. |
 | **Lexical shortcut** — top-25-keyword-per-register rule | recomputed per evaluation set at its own n (0.332 on the full corpus) | Not a failure, a correction: this much of the primary metric needs no emotional register at all. The model's contribution is the margin above it. |
 | Manipulation check — negative control accuracy | ≤ 0.25 | The classifier reads something other than the requested register. **Results not interpretable.** |
@@ -429,7 +434,7 @@ things falsify it as written:
    at 201,900. There is no single number to threshold.
 
 **The replacement:** the study proceeds if the floor-to-ceiling range leaves room for the
-smallest effect of interest (+10 points) to be detected at the design's MDE. Floor and ceiling
+smallest effect of interest (+7 points) to be detected at the design's MDE. Floor and ceiling
 are reported **with their n**, beside that evaluation set's recomputed anchor.
 
 This cannot be gamed by choosing a level, it does not make the human number load-bearing for a

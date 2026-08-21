@@ -1,0 +1,82 @@
+{
+  "export": "emocap-guess-text-20260826.json",
+  "anchor": 0.507,
+  "anchor_n": 4486,
+  "arms": {
+    "v10_35.jsonl": {
+      "n": 100,
+      "neutral_rate": 0.15,
+      "decided_n": 85,
+      "acc_decided": 0.6118,
+      "raw": 0.52,
+      "fce": 0.55,
+      "se": 0.0497,
+      "per_register": {
+        "joyful": {
+          "recall": 0.842,
+          "decided": 19,
+          "neutral": 1
+        },
+        "sad": {
+          "recall": 0.615,
+          "decided": 13,
+          "neutral": 7
+        },
+        "tense": {
+          "recall": 0.611,
+          "decided": 18,
+          "neutral": 2
+        },
+        "romantic": {
+          "recall": 0.471,
+          "decided": 17,
+          "neutral": 3
+        },
+        "humorous": {
+          "recall": 0.5,
+          "decided": 18,
+          "neutral": 2
+        }
+      },
+      "passes_legibility_gate": true
+    },
+    "v10_37.jsonl": {
+      "n": 100,
+      "neutral_rate": 0.11,
+      "decided_n": 89,
+      "acc_decided": 0.6404,
+      "raw": 0.57,
+      "fce": 0.592,
+      "se": 0.0491,
+      "per_register": {
+        "joyful": {
+          "recall": 0.722,
+          "decided": 18,
+          "neutral": 2
+        },
+        "sad": {
+          "recall": 0.444,
+          "decided": 18,
+          "neutral": 2
+        },
+        "tense": {
+          "recall": 0.667,
+          "decided": 18,
+          "neutral": 2
+        },
+        "romantic": {
+          "recall": 0.611,
+          "decided": 18,
+          "neutral": 2
+        },
+        "humorous": {
+          "recall": 0.765,
+          "decided": 17,
+          "neutral": 3
+        }
+      },
+      "passes_legibility_gate": true
+    }
+  },
+  "passes": true
+}

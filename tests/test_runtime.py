@@ -299,3 +299,19 @@ def test_one_generator_key_and_it_matches_across_configs():
     assert gens == {"gemini-3.7-flash"}, gens
     assert not any("generation_model" in v for cfg in (data, lock)
                    for v in cfg.values() if isinstance(v, dict))
+
+
+def test_gate_scripts_still_run_against_the_current_lock():
+    """`check_gates.py` died on `KeyError: 'ceiling_min'` for a day and no test noticed.
+
+    The gate runner reads keys straight out of `prereg.lock.yaml`, so any rename there
+    silently breaks the only implementation of a registered halt condition. This is a smoke
+    test: it asserts the keys the scripts read still exist, without running the models.
+    """
+    lock = load_config("prereg.lock")
+    gates = lock["gates"]
+    assert "smallest_effect_of_interest" in gates
+    assert "negative_control_accuracy_max" in gates["manipulation_check"]
+    assert 0.02 in lock["study"]["mde_curve_by_seed_sd"]
+    # the retired level gate must NOT be reachable as a live key
+    assert "ceiling_min" not in gates

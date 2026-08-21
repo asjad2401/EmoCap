@@ -75,7 +75,7 @@ nothing here depends on it.
 | | |
 |---|---|
 | **Content** | ~202,000 emotion-conditioned captions, each a rewrite of a Flickr8k human caption |
-| **Producer** | Google `gemini-3.1-flash-lite` via the Gemini Batch API, prompt version v5 (`prompt_sha256` recorded in every run manifest under `runs/`) |
+| **Producer** | Google `gemini-3.7-flash` via the Gemini Batch API, prompt version v5 (`prompt_sha256` recorded in every run manifest under `runs/`) |
 | **Derived from** | Flickr8k human captions and images (§1) |
 
 **Status in this repository:** the full corpus is gitignored. Small audit samples
@@ -83,7 +83,7 @@ nothing here depends on it.
 evidence, because generation runs at temperature 0.9 and cannot be reproduced
 byte-identically.
 
-**Three images excluded.** The generator declined to process three Flickr8k images, all
+**Fifteen images excluded — 3 content refusals and 12 zero-output-at-preflight.** The generator declined to process three Flickr8k images, all
 showing young children in or near water, minimally clothed — recorded in
 `data/generated/excluded_images.json`. No attempt was made to circumvent that filtering.
 The exclusion is content-correlated rather than random and is disclosed as a limitation.
@@ -107,7 +107,7 @@ VLM` precisely to keep a VLM's output out of the dataset.
 | model | role | licence |
 |---|---|---|
 | OpenAI CLIP ViT-B/32 | frozen image encoder | MIT |
-| GPT-2 | decoder (Track B) | MIT |
+| GPT-2 | decoder | MIT |
 | DistilRoBERTa | held-out register classifier | Apache 2.0 |
 
 None are redistributed; they are fetched from their upstream sources at run time.

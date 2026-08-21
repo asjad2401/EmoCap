@@ -10,6 +10,26 @@
   },
   "design_effect": 2.733,
   "p_assumed": 0.72,
+  "registered": {
+    "n_comparisons": 4,
+    "n_cells": 4390,
+    "cluster_size": 1.0,
+    "criterion_points": 0.07,
+    "curve": {
+      "0.0": 0.032,
+      "0.005": 0.0348,
+      "0.01": 0.042,
+      "0.02": 0.0632,
+      "0.03": 0.0878
+    },
+    "curve_5runs": {
+      "0.0": 0.032,
+      "0.005": 0.0337,
+      "0.01": 0.0383,
+      "0.02": 0.053,
+      "0.03": 0.071
+    }
+  },
   "cases": [
     {
       "comparison": "unpaired arms, 1k-image test split",

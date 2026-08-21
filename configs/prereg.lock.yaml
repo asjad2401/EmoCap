@@ -33,10 +33,10 @@ study:
   negative_control: shuffled_emotion_labels_per_arm
   runs: 36                                # 6 arms x 5 folds + 6 negative controls (1 fold each)
   ceiling_1225_cells: 0.620               # runs/gate-check-v5/result.json (was mis-cited as 0.612)
-  # SIX comparisons are confirmatory and Holm-corrected; the other nine pairwise
+  # FOUR comparisons are confirmatory and Holm-corrected; the other nine pairwise
   # combinations are exploratory, reported uncorrected and carrying no hypothesis.
-  # Correcting over all 15 raises the MDE from 5.2 to 5.6 points at seed SD 0.02 and buys
-  # nothing, because nine of them test no prediction.
+  # Correcting over all 15 raises the MDE to 7.1 points at seed SD 0.02 -- ABOVE the 0.07
+  # criterion, which is why the family is restricted rather than merely for convenience.
   # CONFIRMATORY comparisons are MATCHED ON IMAGES. The human arm is Personality-Captions
   # over YFCC photographs; every other arm is Flickr8k. The image sets do not intersect, so
   # any human-vs-synthetic comparison varies provenance, image distribution and groundedness

@@ -91,18 +91,23 @@ def main() -> None:
         sys.exit(f"{path} has no records")
 
     lock = load_config("prereg.lock")
-    ceiling_min = lock["gates"]["ceiling_min"]
-    v0_max = lock["gates"]["manipulation_check"]["v0_emotion_accuracy_max"]
+    gates = lock["gates"]
+    sei = gates["smallest_effect_of_interest"]              # 0.07
+    mde = lock["study"]["mde_curve_by_seed_sd"][0.02]       # governing MDE, seed SD 0.02
+    need = sei + mde                                        # range the gate demands
+    nc_max = gates["manipulation_check"]["negative_control_accuracy_max"]
 
     texts, labels, images = build_dataset(records)
     chance = 1 / len(EMOTIONS)
     print(f"store        {path.name}")
     print(f"cells        {len(texts):,} over {len(set(images)):,} images")
     print(f"per register {dict(Counter(EMOTIONS[l] for l in labels))}")
-    print(f"chance       {chance:.3f}   pre-registered ceiling >= {ceiling_min}\n")
+    print(f"chance       {chance:.3f}   gate: floor-to-ceiling range >= {need:.3f} "
+          f"(smallest effect {sei} + MDE {mde})\n")
 
     result: dict = {"store": path.name, "cells": len(texts), "images": len(set(images)),
-                    "chance": chance, "ceiling_min": ceiling_min}
+                    "chance": chance, "smallest_effect": sei, "mde": mde,
+                    "range_required": round(need, 4)}
 
     # ── the lexical-shortcut anchor, for context on everything below ────────
     anchor = keyword_rule_accuracy(records)
@@ -198,26 +203,31 @@ def main() -> None:
 
     # ── verdict ────────────────────────────────────────────────────────────
     acc = ceiling_source["accuracy"]
+    floor_acc = result["floor_tfidf"]["accuracy"]
+    rng = acc - floor_acc
+    passes = rng >= need
     margin = acc - anchor["accuracy"]
     print(f"\n{'=' * 68}")
-    print(f"CEILING ({ceiling_label})      {acc:.3f}   vs pre-registered >= {ceiling_min}")
-    print(f"margin over keyword rule   {margin:+.3f}   "
-          f"({anchor['accuracy']:.3f} needs no model at all)")
-    if acc >= ceiling_min:
-        print("\nPASSES the ceiling on this sample. The generated captions carry "
-              "separable tone.")
-    else:
-        n_img = len(set(images))
-        print(f"\nBELOW the pre-registered ceiling of {ceiling_min} on this sample "
-              f"({n_img:,} images, {len(texts):,} cells).")
-        print("Not the official gate, which trains on the full train split. Read the "
-              "learning curve\nbefore concluding: at this size the classifier may still "
-              "be data-limited.")
-    print(f"\nNot runnable until a model exists: manipulation check (V0 <= {v0_max}), "
-          f"negative\ncontrol (condition C), visual-dependence probe.")
+    print(f"floor        {floor_acc:.3f}")
+    print(f"ceiling      {acc:.3f}   ({ceiling_label})")
+    print(f"range        {rng:.3f}   needs >= {need:.3f}  "
+          f"(smallest effect {sei} + MDE {mde})")
+    print(f"anchor       {anchor['accuracy']:.3f}   at n={len(texts):,} cells "
+          f"-- always quote the anchor with its n")
+    print(f"margin       {margin:+.3f}   over the keyword rule")
+    print("\n" + ("PASSES the detectability gate: the range admits the smallest effect "
+                  "of interest\nat this design's MDE."
+                  if passes else
+                  "FAILS the detectability gate. The design cannot resolve the effect it "
+                  "claims to test.\nHALT."))
+    print(f"\nNot runnable until a model exists: manipulation check (negative control "
+          f"<= {nc_max}),\nvisual-dependence probe. Human legibility is a separate gate -- "
+          f"see scripts/score_guess.py.")
     result["ceiling"] = {"accuracy": acc, "instrument": ceiling_label,
-                         "passes": acc >= ceiling_min,
                          "margin_over_anchor": round(margin, 4)}
+    result["detectability_gate"] = {"floor": floor_acc, "ceiling": acc,
+                                    "range": round(rng, 4), "required": round(need, 4),
+                                    "passes": passes}
 
     if args.out:
         outp = Path(args.out)

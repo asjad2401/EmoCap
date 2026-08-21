@@ -454,7 +454,7 @@ reported as null **regardless of its p-value** is unchanged.
 
 **Was:** `ceiling_min: 0.85`.
 **Is:** the study proceeds if the floor-to-ceiling range admits the smallest effect of
-interest (+10 points) at the design's MDE.
+interest (+7 points) at the design's MDE.
 
 Three reasons the registered value fails as written: our corpus reaches ~0.77 so it says
 *halt*; **human-written text reaches only 0.726** on the identical instrument, so it would
@@ -672,3 +672,38 @@ lines removed. **M1–M12** stale V0/track keys retired, ICC corrected to 0.0722
 1.00 / 1.29 / 2.73), the 1,225-cell ceiling corrected to 0.620, the smallest effect of interest
 brought to +7 to match the criteria, 23-not-24 traits, 19,990 rows, and the superseded
 thresholds in tracked run records annotated rather than rewritten.
+
+### A second audit found ten blockers; all fixed pre-tag
+
+Recomputed against the repo's own estimators again. The most serious were not the stale
+numbers but two faults the first pass created or missed:
+
+**The generation pipeline was pinned to the retired generator.** `configs/data.yaml`
+`generation.model` said `gemini-3.1-flash-lite` — the key `run_stage02.py` and
+`run_vertex.py` actually read. The earlier "one generator key" fix corrected
+`data.generator_model`, which nothing in the generation path reads. **The corpus would have
+been generated with the wrong model.** A test now asserts every key whose name contains
+"model" with a Gemini-shaped value agrees across every config.
+
+**P1 and P6 registered opposite signs for the same comparison.** P1 predicts H beats S; P6's
+mechanism predicts accuracy ranks with stereotypy, and ours is more stereotyped than the human
+corpus, so it predicts the reverse. Separated by scope: P6 covers only the matched-image pair,
+P1 stays a cross-dataset reference. The conflict is named in §3 rather than quietly resolved.
+
+**The gate runner was dead code.** `check_gates.py` crashed with `KeyError: 'ceiling_min'`
+because the gates were rewritten around it, and the two replacement gates had no
+implementation at all — so the registration committed to halt conditions that could not be
+evaluated. 256 tests passed because none touched the script. It now evaluates the
+detectability range, `scripts/score_guess.py` implements the human-legibility gate, and a
+smoke test asserts the lock keys both scripts read still exist.
+
+**"Correcting over all 15 buys nothing" was wrong in direction and hid a criterion break.**
+More comparisons cannot lower an MDE. Recomputed: 4 → 6.3, 6 → 6.6, **15 → 7.1** — above the
+7.0 criterion. The 5.6 figure was stale from the superseded 8,048-cell curve. The paragraph
+now states the real cost.
+
+Also fixed: the confirmatory family read four/six/four in three places (now four everywhere);
+the README still listed 8,076-caption arms the strict mapping makes impossible; the
+detectability gate quoted the optimistic 5-run MDE row the document forbids; smallest effect
+of interest was +7 in three places and +10 in two; `data-attribution.md` said three exclusions
+where disk holds fifteen, and still named the v5 generator and the dropped two-track design.
