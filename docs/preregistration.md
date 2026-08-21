@@ -52,14 +52,51 @@ emotion accuracy alone can be entirely valid internally and still measure the wr
 
 ## 2. Design
 
-**Three data arms, one architecture.** Every arm trains the same decoder on the same images
+**Six data arms, one architecture.** Every arm trains the same decoder on the same images
 with the same schedule; only the captions differ.
 
-| arm | captions from | images | captions | structure |
-|---|---|---|---|---|
-| **S-paired** | ours (prompt v10, gemini-3.7-flash) | 8,076 | 201,900 | 25 per image — all 5 registers × 5 source captions |
-| **S-unpaired** | ours, subsampled from the same corpus | 8,076 | 8,076 | 1 per image, 1 register |
-| **H-unpaired** | Personality-Captions (human-written) | ~8,076 | ~8,076 | 1 per image, 1 style |
+| arm | captions from | structure | captions |
+|---|---|---|---|
+| **S-paired25** | ours — prompt v10, gemini-3.7-flash | 25/image (5 registers × 5 source captions) | 201,900 |
+| **S-paired5** | ours — same corpus, 1 source caption | 5/image, all 5 registers | 40,380 |
+| **S-unpaired** | ours — same corpus, subsampled | 1/image, 1 register | 8,076 |
+| **V1-paired5** | the retired v1 pilot corpus | 5/image, all 5 registers | 40,240 |
+| **V1-unpaired** | the v1 pilot, subsampled | 1/image, 1 register | 8,048 |
+| **H-unpaired** | Personality-Captions (human-written) | 1/image, 1 style | 8,076 |
+
+Three structure classes, so provenance is compared at matched shape and never across it:
+
+- **1/image** — S-unpaired vs V1-unpaired vs H-unpaired
+- **5/image** — S-paired5 vs V1-paired5
+- **25/image** — S-paired25, which only our corpus can supply
+
+### Why the v1 pilot corpus is an arm
+
+The v1 pilot produced unusable results, and its post-mortem lists several causes at once:
+a beam-search KV-cache aliasing bug in the decoder, a VLM (Moondream) rather than humans as
+the neutral source, one reference per cell, and figurative style leaking past the prompt.
+**The code faults are fixed in this version.** Training the pilot's *data* through the
+corrected pipeline therefore separates two explanations that were previously entangled:
+**did the pilot fail because of its code, or because of its data?**
+
+It is also the most useful point on this study's central axis. Measured with the same
+instrument at matched n, the keyword anchor is:
+
+| corpus | anchor | names its own emotion | fails the deterministic validator |
+|---|---|---|---|
+| **v1 pilot** | **0.724** | **24.2%** | **42.4%** |
+| ours (v10) | 0.510 | 3.5% | 2.4% |
+| Personality-Captions (human) | 0.342 | — | — |
+
+That is a **three-point gradient in lexical stereotypy**, from a corpus that names the emotion
+outright to human text that does not. P2 asks whether emotion-conditioning accuracy tracks the
+register or the fingerprint; this gradient is the sharpest available test of it, and the v1
+corpus is the extreme case.
+
+**It is included as a contrast, not as a rehabilitation.** Its captions are known to be worse:
+the neutral source hallucinated, so grounding is broken upstream of the rewrite. Reporting it
+as a fair competitor would be dishonest; reporting it as the high-fingerprint end of a
+gradient is what it is.
 
 **S-unpaired exists to separate two things S-paired confounds**: having synthetic captions,
 and having *every register for the same photograph*. Without it, any S-paired advantage could
@@ -84,8 +121,8 @@ settings, and trainable parameter count matched within ±5%.
 
 ### Runs
 
-3 arms × 5 folds = **15 training runs**, plus a negative control per arm (shuffled emotion
-labels) for **18 total**. Kaggle notebooks, *Save & Run All*, all outputs preserved for
+6 arms × 5 folds = **30 training runs**, plus one negative control per arm (shuffled emotion
+labels, single fold) for **36 total**. Kaggle notebooks, *Save & Run All*, all outputs preserved for
 export; no stage depends on a session surviving.
 
 <details><summary>SUPERSEDED §2 as originally drafted (click to expand)</summary>
@@ -115,7 +152,7 @@ decode settings; trainable parameter count matched within ±5% per track.
 
 Every criterion below is stated **in points of accuracy** and every one has been checked
 against the minimum detectable effect **before** registration. Under 5-fold CV over a whole
-arm the MDE is **2.3 points** (80% power, α 0.05 Holm-adjusted over 6 comparisons, ICC 0.070,
+arm the MDE is **2.3 points** (80% power, α 0.05 Holm-adjusted over 15 comparisons, ICC 0.070,
 design effect 2.69 on the paired arm). **No criterion below sits under 2.3.** This check is
 not decorative: the first draft of P2 used a 5-point criterion against an MDE of 6.5, which
 made it unfalsifiable, and that was caught by computing the MDE rather than by review.
@@ -128,6 +165,13 @@ made it unfalsifiable, and that was caught by computing the MDE rather than by r
 | **P3b** | That improvement **also** appears in the margin over the anchor, by ≥3 points | margin flat (≤0) — meaning per-image register contrast teaches vocabulary and nothing else | 3.0 vs 2.3 |
 | **P4** | Models trained on S score lower under an H-trained judge than H-trained models do under an S-trained judge (asymmetric transfer) | symmetric, or reversed | — |
 | **P5** | No model exceeds the **human** blind-guess score on its own corpus | — (a bound, not a hypothesis; reported either way) | — |
+| **P6** | **Emotion accuracy tracks the corpus's keyword anchor, not its human legibility.** Across the three provenances at matched structure, accuracy correlates with the anchor (v1 0.724 > ours 0.510 > human 0.342), so V1-unpaired scores **highest** on raw accuracy and lowest on the margin over its own anchor | accuracy does not rank with the anchor, or V1-unpaired's margin is not the smallest | ≥3 pts vs 2.3 |
+
+**P6 is what the v1 arm buys.** With three corpora whose anchors span 0.342 to 0.724, the
+prediction is falsifiable in a way no two-corpus comparison could be: if raw accuracy ranks
+with stereotypy while the margin over the anchor ranks the other way, then "emotion accuracy"
+is substantially a measure of lexical provenance. **P6 failing is as informative as P6
+holding** — it would mean the metric is more robust to provenance than we think.
 
 **P2 is the study's actual claim.** P1 alone would be a result about accuracy; P2 is the
 result about what accuracy *means*, because it asks whether the human-written corpus wins for
@@ -200,16 +244,19 @@ mitigations, all reported:
    same span where ours falls 0.031. The anchor is therefore **recomputed on whatever
    evaluation set the primary metric is measured on, at that set's own n**, and reported
    beside it. Three findings were retracted on 2026-08-19 for violating exactly that.
-   This threatens *construct* validity, not internal validity: stereotypy affects every
-   condition equally, so it cannot explain V0 vs V2, but it does mean "emotion accuracy"
-   partly measures keyword emission rather than register.
+   This threatens *construct* validity, not internal validity. Stereotypy cannot explain an
+   arm's advantage over its own negative control, since both share a corpus — but it very
+   much can explain one arm beating another, because **the arms differ in exactly how
+   stereotyped they are** (anchor 0.724 for v1, 0.510 for ours, 0.342 for human text). That
+   is why every arm comparison is reported as the margin over *that arm's own* anchor, and
+   why P2 is the study's real claim rather than P1.
 
 ## 5. Analysis plan
 
 - Each arm compared to every other on the primary metric, and each to its own negative control.
 - Paired bootstrap over test **images** (clustered — the five emotion cells of one image
   are not independent), 10,000 resamples, 95% CIs.
-- Holm–Bonferroni across the six arm comparisons.
+- Holm–Bonferroni across the 15 pairwise arm comparisons.
 - **Evaluation regime: 5-fold CV over each arm, folds split by `image_id`.** Never by
   caption — the five register cells of one photograph are not independent, and splitting by
   caption leaks the image across the split. Fold-to-fold spread absorbs both data and
@@ -313,8 +360,25 @@ perfectly balanced at 40,380 cells per register to a 16.9% imbalance concentrate
 
 ## 8. What a null result looks like
 
-If H1 is falsified — no conditioning strategy beats the unconditioned baseline by the
-smallest effect of interest — that is the finding, and it is reported as the headline. The
-plausible mechanism is already identified: with five references per cell and a shared
-visual encoder, the emotion embedding may be a low-capacity channel relative to the
-language prior. Reporting that is more useful than a tuned positive.
+**If P1 is falsified** — the human-written arm does not beat the synthetic arms — that is
+reported as the headline. It would mean synthetic emotive captions are as good a training
+signal as human ones for this task, which is a useful negative for anyone building such a
+corpus.
+
+**If P2 is falsified** — the human arm's advantage *is* fully explained by lexical stereotypy
+— that is a stronger result than the positive would be. It would say emotion-conditioning
+accuracy is measuring vocabulary provenance rather than register, and that the metric as
+commonly reported does not mean what it appears to mean. **This is the outcome the study is
+built to be able to detect.**
+
+**If the arms are indistinguishable at the design's MDE**, that is reported as such and not
+resolved by adding comparisons after the fact. The MDE is 2.3 points under 5-fold CV; a
+difference smaller than the observed fold spread is reported as null regardless of its
+p-value.
+
+**If the v1 arms match the v10 arms**, the pilot's failure was its code and not its data —
+which reverses the post-mortem's emphasis and is worth reporting plainly, including that the
+retired corpus was discarded on an incomplete diagnosis.
+
+No outcome here requires a positive finding to be publishable, and the exclusion rules in §7
+are what make that credible: nothing can be dropped for performing badly.

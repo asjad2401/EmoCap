@@ -493,3 +493,43 @@ captions against 3% elsewhere, and masking such words dropped the lexical anchor
 0.638 → 0.504. A decoder trained on that learns `joyful → bright`. Tuning the caps after
 seeing the anchor would be fitting the instrument to the result, which is why they are frozen
 pre-tag.
+
+### The retired v1 pilot corpus is ADDED as two arms
+
+**Was:** the v1 pilot corpus was archived as provenance only, marked *"do not train on this"*.
+**Is:** two arms — **V1-paired5** (5/image) and **V1-unpaired** (1/image) — bringing the
+design to **six arms and 36 runs**.
+
+Two reasons, decided 2026-08-21 before the tag:
+
+1. **It separates the pilot's code faults from its data.** The post-mortem lists several
+   causes at once, including a beam-search KV-cache aliasing bug in the decoder. That bug is
+   fixed in this version, so training the pilot's *data* through the corrected pipeline
+   answers a question the post-mortem could not: did the pilot fail because of its code or
+   because of its data? If the v1 arms match the v10 arms, the corpus was discarded on an
+   incomplete diagnosis — and that is worth reporting.
+
+2. **It is the extreme point of the study's central axis.** Keyword anchors at matched n:
+   **v1 0.724**, ours 0.510, human 0.342. A three-point gradient in lexical stereotypy makes
+   **P6** falsifiable in a way no two-corpus comparison could be.
+
+**It is a contrast arm, not a rehabilitation.** The v1 captions are known to be worse — 24.2%
+name their own emotion, 42.4% fail the deterministic validator, and the neutral source was a
+VLM that hallucinated, so grounding is broken upstream of the rewrite. Presenting it as a fair
+competitor would be dishonest; presenting it as the high-fingerprint end of a gradient is what
+it is.
+
+**Availability verified before registering:** 8,048 of 8,091 pilot images carry all five
+registers, are present in Flickr8k, survive the safety exclusions, and have their image file
+on disk. No duplicate `(image, emotion)` cells.
+
+### The Personality-Captions trait mapping is FROZEN
+
+24 traits map to the five registers; `Breezy (Relaxed, Informal)` is dropped because only one
+usable row survives the image download. The mapping is in `configs/prereg.lock.yaml`
+(`study.personality_map`) and fixed **before** training, because an earlier mapping choice
+flipped the sign of a human-vs-synthetic comparison. §2 requires its sensitivity be reported.
+
+**Availability verified:** 19,991 Personality-Captions rows have their YFCC image on disk
+across 19,987 distinct images — ample for an 8,076-caption arm balanced at 1,615 per register,
+with `romantic` the scarcest at 2,608 available.

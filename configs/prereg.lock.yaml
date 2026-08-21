@@ -15,12 +15,32 @@ study:
   # 6.5 on a single 1k test split, which made a registered 5-point criterion unfalsifiable);
   # conditioning variants are dropped entirely, the decoder is now a fixed control; and
   # A_lstm is dropped because 8,076 captions cannot train a decoder from scratch.
-  design: three_matched_data_arms
-  arms: [S_paired, S_unpaired, H_unpaired]
+  design: six_matched_data_arms
+  # Three structure classes so provenance is never compared across shape:
+  #   1/image   S_unpaired | V1_unpaired | H_unpaired
+  #   5/image   S_paired5  | V1_paired5
+  #   25/image  S_paired25 (only our corpus can supply it)
+  arms: [S_paired25, S_paired5, S_unpaired, V1_paired5, V1_unpaired, H_unpaired]
   folds: 5
   fold_split_by: image_id                 # NEVER by caption: one image's 5 cells are dependent
   negative_control: shuffled_emotion_labels_per_arm
-  runs: 18                                # 3 arms x 5 folds + 3 negative controls
+  runs: 36                                # 6 arms x 5 folds + 6 negative controls (1 fold each)
+  comparisons: 15                         # pairwise; Holm-adjusted
+  # The v1 pilot corpus is an arm because it is the high-stereotypy end of the study's axis
+  # (anchor 0.724 against 0.510 for ours and 0.342 for human text) AND because the pilot's
+  # decoder faults are fixed here, so its data can be tested apart from its code.
+  v1_arm_rationale: high_stereotypy_contrast_and_code_vs_data_separation
+
+  # Personality-Captions traits -> our five registers. FROZEN before training; §2 requires
+  # the mapping's sensitivity be reported, because an earlier mapping choice flipped the sign
+  # of a human-vs-synthetic comparison. "Breezy (Relaxed, Informal)" is dropped: 1 usable row.
+  personality_map:
+    joyful:   [Optimistic, Cheerful, Happy, Enthusiastic, Energetic]
+    sad:      [Gloomy, Melancholic, Miserable, Sentimental, Solemn]
+    tense:    [Anxious, Paranoid, Fearful, Aggressive, Intense]
+    romantic: [Romantic, Passionate, Sweet]
+    humorous: [Sarcastic, Zany, Witty, Silly, Humorous]
+  personality_map_dropped: ["Breezy (Relaxed, Informal)"]
   # seeds stay LIVE: they still fix initialisation and data order per run. What changed is
   # what is REPORTED as variance -- fold-to-fold spread, not seed spread. Keeping them here
   # is what makes a run reproducible; PREREGISTERED_SEEDS in code must match.
