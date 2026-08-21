@@ -413,4 +413,83 @@ checkpointing is required — which is why the corpus generation was built appen
 first place. Outputs must be written where Kaggle actually exports them.
 
 This makes `notebooks/` a real directory rather than the aspirational one the README has
-described since the start (see PH-09).
+described since the start.
+
+---
+
+## 2026-08-21 — the pre-tag rewrite: what changed between the draft and `prereg-v1`
+
+Every item here was decided **before** the tag and is logged so the change is visible rather
+than silent. After the tag these would require `prereg-v2`.
+
+### The question changed from architecture to data
+
+**Was:** *"Where in a decoder should the emotion signal be injected, and does the answer
+depend on the decoder family?"*
+**Is:** what emotion-conditioning accuracy measures when the training data is LLM-synthesised.
+
+Two external reviews independently judged the conditioning-placement question well covered
+and not a 2026 contribution on its own. The decoder is now a fixed control. The superseded
+text is preserved in collapsed blocks in §1–§3 rather than deleted.
+
+**Consequence:** five conditions × two tracks × three seeds = 30 runs becomes three data arms
+× five folds + three negative controls = **18 runs**. `A_lstm` is dropped outright — 8,076
+captions cannot train a decoder from scratch.
+
+### Evaluation regime: seed spread → 5-fold CV over each arm
+
+**Was:** variance reported as the spread across three seeds on a single 1,000-cell test split.
+**Is:** 5-fold cross-validation over each arm, folds split by `image_id`, with fold-to-fold
+spread as the reported variance.
+
+**Why:** the MDE on a single 1,000-cell split is **6.5 points** against **2.3** under CV. A
+5-point criterion had been registered against the former, meaning **it could not have been
+falsified**. Computing the MDE before committing the criterion is what caught it.
+
+Seeds remain live in the lock — they still fix initialisation and data order. Only what is
+*reported* as variance changed. The rule that a gap smaller than the observed spread is
+reported as null **regardless of its p-value** is unchanged.
+
+### The ceiling gate: a level → a detectability criterion
+
+**Was:** `ceiling_min: 0.85`.
+**Is:** the study proceeds if the floor-to-ceiling range admits the smallest effect of
+interest (+10 points) at the design's MDE.
+
+Three reasons the registered value fails as written: our corpus reaches ~0.77 so it says
+*halt*; **human-written text reaches only 0.726** on the identical instrument, so it would
+halt a study on data matching human performance; and the ceiling is sample-size dependent
+(0.612 at 1,225 cells → 0.773 at 201,900), so there is no single number to threshold.
+
+Gating on the **margin over the anchor** was considered and **rejected by measurement** — the
+margin moves +0.198 across the n-range against accuracy's +0.090, amplifying the confound it
+was meant to control.
+
+### A human-legibility gate is ADDED
+
+New, with no predecessor: a blind caption-only register guess by a human, reported with its
+neutral rate beside the same corpus's keyword anchor. **The corpus must be more legible to a
+reader than to a bag of 25 keywords per register.**
+
+Added because the first corpus passed floor, artifact-ablation, anchor and fold-variance
+checks while a human read its register at **0.310** against 0.200 chance — and a keyword bag
+scored 0.441, *above* the human. Four automated gates agreed with each other and disagreed
+with a reader. The current corpus scores **0.592 human vs 0.510 anchor**.
+
+### Generator: prompt v10 on gemini-3.7-flash
+
+The corpus is regenerated from scratch. The v5 flash-lite corpus (201,900 captions) is
+**discarded, not repaired** — selective re-runs cannot fix a register that is absent.
+Decision evidence: `RESEARCH-LOG.md` Part 18.
+
+### A corpus-construction rule is ADDED: the vocabulary cap
+
+No content word may exceed its register's document-frequency cap when it is also ≥2× more
+common there than in any other register. Caps are per-register, fixed in `configs/data.yaml`
+**before** the corpus is built.
+
+Added because prompt v6 turned technique into a template — `bright` reached 34% of joyful
+captions against 3% elsewhere, and masking such words dropped the lexical anchor
+0.638 → 0.504. A decoder trained on that learns `joyful → bright`. Tuning the caps after
+seeing the anchor would be fitting the instrument to the result, which is why they are frozen
+pre-tag.

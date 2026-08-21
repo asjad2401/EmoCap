@@ -1,0 +1,29 @@
+{
+ "joyful": [
+  "bright",
+  "high",
+  "open",
+  "wide",
+  "happ",
+  "sky",
+  "blue",
+  "smil",
+  "leap"
+ ],
+ "romantic": [
+  "soft",
+  "quiet",
+  "light",
+  "gent",
+  "close"
+ ],
+ "sad": [
+  "empt",
+  "cold",
+  "grey"
+ ],
+ "tense": [
+  "mid",
+  "keep"
+ ]
+}

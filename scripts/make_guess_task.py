@@ -31,6 +31,7 @@ Design points that matter:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import random
 import sys
@@ -178,11 +179,101 @@ if (Object.keys(S.answers).length || S.i) render(); else intro();
 """
 
 
+
+def _item_id(store_name: str, emotion: str, k: int, image_id: str) -> str:
+    """An opaque item id.
+
+    The id travels to the browser inside the page data, so it must not encode the answer.
+    An earlier version used the register's first letter -- `j0_1234abcd` for joyful --
+    which put the label in the page of a blind test. A digest of the same inputs keeps ids
+    stable and reproducible without carrying the register or the source store.
+    """
+    return hashlib.sha256(f"{store_name}|{emotion}|{k}|{image_id}".encode()).hexdigest()[:12]
+
+
+def _mixed_items(per_store, n, blocked, cfg, rng):
+    """Balanced items across several stores, with NO image used twice.
+
+    Both v10 arms cover the same photographs, so drawing independently would show the same
+    scene under two systems -- handing the guesser a comparison and destroying the blind.
+    Images are therefore partitioned: each one belongs to exactly one store's pool.
+    """
+    names = list(per_store)
+    n_per_store = n // len(names)
+    per_reg = n_per_store // len(EMOTIONS)
+    by_store_img = {k: {r["image_id"] for r in v} for k, v in per_store.items()}
+    shared = sorted(set.intersection(*by_store_img.values()) - blocked)
+    rng.shuffle(shared)
+    # deal the shared images out round-robin, so each store gets a disjoint slice
+    owned = {k: set() for k in names}
+    for i, img in enumerate(shared):
+        owned[names[i % len(names)]].add(img)
+
+    items = []
+    for name in names:
+        pool = {e: [] for e in EMOTIONS}
+        for r in per_store[name]:
+            if r["image_id"] not in owned[name]:
+                continue
+            for e in EMOTIONS:
+                txt = str(r["captions"].get(e, "")).strip()
+                if txt:
+                    pool[e].append((r["image_id"], txt))
+        used = {i["image_id"] for i in items}
+        for e in EMOTIONS:
+            cand = pool[e][:]
+            rng.shuffle(cand)
+            taken = 0
+            for img, txt in cand:
+                if img in used:
+                    continue
+                used.add(img)
+                items.append({"id": _item_id(name, e, taken, img), "text": txt,
+                              "truth": e, "image_id": img, "arm": name,
+                              "rel": str(Path(cfg["paths"]["images_dir"]) / img)})
+                taken += 1
+                if taken >= per_reg:
+                    break
+            if taken < per_reg:
+                raise SystemExit(f"{name}: only {taken} unique-image captions for '{e}', "
+                                 f"need {per_reg}. Lower --n.")
+    rng.shuffle(items)
+    return items
+
+
+def _write(items, args, stores, seed, cfg, blocked):
+    key = {it["id"]: {"truth": it["truth"], "image_id": it["image_id"],
+                      "text": it["text"], "arm": it["arm"]} for it in items}
+    public = [{k: v for k, v in it.items() if k not in ("truth", "arm")} for it in items]
+    data = {"mode": args.mode, "seed": seed, "registers": list(EMOTIONS),
+            "source": "+".join(s.name for s in stores), "items": public}
+    title = ("Guess the register — caption only" if args.mode == "text"
+             else "Guess the register — caption + photograph")
+    out = ROOT / (args.out or f"GUESS-{args.mode.upper()}.html")
+    out.write_text(PAGE.replace("__DATA__", json.dumps(data)).replace("__TITLE__", title),
+                   encoding="utf-8")
+    kp = ROOT / (args.key or f"runs/guess/{args.mode}_key.json")
+    kp.parent.mkdir(parents=True, exist_ok=True)
+    kp.write_text(json.dumps({"mode": args.mode, "seed": seed,
+                              "source": data["source"], "excluded_images": sorted(blocked),
+                              "key": key}, indent=2))
+    from collections import Counter
+    print(f"wrote {out}  ({out.stat().st_size/1024:.0f} KB)")
+    print(f"  {len(items)} items, arms: {dict(Counter(i['arm'] for i in items))}")
+    print(f"  registers: {dict(Counter(i['truth'] for i in items))}")
+    print(f"  answer key -> {kp}  (the page never loads it)")
+    print(f"\n  open {out}")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--mode", choices=["text", "image"], required=True)
     ap.add_argument("--n", type=int, default=100, help="items; rounded down to a multiple of 5")
-    ap.add_argument("--store", default=None, help="caption store (default: the v5 corpus)")
+    ap.add_argument("--store", default=None,
+                    help="caption store, or SEVERAL comma-separated for a mixed task. With "
+                         "several, --n is split evenly and each item records which store it "
+                         "came from. Mixing arms into ONE sitting controls for practice and "
+                         "mood, which two separate sittings cannot.")
     ap.add_argument("--seed", type=int, default=None)
     ap.add_argument("--exclude-images", default=None,
                     help="JSON list of image_ids to keep OUT of the task. Use this whenever "
@@ -197,10 +288,16 @@ def main() -> None:
     args = ap.parse_args()
 
     cfg = load_config("data")
-    store = Path(args.store) if args.store else ROOT / cfg["paths"]["raw_generations"]
-    if not store.is_absolute():
-        store = ROOT / store
-    recs = [json.loads(l) for l in store.read_text().splitlines() if l.strip()]
+    paths = [s.strip() for s in (args.store or cfg["paths"]["raw_generations"]).split(",")]
+    stores = []
+    for s in paths:
+        q = Path(s)
+        stores.append(q if q.is_absolute() else ROOT / q)
+    per_store: dict[str, list[dict]] = {}
+    for q in stores:
+        per_store[q.name] = [json.loads(l) for l in q.read_text().splitlines() if l.strip()]
+    recs = [r for v in per_store.values() for r in v]
+    store = stores[0]
 
     blocked: set[str] = set()
     if args.exclude_images:
@@ -214,8 +311,13 @@ def main() -> None:
         print(f"excluded {before - after} already-seen images -> {after} available")
 
     seed = args.seed if args.seed is not None else (20260820 if args.mode == "text" else 20260821)
-    per = args.n // len(EMOTIONS)
     rng = random.Random(seed)
+
+    if len(stores) > 1:
+        items = _mixed_items(per_store, args.n, blocked, cfg, rng)
+        _write(items, args, stores, seed, cfg, blocked)
+        return
+    per = args.n // len(EMOTIONS)
 
     # Balanced by register, and each caption from a DIFFERENT image so no image contributes
     # two items -- otherwise a guesser who recognises the scene gets a free comparison.
@@ -235,7 +337,7 @@ def main() -> None:
             if img in used:
                 continue
             used.add(img)
-            items.append({"id": f"{e[0]}{taken}_{img[:10]}", "text": text,
+            items.append({"id": _item_id(store.name, e, taken, img), "text": text,
                           "truth": e, "image_id": img,
                           "rel": str(Path(cfg["paths"]["images_dir"]) / img)})
             taken += 1

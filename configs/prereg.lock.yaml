@@ -7,21 +7,28 @@
 # ═══════════════════════════════════════════════════════════════════════════
 
 study:
-  name: "EmoCap: where should emotion enter a caption decoder?"
-  emotions: [joyful, sad, tense, romantic, humorous]   # order fixes emotion_id
-  # PH-10 -- PENDING REWRITE. These three fields describe the SUPERSEDED design and are
-  # left in place only as the record of what was drafted. Do not treat them as current.
-  #   seeds      -> the evaluation regime changes to 5-fold CV over each arm (MDE 2.3 vs 6.5
-  #                 on a single 1k test split), so fold-to-fold spread replaces seed spread.
-  #   conditions -> collapse from five to two (unconditioned, best-conditioned).
-  #   tracks     -> A_lstm is DROPPED; 8,076 captions cannot train a decoder from scratch and
-  #                 architecture-dependence is no longer the claim.
-  # Replacement is three matched DATA arms; see RESEARCH-LOG.md Part 7. Applied in one pass
-  # with the tag.
-  study_design_status: SUPERSEDED_PENDING_REWRITE
+  name: "EmoCap: what does emotion-conditioning accuracy measure when the captions are synthetic?"
+  emotions: [joyful, sad, tense, romantic, humorous]   # order fixes emotion_id -- DO NOT REORDER
+  # Applied 2026-08-21 with the tag. The superseded values are kept below the live ones as
+  # the record of what was drafted; `superseded_2026_08_21` is documentation, never read by
+  # code. Reasons: the evaluation regime moved to 5-fold CV over each arm (MDE 2.3 against
+  # 6.5 on a single 1k test split, which made a registered 5-point criterion unfalsifiable);
+  # conditioning variants are dropped entirely, the decoder is now a fixed control; and
+  # A_lstm is dropped because 8,076 captions cannot train a decoder from scratch.
+  design: three_matched_data_arms
+  arms: [S_paired, S_unpaired, H_unpaired]
+  folds: 5
+  fold_split_by: image_id                 # NEVER by caption: one image's 5 cells are dependent
+  negative_control: shuffled_emotion_labels_per_arm
+  runs: 18                                # 3 arms x 5 folds + 3 negative controls
+  # seeds stay LIVE: they still fix initialisation and data order per run. What changed is
+  # what is REPORTED as variance -- fold-to-fold spread, not seed spread. Keeping them here
+  # is what makes a run reproducible; PREREGISTERED_SEEDS in code must match.
   seeds: [42, 1337, 2024]
-  conditions: [V0, V1, V2, V3, C]
-  tracks: [A_lstm, B_clipcap]
+  superseded_2026_08_21:
+    conditions: [V0, V1, V2, V3, C]
+    tracks: [A_lstm, B_clipcap]
+    variance_reported_as: spread_across_three_seeds   # now: fold-to-fold spread
 
 data:
   dataset: flickr8k
@@ -154,12 +161,18 @@ gates:                                      # a run or the study halts if these 
   # Two limits on the human figure: it is measured at 4,486 cells, the largest the human
   # corpus supports under a 1:1 trait mapping, and it is 5-way -- NOT comparable to binary
   # style-accuracy numbers reported on FlickrStyle10K or SentiCap.
-  # PH-05 -- the replacement is DECIDED (a detectability criterion, not a level) and
-  # deliberately not applied yet; see RESEARCH-LOG.md Part 11 and docs/preregistration.md §6.
-  ceiling_min: 0.85
-  ceiling_min_status: SUPERSEDED_replacement_decided_not_yet_applied
-  ceiling_replacement: floor_to_ceiling_range_must_admit_smallest_effect_at_design_MDE
-  ceiling_human_reference: 0.726
+  # Applied 2026-08-21. The registered `ceiling_min: 0.85` was uncalibrated: our corpus
+  # reaches ~0.77 and human-written text reaches 0.726 on the same instrument, so the gate as
+  # written would halt a study on data matching human performance. The ceiling is also
+  # sample-size dependent (0.612 at 1,225 cells -> 0.773 at 201,900), so there is no single
+  # number to threshold. Replaced by a detectability criterion.
+  gate: floor_to_ceiling_range_must_admit_smallest_effect_at_design_MDE
+  smallest_effect_of_interest: 0.10
+  mde_under_5fold_cv: 0.023
+  human_legibility_gate: human_blind_guess_must_exceed_same_corpus_anchor
+  superseded_2026_08_21:
+    ceiling_min: 0.85
+    ceiling_human_reference: 0.726
   visual_dependence_probe: required         # captions must change when features are zeroed
   truncation_rate_max: 0.02
 

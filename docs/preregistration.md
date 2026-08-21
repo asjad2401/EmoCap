@@ -1,22 +1,18 @@
 # Pre-registration — EmoCap v2
 
-> ## ⚠ THIS DOCUMENT IS MID-REWRITE — DO NOT CITE §1–§3
+> ## Scope of this registration
 >
-> The study design changed on 2026-08-19/20 after the corpus was generated and two external
-> reviews landed. **§1, §2, §3, part of §5 and §6's ceiling gate still describe the
-> SUPERSEDED design** (five conditions, two tracks, an LSTM trained from scratch) and are
-> fenced as such below. They are preserved because they are what was actually drafted, not
-> because they are current.
+> This registers a study about **training data**, not about decoder architecture. An earlier
+> draft asked where in a decoder an emotion signal should be injected; that question is well
+> covered and two external reviews were right that it is not a 2026 contribution on its own.
+> The superseded text is kept in collapsed blocks below rather than deleted, because it is
+> what was actually drafted and the change of direction is part of the record.
 >
-> The decided replacement content is **not written here yet, deliberately** — it lands in one
-> pass together with the tag, so the pre-tag state stays legible. Placeholders below carry IDs
-> (`PH-nn`); the tracker is `PLACEHOLDERS.md` (local only).
->
-> **Authoritative right now:** `RESEARCH-LOG.md` for findings and the gate reformulation
-> (Part 11), `TASKS.md` Phase 1 for what is pending, `METHODOLOGY.md` for instruments.
-> §4, §7 and §8 of this document ARE current.
+> Everything measured before this tag characterises the **corpus** — its lexical shortcut,
+> its human legibility, its grounding. **No model comparison has been run.** The hypotheses
+> below are therefore untested and the tag retains its force.
 
-**Status:** draft, mid-rewrite. To be tagged `prereg-v1` before any training.
+**Status:** complete. Tagged `prereg-v1`; the tag's commit timestamp is the record.
 **Frozen settings:** [`configs/prereg.lock.yaml`](../configs/prereg.lock.yaml)
 **Registration mechanism:** git tag. The tag's commit timestamp is the record. OSF
 registration is deliberately deferred and can be added later without invalidating this.
@@ -25,42 +21,75 @@ registration is deliberately deferred and can be added later without invalidatin
 
 ## 1. Question
 
-<!-- PH-01 -->
-> **PLACEHOLDER PH-01 — the research question is being rewritten.**
->
-> The question below is **SUPERSEDED**. It asks where in a decoder emotion should be
-> injected; that design space is well covered and the reviews were right that it is not a
-> 2026 contribution on its own. The study's claim is now about **data**, with the decoder
-> demoted to a control.
->
-> Decided direction (`RESEARCH-LOG.md` Part 0): what emotion-conditioning accuracy measures
-> when the training data is LLM-synthesised. Final wording pending.
+Emotion-conditioned captioning is normally evaluated by asking whether a classifier can
+recover the requested emotion from the generated caption. **This study asks what that number
+measures when the training data is LLM-synthesised.**
 
-~~Given an image and a target emotion, generate a caption that describes the image *and*
-reads in that register. **Where in a decoder should the emotion signal be injected, and
-does the answer depend on the decoder family?**~~
+A synthetic corpus is produced by prompting one model, and a prompt is a shared instruction
+applied 8,000 times. That gives every caption of a register a common origin, which a
+classifier can exploit without the register being present to a reader. We measured exactly
+that before registering: on our first corpus a DistilRoBERTa classifier reached **0.775**
+while a human reading the same captions scored **0.310**, barely above the 0.200 chance
+level, and a bag of 25 keywords per register scored **0.441** — above the human.
+
+So the question is:
+
+> **When emotion-conditioning accuracy is measured on a model trained from synthetic
+> captions, how much of it reflects an emotional register a reader can perceive, and how much
+> reflects the generator's lexical fingerprint? And does training on human-written emotive
+> captions change the answer?**
+
+The decoder is a **control**, not a contribution: one architecture, held fixed, so that
+differences between arms are attributable to their data.
+
+### Why this is worth registering
+
+The failure mode is invisible to the checks that normally guard against it. On the corpus
+above, the floor (0.201), the artifact ablation (gap 0.000), the lexical anchor and the
+fold-to-fold spread all passed while a human read the register at close to chance. **Four
+automated gates agreed with each other and disagreed with a reader.** A study that reports
+emotion accuracy alone can be entirely valid internally and still measure the wrong thing.
 
 ## 2. Design
 
-<!-- PH-02 -->
-> **PLACEHOLDER PH-02 — the design is being rewritten from conditioning variants to data arms.**
->
-> **SUPERSEDED below.** Track A (LSTM from scratch) is **dropped** — 8,076 captions cannot
-> train a decoder from scratch, and architecture-dependence is no longer the claim.
-> Conditioning variants collapse from five to two. 30 runs becomes 6–9.
->
-> Decided direction: **three data arms** — S-paired (ours, 25 registers per image), S-unpaired
-> (ours, 1 per image), H-unpaired (Personality-Captions, human) — matched on images, caption
-> count, structure and class count. A possible fourth arm (generator capability, gemini-3.5-flash
-> via Vertex) is **pending the pilot**; see `TASKS.md` 1.2.
->
-> Also pending: whether a uniform visual pathway (patch features for every condition) is still
-> needed now that variants collapse to two. See `TASKS.md` Phase 4.
->
-> Arm table, sizes and the judge design are in `RESEARCH-LOG.md` Part 7. Not transcribed here
-> until the one-pass rewrite.
+**Three data arms, one architecture.** Every arm trains the same decoder on the same images
+with the same schedule; only the captions differ.
+
+| arm | captions from | images | captions | structure |
+|---|---|---|---|---|
+| **S-paired** | ours (prompt v10, gemini-3.7-flash) | 8,076 | 201,900 | 25 per image — all 5 registers × 5 source captions |
+| **S-unpaired** | ours, subsampled from the same corpus | 8,076 | 8,076 | 1 per image, 1 register |
+| **H-unpaired** | Personality-Captions (human-written) | ~8,076 | ~8,076 | 1 per image, 1 style |
+
+**S-unpaired exists to separate two things S-paired confounds**: having synthetic captions,
+and having *every register for the same photograph*. Without it, any S-paired advantage could
+be either.
+
+**H-unpaired is matched to S-unpaired** on images, caption count, structure and class count,
+so the arms differ in provenance and not in shape. Personality-Captions styles are mapped to
+our five registers; the mapping is fixed in `configs/prereg.lock.yaml` before training and
+**the mapping's sensitivity is reported**, because an earlier mapping choice flipped the sign
+of a human-vs-synthetic comparison.
+
+### Architecture (control, not contribution)
+
+ClipCap-style: frozen CLIP ViT-B/32 → mapping network → GPT-2 with LoRA. The emotion is one
+prefix slot. Chosen because it is standard, trains on 8,076 images, and is not the object of
+study. **No conditioning-placement variants**: that comparison is dropped, and with it the
+five-condition, two-track, 30-run design.
+
+**Held constant by config, not by discipline:** images and splits, data order per seed,
+pre-extracted CLIP features, optimizer, schedule, epochs, batch size, early stopping, decode
+settings, and trainable parameter count matched within ±5%.
+
+### Runs
+
+3 arms × 5 folds = **15 training runs**, plus a negative control per arm (shuffled emotion
+labels) for **18 total**. Kaggle notebooks, *Save & Run All*, all outputs preserved for
+export; no stage depends on a session surviving.
 
 <details><summary>SUPERSEDED §2 as originally drafted (click to expand)</summary>
+
 
 Five conditions per track, three seeds each. 5 × 2 × 3 = **30 runs**.
 
@@ -84,19 +113,40 @@ decode settings; trainable parameter count matched within ±5% per track.
 
 ## 3. Hypotheses
 
-<!-- PH-03 -->
-> **PLACEHOLDER PH-03 — H1–H4 are superseded by P1–P6.**
->
-> **SUPERSEDED below.** H1–H4 concern conditioning placement, which is no longer the claim.
-> H3 in particular (Spearman ρ = 1.0 across tracks) is void — there is only one track now.
->
-> Replacements P1–P6 are drafted with falsification criteria in `TASKS.md` 1.5. **P2 as first
-> drafted is dead**: it predicted the human/synthetic margins would be identical, and the
-> accuracy gap largely survives the anchor correction, so the claim now runs the other way.
-> Each replacement must be checked against the MDE before it is registered — the original P2's
-> 5-point criterion was **unfalsifiable** at the planned sample size.
+Every criterion below is stated **in points of accuracy** and every one has been checked
+against the minimum detectable effect **before** registration. Under 5-fold CV over a whole
+arm the MDE is **2.3 points** (80% power, α 0.05 Holm-adjusted over 6 comparisons, ICC 0.070,
+design effect 2.69 on the paired arm). **No criterion below sits under 2.3.** This check is
+not decorative: the first draft of P2 used a 5-point criterion against an MDE of 6.5, which
+made it unfalsifiable, and that was caught by computing the MDE rather than by review.
+
+| | Prediction | Falsified if | margin over MDE |
+|---|---|---|---|
+| **P1** | H-unpaired beats S-unpaired on raw emotion accuracy | S-unpaired ≥ H-unpaired, or the difference straddles zero | 4.3 pt effect vs 2.3 |
+| **P2** | The gap is **not** fully explained by lexical stereotypy: H's margin over its own keyword anchor exceeds S's margin over its own, by ≥3 points | margin difference ≤ 0 | 3.0 vs 2.3 |
+| **P3a** | S-paired beats S-unpaired on raw accuracy (sanity check on the extra data) | S-paired ≤ S-unpaired | — |
+| **P3b** | That improvement **also** appears in the margin over the anchor, by ≥3 points | margin flat (≤0) — meaning per-image register contrast teaches vocabulary and nothing else | 3.0 vs 2.3 |
+| **P4** | Models trained on S score lower under an H-trained judge than H-trained models do under an S-trained judge (asymmetric transfer) | symmetric, or reversed | — |
+| **P5** | No model exceeds the **human** blind-guess score on its own corpus | — (a bound, not a hypothesis; reported either way) | — |
+
+**P2 is the study's actual claim.** P1 alone would be a result about accuracy; P2 is the
+result about what accuracy *means*, because it asks whether the human-written corpus wins for
+a reason a keyword bag cannot reproduce.
+
+**P5 has no falsification condition on purpose.** It is a bound we report whether or not it
+holds. A model exceeding the human score would not be a triumph — on this corpus a reader
+scores 0.592 and a keyword bag 0.510, so a model at 0.85 is prima facie evidence of a
+shortcut, not of comprehension.
+
+### What was dropped, and why
+
+The original P2 ("human and synthetic margins are identical") is **dead**: the accuracy gap
+largely survived the anchor correction, so the claim now runs the other way. A sixth
+prediction about the anchor declining monotonically with evaluation-set size was dropped with
+the v1-prompt corpus it depended on.
 
 <details><summary>SUPERSEDED §3 as originally drafted (click to expand)</summary>
+
 
 | | Claim | Falsified if |
 |---|---|---|
@@ -156,47 +206,61 @@ mitigations, all reported:
 
 ## 5. Analysis plan
 
-- Each variant compared to its track's V0 on the primary metric.
+- Each arm compared to every other on the primary metric, and each to its own negative control.
 - Paired bootstrap over test **images** (clustered — the five emotion cells of one image
   are not independent), 10,000 resamples, 95% CIs.
-- Holm–Bonferroni across the three comparisons within each track.
-<!-- PH-04 -->
-- **PH-04 — PENDING.** ~~Seed variance reported as the spread across three runs.~~ The
-  evaluation regime changes to **5-fold CV over each arm**, because the MDE on a single
-  1,000-cell test split is 6.5 points against 2.3 under CV, and the original P2 criterion was
-  unfalsifiable at the former. Fold-to-fold spread absorbs both data and initialisation
-  variance. **The rule itself stands and is not weakened: a gap smaller than the observed
-  spread is reported as null regardless of its p-value.**
+- Holm–Bonferroni across the six arm comparisons.
+- **Evaluation regime: 5-fold CV over each arm, folds split by `image_id`.** Never by
+  caption — the five register cells of one photograph are not independent, and splitting by
+  caption leaks the image across the split. Fold-to-fold spread absorbs both data and
+  initialisation variance, replacing the earlier "spread across three seeds".
+
+  This changed because the MDE on a single 1,000-cell test split is **6.5 points** against
+  **2.3** under CV, and a 5-point criterion was registered against the former — i.e. it could
+  not have been falsified. Logged as a pre-tag deviation in `docs/deviations.md`.
+
+- **A gap smaller than the observed fold spread is reported as null regardless of its
+  p-value.** This rule is unchanged and is not weakened by the regime change. It exists
+  because a 9.6-point gap once survived a 4-SE check and was still a small-sample artifact:
+  **fold variance rules out noise, not bias.**
 - Smallest effect of interest fixed at **+10 percentage points** of emotion accuracy.
 
 ## 6. Anchors and gates
 
 | Check | Expectation | If it fails |
 |---|---|---|
-| Ceiling — accuracy on the reference captions | **PH-05 — PENDING.** ~~≥ 0.85~~ Replaced by a *detectability* criterion; see below | The generated data lacks separable tone. **Halt the study.** |
+| **Detectability** — floor-to-ceiling range vs the design's MDE | the range must admit the smallest effect of interest (+10 pts) at the MDE. Currently floor 0.201, ceiling 0.773, range 57 pts, MDE 2.3 → **passes** | The design cannot resolve the effect it claims to test. **Halt the study.** |
+| **Human legibility** — blind register guess on the corpus, caption only | reported with its neutral rate, beside the anchor for the same corpus. Currently **0.592 human vs 0.510 anchor** | A corpus a reader cannot decode above its own keyword anchor is not measuring register. **Halt.** |
 | Floor — accuracy with randomly reassigned labels | ≈ 0.20 | The metric is broken. |
 | **Lexical shortcut** — top-25-keyword-per-register rule | recomputed per evaluation set at its own n (0.332 on the full corpus) | Not a failure, a correction: this much of the primary metric needs no emotional register at all. The model's contribution is the margin above it. |
-| Manipulation check — V0 accuracy | ≤ 0.25 | The classifier reads something other than tone. **Results not interpretable.** |
-| Negative control — condition C | indistinguishable from V0 | Conditioning is not doing the work. |
+| Manipulation check — negative control accuracy | ≤ 0.25 | The classifier reads something other than the requested register. **Results not interpretable.** |
+| Negative control — shuffled emotion labels, per arm | ≈ floor | The conditioning is not doing the work. |
 | Visual-dependence probe — zero the features | captions change substantially | The run collapsed to a language prior. **Exclude the run.** |
 
-### PH-05 — the ceiling gate, decided but not yet applied
+### Why the ceiling gate is a detectability criterion, not a level
 
-<!-- PH-05 -->
-> **The replacement is decided and deliberately not written into the gate table yet.**
->
-> **Revised gate:** the study proceeds if the range between the measured floor and ceiling
-> leaves room for the smallest effect of interest (+10 points) to be detected at the design's
-> MDE. Ceiling and floor are reported **with their n** and beside that evaluation set's
-> recomputed anchor.
->
-> Against current numbers: floor 0.201, ceiling 0.773 → a 57-point range at an MDE of 2.3
-> points under 5-fold CV. Passes.
->
-> Gating on the **margin over the anchor** was considered and **rejected by measurement**:
-> accuracy rises with n while the anchor falls, so the margin moves +0.198 across the range
-> against accuracy's +0.090 — it amplifies the confound. Full reasoning and the rejected
-> alternatives are in `RESEARCH-LOG.md` Part 11.
+The registered gate was `ceiling_min: 0.85`, set a priori with nothing calibrating it. Three
+things falsify it as written:
+
+1. **Our corpus does not reach it** — the ceiling is ~0.77, so the gate says *halt*.
+2. **Neither does human-written text.** Measured with the identical instrument at matched n,
+   Personality-Captions reaches **0.726**. A gate that halts a study on data matching human
+   performance is a miscalibrated instrument, not a finding.
+3. **The ceiling is sample-size dependent**: 0.612 at 1,225 cells → 0.737 at 24,925 → 0.773
+   at 201,900. There is no single number to threshold.
+
+**The replacement:** the study proceeds if the floor-to-ceiling range leaves room for the
+smallest effect of interest (+10 points) to be detected at the design's MDE. Floor and ceiling
+are reported **with their n**, beside that evaluation set's recomputed anchor.
+
+This cannot be gamed by choosing a level, it does not make the human number load-bearing for a
+gate, and it asks the right question — not *"is 0.773 high enough?"*, which has no principled
+answer, but *"can this design resolve the effect it claims to test?"*, which does.
+
+**Rejected by measurement:** gating on the *margin over the anchor*. Accuracy rises with n
+while the anchor falls, so the margin moves +0.198 across the range against accuracy's +0.090
+— it amplifies the very confound it was meant to control. Rejected alternatives in full:
+`RESEARCH-LOG.md` Part 11.
 
 ### Why 0.85 is not calibrated, and human text does not reach it
 

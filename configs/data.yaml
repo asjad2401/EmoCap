@@ -101,7 +101,21 @@ generation:
   # gemini-3.5-flash on the IDENTICAL v5 prompt was measured and did NOT help -- register
   # overlap 0.4007 -> 0.4175, WORSE, because its higher content recall (0.85 vs 0.78) hugs
   # the source caption even closer. The bottleneck was the prompt, not the model.
-  prompt_version: v6
+  prompt_version: v10
+  # DECIDED 2026-08-21 on a 200-item blind register-guess, 100 captions per arm, mixed
+  # into one sitting so practice and fatigue affect both equally.
+  #
+  #   arm            human(FCE)  neutral  anchor  gap     defects
+  #   v7             0.650       n/a      0.553   +0.097  5.6%
+  #   v10 / 3.7      0.592       11%      0.510   +0.082  5.2%
+  #   v10 / 3.5      0.550       15%      0.557   -0.007  4.5%
+  #
+  # All three are statistically indistinguishable on legibility (3.5 vs 3.7 z=-0.60;
+  # v7 vs 3.7 z=0.85), so the choice rests on everything else: 3.7 has the LOWEST anchor
+  # of any corpus built, the lowest neutral rate, grounding better than v7 via rule 2c,
+  # and costs half of 3.5. A low anchor matters most -- it is the shortcut a trained
+  # decoder could learn instead of the register.
+  generation_model: gemini-3.7-flash
 
 # USD per 1M tokens. USER-SUPPLIED, from the Google AI pricing page on 2026-08-18.
 # Not authoritative and not stable -- re-check before any run that matters, and note
