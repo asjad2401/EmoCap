@@ -251,13 +251,31 @@ will be reported that way rather than as evidence of no difference.
 
 | | Prediction | Falsified if | margin over MDE |
 |---|---|---|---|
-| **P1** | H-unpaired beats S-unpaired on raw emotion accuracy | S-unpaired ≥ H-unpaired, or the difference straddles zero | 4.3 pt effect — **near the MDE, see caveat above** |
+| **P1** | H-unpaired beats S-unpaired on raw emotion accuracy | S-unpaired ≥ H-unpaired, or the difference straddles zero | **reference comparison — see the conflict note below** |
 | **P2** | The gap is **not** fully explained by lexical stereotypy: H's margin over its own keyword anchor exceeds S's margin over its own, by **≥7 points** | margin difference ≤ 0 | 7.0 vs MDE 6.3 at seed SD .02 |
 | **P3a** | S-paired beats S-unpaired on raw accuracy (sanity check on the extra data) | S-paired ≤ S-unpaired | — |
 | **P3b** | That improvement **also** appears in the margin over the anchor, by **≥7 points** | margin flat (≤0) — meaning per-image register contrast teaches vocabulary and nothing else | 7.0 vs MDE 6.3 |
 | **P4** | Models trained on S score lower under an H-trained judge than H-trained models do under an S-trained judge (asymmetric transfer) | symmetric, or reversed | — |
 | **P5** | No model exceeds the **human** blind-guess score on its own corpus | — (a bound, not a hypothesis; reported either way) | — |
-| **P6** | **Emotion accuracy tracks the corpus's keyword anchor, not its human legibility.** Across the three provenances at matched structure, accuracy ranks with the anchor (v1 0.718 > ours 0.507 > human 0.450), so V1-unpaired scores **highest** on raw accuracy and lowest on the margin over its own anchor, **each step ≥7 points** | accuracy does not rank with the anchor, or V1-unpaired's margin is not the smallest | **≥7 pts** vs MDE 6.3 |
+| **P6** | **Emotion accuracy tracks the corpus's keyword anchor, not its human legibility.** On the **matched-image** pair, S-unpaired beats V1-unpaired in the direction of their anchors (v1 0.718 > ours 0.507 at 4,486 cells), so **V1-unpaired scores higher on raw accuracy and lower on the margin over its own anchor**, by ≥7 points | V1's raw accuracy is not higher, or its margin is not the smaller | ≥7 pts vs MDE 6.3 |
+
+### P1 and P6 point in opposite directions, and that is deliberate
+
+**P1 predicts H-unpaired beats S-unpaired. P6's mechanism predicts the reverse** — accuracy
+should rank with lexical stereotypy, and ours is more stereotyped than the human corpus
+(0.507 vs 0.450 at 4,486 cells). An earlier draft registered both over the same comparison,
+which is incoherent: they cannot both hold.
+
+They are separated by scope. **P6 is registered only over the matched-image pair**
+(S-unpaired vs V1-unpaired), where provenance is the sole difference and the anchor gap is
+21 points. **P1 stays a reference comparison** over the cross-dataset pair, where the anchor
+gap is 5.7 points — below both the ≥7 criterion and the 6.3 MDE, so P6 could not be tested
+there even if it were coherent to try.
+
+**If P1 holds and P6 holds, that is the study's most informative outcome**: human data wins
+across datasets *while* accuracy tracks stereotypy within a matched pair, which is precisely
+the claim that emotion accuracy measures two different things at once. If they conflict on
+the same comparison, the registration would have been unfalsifiable. It is not, now.
 
 **P6 is what the v1 arm buys.** With three corpora whose anchors span 0.450 to 0.718, the
 prediction is falsifiable in a way no two-corpus comparison could be: if raw accuracy ranks

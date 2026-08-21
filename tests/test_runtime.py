@@ -262,6 +262,30 @@ def test_prompt_version_matches_both_configs():
     assert load_config("prereg.lock")["study"]["prompt_version"] == PROMPT_VERSION
 
 
+def test_every_generator_key_in_every_config_agrees():
+    """The pipeline reads `generation.model`; the lock freezes `data.generator_model`.
+
+    An earlier fix corrected the frozen key and left `generation.model` -- which
+    `run_stage02.py` and `run_vertex.py` actually read -- pointing at the retired v5
+    generator. This asserts on EVERY key whose name contains "model" and whose value looks
+    like a Gemini model id, so a third one cannot drift in unnoticed.
+    """
+    import re
+
+    data = load_config("data")
+    lock = load_config("prereg.lock")
+    found = {}
+    for name, cfg in (("data", data), ("lock", lock)):
+        for sec, body in cfg.items():
+            if not isinstance(body, dict):
+                continue
+            for k, v in body.items():
+                if "model" in k and isinstance(v, str) and re.match(r"gemini-", v):
+                    found[f"{name}.{sec}.{k}"] = v
+    assert found, "no generator key found at all"
+    assert set(found.values()) == {"gemini-3.7-flash"}, found
+
+
 def test_one_generator_key_and_it_matches_across_configs():
     """Two keys one letter apart named different models for a day.
 

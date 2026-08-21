@@ -120,7 +120,7 @@ data:
   # The ONE generator key. An earlier edit added `generation_model` in data.yaml
   # instead of updating this, leaving the frozen config naming the retired v5
   # generator while the documents named 3.7-flash.
-  generator_model: "gemini-3.7-flash"
+  generator_model: "gemini-3.7-flash"   # must equal data.yaml generation.model
   generation_input: image_plus_human_captions   # multimodal; Moondream retired
   generator_multimodal: true
   # Each register also returns a self-reported fit: 0 natural, 1 strained, 2 no honest
