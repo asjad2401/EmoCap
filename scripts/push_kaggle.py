@@ -147,8 +147,15 @@ def main() -> None:
             continue
 
         api = _api()
-        existing = {d.ref.split("/")[-1] for d in api.dataset_list(user=owner)}
-        if slug in existing:
+        # `dataset_list` does not reliably return PRIVATE datasets, so it once reported a
+        # slug as absent, took the create path, and left the live dataset on its old
+        # version while printing success. Existence is probed directly instead.
+        try:
+            api.dataset_status(f"{owner}/{slug}")
+            exists = True
+        except Exception:  # noqa: BLE001
+            exists = False
+        if exists:
             print(f"  updating {owner}/{slug} (new version)...")
             api.dataset_create_version(
                 str(stage), version_notes=args.message or prov["git_commit"][:8],
