@@ -20,7 +20,29 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from emocap.data.arms import ARMS, build_all_arms, write_arm  # noqa: E402
+from emocap.data.exclusions import load_exclusions  # noqa: E402
 from emocap.data.prompt import EMOTIONS  # noqa: E402
+
+PILOT = "archive/v1-pilot/data/v1_emotion_captions.csv.gz"
+
+
+def v1_captions(path: Path) -> dict[str, dict[str, str]]:
+    """The ARCHIVED v1 pilot, image_id -> {register: caption}.
+
+    Not `data/generated/captions_raw.jsonl`. That file is the v2 rebuild's first
+    generation attempt and its keyword anchor is 0.436 -- below the human corpus. The
+    pilot's is 0.706, which is what makes it the high-stereotypy end of the study's axis.
+    """
+    import csv
+    import gzip
+
+    out: dict[str, dict[str, str]] = {}
+    with gzip.open(path, "rt") as f:
+        for r in csv.DictReader(f):
+            text = (r.get("emotion_caption") or "").strip()
+            if text:
+                out.setdefault(r["image_id"], {})[r["emotion"]] = text
+    return out
 
 STRICT = {"joyful": "Happy", "sad": "Gloomy", "tense": "Anxious",
           "romantic": "Romantic", "humorous": "Humorous"}
@@ -47,9 +69,10 @@ def human_cells(root: Path, images: Path) -> list[dict]:
 def main() -> None:
     arms = build_all_arms(
         corpus_path=ROOT / "data/generated/captions_corpus.jsonl",
-        v1_path=ROOT / "data/generated/captions_raw.jsonl",
+        v1_captions=v1_captions(ROOT / PILOT),
         human_cells=human_cells(ROOT / "data/external/personality_captions",
                                 ROOT / "data/external/yfcc_images"),
+        excluded=frozenset(load_exclusions()),
     )
     man: dict = {"arms": {}, "folds": 5, "fold_split_by": "image_id",
                  "selection": {
@@ -57,7 +80,9 @@ def main() -> None:
                      "paired5_caption_idx": "sha1('cap-v1' + image_id) % 5",
                      "unpaired_images": "878 x 5 by sha1('unpaired-v1' + image_id), "
                                         "registers round-robin within fold",
-                     "v1_matching": "same images, same caption_idx, same register as S"}}
+                     "v1_matching": "same images and same register as S; the pilot has "
+                                    "ONE caption per image, so no caption_idx to match",
+                     "v1_source": PILOT}}
     out = ROOT / "data/arms"
     for a in ARMS:
         cells = arms[a]

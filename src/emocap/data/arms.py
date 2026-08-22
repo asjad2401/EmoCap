@@ -19,12 +19,16 @@ Three structure classes, and the reason each exists
 
 Matching is by construction, not by sampling twice
 --------------------------------------------------
-``V1_paired5`` selects **the same images and the same ``caption_idx``** as ``S_paired5``;
-``V1_unpaired`` selects the same images *and the same register per image* as
-``S_unpaired``. The two corpora are rewrites of the identical Flickr8k source sentences,
-so this makes the S-vs-V1 comparisons differ in generator and nothing else. Sampling each
-arm independently from a shared pool would have left a sampling difference on top of the
+``V1_paired5`` selects **the same images** as ``S_paired5``; ``V1_unpaired`` selects the
+same images *and the same register per image* as ``S_unpaired``. Sampling each arm
+independently from a shared pool would have left a sampling difference on top of the
 provenance difference, which is the confound the whole design exists to avoid.
+
+Matching stops at the image, and that is forced by the data rather than chosen. The v1
+pilot rewrote **one Moondream-generated neutral caption per image**; our corpus rewrites
+**five human Flickr8k captions per image**. There is no shared ``caption_idx`` to align, so
+S-vs-V1 varies generator *and* source text on the same photographs. The registration says
+"same images, same structure" and means exactly that -- no more.
 
 Everything is chosen by hashing the ``image_id``
 ------------------------------------------------
@@ -110,22 +114,29 @@ def _unpaired_assignment(images: Sequence[str], per_register: int) -> dict[str, 
 def build_all_arms(
     *,
     corpus_path: Path,
-    v1_path: Path,
+    v1_captions: Mapping[str, Mapping[str, str]],
     human_cells: Iterable[Mapping],
+    excluded: frozenset[str] = frozenset(),
     per_register: int = 878,
 ) -> dict[str, list[dict]]:
-    """Return every arm as a list of cells. Pure function of its inputs."""
+    """Return every arm as a list of cells. Pure function of its inputs.
+
+    ``v1_captions`` maps ``image_id -> {register: text}`` for the archived pilot. It is
+    passed in rather than read from ``data/generated/captions_raw.jsonl``, which is NOT the
+    pilot -- that file is the v2 rebuild's first generation attempt (prompt v1 on
+    gemini-3.1-flash-lite) and its keyword anchor is 0.436, not the 0.706 the registration
+    describes. Building the V1 arms from it silently replaced the study's high-stereotypy
+    contrast with a corpus less stereotyped than the human one, inverting P6.
+    """
     S = _load_jsonl(corpus_path)
-    V = _load_jsonl(v1_path)
 
     # The shared image universe. Every Flickr8k arm is drawn from this one set, so a
     # missing image is missing from all of them and no comparison silently becomes
     # unmatched.
-    s_imgs = {i for i, _ in S}
-    v_imgs = {i for i, _ in V}
-    images = sorted(s_imgs & v_imgs)
-    full = [i for i in images
-            if all((i, k) in S and (i, k) in V for k in range(5))]
+    s_full = {i for i, _ in S if all((i, k) in S for k in range(5))}
+    v_full = {i for i, caps in v1_captions.items()
+              if all(caps.get(e, "").strip() for e in EMOTIONS)}
+    full = sorted((s_full & v_full) - set(excluded))
 
     arms: dict[str, list[dict]] = {a: [] for a in ARMS}
     picks = {i: pick_caption_idx(i) for i in full}
@@ -133,15 +144,15 @@ def build_all_arms(
         for k in range(5):
             arms["S_paired25"] += _cells(S[(img, k)], img, k, "S")
         arms["S_paired5"] += _cells(S[(img, picks[img])], img, picks[img], "S")
-        arms["V1_paired5"] += _cells(V[(img, picks[img])], img, picks[img], "V1")
+        # The pilot has ONE caption per image, so caption_idx is always 0 -- there is no
+        # source-caption axis to sample along.
+        arms["V1_paired5"] += _cells({"captions": v1_captions[img]}, img, 0, "V1")
 
     assign = _unpaired_assignment(full, per_register)
     for img, emo in assign.items():
-        k = picks[img]
-        for src, rec, arm in (("S", S[(img, k)], "S_unpaired"),
-                              ("V1", V[(img, k)], "V1_unpaired")):
-            cell = next((c for c in _cells(rec, img, k, src) if c["emotion"] == emo),
-                        None)
+        for rec, k, src, arm in ((S[(img, picks[img])], picks[img], "S", "S_unpaired"),
+                                 ({"captions": v1_captions[img]}, 0, "V1", "V1_unpaired")):
+            cell = next((c for c in _cells(rec, img, k, src) if c["emotion"] == emo), None)
             if cell:
                 arms[arm].append(cell)
 

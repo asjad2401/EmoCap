@@ -57,27 +57,30 @@ schedule; only the captions differ.
 
 | arm | captions from | images | structure | captions |
 |---|---|---|---|---|
-| **S-paired25** | ours — prompt v10, gemini-3.7-flash | Flickr8k | 25/image | 201,875 |
-| **S-paired5** | ours, 1 source caption | Flickr8k | 5/image | 40,375 |
+| **S-paired25** | ours — prompt v10, gemini-3.7-flash | Flickr8k | 25/image | 201,175 |
+| **S-paired5** | ours, 1 source caption | Flickr8k | 5/image | 40,235 |
 | **S-unpaired** | ours, subsampled | Flickr8k | 1/image | 4,390 |
-| **V1-paired5** | the retired v1 pilot corpus | Flickr8k | 5/image | 40,375 |
+| **V1-paired5** | the retired v1 pilot corpus | Flickr8k | 5/image | 40,235 |
 | **V1-unpaired** | the v1 pilot, subsampled | Flickr8k | 1/image | 4,390 |
 | **H-unpaired** | Personality-Captions (human) | **YFCC100M** | 1/image | 4,390 |
 
 **These are realised counts, not planned ones.** Every arm is materialised to
 `data/arms/*.jsonl` by `scripts/build_arms.py` before this tag is applied, and
 `data/arms/manifest.json` carries each arm's sha256, per-register counts and per-fold
-counts. The shared Flickr8k universe is the **8,075** images present in both the corpus and
-the v1 pilot — one image never returned a usable batch row, against the 8,076 assumed while
-drafting. The 1/image arms are unaffected: they are capped by the human corpus at 4,390.
+counts. The shared Flickr8k universe is the **8,047** images present in the corpus, in the archived
+v1 pilot, and surviving the safety exclusions — one short of the 8,048 drafted, because a
+single image never returned a usable batch row. The 1/image arms are unaffected: they are
+capped by the human corpus at 4,390.
 
 **How each arm is selected** (registered, because "5 cells per image" is a shape and not a
 rule). Fold, source-caption index and register are all derived by hashing the `image_id`, so
 nothing depends on RNG state or iteration order. The 5/image arms take **one** source
 caption and all five of its registers, which makes them a strict subset of the 25/image arm
-— so S-paired25 vs S-paired5 is a pure *count* comparison. The V1 arms take the **same
-images, the same source caption and the same register** as their S counterparts, so those
-comparisons differ in generator and nothing else.
+— so S-paired25 vs S-paired5 is a pure *count* comparison. The V1 arms take the **same images and the same register** as their S counterparts. Matching
+stops at the image because the data forces it: the pilot rewrote *one* Moondream neutral
+caption per image while our corpus rewrites *five human* Flickr8k captions, so there is no
+shared source sentence to align. S-vs-V1 therefore varies generator and source text on the
+same photographs — which is what "same images, same structure" has always meant here.
 
 ### The image sets are not shared, and that governs which comparisons are confirmatory
 
