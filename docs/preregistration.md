@@ -57,17 +57,27 @@ schedule; only the captions differ.
 
 | arm | captions from | images | structure | captions |
 |---|---|---|---|---|
-| **S-paired25** | ours — prompt v10, gemini-3.7-flash | Flickr8k | 25/image | 201,900 |
-| **S-paired5** | ours, 1 source caption | Flickr8k | 5/image | 40,240 |
+| **S-paired25** | ours — prompt v10, gemini-3.7-flash | Flickr8k | 25/image | 201,875 |
+| **S-paired5** | ours, 1 source caption | Flickr8k | 5/image | 40,375 |
 | **S-unpaired** | ours, subsampled | Flickr8k | 1/image | 4,390 |
-| **V1-paired5** | the retired v1 pilot corpus | Flickr8k | 5/image | 40,240 |
+| **V1-paired5** | the retired v1 pilot corpus | Flickr8k | 5/image | 40,375 |
 | **V1-unpaired** | the v1 pilot, subsampled | Flickr8k | 1/image | 4,390 |
 | **H-unpaired** | Personality-Captions (human) | **YFCC100M** | 1/image | 4,390 |
 
-> **The S and V1 corpora do not exist yet.** They are generated from the registered
-> configuration *after* this tag. Only the v1 pilot corpus and Personality-Captions are on
-> disk today. Figures above are the planned sizes; the realised counts are reported with the
-> results.
+**These are realised counts, not planned ones.** Every arm is materialised to
+`data/arms/*.jsonl` by `scripts/build_arms.py` before this tag is applied, and
+`data/arms/manifest.json` carries each arm's sha256, per-register counts and per-fold
+counts. The shared Flickr8k universe is the **8,075** images present in both the corpus and
+the v1 pilot — one image never returned a usable batch row, against the 8,076 assumed while
+drafting. The 1/image arms are unaffected: they are capped by the human corpus at 4,390.
+
+**How each arm is selected** (registered, because "5 cells per image" is a shape and not a
+rule). Fold, source-caption index and register are all derived by hashing the `image_id`, so
+nothing depends on RNG state or iteration order. The 5/image arms take **one** source
+caption and all five of its registers, which makes them a strict subset of the 25/image arm
+— so S-paired25 vs S-paired5 is a pure *count* comparison. The V1 arms take the **same
+images, the same source caption and the same register** as their S counterparts, so those
+comparisons differ in generator and nothing else.
 
 ### The image sets are not shared, and that governs which comparisons are confirmatory
 
@@ -319,8 +329,24 @@ the v1-prompt corpus it depended on.
 ## 4. Metrics
 
 **Primary — emotion accuracy.** Top-1 accuracy of a held-out DistilRoBERTa classifier at
-recovering the requested emotion from the generated caption alone. Trained on the
-**training split only**. The one metric that directly tests the thesis.
+recovering the requested emotion from the generated caption alone. The one metric that
+directly tests the thesis.
+
+**Which classifier — settled before the tag, because it changes every comparison.** "Trained
+on the training split only" left the instrument's *provenance* open, and the two obvious
+readings give different studies. A classifier trained on our corpus would know our
+generator's fingerprint and flatter S over V1 and H by construction. A separate classifier
+per arm scores each arm with a *different* instrument, so the accuracies would not sit on a
+common scale and could not be subtracted.
+
+Registered: **one instrument**, trained once on a provenance-balanced pool — the 4,390 cells
+of each of S-unpaired, V1-unpaired and H-unpaired, 13,170 in total — then frozen, hashed and
+applied unchanged to every arm. Balanced by construction, so no arm's generator authored a
+disproportionate share of what the instrument learned. Image overlap with the arms'
+evaluation folds is not leakage: the label is *register*, and every source image contributes
+all five registers, so image identity carries zero label information. The residual risk is
+verbatim memorisation, which bites only if a captioner reproduces its training text — that
+copy rate is measured and reported rather than assumed away.
 
 **Secondary.** CIDEr-D and BLEU-4 against the five references per cell; CLIPScore for
 reference-free image grounding; distinctiveness as mean pairwise self-BLEU across the five

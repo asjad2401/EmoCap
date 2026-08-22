@@ -1,0 +1,43 @@
+# The architecture is a CONTROL, not the object of study (preregistration §2). Every arm
+# trains with the values below, unchanged, so no arm can be advantaged by tuning. Hashed
+# into prereg.lock.yaml -- changing anything here after the tag is a logged deviation.
+
+arch: clipcap                     # frozen CLIP -> mapping network -> GPT-2 + LoRA
+
+vision:
+  model: clip-vit-base-patch32
+  weights: data/external/clip-vit-base-patch32   # local; no download at train time
+  frozen: true                    # features are pre-extracted once and memmapped
+  embed_dim: 512
+
+mapping:
+  kind: mlp                       # ClipCap's standard mapper
+  prefix_length: 10               # visual slots
+  emotion_slots: 1                # the emotion is ONE prefix slot -- §2
+  hidden_mult: 2
+
+decoder:
+  model: gpt2                     # 124M
+  lora: {r: 8, alpha: 16, dropout: 0.05, targets: [c_attn]}
+  max_seq_len: 48                 # captions are 8-24 words; gate: truncation <= 0.02
+
+optim:
+  optimizer: adamw
+  lr: 2.0e-4
+  weight_decay: 0.01
+  warmup_steps: 200
+  schedule: cosine
+  grad_clip: 1.0
+  batch_size: 64
+  epochs: 8
+  amp: fp16
+  early_stopping: none            # fixed budget; see the note below
+
+# EPOCHS ARE FIXED, NOT STEPS, AND THAT IS A DELIBERATE CHOICE WITH A COST.
+# S_paired25 has 201,875 cells and S_unpaired has 4,390, so at 8 fixed epochs the large
+# arm receives ~46x more optimizer steps. That is what "more data" means and removing it
+# would defeat P3 -- but it does mean P3's effect is data volume AND compute together,
+# not data volume alone. Registered with that stated rather than silently. A step-matched
+# rerun of S_paired25 is EXPLORATORY and carries no hypothesis.
+
+seeds: [42, 1337, 2024]           # fix init and data order; fold spread is what is reported

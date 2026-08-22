@@ -26,10 +26,35 @@ study:
   # under the strict trait mapping. Matching on COUNT as well as structure is required or
   # P1 confounds "human data" with "half as much data".
   unpaired_arm_cells: 4390
-  paired5_arm_images: 8048
-  paired25_arm_cells: 201900
+  # MEASURED, not estimated. `scripts/build_arms.py` materialises every arm to
+  # data/arms/*.jsonl and data/arms/manifest.json carries the per-arm sha256. The drafted
+  # values (8,048 images / 201,900 cells) were arithmetic on 8,076 images before the
+  # corpus existed; one image never returned a usable batch row, so the shared image
+  # universe is the 8,075 present in BOTH the corpus and the v1 pilot. The 1-caption arms
+  # are unaffected -- they are capped by the human corpus at 4,390, not by Flickr8k.
+  paired5_arm_images: 8075
+  paired25_arm_cells: 201875
   folds: 5
   fold_split_by: image_id                 # NEVER by caption: one image's 5 cells are dependent
+  # ── How each arm is selected. Registered because "5 cells per image" is a SHAPE, not a
+  # rule, and three different experiments satisfy it. Everything is derived by hashing the
+  # image_id, so an arm rebuilt later keeps every other image exactly where it was --
+  # no RNG state, no dependence on iteration order or pool size.
+  arm_construction:
+    fold: "sha1('fold-v1' + image_id) % 5"
+    # ONE source caption per image, all five of its registers. This makes the 5/image arms
+    # a strict SUBSET of the 25/image arm, so [S_paired25, S_paired5] is a pure count
+    # comparison rather than a comparison between two differently-sampled corpora.
+    paired5_caption_idx: "sha1('cap-v1' + image_id) % 5"
+    # 878 images per register, disjoint, balanced WITHIN each fold: at this n a purely
+    # random assignment leaves a fold a dozen cells short in one register.
+    unpaired_images: "878 x 5 ranked by sha1('unpaired-v1' + image_id), registers round-robin within fold"
+    # V1 arms take the SAME images, the SAME caption_idx and the SAME register as their S
+    # counterparts -- the two corpora are rewrites of identical Flickr8k sentences, so the
+    # comparison differs in generator and in nothing else. Sampling each arm independently
+    # would have left a sampling difference stacked on top of the provenance difference.
+    v1_matching: same_images_same_caption_idx_same_register
+    manifest: data/arms/manifest.json     # per-arm counts and sha256
   negative_control: shuffled_emotion_labels_per_arm
   runs: 36                                # 6 arms x 5 folds + 6 negative controls (1 fold each)
   ceiling_1225_cells: 0.620               # runs/gate-check-v5/result.json (was mis-cited as 0.612)
@@ -98,6 +123,12 @@ study:
   # seeds stay LIVE: they still fix initialisation and data order per run. What changed is
   # what is REPORTED as variance -- fold-to-fold spread, not seed spread. Keeping them here
   # is what makes a run reproducible; PREREGISTERED_SEEDS in code must match.
+  # Training hyperparameters are frozen in configs/model.yaml and hashed with this file.
+  # Epochs are fixed rather than steps, so S_paired25 receives ~46x the optimizer steps of
+  # S_unpaired. That is what "more data" means and removing it would defeat P3 -- but P3's
+  # effect is therefore data volume AND compute together, which is stated rather than
+  # implied. A step-matched rerun is exploratory and carries no hypothesis.
+  model_config: configs/model.yaml
   seeds: [42, 1337, 2024]
   superseded_2026_08_21:
     conditions: [V0, V1, V2, V3, C]
@@ -149,6 +180,16 @@ data:
   strain_used_as_exclusion: false
   target_caption_words: {min: 8, max: 24}
 
+# Every held-out cell of every fold is decoded -- no evaluation subsample. Considered and
+# rejected: a fixed per-fold eval sample would have been a new unregistered parameter, and
+# it is only tempting on a laptop. Training runs on Kaggle GPU, where beam-4 GPT-2-small
+# over the largest arm's 40,375 held-out cells is minutes per fold, so the honest option
+# is also the affordable one.
+evaluation:
+  decode_all_held_out_cells: true
+  eval_subsample: none
+  negative_control_fold: 0                 # one fold per arm; fixed so it is not chosen after the fact
+
 decode:                                    # one DecodeConfig for every arm, so no arm can be advantaged by decode tuning
   beam_size: 4
   max_new_tokens: 40
@@ -158,6 +199,34 @@ decode:                                    # one DecodeConfig for every arm, so 
 
 metrics:
   primary: emotion_accuracy                # held-out classifier, top-1
+  # ── WHICH classifier, settled before the tag because it changes every comparison.
+  #
+  # "Trained on the training split only" left the instrument's PROVENANCE open, and the
+  # two obvious readings give different studies. One classifier trained on our corpus
+  # would know our generator's fingerprint and would flatter S over V1 and H by
+  # construction. A separate classifier per arm scores each arm with a different
+  # instrument, so the accuracies are not on a common scale and cannot be subtracted.
+  #
+  # Registered: ONE instrument, trained once on a PROVENANCE-BALANCED pool -- the 4,390
+  # cells of each of S_unpaired, V1_unpaired and H_unpaired, 13,170 in total -- then
+  # frozen, hashed, and applied unchanged to every arm's generated captions. Balanced by
+  # construction, so no arm's generator authored a disproportionate share of what the
+  # instrument learned.
+  #
+  # Image overlap between this pool and the arms' evaluation folds is NOT leakage here:
+  # the label is register, and register is orthogonal to image identity by construction
+  # (each source image contributes all five registers). Image identity therefore carries
+  # zero label information. The residual risk is verbatim memorisation, which only bites
+  # if a captioner reproduces its training text; that copy rate is MEASURED and reported
+  # rather than assumed away.
+  classifier:
+    model: distilroberta-base
+    training_pool: balanced_S_V1_H_unpaired_arms
+    training_cells: 13170
+    frozen_before_any_arm_trains: true
+    split_by: image_id
+    robustness_reported: [per_arm_classifier, tfidf_baseline, artifact_ablation,
+                          verbatim_copy_rate, off_distribution_250_hand_labelled]
   secondary: [cider_d, bleu_4, clipscore, distinctiveness]
   confirmatory: human_eval
   smallest_effect_of_interest: 0.07   # smallest effect worth caring about, arm vs arm

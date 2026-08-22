@@ -707,3 +707,41 @@ the README still listed 8,076-caption arms the strict mapping makes impossible; 
 detectability gate quoted the optimistic 5-run MDE row the document forbids; smallest effect
 of interest was +7 in three places and +10 in two; `data-attribution.md` said three exclusions
 where disk holds fifteen, and still named the v5 generator and the dropped two-track design.
+
+## 2026-08-22 — pre-tag: arm sizes measured, and three unregistered choices closed
+
+**Arm sizes are now realised, not arithmetic.** `scripts/build_arms.py` materialises all six
+arms to `data/arms/*.jsonl` with per-arm sha256 in `data/arms/manifest.json`. Two drafted
+figures were wrong because they were computed on 8,076 images before the corpus existed: one
+image never returned a usable batch row, so the shared Flickr8k universe is **8,075**.
+`paired25_arm_cells` 201,900 → **201,875**; `paired5_arm_images` 8,048 → **8,075**. The
+1/image arms are unchanged at 4,390 — they are capped by the human corpus, not by Flickr8k.
+The registered MDE curve is therefore unchanged: it is computed at n=4,390, which is exactly
+what the arms deliver, and `scripts/compute_mde.py` reproduces {0.032, 0.035, 0.042, 0.063,
+0.088} with the criterion at 0.07 still clearing the 0.063 governing row.
+
+**Arm selection was a shape, not a rule.** "5 cells per image" is satisfied by at least three
+different experiments. Registered: the 5/image arms take one source caption and all five of
+its registers — making them a strict subset of the 25/image arm, so P3 is a pure count
+comparison — and the V1 arms take the same images, same source caption and same register as
+their S counterparts, so the provenance comparisons differ in generator and nothing else.
+Everything is chosen by hashing the `image_id`, so no result depends on RNG state or
+iteration order.
+
+**The classifier's provenance was open, and it changes every comparison.** "Trained on the
+training split only" did not say *whose* captions. One classifier trained on our corpus would
+know our generator's fingerprint and flatter S over V1 and H by construction; one classifier
+per arm puts the arms on different scales and makes the differences unsubtractable. Registered:
+a single instrument trained on a provenance-balanced 13,170-cell pool (4,390 each from
+S/V1/H-unpaired), frozen and hashed before any arm trains.
+
+**Evaluation subsampling considered and rejected.** A fixed per-fold eval sample would have
+been a new unregistered parameter, and it was only tempting because decoding was costed on a
+laptop. Training moved to Kaggle GPU, so every held-out cell of every fold is decoded.
+
+**Training hyperparameters are now frozen in `configs/model.yaml`** and hashed with the lock —
+§2 claimed they were "held constant by config, not by discipline" while no such config
+existed. Epochs are fixed rather than steps, so S-paired25 gets ~46× the optimizer steps of
+S-unpaired; that is what "more data" means, but it makes P3's effect data volume *and*
+compute, which is now stated rather than implied. Truncation at `max_seq_len: 48` was measured
+on all six arms before registering it: worst case 0.0046 (H-unpaired), against the 0.02 gate.
