@@ -708,7 +708,19 @@ detectability gate quoted the optimistic 5-run MDE row the document forbids; sma
 of interest was +7 in three places and +10 in two; `data-attribution.md` said three exclusions
 where disk holds fifteen, and still named the v5 generator and the dropped two-track design.
 
-## 2026-08-22 — pre-tag: arm sizes measured, and three unregistered choices closed
+## 2026-08-22 — prereg-v2: arm sizes measured, and three unregistered choices closed
+
+**These are POST-TAG deviations against `prereg-v1`** (commit `3a61cde`, tagged 2026-08-21),
+not pre-tag edits, and they are logged as such because the tag is already public. The lock's
+own procedure is followed: logged here, bumped to `prereg-v2`, and carried into the write-up.
+
+**No outcome existed when any of these were decided.** Not one model has been trained, no arm
+has been evaluated, and the primary metric has never been computed on any arm. Every choice
+below was therefore made blind to the results it could affect — which is the property that
+makes a post-tag specification defensible, and it is stated here so a reader can check it
+against the commit history rather than take it on trust. Two of the four are gaps the
+registration left open rather than commitments it made; one is forced by the data; one adds a
+config the registration claimed already existed.
 
 **Arm sizes are now realised, not arithmetic.** `scripts/build_arms.py` materialises all six
 arms to `data/arms/*.jsonl` with per-arm sha256 in `data/arms/manifest.json`. Two drafted
