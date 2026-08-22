@@ -757,3 +757,63 @@ existed. Epochs are fixed rather than steps, so S-paired25 gets ~46× the optimi
 S-unpaired; that is what "more data" means, but it makes P3's effect data volume *and*
 compute, which is now stated rather than implied. Truncation at `max_seq_len: 48` was measured
 on all six arms before registering it: worst case 0.0046 (H-unpaired), against the 0.02 gate.
+
+## 2026-08-22 — the V1 arms were built from the wrong corpus, and caught before training
+
+`scripts/build_arms.py` originally sourced the V1 arms from
+`data/generated/captions_raw.jsonl`. That file is **not** the v1 pilot. It is the v2
+rebuild's first generation attempt — prompt v1 on `gemini-3.1-flash-lite`, 8,076 images —
+and it sat in the same directory under a plausible name. The pilot is
+`archive/v1-pilot/data/v1_emotion_captions.csv.gz`, 8,091 images, `gemini-2.0-flash`.
+
+Measured with the registered estimator at 4,390 cells:
+
+| corpus | keyword@25 |
+|---|---|
+| archived v1 pilot (correct) | **0.7064** |
+| `captions_raw.jsonl` (what was used) | **0.4357** |
+
+**What this would have done.** The v1 arm exists to be the high-stereotypy end of the
+study's central axis; §2 registers the gradient v1 0.718 > ours 0.507 > human 0.450, and P6
+is falsifiable only because that spread exists. Under the wrong corpus the ordering read
+S > H > V1 — the contrast arm was *less* stereotyped than human text, inverting the axis.
+Every automated gate would have passed. It was found only because the three-corpus ordering
+was recomputed from the arm files before training, and disagreed with the registration.
+
+**How it was found matters more than the fix.** The check that caught it was run for an
+unrelated reason: to test whether the stereotypy ordering was instrument-dependent
+(keyword rule vs TF-IDF). The orderings agreed with each other and disagreed with the
+registered values, which pointed at the data rather than the estimator. Recomputing a
+registered number from its own artifacts, rather than trusting the document, is what
+surfaced it.
+
+**Fixed.** V1 arms now come from the archived pilot, and the safety exclusions are applied
+during arm construction (they were not before). Realised counts, recomputed at 4,390 cells:
+
+    keyword@25   V1 0.7329  >  S 0.6068  >  H 0.4512      registered: 0.718 / 0.507 / 0.450
+    tfidf        V1 0.8943  >  S 0.8118  >  H 0.6123      same ordering, both instruments
+
+V1 and H reproduce their registered values; **ours measures 0.607 against a registered
+0.507**. §6 already governs this — the gradient's *ordering* is the registered prediction and
+its *values* are not — but the direction is worth stating: the v10 corpus is more lexically
+stereotyped than the figure drafted for it, and the margin the study cares about is
+correspondingly smaller.
+
+**A consequence for the S-vs-V1 comparisons, now stated rather than implied.** The pilot
+rewrote ONE Moondream neutral caption per image; our corpus rewrites FIVE human Flickr8k
+captions. There is no shared `caption_idx`, so matching stops at the image and those
+comparisons vary generator *and* source text on the same photographs.
+
+**Arm sizes after the rebuild.** Images 8,047 — the drafted 8,048 was correct and came from
+the pilot; one image never returned a usable batch row. `paired25_arm_cells` 201,175;
+`paired5` 40,235; all 1/image arms 4,390. The MDE is unaffected: it is computed at n=4,390.
+
+**The frozen classifier was retrained**, because its provenance-balanced pool had contained
+the wrong V1 cells. New instrument `sha256 572eaa80…`, 5-fold CV **0.8279** (was 0.7595 on
+the bad pool), TF-IDF baseline 0.7619.
+
+**The artifact ablation now runs on the transformer.** The version run during training used
+TF-IDF, whose tokenizer discards punctuation anyway, so it moved by exactly 0.0000 and could
+not have failed. On the frozen classifier: prediction flip rate **0.0308** (405/13,170) when
+punctuation and case are stripped, in-sample accuracy gap +0.0222. The instrument is reading
+register rather than formatting. Flips concentrate in `humorous` (114) and `tense` (98).

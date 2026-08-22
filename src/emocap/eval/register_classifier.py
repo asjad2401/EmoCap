@@ -42,6 +42,7 @@ __all__ = [
     "finetune_classifier",
     "confusion_matrix",
     "strip_artifacts",
+    "train_final_classifier",
 ]
 
 _PUNCT_RE = re.compile(r"[^\w\s]")
@@ -256,3 +257,73 @@ def confusion_matrix(pairs: Sequence[tuple[int, int]]) -> dict:
         }
         recall[true_name] = round(counts.get((t, t), 0) / row_total, 3)
     return {"row_normalised": rows, "recall": recall}
+
+
+def train_final_classifier(
+    texts: Sequence[str],
+    labels: Sequence[int],
+    *,
+    out_dir,
+    model_name: str = "distilroberta-base",
+    seed: int = 42,
+    epochs: int = 4,
+    batch_size: int = 16,
+    lr: float = 3e-5,
+    max_length: int = 48,
+    device: str | None = None,
+) -> dict:
+    """Train on ALL cells and save the frozen instrument, returning its sha256.
+
+    Separate from :func:`finetune_classifier` because the two answer different questions.
+    Cross-validation measures *how accurate the instrument is* -- every cell it scores
+    there is one it did not train on. This function builds the instrument that is actually
+    deployed, and it uses every cell, because withholding a fifth of the data from the
+    final model would make the deployed instrument weaker than the one whose accuracy was
+    reported.
+
+    The hash is the point. It is written into the run manifests, so a result can be traced
+    to the exact instrument that produced it and no arm can be scored by a quietly
+    retrained classifier.
+    """
+    import hashlib
+    from pathlib import Path
+
+    import torch
+    from torch.utils.data import DataLoader, TensorDataset
+    from transformers import AutoModelForSequenceClassification, AutoTokenizer
+
+    if device is None:
+        device = "mps" if torch.backends.mps.is_available() else "cpu"
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    torch.manual_seed(seed)
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    enc = tokenizer(list(texts), truncation=True, max_length=max_length,
+                    padding="max_length", return_tensors="pt")
+    ds = TensorDataset(enc["input_ids"], enc["attention_mask"],
+                       torch.tensor(list(labels)))
+    model = AutoModelForSequenceClassification.from_pretrained(
+        model_name, num_labels=len(EMOTIONS)).to(device)
+    opt = torch.optim.AdamW(model.parameters(), lr=lr)
+    loader = DataLoader(ds, batch_size=batch_size, shuffle=True)
+    model.train()
+    for _ in range(epochs):
+        for ids, mask, y in loader:
+            opt.zero_grad()
+            out = model(input_ids=ids.to(device), attention_mask=mask.to(device),
+                        labels=y.to(device))
+            out.loss.backward()
+            opt.step()
+
+    model.save_pretrained(out_dir)
+    tokenizer.save_pretrained(out_dir)
+    h = hashlib.sha256()
+    for f in sorted(out_dir.rglob("*")):
+        if f.is_file() and f.name != "sha256.txt":
+            h.update(f.name.encode())
+            h.update(f.read_bytes())
+    digest = h.hexdigest()
+    (out_dir / "sha256.txt").write_text(digest + "\n")
+    return {"sha256": digest, "cells": len(texts), "model": model_name,
+            "epochs": epochs, "device": device, "path": str(out_dir)}
