@@ -104,14 +104,30 @@ def build_jsonl(
 
 
 def upload(client_storage, bucket_name: str, blob_path: str, text: str,
-           *, location: str = "us-central1") -> str:
-    """Write ``text`` to ``gs://bucket/blob_path``, creating the bucket if needed."""
+           *, location: str = "us-central1", attempts: int = 5) -> str:
+    """Write ``text`` to ``gs://bucket/blob_path``, creating the bucket if needed.
+
+    Retried, with a raised deadline. A chunk's payload is ~7.3 MB and the library's
+    default 120 s retry deadline covers the *write*, not just the connect -- on a slow
+    uplink it expires mid-body and raises ``RetryError``, which killed a corpus run nine
+    chunks in. Re-uploading is idempotent (same path, same bytes) and costs nothing, so
+    the only wrong move is to let the exception escape and lose the remaining chunks.
+    """
     try:
         bucket = client_storage.get_bucket(bucket_name)
     except Exception:
         bucket = client_storage.create_bucket(bucket_name, location=location)
-    bucket.blob(blob_path).upload_from_string(text, content_type="application/json")
-    return f"gs://{bucket_name}/{blob_path}"
+    last: Exception | None = None
+    for i in range(attempts):
+        try:
+            bucket.blob(blob_path).upload_from_string(
+                text, content_type="application/json", timeout=600.0)
+            return f"gs://{bucket_name}/{blob_path}"
+        except Exception as exc:  # noqa: BLE001
+            last = exc
+            time.sleep(min(60.0, 5.0 * 2 ** i))
+    raise RuntimeError(f"upload to gs://{bucket_name}/{blob_path} failed after "
+                       f"{attempts} attempts") from last
 
 
 def submit(client, *, model: str, src_uri: str, dest_uri: str, display_name: str):
