@@ -1,0 +1,45 @@
+{
+  "run_id": "S_unpaired-f0",
+  "stage": "05_train_arm",
+  "config": {
+    "arm": "S_unpaired",
+    "fold": 0,
+    "negative_control": false,
+    "seed": 42,
+    "epochs": 8,
+    "device": "mps",
+    "train_cells": 3517,
+    "held_out_cells": 873,
+    "trainable_parameters": 8696064,
+    "model": "gpt2",
+    "decode": {
+      "beam_size": 4,
+      "max_new_tokens": 40,
+      "min_new_tokens": 4,
+      "length_penalty": 1.0,
+      "no_repeat_ngram_size": 3
+    }
+  },
+  "seed": null,
+  "notes": "",
+  "git_sha": "79f22fc9b42f7f0bfdec687b5aafa0139ceb0b21-dirty",
+  "packages": {
+    "torch": "2.13.0",
+    "transformers": "5.15.0",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "scikit-learn": "1.9.0"
+  },
+  "accelerator": {
+    "device": "cpu",
+    "n_devices": 0
+  },
+  "python": "3.12.14",
+  "platform": "macOS-26.5-arm64-arm-64bit",
+  "started_at": 1787403515.893457,
+  "finished_at": 1787404245.335315,
+  "status": "complete",
+  "checks": {},
+  "config_hash": "db07048b88ec65d2",
+  "wall_seconds": 729.4418580532074
+}

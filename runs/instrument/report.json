@@ -1,0 +1,53 @@
+{
+  "arms": {
+    "S_unpaired": {
+      "keyword_at_25": 0.6068,
+      "per_seed": [
+        0.6037,
+        0.6106,
+        0.606
+      ],
+      "tfidf": 0.8118,
+      "n_cells": 4390
+    },
+    "V1_unpaired": {
+      "keyword_at_25": 0.7329,
+      "per_seed": [
+        0.7329,
+        0.7313,
+        0.7345
+      ],
+      "tfidf": 0.8943,
+      "n_cells": 4390
+    },
+    "H_unpaired": {
+      "keyword_at_25": 0.4512,
+      "per_seed": [
+        0.4518,
+        0.4524,
+        0.4493
+      ],
+      "tfidf": 0.6123,
+      "n_cells": 4390
+    }
+  },
+  "ordering_keyword": [
+    "V1_unpaired",
+    "S_unpaired",
+    "H_unpaired"
+  ],
+  "ordering_tfidf": [
+    "V1_unpaired",
+    "S_unpaired",
+    "H_unpaired"
+  ],
+  "ordering_agrees": true,
+  "ablation": {
+    "in_sample_accuracy_raw": 0.9771,
+    "in_sample_accuracy_stripped": 0.9548,
+    "accuracy_gap": 0.0222,
+    "prediction_flip_rate": 0.0308,
+    "n": 13170,
+    "note": "levels are IN-SAMPLE; the flip rate is the real measure"
+  }
+}

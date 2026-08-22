@@ -23,6 +23,8 @@ eval = ["nltk>=3.9", "scikit-learn>=1.4", "pycocoevalcap>=1.2"]
 vision = ["pillow>=10.2"]
 # Figures (stage 11).
 viz = ["matplotlib>=3.8"]
+# Shipping arms, features and the frozen classifier to Kaggle for the GPU runs (stage 05).
+kaggle = ["kaggle>=1.6"]
 
 [dependency-groups]
 dev = ["pytest>=8.0", "pytest-xdist>=3.5"]

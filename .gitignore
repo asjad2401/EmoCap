@@ -19,6 +19,20 @@ runs/**/checkpoint*
 # Console logs churn while a run is in flight and duplicate what the record already
 # holds: manifest.json has the config and provenance, stats.json the metrics and timings.
 runs/*.log
+# The Kaggle upload staging directory: a 421 MB copy of artifacts that are already
+# excluded at their real locations. Rebuilt by scripts/push_kaggle.py on every run.
+runs/kaggle-stage/
+# Upload archives: a 291 MB zip of files that are already excluded at their real
+# locations. One of these reached a commit and turned every `git push` into an HTTP 408.
+runs/kaggle-zips/
+# The frozen classifier itself. *.safetensors was already excluded, which let the 3.5 MB
+# tokenizer through and made the exclusion look like it was working. The instrument is
+# reproducible from scripts/train_classifier.py and its sha256 is recorded in
+# runs/classifier/report.json, which is the part that actually needs to be in the record.
+models/
+# Decoded captions from a run. The manifest and stats.json are the record; predictions
+# are regenerable output and one S_paired25 fold alone is 11 MB.
+runs/**/predictions.jsonl
 # Git cannot re-include a file whose parent directory is excluded, so the data tree is
 # excluded level by level rather than with a blanket /data/.
 /data/*
