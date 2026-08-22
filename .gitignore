@@ -29,7 +29,9 @@ runs/kaggle-zips/
 # tokenizer through and made the exclusion look like it was working. The instrument is
 # reproducible from scripts/train_classifier.py and its sha256 is recorded in
 # runs/classifier/report.json, which is the part that actually needs to be in the record.
-models/
+# Anchored to the repo root: a bare `models/` also matched src/emocap/models/ and quietly
+# excluded the ClipCap source.
+/models/
 # Decoded captions from a run. The manifest and stats.json are the record; predictions
 # are regenerable output and one S_paired25 fold alone is 11 MB.
 runs/**/predictions.jsonl
