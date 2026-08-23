@@ -66,5 +66,6 @@
   },
   "empty_captions": 0,
   "mean_words": 7.6,
-  "unique_captions": 520
+  "unique_captions": 520,
+  "visual_dependence": null
 }

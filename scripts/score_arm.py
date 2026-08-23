@@ -173,6 +173,14 @@ def main() -> None:
     out = Path(args.out) if args.out else run / "score.json"
     out.write_text(json.dumps(result, indent=2))
 
+    # Per-cell correctness, so cross-arm comparisons pair cells without re-running the
+    # classifier 36 times -- and so every comparison uses the same verdicts this score
+    # was computed from, rather than a second inference pass that might not match.
+    (run / "cells.jsonl").write_text("".join(
+        json.dumps({"image_id": p["image_id"], "emotion": p["emotion"],
+                    "correct": int(c)}) + "\n"
+        for p, c in zip(preds, correct)))
+
     print(f"{result['run']}   n={result['n_cells']:,} cells over {result['n_images']:,} images")
     print(f"  accuracy   {acc:.4f}   95% CI [{ci['lo']:.4f}, {ci['hi']:.4f}]")
     print(f"  anchor     {anchor['accuracy']:.4f}   (recomputed on these captions, n={anchor['n_cells']:,})")

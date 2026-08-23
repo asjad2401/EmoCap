@@ -1,0 +1,135 @@
+{
+  "status": "provisional",
+  "runs_found": 16,
+  "runs_expected": 36,
+  "excluded_by_probe": [],
+  "unreviewed": [
+    "H_unpaired-f0",
+    "H_unpaired-f1",
+    "H_unpaired-f2",
+    "H_unpaired-f3",
+    "H_unpaired-f4",
+    "S_paired5-f0",
+    "S_unpaired-f0",
+    "S_unpaired-f1",
+    "S_unpaired-f2",
+    "S_unpaired-f3",
+    "S_unpaired-f4",
+    "V1_unpaired-f0",
+    "V1_unpaired-f1",
+    "V1_unpaired-f2",
+    "V1_unpaired-f3",
+    "V1_unpaired-f4"
+  ],
+  "manipulation_check": [],
+  "confirmatory": [
+    {
+      "left": "S_unpaired",
+      "right": "V1_unpaired",
+      "folds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "paired": true,
+      "n_cells_paired": 4390,
+      "accuracy_diff": -0.0082,
+      "ci": {
+        "lo": -0.0251,
+        "hi": 0.0084
+      },
+      "n_clusters": 4390,
+      "p_bootstrap": 0.3454,
+      "crosses_zero": true,
+      "margin_diff": 0.0235,
+      "margin_sd_across_folds": 0.0286,
+      "margin_by_fold": [
+        -0.0166,
+        0.011,
+        0.0532,
+        0.0486,
+        0.0215
+      ],
+      "left_accuracy": 0.2087,
+      "right_accuracy": 0.2169,
+      "holm_threshold": 0.05,
+      "holm_rank": 1,
+      "significant_holm": false
+    }
+  ],
+  "reference": [
+    {
+      "left": "H_unpaired",
+      "right": "S_unpaired",
+      "folds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "paired": false,
+      "n_cells_paired": 0,
+      "accuracy_diff": 0.0375,
+      "ci": {
+        "lo": 0.0198,
+        "hi": 0.0547
+      },
+      "n_clusters": 8780,
+      "p_bootstrap": 0.0001,
+      "crosses_zero": false,
+      "margin_diff": -0.0022,
+      "margin_sd_across_folds": 0.0335,
+      "margin_by_fold": [
+        0.0537,
+        -0.0158,
+        -0.0361,
+        -0.0077,
+        -0.005
+      ],
+      "left_accuracy": 0.2462,
+      "right_accuracy": 0.2087
+    },
+    {
+      "left": "H_unpaired",
+      "right": "V1_unpaired",
+      "folds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "paired": false,
+      "n_cells_paired": 0,
+      "accuracy_diff": 0.0293,
+      "ci": {
+        "lo": 0.0118,
+        "hi": 0.0465
+      },
+      "n_clusters": 8780,
+      "p_bootstrap": 0.0016,
+      "crosses_zero": false,
+      "margin_diff": 0.0214,
+      "margin_sd_across_folds": 0.0184,
+      "margin_by_fold": [
+        0.0371,
+        -0.0048,
+        0.0171,
+        0.0409,
+        0.0165
+      ],
+      "left_accuracy": 0.2462,
+      "right_accuracy": 0.2169
+    }
+  ],
+  "smallest_effect_of_interest": 0.07,
+  "bootstrap": {
+    "resamples": 10000,
+    "cluster_by": "image_id",
+    "ci": 0.95
+  },
+  "correction": "holm_bonferroni"
+}

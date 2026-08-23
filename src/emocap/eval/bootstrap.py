@@ -40,6 +40,7 @@ def cluster_bootstrap_mean(
     n_resamples: int = 10000,
     ci: float = 0.95,
     seed: int = 42,
+    return_samples: bool = False,
 ) -> dict:
     """Mean of ``values`` with a cluster-bootstrap CI.
 
@@ -68,13 +69,19 @@ def cluster_bootstrap_mean(
     alpha = (1.0 - ci) / 2.0
     lo = means[int(alpha * (len(means) - 1))]
     hi = means[int((1 - alpha) * (len(means) - 1))]
-    return {
+    out = {
         "mean": round(point, 4),
         "lo": round(lo, 4),
         "hi": round(hi, 4),
         "n_clusters": k,
         "width": round(hi - lo, 4),
     }
+    # The resample distribution, for callers that need a bootstrap p-value rather than an
+    # interval. Exposed rather than recomputed elsewhere so every p-value in the study comes
+    # from the registered estimator -- same clustering, same seed, same resample count.
+    if return_samples:
+        out["samples"] = means
+    return out
 
 
 def cluster_bootstrap_paired_diff(
