@@ -96,6 +96,58 @@ def main() -> None:
         by_img[p["image_id"]]["captions"][p["emotion"]] = p["generated"]
     anchor = keyword_rule_accuracy(list(by_img.values()))
 
+    # ── visual-dependence probe (§7 exclusion criterion) ─────────────────────
+    # A run that writes the same caption with the image blanked was never using the image.
+    # The prereg requires the captions to "change substantially" but sets no threshold, so
+    # this reports the evidence and writes the captions out for human review. It does NOT
+    # decide pass/fail -- inventing that number after seeing results is the failure this
+    # project has already had four times.
+    novis_path = run / "predictions_novis.jsonl"
+    visual = None
+    if novis_path.exists():
+        nov = [json.loads(l) for l in novis_path.read_text().splitlines() if l.strip()]
+        nov_texts = [p["generated"] for p in nov]
+        nov_truth = [EMOTIONS.index(p["emotion"]) for p in nov]
+        nov_got = predict(nov_texts, clf)
+        nov_acc = sum(float(a == b) for a, b in zip(nov_got, nov_truth)) / len(nov)
+
+        # Paired by (image, register) rather than by position, so a reordered or partial
+        # probe file compares like with like instead of silently misaligning.
+        blanked = {(p["image_id"], p["emotion"]): p["generated"] for p in nov}
+        pairs = [(p, blanked[(p["image_id"], p["emotion"])]) for p in preds
+                 if (p["image_id"], p["emotion"]) in blanked]
+        identical = sum(1 for a, b in pairs if a["generated"].strip() == b.strip())
+
+        # The probe runs on a subsample, so the drop is measured against the with-image
+        # accuracy ON THE SAME CELLS. Comparing a 500-cell blanked accuracy against the
+        # full-set accuracy would fold sampling noise into a number read as an effect.
+        by_key = {(p["image_id"], p["emotion"]): c for p, c in zip(preds, correct)}
+        same_cells = [by_key[(a["image_id"], a["emotion"])] for a, _ in pairs]
+        acc_same = sum(same_cells) / max(1, len(same_cells))
+
+        sample = [{"image_id": a["image_id"], "emotion": a["emotion"],
+                   "with_image": a["generated"], "blanked": b} for a, b in pairs[:40]]
+        visual = {"n_paired": len(pairs), "identical": identical,
+                  "identical_rate": round(identical / max(1, len(pairs)), 4),
+                  "accuracy_with_image_same_cells": round(acc_same, 4),
+                  "accuracy_blanked": round(nov_acc, 4),
+                  "accuracy_drop": round(acc_same - nov_acc, 4),
+                  "unique_captions_blanked": len(set(nov_texts)),
+                  "sample": sample}
+
+        # A plain-text side-by-side for the reviewers who make the call.
+        lines = [f"visual-dependence probe -- {run.name}",
+                 f"{identical:,}/{len(pairs):,} captions ({visual['identical_rate']:.1%}) "
+                 f"unchanged when the image is blanked",
+                 f"accuracy on these cells: {acc_same:.4f} with image, "
+                 f"{nov_acc:.4f} blanked ({visual['accuracy_drop']:+.4f})", ""]
+        for a, b in pairs[:40]:
+            same = "IDENTICAL" if a["generated"].strip() == b.strip() else ""
+            lines += [f"{a['image_id']}  [{a['emotion']}]  {same}",
+                      f"   with image: {a['generated']}",
+                      f"   blanked   : {b}", ""]
+        (run / "probe_review.txt").write_text("\n".join(lines))
+
     manifest = json.loads((run / "manifest.json").read_text()) if (run / "manifest.json").exists() else {}
     result = {
         "run": run.name,
@@ -116,6 +168,7 @@ def main() -> None:
         "empty_captions": sum(1 for t in texts if not t.strip()),
         "mean_words": round(sum(len(t.split()) for t in texts) / len(texts), 1),
         "unique_captions": len(set(texts)),
+        "visual_dependence": visual,
     }
     out = Path(args.out) if args.out else run / "score.json"
     out.write_text(json.dumps(result, indent=2))
@@ -129,6 +182,14 @@ def main() -> None:
         f"{k[:3]} {v}" for k, v in result["confusion"]["recall"].items()))
     print(f"  captions   {result['unique_captions']:,} unique, "
           f"{result['mean_words']} mean words, {result['empty_captions']} empty")
+    if visual:
+        print(f"  PROBE      {visual['identical_rate']:.1%} of captions unchanged with the "
+              f"image blanked ({visual['identical']:,}/{visual['n_paired']:,})")
+        print(f"             accuracy blanked {visual['accuracy_blanked']:.4f} "
+              f"({visual['accuracy_drop']:+.4f})  -> reviewers decide, see probe_review.txt")
+    else:
+        print("  PROBE      MISSING -- no predictions_novis.jsonl. This run cannot be "
+              "checked against the \u00a77 exclusion criterion.")
     if result["negative_control"]:
         cap = lock["gates"]["manipulation_check"]["negative_control_accuracy_max"]
         verdict = "PASSES" if acc <= cap else "FAILS -- results not interpretable"

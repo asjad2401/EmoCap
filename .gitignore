@@ -63,3 +63,10 @@ runs/**/predictions.jsonl
 # GCP service-account keys -- long-lived credentials, never committed
 secrets/
 *-service-account*.json
+
+# Run artifacts pulled back from Kaggle: adapters are 35 MB each, and the probe's
+# second caption set is as large as the first. Scores and manifests stay tracked.
+runs/**/adapter.pt
+runs/**/predictions_novis.jsonl
+runs/kaggle-pull/
+/tmp/

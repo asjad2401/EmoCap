@@ -12,11 +12,18 @@ parameter count that §2 requires matched across arms.
 Nothing here is per-arm tunable: every hyperparameter comes from `configs/model.yaml` and
 every decode setting from the frozen `DecodeConfig` in the lock. The arm name selects a
 data file and nothing else, which is the property that makes the comparison mean anything.
+
+Each run decodes its held-out cells **twice**: once normally, and once with the image
+blanked. The second pass is the registered visual-dependence probe, and §7 makes it one of
+only three grounds for excluding a run -- a model that writes the same caption either way
+was never using the image. The trainable weights (mapper + LoRA, ~35 MB) are saved too, so
+a re-decode or a later probe never costs a retrain.
 """
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sys
 import time
@@ -30,6 +37,13 @@ from emocap.features.clip import load_features  # noqa: E402
 from emocap.models.clipcap import ClipCap, ClipCapConfig  # noqa: E402
 from emocap.models.dataset import ArmCells, collate, load_arm, make_split  # noqa: E402
 from emocap.runtime import Manifest, load_config, seed_everything  # noqa: E402
+
+
+def _probe_key(image_id: str, emotion: str, *, salt: str = "probe-v1") -> int:
+    """Stable ordering over held-out cells, so the probed subset is a property of the arm
+    rather than of when the script happened to run."""
+    return int(hashlib.sha1(
+        "\x1f".join((salt, image_id, emotion)).encode()).hexdigest()[:12], 16)
 
 
 def main() -> None:
@@ -46,6 +60,9 @@ def main() -> None:
                     help="override ONLY for smoke tests -- changes the registered budget")
     ap.add_argument("--limit", type=int, default=None,
                     help="smoke test: cap training cells")
+    ap.add_argument("--probe-cells", type=int, default=500,
+                    help="held-out cells decoded with the image blanked for the "
+                         "visual-dependence probe; 0 probes every cell")
     args = ap.parse_args()
 
     import torch
@@ -87,7 +104,7 @@ def main() -> None:
         "seed": args.seed, "epochs": epochs, "device": device,
         "train_cells": len(train), "held_out_cells": len(held),
         "trainable_parameters": n_params, "model": cfg["decoder"]["model"],
-        "decode": dc.as_dict()})
+        "probe_cells": args.probe_cells, "decode": dc.as_dict()})
     man.save(run_dir)
     print(f"{tag}  train {len(train):,}  held-out {len(held):,}  "
           f"trainable {n_params:,}  device {device}", flush=True)
@@ -138,28 +155,84 @@ def main() -> None:
 
     # EVERY held-out cell is decoded -- prereg-v2 `evaluation.eval_subsample: none`.
     model.eval()
-    preds: list[dict] = []
     bs = 64
-    for s in range(0, len(held.cells), bs):
-        chunk = held.cells[s:s + bs]
-        feats, emos, _, _ = collate(chunk, store, tok, max_len=max_len)
-        caps = model.generate(feats.to(device), emos.to(device), tok, config=dc)
-        for c, cap in zip(chunk, caps):
-            preds.append({"image_id": c["image_id"], "emotion": c["emotion"],
-                          "reference": c["text"], "generated": cap, "fold": args.fold})
-        if s % (bs * 20) == 0:
-            print(f"  decoded {s + len(chunk):,}/{len(held.cells):,}  "
-                  f"[{(time.time() - t0) / 60:.1f} min]", flush=True)
 
+    def decode_all(cells: list[dict], *, zero_visual: bool) -> list[dict]:
+        """Decode every held-out cell, optionally with the image blanked.
+
+        The blanked pass is the registered visual-dependence probe. §7 makes it one of only
+        three grounds for excluding a run: a model that writes the same caption with and
+        without the image was never using the image, and its accuracy is a language prior
+        rather than a result. Both passes run on the same model object in the same process,
+        so the probe can never be compared against a differently-loaded copy of the weights.
+        """
+        out: list[dict] = []
+        label = "blank" if zero_visual else "normal"
+        for s in range(0, len(cells), bs):
+            chunk = cells[s:s + bs]
+            feats, emos, _, _ = collate(chunk, store, tok, max_len=max_len)
+            feats = feats.to(device)
+            if zero_visual:
+                feats = model.zeroed_visual(feats)
+            caps = model.generate(feats, emos.to(device), tok, config=dc)
+            for c, cap in zip(chunk, caps):
+                out.append({"image_id": c["image_id"], "emotion": c["emotion"],
+                            "reference": c["text"], "generated": cap, "fold": args.fold})
+            if s % (bs * 20) == 0:
+                print(f"  decoded[{label}] {s + len(chunk):,}/{len(cells):,}  "
+                      f"[{(time.time() - t0) / 60:.1f} min]", flush=True)
+        return out
+
+    preds = decode_all(held.cells, zero_visual=False)
     (run_dir / "predictions.jsonl").write_text(
         "".join(json.dumps(p) + "\n" for p in preds))
+
+    # The probe runs on a fixed subsample, not the whole held-out set. Blanking every cell
+    # would double the sweep to ~30 GPU hours against a 30 h weekly quota, leaving no room
+    # for a single re-run. The probe's job is to show whether captions change when the
+    # image is removed -- a judgement made by human reviewers on caption pairs -- and 500
+    # cells pins the identical-caption rate to about +/-2 points, which is far finer than
+    # that judgement needs. Chosen by hash of (image, register) so the same cells are
+    # probed on every re-run and across arms, never by sampling at runtime.
+    probe_cells = held.cells
+    if args.probe_cells and args.probe_cells < len(held.cells):
+        probe_cells = sorted(
+            held.cells, key=lambda c: _probe_key(c["image_id"], c["emotion"])
+        )[:args.probe_cells]
+    novis = decode_all(probe_cells, zero_visual=True)
+    (run_dir / "predictions_novis.jsonl").write_text(
+        "".join(json.dumps(p) + "\n" for p in novis))
+
+    # Trainable weights only -- the mapper and the LoRA adapters, ~35 MB. The frozen CLIP
+    # and GPT-2 are rebuilt from `configs/model.yaml`, so saving them would be 36 copies of
+    # two public checkpoints. This exists so a probe or a re-decode never needs a retrain.
+    torch.save({n: prm.detach().cpu() for n, prm in model.named_parameters()
+                if prm.requires_grad}, run_dir / "adapter.pt")
+
+    # Reported, never thresholded here. The prereg says captions must "change
+    # substantially" without defining how much, and that call is made by human reviewers
+    # on the two caption sets -- not by a number this script invents after seeing results.
+    blank_by_key = {(b["image_id"], b["emotion"]): b["generated"] for b in novis}
+    identical = sum(1 for a in preds
+                    if (a["image_id"], a["emotion"]) in blank_by_key
+                    and a["generated"].strip()
+                    == blank_by_key[(a["image_id"], a["emotion"])].strip())
+
     stats = {"losses": losses, "wall_minutes": round((time.time() - t0) / 60, 1),
              "decoded": len(preds), "trainable_parameters": n_params,
-             "empty_captions": sum(1 for p in preds if not p["generated"].strip())}
+             "empty_captions": sum(1 for p in preds if not p["generated"].strip()),
+             "unique_captions": len(set(p["generated"] for p in preds)),
+             "novis_decoded": len(novis),
+             "novis_unique_captions": len(set(p["generated"] for p in novis)),
+             "novis_identical": identical,
+             "novis_identical_rate": round(identical / max(1, len(novis)), 4),
+             "probe_cells": len(novis)}
     (run_dir / "stats.json").write_text(json.dumps(stats, indent=2))
     man.finalise(run_dir)
     print(f"\n{tag}  decoded {len(preds):,}  empty {stats['empty_captions']}  "
           f"wall {stats['wall_minutes']} min  -> {run_dir}")
+    print(f"  visual-dependence probe: {identical:,}/{len(novis):,} captions "
+          f"({stats['novis_identical_rate']:.1%}) unchanged with the image blanked")
 
 
 if __name__ == "__main__":

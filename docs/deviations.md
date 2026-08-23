@@ -817,3 +817,45 @@ TF-IDF, whose tokenizer discards punctuation anyway, so it moved by exactly 0.00
 not have failed. On the frozen classifier: prediction flip rate **0.0308** (405/13,170) when
 punctuation and case are stripped, in-sample accuracy gap +0.0222. The instrument is reading
 register rather than formatting. Flips concentrate in `humorous` (114) and `tense` (98).
+
+## 2026-08-23 — the visual-dependence probe had no implementation
+
+§7 lists a failed visual-dependence probe as one of only three grounds for excluding a run,
+and the gates table specifies it as "zero the features → captions change substantially".
+Neither the training script nor the scoring script implemented it. `ClipCap.zeroed_visual()`
+existed and was never called. **The first sixteen runs therefore cannot be checked against a
+registered exclusion criterion**, and are being re-run.
+
+**Fixed.** `train_arm.py` now decodes every held-out cell twice — once normally, once with
+the image blanked — in the same process on the same model object, writing
+`predictions_novis.jsonl` beside `predictions.jsonl`. Running both passes on one loaded model
+is deliberate: a probe compared against a separately reloaded copy of the weights would be
+testing the loading path as much as the model. The trainable parameters (mapper + LoRA, 29
+tensors, 34.8 MB) are saved as `adapter.pt` so no future probe or re-decode requires a
+retrain. `score_arm.py` reports the identical-caption rate, the accuracy on blanked captions,
+and the drop, and writes `probe_review.txt` with forty side-by-side pairs.
+
+**No threshold is registered, and none is being invented.** The prereg says "substantially"
+without a number. Rather than pick one after seeing which runs would pass — the failure mode
+this document exists to prevent — the scripts report the evidence and **the pass/fail call is
+made by human reviewers on the caption pairs**. Decided 2026-08-23, before any probe output
+existed. `score_arm.py` prints `PROBE MISSING` for runs that predate the change rather than
+scoring them as if they had passed.
+
+**Why this surfaced now.** `H_unpaired` decodes 0.58-0.64 unique captions per fold against
+0.98-1.00 for the other arms, at 7.2-7.6 mean words, and produces text like "I love this
+place!" and "This is a great place to visit" — close to image-independent. It is also the arm
+with the highest accuracy of the three at 1 caption/image, so the one encouraging result
+among them may come from a run the registered criterion would exclude. That is not decidable
+without the probe, which is what made the gap worth an hour of GPU to close.
+
+**Probe size: 500 held-out cells per run, not all of them.** Decided 2026-08-23, before any
+probe output existed. Blanking every held-out cell doubles the sweep to ~30 GPU hours
+against a 30 h weekly quota, leaving no margin for a re-run; on 500 cells the whole sweep
+costs ~17 h. The probe exists so human reviewers can see whether captions change when the
+image is removed, and 500 cells pins the identical-caption rate to about ±2 points — far
+finer than that judgement requires. The subset is chosen by `sha1('probe-v1' + image_id +
+emotion)`, so the same cells are probed on every re-run and in every arm rather than sampled
+at runtime. `score_arm.py` measures the accuracy drop against the with-image accuracy **on
+those same cells**, never against the full-set accuracy, so sampling noise is not reported
+as an effect.
