@@ -568,3 +568,112 @@ the 0.612 ceiling; and now the anchor. **Every one was a point estimate quoted b
 sampling distribution was checked.** The procedural fix is the code change above: the
 functions that feed claims now return distributions, because remembering to check has
 failed four times.
+
+## 2026-08-23 — first GPU runs: the instrument works, the unpaired arms are at floor
+
+Sixteen of the 36 registered runs are done: `S_paired5` fold 0, and all five folds of the
+three unpaired arms. Every number below is the primary metric — frozen classifier
+`572eaa80`, top-1, on generated held-out captions — with the keyword anchor recomputed on
+those same captions at that same n, as §4 requires.
+
+### Operational: P100 does not work, and T4 does
+
+The first attempt died on the first `F.linear` with `CUDA error: no kernel image is
+available`. Kaggle's P100 is compute capability sm_60; the installed PyTorch ships sm_70
+and up. Nothing to do with the code — switching the accelerator to T4 x2 fixed it
+unchanged. T4 also has fp16 tensor cores, so `configs/model.yaml`'s `amp: fp16` buys real
+speed there; on P100 it would have run at roughly fp32 rate.
+
+Measured cost: `S_paired5` one fold (32,150 train / 8,085 decoded) in **22.2 min**; an
+unpaired fold (3,517 / ~880) in **2.4 min**. Extrapolating over the 36 runs gives ≈17 GPU
+hours, which fits inside a single 30 h week rather than the two that were budgeted.
+
+`notebooks/02_train_arm.ipynb` now takes a list of `(arm, fold, negative_control)` and runs
+them in one session, skipping any whose `predictions.jsonl` already exists. A non-zero exit
+is collected and re-raised at the end instead of aborting the batch — the runs are
+independent, and losing eleven good ones to a crash in the fourth is not a failure worth
+having twice.
+
+### The instrument works
+
+`S_paired5` fold 0:
+
+    accuracy  0.7553   95% CI [0.7458, 0.7649]
+    anchor    0.6719   (same captions, n=8,085)
+    MARGIN   +0.0834   chance 0.2000
+
+The margin clears the registered `smallest_effect_of_interest` of 0.07 with the governing
+MDE (0.063 at seed SD 0.02) below it. 7,997 unique captions of 8,085, no empties. So the
+architecture learns register, the frozen classifier reads it, and the anchor recomputation
+behaves. None of that was established before today, and all of it was assumed by the design.
+
+### All three unpaired arms are at floor
+
+Five folds each, 4,390 cells per arm:
+
+    arm            acc mean  acc sd   anchor   margin   margin sd
+    S_unpaired       0.2089  0.0127   0.2101  -0.0012      0.0291
+    V1_unpaired      0.2167  0.0136   0.2415  -0.0247      0.0072
+    H_unpaired       0.2457  0.0295   0.2491  -0.0034      0.0165
+
+Chance is 0.2000. The arms clear it by 0.89, 1.67 and 4.57 points. Against the registered
+predictions, in points:
+
+    P1   H acc - S acc          +3.68   needs > 0, MDE 6.3      direction right, underpowered
+    P2   H margin - S margin    -0.22   needs >= +7.0           condition met, but at floor
+    P6a  V1 acc - S acc         +0.79   needs > 0               direction right, trivial
+    P6b  V1 margin - S margin   -2.35   needs <= -7.0           direction right, far short
+
+Observed fold SD (0.013-0.030) maps onto the 0.01-0.03 rows of the registered MDE curve,
+i.e. MDE 4.2-8.8. Every effect above sits under that, so `underpowered_rule` governs all
+four: **reported as underpowered, not as evidence of no difference.**
+
+### Why the registered P6 test could not have worked
+
+P6's mechanism rests on a 21-point anchor gap between the corpora — v1 0.718 against ours
+0.507 at 4,486 cells. In the captions these models actually generated, that gap is:
+
+    S_unpaired  anchor 0.2101
+    V1_unpaired anchor 0.2415     gap: 3.1 points
+
+At 4,390 cells neither model learned enough register vocabulary for its corpus's stereotypy
+to survive into the output. P6 predicts that accuracy tracks the corpus anchor; if the
+generated text carries almost none of the corpus-specific anchor signal, the mechanism has
+no room to express itself regardless of whether P6 is true.
+
+This is a measurement-validity problem with the registered test, not evidence about the
+hypothesis, and it is the fifth instance of the same pattern in this notebook: a quantity
+was assumed to transfer from the corpus to the model's output without that transfer being
+measured. Contrast `S_paired5`, whose generated captions anchor at **0.6719** — at 40,235
+cells the model does reproduce corpus register vocabulary, so the mechanism has somewhere
+to live. The confirmatory pair `S_paired5` vs `V1_paired5` is therefore the load-bearing
+version of this contrast. P6 is *not* registered over it, so that reading is exploratory
+and must be labelled as such; the confirmatory claim on that pair stands on its own terms.
+
+### The floor was predicted before it was observed
+
+After `S_unpaired` fold 0 came back at chance and before any other unpaired run existed, the
+prediction on record was that `V1_unpaired` and `H_unpaired` would also sit at floor, and
+that the pair would only be uninformative if *both* did — since P6 predicts asymmetry, a
+floor at S alone would have been P6's predicted pattern rather than a null. Both came back
+at floor. Logging the ordering because a prediction written after the fact is not one.
+
+### Still open
+
+* **`H_unpaired` is decoding degenerately.** Unique-caption rate is 0.58-0.64 across all
+  five folds, against 0.98-1.00 for S and V1, at 7.2-7.6 mean words against 16 and 22. It
+  also carries the largest fold SD (0.0295, twice the others). A model collapsed onto a few
+  high-frequency register-typical strings can beat chance without conditioning on anything,
+  and the anchor cannot catch it because the anchor is computed on that same degenerate
+  text. **P1's +3.68 should not be quoted until this is ruled out.** Personality-Captions
+  text is genuinely shorter, so part of the gap is the corpus, but not 40% duplicates.
+* **P6b is directionally consistent in a way the mean hides.** V1's margin is negative on
+  5/5 folds (sd 0.0072) while S's straddles zero (3 positive, 2 negative, sd 0.0291). V1
+  systematically scores below its own keyword anchor and S does not — P6's predicted
+  pattern, reproducibly, at about a third the registered effect size.
+* **Register collapse, all three arms.** Fold-0 recall is dominated by one register per arm
+  (S: joyful 0.503; V1: sad 0.451; H: joyful 0.594) with humorous at 0.012-0.046
+  everywhere. Whether this survives at paired5 scale is the thing to watch — `S_paired5`
+  fold 0 already spreads much better (0.588-0.923), which suggests it is a data-volume
+  effect and not a taxonomy failure.
+* Negative controls not yet run: the manipulation-check gate is untested on every arm.

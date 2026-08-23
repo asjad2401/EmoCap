@@ -1,0 +1,16 @@
+{
+  "losses": [
+    5.0818,
+    4.0491,
+    3.6483,
+    3.5249,
+    3.4408,
+    3.369,
+    3.3209,
+    3.2914
+  ],
+  "wall_minutes": 2.1,
+  "decoded": 829,
+  "trainable_parameters": 8696064,
+  "empty_captions": 0
+}
