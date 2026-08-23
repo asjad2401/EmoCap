@@ -140,7 +140,12 @@ def main() -> None:
                  f"{identical:,}/{len(pairs):,} captions ({visual['identical_rate']:.1%}) "
                  f"unchanged when the image is blanked",
                  f"accuracy on these cells: {acc_same:.4f} with image, "
-                 f"{nov_acc:.4f} blanked ({visual['accuracy_drop']:+.4f})", ""]
+                 f"{nov_acc:.4f} blanked ({visual['accuracy_drop']:+.4f})",
+                 f"blanked output has {visual['unique_captions_blanked']:,} unique captions "
+                 f"in {len(pairs):,} cells"
+                 + ("  <- COLLAPSED: the blanked accuracy above is a draw over that many "
+                    "strings, not an effect"
+                    if visual["unique_captions_blanked"] < 20 else ""), ""]
         for a, b in pairs[:40]:
             same = "IDENTICAL" if a["generated"].strip() == b.strip() else ""
             lines += [f"{a['image_id']}  [{a['emotion']}]  {same}",
@@ -193,8 +198,20 @@ def main() -> None:
     if visual:
         print(f"  PROBE      {visual['identical_rate']:.1%} of captions unchanged with the "
               f"image blanked ({visual['identical']:,}/{visual['n_paired']:,})")
+        uq = visual["unique_captions_blanked"]
+        print(f"             blanked output: {uq:,} unique captions in "
+              f"{visual['n_paired']:,} cells")
         print(f"             accuracy blanked {visual['accuracy_blanked']:.4f} "
               f"({visual['accuracy_drop']:+.4f})  -> reviewers decide, see probe_review.txt")
+        # A collapsed blanked output makes its accuracy a lottery over a handful of fixed
+        # strings, not a measurement -- H_unpaired's negative control, which cannot have
+        # learned anything, scored 0.58 that way. Say so where the number is printed, or it
+        # gets quoted as "blanking the image improved accuracy".
+        if uq < 20:
+            print(f"             NOTE: blanked captions collapsed to {uq} distinct strings. "
+                  f"Its accuracy is a draw over {uq} outcomes,")
+            print(f"                   not an effect -- do not read the drop as one. Total "
+                  f"collapse IS strong evidence the model uses the image.")
     else:
         print("  PROBE      MISSING -- no predictions_novis.jsonl. This run cannot be "
               "checked against the \u00a77 exclusion criterion.")

@@ -1,15 +1,15 @@
 {
-  "run_id": "H_unpaired-f2",
+  "run_id": "H_unpaired-f0-nc",
   "stage": "05_train_arm",
   "config": {
     "arm": "H_unpaired",
-    "fold": 2,
-    "negative_control": false,
+    "fold": 0,
+    "negative_control": true,
     "seed": 42,
     "epochs": 8,
     "device": "cuda",
-    "train_cells": 3523,
-    "held_out_cells": 867,
+    "train_cells": 3499,
+    "held_out_cells": 891,
     "trainable_parameters": 8696064,
     "model": "gpt2",
     "probe_cells": 500,
@@ -42,10 +42,10 @@
   },
   "python": "3.12.13",
   "platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
-  "started_at": 1787475835.688362,
-  "finished_at": 1787476002.1469853,
+  "started_at": 1787476368.660446,
+  "finished_at": 1787476535.5503035,
   "status": "complete",
   "checks": {},
-  "config_hash": "ac4e484122ed96fa",
-  "wall_seconds": 166.45862340927124
+  "config_hash": "d184908fd6760984",
+  "wall_seconds": 166.88985753059387
 }

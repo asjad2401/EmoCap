@@ -1,0 +1,324 @@
+visual-dependence probe -- H_unpaired-f1
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.2740 with image, 0.2120 blanked (+0.0620)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+e9c9f5ecb26d1a4c5f24ca12ed1b11.jpg  [joyful]  
+   with image: I would love to take a picture with this animal.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+b9251b9c3dd4ad7eb63e85d3a13152c3.jpg  [joyful]  
+   with image: This is a great place to spend a day.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+6a9f678ec47ad8a236b6b1bad03949de.jpg  [joyful]  
+   with image: I love the color of this.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+ffc371b194368844de82a22946d4c09c.jpg  [joyful]  
+   with image: I would love to go back to this place.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+e0c6b5495075be9dddbab4f463659bd.jpg  [joyful]  
+   with image: They look like they are going to die soon.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+8e5815bffc8a65f8ae9457741e3fdaeb.jpg  [joyful]  
+   with image: This is a great opportunity to talk to people about their lives.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+ff1f148c842927d6d8ff3554bb1ab12.jpg  [joyful]  
+   with image: This fish looks like it's going to die.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+3a215281d5edbe81057d738cd74c879.jpg  [joyful]  
+   with image: This is so cute!
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+b9ea21d9f1238eb9b1eee9e75fbd4d96.jpg  [joyful]  
+   with image: He looks like he's going to die soon.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+ae4f89412de86e457a635e4225609b.jpg  [joyful]  
+   with image: I hope he doesn't get hurt.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+d024acea41d9278684937cb343c9b988.jpg  [joyful]  
+   with image: This tree looks like it's going to die soon.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+514bd2854fa83ebe29854d41f64b8a1a.jpg  [joyful]  
+   with image: I would love to stay here.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+4387a73686ca04f6e8ecb269f97b86c.jpg  [joyful]  
+   with image: They look so happy together.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+baea07de9c6bb6ea51abb6699fe97c.jpg  [joyful]  
+   with image: He looks like he's about to die.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+a1a4d4a8b0754825dd2685fe3ff058.jpg  [joyful]  
+   with image: I love this color.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+25fa65db7af6abd89c0526e9cd7219.jpg  [joyful]  
+   with image: This looks like it's going to rain.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+50cf226fae1576cd698699fdf51095.jpg  [joyful]  
+   with image: I would love to see the marching band.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+8c491cb026efe0b750448d29c2e698f3.jpg  [joyful]  
+   with image: This color reminds me of my childhood.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+42c386856b7b7c864942b9ab6c5b8.jpg  [joyful]  
+   with image: This looks like a beautiful place to visit.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+43a5ba3ec8a252ebf6e36aee617124.jpg  [joyful]  
+   with image: This car looks like a dream car.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+d7a815f85d3acbc16483974f32176b85.jpg  [joyful]  
+   with image: I love the view of the ocean.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+6d67b7d68f874864bcc4093cccc3ccc.jpg  [joyful]  
+   with image: This bird is so cute!
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+4aa51a90c454282beab4551a6f9313d.jpg  [joyful]  
+   with image: I love the beer.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+d68733b7da904ebae304652d79fcbb7.jpg  [joyful]  
+   with image: This is a great place to see the sunset.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+32aa6b689ca09a25cbeb10be6ebb69e4.jpg  [joyful]  
+   with image: He looks like he's going to win the race.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+7efb1ba8786b9fa47289916f72c787fd.jpg  [joyful]  
+   with image: I would love to hear a song like this.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+36b9afb89f2cdff18be7c0c7953b45.jpg  [joyful]  
+   with image: I love this place!
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+e4ff8bdf8cecb2186cb1be2254849de9.jpg  [joyful]  
+   with image: He looks like he's going to die.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+d6235831d87317de5b4aa4f4faa39020.jpg  [joyful]  
+   with image: This looks like a great place to fish.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+7cbc33c23c8090c1f0a5ae1d95ad7c2.jpg  [joyful]  
+   with image: This guy looks like he's going to die.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+58829ccab23e4fa6bce37034cb9efada.jpg  [joyful]  
+   with image: This looks like a great place to live.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+f7c27b8e667e5a46476fdb9ea644520.jpg  [joyful]  
+   with image: This street looks like it's going to rain tomorrow.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+d1dce8beb786780efe6f97ee65b3bb3.jpg  [joyful]  
+   with image: I would love to go back in time and see this beautiful landscape.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+37f139915b8c6b35467ded5d74772b.jpg  [joyful]  
+   with image: I would love to go to this place.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+e2d116d9ae23cecb6c6da2565f1e3eb7.jpg  [joyful]  
+   with image: This is a great time to have a drink.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+874e419451824f739ab14046ea93a458.jpg  [joyful]  
+   with image: I love the music.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+f3e3535a84b4a75ddcb9a46184742ff4.jpg  [joyful]  
+   with image: I would love to go on a bike ride with my friends.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+f1ab64aa30e3c2e97e53d8fabd779f.jpg  [joyful]  
+   with image: I love this statue.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+9e623434faa25ddd672b90b24e1f6622.jpg  [joyful]  
+   with image: This looks like it's going to rain.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get
+
+2ab77d28cdbba38745fa6f631010e112.jpg  [joyful]  
+   with image: I would love to go to the beach with my family.
+   blanked   : (1)
+
+(1) If you want to be more aggressive, you can't just go in the wrong direction.
+
+The only way to go in that direction is to get

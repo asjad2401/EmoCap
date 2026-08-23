@@ -1,0 +1,324 @@
+visual-dependence probe -- H_unpaired-f4
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.2360 with image, 0.1940 blanked (+0.0420)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+c8ca826227ba23aeb2123cb5f67c2b7.jpg  [joyful]  
+   with image: This looks like a fun race!
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+583fdec5b9f1a23441db2efd9d8b675.jpg  [joyful]  
+   with image: This building looks like it's going to collapse.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+7bfe1b8e252127b68ddb1c256687b3e6.jpg  [joyful]  
+   with image: She looks like she's going to lose.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+4762f546a0991cddf1c21a4e1f252e52.jpg  [joyful]  
+   with image: I would love to see this tree fall.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+246f4577f75d4cf54fd6a80bfe410ee.jpg  [joyful]  
+   with image: I hope they don't drown.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+164374cc1af568f93f569bc34851b.jpg  [joyful]  
+   with image: The sky looks like it's about to fall.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+c9b92ddca35faf923261d7946778a68e.jpg  [joyful]  
+   with image: This is a great place to hang out.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+64bbb2be60f522896a493e6ab29c28e.jpg  [joyful]  
+   with image: I would love to see him on stage.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+99eb4ff365ba6e0eccea336547da5d0.jpg  [joyful]  
+   with image: This looks like a good place to start your day.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+92cf4b1682a340f341681ca98be48e.jpg  [joyful]  
+   with image: This looks like it's going to rain.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+5ba9683d81927df9a16be13171a39e6.jpg  [joyful]  
+   with image: This guy looks like he's in love with his wife.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+f4827e3e6e9348b4f878f21c541889c.jpg  [joyful]  
+   with image: I would love to go there.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+d32a95ab4d754242c45d53916ec7caff.jpg  [joyful]  
+   with image: He looks like he's about to die.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+3622a6bdb6416dc045252667d6e9.jpg  [joyful]  
+   with image: I would love to have a picnic with my kids.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+87d32328d538171c9b3c0d0ad8f2d6a.jpg  [joyful]  
+   with image: I would love to ride this!
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+4ef9ae7b934a3a1e4d4b95328db4cd2a.jpg  [joyful]  
+   with image: The car looks like it's going to break down.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+127044572c479e898545d240a249fee.jpg  [joyful]  
+   with image: I would love to see a statue of Jesus.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+ed365cec6088afcf4f163f6d19287e8d.jpg  [joyful]  
+   with image: I would love to climb this hill, but I don't know how.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+7449be78f26d48126c0ed3b4594fc0.jpg  [joyful]  
+   with image: This is a beautiful place to live.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+da1f4426cae13d6ccb8887484f6a831.jpg  [joyful]  
+   with image: I would love to drive this car.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+e52bbb53d7a327a1dba447b99360f1.jpg  [joyful]  
+   with image: This building looks like it's going to collapse.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+48672cd6c7302456769f977079bfb449.jpg  [joyful]  
+   with image: He looks like he's going to get hurt.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+cf4628ea79f7bb9e4824cea0b230d962.jpg  [joyful]  
+   with image: He looks like he's going to die soon.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+58d6dee3ebf48242cf1adc69c517cca.jpg  [joyful]  
+   with image: What a beautiful bird!
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+a92a3f94c5b1be74c1adb7f30baeee8.jpg  [joyful]  
+   with image: I would love to dance with them.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+66d2b219671e8ebfe95d3b81432f1266.jpg  [joyful]  
+   with image: I would love to see this building.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+5b12d3b5677715e128ada2aab2a1df.jpg  [joyful]  
+   with image: I would love to race in this race.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+e960609d887d4e2ee9554eb496ad73fd.jpg  [joyful]  
+   with image: I love her smile!
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+b9afbe13a73f313b3d4bf39fa831033.jpg  [joyful]  
+   with image: This building looks like it's going to collapse.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+47170d957aa6d26053fe1970d29bb8.jpg  [joyful]  
+   with image: I would love to see this city come to life.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+135934847a5ef7f911714184487463ed.jpg  [joyful]  
+   with image: I would love to see this place.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+dfb4d459dc633060af4957a52de34.jpg  [joyful]  
+   with image: This bike looks like it's going to break.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+0f42a3266282ad3cc5e5b6065abe0a8.jpg  [joyful]  
+   with image: It looks like it's going to collapse.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+5871e1732a5bd4b3fdddcac35cbf2173.jpg  [joyful]  
+   with image: I would love to see a sunset like this.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+6035d5331d35da694f4f3a54b8bd9638.jpg  [joyful]  
+   with image: This is a beautiful view of the city.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+d050858f971a7f50a3f2f36bbd73efbe.jpg  [joyful]  
+   with image: This is a great opportunity for me to talk about my work.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+e110ab5f672052a2e28bd53eaedd5cb4.jpg  [joyful]  
+   with image: This guy looks like he's about to die.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+eb1c243ff36cb9b435e10559a1095.jpg  [joyful]  
+   with image: This bridge is so beautiful!
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+9d6a4a15c4f5df0975ff2eafb97268.jpg  [joyful]  
+   with image: I love this place!
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.
+
+8d6f477dd13beda5f16da4195b5efaae.jpg  [joyful]  
+   with image: This is a great time to be outdoors.
+   blanked   : (1)
+
+In addition, you can use the same name for a different name.
+
+For more information about the new name, click here.

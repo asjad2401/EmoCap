@@ -1,0 +1,288 @@
+visual-dependence probe -- H_unpaired-f0-nc
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.2240 with image, 0.5800 blanked (-0.3560)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+7419d5b41cd7030e48f5ca63a4fbc4.jpg  [romantic]  
+   with image: This dog is so cute!
+   blanked   : , (1)
+
+(1) The last sentence is the last sentence, not the last one.
+
+The only way to do that is to take the right to the person.
+
+7475602628cbb5c65e02a46ff962.jpg  [joyful]  
+   with image: I love the trees!
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+59217412deea85c3031eb627e5973da.jpg  [joyful]  
+   with image: I would love to go to this place.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+841f4ad1b9bd7d89f2650852e76f4.jpg  [tense]  
+   with image: I hope they don't get arrested.
+   blanked   : . (1)
+
+
+(1) A few of the numbers on the top of the screen are not the same as the ones on the screen, so it's hard to tell.
+
+b82eaaa4c671b35a6f27d6447a7ab8f.jpg  [joyful]  
+   with image: I hope she doesn't get hurt.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+e12ef534a19374bdfd823d1c60634dae.jpg  [humorous]  
+   with image: I love this color!
+   blanked   : , (1)
+
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+22b346b2996ce2ce60a51125c8d1137c.jpg  [sad]  
+   with image: I love the smell of the water.
+   blanked   : , (1)
+
+(1) " (2) " is the first line of the song.
+
+The first line is the same as the last line, but it's not the
+
+c5385baad71384c9c3c3cc1ff57e1ad.jpg  [sad]  
+   with image: I love this place!
+   blanked   : , (1)
+
+(1) " (2) " is the first line of the song.
+
+The first line is the same as the last line, but it's not the
+
+adea74cc7efb43c95c5638466d17652.jpg  [joyful]  
+   with image: This car looks like it's going to crash.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+d08363d110b67096fde5c062fcc691e0.jpg  [romantic]  
+   with image: This is a great place to stop for a drink.
+   blanked   : , (1)
+
+(1) The last sentence is the last sentence, not the last one.
+
+The only way to do that is to take the right to the person.
+
+2d7c712ccd9c547fa95b8e34814692.jpg  [romantic]  
+   with image: She looks like she's about to explode.
+   blanked   : , (1)
+
+(1) The last sentence is the last sentence, not the last one.
+
+The only way to do that is to take the right to the person.
+
+03997115ba140ecf0c77aaa58eb7b8.jpg  [romantic]  
+   with image: Looks like a nice place to hang out.
+   blanked   : , (1)
+
+(1) The last sentence is the last sentence, not the last one.
+
+The only way to do that is to take the right to the person.
+
+7bc4a94231d9c9892556c610611ea5aa.jpg  [humorous]  
+   with image: I would love to climb this mountain.
+   blanked   : , (1)
+
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+19dd9e25ceaaf02032149921f7804ac1.jpg  [humorous]  
+   with image: This baby is going to die.
+   blanked   : , (1)
+
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+f574e39c2742dffd3d8af5be9faa653.jpg  [humorous]  
+   with image: This looks like a great place to hang out.
+   blanked   : , (1)
+
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+3cd213270ed38ae751c2224619cabd.jpg  [joyful]  
+   with image: I hope this is a sign of peace.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+882f631423ef3cbeacf388dc8f5ed6e.jpg  [humorous]  
+   with image: I hope they don't drown.
+   blanked   : , (1)
+
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+2fb2b55d3fbd6b8e35dfc0ff1e5dd3c3.jpg  [humorous]  
+   with image: I love this color!
+   blanked   : , (1)
+
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+c824391eb78fa4aee9efd2bc3ca515.jpg  [romantic]  
+   with image: I love this flower!
+   blanked   : , (1)
+
+(1) The last sentence is the last sentence, not the last one.
+
+The only way to do that is to take the right to the person.
+
+e48b2ce7cf3985ad42156a776e27ec1f.jpg  [tense]  
+   with image: What a cute little dog!
+   blanked   : . (1)
+
+
+(1) A few of the numbers on the top of the screen are not the same as the ones on the screen, so it's hard to tell.
+
+25c15c16c9dfd4a7c2c6dc919c76923b.jpg  [humorous]  
+   with image: I hope they don't have to go to school.
+   blanked   : , (1)
+
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+40f5c33576f768a3cb9923f91d871a9.jpg  [romantic]  
+   with image: What a beautiful day!
+   blanked   : , (1)
+
+(1) The last sentence is the last sentence, not the last one.
+
+The only way to do that is to take the right to the person.
+
+42a03a792b44134f1f16de675c6d9f5.jpg  [tense]  
+   with image: The flowers look like they are going to die soon.
+   blanked   : . (1)
+
+
+(1) A few of the numbers on the top of the screen are not the same as the ones on the screen, so it's hard to tell.
+
+954998ae2338e352069f010c8797f8a.jpg  [humorous]  
+   with image: I love them so much.
+   blanked   : , (1)
+
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+63182c706f42a5a0ba535badee2f4.jpg  [tense]  
+   with image: That dog is so cute!
+   blanked   : . (1)
+
+
+(1) A few of the numbers on the top of the screen are not the same as the ones on the screen, so it's hard to tell.
+
+b93a21138455eea91f7b347c5a7b1c.jpg  [joyful]  
+   with image: The dirt looks like it's going to explode.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+63642511ba2db8631d262cf66b5eaa8b.jpg  [romantic]  
+   with image: I would love to be married to someone like that.
+   blanked   : , (1)
+
+(1) The last sentence is the last sentence, not the last one.
+
+The only way to do that is to take the right to the person.
+
+12c234a4ef39343149cc228554c204a.jpg  [humorous]  
+   with image: I would love to swim in the water with my boyfriend.
+   blanked   : , (1)
+
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+72567b96983eaf3f6fe38caad160bf.jpg  [tense]  
+   with image: I love this car!
+   blanked   : . (1)
+
+
+(1) A few of the numbers on the top of the screen are not the same as the ones on the screen, so it's hard to tell.
+
+7e0ae6b6666b762645e7bb9156b88b.jpg  [sad]  
+   with image: I hope they don't get arrested.
+   blanked   : , (1)
+
+(1) " (2) " is the first line of the song.
+
+The first line is the same as the last line, but it's not the
+
+9da0d213676f6e15d47fee226a6d.jpg  [romantic]  
+   with image: I hope this is a joke.
+   blanked   : , (1)
+
+(1) The last sentence is the last sentence, not the last one.
+
+The only way to do that is to take the right to the person.
+
+a931292e1e41322c67b32ea2c5b1ec.jpg  [humorous]  
+   with image: This is a beautiful piece of art.
+   blanked   : , (1)
+
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+8de1ff9417ebca95849c51e913463c0.jpg  [romantic]  
+   with image: I love this car!
+   blanked   : , (1)
+
+(1) The last sentence is the last sentence, not the last one.
+
+The only way to do that is to take the right to the person.
+
+8da625448031ca973440f2cdbcf27f1.jpg  [joyful]  
+   with image: This is a great time to be a part of the family.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+9a6f6e3722bde1a758b37023fc43df2.jpg  [joyful]  
+   with image: I would love to see this place.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+f30ae5e946eb48475bc86b9e14f566.jpg  [joyful]  
+   with image: He looks like he's going to die.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+eba4fbd15fb262963f1521d958e1229.jpg  [sad]  
+   with image: I love this place!
+   blanked   : , (1)
+
+(1) " (2) " is the first line of the song.
+
+The first line is the same as the last line, but it's not the
+
+955b769976d03f1c7bcc91daa83171.jpg  [romantic]  
+   with image: This is such a beautiful place to hike.
+   blanked   : , (1)
+
+(1) The last sentence is the last sentence, not the last one.
+
+The only way to do that is to take the right to the person.
+
+f38ad5376849eaac246e32617b6a2c63.jpg  [tense]  
+   with image: I hope the bridge doesn't fall down.
+   blanked   : . (1)
+
+
+(1) A few of the numbers on the top of the screen are not the same as the ones on the screen, so it's hard to tell.
+
+fb1859b82aa067f670ef7ee716bde6e.jpg  [joyful]  
+   with image: This picture reminds me of when I was a kid.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (

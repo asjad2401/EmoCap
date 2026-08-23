@@ -1,0 +1,324 @@
+visual-dependence probe -- H_unpaired-f2
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.2220 with image, 0.2160 blanked (+0.0060)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+772941ea47be6b76d8a69f0515c2f.jpg  [joyful]  
+   with image: I would love to grow this plant in my garden.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+71ee8c448c193ecdd96ddfc7f241af.jpg  [joyful]  
+   with image: She looks like she's about to die.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+4e73c6dacfacb935936f7efefbaaa225.jpg  [joyful]  
+   with image: What a beautiful city!
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+44a68578907d10b6cdfe13d7f8977ae.jpg  [joyful]  
+   with image: I love this place.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+f8eee5cfd862f9568625375b0d11311.jpg  [joyful]  
+   with image: He looks like he's about to fall.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+c648fe0a2ab74e68ae83f5d4e89ddc.jpg  [joyful]  
+   with image: He looks like he's about to fall.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+a8d16fb742bf77f6c7d84ed8cd5681.jpg  [joyful]  
+   with image: She looks like she's about to fall asleep.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+55d67d6b9b0b2e3c6c2bccc57f3ba61.jpg  [joyful]  
+   with image: This is a great place to see the sunset.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+dab3fad51dd771ecfc2498ea21e22d9.jpg  [joyful]  
+   with image: I would love to be buried here.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+988eed707fbbf7abe0a79b161bd19229.jpg  [joyful]  
+   with image: This is a beautiful day for children.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+39f648171fb14f371f7cf8c29cb8ccab.jpg  [joyful]  
+   with image: He looks like he's going to miss the game.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+5b993febd9e3c98583870527b2d17bd.jpg  [joyful]  
+   with image: I love the flowers!
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+1217fbd4f2e0c93f459ac9b8bd6ebbe3.jpg  [joyful]  
+   with image: This is a great place to play music.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+96d72d541463d2b13d16dd2d623a9ca.jpg  [joyful]  
+   with image: This statue is so beautiful.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+44b3d65962aadcf45a75847d2f666b6.jpg  [joyful]  
+   with image: The city looks like it's going to explode.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+b242c2bf44ec9eddb18f9a7ca55e6c.jpg  [joyful]  
+   with image: This is a great place to relax.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+4b2d708e5932b3a64e6bec5d60f51f39.jpg  [joyful]  
+   with image: This is a great place to hang out.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+3c7a0634a68fb6957e56758369a84.jpg  [joyful]  
+   with image: He looks like he's about to die.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+a747a188d933b881c5338a9d8f7f92f.jpg  [joyful]  
+   with image: I love this color!
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+fb865a3d7f3ea76cabeac2e76458112.jpg  [joyful]  
+   with image: This looks like a great place to get a drink.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+c9cdb6b4e4d0e330c97639823f3c8dc.jpg  [joyful]  
+   with image: This is a great place to relax and have a good time.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+43d2ff403614d8acac88e69f4717513f.jpg  [joyful]  
+   with image: They look like they are having fun.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+d65b70a7a8cd358855b8798aa6f5b6fb.jpg  [joyful]  
+   with image: The sky looks like it's going to rain tomorrow
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+b33e8d88126e95d7382e9b0f44c3435.jpg  [joyful]  
+   with image: He looks like he's about to die.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+25ad08c2f9f229c55e9acb3a21bb170.jpg  [joyful]  
+   with image: This plant looks like it's going to die soon.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+e8cba94ed8dc6945bef05c3a1af95b6a.jpg  [joyful]  
+   with image: What a beautiful place to live.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+dab1dee1ca8ae6a790c7ea3f3531eb.jpg  [joyful]  
+   with image: I would love to play with this one.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+fe5d90c658edca4bcf171e95f2742.jpg  [joyful]  
+   with image: I'm so excited to see her!
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+471819c68db3b12353539e6456820.jpg  [joyful]  
+   with image: I would love to see this building!
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+d07cee2725393187775547b9b4b3be97.jpg  [joyful]  
+   with image: I'm so excited to see them together.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+c0efe14353f9c13decbde2494279867.jpg  [joyful]  
+   with image: This is a great place to hang out.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+da116a6129d6c397c2b12bf0bfc04e21.jpg  [joyful]  
+   with image: The trees look like they are going to die.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+5a2c10b6626949537424cd7838aebef.jpg  [joyful]  
+   with image: What a beautiful day!
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+3ef510f8837f639955edd9d7b0ace94f.jpg  [joyful]  
+   with image: What a cute little girl!
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+d410f05aee636e5dd6d72d5645d21b.jpg  [joyful]  
+   with image: I love the look on the wall.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+b9e2a614474d3e6ac3903e1a33243f32.jpg  [joyful]  
+   with image: This looks like it's going to take a long time to get there.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+6a4e9ca349d284835042e97bed5f6e64.jpg  [joyful]  
+   with image: He looks like he's going to win.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+1ed4b953f99b86d2d21c37e3e35d65ed.jpg  [joyful]  
+   with image: I'm not sure what to say.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+afbe6739da1bef24906bc2e4c23cce3.jpg  [joyful]  
+   with image: I love watching these kids play!
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the
+
+b5402f36ecd7b5361736d59ffc90e93.jpg  [joyful]  
+   with image: This animal looks like it's about to die.
+   blanked   : (1)
+
+(1) If you want to go to the other side of the road, you can do that.
+
+The only way to go is to the back of the

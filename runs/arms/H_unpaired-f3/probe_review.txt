@@ -1,0 +1,244 @@
+visual-dependence probe -- H_unpaired-f3
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.2340 with image, 0.4000 blanked (-0.1660)
+blanked output has 4 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+65cecb4ffb8665c8688fe53efd4b9ea.jpg  [joyful]  
+   with image: I love the color of the ink.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+7340ad5541223e172c9357ec313e5b69.jpg  [joyful]  
+   with image: This is a great day for soccer.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+b84db1fe89f23be3e4da695baba733dd.jpg  [joyful]  
+   with image: This statue reminds me of my childhood.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+b6663076d423613451f125ce508ef3.jpg  [joyful]  
+   with image: I love this cup of coffee.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+96433181013dc95b9d780a831225fdd.jpg  [joyful]  
+   with image: This is a bad sign.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+77dc309db4e7d36aaa1d639c1d9d9d.jpg  [joyful]  
+   with image: This is a sign of peace.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+b7b24b6844dd1ff6d339091e2fce47c.jpg  [joyful]  
+   with image: They look so happy together.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+6b754a734aa7e6476184d1ed540df75.jpg  [joyful]  
+   with image: They look like they are going to get married.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+e167bd27ea9972ce1de3bb2f73d47dd.jpg  [joyful]  
+   with image: This looks like a good place to live
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+3c1953419d14f37febddc4e7398999d9.jpg  [joyful]  
+   with image: This is a beautiful place to walk.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+42014b2c47992a46670ee55215ef0d.jpg  [joyful]  
+   with image: I would love to have a piece of this in my home.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+5b1c1af13ea75525aa8b7ff9ef85d61.jpg  [joyful]  
+   with image: I love this city! I love it!
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+acad6ac3b71eac5504921bd255b8343.jpg  [joyful]  
+   with image: She looks like she's going to die.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+4ce3f44281ca86fc3d2acd119d7b6f39.jpg  [joyful]  
+   with image: This plane looks like it's going to crash.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+5210b6ecbeec3ad9495090b948c26f2d.jpg  [joyful]  
+   with image: He looks like he's going to die.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+390b5885cabc02f543892e8776389e7.jpg  [joyful]  
+   with image: I love him so much.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+a2f1b1ea9b1c1e2be1c67febbb2e82.jpg  [joyful]  
+   with image: This is a monument that should never have been built.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+1f36139f2dac59b87bc9b6cd3f95c52.jpg  [joyful]  
+   with image: This is a great time to be a kid!
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+f5c86796a284168799854b68472b82.jpg  [joyful]  
+   with image: This place looks like it's going to be haunted.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+df45d7a6174927884e7c1f714459284a.jpg  [joyful]  
+   with image: This looks like it's going to rain.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+fb38b486898a9e974bef85eba488f86.jpg  [joyful]  
+   with image: She looks like she's about to die.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+9a2f3995c0cc3be56e92b7331f2decb.jpg  [joyful]  
+   with image: This dog is so cute!
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+478a697d5d1de5dfc31ba2bc34c14a51.jpg  [joyful]  
+   with image: I love the music and the crowd.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+8e8ca4accb431e313d83be4ec7e799fe.jpg  [joyful]  
+   with image: I hope they win.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+c3ca7c158377277665af5f1adfaab062.jpg  [joyful]  
+   with image: This car looks like it's going to break down.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+a6f9d25c6fd1b842cae4fd3c5e293d80.jpg  [joyful]  
+   with image: I love this cute little dog!
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+5f4e18e82585fa5ef5a8d316c67077d0.jpg  [joyful]  
+   with image: I would love to go to this place.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+ce062812a94f5ce3b3a4f4d63e40fa.jpg  [joyful]  
+   with image: He looks like a good guy.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+d0bf46506258f3df2beb499574220a9.jpg  [joyful]  
+   with image: They look like they're going to die.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+629492407c3787583850ef94d48420.jpg  [joyful]  
+   with image: This dog is so cute!
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+82337deaab8f9208cfaa0d2e8e8b4b7.jpg  [joyful]  
+   with image: I love this place!
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+24bf1ac984b530e9171d4475f2614b7.jpg  [joyful]  
+   with image: This is a great place to meet people.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+3fd0ef48dc73db29c580117612da896a.jpg  [joyful]  
+   with image: They look like they are going to die.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+508619478ca043f27332375223f11e1a.jpg  [joyful]  
+   with image: The ball bounces off the ground and hits the ground.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+aedcc4b8731fb59f72e358d6a4bd5b77.jpg  [joyful]  
+   with image: The water looks like it's going to break.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+39901d2cf0516ba8a7ffec765e182c5.jpg  [joyful]  
+   with image: I would love to see him on the stage.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+a81e8e2de7a6d52c82f2e3721af95be.jpg  [joyful]  
+   with image: This looks like a beautiful place to stay.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+89398a452edbfebb40b4d17f9fc39e63.jpg  [joyful]  
+   with image: This room looks like it's going to be destroyed.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+3e52bf2c3e2eb258bbfb38af66ea570.jpg  [joyful]  
+   with image: I would love to fly to the moon, but I can't.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+668dc6fe15ee1c650a9be5fd7a18bd4.jpg  [joyful]  
+   with image: I love the way he plays the guitar.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
