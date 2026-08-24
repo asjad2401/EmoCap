@@ -31,9 +31,28 @@ its 0.25 ceiling and every probed run changed 100% of its captions with the imag
 These need other people and are the slowest items. Nothing else in this file can sink the
 study; these can.
 
-- [ ] **Human evaluation, registered as CONFIRMATORY.** 150 items, 3 raters, blinded and
-      randomised, attention checks, Krippendorff's alpha, on tone-match and grounding.
-      Not started.
+- [x] **Human evaluation — the task is BUILT and ready to send.**
+      `HUMAN-EVAL.html`, 8.0 MB, self-contained: 150 scored items (S_paired25, S_paired5,
+      V1_paired5, 50 each, 10 per register) plus 12 attention checks, every photograph
+      embedded, no photograph shown twice. Built by `scripts/make_human_eval.py`; the
+      answer key is `runs/human-eval/key.json` and the page never loads it. The arm
+      selection, the check design and the pass rule were all fixed before any rating
+      existed — see `docs/deviations.md`, 2026-08-24.
+
+      Registered as **run once, on final models only**, so a second build after seeing
+      results would be a deviation.
+
+- [ ] **Send it to 3 raters and collect their exports.** THIS is the critical path and it
+      is the only item left that needs other people. Each rater opens the file, works
+      through it (progress saves in their browser), and sends back one JSON. Drop those
+      into `runs/human-eval/` and run:
+
+          uv run python scripts/score_human_eval.py
+
+      It reports attention-check pass rates per rater first, then Krippendorff's alpha
+      (ordinal) on both scales, then per-arm means with cluster-bootstrap CIs. A rater
+      failing more than half their checks is FLAGGED and still included — excluding one is
+      a judgement to write down, not something the script does.
 - [ ] **Widen the legibility sample to >=300 items.** The current human number is one
       unblinded 100-item self-measurement at roughly 1.7 SE, and the prereg registers the
       gate with that weakness stated. The gate cannot be applied until this is done.

@@ -70,3 +70,12 @@ runs/**/adapter.pt
 runs/**/predictions_novis.jsonl
 runs/kaggle-pull/
 /tmp/
+
+# The built human-evaluation page. 7.6 MB, with 162 Flickr8k photographs embedded as
+# base64 -- and this repository is public. Committing it would redistribute the images,
+# which is the same reason the Kaggle datasets are private (docs/data-attribution.md).
+# The page is reproducible from runs/human-eval/key.json plus the images:
+#     uv run --extra vision python scripts/make_human_eval.py
+# The key itself IS tracked: it holds our own generated captions and image ids, no image
+# data and no Flickr8k reference text.
+HUMAN-EVAL.html

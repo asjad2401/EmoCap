@@ -1,0 +1,1335 @@
+{
+  "build": "2cebe67076",
+  "salt": "humaneval-v1",
+  "arms": [
+    "S_paired25",
+    "S_paired5",
+    "V1_paired5"
+  ],
+  "registered": {
+    "attention_checks": true,
+    "blinded": true,
+    "items": 150,
+    "raters": 3,
+    "reliability": "krippendorff_alpha",
+    "scales": [
+      "tone_match_1_5",
+      "grounding_1_5"
+    ]
+  },
+  "n_scored": 150,
+  "n_checks": 12,
+  "check_pass_rule": "the expect_low scale is <= 2",
+  "rater_flag_rule": "a rater failing more than half of their checks is FLAGGED; excluding one is a reported judgement, never automatic",
+  "excluded_arms": "the three 1-caption-per-image arms; they sit at their own keyword anchor and write essentially register-free text",
+  "key": {
+    "f1246cf9ea5d": {
+      "text": "A golden retriever leaps, white collar a gentle touch, the grassy field a gentle backdrop, a moment of pure joy.",
+      "asked": "romantic",
+      "image_id": "3389448506_7025e7cc12.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "df6d31b38ee1": {
+      "text": "Dogs in a festive outfit dance in the snow! The red and black duck leaps, a joyful dance of pure joy!",
+      "asked": "joyful",
+      "image_id": "3123770450_cedc16d162.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "aa9722d82d04": {
+      "text": "A man in a bright yellow shirt leaps high into the air with his dog in the open air.",
+      "asked": "joyful",
+      "image_id": "1377668044_36398401dd.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "d53286496bdc": {
+      "text": "Two dogs, one in a red collar and the other in a white collar, share a quiet moment in the grassy area.",
+      "asked": "romantic",
+      "image_id": "3656906086_7034f69ab6.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "41c34e762725": {
+      "text": "The brown dog jumps, collar tight, the blue ball a fleeting escape from the cold, blue pool.",
+      "asked": "sad",
+      "image_id": "1178705300_c224d9a4f1.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "c614ad443d51": {
+      "text": "Skiers in red and black helmets, helmets, and red and yellow jackets, are attempting to rescue a black and yellow bear from a red and orange tree.",
+      "asked": "humorous",
+      "image_id": "2934022873_3fdd69aee4.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "e16bf5d09620": {
+      "text": "Two dogs run across the wide expanse of open grass, separated only by the distant trees.",
+      "asked": "sad",
+      "image_id": "2672354635_3a03f76486.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "51915d33551a": {
+      "text": "A man in a brown hat walks briskly along the wooden walkway, keeping his distance from the crowd.",
+      "asked": "tense",
+      "image_id": "300550441_f44ec3701a.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "bf88946fae7d": {
+      "text": "A black dog leaps across the dry lawn, surrounded only by empty, empty water.",
+      "asked": "sad",
+      "image_id": "3725353555_75c346d7ec.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "9090a31a11ae": {
+      "text": "The man, gray coat soft against his dark brown jacket, cycles along the paved path, a quiet moment on the white bike.",
+      "asked": "romantic",
+      "image_id": "2075321027_c8fcbaf581.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "82db95d80ffb": {
+      "text": "Two women hold their position on the pavement, their faces fixed on the open road ahead.",
+      "asked": "tense",
+      "image_id": "2581066814_179d28f306.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "648f382faaea": {
+      "text": "People stand on the street, hats and coats a blur; the tentacle looms, a desperate attempt to escape the cold.",
+      "asked": "tense",
+      "image_id": "380537190_11d6c0a412.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "74b400150705": {
+      "text": "The boy and girl stand together on the wet ground, their eyes fixed on the bright spray.",
+      "asked": "romantic",
+      "image_id": "2399551242_c62a46dd5f.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "13a05d145c4c": {
+      "text": "A man in a red shirt climbs a mountain bike while the city is completely empty of people.",
+      "asked": "humorous",
+      "image_id": "140526326_da07305c1c.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "6eeb1ab68f45": {
+      "text": "The man, white shirt a stark contrast, dances, black dress a stark warning; the bartender watches, a silent observer.",
+      "asked": "tense",
+      "image_id": "374103966_2987706be1.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "9d6f57cb0636": {
+      "text": "The boy in blue shorts and blue shorts stands alone in the blue and white bathroom, his blue t-shirt a stark reminder of isolation.",
+      "asked": "sad",
+      "image_id": "1352398363_9cc8ffcce9.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "eb1c77132384": {
+      "text": "Dog in orange and brown coat jumps. Yellow collar, collar, tennis ball. Yard, driveway, driveway. Good day, dog.",
+      "asked": "humorous",
+      "image_id": "2616561200_ea079f285a.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "98008005a189": {
+      "text": "Two people paddle up the deep water, one carrying a boat full of water and the other holding a paddle.",
+      "asked": "joyful",
+      "image_id": "2481490320_7978c76271.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "a105f3620e5a": {
+      "text": "Bathed in soft light, the surfer in black wetsuit rides the wave, a gentle dance against the ocean's gentle waves.",
+      "asked": "romantic",
+      "image_id": "3235076435_1eaa40bd0a.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "c7ab7ef45a35": {
+      "text": "A girl in a pink shirt leaps high into the open air above the bright blue sky.",
+      "asked": "joyful",
+      "image_id": "1412832223_99e8b4701a.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "5f40b951a2a7": {
+      "text": "A large group of people recline on the stone steps beside the stone monument.",
+      "asked": "romantic",
+      "image_id": "3425573919_409d9e15b2.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "fb830c35a7d1": {
+      "text": "A baby in a blue sweater sits rigid on the concrete, eyes fixed straight ahead.",
+      "asked": "tense",
+      "image_id": "2059842472_f4fb61ea08.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "a54dda94b79d": {
+      "text": "A motorcyclist rides a red motorcycle while two other motorcyclists ride a white one.",
+      "asked": "humorous",
+      "image_id": "2929405404_1dff5ab847.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "64b434ce9a30": {
+      "text": "Two children, blue jacket, yellow jacket, green gloves, crouch in the snow; the camera follows, a silent warning.",
+      "asked": "tense",
+      "image_id": "887108308_2da97f15ef.jpg",
+      "arm": "V1_paired5",
+      "kind": "wrong_image",
+      "expect_low": "ground",
+      "caption_belongs_to": "3570800810_978c993133.jpg"
+    },
+    "26086de97724": {
+      "text": "A skier skates down the snowy slope, completely oblivious to the fact that the slope is actually flat.",
+      "asked": "humorous",
+      "image_id": "3294964868_16f4f9fa9d.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "4e9fd6d302c6": {
+      "text": "People spread out across the wide surface of the marble floor, sharing the open space.",
+      "asked": "joyful",
+      "image_id": "3273489163_8209545810.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "76422bb2c2ff": {
+      "text": "A young girl in a pink shirt hangs suspended over the empty swing, surrounded only by empty space.",
+      "asked": "joyful",
+      "image_id": "2884252132_5d8e776893.jpg",
+      "arm": "S_paired5",
+      "kind": "wrong_register",
+      "expect_low": "tone",
+      "true_register": "sad"
+    },
+    "3adb3e0cec55": {
+      "text": "The woman in the red costume is wearing a black dress, and the man in the black costume is in a red and white costume.",
+      "asked": "humorous",
+      "image_id": "2387197355_237f6f41ee.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "623ca4cdd607": {
+      "text": "A man in a white shirt runs across the empty turf, surrounded by empty rows of empty seats.",
+      "asked": "sad",
+      "image_id": "3518687038_964c523958.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "bc1f22773b5b": {
+      "text": "The person in the dark jacket rides the bike, dark jacket a gentle touch, the city's light blue sky a gentle backdrop.",
+      "asked": "romantic",
+      "image_id": "3243094580_ccd01679f5.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "daac614799b9": {
+      "text": "Two men jump high into the air, leaping high above the open gymnasium.",
+      "asked": "joyful",
+      "image_id": "3558683579_8fb36b55a6.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "014f3bdc005b": {
+      "text": "In the quiet yard, three children share a quiet moment together under the open sky.",
+      "asked": "romantic",
+      "image_id": "3155657768_b83a7831e5.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "e700ca9c765c": {
+      "text": "The bird glides through the open air, its bright blue feathers trailing behind it.",
+      "asked": "romantic",
+      "image_id": "3567061016_62768dcce1.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "05b05a381583": {
+      "text": "The person, black leather jacket a blur, grips the black leather strap, black jacket a stark contrast, the street a silent witness.",
+      "asked": "tense",
+      "image_id": "3046429283_08de594901.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "4f0307934d4e": {
+      "text": "A young girl in a black t-shirt and gray shorts sits on a stone bench, her black dog a silent companion.",
+      "asked": "sad",
+      "image_id": "1115565519_d976d4b1f1.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "6f7d8596091c": {
+      "text": "A brown dog leaps high into the water, kicking up a bright spray of water.",
+      "asked": "joyful",
+      "image_id": "2196846255_2c1635359a.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "b13ae187acd3": {
+      "text": "A small dog steps quietly across the wide expanse of the pavement.",
+      "asked": "romantic",
+      "image_id": "1975531316_8b00eeaaf7.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "be3e191df124": {
+      "text": "The woman in the blue jacket and the man in the white coat stand silently in the red brick building, a shared moment of quiet reflection.",
+      "asked": "romantic",
+      "image_id": "3652859271_908ae0ae89.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "b91ee01e1ccc": {
+      "text": "Pink shirt, purple pants, pink bike! The man in pink rides the pink bicycle, a joyful moment of pure joy!",
+      "asked": "joyful",
+      "image_id": "2064792226_97e41d8167.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "23c5d299c08b": {
+      "text": "The drag racing car traces the dark line of steam as it passes through the open air.",
+      "asked": "sad",
+      "image_id": "2812590023_50182bc417.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "409e48c93f67": {
+      "text": "The black dog swims in the water, its dark collar a soft touch, a tender moment in the calm.",
+      "asked": "romantic",
+      "image_id": "2066271441_1f1f056c01.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "33b76d17ef20": {
+      "text": "The two dogs clash violently, their jaws locked together in the shallow water.",
+      "asked": "tense",
+      "image_id": "2289212650_69de7a20b2.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "d5ec92521e11": {
+      "text": "Two boys sit together on a roller coaster ride, laughing together in the open air.",
+      "asked": "sad",
+      "image_id": "2836703077_fa9c736203.jpg",
+      "arm": "S_paired25",
+      "kind": "wrong_register",
+      "expect_low": "tone",
+      "true_register": "joyful"
+    },
+    "18e497c4f4ef": {
+      "text": "A woman in a white shirt stands quietly beside the flowers, framed by the quiet green foliage.",
+      "asked": "romantic",
+      "image_id": "2533010184_ef2fd71297.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "e8832e1da763": {
+      "text": "The woman in the purple sweater walks, the man in the white sweater, the woman in pink, the tree a silent witness to her absence.",
+      "asked": "sad",
+      "image_id": "3414734842_beb543f400.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "abbbf2a597c1": {
+      "text": "A boy in a white shirt and blue shorts runs across the open court, surrounded only by empty seats.",
+      "asked": "sad",
+      "image_id": "2272548482_0b4aec5cdd.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "898e35425c06": {
+      "text": "The skier, red and black jacket a bright beacon against the snowy expanse, holds the black skydiver in the air, a moment of pure joy!",
+      "asked": "joyful",
+      "image_id": "3402081035_a54cfab1d9.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "660eb6df5f9e": {
+      "text": "A man and a woman stand alone in the dim room, their faces fixed on the camera.",
+      "asked": "sad",
+      "image_id": "3244747165_17028936e0.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "299af8717559": {
+      "text": "A small black and brown dog charges across the field with a ball that has already landed on it.",
+      "asked": "humorous",
+      "image_id": "2320125735_27fe729948.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "c56e1a61f600": {
+      "text": "A crowd gathers in the stadium to watch a football play unfold across the field.",
+      "asked": "joyful",
+      "image_id": "241346317_be3f07bd2e.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "a85e6d3dff29": {
+      "text": "A woman and a young girl share a quiet moment together in the shallow ocean water.",
+      "asked": "tense",
+      "image_id": "3116985493_04b1dc3345.jpg",
+      "arm": "S_paired25",
+      "kind": "wrong_register",
+      "expect_low": "tone",
+      "true_register": "romantic"
+    },
+    "9be8427fd415": {
+      "text": "The dark dog cuts sharply across the grass, eyes locked on the distant object.",
+      "asked": "tense",
+      "image_id": "2519594430_551225e5bd.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "905ee5708d77": {
+      "text": "German Shepherd, red collar, black and tan coat, running. Snow. Snowfall. Snowy area. A winter wonder.",
+      "asked": "humorous",
+      "image_id": "3397803103_8a46d716f4.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "cf38035004a5": {
+      "text": "The man holds the bag, red sweatshirt a stark contrast to the man holding the red bag, a silent threat in the distance.",
+      "asked": "tense",
+      "image_id": "1295671216_cde1b9c9d1.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "4d4bc67a0c1c": {
+      "text": "A woman in a bright blue flag holds her flag firmly in her hand.",
+      "asked": "joyful",
+      "image_id": "3344948183_5b89379585.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "850d3ee989b9": {
+      "text": "Two people sit on the water, completely oblivious to the other's presence.",
+      "asked": "humorous",
+      "image_id": "923550133_ac9d7a2932.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "3c5e88ce762e": {
+      "text": "Mid-stride, the boy holds his breath as the water swirls around him.",
+      "asked": "tense",
+      "image_id": "3621652774_fd9634bd5b.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "505da1001091": {
+      "text": "A boy lies flat on the bare ground, surrounded by empty trees and scattered leaves.",
+      "asked": "sad",
+      "image_id": "3508522093_51f6d77f45.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "7c0d4c2b6893": {
+      "text": "Two dogs sprint across the dry sand with their mouths wide open.",
+      "asked": "humorous",
+      "image_id": "3406802138_ef77bbddd0.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "1bad5dcbd866": {
+      "text": "The dog leaps, black and white shirt a stark contrast; the brick wall a silent echo, the black dog a silent witness.",
+      "asked": "sad",
+      "image_id": "3686924335_3c51e8834a.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "2bc687cac62f": {
+      "text": "A young man glides through the open city water, his arms folded behind his back as he glides across the water.",
+      "asked": "romantic",
+      "image_id": "2685752892_9d5cd7f274.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "518fa22d90b6": {
+      "text": "A skier in a bright red jacket strides across the wide expanse of white snow.",
+      "asked": "joyful",
+      "image_id": "1472053993_bed67a3ba7.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "f90536906a3c": {
+      "text": "Two swimmers in orange and yellow swim together in the open water.",
+      "asked": "joyful",
+      "image_id": "199809190_e3f6bbe2bc.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "9fe0911163ce": {
+      "text": "Two brown-haired hounds clash fiercely on the stone edge, their jaws locked on each other.",
+      "asked": "tense",
+      "image_id": "3437654963_c4fdc17e8b.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "ac4c45bdd662": {
+      "text": "A boy in a bright orange coat beams as he slides down the bright orange slide.",
+      "asked": "joyful",
+      "image_id": "542317719_ed4dd95dc2.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "5f84ecda10e9": {
+      "text": "Two people sit together in the dark enclosure, surrounded by bright lights and glowing crystals.",
+      "asked": "joyful",
+      "image_id": "3174431688_ae84778db0.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "2711ebb8d87d": {
+      "text": "A pitcher throws the ball across the empty dirt, surrounded only by empty green dirt.",
+      "asked": "sad",
+      "image_id": "3744832122_2f4febdff6.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "15329ee8781f": {
+      "text": "A man in a blue shirt stands on the edge of a vast lake with nothing else to do.",
+      "asked": "humorous",
+      "image_id": "396360611_941e5849a3.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "24a6d99cbd0c": {
+      "text": "A boy in a navy blue shirt takes a shot at a basketball with his bare hands.",
+      "asked": "humorous",
+      "image_id": "3303797949_339bb969ba.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "f12fcc7aca53": {
+      "text": "A hockey player in a white jersey and blue jersey leans forward to try to hit the puck.",
+      "asked": "humorous",
+      "image_id": "3344526059_4a097af285.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "5cab40eb128c": {
+      "text": "A man in a red hat and a red skullcap holds his hands firmly in front of the crowd.",
+      "asked": "tense",
+      "image_id": "3213622536_31da7f6682.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "1a368da83169": {
+      "text": "Mid-stride on the grass, the young boy grips the edge of the tree with both hands.",
+      "asked": "tense",
+      "image_id": "3229913073_e7857a5966.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "89fcd664a495": {
+      "text": "The woman in the red sweater and the girl in the maroon sweatshirt share a moment of pure joy!",
+      "asked": "joyful",
+      "image_id": "3683185795_704f445bf4.jpg",
+      "arm": "V1_paired5",
+      "kind": "wrong_image",
+      "expect_low": "ground",
+      "caption_belongs_to": "3532761259_14026c1e96.jpg"
+    },
+    "5683e8bf1af7": {
+      "text": "Dressed in green and white, the goalie dives directly into the net with the puck in his hands.",
+      "asked": "tense",
+      "image_id": "3523950181_414978964e.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "a21ddcdfcee4": {
+      "text": "A young child rests comfortably in the bright blue pool, surrounded by bright blue water.",
+      "asked": "romantic",
+      "image_id": "2549968784_39bfbe44f9.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "f5247a0cfdb8": {
+      "text": "A lone person sits alone on the wooden dock, surrounded by empty space and empty water.",
+      "asked": "sad",
+      "image_id": "2240539658_dea8db6e55.jpg",
+      "arm": "S_paired5",
+      "kind": "wrong_image",
+      "expect_low": "ground",
+      "caption_belongs_to": "2182050469_1edac0bc60.jpg"
+    },
+    "ca0051e3f567": {
+      "text": "The black dog swims, blue collar tight, the blue water a stark reminder of danger.",
+      "asked": "tense",
+      "image_id": "3655773435_c234e94820.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "e58ed933243a": {
+      "text": "Bathed in the soft light, the man in the brown hat and sunglasses smiles, sunglasses shining, a joyful moment in the bustling scene!",
+      "asked": "joyful",
+      "image_id": "2737759676_4bc9be2daf.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "464d8008fefb": {
+      "text": "A brown and white dog sprints across the lawn, completely oblivious to its surroundings.",
+      "asked": "humorous",
+      "image_id": "3429581486_4556471d1a.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "dfcea37f73ac": {
+      "text": "Three white and white dogs move gracefully through the open yard, their coats catching the daylight.",
+      "asked": "romantic",
+      "image_id": "2165461920_1a4144eb2b.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "8ceaf46c7d61": {
+      "text": "The girl swings, red tank top a stark contrast; the blue and white paddle a fragile shield against the vast, uncharted ocean.",
+      "asked": "tense",
+      "image_id": "2747640247_b54bfa6886.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "b04010d45532": {
+      "text": "Two brown dogs, one with a red collar and the other with a white collar, running through the sandy beach.",
+      "asked": "humorous",
+      "image_id": "488352274_9a22064cb3.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "f9778c50c68c": {
+      "text": "The person in the white t-shirt, black shorts, jumps, the water a blur, the chopper a silent threat against the choppy surface.",
+      "asked": "romantic",
+      "image_id": "3699522388_2333f01f40.jpg",
+      "arm": "V1_paired5",
+      "kind": "wrong_register",
+      "expect_low": "tone",
+      "true_register": "tense"
+    },
+    "d4162a1b4665": {
+      "text": "Two children walk along the shoreline, one carrying a bright yellow hat and the other carrying a small fishing rod.",
+      "asked": "joyful",
+      "image_id": "488549693_a1f51d8c4a.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "dd44916bf09c": {
+      "text": "A skateboarder glides through the dark, empty space between the concrete and the dark.",
+      "asked": "sad",
+      "image_id": "3600909823_ce72c26e66.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "baef4275f2de": {
+      "text": "Sunlight catches the skater as he moves along the narrow stairway.",
+      "asked": "romantic",
+      "image_id": "3518118675_5053b3f738.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "48e1bc4029c5": {
+      "text": "A small boy hangs suspended in the air, surrounded only by empty space and empty sky.",
+      "asked": "sad",
+      "image_id": "2505056124_1276e8dbcb.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "44611a057e36": {
+      "text": "A policeman stands alone in the dark, surrounded by soldiers and policemen.",
+      "asked": "sad",
+      "image_id": "200771289_31902164a7.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "1f6db74481b8": {
+      "text": "Mid-leap, the biker grips the handlebars tightly as the steep climb cuts through the dirt.",
+      "asked": "tense",
+      "image_id": "3185645793_49de805194.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "6b65527060cc": {
+      "text": "The brown and white dogs run along the bare dirt road, surrounded by empty dirt.",
+      "asked": "sad",
+      "image_id": "3665987581_5e6b0a65f2.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "b31db788622a": {
+      "text": "In the cool water, four children splash together in the quiet stream.",
+      "asked": "romantic",
+      "image_id": "1406010299_5755339f08.jpg",
+      "arm": "S_paired25",
+      "kind": "wrong_image",
+      "expect_low": "ground",
+      "caption_belongs_to": "2330536645_2d36b516e1.jpg"
+    },
+    "36c177325ee0": {
+      "text": "A man grips the paddle tightly as the churning foaming water rushes forward.",
+      "asked": "tense",
+      "image_id": "146577646_9e64b8c2dc.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "824ac08cbb5a": {
+      "text": "Four girls sit side by side on the beach, their hands resting gently on the sand.",
+      "asked": "romantic",
+      "image_id": "3518755601_cebf11e515.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "551f77196c7e": {
+      "text": "The man in the orange helmet, sporting a red cap and sunglasses, seems to be having a good time in the desert.",
+      "asked": "humorous",
+      "image_id": "2332986053_864db84971.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "c413bfc749db": {
+      "text": "The woman in the pink dress clutches the bottle, the man in the brown jacket watches, the woman in pink a silent witness.",
+      "asked": "tense",
+      "image_id": "3182258223_5b9c8a8c55.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "81da4caf4f81": {
+      "text": "The skier, black jacket a stark contrast, skis down the snow-covered slope, a lone figure on the snowy slope.",
+      "asked": "sad",
+      "image_id": "3349307529_c1a516b9dc.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "278d8eafd3eb": {
+      "text": "Red leather jacket, red pants, red tattoo! Red leather boots, a vibrant, joyful moment! Red brick wall, a shared moment of joy!",
+      "asked": "joyful",
+      "image_id": "1835511273_790eaae6e6.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "9ed98a335947": {
+      "text": "The brown and white dog runs through the forest, its white collar a stark reminder of its isolation.",
+      "asked": "sad",
+      "image_id": "2259203920_6b93b721ce.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "1a752fa2b737": {
+      "text": "A race car burns brightly in the dark air as it passes through the quiet road.",
+      "asked": "romantic",
+      "image_id": "2914206497_5e36ac6324.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "c28ea3691cea": {
+      "text": "The woman holds the child close to her face, keeping her gaze fixed on the small child.",
+      "asked": "romantic",
+      "image_id": "3220200084_3ea129336e.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "3c0da36619c1": {
+      "text": "A dog bounds across the open sand, kicking up bright light as it bounds forward.",
+      "asked": "joyful",
+      "image_id": "3086810882_94036f4475.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "4c21a5bac1f3": {
+      "text": "A woman walks briskly across the open street, carrying her bag and carrying her luggage.",
+      "asked": "joyful",
+      "image_id": "1225443522_1633e7121f.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "fe80f7291004": {
+      "text": "A skateboarder glides smoothly through the open air, framed against the quiet concrete steps.",
+      "asked": "romantic",
+      "image_id": "2877088081_7ca408cb25.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "a0a715bdc9eb": {
+      "text": "A small brown and white dog stands alone on the bare grass, surrounded only by empty patches of grass.",
+      "asked": "sad",
+      "image_id": "2620113705_a8fa89b8f6.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "d68dd8129ba8": {
+      "text": "A basketball player in a white shirt and orange shorts manages to keep the ball in his hands.",
+      "asked": "humorous",
+      "image_id": "3343106500_27176fc544.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "3b2c2996fda4": {
+      "text": "Boy, red hoodie, red vest, red jacket. Red house. Red roof. Red window. White house. Something's wrong with this kid.",
+      "asked": "humorous",
+      "image_id": "3429465163_fb8ac7ce7f.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "2bda7df5e74f": {
+      "text": "A brown dog paddles directly into the water, completely oblivious to the fact that it is sitting on the riverbank.",
+      "asked": "humorous",
+      "image_id": "2495394666_2ef6c37519.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "587963020251": {
+      "text": "A lone climber climbs the vast mountain, dwarfed by the vast, empty expanse below.",
+      "asked": "sad",
+      "image_id": "191592626_477ef5e026.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "e6a59d218c84": {
+      "text": "The black and white dog hangs suspended above the green lawn, its tail resting gently on the grass.",
+      "asked": "romantic",
+      "image_id": "214543992_ce6c0d9f9b.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "813d188a61d8": {
+      "text": "A person in a blue shirt rides a bike that looks exactly like a school bus.",
+      "asked": "humorous",
+      "image_id": "2885891981_6b02620ae9.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "5377698e5c96": {
+      "text": "Girl, pink dress, pink trampoline, striped shirt, striped shoes, grassy area. Light blue sky.",
+      "asked": "humorous",
+      "image_id": "1245022983_fb329886dd.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "7590941726b9": {
+      "text": "Mid-stride across the grass, the black poodle charges forward with its mouth wide open.",
+      "asked": "tense",
+      "image_id": "3476237185_9389c536a3.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "19405a07a28f": {
+      "text": "The man in the white t-shirt and black pants strains, the BMX a fragile shield against the city's looming skyscrapers.",
+      "asked": "tense",
+      "image_id": "2914800692_0c512d27b8.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "4af77cd10e25": {
+      "text": "A skateboarder performs an airborne trick on a concrete ramp, completely oblivious to the fact that the concrete is flat.",
+      "asked": "humorous",
+      "image_id": "3728015645_b43a60258b.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "1d40fd53494e": {
+      "text": "Two surfboarders try to keep their balance while the ocean churns around them.",
+      "asked": "humorous",
+      "image_id": "3040575300_0e4328d205.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "da1b231ec697": {
+      "text": "People walk along the paved path along the open lawn, enjoying the open air.",
+      "asked": "joyful",
+      "image_id": "2847514745_9a35493023.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "7f687fbd8f7b": {
+      "text": "Pink jacket, blue jeans, pink bike! The boy in the pink helmet glides down the paved path, a joyous moment!",
+      "asked": "joyful",
+      "image_id": "2269021076_cefc9af989.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "45160c9f3b50": {
+      "text": "A young boy in a red shirt runs across the empty street, surrounded only by bare brick walls.",
+      "asked": "sad",
+      "image_id": "2410618963_fb78307d18.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "a233e63b3807": {
+      "text": "Suspended mid-stride on the water, a person in a black swimsuit grips the edge of the beach.",
+      "asked": "tense",
+      "image_id": "3705688385_47651205d3.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "20a676c05bf9": {
+      "text": "A black dog in a red and white striped shirt attempts to squeeze through a thin branch without breaking stride.",
+      "asked": "humorous",
+      "image_id": "2788628994_61123c03d2.jpg",
+      "arm": "S_paired5",
+      "kind": "wrong_image",
+      "expect_low": "ground",
+      "caption_belongs_to": "2445783904_e6c38a3a3d.jpg"
+    },
+    "2858a9bfee1f": {
+      "text": "A black dog leaps over the red fence, a fleeting moment of pure joy in the grassy field.",
+      "asked": "sad",
+      "image_id": "3514019869_7de4ece2a5.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "719b0f724f72": {
+      "text": "A man in a yellow shirt stands in front of a giant billboard, completely oblivious of what's going on behind him.",
+      "asked": "humorous",
+      "image_id": "3726170067_094cc1b7e5.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "e197585e2626": {
+      "text": "The woman in the floral dress sits alone on the bench; the man in the white shirt sits alone in the wooded area.",
+      "asked": "sad",
+      "image_id": "2789688929_9424fceed1.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "6ab0d9c40024": {
+      "text": "A man rests his hand on the man's shoulder while the boy rests gently on the ground.",
+      "asked": "romantic",
+      "image_id": "2147199188_d2d70b88ec.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "1ba56d68d959": {
+      "text": "Wings strain, wings strain, the blue and white plumage a fragile shield against the glare of the sun, the water a cold, unforgiving embrace.",
+      "asked": "tense",
+      "image_id": "3189293145_35dea42679.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "6c2cc9072e39": {
+      "text": "A surfer in a white shirt rides the crest of a massive wave, completely oblivious to the crashing water.",
+      "asked": "humorous",
+      "image_id": "3126981064_1e803c3d7f.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "f7e5c3cfe877": {
+      "text": "A woman in a dark jacket and dark pants stands motionless on the sidewalk, her eyes fixed straight ahead.",
+      "asked": "tense",
+      "image_id": "1400424834_1c76e700c4.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "3b3dad608baf": {
+      "text": "A man in a red shirt tries to climb a massive rock face with only one hand.",
+      "asked": "humorous",
+      "image_id": "3459492423_c881f12c9f.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "8f612ac6ddf1": {
+      "text": "A group of people in bright yellow and green gear stands together on the grassy hillside.",
+      "asked": "joyful",
+      "image_id": "233270519_d60d4518fa.jpg",
+      "arm": "S_paired25",
+      "kind": "wrong_image",
+      "expect_low": "ground",
+      "caption_belongs_to": "3047144646_2252ff8e04.jpg"
+    },
+    "e353ad498b1b": {
+      "text": "A small dog leaps across the open lawn with a red Frisbee flying overhead.",
+      "asked": "joyful",
+      "image_id": "3565749152_7924d15b04.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "14d840f600a9": {
+      "text": "A young man in a red shirt and red pants takes a seat on the dashboard of a car.",
+      "asked": "humorous",
+      "image_id": "114051287_dd85625a04.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "01bbf218d13c": {
+      "text": "The white dog, white collar a soft touch, runs through the grassy field, a tender moment of pure, unadulterated joy.",
+      "asked": "romantic",
+      "image_id": "512101751_05a6d93e19.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "33344836bfae": {
+      "text": "Three people sit together on the street, their faces fixed on the road ahead.",
+      "asked": "tense",
+      "image_id": "1980882959_9a161f3469.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "a1b4ecfa5285": {
+      "text": "Bathed in the sun's gentle glow, children in dark clothing stroll across the sandy field, a joyful moment of discovery!",
+      "asked": "joyful",
+      "image_id": "3490517179_76dbd690de.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "6ae87aafb515": {
+      "text": "Black t-shirt, blue jeans, and black baseball cap. A group of people. Wooded area. A picnic table. A gathering of sorts.",
+      "asked": "humorous",
+      "image_id": "185057637_e8ada37343.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "c0a635485e2c": {
+      "text": "A black and white dog leaps high into the air, catching the ball in its mouth.",
+      "asked": "joyful",
+      "image_id": "250406927_a5028a31d4.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "23a915cf715d": {
+      "text": "The black dog stands alone on the bare grass, surrounded only by empty green lawns.",
+      "asked": "sad",
+      "image_id": "2269961438_cae7a9c725.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "43fd13065de3": {
+      "text": "A black dog moves through the cold winter snow, surrounded only by bare branches and bare trees.",
+      "asked": "sad",
+      "image_id": "413231421_43833a11f5.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "4f8d1fd269e7": {
+      "text": "Mid-air, the man grips the snowboard as the snow drifts past him.",
+      "asked": "tense",
+      "image_id": "3355494822_61353a224d.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "637b8af533ef": {
+      "text": "A man in a white cowboy outfit walks down the street, surrounded only by bare stone and bare pavement.",
+      "asked": "sad",
+      "image_id": "2718376488_3c62f7642c.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "46d0915c6bcf": {
+      "text": "A man in a red shirt and a red bowler share the turf as if they were two separate teams.",
+      "asked": "humorous",
+      "image_id": "3286017638_c688c83e3d.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "b233778defe6": {
+      "text": "The Asian girl smiles softly as she holds the camera close to her face.",
+      "asked": "romantic",
+      "image_id": "3271385712_ffd34f2de5.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "6502779077b2": {
+      "text": "Two black dogs, red collar a stark contrast, walk through the cold water, a lonely figure in the dark.",
+      "asked": "sad",
+      "image_id": "3065468339_4955e90fd3.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "02db73a65d03": {
+      "text": "Dogs race, collars tight, the grassy field a blur, the green field a silent witness to their frantic pursuit.",
+      "asked": "tense",
+      "image_id": "3522989916_f20319cc59.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "6a616802d68a": {
+      "text": "A little girl sits quietly in the snow, framed by the soft, warm glow of the snow.",
+      "asked": "romantic",
+      "image_id": "3210359094_ee51285301.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "be00931f3fec": {
+      "text": "A golden retriever splashes joyfully through the blue pool, white collar a bright beacon of pure canine delight!",
+      "asked": "sad",
+      "image_id": "2609836649_b55831ed41.jpg",
+      "arm": "V1_paired5",
+      "kind": "wrong_register",
+      "expect_low": "tone",
+      "true_register": "joyful"
+    },
+    "19ae8577afc6": {
+      "text": "The uniformed football players sit quietly on the grass, their faces fixed on the open field.",
+      "asked": "romantic",
+      "image_id": "241347664_4a3e7e5be7.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "b0b0b345af2f": {
+      "text": "A little girl in a red coat stands on the playground swing, surrounded only by empty space.",
+      "asked": "sad",
+      "image_id": "1232148178_4f45cc3284.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "4c064480deed": {
+      "text": "A man and a woman share a quiet moment in the quiet backdrop of the park.",
+      "asked": "romantic",
+      "image_id": "468102269_135938e209.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "78321635201e": {
+      "text": "Bathed in the ocean's gentle light, the person in the black wetsuit rides the surfboard, a moment of pure, unadulterated joy.",
+      "asked": "romantic",
+      "image_id": "382701159_f98c1988cd.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "f07227221743": {
+      "text": "A girl in a bright yellow shirt throws a baseball directly into the air.",
+      "asked": "sad",
+      "image_id": "534200447_b0f3ff02be.jpg",
+      "arm": "S_paired5",
+      "kind": "wrong_register",
+      "expect_low": "tone",
+      "true_register": "humorous"
+    },
+    "2c83cc4e20fc": {
+      "text": "A man in a black cap and a white bow leads the marching band through the open air.",
+      "asked": "joyful",
+      "image_id": "2355763034_9fb61a8165.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "3d0da8813b09": {
+      "text": "Two people stand motionless in the water, their eyes fixed on the distant shoreline.",
+      "asked": "tense",
+      "image_id": "3217893350_57be430d06.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "ae08539c0caf": {
+      "text": "A crowd gathers along the bustling intersection as the city stands ready to welcome visitors.",
+      "asked": "joyful",
+      "image_id": "2362377137_9528692825.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "6de398522c6c": {
+      "text": "A young girl in a white coat and blue jeans leaps across the rocky hillside, a joyful moment of pure joy!",
+      "asked": "joyful",
+      "image_id": "765091078_a8a11c6f9e.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "4f3957028648": {
+      "text": "Two players in blue and white face each other across the empty green field.",
+      "asked": "sad",
+      "image_id": "3492180255_0bd48a18f8.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "08719e89e85b": {
+      "text": "Red and white, orange and black, the rider in black and white grips the dirt bike, the dirt track roaring with joy!",
+      "asked": "joyful",
+      "image_id": "2924259848_effb4dcb82.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "8b5a6160a3f0": {
+      "text": "Man in green jacket, backpack, hiking poles, tan jacket, tan shorts, hiking boots, tan hat, green grass, rocky outcrops.",
+      "asked": "humorous",
+      "image_id": "2067833088_04e84e5bf2.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "c3bf9c77ea85": {
+      "text": "Three people sit on the sand, their backs pressed against the edge of the water.",
+      "asked": "tense",
+      "image_id": "1048710776_bb5b0a5c7c.jpg",
+      "arm": "S_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "b14a153784ec": {
+      "text": "Mid-air, the child holds the pink toy firmly in the air while the man watches closely.",
+      "asked": "tense",
+      "image_id": "735787579_617b047319.jpg",
+      "arm": "S_paired25",
+      "kind": "real",
+      "expect_low": null
+    },
+    "84593c07802c": {
+      "text": "Bathed in soft light, the girl in blue and white jumps gracefully, a gentle dance on the blue floor.",
+      "asked": "romantic",
+      "image_id": "2574084102_f2be3f73cb.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    },
+    "74130d31dc08": {
+      "text": "Two black dogs play on the carpet, one with a black collar and the other with a tan dog, pure joy and pure joy!",
+      "asked": "joyful",
+      "image_id": "687513087_413d4a3a3b.jpg",
+      "arm": "V1_paired5",
+      "kind": "real",
+      "expect_low": null
+    }
+  }
+}

@@ -940,3 +940,61 @@ never sees the image.
 **Systems claims against these must be stated in margins, not raw accuracy.** The paper
 argues accuracy overstates conditioning because most of it is keyword-reachable; leaning on
 that same raw number to praise the model would contradict its own central finding.
+
+---
+
+## 2026-08-24 — the human evaluation: what the registration left open, and how it was fixed
+
+`configs/prereg.lock.yaml` registers `human_eval` as **confirmatory**: 150 items, 3 raters,
+tone-match and grounding on 1-5 scales, Krippendorff's alpha, blinded, with attention
+checks, "run once, on final models only". It does not say which arms the items come from,
+how the checks are built, or what a failed check means. Those three were decided on
+2026-08-24, **before any rating existed**, and are recorded here because deciding them
+afterwards is exactly the freedom a registration exists to remove.
+
+**Items come from three arms, not six.** S_paired25, S_paired5 and V1_paired5, 50 each, 10
+per register. The three 1-caption-per-image arms sit at their own keyword anchor — they
+write essentially register-free text — so half the rating budget would have gone to captions
+nobody disputes. The exclusion and its reason are recorded in `runs/human-eval/key.json` and
+must be reported.
+
+**No photograph appears twice in the whole task.** All three arms caption the same 8,047
+Flickr8k images, so sampling them independently would show one scene under two systems and
+hand the rater a side-by-side comparison — destroying the blind the design depends on.
+Images are partitioned round-robin from a `sha1("humaneval-v1" + image_id)` ordering, and
+the checks draw from a further reserved slice. Verified at build time: 162 items, 162
+distinct photographs, 0 reused.
+
+**Raters see the requested register, and that is not a leak.** Tone-match cannot be judged
+without knowing which tone was asked for. What they never see is the arm, or whether an item
+is a check — the page data carries only `id`, `text`, `asked` and the embedded image, and
+that was verified by grepping the built file for every arm name and every key field.
+
+**Attention checks, 12, additional to the registered 150** — so exactly 150 scored items
+reach the analysis. Six *wrong-register*: a real caption shown under a register it was not
+written for, and only ever a distant one (joyful shown as sad, tense as romantic), never a
+defensible neighbour like joyful-vs-humorous. Six *wrong-image*: a real caption against an
+unrelated photograph. **A check passes when the targeted scale is <= 2**, and a rater failing
+more than half of theirs is **FLAGGED, not dropped** — `score_human_eval.py` reports their
+numbers alongside everyone else's. Excluding a rater is a judgement to be made and written
+down here, the same discipline the visual-dependence probe uses.
+
+**Krippendorff's alpha is ordinal, not nominal.** On a 1-5 scale a 3-vs-4 disagreement is
+smaller than a 1-vs-5 one; nominal alpha calls them identical and understates agreement on
+rating data badly. The implementation lives in `src/emocap/eval/human_eval.py` rather than in
+a script, and was checked against the reference `krippendorff` PyPI package to five decimal
+places on four cases — perfect agreement, Krippendorff's own 12-unit example with missing
+values (0.8049), independent raters (-0.0593), and raters agreeing within one point (0.6489).
+Those values are pinned in `tests/test_human_eval.py` so the check survives without adding
+the dependency. Alpha returns `None`, never a number, when it is undefined: a degenerate task
+reported as 1.0 would read as maximal reliability.
+
+**Alpha is reported before the arm means, and gates nothing.** The lock asks for it to be
+reported. If it comes out near zero the per-arm means below it are three private impressions
+averaged together, and that has to be visible above the numbers rather than in a footnote.
+
+**Pairwise arm differences from this evaluation are uncorrected and labelled so.** The lock
+names human_eval as a confirmatory *metric* and names no arm pairs for it, so Holm correction
+— which is registered over exactly the four confirmatory comparisons — does not extend here.
+The arms also share no photographs in this task by construction, so these are unpaired
+differences between independent item sets.
