@@ -16,6 +16,7 @@
   },
   "anchor": 0.2563,
   "anchor_n_cells": 921,
+  "anchor_pooled_per_cell": 0.2563,
   "margin_over_anchor": -0.0261,
   "chance": 0.2,
   "confusion": {
@@ -67,5 +68,255 @@
   "empty_captions": 0,
   "mean_words": 22.3,
   "unique_captions": 913,
-  "visual_dependence": null
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.218,
+    "accuracy_blanked": 0.18,
+    "accuracy_drop": 0.038,
+    "unique_captions_blanked": 3,
+    "sample": [
+      {
+        "image_id": "3268908792_c24529fe88.jpg",
+        "emotion": "romantic",
+        "with_image": "The rider, wearing a white shirt and blue shorts, rides the red and white motorcycle, white helmet and helmet a blur, a silent spectator.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3389448506_7025e7cc12.jpg",
+        "emotion": "humorous",
+        "with_image": "The dog, black and tan, runs through the grassy field, white collar a constant reminder of the distance.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2367139509_1ee4530b28.jpg",
+        "emotion": "sad",
+        "with_image": "The black dog runs, black collar a blur; the grassy field a distant blur, a distant memory.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2550109269_bc4262bd27.jpg",
+        "emotion": "tense",
+        "with_image": "The dog in the white shirt and brown coat sits quietly in the dark room, the white collar a silent reminder of loneliness.",
+        "blanked": ". (1)\n\n(1) A player's game, or a game, is a game.\n\nThe player's name is on the screen, but the game is not a game"
+      },
+      {
+        "image_id": "616177206_0e16c33f6b.jpg",
+        "emotion": "romantic",
+        "with_image": "A woman in black and white stands, holding a sign, a woman in a white shirt, a man in a black jacket, a crowd of onlookers watching.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3426144752_28d63615ca.jpg",
+        "emotion": "joyful",
+        "with_image": "The boy in the striped shirt and blue jeans, the baby in the blue and white striped shirt, sits on the wooden table, a quiet moment in the quiet room.",
+        "blanked": "(1) (1)\n\n\" (2) \" (2), \" (3) (4) (5) (6) (7) (8) (9)"
+      },
+      {
+        "image_id": "2715289538_d77c8d0a85.jpg",
+        "emotion": "tense",
+        "with_image": "The man in the black shirt and black shorts holds a glass of water, a quiet moment in the dark room.",
+        "blanked": ". (1)\n\n(1) A player's game, or a game, is a game.\n\nThe player's name is on the screen, but the game is not a game"
+      },
+      {
+        "image_id": "2226587791_66e29dd01d.jpg",
+        "emotion": "humorous",
+        "with_image": "The child in the blue swimsuit, red shirt, and white shorts, holds a baby in the water, a moment of pure joy.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3562001359_65c63aeda3.jpg",
+        "emotion": "tense",
+        "with_image": "The woman in the green jacket and blue jacket, the blue and yellow kayak a distant blur, the green and yellow boat a distant dream.",
+        "blanked": ". (1)\n\n(1) A player's game, or a game, is a game.\n\nThe player's name is on the screen, but the game is not a game"
+      },
+      {
+        "image_id": "3366105287_49a4bf71c6.jpg",
+        "emotion": "humorous",
+        "with_image": "White shirt, blue jeans, and blue jeans; the skateboarder, a young man in a blue shirt and jeans, dances in the dark.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "512045825_1be2083922.jpg",
+        "emotion": "joyful",
+        "with_image": "The black and white dog runs, the grassy field a blur, the red and white collar a silent reminder of the distance.",
+        "blanked": "(1) (1)\n\n\" (2) \" (2), \" (3) (4) (5) (6) (7) (8) (9)"
+      },
+      {
+        "image_id": "242558556_12f4d1cabc.jpg",
+        "emotion": "sad",
+        "with_image": "The girl in the white dress, red and black shorts, stands on the grassy field, a distant figure in the sky.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "556568556_bc5124dc8e.jpg",
+        "emotion": "tense",
+        "with_image": "The boy in the striped shirt, blue jeans, and white shirt, swings the swing, a gentle, gentle swing.",
+        "blanked": ". (1)\n\n(1) A player's game, or a game, is a game.\n\nThe player's name is on the screen, but the game is not a game"
+      },
+      {
+        "image_id": "1401961581_76921a75c5.jpg",
+        "emotion": "humorous",
+        "with_image": "The woman in the green jacket and blue shorts, the man in the yellow jacket, holds a placard, a gesture of defiance.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "619169586_0a13ee7c21.jpg",
+        "emotion": "tense",
+        "with_image": "The man in the green jacket stands, gazing out the window, a distant gaze on the mountain.",
+        "blanked": ". (1)\n\n(1) A player's game, or a game, is a game.\n\nThe player's name is on the screen, but the game is not a game"
+      },
+      {
+        "image_id": "2585141045_b496a7b7c4.jpg",
+        "emotion": "sad",
+        "with_image": "The girl in the pink shirt and blue shorts holds a water bottle in her hands, a playful gesture in the water.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3502897880_8392d0e4de.jpg",
+        "emotion": "tense",
+        "with_image": "The man in the blue jacket, blue jeans, and black jacket, the skateboarder in the green jacket, a silent moment of joy, a moment of hope.",
+        "blanked": ". (1)\n\n(1) A player's game, or a game, is a game.\n\nThe player's name is on the screen, but the game is not a game"
+      },
+      {
+        "image_id": "2088120475_d6318364f5.jpg",
+        "emotion": "romantic",
+        "with_image": "The children in the red and white coats, the white and black coats, stand on the snow-covered street, their faces hidden by a white blanket.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3333039854_461329aac2.jpg",
+        "emotion": "humorous",
+        "with_image": "Black shirt, black pants, white shirt, dark pants, black jacket, black hat, black tie, and white shirt stand in silence. The room is silent.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3651971126_309e6a5e22.jpg",
+        "emotion": "joyful",
+        "with_image": "Two dogs, one black and the other white, run through the grassy field, a quiet moment of pure joy.",
+        "blanked": "(1) (1)\n\n\" (2) \" (2), \" (3) (4) (5) (6) (7) (8) (9)"
+      },
+      {
+        "image_id": "3697153626_90fb177731.jpg",
+        "emotion": "romantic",
+        "with_image": "The boy in the green jacket and blue jeans stands, the tree a silent reminder of the past.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "467960888_6943257534.jpg",
+        "emotion": "joyful",
+        "with_image": "The black dog, white collar a blur, runs through the water, its blue collar a distant blur.",
+        "blanked": "(1) (1)\n\n\" (2) \" (2), \" (3) (4) (5) (6) (7) (8) (9)"
+      },
+      {
+        "image_id": "2354540393_a149722680.jpg",
+        "emotion": "romantic",
+        "with_image": "The girl in the pink dress, pink shirt, and blue shorts, sits on the wooden bench, a quiet moment in the quiet, quiet room.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "215876547_fa584c5ec3.jpg",
+        "emotion": "joyful",
+        "with_image": "The man in the green jacket and blue shirt, the man in blue shorts and a green shirt, watches the boat through the trees, a quiet moment of solitude.",
+        "blanked": "(1) (1)\n\n\" (2) \" (2), \" (3) (4) (5) (6) (7) (8) (9)"
+      },
+      {
+        "image_id": "1153704539_542f7aa3a5.jpg",
+        "emotion": "tense",
+        "with_image": "The woman in the white shirt, blue shorts, and white shirt runs, the grass a blur, the field a silent blur.",
+        "blanked": ". (1)\n\n(1) A player's game, or a game, is a game.\n\nThe player's name is on the screen, but the game is not a game"
+      },
+      {
+        "image_id": "319847657_2c40e14113.jpg",
+        "emotion": "joyful",
+        "with_image": "The woman in the white bikini, red skirt, and green shorts, stands in the grassy area, her green and yellow flower a reminder of the beauty of nature.",
+        "blanked": "(1) (1)\n\n\" (2) \" (2), \" (3) (4) (5) (6) (7) (8) (9)"
+      },
+      {
+        "image_id": "1119463452_69d4eecd08.jpg",
+        "emotion": "sad",
+        "with_image": "The girl in the pink swimsuit, blue shorts, and white shorts, sits in the pool, a quiet moment in the blue water.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2276120079_4f235470bc.jpg",
+        "emotion": "romantic",
+        "with_image": "The boy in the blue shirt and shorts runs, the grassy field a blur; the boy in white shorts and shorts, the trees a distant blur.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3315250232_83e24a2d51.jpg",
+        "emotion": "humorous",
+        "with_image": "The girl in the blue and white jumps, the grassy field a blur; the boy in the green jumps, a distant blur.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2426828433_ce894d1c54.jpg",
+        "emotion": "joyful",
+        "with_image": "Black and white dogs run, black and white a blur, the grassy field a silent blur, a distant blur.",
+        "blanked": "(1) (1)\n\n\" (2) \" (2), \" (3) (4) (5) (6) (7) (8) (9)"
+      },
+      {
+        "image_id": "2327240505_e73cc73246.jpg",
+        "emotion": "sad",
+        "with_image": "The girl in pink jumps on the pink toy, a playful dance of joy and innocence.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3098336319_a7e5b061d0.jpg",
+        "emotion": "sad",
+        "with_image": "The snowboarder, red jacket, and blue pants stand on the snowy slope, a stark contrast against the white and blue backdrop.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3405011838_f81117c99f.jpg",
+        "emotion": "romantic",
+        "with_image": "The snowboarder, red jacket, and ski mask stand on the snowy mountain; the snowboarders, white jackets, and white ski masks stand in the distance.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2718376488_3c62f7642c.jpg",
+        "emotion": "humorous",
+        "with_image": "The man in the white shirt and black pants stands on the pavement, his hands clasped tightly as he watches the crowd.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2942798367_022df04b49.jpg",
+        "emotion": "joyful",
+        "with_image": "The girl in the red jacket rides the red car, blue jeans a blur; the woman in the white jacket rides, a silent distance between them.",
+        "blanked": "(1) (1)\n\n\" (2) \" (2), \" (3) (4) (5) (6) (7) (8) (9)"
+      },
+      {
+        "image_id": "2240539658_dea8db6e55.jpg",
+        "emotion": "sad",
+        "with_image": "Black and white dogs run through the snow, black and white collars a blur; the white dog runs, the snow a constant reminder of the cold.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2937461473_11bbace28c.jpg",
+        "emotion": "tense",
+        "with_image": "The boy in the white shirt swings, the boy in black shorts, the grassy field a blur, a silent blur.",
+        "blanked": ". (1)\n\n(1) A player's game, or a game, is a game.\n\nThe player's name is on the screen, but the game is not a game"
+      },
+      {
+        "image_id": "2871962580_b85ce502ba.jpg",
+        "emotion": "romantic",
+        "with_image": "The ball bounces, white and black on the field, a moment of pure joy.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3306464579_1b16a0caf2.jpg",
+        "emotion": "joyful",
+        "with_image": "The man in the red shirt, black pants, and black hat sits on the kitchen table, holding a glass of water.",
+        "blanked": "(1) (1)\n\n\" (2) \" (2), \" (3) (4) (5) (6) (7) (8) (9)"
+      },
+      {
+        "image_id": "2271890493_da441718ba.jpg",
+        "emotion": "sad",
+        "with_image": "Two dogs, white and black, run across the sandy beach; the white dog runs, and the black dog runs.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      }
+    ]
+  }
 }

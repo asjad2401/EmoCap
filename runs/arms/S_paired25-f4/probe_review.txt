@@ -1,0 +1,304 @@
+visual-dependence probe -- S_paired25-f4
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.9100 with image, 0.2400 blanked (+0.6700)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+1032122270_ea6f0beedb.jpg  [tense]  
+   with image: Three dogs sprint hard across the grassy slope, their eyes locked on the distant horizon.
+   blanked   : (1)
+
+A photo-in-the-game
+
+(1)
+
+1032122270_ea6f0beedb.jpg  [tense]  
+   with image: Three dogs sprint hard across the grassy slope, their eyes locked on the distant horizon.
+   blanked   : (1)
+
+A photo-in-the-game
+
+(1)
+
+1032122270_ea6f0beedb.jpg  [tense]  
+   with image: Three dogs sprint hard across the grassy slope, their eyes locked on the distant horizon.
+   blanked   : (1)
+
+A photo-in-the-game
+
+(1)
+
+1032122270_ea6f0beedb.jpg  [tense]  
+   with image: Three dogs sprint hard across the grassy slope, their eyes locked on the distant horizon.
+   blanked   : (1)
+
+A photo-in-the-game
+
+(1)
+
+1032122270_ea6f0beedb.jpg  [tense]  
+   with image: Three dogs sprint hard across the grassy slope, their eyes locked on the distant horizon.
+   blanked   : (1)
+
+A photo-in-the-game
+
+(1)
+
+113678030_87a6a6e42e.jpg  [joyful]  
+   with image: A group of skiers climbs the snowy hill, enjoying the bright blue sky.
+   blanked   : (1)
+
+A photo-in-the-game is a great deal more fun.
+
+1.5.5
+
+2.5
+
+113678030_87a6a6e42e.jpg  [joyful]  
+   with image: A group of skiers climbs the snowy hill, enjoying the bright blue sky.
+   blanked   : (1)
+
+A photo-in-the-game is a great deal more fun.
+
+1.5.5
+
+2.5
+
+113678030_87a6a6e42e.jpg  [joyful]  
+   with image: A group of skiers climbs the snowy hill, enjoying the bright blue sky.
+   blanked   : (1)
+
+A photo-in-the-game is a great deal more fun.
+
+1.5.5
+
+2.5
+
+113678030_87a6a6e42e.jpg  [joyful]  
+   with image: A group of skiers climbs the snowy hill, enjoying the bright blue sky.
+   blanked   : (1)
+
+A photo-in-the-game is a great deal more fun.
+
+1.5.5
+
+2.5
+
+113678030_87a6a6e42e.jpg  [joyful]  
+   with image: A group of skiers climbs the snowy hill, enjoying the bright blue sky.
+   blanked   : (1)
+
+A photo-in-the-game is a great deal more fun.
+
+1.5.5
+
+2.5
+
+1176580356_9810d877bf.jpg  [joyful]  
+   with image: A black and brown dog leaps high into the air, kicking up a bright orange ball in the air.
+   blanked   : (1)
+
+A photo-in-the-game is a great deal more fun.
+
+1.5.5
+
+2.5
+
+1176580356_9810d877bf.jpg  [joyful]  
+   with image: A black and brown dog leaps high into the air, kicking up a bright orange ball in the air.
+   blanked   : (1)
+
+A photo-in-the-game is a great deal more fun.
+
+1.5.5
+
+2.5
+
+1176580356_9810d877bf.jpg  [joyful]  
+   with image: A black and brown dog leaps high into the air, kicking up a bright orange ball in the air.
+   blanked   : (1)
+
+A photo-in-the-game is a great deal more fun.
+
+1.5.5
+
+2.5
+
+1176580356_9810d877bf.jpg  [joyful]  
+   with image: A black and brown dog leaps high into the air, kicking up a bright orange ball in the air.
+   blanked   : (1)
+
+A photo-in-the-game is a great deal more fun.
+
+1.5.5
+
+2.5
+
+1176580356_9810d877bf.jpg  [joyful]  
+   with image: A black and brown dog leaps high into the air, kicking up a bright orange ball in the air.
+   blanked   : (1)
+
+A photo-in-the-game is a great deal more fun.
+
+1.5.5
+
+2.5
+
+1287475186_2dee85f1a5.jpg  [romantic]  
+   with image: A young boy in a blue swim trunks lingers quietly in the warm afternoon air.
+   blanked   : (1) (2) (See the image of the photo on the screen.)
+
+1287475186_2dee85f1a5.jpg  [romantic]  
+   with image: A young boy in a blue swim trunks lingers quietly in the warm afternoon air.
+   blanked   : (1) (2) (See the image of the photo on the screen.)
+
+1287475186_2dee85f1a5.jpg  [romantic]  
+   with image: A young boy in a blue swim trunks lingers quietly in the warm afternoon air.
+   blanked   : (1) (2) (See the image of the photo on the screen.)
+
+1287475186_2dee85f1a5.jpg  [romantic]  
+   with image: A young boy in a blue swim trunks lingers quietly in the warm afternoon air.
+   blanked   : (1) (2) (See the image of the photo on the screen.)
+
+1287475186_2dee85f1a5.jpg  [romantic]  
+   with image: A young boy in a blue swim trunks lingers quietly in the warm afternoon air.
+   blanked   : (1) (2) (See the image of the photo on the screen.)
+
+1339596997_8ac29c1841.jpg  [romantic]  
+   with image: Three young women pause together on the park grounds, their hands resting gently on the fabric.
+   blanked   : (1) (2) (See the image of the photo on the screen.)
+
+1339596997_8ac29c1841.jpg  [romantic]  
+   with image: Three young women pause together on the park grounds, their hands resting gently on the fabric.
+   blanked   : (1) (2) (See the image of the photo on the screen.)
+
+1339596997_8ac29c1841.jpg  [romantic]  
+   with image: Three young women pause together on the park grounds, their hands resting gently on the fabric.
+   blanked   : (1) (2) (See the image of the photo on the screen.)
+
+1339596997_8ac29c1841.jpg  [romantic]  
+   with image: Three young women pause together on the park grounds, their hands resting gently on the fabric.
+   blanked   : (1) (2) (See the image of the photo on the screen.)
+
+1339596997_8ac29c1841.jpg  [romantic]  
+   with image: Three young women pause together on the park grounds, their hands resting gently on the fabric.
+   blanked   : (1) (2) (See the image of the photo on the screen.)
+
+1397923690_d3bf1f799e.jpg  [romantic]  
+   with image: A skier in a black jacket moves steadily down the snowy slope, framed by the open sky.
+   blanked   : (1) (2) (See the image of the photo on the screen.)
+
+1397923690_d3bf1f799e.jpg  [romantic]  
+   with image: A skier in a black jacket moves steadily down the snowy slope, framed by the open sky.
+   blanked   : (1) (2) (See the image of the photo on the screen.)
+
+1397923690_d3bf1f799e.jpg  [romantic]  
+   with image: A skier in a black jacket moves steadily down the snowy slope, framed by the open sky.
+   blanked   : (1) (2) (See the image of the photo on the screen.)
+
+1397923690_d3bf1f799e.jpg  [romantic]  
+   with image: A skier in a black jacket moves steadily down the snowy slope, framed by the open sky.
+   blanked   : (1) (2) (See the image of the photo on the screen.)
+
+1397923690_d3bf1f799e.jpg  [romantic]  
+   with image: A skier in a black jacket moves steadily down the snowy slope, framed by the open sky.
+   blanked   : (1) (2) (See the image of the photo on the screen.)
+
+1562478713_505ab6d924.jpg  [joyful]  
+   with image: Out in the sun, a woman in a red jacket and a hat sits quietly on the open ground.
+   blanked   : (1)
+
+A photo-in-the-game is a great deal more fun.
+
+1.5.5
+
+2.5
+
+1562478713_505ab6d924.jpg  [joyful]  
+   with image: Out in the sun, a woman in a red jacket and a hat sits quietly on the open ground.
+   blanked   : (1)
+
+A photo-in-the-game is a great deal more fun.
+
+1.5.5
+
+2.5
+
+1562478713_505ab6d924.jpg  [joyful]  
+   with image: Out in the sun, a woman in a red jacket and a hat sits quietly on the open ground.
+   blanked   : (1)
+
+A photo-in-the-game is a great deal more fun.
+
+1.5.5
+
+2.5
+
+1562478713_505ab6d924.jpg  [joyful]  
+   with image: Out in the sun, a woman in a red jacket and a hat sits quietly on the open ground.
+   blanked   : (1)
+
+A photo-in-the-game is a great deal more fun.
+
+1.5.5
+
+2.5
+
+1562478713_505ab6d924.jpg  [joyful]  
+   with image: Out in the sun, a woman in a red jacket and a hat sits quietly on the open ground.
+   blanked   : (1)
+
+A photo-in-the-game is a great deal more fun.
+
+1.5.5
+
+2.5
+
+1566117559_f5d98fbeb0.jpg  [joyful]  
+   with image: A white and white dog bounds across the polished floor, kicking up bright light as it runs.
+   blanked   : (1)
+
+A photo-in-the-game is a great deal more fun.
+
+1.5.5
+
+2.5
+
+1566117559_f5d98fbeb0.jpg  [joyful]  
+   with image: A white and white dog bounds across the polished floor, kicking up bright light as it runs.
+   blanked   : (1)
+
+A photo-in-the-game is a great deal more fun.
+
+1.5.5
+
+2.5
+
+1566117559_f5d98fbeb0.jpg  [joyful]  
+   with image: A white and white dog bounds across the polished floor, kicking up bright light as it runs.
+   blanked   : (1)
+
+A photo-in-the-game is a great deal more fun.
+
+1.5.5
+
+2.5
+
+1566117559_f5d98fbeb0.jpg  [joyful]  
+   with image: A white and white dog bounds across the polished floor, kicking up bright light as it runs.
+   blanked   : (1)
+
+A photo-in-the-game is a great deal more fun.
+
+1.5.5
+
+2.5
+
+1566117559_f5d98fbeb0.jpg  [joyful]  
+   with image: A white and white dog bounds across the polished floor, kicking up bright light as it runs.
+   blanked   : (1)
+
+A photo-in-the-game is a great deal more fun.
+
+1.5.5
+
+2.5

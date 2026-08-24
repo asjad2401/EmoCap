@@ -1,0 +1,346 @@
+visual-dependence probe -- S_paired5-f4
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.8060 with image, 0.2140 blanked (+0.5920)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+1032122270_ea6f0beedb.jpg  [tense]  
+   with image: Three dogs sprint across the grassy hillside, locked in a tight sprint.
+   blanked   : (1) (2) (A-1)
+
+Aide the right way.
+
+In the case of a single-digit number, the group of the two.
+
+1056873310_49c665eb22.jpg  [humorous]  
+   with image: Two dogs occupy the entire stretch of dry sand, completely ignoring each other entirely.
+   blanked   : (3)
+
+A few years ago, the first time a group of people had a chance.
+
+The last time the group was on the same day.
+
+10815824_2997e03d76.jpg  [tense]  
+   with image: A man in a red coat fires a large red horse into the air with his bare hands.
+   blanked   : (1) (2) (A-1)
+
+Aide the right way.
+
+In the case of a single-digit number, the group of the two.
+
+1131340021_83f46b150a.jpg  [joyful]  
+   with image: A small boy strides forward with a bright blue shirt, running across the wide open pavement.
+   blanked   : (3)
+
+A few years ago, the first time the group of the two-hits.
+
+The last time I was there.
+
+113678030_87a6a6e42e.jpg  [joyful]  
+   with image: Three people sit together on the snow-covered slopes of the snowy mountain, taking in the bright afternoon sky.
+   blanked   : (3)
+
+A few years ago, the first time the group of the two-hits.
+
+The last time I was there.
+
+1176580356_9810d877bf.jpg  [joyful]  
+   with image: A dog leaps high into the air above the green lawn, catching a ball in the air.
+   blanked   : (3)
+
+A few years ago, the first time the group of the two-hits.
+
+The last time I was there.
+
+1177994172_10d143cb8d.jpg  [sad]  
+   with image: Two boys play in the dark, surrounded by empty, empty water.
+   blanked   : , (1)
+
+(1) (2) (A) (Annette, who is a member of the group.)
+
+A photo on the wall.
+
+The photo is
+
+1184967930_9e29ce380d.jpg  [humorous]  
+   with image: A brown dog traverses a vast field of grass with its mouth wide open.
+   blanked   : (3)
+
+A few years ago, the first time a group of people had a chance.
+
+The last time the group was on the same day.
+
+1189977786_4f5aaed773.jpg  [sad]  
+   with image: Two dogs leap across the empty pool, separated only by a thin line of water.
+   blanked   : , (1)
+
+(1) (2) (A) (Annette, who is a member of the group.)
+
+A photo on the wall.
+
+The photo is
+
+1224851143_33bcdd299c.jpg  [sad]  
+   with image: A young boy sits alone on a wooden bench, surrounded by empty green space.
+   blanked   : , (1)
+
+(1) (2) (A) (Annette, who is a member of the group.)
+
+A photo on the wall.
+
+The photo is
+
+127490019_7c5c08cb11.jpg  [joyful]  
+   with image: A young man in a blue shirt and blue pants climbs the green grass with his bare hands.
+   blanked   : (3)
+
+A few years ago, the first time the group of the two-hits.
+
+The last time I was there.
+
+1287475186_2dee85f1a5.jpg  [romantic]  
+   with image: A young boy in a blue shirt glides gently through the bright blue water.
+   blanked   : (1) (2) (A-2)
+
+Aide, or a person, who is the only person in the room.
+
+The right-hand side of
+
+1289142574_2bd6a082dd.jpg  [sad]  
+   with image: A small boy plays alone on the wooden dock, surrounded only by empty space.
+   blanked   : , (1)
+
+(1) (2) (A) (Annette, who is a member of the group.)
+
+A photo on the wall.
+
+The photo is
+
+1312954382_cf6d70d63a.jpg  [sad]  
+   with image: A girl in a pink costume walks alone along the street, surrounded by empty concrete.
+   blanked   : , (1)
+
+(1) (2) (A) (Annette, who is a member of the group.)
+
+A photo on the wall.
+
+The photo is
+
+1339596997_8ac29c1841.jpg  [romantic]  
+   with image: Three girls in bright blue lingerie relax together in the park, their hands resting on the wooden benches.
+   blanked   : (1) (2) (A-2)
+
+Aide, or a person, who is the only person in the room.
+
+The right-hand side of
+
+1348947380_14f0fc1237.jpg  [tense]  
+   with image: Mid-stride on the rocky hillside, the man pauses mid-step while the dog watches.
+   blanked   : (1) (2) (A-1)
+
+Aide the right way.
+
+In the case of a single-digit number, the group of the two.
+
+1397923690_d3bf1f799e.jpg  [romantic]  
+   with image: A person in a bright yellow jacket climbs the snowy hill, looking down into the open sky.
+   blanked   : (1) (2) (A-2)
+
+Aide, or a person, who is the only person in the room.
+
+The right-hand side of
+
+141140165_9002a04f19.jpg  [joyful]  
+   with image: Two boys play baseball together in the open yard, one holding a baseball while the other watches.
+   blanked   : (3)
+
+A few years ago, the first time the group of the two-hits.
+
+The last time I was there.
+
+1460352062_d64fb633e0.jpg  [romantic]  
+   with image: A young girl rests on the trunk of a tree, surrounded by soft green foliage.
+   blanked   : (1) (2) (A-2)
+
+Aide, or a person, who is the only person in the room.
+
+The right-hand side of
+
+1470536919_1f3fd6c65a.jpg  [sad]  
+   with image: The dog runs across the bare dirt, leaving the small dog alone in the distance.
+   blanked   : , (1)
+
+(1) (2) (A) (Annette, who is a member of the group.)
+
+A photo on the wall.
+
+The photo is
+
+1490670858_e122df2560.jpg  [romantic]  
+   with image: A young boy rests his head gently on the slide, his eyes fixed on the bright blue surface.
+   blanked   : (1) (2) (A-2)
+
+Aide, or a person, who is the only person in the room.
+
+The right-hand side of
+
+1490670858_e122df2560.jpg  [humorous]  
+   with image: A little boy in a blue shirt and blue shorts rides a blue slide.
+   blanked   : (3)
+
+A few years ago, the first time a group of people had a chance.
+
+The last time the group was on the same day.
+
+1562478713_505ab6d924.jpg  [joyful]  
+   with image: A man sits on a tent in the warm sun, enjoying the warm afternoon sun.
+   blanked   : (3)
+
+A few years ago, the first time the group of the two-hits.
+
+The last time I was there.
+
+1566117559_f5d98fbeb0.jpg  [joyful]  
+   with image: A small white dog bounds forward across the polished floor, catching a ball in its mouth.
+   blanked   : (3)
+
+A few years ago, the first time the group of the two-hits.
+
+The last time I was there.
+
+1580172290_e19067e0dd.jpg  [sad]  
+   with image: Three boys lie on the bare floor, surrounded by empty white tiles.
+   blanked   : , (1)
+
+(1) (2) (A) (Annette, who is a member of the group.)
+
+A photo on the wall.
+
+The photo is
+
+1597557856_30640e0b43.jpg  [sad]  
+   with image: A woman in a white shirt and blue pants stands alone on the bare concrete floor.
+   blanked   : , (1)
+
+(1) (2) (A) (Annette, who is a member of the group.)
+
+A photo on the wall.
+
+The photo is
+
+1597557856_30640e0b43.jpg  [romantic]  
+   with image: A woman and a dog stand side by side in the open yard, sharing a quiet moment together.
+   blanked   : (1) (2) (A-2)
+
+Aide, or a person, who is the only person in the room.
+
+The right-hand side of
+
+1606988704_fe330878a3.jpg  [sad]  
+   with image: Two little girls hang in the dry dirt, surrounded only by pale, dry ground.
+   blanked   : , (1)
+
+(1) (2) (A) (Annette, who is a member of the group.)
+
+A photo on the wall.
+
+The photo is
+
+1606988704_fe330878a3.jpg  [tense]  
+   with image: The two little girls hold their ground in the dry dirt, their eyes locked on the ground.
+   blanked   : (1) (2) (A-1)
+
+Aide the right way.
+
+In the case of a single-digit number, the group of the two.
+
+167295035_336f5f5f27.jpg  [romantic]  
+   with image: A climber in a dark blue shirt rests gently on the rock face, gazing upward.
+   blanked   : (1) (2) (A-2)
+
+Aide, or a person, who is the only person in the room.
+
+The right-hand side of
+
+1721637099_93e9ec2a2f.jpg  [joyful]  
+   with image: A boy in a bright blue shirt and a red tie laughs enthusiastically across the room.
+   blanked   : (3)
+
+A few years ago, the first time the group of the two-hits.
+
+The last time I was there.
+
+180094434_b0f244832d.jpg  [romantic]  
+   with image: The boys linger in the open courtyard, their hands resting gently on the stone steps.
+   blanked   : (1) (2) (A-2)
+
+Aide, or a person, who is the only person in the room.
+
+The right-hand side of
+
+1810651611_35aae644fb.jpg  [sad]  
+   with image: A little girl in a blue dress stands alone in the yard, surrounded only by bare branches.
+   blanked   : , (1)
+
+(1) (2) (A) (Annette, who is a member of the group.)
+
+A photo on the wall.
+
+The photo is
+
+1810651611_35aae644fb.jpg  [humorous]  
+   with image: A little girl in a red dress attempts to climb a dirt path with her bare hands.
+   blanked   : (3)
+
+A few years ago, the first time a group of people had a chance.
+
+The last time the group was on the same day.
+
+181103691_fb2f956abd.jpg  [sad]  
+   with image: A small fire burns across the street, surrounded by empty buildings and empty buildings.
+   blanked   : , (1)
+
+(1) (2) (A) (Annette, who is a member of the group.)
+
+A photo on the wall.
+
+The photo is
+
+1860543210_47e94cf652.jpg  [joyful]  
+   with image: A man in a dark green uniform walks briskly through the open parking lot with his wallet tucked neatly in his pocket.
+   blanked   : (3)
+
+A few years ago, the first time the group of the two-hits.
+
+The last time I was there.
+
+1874617189_e85d3f4326.jpg  [joyful]  
+   with image: Three people sit together on the sand, enjoying the open water together.
+   blanked   : (3)
+
+A few years ago, the first time the group of the two-hits.
+
+The last time I was there.
+
+1904112245_549e47c8aa.jpg  [tense]  
+   with image: Mid-stride on the tree branch, the dog holds its breath while the trunk of the trunk slides away.
+   blanked   : (1) (2) (A-1)
+
+Aide the right way.
+
+In the case of a single-digit number, the group of the two.
+
+190965502_0b9ed331d9.jpg  [joyful]  
+   with image: A wave of people walks across the open sand, taking in the open air.
+   blanked   : (3)
+
+A few years ago, the first time the group of the two-hits.
+
+The last time I was there.
+
+1977827746_4e13d7e19f.jpg  [joyful]  
+   with image: Two little girls sit together in the sunny park, enjoying the sunny afternoon sunshine.
+   blanked   : (3)
+
+A few years ago, the first time the group of the two-hits.
+
+The last time I was there.

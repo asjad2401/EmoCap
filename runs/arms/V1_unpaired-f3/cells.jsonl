@@ -1,858 +1,858 @@
-{"image_id": "2423856014_8df0e7f656.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "824782868_a8f532f3a6.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3517127930_5dbddb45f6.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3067885047_f69d90c35b.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "2599444370_9e40103027.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3613027188_1645ca1976.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3758787457_1a903ee1e9.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3349451628_4249a21c8f.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3262760716_1e9734f5ba.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "290019324_23582048d4.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "862187579_9faf4a51e0.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2814406547_a237ef0122.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3594029059_cee1f4c59a.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "370614351_98b8a166b9.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2340206885_58754a799a.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "1479124077_17dcc0d5d7.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3453284877_8866189055.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "1131804997_177c3c0640.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "241347150_5ff37818c2.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "1463732807_0cdf4f22c7.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "502671104_b2114246c7.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2187222896_c206d63396.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "2358554995_54ed3baa83.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "247097023_e656d5854d.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "2777021428_0b2ac3e987.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3236677456_75821e3583.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "427936315_0b8f7b8d23.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "214543992_ce6c0d9f9b.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3533660418_f3a73a257c.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "2817230861_d27341dec0.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2460159430_71ab1aacfa.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3373069977_bc73e9e409.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2524003134_580e74328b.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2263655670_517890f5b7.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "369360998_ba56fb436f.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "373394550_1b2296b8c4.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2991994415_504d1c0a03.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "2396691909_6b8c2f7c44.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "470887791_86d5a08a38.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2895403073_906768cafa.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "181415975_2627aa6668.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "488352274_9a22064cb3.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "1808370027_2088394eb4.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "1688699579_2f72328c7e.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2934573544_7ffe92a2c9.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3281078518_630a7a7f4f.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2944193661_7b255af9cc.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3625049113_554d82c2a1.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2861100960_457ceda7fa.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3336682980_1082a66878.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2597737483_6518a230e4.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3590647207_2d4ec3f52c.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3119913014_688d4997d7.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3560081723_62da0035bd.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3647170476_0fd71a4c9f.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3352199368_b35f25793e.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2635400219_2e1a984fd3.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "515335111_c4afd5b903.jpg", "emotion": "tense", "correct": 1}
-{"image_id": "2642475077_69d19deb74.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3190677999_60bbd330fd.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2574230252_f5a1382dd4.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "961611340_251081fcb8.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "300577374_bfccb0430b.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2555622234_3e531e4014.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "276699720_fe6718fd03.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2800990525_a1f8427272.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "36422830_55c844bc2d.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3669564923_8fcb1a6eff.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2180480870_dcaf5ac0df.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "211295363_49010ca38d.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3457210101_3533edebc8.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2600386812_8790879d9a.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "125319704_49ead3463c.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2266144051_614b2d62b0.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3150440350_b0f2a9e774.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3765374230_cb1bbee0cb.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "543603259_ef26d9c72d.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3431860810_44277cd360.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2422302286_385725e3cf.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "242109387_e497277e07.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2826769554_85c90864c9.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3295671644_0e10891b6d.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2937497894_e3664a9513.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2519812011_f85c3b5cb5.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "2203286182_b453e9d176.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2774362575_7543b8bf19.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2712974062_6d5b6aa7f0.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3690883532_d883f34617.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2891961886_b7a2f0b0fd.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3525453732_f74a38f111.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3486154327_8be7c78569.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3550255426_4ab03c0d6e.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3364258732_9942c557e5.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2684489465_32ba1d0344.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2847514745_9a35493023.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2170222061_e8bce4a32d.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3455920874_6fbec43194.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "254901702_67ada9867c.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3396043950_12783c5147.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3245266444_2e798096e6.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2855667597_bf6ceaef8e.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2986671935_0c60bbb3fa.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "358607894_5abb1250d3.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3040033126_9f4b88261b.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "236095034_c983bdfbbf.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2985439112_8a3b77d5c9.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "684255145_db3f8e3e46.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3567214106_6ece483f8b.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3207654194_43d6bebd68.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3486538055_bcf4d3dfda.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "525863257_053333e612.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "300371487_daec5d11ab.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3569284680_44fef444ef.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3183195653_11b66acb34.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3558251719_3af5ae2d02.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2934022873_3fdd69aee4.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "2878272032_fda05ffac7.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2238166082_140f8b01b8.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2162564553_96de62c7e6.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2508249781_36e9282423.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3643684688_2f7157b23d.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3239866450_3f8cfb0c83.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "2473689180_e9d8fd656a.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3542771548_fcb8fa0cba.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3508522093_51f6d77f45.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3632842482_482f29e712.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2426724282_237bca30b5.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3335370208_460fc19bfa.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2578161080_e007c9177a.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2384728877_48c85d58af.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3354414391_a3908bd4ff.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3002920707_5d2e6e6aac.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3524436870_7670df68e8.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3130093622_362f32f2bb.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "289860281_94d699f36d.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "1304100320_c8990a1539.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2372572028_53b76104a9.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3254645823_a7c072481c.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "1414779054_31946f9dfc.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3335773346_ac0d97efeb.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3399906919_bc8562b257.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "3475111806_f0d2927707.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3381584882_341ee3092f.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3088572348_264c47f78c.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "2460126267_0deea8b645.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2596474836_79468f23a0.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "350529848_9569a3bcbc.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "446291803_2fd4641b99.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "424506167_01f365726b.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "2873648844_8efc7d78f1.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3595216998_0a19efebd0.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "3278581900_8ce75a5332.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3630332976_fdba22c50b.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "1659358133_95cd1027bd.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2191329761_3effd856c5.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2894850774_2d530040a1.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "292780636_72e1968949.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3231575742_31732664cf.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3145967019_1a83ebf712.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3661239105_973f8216c4.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3721082512_8277087f3f.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3271084924_4778d556cc.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3155361712_2cbf59c78e.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "142802798_962a4ec5ce.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "1525153022_06c48dbe52.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2893515010_4a3d9dcc67.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2604305843_ebe3e8a328.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "613900608_2e49415772.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "1105959054_9c3a738096.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "278002947_3fd22a2cb6.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3344411431_6f4917bb2f.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3251906388_c09d44340e.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3175446111_681a89f873.jpg", "emotion": "tense", "correct": 1}
-{"image_id": "3256275785_9c3af57576.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3122497129_d08f5729b8.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3666169738_a8c74cf745.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3662909101_21b9e59a3e.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3079917032_3cfacb2fd7.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "512306469_1392697d32.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2431723485_bc6b8e6418.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3318995586_c2bc50b92e.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2394919002_ed7527ff93.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "2992999413_018f48aabc.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2907073768_08fd7bdf60.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "260392825_ea61660633.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2891185857_54942809cf.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "247704641_d883902277.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3304030264_da3dd18c7b.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "330325191_63e11d9c93.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3474985382_26e1560338.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2911919938_6bb6587a36.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2125216241_5b265a2fbc.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "2204777844_1bcf26bf84.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "400851260_5911898657.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3162289423_4ca8915d0c.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "1082252566_8c79beef93.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2552949275_b8cdc450cc.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3105315670_5f86f73753.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3556598205_86c180769d.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3606909929_90a1a072b7.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3550459890_161f436c8d.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2646046871_c3a5dbb971.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "368212336_bc19b0bb72.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "1370615506_2b96105ca3.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3360930596_1e75164ce6.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3541491057_61a49588d9.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3303797949_339bb969ba.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "269630255_c3ec75c792.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3375549004_beee810e60.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3606093421_eddd46c2c7.jpg", "emotion": "humorous", "correct": 1}
-{"image_id": "3691800116_6a7b315e46.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2284894733_b710b9b106.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "172092461_a9a9762e13.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2971431335_e192613db4.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2561334141_0aacefa5e7.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3362592729_893e26b806.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3134585858_a8c3493ca5.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3497224764_6e17544e0d.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3401647850_685c03ffff.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2379150102_157d718d1d.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3155501473_510f9c9f6b.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3126981064_1e803c3d7f.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "446514680_ff5ca15ece.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2836703077_fa9c736203.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2810412010_f8b3bc1207.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2480668859_6f9b46be6a.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "240583223_e26e17ee96.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "2988439935_7cea05bc48.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "397725001_e51f7c391c.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "2561481438_447b852e4d.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3562169000_6aa7f1043d.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3665569615_9a71c4b6e4.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3276895962_c053263d01.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "318667317_108c402140.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "1245022983_fb329886dd.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2165461920_1a4144eb2b.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2918769188_565dd48060.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "535529555_583d89b7f2.jpg", "emotion": "tense", "correct": 1}
-{"image_id": "3503544012_1771be9d3a.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2192333873_2a0cbe849d.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "772403830_08b72c7da9.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "3590557969_d0270d518b.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3056530884_27766059bc.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "279550225_d64d56158a.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3416460533_d5819fbf69.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2701603045_6cbdc4ce7c.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "317641829_ab2607a6c0.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "412056525_191724b058.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2330843604_b8d75d6ac7.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "233242340_09963100a3.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3587449716_3bf1552c36.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3535084928_858544f49a.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3073579130_7c95d16a7f.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3231237864_8cb1c6d863.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3728164558_52729baefa.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2648165716_02e2e74fd6.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "245895500_a4eb97af02.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3601508034_5a3bfc905e.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2109479807_eec8d72ca7.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3380072636_4cd59385fd.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3304712466_18cbdb85fe.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2328616978_fb21be2b87.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2366643786_9c9a830db8.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3177799416_5bd0382370.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3245070961_8977fdd548.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3025513877_1a6160070d.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "323657582_b6b6d8f7bd.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3713133789_f05e8daffd.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3585487286_ef9a8d4c56.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "1397887419_e798697b93.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3134387513_ceb75bea0a.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2702506716_17a7fb3ba4.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "1771490732_0ab5f029ac.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "1130017585_1a219257ac.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "2838085973_42b6e9b5b1.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2389107995_ec756f3514.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "378170167_9b5119d918.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3262793378_773b21ec19.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2874984466_1aafec2c9f.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3697456750_460aea7252.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3391924827_53b31542ce.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "2789648482_1df61f224a.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "2206594874_5e0087c6b7.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2629027962_9cc3b46527.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "254475194_3d8f4dfd53.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2671602981_4edde92658.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "482047956_9a29e9cee6.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3405100926_e96308ce89.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "370442541_60d93ecd13.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "466956209_2ffcea3941.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "506478284_7cf8bdbe36.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2813588204_69fe7deb14.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "1298295313_db1f4c6522.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "1576185717_f841ddc3da.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "326456451_effadbbe49.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3366904106_e996320d20.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "251958970_fa6b423f23.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2249865945_f432c8e5da.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3289817083_4e78e1c05a.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "539801139_7258ee437f.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "161669933_3e7d8c7e2c.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "3209966887_5b744bd050.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3341077091_7ca0833373.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "1772859261_236c09b861.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "1394396709_65040d97ab.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3553374585_25b1bd6970.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "3576259024_9c05b163aa.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2102360862_264452db8e.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2471447879_6554cefb16.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3192311620_99bda27fbd.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "12830823_87d2654e31.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2565657591_6c1cdfc092.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "235074044_c1358888ed.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "478750151_e0adb5030a.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3587781729_bd21ce7b11.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "397286183_745abbf40d.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2860041212_797afd6ccf.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "2813784259_d201044d71.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3172369593_eb4d787ffb.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3159424456_f316bdc1d5.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "1236951314_0308dc4138.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "1784309115_0ad6791146.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3231751379_10ebf7150c.jpg", "emotion": "tense", "correct": 1}
-{"image_id": "2105756457_a100d8434e.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3411579899_0f8ed09142.jpg", "emotion": "humorous", "correct": 1}
-{"image_id": "2832978253_8fcc72da3b.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "2252264255_03fefc25af.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2251747182_6b67a3ab8b.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2735979477_eef7c680f9.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3203742047_6a55065411.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "1491192153_7c395991e5.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3468694409_a51571d621.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "524698457_77ba13840a.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2586911841_41b7a48c91.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "1107246521_d16a476380.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "1313693129_71d0b21c63.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3355683198_715fb1a2ac.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "252504549_135b0db5a3.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2220185725_45d4fa68d9.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3652572138_34d6b72999.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "101669240_b2d3e7f17b.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "3263141261_db3a4798b5.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3542418447_7c337360d6.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2806632713_edd6f6c893.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2768662025_44001fe5d1.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3419197575_aa5b84a9f0.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "309771854_952aabe3cc.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "524360969_472a7152f0.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3710073758_ac2b217f29.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2618322793_5fb164d86a.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3282121432_648dac8a29.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "210126070_0d43b300b9.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3294209955_a1f1e2cc19.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3534183988_3763593dfb.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3695064885_a6922f06b2.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2759596272_e0ce0a965a.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2528552898_9e49a7033f.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "632608471_a70461f123.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3499720588_c32590108e.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3455757720_7aeba57056.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3185695861_86152b2755.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3139160252_75109e9e05.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2844641033_dab3715a99.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3471463779_64084b686c.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3431194126_ca78f5fde6.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2872806249_00bea3c4e7.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "1167669558_87a8a467d6.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "353180303_6a24179c50.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3116039960_54d1d68145.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "1334892555_1beff092c3.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3564738125_10400f69c0.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3561639055_5ac66ae92f.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "1561658940_a947f2446a.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "98377566_e4674d1ebd.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "2041867793_552819a40b.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3204081508_0e7f408097.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3257277774_aba333a94c.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3666056567_661e25f54c.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "1679557684_50a206e4a9.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "2589241160_3832440850.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3613005134_bb7f304da1.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2594459477_8ca0121a9a.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3241726740_6d256d61ec.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "423066487_07757b2b49.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3017656907_c3b137e070.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3504881781_6a842e043b.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "263854883_0f320c1562.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3458577912_67db47209d.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "493109089_468e105233.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "700884207_d3ec546494.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "1075881101_d55c46bece.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3584406900_039f30b34c.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "381052465_722e00807b.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3289893683_d4cc3ce208.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "297285273_688e44c014.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "430964917_022995afb6.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2929405404_1dff5ab847.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "1332823164_c70a5d930e.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3723903586_e98d3d8ec7.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2301379282_5fbcf230d1.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "1428578577_82864facae.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "3636632926_09f39f2629.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3568605391_54ec367d88.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2756765580_9e57e10f0d.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2561319255_ce5ede291e.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2490179961_e842fda5eb.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2858439751_daa3a30ab8.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "2717686269_80c4b5ac9e.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3217266166_4e0091860b.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "530661899_94655d7d0e.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2452238877_2340609c6e.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "1805990081_da9cefe3a5.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2921430836_3b4d062238.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "724702877_f2a938766b.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3430287726_94a1825bbf.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "560278886_df4bd2e212.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2998504949_1022fec53b.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "2403078014_4b1d6f8bde.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2857372127_d86639002c.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3717809376_f97611ab84.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3558683579_8fb36b55a6.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "3051341320_1d0166e775.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3579842996_3a62ec1bc7.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "1022454332_6af2c1449a.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "2742426734_291df6da08.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2995461857_dd26188dcf.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3398788809_25c71ba018.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "358875403_f357f03713.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2449552677_ee78f01bae.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3372022051_132b8e6233.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "241345522_c3c266a02a.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2750832671_4b39f06acf.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "2137789511_69a6c6afa8.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3375534917_62350bd06b.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "476759700_8911f087f8.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3306212559_731ba9bd05.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "539493431_744eb1abaa.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2873188959_ff023defa9.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3562903245_85071bb5f9.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2149968397_a7411729d1.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "502115726_927dd684d3.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2201222219_8d656b0633.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2663794355_e726ec7e05.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "753578547_912d2b4048.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "2414397449_2ac3b78e0d.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2785115802_137fa30000.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "673806038_0a3682a83f.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "278388986_78ba84eb8f.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3102363657_dc95fe6850.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2321466753_5606a10721.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2286236765_2a63eeb550.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3646970605_d25c25340b.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "278105206_df987b0ca0.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3482668767_66004ce736.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2836553263_b1a08c25ea.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3177298173_78cea31d64.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2908466042_bf07cb52c7.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3588417747_b152a51c52.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "1389264266_8170bc1c54.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "2370481277_a3085614c9.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3569329986_1f468729b2.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3702038926_966fdaa311.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "1415591512_a84644750c.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3517040752_debec03376.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3132619510_7dfc947d25.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3453019315_cfd5c10dae.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3207264553_8cd4dcde53.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3174228611_6cf9d2266b.jpg", "emotion": "tense", "correct": 1}
-{"image_id": "356143774_ef3e93eede.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2426781076_e3f4d2685c.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3363836972_c87b58c948.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "837919879_94e3dacd83.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "200771289_31902164a7.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3254640083_eb34b8edfe.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3040575300_0e4328d205.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2318721455_80c6644441.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2511762757_bd0ab0a017.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "957230475_48f4285ffe.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "973827791_467d83986e.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3442272060_f9155194c2.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2391812384_7429b5e567.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "688940111_325a74674a.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "852469220_bc0fee3623.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "443885436_6e927e6c58.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2524084967_a5e011b73d.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "124972799_de706b6d0b.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3615730936_23457575e9.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "566794036_60f7acdf35.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "408573233_1fff966798.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2884420269_225d27f242.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3577309234_c952c2af86.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2632381125_de32bdfdf6.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "2565237642_bdd46d7cef.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3231596071_f0c522a639.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3019986034_7453777274.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3666574371_317b008d2a.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "1148238960_f8cacec2fc.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2040941056_7f5fd50794.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2084103826_ffd76b1e3e.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3560726559_4c4bed9f2d.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "880220939_0ef1c37f1f.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3572346664_e1e6c77f11.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "537222436_ab406234ce.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3430607596_7e4f74e3ff.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2259336826_0cb294e1f7.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3437273677_47d4462974.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3303648823_53cf750acd.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2222186636_85e03e0b75.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2938120171_970564e3d8.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "2837799692_2f1c50722a.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3032790880_d216197d55.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "2704362232_7d84503433.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3336759846_5220e27deb.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3036596725_541bbe0955.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "1813777902_07d1d4b00c.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "256085101_2c2617c5d0.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2294688426_96c8614f1d.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3376439178_159e4126de.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2606433181_f8f9d38579.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "333031366_a0828c540d.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2694178830_116be6a6a9.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3350785999_462f333c44.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "417966898_a04f9b5349.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3450776690_38605c667d.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3050606344_af711c726c.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3164328039_2c56acf594.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "2522230304_1581d52961.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3287969199_08e775d896.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2745663684_650f84e1e6.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3205214191_29b42b9b09.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "1034276567_49bb87c51c.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "251056963_c8b67f0107.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2368266191_87d77750f1.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "210839948_bbd5bfa3b6.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "315880837_90db309bab.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3653484549_f316590b0f.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "2206403470_8c25aa3cf8.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "1798215547_ef7ad95be8.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3265527323_6431f00692.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2755362721_368cbde668.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "1355703632_5683a4b6fb.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "523327429_af093fc7cf.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2715155329_1ed1756000.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2472980433_210ec62874.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3398746625_5199beea71.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2068403258_2669cf9763.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2125626631_a4b63af97e.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3644941648_012ec87848.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2244551043_21b8cca866.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3531811969_49af4c22f0.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2274602044_b3d55df235.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2390369143_6523253a73.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "2419186511_f0ce5f9685.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3249014584_21dd9ddd9d.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2565618804_8d7ed87389.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3053415073_5b667230ed.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "2607130765_97833d6ce1.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "44129946_9eeb385d77.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3504275465_604ce2ef34.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2838125339_3dd314e315.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "608257195_6ec6f48e37.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3482879314_d3387e95b1.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3247052319_da8aba1983.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "1193116658_c0161c35b5.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2928835996_88b9f9503d.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3173461705_b5cdeef1eb.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2257631407_1529b9db39.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2501968935_02f2cd8079.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3587009091_37188fd07e.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3550253365_27d4c303cf.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3212456649_40a3052682.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3328646934_5cca4cebce.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "2498897831_0bbb5d5b51.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3485657956_7481582565.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "1227655020_b11a1bb112.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3697003897_d8ac13be9a.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3042405316_ba3a01926b.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "2676937700_456134c7b5.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "1434607942_da5432c28c.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3126724531_f483e1b92a.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3353036763_4cbeba03b2.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2304374703_555195d8d5.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2733659177_d74a00995b.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3185662156_c877583c53.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3156991513_3bf03333d8.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2649406158_ded6be38de.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2677656448_6b7e7702af.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3025546819_ce031d2fc3.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2261169495_98254e2e66.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2924870944_90ff9eca1a.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3323528927_7b21081271.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2335619125_2e2034f2c3.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "701816897_221bbe761a.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "405331006_4e94e07698.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3090398639_68c0dfa9a5.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3697379772_40d831392b.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3652764505_87139e71f8.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "2780105274_52360c4cca.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2593406865_ab98490c1f.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3729525173_7f984ed776.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2976684095_ce7ccfd423.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2685139184_4ff45e0f76.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "374104006_7f32c8c5de.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3444982197_0ff15cc50b.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2087317114_cf06df5aa5.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2248487950_c62d0c81a9.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "1352410176_af6b139734.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "379006645_b9a2886b51.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2282895743_f803f1cf01.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2607383384_d9ce9de793.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2676648667_cb055b4fc6.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3423802527_94bd2b23b0.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3637013_c675de7705.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3675825945_96b2916959.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3268443910_b36dbc1e5c.jpg", "emotion": "humorous", "correct": 1}
-{"image_id": "2603690144_7a28b1d13c.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3116985493_04b1dc3345.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3188319076_71724fcc07.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2303426046_09cfd7bc4e.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3456579559_b5c8927938.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2960033435_c20cc7399a.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3619232550_0b1e1fd4e4.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "824923476_d85edce294.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "241347300_7c84ecf764.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2723477522_d89f5ac62b.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "444872454_9f51e07f88.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2833820456_143ea6ce47.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2774430374_fee1d793e7.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "111766423_4522d36e56.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "946051430_8db7e4ce09.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "772212710_f5fc22ed35.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2333288869_8c01e4c859.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3258394043_a0b6a94dce.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "244368383_e90b6b2f20.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "2256320794_0286c31bfa.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3170802797_3c851bb475.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "210686241_b8e069fff3.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3701226275_952547ba0f.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2477623312_58e8e8c8af.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "2265367960_7928c5642f.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2967549094_d32422eb01.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "421706022_1ddb6a7a78.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3551170666_01df31412d.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2845691057_d4ab89d889.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2467850190_07a74d89b7.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "535309053_ec737abde8.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2938747424_64e64784f0.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3465473743_7da0c5d973.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "436608339_f1d1298770.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "454709143_9c513f095c.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3490736665_38710f4b91.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3501386648_e11e3f3152.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2255266906_8222af18b9.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3356700488_183566145b.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "263231469_e85c74f5fd.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "1342766791_1e72f92455.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2573667207_a1bf49befc.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3227148358_f152303584.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "1466479163_439db855af.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "488089932_c3a5fa4140.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3229442620_fd47d01b59.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "1859726819_9a793b3b44.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "2640000969_b5404a5143.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2109911919_af45b93ef3.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3556485995_9cd40269e9.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3050264832_4215f2b398.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "424416723_19c56cb365.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2708634088_a4686be24c.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2682382530_f9f8fd1e89.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3030793171_55cd646eed.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3166366760_e43cf66eda.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2913972180_547783dd3d.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "447733067_09cfac3286.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2533010184_ef2fd71297.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "2756591658_3ca6db1595.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3426724811_137855b4f7.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "688210930_85c5675d5b.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "2246717855_c0c08fe5d2.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2999638340_75bc8b165d.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2249141510_f534708374.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3168123064_d1983b8f92.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3416339125_0860d3d1eb.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "2947452329_08f2d2a467.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2272491304_cb7c7ed16f.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2939475047_84585ea45c.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2653552905_4301449235.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2330536645_2d36b516e1.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3417102649_5c0b2f4b4d.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2224450291_4c133fabe8.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "289616152_012a9f16c6.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3333017828_b930b9d41b.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "282960970_574aa1ba49.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "505944126_f9a6ab8944.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2286239223_d84ffc4e4a.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "1394368714_3bc7c19969.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2604825598_593a825b5b.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2860400846_2c1026a573.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3375134059_7e9eb2ef01.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3108732084_565b423162.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3597326009_3678a98a43.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3459419203_cd7c68ce4d.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2162469360_ff777edc95.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2021602343_03023e1fd1.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "284279868_2ca98e3dcd.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3246773992_89bf86937b.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "189740668_0b045f1ff2.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3244171699_ace4b5d999.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "1419385780_1383ec7ba9.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3439982121_0afc6d5973.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3054200086_657d4398e8.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2059616165_b7c99c1009.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3634032601_2236676cdd.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3599568766_9e96def0ef.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "617038406_4092ee91dd.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "2185793891_5a5e903ca6.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2458862292_466a920ee2.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2352414953_10f3cd0f1f.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "112178718_87270d9b4d.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2102732029_9ae520914d.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3273325447_81c94000da.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2883099128_0b056eed9e.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3647283075_3005333222.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3696698390_989f1488e7.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3086523890_fd9394af8b.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3248352729_ab264b2222.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2839038702_e168128665.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3286543624_7a327f79ae.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3541962817_78bcd3835b.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3472449219_eb927f05b8.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3215695965_69fbeba3d5.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2107837987_ffecfc367a.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "799486353_f665d7b0f0.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "357191373_a1cb5696e8.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "501699433_f8df386cf9.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3404978479_8a81843e17.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3532192208_64b069d05d.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "1439282131_3814d6ae04.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3359089834_263e529c71.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3354489242_dd529ffa1f.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3430526230_234b3550f6.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2286032269_8ba929709c.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2782433864_5a0c311d87.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "2337757064_08c4033824.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3101378069_f8caa14c0a.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "1802092493_7b44fdb6b9.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2831313661_1a328acb70.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "661757041_61e131e913.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3183777589_460a4f445b.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3351667632_00f586a30c.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3396275223_ee080df8b5.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "134894450_dadea45d65.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3451984463_37ac1ff7a8.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3364796213_b8948913b5.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "684375286_09cc1aa778.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "437404867_209625774d.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2527303359_6c3dc3f282.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "1428641354_f7453afbea.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2398605966_1d0c9e6a20.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2682194299_92005b26c6.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "2873431806_86a56cdae8.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3256456935_664a7a5bba.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2868776402_aef437e493.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3209620285_edfc479392.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3432637363_3ba357e2da.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3391209042_d2de8a8978.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2699125097_c6801d80ed.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3520922312_e58a6cfd9c.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3576840040_9356b5b10a.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2451285022_59255e7fd9.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "1404832008_68e432665b.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3485425825_c2f3446e73.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "472661386_723aae880b.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3044745642_1d0784ff29.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3494394662_3edfd4a34c.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3679341667_936769fd0c.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2528547068_7d37479b9b.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "3678100844_e3a9802471.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3449718979_e987c64e2d.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3103231330_db98b14501.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3611603026_9112b0c53f.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "406248253_27b5eba25a.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3099694681_19a72c8bdc.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "262681159_e5fed3acf0.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "618292739_0fdc2ccab0.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2144050118_3e7d2e05b1.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "300922408_05a4f9938c.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3436063693_15c8d377a2.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3054989420_3e755ca352.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3180806542_49b6de312d.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3025495499_b15797b452.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2268115375_69884e958d.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3543294190_0037c59607.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2867736861_43c9487a65.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2337809114_899ba61330.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3654338683_13b2f95a9a.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "1019604187_d087bf9a5f.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2644920808_f5a214b744.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3029472296_d429b1586c.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "233270519_d60d4518fa.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3673165148_67f217064f.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3271178748_630d269811.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "1765164972_92dac06fa9.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "374103776_0de490c1b0.jpg", "emotion": "tense", "correct": 1}
-{"image_id": "1597319381_1e80d9e39c.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3631136463_53ff624b82.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3108197858_441ff38565.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "1096395242_fc69f0ae5a.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "3292277400_f95cdd13d1.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3523819210_99782628fc.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "505929313_7668f021ab.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "1925434818_2949a8f6d8.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "219301555_17883a51bd.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "241346352_c5a0ea43c6.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2868136205_3cf679208d.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3443351431_7b4061df5c.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "482882307_7dcb9eee11.jpg", "emotion": "joyful", "correct": 1}
-{"image_id": "1332492622_8c66992b62.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "54501196_a9ac9d66f2.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3258472448_75cfab5e6f.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "2901074943_041aba4607.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3170856184_efabfd0297.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "380527679_574749123d.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2192411521_9c7e488c5e.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3302804312_0272091cd5.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "3459858555_c3f0087a72.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3106791484_13e18c33d8.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "1262454669_f1caafec2d.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2484190118_e89363c465.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3413019648_e787f0cb88.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "2067362863_59577f9d4d.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3544483327_830349e7bc.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3242919570_39a05aa2ee.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "2521938720_911ac092f7.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3286111436_891ae7dab9.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3243588540_b418ac7eda.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3339768802_8ab768558a.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3467843559_a457ce37b6.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "2724485630_7d2452df00.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2445654384_4ee3e486e1.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3240558825_cd859d6230.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2860035355_3fe7a5caa4.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "3188036349_8e4e2d6ca8.jpg", "emotion": "sad", "correct": 0}
-{"image_id": "765091078_a8a11c6f9e.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2378149488_648e5deeac.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "2282522980_45cfa8e0cf.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2831846986_5534425cfa.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "523692399_d2e261a302.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3159995270_17334ccb5b.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "2994179598_a45c2732b5.jpg", "emotion": "romantic", "correct": 0}
-{"image_id": "3261666285_86fceb762d.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "3628059004_5c3529b120.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2522540026_6ee8ab4c6a.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3343116398_59a5341f7f.jpg", "emotion": "tense", "correct": 0}
-{"image_id": "3636126441_5617c89aaa.jpg", "emotion": "romantic", "correct": 1}
-{"image_id": "405051459_3b3a3ba5b3.jpg", "emotion": "humorous", "correct": 0}
-{"image_id": "2181117039_c4eea8036e.jpg", "emotion": "joyful", "correct": 0}
-{"image_id": "2960759328_2d31e4af9b.jpg", "emotion": "sad", "correct": 1}
-{"image_id": "3582048078_7bac2d8473.jpg", "emotion": "tense", "correct": 0}
+{"image_id": "2423856014_8df0e7f656.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "824782868_a8f532f3a6.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0833}
+{"image_id": "3517127930_5dbddb45f6.jpg", "emotion": "tense", "correct": 0, "anchor": 0.4444}
+{"image_id": "3067885047_f69d90c35b.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.6667}
+{"image_id": "2599444370_9e40103027.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.3333}
+{"image_id": "3613027188_1645ca1976.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.4444}
+{"image_id": "3758787457_1a903ee1e9.jpg", "emotion": "sad", "correct": 1, "anchor": 0.5}
+{"image_id": "3349451628_4249a21c8f.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "3262760716_1e9734f5ba.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.3333}
+{"image_id": "290019324_23582048d4.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.2}
+{"image_id": "862187579_9faf4a51e0.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2814406547_a237ef0122.jpg", "emotion": "sad", "correct": 0, "anchor": 0.8333}
+{"image_id": "3594029059_cee1f4c59a.jpg", "emotion": "tense", "correct": 0, "anchor": 0.6111}
+{"image_id": "370614351_98b8a166b9.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.6667}
+{"image_id": "2340206885_58754a799a.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1111}
+{"image_id": "1479124077_17dcc0d5d7.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "3453284877_8866189055.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "1131804997_177c3c0640.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "241347150_5ff37818c2.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.6667}
+{"image_id": "1463732807_0cdf4f22c7.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.8333}
+{"image_id": "502671104_b2114246c7.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2187222896_c206d63396.jpg", "emotion": "sad", "correct": 1, "anchor": 1.0}
+{"image_id": "2358554995_54ed3baa83.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "247097023_e656d5854d.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.2778}
+{"image_id": "2777021428_0b2ac3e987.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3236677456_75821e3583.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "427936315_0b8f7b8d23.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0667}
+{"image_id": "214543992_ce6c0d9f9b.jpg", "emotion": "tense", "correct": 0, "anchor": 0.8333}
+{"image_id": "3533660418_f3a73a257c.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.1111}
+{"image_id": "2817230861_d27341dec0.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2460159430_71ab1aacfa.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "3373069977_bc73e9e409.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "2524003134_580e74328b.jpg", "emotion": "tense", "correct": 0, "anchor": 0.3333}
+{"image_id": "2263655670_517890f5b7.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.1667}
+{"image_id": "369360998_ba56fb436f.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1667}
+{"image_id": "373394550_1b2296b8c4.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2991994415_504d1c0a03.jpg", "emotion": "sad", "correct": 1, "anchor": 0.4444}
+{"image_id": "2396691909_6b8c2f7c44.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0667}
+{"image_id": "470887791_86d5a08a38.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.5556}
+{"image_id": "2895403073_906768cafa.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1111}
+{"image_id": "181415975_2627aa6668.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.0667}
+{"image_id": "488352274_9a22064cb3.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "1808370027_2088394eb4.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "1688699579_2f72328c7e.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "2934573544_7ffe92a2c9.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3281078518_630a7a7f4f.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2944193661_7b255af9cc.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "3625049113_554d82c2a1.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "2861100960_457ceda7fa.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.7778}
+{"image_id": "3336682980_1082a66878.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2597737483_6518a230e4.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.2778}
+{"image_id": "3590647207_2d4ec3f52c.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "3119913014_688d4997d7.jpg", "emotion": "tense", "correct": 0, "anchor": 0.8333}
+{"image_id": "3560081723_62da0035bd.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.2778}
+{"image_id": "3647170476_0fd71a4c9f.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1333}
+{"image_id": "3352199368_b35f25793e.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.1667}
+{"image_id": "2635400219_2e1a984fd3.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "515335111_c4afd5b903.jpg", "emotion": "tense", "correct": 1, "anchor": 0.0}
+{"image_id": "2642475077_69d19deb74.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.5}
+{"image_id": "3190677999_60bbd330fd.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1667}
+{"image_id": "2574230252_f5a1382dd4.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.1111}
+{"image_id": "961611340_251081fcb8.jpg", "emotion": "sad", "correct": 0, "anchor": 1.0}
+{"image_id": "300577374_bfccb0430b.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "2555622234_3e531e4014.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "276699720_fe6718fd03.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2800990525_a1f8427272.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.2222}
+{"image_id": "36422830_55c844bc2d.jpg", "emotion": "sad", "correct": 1, "anchor": 0.5}
+{"image_id": "3669564923_8fcb1a6eff.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "2180480870_dcaf5ac0df.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.1333}
+{"image_id": "211295363_49010ca38d.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.2}
+{"image_id": "3457210101_3533edebc8.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2600386812_8790879d9a.jpg", "emotion": "sad", "correct": 0, "anchor": 0.7778}
+{"image_id": "125319704_49ead3463c.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "2266144051_614b2d62b0.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.8333}
+{"image_id": "3150440350_b0f2a9e774.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.6111}
+{"image_id": "3765374230_cb1bbee0cb.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "543603259_ef26d9c72d.jpg", "emotion": "sad", "correct": 0, "anchor": 0.3333}
+{"image_id": "3431860810_44277cd360.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "2422302286_385725e3cf.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.1667}
+{"image_id": "242109387_e497277e07.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2826769554_85c90864c9.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "3295671644_0e10891b6d.jpg", "emotion": "sad", "correct": 0, "anchor": 0.7333}
+{"image_id": "2937497894_e3664a9513.jpg", "emotion": "tense", "correct": 0, "anchor": 0.4}
+{"image_id": "2519812011_f85c3b5cb5.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.2778}
+{"image_id": "2203286182_b453e9d176.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0667}
+{"image_id": "2774362575_7543b8bf19.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0667}
+{"image_id": "2712974062_6d5b6aa7f0.jpg", "emotion": "sad", "correct": 1, "anchor": 0.5}
+{"image_id": "3690883532_d883f34617.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "2891961886_b7a2f0b0fd.jpg", "emotion": "romantic", "correct": 1, "anchor": 1.0}
+{"image_id": "3525453732_f74a38f111.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3486154327_8be7c78569.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.7778}
+{"image_id": "3550255426_4ab03c0d6e.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "3364258732_9942c557e5.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "2684489465_32ba1d0344.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0667}
+{"image_id": "2847514745_9a35493023.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1111}
+{"image_id": "2170222061_e8bce4a32d.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.1333}
+{"image_id": "3455920874_6fbec43194.jpg", "emotion": "sad", "correct": 1, "anchor": 0.3333}
+{"image_id": "254901702_67ada9867c.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "3396043950_12783c5147.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.6111}
+{"image_id": "3245266444_2e798096e6.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2855667597_bf6ceaef8e.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2986671935_0c60bbb3fa.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "358607894_5abb1250d3.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "3040033126_9f4b88261b.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.1111}
+{"image_id": "236095034_c983bdfbbf.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2985439112_8a3b77d5c9.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "684255145_db3f8e3e46.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "3567214106_6ece483f8b.jpg", "emotion": "tense", "correct": 0, "anchor": 0.7333}
+{"image_id": "3207654194_43d6bebd68.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3486538055_bcf4d3dfda.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "525863257_053333e612.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.1667}
+{"image_id": "300371487_daec5d11ab.jpg", "emotion": "sad", "correct": 1, "anchor": 0.1111}
+{"image_id": "3569284680_44fef444ef.jpg", "emotion": "tense", "correct": 0, "anchor": 0.4667}
+{"image_id": "3183195653_11b66acb34.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.2222}
+{"image_id": "3558251719_3af5ae2d02.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2934022873_3fdd69aee4.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.1111}
+{"image_id": "2878272032_fda05ffac7.jpg", "emotion": "sad", "correct": 0, "anchor": 1.0}
+{"image_id": "2238166082_140f8b01b8.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "2162564553_96de62c7e6.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.6667}
+{"image_id": "2508249781_36e9282423.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3643684688_2f7157b23d.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.1667}
+{"image_id": "3239866450_3f8cfb0c83.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "2473689180_e9d8fd656a.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "3542771548_fcb8fa0cba.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.1667}
+{"image_id": "3508522093_51f6d77f45.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3632842482_482f29e712.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2426724282_237bca30b5.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "3335370208_460fc19bfa.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "2578161080_e007c9177a.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.3333}
+{"image_id": "2384728877_48c85d58af.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3354414391_a3908bd4ff.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "3002920707_5d2e6e6aac.jpg", "emotion": "sad", "correct": 1, "anchor": 0.5}
+{"image_id": "3524436870_7670df68e8.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "3130093622_362f32f2bb.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "289860281_94d699f36d.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "1304100320_c8990a1539.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.3333}
+{"image_id": "2372572028_53b76104a9.jpg", "emotion": "sad", "correct": 1, "anchor": 0.1667}
+{"image_id": "3254645823_a7c072481c.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "1414779054_31946f9dfc.jpg", "emotion": "romantic", "correct": 0, "anchor": 1.0}
+{"image_id": "3335773346_ac0d97efeb.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3399906919_bc8562b257.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.6111}
+{"image_id": "3475111806_f0d2927707.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "3381584882_341ee3092f.jpg", "emotion": "tense", "correct": 0, "anchor": 0.2222}
+{"image_id": "3088572348_264c47f78c.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.3333}
+{"image_id": "2460126267_0deea8b645.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2596474836_79468f23a0.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.6111}
+{"image_id": "350529848_9569a3bcbc.jpg", "emotion": "sad", "correct": 0, "anchor": 0.8333}
+{"image_id": "446291803_2fd4641b99.jpg", "emotion": "tense", "correct": 0, "anchor": 0.8333}
+{"image_id": "424506167_01f365726b.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.0667}
+{"image_id": "2873648844_8efc7d78f1.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3595216998_0a19efebd0.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.0}
+{"image_id": "3278581900_8ce75a5332.jpg", "emotion": "sad", "correct": 0, "anchor": 0.2}
+{"image_id": "3630332976_fdba22c50b.jpg", "emotion": "tense", "correct": 0, "anchor": 0.1333}
+{"image_id": "1659358133_95cd1027bd.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.7333}
+{"image_id": "2191329761_3effd856c5.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2894850774_2d530040a1.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "292780636_72e1968949.jpg", "emotion": "sad", "correct": 0, "anchor": 0.5}
+{"image_id": "3231575742_31732664cf.jpg", "emotion": "tense", "correct": 0, "anchor": 0.6667}
+{"image_id": "3145967019_1a83ebf712.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.4667}
+{"image_id": "3661239105_973f8216c4.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.3333}
+{"image_id": "3721082512_8277087f3f.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.4444}
+{"image_id": "3271084924_4778d556cc.jpg", "emotion": "sad", "correct": 0, "anchor": 0.1667}
+{"image_id": "3155361712_2cbf59c78e.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "142802798_962a4ec5ce.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "1525153022_06c48dbe52.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2893515010_4a3d9dcc67.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.6667}
+{"image_id": "2604305843_ebe3e8a328.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0833}
+{"image_id": "613900608_2e49415772.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "1105959054_9c3a738096.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "278002947_3fd22a2cb6.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0667}
+{"image_id": "3344411431_6f4917bb2f.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.2}
+{"image_id": "3251906388_c09d44340e.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "3175446111_681a89f873.jpg", "emotion": "tense", "correct": 1, "anchor": 0.3333}
+{"image_id": "3256275785_9c3af57576.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3122497129_d08f5729b8.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1667}
+{"image_id": "3666169738_a8c74cf745.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "3662909101_21b9e59a3e.jpg", "emotion": "sad", "correct": 0, "anchor": 0.7333}
+{"image_id": "3079917032_3cfacb2fd7.jpg", "emotion": "tense", "correct": 0, "anchor": 0.3333}
+{"image_id": "512306469_1392697d32.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "2431723485_bc6b8e6418.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3318995586_c2bc50b92e.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2394919002_ed7527ff93.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "2992999413_018f48aabc.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "2907073768_08fd7bdf60.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.6667}
+{"image_id": "260392825_ea61660633.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2891185857_54942809cf.jpg", "emotion": "joyful", "correct": 0, "anchor": 1.0}
+{"image_id": "247704641_d883902277.jpg", "emotion": "sad", "correct": 1, "anchor": 0.6667}
+{"image_id": "3304030264_da3dd18c7b.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "330325191_63e11d9c93.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.6667}
+{"image_id": "3474985382_26e1560338.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1111}
+{"image_id": "2911919938_6bb6587a36.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.8333}
+{"image_id": "2125216241_5b265a2fbc.jpg", "emotion": "sad", "correct": 1, "anchor": 0.1944}
+{"image_id": "2204777844_1bcf26bf84.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "400851260_5911898657.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.6667}
+{"image_id": "3162289423_4ca8915d0c.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "1082252566_8c79beef93.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0667}
+{"image_id": "2552949275_b8cdc450cc.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "3105315670_5f86f73753.jpg", "emotion": "tense", "correct": 0, "anchor": 0.4167}
+{"image_id": "3556598205_86c180769d.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3606909929_90a1a072b7.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3550459890_161f436c8d.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.1667}
+{"image_id": "2646046871_c3a5dbb971.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "368212336_bc19b0bb72.jpg", "emotion": "tense", "correct": 0, "anchor": 0.5}
+{"image_id": "1370615506_2b96105ca3.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.1667}
+{"image_id": "3360930596_1e75164ce6.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1111}
+{"image_id": "3541491057_61a49588d9.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.2889}
+{"image_id": "3303797949_339bb969ba.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "269630255_c3ec75c792.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "3375549004_beee810e60.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.4444}
+{"image_id": "3606093421_eddd46c2c7.jpg", "emotion": "humorous", "correct": 1, "anchor": 0.0}
+{"image_id": "3691800116_6a7b315e46.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2284894733_b710b9b106.jpg", "emotion": "sad", "correct": 0, "anchor": 1.0}
+{"image_id": "172092461_a9a9762e13.jpg", "emotion": "tense", "correct": 0, "anchor": 0.2222}
+{"image_id": "2971431335_e192613db4.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.1111}
+{"image_id": "2561334141_0aacefa5e7.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3362592729_893e26b806.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.8333}
+{"image_id": "3134585858_a8c3493ca5.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "3497224764_6e17544e0d.jpg", "emotion": "tense", "correct": 0, "anchor": 0.1667}
+{"image_id": "3401647850_685c03ffff.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "2379150102_157d718d1d.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.6667}
+{"image_id": "3155501473_510f9c9f6b.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "3126981064_1e803c3d7f.jpg", "emotion": "sad", "correct": 0, "anchor": 0.2}
+{"image_id": "446514680_ff5ca15ece.jpg", "emotion": "tense", "correct": 0, "anchor": 0.4}
+{"image_id": "2836703077_fa9c736203.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "2810412010_f8b3bc1207.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.7778}
+{"image_id": "2480668859_6f9b46be6a.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.6667}
+{"image_id": "240583223_e26e17ee96.jpg", "emotion": "sad", "correct": 1, "anchor": 0.1667}
+{"image_id": "2988439935_7cea05bc48.jpg", "emotion": "tense", "correct": 0, "anchor": 0.3333}
+{"image_id": "397725001_e51f7c391c.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.8333}
+{"image_id": "2561481438_447b852e4d.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1111}
+{"image_id": "3562169000_6aa7f1043d.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.2333}
+{"image_id": "3665569615_9a71c4b6e4.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "3276895962_c053263d01.jpg", "emotion": "tense", "correct": 0, "anchor": 0.7333}
+{"image_id": "318667317_108c402140.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.8333}
+{"image_id": "1245022983_fb329886dd.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2165461920_1a4144eb2b.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2918769188_565dd48060.jpg", "emotion": "sad", "correct": 0, "anchor": 0.3333}
+{"image_id": "535529555_583d89b7f2.jpg", "emotion": "tense", "correct": 1, "anchor": 0.4}
+{"image_id": "3503544012_1771be9d3a.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.7778}
+{"image_id": "2192333873_2a0cbe849d.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1111}
+{"image_id": "772403830_08b72c7da9.jpg", "emotion": "joyful", "correct": 1, "anchor": 1.0}
+{"image_id": "3590557969_d0270d518b.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "3056530884_27766059bc.jpg", "emotion": "tense", "correct": 0, "anchor": 0.2778}
+{"image_id": "279550225_d64d56158a.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.2}
+{"image_id": "3416460533_d5819fbf69.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2701603045_6cbdc4ce7c.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "317641829_ab2607a6c0.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "412056525_191724b058.jpg", "emotion": "tense", "correct": 0, "anchor": 0.1111}
+{"image_id": "2330843604_b8d75d6ac7.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "233242340_09963100a3.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3587449716_3bf1552c36.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "3535084928_858544f49a.jpg", "emotion": "sad", "correct": 0, "anchor": 0.5}
+{"image_id": "3073579130_7c95d16a7f.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "3231237864_8cb1c6d863.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3728164558_52729baefa.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2648165716_02e2e74fd6.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.2222}
+{"image_id": "245895500_a4eb97af02.jpg", "emotion": "sad", "correct": 1, "anchor": 0.2778}
+{"image_id": "3601508034_5a3bfc905e.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "2109479807_eec8d72ca7.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3380072636_4cd59385fd.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3304712466_18cbdb85fe.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.3333}
+{"image_id": "2328616978_fb21be2b87.jpg", "emotion": "sad", "correct": 0, "anchor": 0.1667}
+{"image_id": "2366643786_9c9a830db8.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0667}
+{"image_id": "3177799416_5bd0382370.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3245070961_8977fdd548.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3025513877_1a6160070d.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.0}
+{"image_id": "323657582_b6b6d8f7bd.jpg", "emotion": "sad", "correct": 1, "anchor": 1.0}
+{"image_id": "3713133789_f05e8daffd.jpg", "emotion": "tense", "correct": 0, "anchor": 0.8333}
+{"image_id": "3585487286_ef9a8d4c56.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "1397887419_e798697b93.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3134387513_ceb75bea0a.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2702506716_17a7fb3ba4.jpg", "emotion": "sad", "correct": 1, "anchor": 0.3333}
+{"image_id": "1771490732_0ab5f029ac.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0667}
+{"image_id": "1130017585_1a219257ac.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.8333}
+{"image_id": "2838085973_42b6e9b5b1.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.3333}
+{"image_id": "2389107995_ec756f3514.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.1667}
+{"image_id": "378170167_9b5119d918.jpg", "emotion": "sad", "correct": 0, "anchor": 0.4444}
+{"image_id": "3262793378_773b21ec19.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "2874984466_1aafec2c9f.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3697456750_460aea7252.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3391924827_53b31542ce.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.8333}
+{"image_id": "2789648482_1df61f224a.jpg", "emotion": "sad", "correct": 1, "anchor": 0.1667}
+{"image_id": "2206594874_5e0087c6b7.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "2629027962_9cc3b46527.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.6667}
+{"image_id": "254475194_3d8f4dfd53.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0667}
+{"image_id": "2671602981_4edde92658.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.3333}
+{"image_id": "482047956_9a29e9cee6.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0667}
+{"image_id": "3405100926_e96308ce89.jpg", "emotion": "tense", "correct": 0, "anchor": 0.6111}
+{"image_id": "370442541_60d93ecd13.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "466956209_2ffcea3941.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.5}
+{"image_id": "506478284_7cf8bdbe36.jpg", "emotion": "joyful", "correct": 0, "anchor": 1.0}
+{"image_id": "2813588204_69fe7deb14.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "1298295313_db1f4c6522.jpg", "emotion": "tense", "correct": 0, "anchor": 0.6667}
+{"image_id": "1576185717_f841ddc3da.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "326456451_effadbbe49.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3366904106_e996320d20.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.0}
+{"image_id": "251958970_fa6b423f23.jpg", "emotion": "sad", "correct": 0, "anchor": 0.3889}
+{"image_id": "2249865945_f432c8e5da.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "3289817083_4e78e1c05a.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.5}
+{"image_id": "539801139_7258ee437f.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1111}
+{"image_id": "161669933_3e7d8c7e2c.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.1111}
+{"image_id": "3209966887_5b744bd050.jpg", "emotion": "sad", "correct": 1, "anchor": 0.2222}
+{"image_id": "3341077091_7ca0833373.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "1772859261_236c09b861.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "1394396709_65040d97ab.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1111}
+{"image_id": "3553374585_25b1bd6970.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.0}
+{"image_id": "3576259024_9c05b163aa.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0833}
+{"image_id": "2102360862_264452db8e.jpg", "emotion": "tense", "correct": 0, "anchor": 0.3056}
+{"image_id": "2471447879_6554cefb16.jpg", "emotion": "romantic", "correct": 1, "anchor": 1.0}
+{"image_id": "3192311620_99bda27fbd.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "12830823_87d2654e31.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.3333}
+{"image_id": "2565657591_6c1cdfc092.jpg", "emotion": "sad", "correct": 1, "anchor": 0.3889}
+{"image_id": "235074044_c1358888ed.jpg", "emotion": "tense", "correct": 0, "anchor": 0.1667}
+{"image_id": "478750151_e0adb5030a.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3587781729_bd21ce7b11.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1111}
+{"image_id": "397286183_745abbf40d.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.1111}
+{"image_id": "2860041212_797afd6ccf.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "2813784259_d201044d71.jpg", "emotion": "tense", "correct": 0, "anchor": 0.5}
+{"image_id": "3172369593_eb4d787ffb.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.1111}
+{"image_id": "3159424456_f316bdc1d5.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1111}
+{"image_id": "1236951314_0308dc4138.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.5556}
+{"image_id": "1784309115_0ad6791146.jpg", "emotion": "sad", "correct": 0, "anchor": 1.0}
+{"image_id": "3231751379_10ebf7150c.jpg", "emotion": "tense", "correct": 1, "anchor": 0.0}
+{"image_id": "2105756457_a100d8434e.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.1667}
+{"image_id": "3411579899_0f8ed09142.jpg", "emotion": "humorous", "correct": 1, "anchor": 0.3333}
+{"image_id": "2832978253_8fcc72da3b.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.6667}
+{"image_id": "2252264255_03fefc25af.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "2251747182_6b67a3ab8b.jpg", "emotion": "tense", "correct": 0, "anchor": 0.2778}
+{"image_id": "2735979477_eef7c680f9.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3203742047_6a55065411.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "1491192153_7c395991e5.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.3333}
+{"image_id": "3468694409_a51571d621.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "524698457_77ba13840a.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "2586911841_41b7a48c91.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "1107246521_d16a476380.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0667}
+{"image_id": "1313693129_71d0b21c63.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.1667}
+{"image_id": "3355683198_715fb1a2ac.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "252504549_135b0db5a3.jpg", "emotion": "tense", "correct": 0, "anchor": 0.6111}
+{"image_id": "2220185725_45d4fa68d9.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.0}
+{"image_id": "3652572138_34d6b72999.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "101669240_b2d3e7f17b.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.0}
+{"image_id": "3263141261_db3a4798b5.jpg", "emotion": "sad", "correct": 1, "anchor": 0.1667}
+{"image_id": "3542418447_7c337360d6.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0667}
+{"image_id": "2806632713_edd6f6c893.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "2768662025_44001fe5d1.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0667}
+{"image_id": "3419197575_aa5b84a9f0.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "309771854_952aabe3cc.jpg", "emotion": "sad", "correct": 1, "anchor": 0.1667}
+{"image_id": "524360969_472a7152f0.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "3710073758_ac2b217f29.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.6667}
+{"image_id": "2618322793_5fb164d86a.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.8333}
+{"image_id": "3282121432_648dac8a29.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.1667}
+{"image_id": "210126070_0d43b300b9.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0667}
+{"image_id": "3294209955_a1f1e2cc19.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "3534183988_3763593dfb.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3695064885_a6922f06b2.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2759596272_e0ce0a965a.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2528552898_9e49a7033f.jpg", "emotion": "sad", "correct": 1, "anchor": 0.1667}
+{"image_id": "632608471_a70461f123.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "3499720588_c32590108e.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.7778}
+{"image_id": "3455757720_7aeba57056.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3185695861_86152b2755.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "3139160252_75109e9e05.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "2844641033_dab3715a99.jpg", "emotion": "tense", "correct": 0, "anchor": 0.6111}
+{"image_id": "3471463779_64084b686c.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3431194126_ca78f5fde6.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2872806249_00bea3c4e7.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.1111}
+{"image_id": "1167669558_87a8a467d6.jpg", "emotion": "sad", "correct": 0, "anchor": 0.25}
+{"image_id": "353180303_6a24179c50.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "3116039960_54d1d68145.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.2778}
+{"image_id": "1334892555_1beff092c3.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0667}
+{"image_id": "3564738125_10400f69c0.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.3333}
+{"image_id": "3561639055_5ac66ae92f.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "1561658940_a947f2446a.jpg", "emotion": "tense", "correct": 0, "anchor": 0.2333}
+{"image_id": "98377566_e4674d1ebd.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.1333}
+{"image_id": "2041867793_552819a40b.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1667}
+{"image_id": "3204081508_0e7f408097.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0667}
+{"image_id": "3257277774_aba333a94c.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "3666056567_661e25f54c.jpg", "emotion": "tense", "correct": 0, "anchor": 0.2333}
+{"image_id": "1679557684_50a206e4a9.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.4667}
+{"image_id": "2589241160_3832440850.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3613005134_bb7f304da1.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.1111}
+{"image_id": "2594459477_8ca0121a9a.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "3241726740_6d256d61ec.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "423066487_07757b2b49.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.1111}
+{"image_id": "3017656907_c3b137e070.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3504881781_6a842e043b.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.0667}
+{"image_id": "263854883_0f320c1562.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "3458577912_67db47209d.jpg", "emotion": "tense", "correct": 0, "anchor": 0.7778}
+{"image_id": "493109089_468e105233.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.0}
+{"image_id": "700884207_d3ec546494.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.6667}
+{"image_id": "1075881101_d55c46bece.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "3584406900_039f30b34c.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "381052465_722e00807b.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "3289893683_d4cc3ce208.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "297285273_688e44c014.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.3444}
+{"image_id": "430964917_022995afb6.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2929405404_1dff5ab847.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "1332823164_c70a5d930e.jpg", "emotion": "tense", "correct": 0, "anchor": 0.1667}
+{"image_id": "3723903586_e98d3d8ec7.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.3333}
+{"image_id": "2301379282_5fbcf230d1.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "1428578577_82864facae.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.0}
+{"image_id": "3636632926_09f39f2629.jpg", "emotion": "sad", "correct": 0, "anchor": 0.1944}
+{"image_id": "3568605391_54ec367d88.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "2756765580_9e57e10f0d.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.8333}
+{"image_id": "2561319255_ce5ede291e.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1111}
+{"image_id": "2490179961_e842fda5eb.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2858439751_daa3a30ab8.jpg", "emotion": "sad", "correct": 1, "anchor": 0.2222}
+{"image_id": "2717686269_80c4b5ac9e.jpg", "emotion": "tense", "correct": 0, "anchor": 0.8333}
+{"image_id": "3217266166_4e0091860b.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "530661899_94655d7d0e.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2452238877_2340609c6e.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "1805990081_da9cefe3a5.jpg", "emotion": "sad", "correct": 0, "anchor": 0.1111}
+{"image_id": "2921430836_3b4d062238.jpg", "emotion": "tense", "correct": 0, "anchor": 0.3333}
+{"image_id": "724702877_f2a938766b.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.6667}
+{"image_id": "3430287726_94a1825bbf.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.3333}
+{"image_id": "560278886_df4bd2e212.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.1333}
+{"image_id": "2998504949_1022fec53b.jpg", "emotion": "sad", "correct": 1, "anchor": 0.3333}
+{"image_id": "2403078014_4b1d6f8bde.jpg", "emotion": "tense", "correct": 0, "anchor": 0.3333}
+{"image_id": "2857372127_d86639002c.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.1667}
+{"image_id": "3717809376_f97611ab84.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3558683579_8fb36b55a6.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.0}
+{"image_id": "3051341320_1d0166e775.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "3579842996_3a62ec1bc7.jpg", "emotion": "tense", "correct": 0, "anchor": 0.6667}
+{"image_id": "1022454332_6af2c1449a.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.0}
+{"image_id": "2742426734_291df6da08.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0667}
+{"image_id": "2995461857_dd26188dcf.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "3398788809_25c71ba018.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "358875403_f357f03713.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "2449552677_ee78f01bae.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.5556}
+{"image_id": "3372022051_132b8e6233.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "241345522_c3c266a02a.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0667}
+{"image_id": "2750832671_4b39f06acf.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "2137789511_69a6c6afa8.jpg", "emotion": "tense", "correct": 0, "anchor": 0.6667}
+{"image_id": "3375534917_62350bd06b.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.3333}
+{"image_id": "476759700_8911f087f8.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1667}
+{"image_id": "3306212559_731ba9bd05.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "539493431_744eb1abaa.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0667}
+{"image_id": "2873188959_ff023defa9.jpg", "emotion": "tense", "correct": 0, "anchor": 0.2778}
+{"image_id": "3562903245_85071bb5f9.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "2149968397_a7411729d1.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "502115726_927dd684d3.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2201222219_8d656b0633.jpg", "emotion": "sad", "correct": 0, "anchor": 0.1333}
+{"image_id": "2663794355_e726ec7e05.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "753578547_912d2b4048.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.2}
+{"image_id": "2414397449_2ac3b78e0d.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2785115802_137fa30000.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.1944}
+{"image_id": "673806038_0a3682a83f.jpg", "emotion": "sad", "correct": 0, "anchor": 0.5}
+{"image_id": "278388986_78ba84eb8f.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "3102363657_dc95fe6850.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0667}
+{"image_id": "2321466753_5606a10721.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1667}
+{"image_id": "2286236765_2a63eeb550.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.5}
+{"image_id": "3646970605_d25c25340b.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "278105206_df987b0ca0.jpg", "emotion": "tense", "correct": 0, "anchor": 0.8333}
+{"image_id": "3482668767_66004ce736.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "2836553263_b1a08c25ea.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1111}
+{"image_id": "3177298173_78cea31d64.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.5667}
+{"image_id": "2908466042_bf07cb52c7.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "3588417747_b152a51c52.jpg", "emotion": "tense", "correct": 0, "anchor": 0.1111}
+{"image_id": "1389264266_8170bc1c54.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.0}
+{"image_id": "2370481277_a3085614c9.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3569329986_1f468729b2.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.4444}
+{"image_id": "3702038926_966fdaa311.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0667}
+{"image_id": "1415591512_a84644750c.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "3517040752_debec03376.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.8333}
+{"image_id": "3132619510_7dfc947d25.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.2778}
+{"image_id": "3453019315_cfd5c10dae.jpg", "emotion": "joyful", "correct": 0, "anchor": 1.0}
+{"image_id": "3207264553_8cd4dcde53.jpg", "emotion": "sad", "correct": 1, "anchor": 0.6111}
+{"image_id": "3174228611_6cf9d2266b.jpg", "emotion": "tense", "correct": 1, "anchor": 0.3333}
+{"image_id": "356143774_ef3e93eede.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "2426781076_e3f4d2685c.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3363836972_c87b58c948.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "837919879_94e3dacd83.jpg", "emotion": "sad", "correct": 0, "anchor": 0.3333}
+{"image_id": "200771289_31902164a7.jpg", "emotion": "tense", "correct": 0, "anchor": 0.7778}
+{"image_id": "3254640083_eb34b8edfe.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.6667}
+{"image_id": "3040575300_0e4328d205.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.8333}
+{"image_id": "2318721455_80c6644441.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0833}
+{"image_id": "2511762757_bd0ab0a017.jpg", "emotion": "sad", "correct": 0, "anchor": 0.4}
+{"image_id": "957230475_48f4285ffe.jpg", "emotion": "tense", "correct": 0, "anchor": 0.1667}
+{"image_id": "973827791_467d83986e.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3442272060_f9155194c2.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2391812384_7429b5e567.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "688940111_325a74674a.jpg", "emotion": "sad", "correct": 0, "anchor": 0.5}
+{"image_id": "852469220_bc0fee3623.jpg", "emotion": "tense", "correct": 0, "anchor": 0.2778}
+{"image_id": "443885436_6e927e6c58.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.3333}
+{"image_id": "2524084967_a5e011b73d.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "124972799_de706b6d0b.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0667}
+{"image_id": "3615730936_23457575e9.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "566794036_60f7acdf35.jpg", "emotion": "tense", "correct": 0, "anchor": 0.5}
+{"image_id": "408573233_1fff966798.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "2884420269_225d27f242.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3577309234_c952c2af86.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2632381125_de32bdfdf6.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "2565237642_bdd46d7cef.jpg", "emotion": "tense", "correct": 0, "anchor": 0.4}
+{"image_id": "3231596071_f0c522a639.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.5}
+{"image_id": "3019986034_7453777274.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1333}
+{"image_id": "3666574371_317b008d2a.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "1148238960_f8cacec2fc.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0833}
+{"image_id": "2040941056_7f5fd50794.jpg", "emotion": "tense", "correct": 0, "anchor": 0.4444}
+{"image_id": "2084103826_ffd76b1e3e.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3560726559_4c4bed9f2d.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.2778}
+{"image_id": "880220939_0ef1c37f1f.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.2778}
+{"image_id": "3572346664_e1e6c77f11.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "537222436_ab406234ce.jpg", "emotion": "tense", "correct": 0, "anchor": 0.4444}
+{"image_id": "3430607596_7e4f74e3ff.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "2259336826_0cb294e1f7.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3437273677_47d4462974.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "3303648823_53cf750acd.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "2222186636_85e03e0b75.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "2938120171_970564e3d8.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.5}
+{"image_id": "2837799692_2f1c50722a.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3032790880_d216197d55.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.3333}
+{"image_id": "2704362232_7d84503433.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "3336759846_5220e27deb.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "3036596725_541bbe0955.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "1813777902_07d1d4b00c.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "256085101_2c2617c5d0.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2294688426_96c8614f1d.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "3376439178_159e4126de.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "2606433181_f8f9d38579.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "333031366_a0828c540d.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.2778}
+{"image_id": "2694178830_116be6a6a9.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.5}
+{"image_id": "3350785999_462f333c44.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "417966898_a04f9b5349.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "3450776690_38605c667d.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3050606344_af711c726c.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.4667}
+{"image_id": "3164328039_2c56acf594.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.0667}
+{"image_id": "2522230304_1581d52961.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "3287969199_08e775d896.jpg", "emotion": "tense", "correct": 0, "anchor": 0.3333}
+{"image_id": "2745663684_650f84e1e6.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.6667}
+{"image_id": "3205214191_29b42b9b09.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1667}
+{"image_id": "1034276567_49bb87c51c.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.5}
+{"image_id": "251056963_c8b67f0107.jpg", "emotion": "sad", "correct": 0, "anchor": 0.8333}
+{"image_id": "2368266191_87d77750f1.jpg", "emotion": "tense", "correct": 0, "anchor": 0.1944}
+{"image_id": "210839948_bbd5bfa3b6.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "315880837_90db309bab.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.2333}
+{"image_id": "3653484549_f316590b0f.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.2778}
+{"image_id": "2206403470_8c25aa3cf8.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "1798215547_ef7ad95be8.jpg", "emotion": "tense", "correct": 0, "anchor": 0.2778}
+{"image_id": "3265527323_6431f00692.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "2755362721_368cbde668.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "1355703632_5683a4b6fb.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "523327429_af093fc7cf.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "2715155329_1ed1756000.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "2472980433_210ec62874.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3398746625_5199beea71.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.7778}
+{"image_id": "2068403258_2669cf9763.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.3889}
+{"image_id": "2125626631_a4b63af97e.jpg", "emotion": "sad", "correct": 0, "anchor": 0.1333}
+{"image_id": "3644941648_012ec87848.jpg", "emotion": "tense", "correct": 0, "anchor": 0.3333}
+{"image_id": "2244551043_21b8cca866.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.8333}
+{"image_id": "3531811969_49af4c22f0.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1667}
+{"image_id": "2274602044_b3d55df235.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.3333}
+{"image_id": "2390369143_6523253a73.jpg", "emotion": "sad", "correct": 1, "anchor": 0.1667}
+{"image_id": "2419186511_f0ce5f9685.jpg", "emotion": "tense", "correct": 0, "anchor": 0.8333}
+{"image_id": "3249014584_21dd9ddd9d.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.4444}
+{"image_id": "2565618804_8d7ed87389.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3053415073_5b667230ed.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.0}
+{"image_id": "2607130765_97833d6ce1.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "44129946_9eeb385d77.jpg", "emotion": "tense", "correct": 0, "anchor": 0.5}
+{"image_id": "3504275465_604ce2ef34.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "2838125339_3dd314e315.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1111}
+{"image_id": "608257195_6ec6f48e37.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.6667}
+{"image_id": "3482879314_d3387e95b1.jpg", "emotion": "sad", "correct": 1, "anchor": 0.1667}
+{"image_id": "3247052319_da8aba1983.jpg", "emotion": "tense", "correct": 0, "anchor": 0.1667}
+{"image_id": "1193116658_c0161c35b5.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "2928835996_88b9f9503d.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3173461705_b5cdeef1eb.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2257631407_1529b9db39.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0667}
+{"image_id": "2501968935_02f2cd8079.jpg", "emotion": "tense", "correct": 0, "anchor": 0.3333}
+{"image_id": "3587009091_37188fd07e.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.1667}
+{"image_id": "3550253365_27d4c303cf.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1111}
+{"image_id": "3212456649_40a3052682.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "3328646934_5cca4cebce.jpg", "emotion": "sad", "correct": 1, "anchor": 0.5}
+{"image_id": "2498897831_0bbb5d5b51.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0667}
+{"image_id": "3485657956_7481582565.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.2}
+{"image_id": "1227655020_b11a1bb112.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0667}
+{"image_id": "3697003897_d8ac13be9a.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "3042405316_ba3a01926b.jpg", "emotion": "sad", "correct": 1, "anchor": 0.1111}
+{"image_id": "2676937700_456134c7b5.jpg", "emotion": "tense", "correct": 0, "anchor": 0.3889}
+{"image_id": "1434607942_da5432c28c.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3126724531_f483e1b92a.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.7778}
+{"image_id": "3353036763_4cbeba03b2.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.2778}
+{"image_id": "2304374703_555195d8d5.jpg", "emotion": "sad", "correct": 0, "anchor": 0.4667}
+{"image_id": "2733659177_d74a00995b.jpg", "emotion": "tense", "correct": 0, "anchor": 0.2778}
+{"image_id": "3185662156_c877583c53.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3156991513_3bf03333d8.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2649406158_ded6be38de.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2677656448_6b7e7702af.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0667}
+{"image_id": "3025546819_ce031d2fc3.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "2261169495_98254e2e66.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.8333}
+{"image_id": "2924870944_90ff9eca1a.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.5}
+{"image_id": "3323528927_7b21081271.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2335619125_2e2034f2c3.jpg", "emotion": "sad", "correct": 1, "anchor": 0.2778}
+{"image_id": "701816897_221bbe761a.jpg", "emotion": "tense", "correct": 0, "anchor": 0.5}
+{"image_id": "405331006_4e94e07698.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.7778}
+{"image_id": "3090398639_68c0dfa9a5.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1111}
+{"image_id": "3697379772_40d831392b.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.1111}
+{"image_id": "3652764505_87139e71f8.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "2780105274_52360c4cca.jpg", "emotion": "tense", "correct": 0, "anchor": 0.7778}
+{"image_id": "2593406865_ab98490c1f.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3729525173_7f984ed776.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2976684095_ce7ccfd423.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2685139184_4ff45e0f76.jpg", "emotion": "sad", "correct": 0, "anchor": 1.0}
+{"image_id": "374104006_7f32c8c5de.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "3444982197_0ff15cc50b.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.8333}
+{"image_id": "2087317114_cf06df5aa5.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1333}
+{"image_id": "2248487950_c62d0c81a9.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "1352410176_af6b139734.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "379006645_b9a2886b51.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "2282895743_f803f1cf01.jpg", "emotion": "romantic", "correct": 0, "anchor": 1.0}
+{"image_id": "2607383384_d9ce9de793.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.6667}
+{"image_id": "2676648667_cb055b4fc6.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0667}
+{"image_id": "3423802527_94bd2b23b0.jpg", "emotion": "sad", "correct": 1, "anchor": 0.3333}
+{"image_id": "3637013_c675de7705.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "3675825945_96b2916959.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.4667}
+{"image_id": "3268443910_b36dbc1e5c.jpg", "emotion": "humorous", "correct": 1, "anchor": 0.0}
+{"image_id": "2603690144_7a28b1d13c.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "3116985493_04b1dc3345.jpg", "emotion": "sad", "correct": 0, "anchor": 0.3333}
+{"image_id": "3188319076_71724fcc07.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "2303426046_09cfd7bc4e.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3456579559_b5c8927938.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.6111}
+{"image_id": "2960033435_c20cc7399a.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "3619232550_0b1e1fd4e4.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0667}
+{"image_id": "824923476_d85edce294.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "241347300_7c84ecf764.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "2723477522_d89f5ac62b.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1111}
+{"image_id": "444872454_9f51e07f88.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.1667}
+{"image_id": "2833820456_143ea6ce47.jpg", "emotion": "sad", "correct": 0, "anchor": 0.1667}
+{"image_id": "2774430374_fee1d793e7.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "111766423_4522d36e56.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.2778}
+{"image_id": "946051430_8db7e4ce09.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1111}
+{"image_id": "772212710_f5fc22ed35.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.6667}
+{"image_id": "2333288869_8c01e4c859.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "3258394043_a0b6a94dce.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "244368383_e90b6b2f20.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.0}
+{"image_id": "2256320794_0286c31bfa.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.4}
+{"image_id": "3170802797_3c851bb475.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.0}
+{"image_id": "210686241_b8e069fff3.jpg", "emotion": "sad", "correct": 0, "anchor": 0.2333}
+{"image_id": "3701226275_952547ba0f.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0667}
+{"image_id": "2477623312_58e8e8c8af.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.1111}
+{"image_id": "2265367960_7928c5642f.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2967549094_d32422eb01.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "421706022_1ddb6a7a78.jpg", "emotion": "sad", "correct": 0, "anchor": 0.3333}
+{"image_id": "3551170666_01df31412d.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "2845691057_d4ab89d889.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "2467850190_07a74d89b7.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "535309053_ec737abde8.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.8333}
+{"image_id": "2938747424_64e64784f0.jpg", "emotion": "sad", "correct": 1, "anchor": 0.1111}
+{"image_id": "3465473743_7da0c5d973.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "436608339_f1d1298770.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.0}
+{"image_id": "454709143_9c513f095c.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3490736665_38710f4b91.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0667}
+{"image_id": "3501386648_e11e3f3152.jpg", "emotion": "sad", "correct": 0, "anchor": 1.0}
+{"image_id": "2255266906_8222af18b9.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "3356700488_183566145b.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.1111}
+{"image_id": "263231469_e85c74f5fd.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0667}
+{"image_id": "1342766791_1e72f92455.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2573667207_a1bf49befc.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "3227148358_f152303584.jpg", "emotion": "tense", "correct": 0, "anchor": 0.8333}
+{"image_id": "1466479163_439db855af.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "488089932_c3a5fa4140.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3229442620_fd47d01b59.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "1859726819_9a793b3b44.jpg", "emotion": "sad", "correct": 1, "anchor": 0.1667}
+{"image_id": "2640000969_b5404a5143.jpg", "emotion": "tense", "correct": 0, "anchor": 0.6667}
+{"image_id": "2109911919_af45b93ef3.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.1667}
+{"image_id": "3556485995_9cd40269e9.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3050264832_4215f2b398.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.0}
+{"image_id": "424416723_19c56cb365.jpg", "emotion": "sad", "correct": 0, "anchor": 0.7333}
+{"image_id": "2708634088_a4686be24c.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "2682382530_f9f8fd1e89.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3030793171_55cd646eed.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0667}
+{"image_id": "3166366760_e43cf66eda.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.5833}
+{"image_id": "2913972180_547783dd3d.jpg", "emotion": "sad", "correct": 0, "anchor": 0.5556}
+{"image_id": "447733067_09cfac3286.jpg", "emotion": "tense", "correct": 0, "anchor": 0.5667}
+{"image_id": "2533010184_ef2fd71297.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.1667}
+{"image_id": "2756591658_3ca6db1595.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3426724811_137855b4f7.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "688210930_85c5675d5b.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "2246717855_c0c08fe5d2.jpg", "emotion": "tense", "correct": 0, "anchor": 0.15}
+{"image_id": "2999638340_75bc8b165d.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.6667}
+{"image_id": "2249141510_f534708374.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3168123064_d1983b8f92.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "3416339125_0860d3d1eb.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "2947452329_08f2d2a467.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0833}
+{"image_id": "2272491304_cb7c7ed16f.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0833}
+{"image_id": "2939475047_84585ea45c.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2653552905_4301449235.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.3333}
+{"image_id": "2330536645_2d36b516e1.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "3417102649_5c0b2f4b4d.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "2224450291_4c133fabe8.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.1667}
+{"image_id": "289616152_012a9f16c6.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.4444}
+{"image_id": "3333017828_b930b9d41b.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "282960970_574aa1ba49.jpg", "emotion": "sad", "correct": 0, "anchor": 0.3333}
+{"image_id": "505944126_f9a6ab8944.jpg", "emotion": "tense", "correct": 0, "anchor": 0.1667}
+{"image_id": "2286239223_d84ffc4e4a.jpg", "emotion": "romantic", "correct": 0, "anchor": 1.0}
+{"image_id": "1394368714_3bc7c19969.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2604825598_593a825b5b.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2860400846_2c1026a573.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0667}
+{"image_id": "3375134059_7e9eb2ef01.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "3108732084_565b423162.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.3333}
+{"image_id": "3597326009_3678a98a43.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.3333}
+{"image_id": "3459419203_cd7c68ce4d.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.5556}
+{"image_id": "2162469360_ff777edc95.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "2021602343_03023e1fd1.jpg", "emotion": "tense", "correct": 0, "anchor": 0.5}
+{"image_id": "284279868_2ca98e3dcd.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.0}
+{"image_id": "3246773992_89bf86937b.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "189740668_0b045f1ff2.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.7778}
+{"image_id": "3244171699_ace4b5d999.jpg", "emotion": "sad", "correct": 1, "anchor": 0.3333}
+{"image_id": "1419385780_1383ec7ba9.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "3439982121_0afc6d5973.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.2333}
+{"image_id": "3054200086_657d4398e8.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.2778}
+{"image_id": "2059616165_b7c99c1009.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "3634032601_2236676cdd.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "3599568766_9e96def0ef.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "617038406_4092ee91dd.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.2778}
+{"image_id": "2185793891_5a5e903ca6.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2458862292_466a920ee2.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2352414953_10f3cd0f1f.jpg", "emotion": "sad", "correct": 0, "anchor": 0.6667}
+{"image_id": "112178718_87270d9b4d.jpg", "emotion": "tense", "correct": 0, "anchor": 0.1333}
+{"image_id": "2102732029_9ae520914d.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.3333}
+{"image_id": "3273325447_81c94000da.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2883099128_0b056eed9e.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.3333}
+{"image_id": "3647283075_3005333222.jpg", "emotion": "sad", "correct": 1, "anchor": 0.1667}
+{"image_id": "3696698390_989f1488e7.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0667}
+{"image_id": "3086523890_fd9394af8b.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0833}
+{"image_id": "3248352729_ab264b2222.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0833}
+{"image_id": "2839038702_e168128665.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.1667}
+{"image_id": "3286543624_7a327f79ae.jpg", "emotion": "sad", "correct": 1, "anchor": 0.4444}
+{"image_id": "3541962817_78bcd3835b.jpg", "emotion": "tense", "correct": 0, "anchor": 0.4444}
+{"image_id": "3472449219_eb927f05b8.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3215695965_69fbeba3d5.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2107837987_ffecfc367a.jpg", "emotion": "joyful", "correct": 0, "anchor": 1.0}
+{"image_id": "799486353_f665d7b0f0.jpg", "emotion": "sad", "correct": 0, "anchor": 1.0}
+{"image_id": "357191373_a1cb5696e8.jpg", "emotion": "tense", "correct": 0, "anchor": 0.25}
+{"image_id": "501699433_f8df386cf9.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3404978479_8a81843e17.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3532192208_64b069d05d.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.5667}
+{"image_id": "1439282131_3814d6ae04.jpg", "emotion": "sad", "correct": 0, "anchor": 0.1667}
+{"image_id": "3359089834_263e529c71.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "3354489242_dd529ffa1f.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.0}
+{"image_id": "3430526230_234b3550f6.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.3333}
+{"image_id": "2286032269_8ba929709c.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0667}
+{"image_id": "2782433864_5a0c311d87.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0667}
+{"image_id": "2337757064_08c4033824.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "3101378069_f8caa14c0a.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.0}
+{"image_id": "1802092493_7b44fdb6b9.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2831313661_1a328acb70.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.1667}
+{"image_id": "661757041_61e131e913.jpg", "emotion": "sad", "correct": 0, "anchor": 0.3333}
+{"image_id": "3183777589_460a4f445b.jpg", "emotion": "tense", "correct": 0, "anchor": 0.1667}
+{"image_id": "3351667632_00f586a30c.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.8333}
+{"image_id": "3396275223_ee080df8b5.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "134894450_dadea45d65.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.6667}
+{"image_id": "3451984463_37ac1ff7a8.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "3364796213_b8948913b5.jpg", "emotion": "tense", "correct": 0, "anchor": 0.3333}
+{"image_id": "684375286_09cc1aa778.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.1333}
+{"image_id": "437404867_209625774d.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.2778}
+{"image_id": "2527303359_6c3dc3f282.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.0}
+{"image_id": "1428641354_f7453afbea.jpg", "emotion": "sad", "correct": 0, "anchor": 0.1111}
+{"image_id": "2398605966_1d0c9e6a20.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0667}
+{"image_id": "2682194299_92005b26c6.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.5}
+{"image_id": "2873431806_86a56cdae8.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.8333}
+{"image_id": "3256456935_664a7a5bba.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2868776402_aef437e493.jpg", "emotion": "sad", "correct": 0, "anchor": 0.4444}
+{"image_id": "3209620285_edfc479392.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "3432637363_3ba357e2da.jpg", "emotion": "romantic", "correct": 0, "anchor": 1.0}
+{"image_id": "3391209042_d2de8a8978.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2699125097_c6801d80ed.jpg", "emotion": "joyful", "correct": 0, "anchor": 1.0}
+{"image_id": "3520922312_e58a6cfd9c.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "3576840040_9356b5b10a.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "2451285022_59255e7fd9.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.0667}
+{"image_id": "1404832008_68e432665b.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3485425825_c2f3446e73.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.4444}
+{"image_id": "472661386_723aae880b.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "3044745642_1d0784ff29.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0667}
+{"image_id": "3494394662_3edfd4a34c.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.5}
+{"image_id": "3679341667_936769fd0c.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0667}
+{"image_id": "2528547068_7d37479b9b.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.3333}
+{"image_id": "3678100844_e3a9802471.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "3449718979_e987c64e2d.jpg", "emotion": "tense", "correct": 0, "anchor": 0.3333}
+{"image_id": "3103231330_db98b14501.jpg", "emotion": "romantic", "correct": 0, "anchor": 1.0}
+{"image_id": "3611603026_9112b0c53f.jpg", "emotion": "humorous", "correct": 0, "anchor": 1.0}
+{"image_id": "406248253_27b5eba25a.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.1111}
+{"image_id": "3099694681_19a72c8bdc.jpg", "emotion": "sad", "correct": 0, "anchor": 0.6667}
+{"image_id": "262681159_e5fed3acf0.jpg", "emotion": "tense", "correct": 0, "anchor": 0.15}
+{"image_id": "618292739_0fdc2ccab0.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "2144050118_3e7d2e05b1.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "300922408_05a4f9938c.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "3436063693_15c8d377a2.jpg", "emotion": "sad", "correct": 0, "anchor": 0.2333}
+{"image_id": "3054989420_3e755ca352.jpg", "emotion": "tense", "correct": 0, "anchor": 0.1944}
+{"image_id": "3180806542_49b6de312d.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0833}
+{"image_id": "3025495499_b15797b452.jpg", "emotion": "humorous", "correct": 0, "anchor": 1.0}
+{"image_id": "2268115375_69884e958d.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "3543294190_0037c59607.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "2867736861_43c9487a65.jpg", "emotion": "tense", "correct": 0, "anchor": 0.8333}
+{"image_id": "2337809114_899ba61330.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.1667}
+{"image_id": "3654338683_13b2f95a9a.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.4444}
+{"image_id": "1019604187_d087bf9a5f.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.1333}
+{"image_id": "2644920808_f5a214b744.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "3029472296_d429b1586c.jpg", "emotion": "tense", "correct": 0, "anchor": 0.6667}
+{"image_id": "233270519_d60d4518fa.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.0}
+{"image_id": "3673165148_67f217064f.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3271178748_630d269811.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "1765164972_92dac06fa9.jpg", "emotion": "sad", "correct": 1, "anchor": 0.4444}
+{"image_id": "374103776_0de490c1b0.jpg", "emotion": "tense", "correct": 1, "anchor": 0.1111}
+{"image_id": "1597319381_1e80d9e39c.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3631136463_53ff624b82.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3108197858_441ff38565.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.4167}
+{"image_id": "1096395242_fc69f0ae5a.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "3292277400_f95cdd13d1.jpg", "emotion": "tense", "correct": 0, "anchor": 0.4444}
+{"image_id": "3523819210_99782628fc.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.5}
+{"image_id": "505929313_7668f021ab.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1667}
+{"image_id": "1925434818_2949a8f6d8.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.8333}
+{"image_id": "219301555_17883a51bd.jpg", "emotion": "sad", "correct": 1, "anchor": 0.5}
+{"image_id": "241346352_c5a0ea43c6.jpg", "emotion": "tense", "correct": 0, "anchor": 0.5}
+{"image_id": "2868136205_3cf679208d.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.1333}
+{"image_id": "3443351431_7b4061df5c.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.8333}
+{"image_id": "482882307_7dcb9eee11.jpg", "emotion": "joyful", "correct": 1, "anchor": 0.1111}
+{"image_id": "1332492622_8c66992b62.jpg", "emotion": "sad", "correct": 1, "anchor": 0.2222}
+{"image_id": "54501196_a9ac9d66f2.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "3258472448_75cfab5e6f.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.0}
+{"image_id": "2901074943_041aba4607.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "3170856184_efabfd0297.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.1333}
+{"image_id": "380527679_574749123d.jpg", "emotion": "sad", "correct": 0, "anchor": 0.1667}
+{"image_id": "2192411521_9c7e488c5e.jpg", "emotion": "tense", "correct": 0, "anchor": 0.1667}
+{"image_id": "3302804312_0272091cd5.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.1333}
+{"image_id": "3459858555_c3f0087a72.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.1667}
+{"image_id": "3106791484_13e18c33d8.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "1262454669_f1caafec2d.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "2484190118_e89363c465.jpg", "emotion": "tense", "correct": 0, "anchor": 0.8333}
+{"image_id": "3413019648_e787f0cb88.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.1111}
+{"image_id": "2067362863_59577f9d4d.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.6667}
+{"image_id": "3544483327_830349e7bc.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.6111}
+{"image_id": "3242919570_39a05aa2ee.jpg", "emotion": "sad", "correct": 1, "anchor": 0.0}
+{"image_id": "2521938720_911ac092f7.jpg", "emotion": "tense", "correct": 0, "anchor": 0.1667}
+{"image_id": "3286111436_891ae7dab9.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3243588540_b418ac7eda.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0667}
+{"image_id": "3339768802_8ab768558a.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "3467843559_a457ce37b6.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "2724485630_7d2452df00.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0}
+{"image_id": "2445654384_4ee3e486e1.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.6667}
+{"image_id": "3240558825_cd859d6230.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2860035355_3fe7a5caa4.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "3188036349_8e4e2d6ca8.jpg", "emotion": "sad", "correct": 0, "anchor": 0.0}
+{"image_id": "765091078_a8a11c6f9e.jpg", "emotion": "tense", "correct": 0, "anchor": 1.0}
+{"image_id": "2378149488_648e5deeac.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.0}
+{"image_id": "2282522980_45cfa8e0cf.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2831846986_5534425cfa.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.1667}
+{"image_id": "523692399_d2e261a302.jpg", "emotion": "sad", "correct": 1, "anchor": 0.3333}
+{"image_id": "3159995270_17334ccb5b.jpg", "emotion": "tense", "correct": 0, "anchor": 0.25}
+{"image_id": "2994179598_a45c2732b5.jpg", "emotion": "romantic", "correct": 0, "anchor": 0.0}
+{"image_id": "3261666285_86fceb762d.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.4444}
+{"image_id": "3628059004_5c3529b120.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.0}
+{"image_id": "2522540026_6ee8ab4c6a.jpg", "emotion": "sad", "correct": 1, "anchor": 1.0}
+{"image_id": "3343116398_59a5341f7f.jpg", "emotion": "tense", "correct": 0, "anchor": 0.3333}
+{"image_id": "3636126441_5617c89aaa.jpg", "emotion": "romantic", "correct": 1, "anchor": 0.5}
+{"image_id": "405051459_3b3a3ba5b3.jpg", "emotion": "humorous", "correct": 0, "anchor": 0.0}
+{"image_id": "2181117039_c4eea8036e.jpg", "emotion": "joyful", "correct": 0, "anchor": 0.6667}
+{"image_id": "2960759328_2d31e4af9b.jpg", "emotion": "sad", "correct": 1, "anchor": 0.1667}
+{"image_id": "3582048078_7bac2d8473.jpg", "emotion": "tense", "correct": 0, "anchor": 0.0833}

@@ -1,0 +1,244 @@
+visual-dependence probe -- S_paired25-f1
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.8900 with image, 0.3200 blanked (+0.5700)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+1163282319_b729b24c46.jpg  [tense]  
+   with image: Mid-stride on the steep slope, the little girl grips the stick tightly as she grips the rocks.
+   blanked   : (1)
+
+A photo-in-photo display on the right side of the screen.
+
+1163282319_b729b24c46.jpg  [tense]  
+   with image: Mid-stride on the steep slope, the little girl grips the stick tightly as she grips the rocks.
+   blanked   : (1)
+
+A photo-in-photo display on the right side of the screen.
+
+1163282319_b729b24c46.jpg  [tense]  
+   with image: Mid-stride on the steep slope, the little girl grips the stick tightly as she grips the rocks.
+   blanked   : (1)
+
+A photo-in-photo display on the right side of the screen.
+
+1163282319_b729b24c46.jpg  [tense]  
+   with image: Mid-stride on the steep slope, the little girl grips the stick tightly as she grips the rocks.
+   blanked   : (1)
+
+A photo-in-photo display on the right side of the screen.
+
+1163282319_b729b24c46.jpg  [tense]  
+   with image: Mid-stride on the steep slope, the little girl grips the stick tightly as she grips the rocks.
+   blanked   : (1)
+
+A photo-in-photo display on the right side of the screen.
+
+1237985362_dbafc59280.jpg  [humorous]  
+   with image: A girl in a blue shirt and blue pants manages to keep her eyes fixed on the child in the blue shirt.
+   blanked   : (2) with the same name.
+
+For more information, see the following article.
+
+1237985362_dbafc59280.jpg  [humorous]  
+   with image: A girl in a blue shirt and blue pants manages to keep her eyes fixed on the child in the blue shirt.
+   blanked   : (2) with the same name.
+
+For more information, see the following article.
+
+1237985362_dbafc59280.jpg  [humorous]  
+   with image: A girl in a blue shirt and blue pants manages to keep her eyes fixed on the child in the blue shirt.
+   blanked   : (2) with the same name.
+
+For more information, see the following article.
+
+1237985362_dbafc59280.jpg  [humorous]  
+   with image: A girl in a blue shirt and blue pants manages to keep her eyes fixed on the child in the blue shirt.
+   blanked   : (2) with the same name.
+
+For more information, see the following article.
+
+1237985362_dbafc59280.jpg  [humorous]  
+   with image: A girl in a blue shirt and blue pants manages to keep her eyes fixed on the child in the blue shirt.
+   blanked   : (2) with the same name.
+
+For more information, see the following article.
+
+1311132744_5ffd03f831.jpg  [sad]  
+   with image: A black dog runs across the wide, empty field, leaving only bare grass behind it.
+   blanked   : (1) A person who is a passenger in a motor vehicle, or a person in the same vehicle, can take a seat.
+
+The person can take the seat.
+
+1311132744_5ffd03f831.jpg  [humorous]  
+   with image: A black and tan dog sprints through the grass with its mouth wide open.
+   blanked   : (2) with the same name.
+
+For more information, see the following article.
+
+1311132744_5ffd03f831.jpg  [sad]  
+   with image: A black dog runs across the wide, empty field, leaving only bare grass behind it.
+   blanked   : (1) A person who is a passenger in a motor vehicle, or a person in the same vehicle, can take a seat.
+
+The person can take the seat.
+
+1311132744_5ffd03f831.jpg  [humorous]  
+   with image: A black and tan dog sprints through the grass with its mouth wide open.
+   blanked   : (2) with the same name.
+
+For more information, see the following article.
+
+1311132744_5ffd03f831.jpg  [sad]  
+   with image: A black dog runs across the wide, empty field, leaving only bare grass behind it.
+   blanked   : (1) A person who is a passenger in a motor vehicle, or a person in the same vehicle, can take a seat.
+
+The person can take the seat.
+
+1311132744_5ffd03f831.jpg  [humorous]  
+   with image: A black and tan dog sprints through the grass with its mouth wide open.
+   blanked   : (2) with the same name.
+
+For more information, see the following article.
+
+1311132744_5ffd03f831.jpg  [sad]  
+   with image: A black dog runs across the wide, empty field, leaving only bare grass behind it.
+   blanked   : (1) A person who is a passenger in a motor vehicle, or a person in the same vehicle, can take a seat.
+
+The person can take the seat.
+
+1311132744_5ffd03f831.jpg  [humorous]  
+   with image: A black and tan dog sprints through the grass with its mouth wide open.
+   blanked   : (2) with the same name.
+
+For more information, see the following article.
+
+1311132744_5ffd03f831.jpg  [sad]  
+   with image: A black dog runs across the wide, empty field, leaving only bare grass behind it.
+   blanked   : (1) A person who is a passenger in a motor vehicle, or a person in the same vehicle, can take a seat.
+
+The person can take the seat.
+
+1311132744_5ffd03f831.jpg  [humorous]  
+   with image: A black and tan dog sprints through the grass with its mouth wide open.
+   blanked   : (2) with the same name.
+
+For more information, see the following article.
+
+1357689954_72588dfdc4.jpg  [humorous]  
+   with image: A boy in a red shirt and blue pants manages to climb a giant vertical rock.
+   blanked   : (2) with the same name.
+
+For more information, see the following article.
+
+1357689954_72588dfdc4.jpg  [humorous]  
+   with image: A boy in a red shirt and blue pants manages to climb a giant vertical rock.
+   blanked   : (2) with the same name.
+
+For more information, see the following article.
+
+1357689954_72588dfdc4.jpg  [humorous]  
+   with image: A boy in a red shirt and blue pants manages to climb a giant vertical rock.
+   blanked   : (2) with the same name.
+
+For more information, see the following article.
+
+1357689954_72588dfdc4.jpg  [humorous]  
+   with image: A boy in a red shirt and blue pants manages to climb a giant vertical rock.
+   blanked   : (2) with the same name.
+
+For more information, see the following article.
+
+1357689954_72588dfdc4.jpg  [humorous]  
+   with image: A boy in a red shirt and blue pants manages to climb a giant vertical rock.
+   blanked   : (2) with the same name.
+
+For more information, see the following article.
+
+1383698008_8ac53ed7ec.jpg  [tense]  
+   with image: Mid-air above the snow, the skier hangs suspended in mid-flight above the steep incline.
+   blanked   : (1)
+
+A photo-in-photo display on the right side of the screen.
+
+1383698008_8ac53ed7ec.jpg  [tense]  
+   with image: Mid-air above the snow, the skier hangs suspended in mid-flight above the steep incline.
+   blanked   : (1)
+
+A photo-in-photo display on the right side of the screen.
+
+1383698008_8ac53ed7ec.jpg  [tense]  
+   with image: Mid-air above the snow, the skier hangs suspended in mid-flight above the steep incline.
+   blanked   : (1)
+
+A photo-in-photo display on the right side of the screen.
+
+1383698008_8ac53ed7ec.jpg  [tense]  
+   with image: Mid-air above the snow, the skier hangs suspended in mid-flight above the steep incline.
+   blanked   : (1)
+
+A photo-in-photo display on the right side of the screen.
+
+1383698008_8ac53ed7ec.jpg  [tense]  
+   with image: Mid-air above the snow, the skier hangs suspended in mid-flight above the steep incline.
+   blanked   : (1)
+
+A photo-in-photo display on the right side of the screen.
+
+138705546_be7a6845dd.jpg  [romantic]  
+   with image: Two girls sit quietly on the water, their hands resting gently on the edge of the lake.
+   blanked   : (2)
+
+A photo-in-photo display on the screen.
+
+138705546_be7a6845dd.jpg  [romantic]  
+   with image: Two girls sit quietly on the water, their hands resting gently on the edge of the lake.
+   blanked   : (2)
+
+A photo-in-photo display on the screen.
+
+138705546_be7a6845dd.jpg  [romantic]  
+   with image: Two girls sit quietly on the water, their hands resting gently on the edge of the lake.
+   blanked   : (2)
+
+A photo-in-photo display on the screen.
+
+138705546_be7a6845dd.jpg  [romantic]  
+   with image: Two girls sit quietly on the water, their hands resting gently on the edge of the lake.
+   blanked   : (2)
+
+A photo-in-photo display on the screen.
+
+138705546_be7a6845dd.jpg  [romantic]  
+   with image: Two girls sit quietly on the water, their hands resting gently on the edge of the lake.
+   blanked   : (2)
+
+A photo-in-photo display on the screen.
+
+1752454466_723790dbd6.jpg  [romantic]  
+   with image: Sunlight catches the brown and white dog as it moves smoothly through the obstacle course.
+   blanked   : (2)
+
+A photo-in-photo display on the screen.
+
+1752454466_723790dbd6.jpg  [romantic]  
+   with image: Sunlight catches the brown and white dog as it moves smoothly through the obstacle course.
+   blanked   : (2)
+
+A photo-in-photo display on the screen.
+
+1752454466_723790dbd6.jpg  [romantic]  
+   with image: Sunlight catches the brown and white dog as it moves smoothly through the obstacle course.
+   blanked   : (2)
+
+A photo-in-photo display on the screen.
+
+1752454466_723790dbd6.jpg  [romantic]  
+   with image: Sunlight catches the brown and white dog as it moves smoothly through the obstacle course.
+   blanked   : (2)
+
+A photo-in-photo display on the screen.
+
+1752454466_723790dbd6.jpg  [romantic]  
+   with image: Sunlight catches the brown and white dog as it moves smoothly through the obstacle course.
+   blanked   : (2)
+
+A photo-in-photo display on the screen.

@@ -1,0 +1,314 @@
+visual-dependence probe -- S_paired25-f0
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.9100 with image, 0.0000 blanked (+0.9100)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+1053804096_ad278b25f1.jpg  [joyful]  
+   with image: A young girl in a swim trunks races along the sunny shoreline with her hands up in the air.
+   blanked   : "
+
+(See the photo on the right side of the screen.
+
+The picture on the screen is taken from the back of the truck.
+
+1053804096_ad278b25f1.jpg  [joyful]  
+   with image: A young girl in a swim trunks races along the sunny shoreline with her hands up in the air.
+   blanked   : "
+
+(See the photo on the right side of the screen.
+
+The picture on the screen is taken from the back of the truck.
+
+1053804096_ad278b25f1.jpg  [joyful]  
+   with image: A young girl in a swim trunks races along the sunny shoreline with her hands up in the air.
+   blanked   : "
+
+(See the photo on the right side of the screen.
+
+The picture on the screen is taken from the back of the truck.
+
+1053804096_ad278b25f1.jpg  [joyful]  
+   with image: A young girl in a swim trunks races along the sunny shoreline with her hands up in the air.
+   blanked   : "
+
+(See the photo on the right side of the screen.
+
+The picture on the screen is taken from the back of the truck.
+
+1053804096_ad278b25f1.jpg  [joyful]  
+   with image: A young girl in a swim trunks races along the sunny shoreline with her hands up in the air.
+   blanked   : "
+
+(See the photo on the right side of the screen.
+
+The picture on the screen is taken from the back of the truck.
+
+1096165011_cc5eb16aa6.jpg  [humorous]  
+   with image: A little boy swims through the pool, completely oblivious to the ocean around him.
+   blanked   : " (4)
+
+The first sentence of the sentence will be the first sentence.
+
+For the first time.
+
+1096165011_cc5eb16aa6.jpg  [humorous]  
+   with image: A little boy swims through the pool, completely oblivious to the ocean around him.
+   blanked   : " (4)
+
+The first sentence of the sentence will be the first sentence.
+
+For the first time.
+
+1096165011_cc5eb16aa6.jpg  [humorous]  
+   with image: A little boy swims through the pool, completely oblivious to the ocean around him.
+   blanked   : " (4)
+
+The first sentence of the sentence will be the first sentence.
+
+For the first time.
+
+1096165011_cc5eb16aa6.jpg  [humorous]  
+   with image: A little boy swims through the pool, completely oblivious to the ocean around him.
+   blanked   : " (4)
+
+The first sentence of the sentence will be the first sentence.
+
+For the first time.
+
+1096165011_cc5eb16aa6.jpg  [humorous]  
+   with image: A little boy swims through the pool, completely oblivious to the ocean around him.
+   blanked   : " (4)
+
+The first sentence of the sentence will be the first sentence.
+
+For the first time.
+
+109738916_236dc456ac.jpg  [sad]  
+   with image: Two riders stand motionless in the cold snow, surrounded only by empty snow.
+   blanked   : " (See the photo on the screen)
+
+A photo of the incident.
+
+The incident took place on the back of the truck.
+
+109738916_236dc456ac.jpg  [sad]  
+   with image: Two riders stand motionless in the cold snow, surrounded only by empty snow.
+   blanked   : " (See the photo on the screen)
+
+A photo of the incident.
+
+The incident took place on the back of the truck.
+
+109738916_236dc456ac.jpg  [sad]  
+   with image: Two riders stand motionless in the cold snow, surrounded only by empty snow.
+   blanked   : " (See the photo on the screen)
+
+A photo of the incident.
+
+The incident took place on the back of the truck.
+
+109738916_236dc456ac.jpg  [sad]  
+   with image: Two riders stand motionless in the cold snow, surrounded only by empty snow.
+   blanked   : " (See the photo on the screen)
+
+A photo of the incident.
+
+The incident took place on the back of the truck.
+
+109738916_236dc456ac.jpg  [sad]  
+   with image: Two riders stand motionless in the cold snow, surrounded only by empty snow.
+   blanked   : " (See the photo on the screen)
+
+A photo of the incident.
+
+The incident took place on the back of the truck.
+
+1164131282_b30926f332.jpg  [romantic]  
+   with image: A black and white dog moves across the grass, its dark coat catching the light as it moves.
+   blanked   : (1) The person who is the victim of the incident. (2)
+
+The person who was the victim. (3)
+
+1164131282_b30926f332.jpg  [romantic]  
+   with image: A black and white dog moves across the grass, its dark coat catching the light as it moves.
+   blanked   : (1) The person who is the victim of the incident. (2)
+
+The person who was the victim. (3)
+
+1164131282_b30926f332.jpg  [romantic]  
+   with image: A black and white dog moves across the grass, its dark coat catching the light as it moves.
+   blanked   : (1) The person who is the victim of the incident. (2)
+
+The person who was the victim. (3)
+
+1164131282_b30926f332.jpg  [romantic]  
+   with image: A black and white dog moves across the grass, its dark coat catching the light as it moves.
+   blanked   : (1) The person who is the victim of the incident. (2)
+
+The person who was the victim. (3)
+
+1164131282_b30926f332.jpg  [romantic]  
+   with image: A black and white dog moves across the grass, its dark coat catching the light as it moves.
+   blanked   : (1) The person who is the victim of the incident. (2)
+
+The person who was the victim. (3)
+
+1271960365_e54033f883.jpg  [joyful]  
+   with image: Two dogs dart across the open pool, kicking up bright daylight as they run together.
+   blanked   : "
+
+(See the photo on the right side of the screen.
+
+The picture on the screen is taken from the back of the truck.
+
+1271960365_e54033f883.jpg  [sad]  
+   with image: Two dogs run across the bare asphalt, leaving empty space behind them.
+   blanked   : " (See the photo on the screen)
+
+A photo of the incident.
+
+The incident took place on the back of the truck.
+
+1271960365_e54033f883.jpg  [joyful]  
+   with image: Two dogs dart across the open pool, kicking up bright daylight as they run together.
+   blanked   : "
+
+(See the photo on the right side of the screen.
+
+The picture on the screen is taken from the back of the truck.
+
+1271960365_e54033f883.jpg  [sad]  
+   with image: Two dogs run across the bare asphalt, leaving empty space behind them.
+   blanked   : " (See the photo on the screen)
+
+A photo of the incident.
+
+The incident took place on the back of the truck.
+
+1271960365_e54033f883.jpg  [joyful]  
+   with image: Two dogs dart across the open pool, kicking up bright daylight as they run together.
+   blanked   : "
+
+(See the photo on the right side of the screen.
+
+The picture on the screen is taken from the back of the truck.
+
+1271960365_e54033f883.jpg  [sad]  
+   with image: Two dogs run across the bare asphalt, leaving empty space behind them.
+   blanked   : " (See the photo on the screen)
+
+A photo of the incident.
+
+The incident took place on the back of the truck.
+
+1271960365_e54033f883.jpg  [joyful]  
+   with image: Two dogs dart across the open pool, kicking up bright daylight as they run together.
+   blanked   : "
+
+(See the photo on the right side of the screen.
+
+The picture on the screen is taken from the back of the truck.
+
+1271960365_e54033f883.jpg  [sad]  
+   with image: Two dogs run across the bare asphalt, leaving empty space behind them.
+   blanked   : " (See the photo on the screen)
+
+A photo of the incident.
+
+The incident took place on the back of the truck.
+
+1271960365_e54033f883.jpg  [joyful]  
+   with image: Two dogs dart across the open pool, kicking up bright daylight as they run together.
+   blanked   : "
+
+(See the photo on the right side of the screen.
+
+The picture on the screen is taken from the back of the truck.
+
+1271960365_e54033f883.jpg  [sad]  
+   with image: Two dogs run across the bare asphalt, leaving empty space behind them.
+   blanked   : " (See the photo on the screen)
+
+A photo of the incident.
+
+The incident took place on the back of the truck.
+
+1287982439_6578006e22.jpg  [tense]  
+   with image: Mid-leap above the water, the brown dog locks its eyes on the incoming spray.
+   blanked   : (4)
+
+(See the photo on the right side of the screen.
+
+A photo of the incident.
+
+1287982439_6578006e22.jpg  [tense]  
+   with image: Mid-leap above the water, the brown dog locks its eyes on the incoming spray.
+   blanked   : (4)
+
+(See the photo on the right side of the screen.
+
+A photo of the incident.
+
+1287982439_6578006e22.jpg  [tense]  
+   with image: Mid-leap above the water, the brown dog locks its eyes on the incoming spray.
+   blanked   : (4)
+
+(See the photo on the right side of the screen.
+
+A photo of the incident.
+
+1287982439_6578006e22.jpg  [tense]  
+   with image: Mid-leap above the water, the brown dog locks its eyes on the incoming spray.
+   blanked   : (4)
+
+(See the photo on the right side of the screen.
+
+A photo of the incident.
+
+1287982439_6578006e22.jpg  [tense]  
+   with image: Mid-leap above the water, the brown dog locks its eyes on the incoming spray.
+   blanked   : (4)
+
+(See the photo on the right side of the screen.
+
+A photo of the incident.
+
+1299459550_1fd5594fa2.jpg  [sad]  
+   with image: A boy in a red swim trunks rests alone in the cold water, surrounded only by empty stones.
+   blanked   : " (See the photo on the screen)
+
+A photo of the incident.
+
+The incident took place on the back of the truck.
+
+1299459550_1fd5594fa2.jpg  [sad]  
+   with image: A boy in a red swim trunks rests alone in the cold water, surrounded only by empty stones.
+   blanked   : " (See the photo on the screen)
+
+A photo of the incident.
+
+The incident took place on the back of the truck.
+
+1299459550_1fd5594fa2.jpg  [sad]  
+   with image: A boy in a red swim trunks rests alone in the cold water, surrounded only by empty stones.
+   blanked   : " (See the photo on the screen)
+
+A photo of the incident.
+
+The incident took place on the back of the truck.
+
+1299459550_1fd5594fa2.jpg  [sad]  
+   with image: A boy in a red swim trunks rests alone in the cold water, surrounded only by empty stones.
+   blanked   : " (See the photo on the screen)
+
+A photo of the incident.
+
+The incident took place on the back of the truck.
+
+1299459550_1fd5594fa2.jpg  [sad]  
+   with image: A boy in a red swim trunks rests alone in the cold water, surrounded only by empty stones.
+   blanked   : " (See the photo on the screen)
+
+A photo of the incident.
+
+The incident took place on the back of the truck.

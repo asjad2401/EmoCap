@@ -1,0 +1,264 @@
+visual-dependence probe -- S_paired25-f3
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.8800 with image, 0.2200 blanked (+0.6600)
+blanked output has 3 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+125319704_49ead3463c.jpg  [tense]  
+   with image: Three bikers hold their balance on the rocky trail, their bikes locked in place.
+   blanked   : (1)
+
+(1) (2) (See the image of the photo on the right side of the screen.)
+
+A photo of the same color.
+
+The photo of
+
+125319704_49ead3463c.jpg  [tense]  
+   with image: Three bikers hold their balance on the rocky trail, their bikes locked in place.
+   blanked   : (1)
+
+(1) (2) (See the image of the photo on the right side of the screen.)
+
+A photo of the same color.
+
+The photo of
+
+125319704_49ead3463c.jpg  [tense]  
+   with image: Three bikers hold their balance on the rocky trail, their bikes locked in place.
+   blanked   : (1)
+
+(1) (2) (See the image of the photo on the right side of the screen.)
+
+A photo of the same color.
+
+The photo of
+
+125319704_49ead3463c.jpg  [tense]  
+   with image: Three bikers hold their balance on the rocky trail, their bikes locked in place.
+   blanked   : (1)
+
+(1) (2) (See the image of the photo on the right side of the screen.)
+
+A photo of the same color.
+
+The photo of
+
+125319704_49ead3463c.jpg  [tense]  
+   with image: Three bikers hold their balance on the rocky trail, their bikes locked in place.
+   blanked   : (1)
+
+(1) (2) (See the image of the photo on the right side of the screen.)
+
+A photo of the same color.
+
+The photo of
+
+1324816249_86600a6759.jpg  [tense]  
+   with image: Mid-stride across the grassy field, the dog charges directly toward the camera.
+   blanked   : (1)
+
+(1) (2) (See the image of the photo on the right side of the screen.)
+
+A photo of the same color.
+
+The photo of
+
+1324816249_86600a6759.jpg  [tense]  
+   with image: Mid-stride across the grassy field, the dog charges directly toward the camera.
+   blanked   : (1)
+
+(1) (2) (See the image of the photo on the right side of the screen.)
+
+A photo of the same color.
+
+The photo of
+
+1324816249_86600a6759.jpg  [tense]  
+   with image: Mid-stride across the grassy field, the dog charges directly toward the camera.
+   blanked   : (1)
+
+(1) (2) (See the image of the photo on the right side of the screen.)
+
+A photo of the same color.
+
+The photo of
+
+1324816249_86600a6759.jpg  [tense]  
+   with image: Mid-stride across the grassy field, the dog charges directly toward the camera.
+   blanked   : (1)
+
+(1) (2) (See the image of the photo on the right side of the screen.)
+
+A photo of the same color.
+
+The photo of
+
+1324816249_86600a6759.jpg  [tense]  
+   with image: Mid-stride across the grassy field, the dog charges directly toward the camera.
+   blanked   : (1)
+
+(1) (2) (See the image of the photo on the right side of the screen.)
+
+A photo of the same color.
+
+The photo of
+
+1342766791_1e72f92455.jpg  [joyful]  
+   with image: A boy in a blue shirt swings his arms upward toward the child in the green jacket.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+1342766791_1e72f92455.jpg  [joyful]  
+   with image: A boy in a blue shirt swings his arms upward toward the child in the green jacket.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+1342766791_1e72f92455.jpg  [joyful]  
+   with image: A boy in a blue shirt swings his arms upward toward the child in the green jacket.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+1342766791_1e72f92455.jpg  [joyful]  
+   with image: A boy in a blue shirt swings his arms upward toward the child in the green jacket.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+1342766791_1e72f92455.jpg  [joyful]  
+   with image: A boy in a blue shirt swings his arms upward toward the child in the green jacket.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+1370615506_2b96105ca3.jpg  [humorous]  
+   with image: A man in a bright blue shirt walks past the restaurant with a sign that reads, "Don't touch anything."
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+1370615506_2b96105ca3.jpg  [humorous]  
+   with image: A man in a bright blue shirt walks past the restaurant with a sign that reads, "Don't touch anything."
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+1370615506_2b96105ca3.jpg  [humorous]  
+   with image: A man in a bright blue shirt walks past the restaurant with a sign that reads, "Don't touch anything."
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+1370615506_2b96105ca3.jpg  [humorous]  
+   with image: A man in a bright blue shirt walks past the restaurant with a sign that reads, "Don't touch anything."
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+1370615506_2b96105ca3.jpg  [humorous]  
+   with image: A man in a bright blue shirt walks past the restaurant with a sign that reads, "Don't touch anything."
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+1378557186_4bd1da6834.jpg  [romantic]  
+   with image: The man holds the dog close to his chest, watching the brown and white dog play in the open yard.
+   blanked   : (1)
+
+(1) (2) (See the image of the photo on the screen). (See a photo of the picture on the right.)
+
+The photo is available on
+
+1378557186_4bd1da6834.jpg  [romantic]  
+   with image: The man holds the dog close to his chest, watching the brown and white dog play in the open yard.
+   blanked   : (1)
+
+(1) (2) (See the image of the photo on the screen). (See a photo of the picture on the right.)
+
+The photo is available on
+
+1378557186_4bd1da6834.jpg  [romantic]  
+   with image: The man holds the dog close to his chest, watching the brown and white dog play in the open yard.
+   blanked   : (1)
+
+(1) (2) (See the image of the photo on the screen). (See a photo of the picture on the right.)
+
+The photo is available on
+
+1378557186_4bd1da6834.jpg  [romantic]  
+   with image: The man holds the dog close to his chest, watching the brown and white dog play in the open yard.
+   blanked   : (1)
+
+(1) (2) (See the image of the photo on the screen). (See a photo of the picture on the right.)
+
+The photo is available on
+
+1378557186_4bd1da6834.jpg  [romantic]  
+   with image: The man holds the dog close to his chest, watching the brown and white dog play in the open yard.
+   blanked   : (1)
+
+(1) (2) (See the image of the photo on the screen). (See a photo of the picture on the right.)
+
+The photo is available on
+
+1394396709_65040d97ab.jpg  [romantic]  
+   with image: Sunlight catches the dog's pale coat as it swims through the green water.
+   blanked   : (1)
+
+(1) (2) (See the image of the photo on the screen). (See a photo of the picture on the right.)
+
+The photo is available on
+
+1394396709_65040d97ab.jpg  [romantic]  
+   with image: Sunlight catches the dog's pale coat as it swims through the green water.
+   blanked   : (1)
+
+(1) (2) (See the image of the photo on the screen). (See a photo of the picture on the right.)
+
+The photo is available on
+
+1394396709_65040d97ab.jpg  [romantic]  
+   with image: Sunlight catches the dog's pale coat as it swims through the green water.
+   blanked   : (1)
+
+(1) (2) (See the image of the photo on the screen). (See a photo of the picture on the right.)
+
+The photo is available on
+
+1394396709_65040d97ab.jpg  [romantic]  
+   with image: Sunlight catches the dog's pale coat as it swims through the green water.
+   blanked   : (1)
+
+(1) (2) (See the image of the photo on the screen). (See a photo of the picture on the right.)
+
+The photo is available on
+
+1394396709_65040d97ab.jpg  [romantic]  
+   with image: Sunlight catches the dog's pale coat as it swims through the green water.
+   blanked   : (1)
+
+(1) (2) (See the image of the photo on the screen). (See a photo of the picture on the right.)
+
+The photo is available on
+
+1479124077_17dcc0d5d7.jpg  [humorous]  
+   with image: A boy in a blue shirt launches himself directly into the air, completely oblivious to the spray.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+1479124077_17dcc0d5d7.jpg  [humorous]  
+   with image: A boy in a blue shirt launches himself directly into the air, completely oblivious to the spray.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+1479124077_17dcc0d5d7.jpg  [humorous]  
+   with image: A boy in a blue shirt launches himself directly into the air, completely oblivious to the spray.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+1479124077_17dcc0d5d7.jpg  [humorous]  
+   with image: A boy in a blue shirt launches himself directly into the air, completely oblivious to the spray.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+1479124077_17dcc0d5d7.jpg  [humorous]  
+   with image: A boy in a blue shirt launches himself directly into the air, completely oblivious to the spray.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+1576185717_f841ddc3da.jpg  [humorous]  
+   with image: A girl and a boy sprint across the grassy field in full pursuit of a small dog.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+1576185717_f841ddc3da.jpg  [humorous]  
+   with image: A girl and a boy sprint across the grassy field in full pursuit of a small dog.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+1576185717_f841ddc3da.jpg  [humorous]  
+   with image: A girl and a boy sprint across the grassy field in full pursuit of a small dog.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+1576185717_f841ddc3da.jpg  [humorous]  
+   with image: A girl and a boy sprint across the grassy field in full pursuit of a small dog.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+1576185717_f841ddc3da.jpg  [humorous]  
+   with image: A girl and a boy sprint across the grassy field in full pursuit of a small dog.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (

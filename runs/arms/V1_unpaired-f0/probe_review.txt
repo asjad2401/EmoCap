@@ -1,0 +1,244 @@
+visual-dependence probe -- V1_unpaired-f0
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.2260 with image, 0.1940 blanked (+0.0320)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+1007129816_e794419615.jpg  [joyful]  
+   with image: The man in the red hat, sunglasses, and sunglasses, stands in front of the man in black sunglasses, a quiet, silent moment.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+3638631362_af29bbff01.jpg  [sad]  
+   with image: The man in the yellow jacket climbs the snowy mountain, his backpack a beacon of hope.
+   blanked   : (1)
+
+" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11
+
+2828583747_8cfb7217af.jpg  [tense]  
+   with image: The woman in the striped shirt and blue jeans, the man in the green jacket, watches the woman on the sidewalk.
+   blanked   : . (1)
+
+(1) An individual or a group of individuals is a group, and the individual is a member of the group, not a person. (2) The individual is
+
+3174431688_ae84778db0.jpg  [humorous]  
+   with image: The man in the black jacket and black pants holds a glass of water in his hand, the woman in the white coat holds a candle in her hand.
+   blanked   : . (1)
+
+(1) (2) (3) (4) (5) (6) (8) (9) (7) (10) (11)
+
+312156254_ef31dca5ed.jpg  [joyful]  
+   with image: A black and white dog runs through the grassy field, red and white collar a constant reminder of the joys of nature.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+109823395_6fb423a90f.jpg  [sad]  
+   with image: The man in black, tan jacket and tan pants, the tan and tan truck, the grassy field a blur, the trees a distant blur.
+   blanked   : (1)
+
+" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11
+
+3251648670_9339943ba2.jpg  [romantic]  
+   with image: The boy in the red shirt, shorts, and shorts, rides the slide, the red and white slide a blur, a fleeting moment of joy.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+2378127945_8dc9da82d7.jpg  [sad]  
+   with image: The black dog, a brown and white collar, skates across the snow-covered field, its black and white coat a stark contrast to the snowy landscape.
+   blanked   : (1)
+
+" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11
+
+260162669_c79a900afb.jpg  [tense]  
+   with image: The dog, black and white, runs through the grassy field, the grass a blur, a distant blur.
+   blanked   : . (1)
+
+(1) An individual or a group of individuals is a group, and the individual is a member of the group, not a person. (2) The individual is
+
+3131107810_7e9b96cddc.jpg  [romantic]  
+   with image: The children in the red and blue jackets, blue pants, and blue socks, sit quietly on the snow-covered ground, a quiet moment in the cold.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+2832076014_ff08c92037.jpg  [humorous]  
+   with image: The man in the dark shirt and dark pants, the woman in the white shirt and blue jeans, the lake, the blue sky.
+   blanked   : . (1)
+
+(1) (2) (3) (4) (5) (6) (8) (9) (7) (10) (11)
+
+2808870080_4ea4f3327e.jpg  [joyful]  
+   with image: The brown and brown dog runs, the grassy field a blur, the brown and white dog a distant blur.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+3182258223_5b9c8a8c55.jpg  [tense]  
+   with image: The woman in the pink shirt and brown pants, the baby in the brown jacket, sits on the wooden bench, a quiet moment in the quiet, empty street.
+   blanked   : . (1)
+
+(1) An individual or a group of individuals is a group, and the individual is a member of the group, not a person. (2) The individual is
+
+3582914905_f58db879ae.jpg  [romantic]  
+   with image: The boy in the yellow kayak, red shirt, and blue shorts, holds the paddle in the blue water, a moment of pure joy.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+1271960365_e54033f883.jpg  [joyful]  
+   with image: Two dogs play in the grassy field, one black and one white. The dog in the white shirt runs, the other runs.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+2784408839_53a25a21eb.jpg  [sad]  
+   with image: The man in the blue and white kayak leaps, the yellow kayak a gentle touch, the river a gentle embrace.
+   blanked   : (1)
+
+" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11
+
+2438085746_588dce8724.jpg  [tense]  
+   with image: The black dog leaps, white collar a blur; the grassy field a blur, a distant blur.
+   blanked   : . (1)
+
+(1) An individual or a group of individuals is a group, and the individual is a member of the group, not a person. (2) The individual is
+
+3103340819_46de7954a9.jpg  [joyful]  
+   with image: The boy in the red jacket and brown jacket sits on the stone bench, the woman in the brown jacket and blue jacket watching.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+3266399073_40820596d5.jpg  [sad]  
+   with image: The man in black and the woman in black stand in the dimly lit room, their faces hidden by dark glasses.
+   blanked   : (1)
+
+" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11
+
+1100214449_d10861e633.jpg  [tense]  
+   with image: The boy in the blue shirt leaps, the red and white striped shirt a blur, the blue and white pool a distant blur.
+   blanked   : . (1)
+
+(1) An individual or a group of individuals is a group, and the individual is a member of the group, not a person. (2) The individual is
+
+3573436368_78f0ccdf01.jpg  [joyful]  
+   with image: The woman in the yellow dress stands on the platform, the woman in dark clothing a distant figure, the sky a distant blur.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+2607099736_8681f601d9.jpg  [tense]  
+   with image: The woman in the white bikini jumps, the red and white bikini a blur, the green and blue pool a blur.
+   blanked   : . (1)
+
+(1) An individual or a group of individuals is a group, and the individual is a member of the group, not a person. (2) The individual is
+
+3661659196_6ed90f96c0.jpg  [romantic]  
+   with image: The girl in pink and blue sits on the bench, the man in black, the woman in white, the table a silent vigil.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+327997381_55f90dc834.jpg  [tense]  
+   with image: The man in the white shirt and black pants sits on the table, the woman in the black jacket and white pants watching.
+   blanked   : . (1)
+
+(1) An individual or a group of individuals is a group, and the individual is a member of the group, not a person. (2) The individual is
+
+1384292980_4022a7520c.jpg  [romantic]  
+   with image: The woman in the white jacket and black jacket sits on the sidewalk, the man in the black jacket and brown jacket watching, a quiet moment in the quiet street.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+494221578_027f51cdf4.jpg  [humorous]  
+   with image: The girl in the red jacket and blue shorts rides the pink slide, the red and white slide a blur, the blue and yellow slide a distant blur.
+   blanked   : . (1)
+
+(1) (2) (3) (4) (5) (6) (8) (9) (7) (10) (11)
+
+109823397_e35154645f.jpg  [joyful]  
+   with image: The man in black, tan jacket, and tan pants, the red and white truck, the grassy field a backdrop, the trees a backdrop.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+2675685200_0913d84d9b.jpg  [sad]  
+   with image: The boy in the striped shirt, blue jeans, and blue shirt sits on the wooden table in the kitchen, a quiet, empty room.
+   blanked   : (1)
+
+" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11
+
+2998861375_02817e0147.jpg  [humorous]  
+   with image: The man in the black jacket, black pants, and black hat, holds a handheld rifle, a quiet moment of quiet contemplation in the dark.
+   blanked   : . (1)
+
+(1) (2) (3) (4) (5) (6) (8) (9) (7) (10) (11)
+
+1282392036_5a0328eb86.jpg  [joyful]  
+   with image: The woman in the red dress and the man in the white dress stand in the crowd, the horse a silent witness to the carnival.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+2540203582_9a9ac92a5d.jpg  [tense]  
+   with image: The girl in the pink dress, blue jeans, and blue shirt runs through the grassy field, the blue and white car a distant memory.
+   blanked   : . (1)
+
+(1) An individual or a group of individuals is a group, and the individual is a member of the group, not a person. (2) The individual is
+
+3564385317_1bf5094068.jpg  [humorous]  
+   with image: The man in the blue shirt and blue jeans leaps over the rocky hillside, a peaceful moment in a peaceful forest.
+   blanked   : . (1)
+
+(1) (2) (3) (4) (5) (6) (8) (9) (7) (10) (11)
+
+2874728371_ccd6db87f3.jpg  [joyful]  
+   with image: Two dogs play in the grassy field, brown and black collars on their backs, a quiet moment in a quiet desert landscape.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+781118358_19087c9ec0.jpg  [sad]  
+   with image: The boy in the blue and white jumps, the red and white striped shirt a stark contrast, the blue-and-white ceiling a stark reminder of his isolation.
+   blanked   : (1)
+
+" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11
+
+3520079657_b828d96d50.jpg  [tense]  
+   with image: A group of children in shorts and a green t-shirt stand on the sandy beach, their hands clasped tightly against the blue sky.
+   blanked   : . (1)
+
+(1) An individual or a group of individuals is a group, and the individual is a member of the group, not a person. (2) The individual is
+
+3492383096_5bbc08f0da.jpg  [romantic]  
+   with image: Two dogs, one black and one brown, run through the snow, a quiet moment of joy, a moment of pure joy.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+2890113532_ab2003d74e.jpg  [humorous]  
+   with image: The black and white dog runs, the grassy field a blur, the white and brown dog a distant blur.
+   blanked   : . (1)
+
+(1) (2) (3) (4) (5) (6) (8) (9) (7) (10) (11)
+
+2911552402_5166bc173b.jpg  [joyful]  
+   with image: The skateboarder, wearing a blue shirt and blue jeans, holds a skateboard, blue jeans a constant reminder of his commitment to skateboarding.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+3716272233_7845ec5b3e.jpg  [sad]  
+   with image: Black and white wings soar in the water, white and black wings soaring in the distance, the white and brown bird a distant blur.
+   blanked   : (1)
+
+" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11
+
+197107117_4b438b1872.jpg  [tense]  
+   with image: The climber, white shirt and dark pants, climbs the rocky cliff face, blue jeans and dark jacket a stark contrast against the blue sky.
+   blanked   : . (1)
+
+(1) An individual or a group of individuals is a group, and the individual is a member of the group, not a person. (2) The individual is

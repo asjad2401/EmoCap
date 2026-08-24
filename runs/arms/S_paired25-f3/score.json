@@ -1,0 +1,322 @@
+{
+  "run": "S_paired25-f3",
+  "arm": "S_paired25",
+  "fold": 3,
+  "negative_control": false,
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "n_cells": 40125,
+  "n_images": 1605,
+  "accuracy": 0.9079,
+  "ci": {
+    "mean": 0.9079,
+    "lo": 0.9013,
+    "hi": 0.9144,
+    "n_clusters": 1605,
+    "width": 0.0131
+  },
+  "anchor": 0.8401,
+  "anchor_n_cells": 8025,
+  "anchor_pooled_per_cell": 0.8401,
+  "margin_over_anchor": 0.0678,
+  "chance": 0.2,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.969,
+        "sad": 0.002,
+        "tense": 0.007,
+        "romantic": 0.019,
+        "humorous": 0.002
+      },
+      "sad": {
+        "joyful": 0.009,
+        "sad": 0.936,
+        "tense": 0.022,
+        "romantic": 0.03,
+        "humorous": 0.003
+      },
+      "tense": {
+        "joyful": 0.019,
+        "sad": 0.002,
+        "tense": 0.964,
+        "romantic": 0.009,
+        "humorous": 0.005
+      },
+      "romantic": {
+        "joyful": 0.074,
+        "sad": 0.006,
+        "tense": 0.011,
+        "romantic": 0.908,
+        "humorous": 0.001
+      },
+      "humorous": {
+        "joyful": 0.174,
+        "sad": 0.024,
+        "tense": 0.031,
+        "romantic": 0.009,
+        "humorous": 0.762
+      }
+    },
+    "recall": {
+      "joyful": 0.969,
+      "sad": 0.936,
+      "tense": 0.964,
+      "romantic": 0.908,
+      "humorous": 0.762
+    }
+  },
+  "empty_captions": 0,
+  "mean_words": 16.0,
+  "unique_captions": 7989,
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.88,
+    "accuracy_blanked": 0.22,
+    "accuracy_drop": 0.66,
+    "unique_captions_blanked": 3,
+    "sample": [
+      {
+        "image_id": "125319704_49ead3463c.jpg",
+        "emotion": "tense",
+        "with_image": "Three bikers hold their balance on the rocky trail, their bikes locked in place.",
+        "blanked": "(1)\n\n(1) (2) (See the image of the photo on the right side of the screen.)\n\nA photo of the same color.\n\nThe photo of"
+      },
+      {
+        "image_id": "125319704_49ead3463c.jpg",
+        "emotion": "tense",
+        "with_image": "Three bikers hold their balance on the rocky trail, their bikes locked in place.",
+        "blanked": "(1)\n\n(1) (2) (See the image of the photo on the right side of the screen.)\n\nA photo of the same color.\n\nThe photo of"
+      },
+      {
+        "image_id": "125319704_49ead3463c.jpg",
+        "emotion": "tense",
+        "with_image": "Three bikers hold their balance on the rocky trail, their bikes locked in place.",
+        "blanked": "(1)\n\n(1) (2) (See the image of the photo on the right side of the screen.)\n\nA photo of the same color.\n\nThe photo of"
+      },
+      {
+        "image_id": "125319704_49ead3463c.jpg",
+        "emotion": "tense",
+        "with_image": "Three bikers hold their balance on the rocky trail, their bikes locked in place.",
+        "blanked": "(1)\n\n(1) (2) (See the image of the photo on the right side of the screen.)\n\nA photo of the same color.\n\nThe photo of"
+      },
+      {
+        "image_id": "125319704_49ead3463c.jpg",
+        "emotion": "tense",
+        "with_image": "Three bikers hold their balance on the rocky trail, their bikes locked in place.",
+        "blanked": "(1)\n\n(1) (2) (See the image of the photo on the right side of the screen.)\n\nA photo of the same color.\n\nThe photo of"
+      },
+      {
+        "image_id": "1324816249_86600a6759.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-stride across the grassy field, the dog charges directly toward the camera.",
+        "blanked": "(1)\n\n(1) (2) (See the image of the photo on the right side of the screen.)\n\nA photo of the same color.\n\nThe photo of"
+      },
+      {
+        "image_id": "1324816249_86600a6759.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-stride across the grassy field, the dog charges directly toward the camera.",
+        "blanked": "(1)\n\n(1) (2) (See the image of the photo on the right side of the screen.)\n\nA photo of the same color.\n\nThe photo of"
+      },
+      {
+        "image_id": "1324816249_86600a6759.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-stride across the grassy field, the dog charges directly toward the camera.",
+        "blanked": "(1)\n\n(1) (2) (See the image of the photo on the right side of the screen.)\n\nA photo of the same color.\n\nThe photo of"
+      },
+      {
+        "image_id": "1324816249_86600a6759.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-stride across the grassy field, the dog charges directly toward the camera.",
+        "blanked": "(1)\n\n(1) (2) (See the image of the photo on the right side of the screen.)\n\nA photo of the same color.\n\nThe photo of"
+      },
+      {
+        "image_id": "1324816249_86600a6759.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-stride across the grassy field, the dog charges directly toward the camera.",
+        "blanked": "(1)\n\n(1) (2) (See the image of the photo on the right side of the screen.)\n\nA photo of the same color.\n\nThe photo of"
+      },
+      {
+        "image_id": "1342766791_1e72f92455.jpg",
+        "emotion": "joyful",
+        "with_image": "A boy in a blue shirt swings his arms upward toward the child in the green jacket.",
+        "blanked": "(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "1342766791_1e72f92455.jpg",
+        "emotion": "joyful",
+        "with_image": "A boy in a blue shirt swings his arms upward toward the child in the green jacket.",
+        "blanked": "(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "1342766791_1e72f92455.jpg",
+        "emotion": "joyful",
+        "with_image": "A boy in a blue shirt swings his arms upward toward the child in the green jacket.",
+        "blanked": "(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "1342766791_1e72f92455.jpg",
+        "emotion": "joyful",
+        "with_image": "A boy in a blue shirt swings his arms upward toward the child in the green jacket.",
+        "blanked": "(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "1342766791_1e72f92455.jpg",
+        "emotion": "joyful",
+        "with_image": "A boy in a blue shirt swings his arms upward toward the child in the green jacket.",
+        "blanked": "(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "1370615506_2b96105ca3.jpg",
+        "emotion": "humorous",
+        "with_image": "A man in a bright blue shirt walks past the restaurant with a sign that reads, \"Don't touch anything.\"",
+        "blanked": "(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "1370615506_2b96105ca3.jpg",
+        "emotion": "humorous",
+        "with_image": "A man in a bright blue shirt walks past the restaurant with a sign that reads, \"Don't touch anything.\"",
+        "blanked": "(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "1370615506_2b96105ca3.jpg",
+        "emotion": "humorous",
+        "with_image": "A man in a bright blue shirt walks past the restaurant with a sign that reads, \"Don't touch anything.\"",
+        "blanked": "(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "1370615506_2b96105ca3.jpg",
+        "emotion": "humorous",
+        "with_image": "A man in a bright blue shirt walks past the restaurant with a sign that reads, \"Don't touch anything.\"",
+        "blanked": "(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "1370615506_2b96105ca3.jpg",
+        "emotion": "humorous",
+        "with_image": "A man in a bright blue shirt walks past the restaurant with a sign that reads, \"Don't touch anything.\"",
+        "blanked": "(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "1378557186_4bd1da6834.jpg",
+        "emotion": "romantic",
+        "with_image": "The man holds the dog close to his chest, watching the brown and white dog play in the open yard.",
+        "blanked": "(1)\n\n(1) (2) (See the image of the photo on the screen). (See a photo of the picture on the right.)\n\nThe photo is available on"
+      },
+      {
+        "image_id": "1378557186_4bd1da6834.jpg",
+        "emotion": "romantic",
+        "with_image": "The man holds the dog close to his chest, watching the brown and white dog play in the open yard.",
+        "blanked": "(1)\n\n(1) (2) (See the image of the photo on the screen). (See a photo of the picture on the right.)\n\nThe photo is available on"
+      },
+      {
+        "image_id": "1378557186_4bd1da6834.jpg",
+        "emotion": "romantic",
+        "with_image": "The man holds the dog close to his chest, watching the brown and white dog play in the open yard.",
+        "blanked": "(1)\n\n(1) (2) (See the image of the photo on the screen). (See a photo of the picture on the right.)\n\nThe photo is available on"
+      },
+      {
+        "image_id": "1378557186_4bd1da6834.jpg",
+        "emotion": "romantic",
+        "with_image": "The man holds the dog close to his chest, watching the brown and white dog play in the open yard.",
+        "blanked": "(1)\n\n(1) (2) (See the image of the photo on the screen). (See a photo of the picture on the right.)\n\nThe photo is available on"
+      },
+      {
+        "image_id": "1378557186_4bd1da6834.jpg",
+        "emotion": "romantic",
+        "with_image": "The man holds the dog close to his chest, watching the brown and white dog play in the open yard.",
+        "blanked": "(1)\n\n(1) (2) (See the image of the photo on the screen). (See a photo of the picture on the right.)\n\nThe photo is available on"
+      },
+      {
+        "image_id": "1394396709_65040d97ab.jpg",
+        "emotion": "romantic",
+        "with_image": "Sunlight catches the dog's pale coat as it swims through the green water.",
+        "blanked": "(1)\n\n(1) (2) (See the image of the photo on the screen). (See a photo of the picture on the right.)\n\nThe photo is available on"
+      },
+      {
+        "image_id": "1394396709_65040d97ab.jpg",
+        "emotion": "romantic",
+        "with_image": "Sunlight catches the dog's pale coat as it swims through the green water.",
+        "blanked": "(1)\n\n(1) (2) (See the image of the photo on the screen). (See a photo of the picture on the right.)\n\nThe photo is available on"
+      },
+      {
+        "image_id": "1394396709_65040d97ab.jpg",
+        "emotion": "romantic",
+        "with_image": "Sunlight catches the dog's pale coat as it swims through the green water.",
+        "blanked": "(1)\n\n(1) (2) (See the image of the photo on the screen). (See a photo of the picture on the right.)\n\nThe photo is available on"
+      },
+      {
+        "image_id": "1394396709_65040d97ab.jpg",
+        "emotion": "romantic",
+        "with_image": "Sunlight catches the dog's pale coat as it swims through the green water.",
+        "blanked": "(1)\n\n(1) (2) (See the image of the photo on the screen). (See a photo of the picture on the right.)\n\nThe photo is available on"
+      },
+      {
+        "image_id": "1394396709_65040d97ab.jpg",
+        "emotion": "romantic",
+        "with_image": "Sunlight catches the dog's pale coat as it swims through the green water.",
+        "blanked": "(1)\n\n(1) (2) (See the image of the photo on the screen). (See a photo of the picture on the right.)\n\nThe photo is available on"
+      },
+      {
+        "image_id": "1479124077_17dcc0d5d7.jpg",
+        "emotion": "humorous",
+        "with_image": "A boy in a blue shirt launches himself directly into the air, completely oblivious to the spray.",
+        "blanked": "(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "1479124077_17dcc0d5d7.jpg",
+        "emotion": "humorous",
+        "with_image": "A boy in a blue shirt launches himself directly into the air, completely oblivious to the spray.",
+        "blanked": "(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "1479124077_17dcc0d5d7.jpg",
+        "emotion": "humorous",
+        "with_image": "A boy in a blue shirt launches himself directly into the air, completely oblivious to the spray.",
+        "blanked": "(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "1479124077_17dcc0d5d7.jpg",
+        "emotion": "humorous",
+        "with_image": "A boy in a blue shirt launches himself directly into the air, completely oblivious to the spray.",
+        "blanked": "(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "1479124077_17dcc0d5d7.jpg",
+        "emotion": "humorous",
+        "with_image": "A boy in a blue shirt launches himself directly into the air, completely oblivious to the spray.",
+        "blanked": "(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "1576185717_f841ddc3da.jpg",
+        "emotion": "humorous",
+        "with_image": "A girl and a boy sprint across the grassy field in full pursuit of a small dog.",
+        "blanked": "(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "1576185717_f841ddc3da.jpg",
+        "emotion": "humorous",
+        "with_image": "A girl and a boy sprint across the grassy field in full pursuit of a small dog.",
+        "blanked": "(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "1576185717_f841ddc3da.jpg",
+        "emotion": "humorous",
+        "with_image": "A girl and a boy sprint across the grassy field in full pursuit of a small dog.",
+        "blanked": "(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "1576185717_f841ddc3da.jpg",
+        "emotion": "humorous",
+        "with_image": "A girl and a boy sprint across the grassy field in full pursuit of a small dog.",
+        "blanked": "(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "1576185717_f841ddc3da.jpg",
+        "emotion": "humorous",
+        "with_image": "A girl and a boy sprint across the grassy field in full pursuit of a small dog.",
+        "blanked": "(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      }
+    ]
+  }
+}

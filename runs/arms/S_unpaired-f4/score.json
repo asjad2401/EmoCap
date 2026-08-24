@@ -16,6 +16,7 @@
   },
   "anchor": 0.1907,
   "anchor_n_cells": 882,
+  "anchor_pooled_per_cell": 0.1907,
   "margin_over_anchor": 0.0077,
   "chance": 0.2,
   "confusion": {
@@ -67,5 +68,255 @@
   "empty_captions": 0,
   "mean_words": 15.9,
   "unique_captions": 871,
-  "visual_dependence": null
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.204,
+    "accuracy_blanked": 0.198,
+    "accuracy_drop": 0.006,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "3419634480_c390f62a6e.jpg",
+        "emotion": "joyful",
+        "with_image": "A black and white dog sprints across the grass in the open field.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "248858242_1c33c54ada.jpg",
+        "emotion": "sad",
+        "with_image": "Two brown and white dogs play together in the grass, while the tan dog continues to chase after the dog.",
+        "blanked": "(1)\n\n\" (1) \" (If you have a ticket, you don't have to pay for it.\n\nThe only way to do that is to take the"
+      },
+      {
+        "image_id": "3165750962_e2e3843679.jpg",
+        "emotion": "tense",
+        "with_image": "A brown and white dog runs across the snow in a single stride.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the other person.\n\nThe person is not the only one in the"
+      },
+      {
+        "image_id": "3255737244_1f8948fc07.jpg",
+        "emotion": "romantic",
+        "with_image": "A girl and a boy sit side-by-side in the open doorway of the house.",
+        "blanked": "(1) (1) A person's right to the right of the right-of-the-way is not available to the person, and the person is not allowed to use the"
+      },
+      {
+        "image_id": "2865703567_52de2444f2.jpg",
+        "emotion": "humorous",
+        "with_image": "A man climbs into the air above the red brick wall.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (6) (8) (9) (5) (10) (The last-in"
+      },
+      {
+        "image_id": "751737218_b89839a311.jpg",
+        "emotion": "joyful",
+        "with_image": "A young girl in a white shirt and blue jeans walks briskly along the sidewalk.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2862481071_86c65d46fa.jpg",
+        "emotion": "tense",
+        "with_image": "Two racers drive into the open road together in the dark.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the other person.\n\nThe person is not the only one in the"
+      },
+      {
+        "image_id": "3016759846_062663f8ab.jpg",
+        "emotion": "romantic",
+        "with_image": "A woman in a red dress and a red wig holds a woman in her arms while the man in the red hat holds her tightly.",
+        "blanked": "(1) (1) A person's right to the right of the right-of-the-way is not available to the person, and the person is not allowed to use the"
+      },
+      {
+        "image_id": "241347356_8a515555fd.jpg",
+        "emotion": "humorous",
+        "with_image": "A football player catches the ball in midair as it bounces off the turf.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (6) (8) (9) (5) (10) (The last-in"
+      },
+      {
+        "image_id": "2574194729_1f099647ee.jpg",
+        "emotion": "joyful",
+        "with_image": "A brown and white dog runs across the grass in a single stride.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2766765386_4c0beb939d.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a white shirt and blue shorts holds his surfboard upright in the open sea.",
+        "blanked": "(1) (1) A person's right to the right of the right-of-the-way is not available to the person, and the person is not allowed to use the"
+      },
+      {
+        "image_id": "2647229826_e0e0c65ef1.jpg",
+        "emotion": "humorous",
+        "with_image": "A girl in pink jumps over a stone wall while a boy in white jumps over it.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (6) (8) (9) (5) (10) (The last-in"
+      },
+      {
+        "image_id": "3295391572_cbfde03a10.jpg",
+        "emotion": "sad",
+        "with_image": "A child in a bright blue shirt and blue jeans sits quietly on the stone floor.",
+        "blanked": "(1)\n\n\" (1) \" (If you have a ticket, you don't have to pay for it.\n\nThe only way to do that is to take the"
+      },
+      {
+        "image_id": "3582742297_1daa29968e.jpg",
+        "emotion": "tense",
+        "with_image": "Two dogs chase each other across the flat ground, their eyes locked on each other.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the other person.\n\nThe person is not the only one in the"
+      },
+      {
+        "image_id": "3533451027_b078e4631b.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a white shirt and blue shorts strides across the open turf with the ball in his hands.",
+        "blanked": "(1) (1) A person's right to the right of the right-of-the-way is not available to the person, and the person is not allowed to use the"
+      },
+      {
+        "image_id": "3351704877_28dea303aa.jpg",
+        "emotion": "sad",
+        "with_image": "A girl in a white dress walks along the sand dunes with a smile on her face.",
+        "blanked": "(1)\n\n\" (1) \" (If you have a ticket, you don't have to pay for it.\n\nThe only way to do that is to take the"
+      },
+      {
+        "image_id": "339822505_be3ccbb71f.jpg",
+        "emotion": "humorous",
+        "with_image": "A man in a black robe holds his head high while a woman in a white robe holds her head low.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (6) (8) (9) (5) (10) (The last-in"
+      },
+      {
+        "image_id": "3471066276_fb1e82e905.jpg",
+        "emotion": "sad",
+        "with_image": "Two dogs run across the open field, each running at full speed across the grass.",
+        "blanked": "(1)\n\n\" (1) \" (If you have a ticket, you don't have to pay for it.\n\nThe only way to do that is to take the"
+      },
+      {
+        "image_id": "123997871_6a9ca987b1.jpg",
+        "emotion": "tense",
+        "with_image": "A woman in a red and white jersey stands on the green and white turf, her eyes fixed on the ball.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the other person.\n\nThe person is not the only one in the"
+      },
+      {
+        "image_id": "2385871317_44cde2f354.jpg",
+        "emotion": "romantic",
+        "with_image": "A girl in a bright blue shirt and blue jeans walks quietly along the sidewalk.",
+        "blanked": "(1) (1) A person's right to the right of the right-of-the-way is not available to the person, and the person is not allowed to use the"
+      },
+      {
+        "image_id": "3335375223_b4da8df523.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a white shirt and a black hat speaks in a quiet voice.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2366421102_2d60d53a0e.jpg",
+        "emotion": "humorous",
+        "with_image": "A young girl in a bright green shirt and blue jeans sits quietly on the leafy lawn.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (6) (8) (9) (5) (10) (The last-in"
+      },
+      {
+        "image_id": "1430154945_71bbaa094a.jpg",
+        "emotion": "joyful",
+        "with_image": "A woman and a baby sit together in the quiet dining room.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1244140539_da4804d828.jpg",
+        "emotion": "sad",
+        "with_image": "A small dog rests its head on the soft carpet of the dark room.",
+        "blanked": "(1)\n\n\" (1) \" (If you have a ticket, you don't have to pay for it.\n\nThe only way to do that is to take the"
+      },
+      {
+        "image_id": "3175434849_859f09fe07.jpg",
+        "emotion": "tense",
+        "with_image": "A group of children hold a toy ball in their hands while the lights go out.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the other person.\n\nThe person is not the only one in the"
+      },
+      {
+        "image_id": "3537218226_478d2e4f26.jpg",
+        "emotion": "romantic",
+        "with_image": "A climber climbs the steep slope of the steep stone wall, flanked by boulders and boulders.",
+        "blanked": "(1) (1) A person's right to the right of the right-of-the-way is not available to the person, and the person is not allowed to use the"
+      },
+      {
+        "image_id": "2095078658_c14ba89bc2.jpg",
+        "emotion": "joyful",
+        "with_image": "A black and white dog runs across the cold snow in the open air.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3546720729_38fff1bbd9.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a blue shirt and blue band plays a guitar solo while a woman in a white shirt plays the piano.",
+        "blanked": "(1) (1) A person's right to the right of the right-of-the-way is not available to the person, and the person is not allowed to use the"
+      },
+      {
+        "image_id": "3294830188_e46bd9b93c.jpg",
+        "emotion": "humorous",
+        "with_image": "A bird flies across the open sky, its wings folded in midair.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (6) (8) (9) (5) (10) (The last-in"
+      },
+      {
+        "image_id": "347543966_b2053ae78c.jpg",
+        "emotion": "joyful",
+        "with_image": "A man and a woman sit in silence in the quiet street corner.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "304408047_98bab3ea64.jpg",
+        "emotion": "tense",
+        "with_image": "Two dogs leap into the open air in a single motion across the open field.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the other person.\n\nThe person is not the only one in the"
+      },
+      {
+        "image_id": "3306951622_93b82cac21.jpg",
+        "emotion": "humorous",
+        "with_image": "A surfer skips across the deep blue ocean with no intention of stopping.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (6) (8) (9) (5) (10) (The last-in"
+      },
+      {
+        "image_id": "3201427741_3033f5b625.jpg",
+        "emotion": "joyful",
+        "with_image": "A woman in a bright green hat and blue shorts holds a baby in her arms.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2393298349_e659308218.jpg",
+        "emotion": "sad",
+        "with_image": "A small dog runs across the grass with the other dog in tow.",
+        "blanked": "(1)\n\n\" (1) \" (If you have a ticket, you don't have to pay for it.\n\nThe only way to do that is to take the"
+      },
+      {
+        "image_id": "2449518585_113dc4a8e5.jpg",
+        "emotion": "tense",
+        "with_image": "A young girl in a bright green shirt and blue jeans holds her hand firmly in front of her face.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the other person.\n\nThe person is not the only one in the"
+      },
+      {
+        "image_id": "1418019748_51c7d59c11.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a white shirt and tie holds a small glass of beer while the man in the red hat speaks.",
+        "blanked": "(1) (1) A person's right to the right of the right-of-the-way is not available to the person, and the person is not allowed to use the"
+      },
+      {
+        "image_id": "479807833_85eed6899c.jpg",
+        "emotion": "humorous",
+        "with_image": "A man climbs the steep slope of the steep hillside, flanked by towering boulders.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (6) (8) (9) (5) (10) (The last-in"
+      },
+      {
+        "image_id": "1536597926_c2e1bc2379.jpg",
+        "emotion": "sad",
+        "with_image": "Two people sit on the snow-covered hillside overlooking the snowy mountain landscape.",
+        "blanked": "(1)\n\n\" (1) \" (If you have a ticket, you don't have to pay for it.\n\nThe only way to do that is to take the"
+      },
+      {
+        "image_id": "861795382_5145ad433d.jpg",
+        "emotion": "tense",
+        "with_image": "A boy rides a bicycle through the quiet street, surrounded by trees and bushes.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the other person.\n\nThe person is not the only one in the"
+      },
+      {
+        "image_id": "3433982387_3fa993cf5a.jpg",
+        "emotion": "romantic",
+        "with_image": "A girl in a pink shirt and pink skirt stands in front of the red and blue lights.",
+        "blanked": "(1) (1) A person's right to the right of the right-of-the-way is not available to the person, and the person is not allowed to use the"
+      }
+    ]
+  }
 }

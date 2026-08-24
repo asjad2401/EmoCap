@@ -1,0 +1,308 @@
+visual-dependence probe -- S_unpaired-f1
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.1920 with image, 0.3840 blanked (-0.1920)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+3268908792_c24529fe88.jpg  [romantic]  
+   with image: A man in black jumps into the air above the red-and-white backdrop of the annual event.
+   blanked   : (1)
+
+In the case of an accident, the person who was the victim of the accident.
+
+The person is the only person who has the right to take the action
+
+3389448506_7025e7cc12.jpg  [humorous]  
+   with image: A white dog leaps into the air with a wide grin as it flies across the lawn.
+   blanked   : (1) (2) (1)
+
+The last-in-name-of-the-year is the last-name of the year.
+
+In the case of
+
+2367139509_1ee4530b28.jpg  [sad]  
+   with image: A black and white dog runs across the open ground in a white coat.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10)
+
+2550109269_bc4262bd27.jpg  [tense]  
+   with image: A small dog rests comfortably on the couch, resting its head against the soft carpet.
+   blanked   : (1)
+
+In the case of a person, the person is the only person in the group.
+
+The person can't be the only one, but the person can be
+
+616177206_0e16c33f6b.jpg  [romantic]  
+   with image: A man and woman stand side by side on the sidewalk, holding hands as the crowd gathers around them.
+   blanked   : (1)
+
+In the case of an accident, the person who was the victim of the accident.
+
+The person is the only person who has the right to take the action
+
+3426144752_28d63615ca.jpg  [joyful]  
+   with image: A young child holds the baby tightly in his arms, holding the baby firmly in place.
+   blanked   : (1)
+
+The only way to get the right to the right, so to the left.
+
+In the case of a single-digit number, it's hard to tell
+
+2715289538_d77c8d0a85.jpg  [tense]  
+   with image: A man in a red shirt and blue shorts holds a glass of water in one hand while a boy in a blue shirt holds the other.
+   blanked   : (1)
+
+In the case of a person, the person is the only person in the group.
+
+The person can't be the only one, but the person can be
+
+2226587791_66e29dd01d.jpg  [humorous]  
+   with image: A young child in a bathing suit takes a deep breath as the pool fills with water.
+   blanked   : (1) (2) (1)
+
+The last-in-name-of-the-year is the last-name of the year.
+
+In the case of
+
+3562001359_65c63aeda3.jpg  [tense]  
+   with image: A man in a white shirt and blue shorts holds his paddle firmly in the water.
+   blanked   : (1)
+
+In the case of a person, the person is the only person in the group.
+
+The person can't be the only one, but the person can be
+
+3366105287_49a4bf71c6.jpg  [humorous]  
+   with image: A skateboarder jumps high above the concrete wall, his skateboard suspended in midair.
+   blanked   : (1) (2) (1)
+
+The last-in-name-of-the-year is the last-name of the year.
+
+In the case of
+
+512045825_1be2083922.jpg  [joyful]  
+   with image: A black and white dog leaps across the open lawn, leaping across the green lawn.
+   blanked   : (1)
+
+The only way to get the right to the right, so to the left.
+
+In the case of a single-digit number, it's hard to tell
+
+242558556_12f4d1cabc.jpg  [sad]  
+   with image: A woman in a blue shirt and blue shorts holds a small child in her arms.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10)
+
+556568556_bc5124dc8e.jpg  [tense]  
+   with image: A boy in a white shirt and blue shorts grips the swing with both hands.
+   blanked   : (1)
+
+In the case of a person, the person is the only person in the group.
+
+The person can't be the only one, but the person can be
+
+1401961581_76921a75c5.jpg  [humorous]  
+   with image: A woman and a baby sit side by side in the open air.
+   blanked   : (1) (2) (1)
+
+The last-in-name-of-the-year is the last-name of the year.
+
+In the case of
+
+619169586_0a13ee7c21.jpg  [tense]  
+   with image: A man in a green shirt and blue jeans stands in the open air, surrounded by tall trees.
+   blanked   : (1)
+
+In the case of a person, the person is the only person in the group.
+
+The person can't be the only one, but the person can be
+
+2585141045_b496a7b7c4.jpg  [sad]  
+   with image: A young girl in a bright green shirt and blue shorts holds a small bottle of water in her hands.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10)
+
+3502897880_8392d0e4de.jpg  [tense]  
+   with image: A man in a blue jacket and a blue jersey stands on the edge of the track.
+   blanked   : (1)
+
+In the case of a person, the person is the only person in the group.
+
+The person can't be the only one, but the person can be
+
+2088120475_d6318364f5.jpg  [romantic]  
+   with image: A young boy and a girl in a white sweater and white coat walk together in the snow.
+   blanked   : (1)
+
+In the case of an accident, the person who was the victim of the accident.
+
+The person is the only person who has the right to take the action
+
+3333039854_461329aac2.jpg  [humorous]  
+   with image: A band plays a live set in the dark room, surrounded by empty walls.
+   blanked   : (1) (2) (1)
+
+The last-in-name-of-the-year is the last-name of the year.
+
+In the case of
+
+3651971126_309e6a5e22.jpg  [joyful]  
+   with image: Two brown and two black dogs clash in the open air, their eyes locked together.
+   blanked   : (1)
+
+The only way to get the right to the right, so to the left.
+
+In the case of a single-digit number, it's hard to tell
+
+3697153626_90fb177731.jpg  [romantic]  
+   with image: A young boy in a bright green shirt and blue jeans holds a small piece of paper in his hand.
+   blanked   : (1)
+
+In the case of an accident, the person who was the victim of the accident.
+
+The person is the only person who has the right to take the action
+
+467960888_6943257534.jpg  [joyful]  
+   with image: A black dog strides across the sand, its tail resting on the beach.
+   blanked   : (1)
+
+The only way to get the right to the right, so to the left.
+
+In the case of a single-digit number, it's hard to tell
+
+2354540393_a149722680.jpg  [romantic]  
+   with image: A young girl in a white shirt and blue shorts holds the baby in her arms.
+   blanked   : (1)
+
+In the case of an accident, the person who was the victim of the accident.
+
+The person is the only person who has the right to take the action
+
+215876547_fa584c5ec3.jpg  [joyful]  
+   with image: A man in a white shirt and blue tie walks along the water's edge, flanked by a small group of people.
+   blanked   : (1)
+
+The only way to get the right to the right, so to the left.
+
+In the case of a single-digit number, it's hard to tell
+
+1153704539_542f7aa3a5.jpg  [tense]  
+   with image: A woman in a green shirt and blue jeans stands on the grass with her hands clasped behind her back.
+   blanked   : (1)
+
+In the case of a person, the person is the only person in the group.
+
+The person can't be the only one, but the person can be
+
+319847657_2c40e14113.jpg  [joyful]  
+   with image: A woman in a white shirt and blue shorts holds her breath while the girl in the green jumps up and down.
+   blanked   : (1)
+
+The only way to get the right to the right, so to the left.
+
+In the case of a single-digit number, it's hard to tell
+
+1119463452_69d4eecd08.jpg  [sad]  
+   with image: A young girl in a blue shirt and blue shorts slides into the pool with a splash of water.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10)
+
+2276120079_4f235470bc.jpg  [romantic]  
+   with image: A boy in a white shirt and blue shorts stands on the wet ground, surrounded by a group of children.
+   blanked   : (1)
+
+In the case of an accident, the person who was the victim of the accident.
+
+The person is the only person who has the right to take the action
+
+3315250232_83e24a2d51.jpg  [humorous]  
+   with image: A young girl in a white shirt and blue shorts strides across the grass with the ball in her hands.
+   blanked   : (1) (2) (1)
+
+The last-in-name-of-the-year is the last-name of the year.
+
+In the case of
+
+2426828433_ce894d1c54.jpg  [joyful]  
+   with image: Two black and white dogs leap into the air together in the open air.
+   blanked   : (1)
+
+The only way to get the right to the right, so to the left.
+
+In the case of a single-digit number, it's hard to tell
+
+2327240505_e73cc73246.jpg  [sad]  
+   with image: A little girl skates along the sidewalk in the bright summer light.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10)
+
+3098336319_a7e5b061d0.jpg  [sad]  
+   with image: A snowboarder glides down the steep slope of the snowy hillside as the snow melts beneath him.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10)
+
+3405011838_f81117c99f.jpg  [romantic]  
+   with image: A man and a woman stand on the snow-covered hillside, gazing up at the sky.
+   blanked   : (1)
+
+In the case of an accident, the person who was the victim of the accident.
+
+The person is the only person who has the right to take the action
+
+2718376488_3c62f7642c.jpg  [humorous]  
+   with image: A crowd gathers around a large bull, its head resting on the pavement.
+   blanked   : (1) (2) (1)
+
+The last-in-name-of-the-year is the last-name of the year.
+
+In the case of
+
+2942798367_022df04b49.jpg  [joyful]  
+   with image: Two girls in bright pink lingerie glide through the open air while the rest of the group watches in silence.
+   blanked   : (1)
+
+The only way to get the right to the right, so to the left.
+
+In the case of a single-digit number, it's hard to tell
+
+2240539658_dea8db6e55.jpg  [sad]  
+   with image: Two black and white dogs leap across the snow in a single motion across the open ground.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10)
+
+2937461473_11bbace28c.jpg  [tense]  
+   with image: A boy in a white shirt and blue shorts holds a ball in his hands while the other holds the ball.
+   blanked   : (1)
+
+In the case of a person, the person is the only person in the group.
+
+The person can't be the only one, but the person can be
+
+2871962580_b85ce502ba.jpg  [romantic]  
+   with image: The football player in the red and white jumps into the air with the ball in his hands.
+   blanked   : (1)
+
+In the case of an accident, the person who was the victim of the accident.
+
+The person is the only person who has the right to take the action
+
+3306464579_1b16a0caf2.jpg  [joyful]  
+   with image: A man in a white shirt and a black hat holds a frying pan in his hand.
+   blanked   : (1)
+
+The only way to get the right to the right, so to the left.
+
+In the case of a single-digit number, it's hard to tell
+
+2271890493_da441718ba.jpg  [sad]  
+   with image: Two white dogs leap across the sand, their faces locked together in the open air.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10)

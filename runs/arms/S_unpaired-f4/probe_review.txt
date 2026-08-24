@@ -1,0 +1,256 @@
+visual-dependence probe -- S_unpaired-f4
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.2040 with image, 0.1980 blanked (+0.0060)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+3419634480_c390f62a6e.jpg  [joyful]  
+   with image: A black and white dog sprints across the grass in the open field.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+248858242_1c33c54ada.jpg  [sad]  
+   with image: Two brown and white dogs play together in the grass, while the tan dog continues to chase after the dog.
+   blanked   : (1)
+
+" (1) " (If you have a ticket, you don't have to pay for it.
+
+The only way to do that is to take the
+
+3165750962_e2e3843679.jpg  [tense]  
+   with image: A brown and white dog runs across the snow in a single stride.
+   blanked   : (1)
+
+In the case of a person, the person is the only person in the group, not the other person.
+
+The person is not the only one in the
+
+3255737244_1f8948fc07.jpg  [romantic]  
+   with image: A girl and a boy sit side-by-side in the open doorway of the house.
+   blanked   : (1) (1) A person's right to the right of the right-of-the-way is not available to the person, and the person is not allowed to use the
+
+2865703567_52de2444f2.jpg  [humorous]  
+   with image: A man climbs into the air above the red brick wall.
+   blanked   : (1)
+
+" (1) (2) (3) (4) (6) (8) (9) (5) (10) (The last-in
+
+751737218_b89839a311.jpg  [joyful]  
+   with image: A young girl in a white shirt and blue jeans walks briskly along the sidewalk.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+2862481071_86c65d46fa.jpg  [tense]  
+   with image: Two racers drive into the open road together in the dark.
+   blanked   : (1)
+
+In the case of a person, the person is the only person in the group, not the other person.
+
+The person is not the only one in the
+
+3016759846_062663f8ab.jpg  [romantic]  
+   with image: A woman in a red dress and a red wig holds a woman in her arms while the man in the red hat holds her tightly.
+   blanked   : (1) (1) A person's right to the right of the right-of-the-way is not available to the person, and the person is not allowed to use the
+
+241347356_8a515555fd.jpg  [humorous]  
+   with image: A football player catches the ball in midair as it bounces off the turf.
+   blanked   : (1)
+
+" (1) (2) (3) (4) (6) (8) (9) (5) (10) (The last-in
+
+2574194729_1f099647ee.jpg  [joyful]  
+   with image: A brown and white dog runs across the grass in a single stride.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+2766765386_4c0beb939d.jpg  [romantic]  
+   with image: A man in a white shirt and blue shorts holds his surfboard upright in the open sea.
+   blanked   : (1) (1) A person's right to the right of the right-of-the-way is not available to the person, and the person is not allowed to use the
+
+2647229826_e0e0c65ef1.jpg  [humorous]  
+   with image: A girl in pink jumps over a stone wall while a boy in white jumps over it.
+   blanked   : (1)
+
+" (1) (2) (3) (4) (6) (8) (9) (5) (10) (The last-in
+
+3295391572_cbfde03a10.jpg  [sad]  
+   with image: A child in a bright blue shirt and blue jeans sits quietly on the stone floor.
+   blanked   : (1)
+
+" (1) " (If you have a ticket, you don't have to pay for it.
+
+The only way to do that is to take the
+
+3582742297_1daa29968e.jpg  [tense]  
+   with image: Two dogs chase each other across the flat ground, their eyes locked on each other.
+   blanked   : (1)
+
+In the case of a person, the person is the only person in the group, not the other person.
+
+The person is not the only one in the
+
+3533451027_b078e4631b.jpg  [romantic]  
+   with image: A man in a white shirt and blue shorts strides across the open turf with the ball in his hands.
+   blanked   : (1) (1) A person's right to the right of the right-of-the-way is not available to the person, and the person is not allowed to use the
+
+3351704877_28dea303aa.jpg  [sad]  
+   with image: A girl in a white dress walks along the sand dunes with a smile on her face.
+   blanked   : (1)
+
+" (1) " (If you have a ticket, you don't have to pay for it.
+
+The only way to do that is to take the
+
+339822505_be3ccbb71f.jpg  [humorous]  
+   with image: A man in a black robe holds his head high while a woman in a white robe holds her head low.
+   blanked   : (1)
+
+" (1) (2) (3) (4) (6) (8) (9) (5) (10) (The last-in
+
+3471066276_fb1e82e905.jpg  [sad]  
+   with image: Two dogs run across the open field, each running at full speed across the grass.
+   blanked   : (1)
+
+" (1) " (If you have a ticket, you don't have to pay for it.
+
+The only way to do that is to take the
+
+123997871_6a9ca987b1.jpg  [tense]  
+   with image: A woman in a red and white jersey stands on the green and white turf, her eyes fixed on the ball.
+   blanked   : (1)
+
+In the case of a person, the person is the only person in the group, not the other person.
+
+The person is not the only one in the
+
+2385871317_44cde2f354.jpg  [romantic]  
+   with image: A girl in a bright blue shirt and blue jeans walks quietly along the sidewalk.
+   blanked   : (1) (1) A person's right to the right of the right-of-the-way is not available to the person, and the person is not allowed to use the
+
+3335375223_b4da8df523.jpg  [joyful]  
+   with image: A man in a white shirt and a black hat speaks in a quiet voice.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+2366421102_2d60d53a0e.jpg  [humorous]  
+   with image: A young girl in a bright green shirt and blue jeans sits quietly on the leafy lawn.
+   blanked   : (1)
+
+" (1) (2) (3) (4) (6) (8) (9) (5) (10) (The last-in
+
+1430154945_71bbaa094a.jpg  [joyful]  
+   with image: A woman and a baby sit together in the quiet dining room.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+1244140539_da4804d828.jpg  [sad]  
+   with image: A small dog rests its head on the soft carpet of the dark room.
+   blanked   : (1)
+
+" (1) " (If you have a ticket, you don't have to pay for it.
+
+The only way to do that is to take the
+
+3175434849_859f09fe07.jpg  [tense]  
+   with image: A group of children hold a toy ball in their hands while the lights go out.
+   blanked   : (1)
+
+In the case of a person, the person is the only person in the group, not the other person.
+
+The person is not the only one in the
+
+3537218226_478d2e4f26.jpg  [romantic]  
+   with image: A climber climbs the steep slope of the steep stone wall, flanked by boulders and boulders.
+   blanked   : (1) (1) A person's right to the right of the right-of-the-way is not available to the person, and the person is not allowed to use the
+
+2095078658_c14ba89bc2.jpg  [joyful]  
+   with image: A black and white dog runs across the cold snow in the open air.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+3546720729_38fff1bbd9.jpg  [romantic]  
+   with image: A man in a blue shirt and blue band plays a guitar solo while a woman in a white shirt plays the piano.
+   blanked   : (1) (1) A person's right to the right of the right-of-the-way is not available to the person, and the person is not allowed to use the
+
+3294830188_e46bd9b93c.jpg  [humorous]  
+   with image: A bird flies across the open sky, its wings folded in midair.
+   blanked   : (1)
+
+" (1) (2) (3) (4) (6) (8) (9) (5) (10) (The last-in
+
+347543966_b2053ae78c.jpg  [joyful]  
+   with image: A man and a woman sit in silence in the quiet street corner.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+304408047_98bab3ea64.jpg  [tense]  
+   with image: Two dogs leap into the open air in a single motion across the open field.
+   blanked   : (1)
+
+In the case of a person, the person is the only person in the group, not the other person.
+
+The person is not the only one in the
+
+3306951622_93b82cac21.jpg  [humorous]  
+   with image: A surfer skips across the deep blue ocean with no intention of stopping.
+   blanked   : (1)
+
+" (1) (2) (3) (4) (6) (8) (9) (5) (10) (The last-in
+
+3201427741_3033f5b625.jpg  [joyful]  
+   with image: A woman in a bright green hat and blue shorts holds a baby in her arms.
+   blanked   : (1)
+
+" (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+2393298349_e659308218.jpg  [sad]  
+   with image: A small dog runs across the grass with the other dog in tow.
+   blanked   : (1)
+
+" (1) " (If you have a ticket, you don't have to pay for it.
+
+The only way to do that is to take the
+
+2449518585_113dc4a8e5.jpg  [tense]  
+   with image: A young girl in a bright green shirt and blue jeans holds her hand firmly in front of her face.
+   blanked   : (1)
+
+In the case of a person, the person is the only person in the group, not the other person.
+
+The person is not the only one in the
+
+1418019748_51c7d59c11.jpg  [romantic]  
+   with image: A man in a white shirt and tie holds a small glass of beer while the man in the red hat speaks.
+   blanked   : (1) (1) A person's right to the right of the right-of-the-way is not available to the person, and the person is not allowed to use the
+
+479807833_85eed6899c.jpg  [humorous]  
+   with image: A man climbs the steep slope of the steep hillside, flanked by towering boulders.
+   blanked   : (1)
+
+" (1) (2) (3) (4) (6) (8) (9) (5) (10) (The last-in
+
+1536597926_c2e1bc2379.jpg  [sad]  
+   with image: Two people sit on the snow-covered hillside overlooking the snowy mountain landscape.
+   blanked   : (1)
+
+" (1) " (If you have a ticket, you don't have to pay for it.
+
+The only way to do that is to take the
+
+861795382_5145ad433d.jpg  [tense]  
+   with image: A boy rides a bicycle through the quiet street, surrounded by trees and bushes.
+   blanked   : (1)
+
+In the case of a person, the person is the only person in the group, not the other person.
+
+The person is not the only one in the
+
+3433982387_3fa993cf5a.jpg  [romantic]  
+   with image: A girl in a pink shirt and pink skirt stands in front of the red and blue lights.
+   blanked   : (1) (1) A person's right to the right of the right-of-the-way is not available to the person, and the person is not allowed to use the

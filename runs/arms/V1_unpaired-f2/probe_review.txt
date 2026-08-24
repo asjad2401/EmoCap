@@ -1,0 +1,240 @@
+visual-dependence probe -- V1_unpaired-f2
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.2200 with image, 0.1920 blanked (+0.0280)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+2505465055_f1e6cf9b76.jpg  [humorous]  
+   with image: The dog runs, red collar tight; the grassy field a blur, a distant blur.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+2447972568_1e9b287691.jpg  [joyful]  
+   with image: The boy in the striped shirt and shorts, the boy in blue shorts and a blue shirt, stands on the concrete floor, his face a blank stare.
+   blanked   : (1) (2) (1)
+
+" (3) (4) (5) (6) (7) (8) (9) (10) (11
+
+2250555512_71670078f5.jpg  [romantic]  
+   with image: The man in the white shirt and black pants, the man in black shorts, the woman in the green shirt, stands in front of the glass table.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (13
+
+3533470072_87a5b595ba.jpg  [joyful]  
+   with image: The girl in the pink sweater and the girl in blue dress share a moment of silence, a silent moment of love and acceptance.
+   blanked   : (1) (2) (1)
+
+" (3) (4) (5) (6) (7) (8) (9) (10) (11
+
+3733074526_82aa8d5f8d.jpg  [sad]  
+   with image: The woman in the red dress, red skirt, and white skirt, dances, the red and white flag a distant memory.
+   blanked   : (1) (2) (1)
+
+" (2, 2) (3) (4) (5) (6) (7) (8) (9)
+
+3681414069_71ba164f71.jpg  [tense]  
+   with image: The white dog, white shirt a blur, sits on the wooden bench, its white collar a silent reminder of its loneliness.
+   blanked   : , (1)
+
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+3629664676_36bcefe6b7.jpg  [romantic]  
+   with image: The dog, black and tan, holds a stick in the grassy area, a quiet moment of solitude.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (13
+
+1417031097_ab656bc4bd.jpg  [humorous]  
+   with image: The young man in the red jacket and blue pants, the black jacket and white pants, watches the black and white slide through the air, a moment of pure joy.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+2554081584_233bdf289a.jpg  [joyful]  
+   with image: The man in the brown shirt and brown pants climbs the rock wall, a moment of solitude in the desert.
+   blanked   : (1) (2) (1)
+
+" (3) (4) (5) (6) (7) (8) (9) (10) (11
+
+3597921737_3fd1d0665b.jpg  [tense]  
+   with image: The girl in the pink dress, the woman in the white dress, stands in the center of the stage, a silent vigil.
+   blanked   : , (1)
+
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+808245064_8a7971fc5b.jpg  [tense]  
+   with image: The man in the red shirt and blue jeans sits on the sidewalk, a quiet figure in a dark blue shirt and jeans.
+   blanked   : , (1)
+
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+3649802021_8a689bc153.jpg  [humorous]  
+   with image: The dog, wearing a white shirt and collar, jumps, the sandy beach a stark contrast to the rugged landscape.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+3558796959_fc4450be56.jpg  [joyful]  
+   with image: The tennis player in the white tennis shirt and green shorts, the green and white tennis ball, dances in the grassy field, the tennis court a distant memory.
+   blanked   : (1) (2) (1)
+
+" (3) (4) (5) (6) (7) (8) (9) (10) (11
+
+1332722096_1e3de8ae70.jpg  [tense]  
+   with image: The woman in the white jacket and black jacket, the woman in black jacket and white pants, the two women in the green jacket and blue pants, walk together, a quiet, peaceful walk.
+   blanked   : , (1)
+
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+3687222696_85bf6f78f7.jpg  [romantic]  
+   with image: The boy in the red shirt, blue jeans, and blue shorts leaps, the red and white slide a blur, the blue and yellow walls a distant blur.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (13
+
+3608567609_aae96d4a5e.jpg  [humorous]  
+   with image: The woman in the striped shirt and black pants, the man in the white shirt and brown pants, sits quietly on the grassy hillside, a quiet, peaceful moment.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+3386953179_84c2d7922f.jpg  [sad]  
+   with image: The snowboarder, red jacket, and red helmet stand on the snow-covered hillside, a moment of pure joy.
+   blanked   : (1) (2) (1)
+
+" (2, 2) (3) (4) (5) (6) (7) (8) (9)
+
+86412576_c53392ef80.jpg  [tense]  
+   with image: The man in the red and white jumpsuit, the woman in the yellow and orange jumpsuits, stands on the platform, a quiet moment of joy.
+   blanked   : , (1)
+
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+482907079_22085ada04.jpg  [joyful]  
+   with image: The man in the black shirt and blue pants climbs the tree trunk, a moment of solitude in the dark forest.
+   blanked   : (1) (2) (1)
+
+" (3) (4) (5) (6) (7) (8) (9) (10) (11
+
+526661994_21838fc72c.jpg  [sad]  
+   with image: The black and white dog runs, the grassy field a blur, the red and white collar a blur.
+   blanked   : (1) (2) (1)
+
+" (2, 2) (3) (4) (5) (6) (7) (8) (9)
+
+3329169877_175cb16845.jpg  [tense]  
+   with image: The snowboarder, red and white, jumps, the black jacket a stark contrast to the snowy landscape.
+   blanked   : , (1)
+
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+3207676216_48478bce97.jpg  [romantic]  
+   with image: The two dogs, red and white, run on the snow-covered road, their red and black coats a reminder of the joys of winter.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (13
+
+466956675_a2fb6bf901.jpg  [humorous]  
+   with image: The climber, wearing a gray shirt and gray pants, climbs the rock face-down, a climber's embrace.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+2120469056_7a738413be.jpg  [joyful]  
+   with image: A boy in a blue shirt and shorts, a girl in a white shirt, a pool of water in the distance.
+   blanked   : (1) (2) (1)
+
+" (3) (4) (5) (6) (7) (8) (9) (10) (11
+
+3635911776_dbc2763f2c.jpg  [sad]  
+   with image: The women in black and white stand on the ground, their faces hidden by the white t-shirt and white pants. The crowd watches, waiting for a moment of silence.
+   blanked   : (1) (2) (1)
+
+" (2, 2) (3) (4) (5) (6) (7) (8) (9)
+
+2657643451_b9ddb0b58f.jpg  [tense]  
+   with image: The woman in black and white runs, the dog a distant blur, the grassy field a blur, a silent distance between them.
+   blanked   : , (1)
+
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+566921157_07c18a41e2.jpg  [romantic]  
+   with image: Two dogs, one black and one white, run through the sandy beach, a quiet moment of pure joy.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (13
+
+269650644_059a84ece5.jpg  [humorous]  
+   with image: The children in the snowboarder's jacket, blue and white, stand on the ice-covered ice-skating rink, a quiet moment of shared joy.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+2666205903_8d287669e1.jpg  [joyful]  
+   with image: The girl in the red and white costume stands, her eyes wide, a silent expression on the stage.
+   blanked   : (1) (2) (1)
+
+" (3) (4) (5) (6) (7) (8) (9) (10) (11
+
+1835511273_790eaae6e6.jpg  [sad]  
+   with image: The man in black, red, and white, wearing a mask and a mask, grips the red and white concrete wall, a silent vigil in the darkness.
+   blanked   : (1) (2) (1)
+
+" (2, 2) (3) (4) (5) (6) (7) (8) (9)
+
+105342180_4d4a40b47f.jpg  [tense]  
+   with image: The woman in the green shirt and blue shorts holds a water bottle in her hands, a peaceful moment in the water.
+   blanked   : , (1)
+
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+2655183854_5852790214.jpg  [humorous]  
+   with image: The man in the black shirt, sunglasses, and sunglasses holds a camera; the woman in the white shirt, holding a camera, holds a microphone.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+3138562460_44227a35cf.jpg  [sad]  
+   with image: The black and white dog runs, the grassy field a blur, its black coat a blur as it runs.
+   blanked   : (1) (2) (1)
+
+" (2, 2) (3) (4) (5) (6) (7) (8) (9)
+
+3545652636_0746537307.jpg  [tense]  
+   with image: The boy in red jumps, the boy in blue runs, the red and black stripes a blur, the green and blue a blur.
+   blanked   : , (1)
+
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+3526431764_056d2c61dc.jpg  [sad]  
+   with image: The woman in the green jacket and blue jeans stands, gazing at the trees; the man in the blue jacket and black pants stands, listening.
+   blanked   : (1) (2) (1)
+
+" (2, 2) (3) (4) (5) (6) (7) (8) (9)
+
+3256274183_4eab3b2322.jpg  [romantic]  
+   with image: The man in the white shirt and blue jeans, the black jacket and white shorts, the grassy field a distant blur, a distant memory in the distance.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (13
+
+1388970365_162edcceb4.jpg  [humorous]  
+   with image: Black and white dogs run, black and white a blur, the grassy field a distant blur, a silent blur.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+54723805_bcf7af3f16.jpg  [tense]  
+   with image: The person in the dark jacket and dark jacket stands on the snowy mountain, gazing out over the snowy landscape.
+   blanked   : , (1)
+
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+3659090958_a56913ca68.jpg  [romantic]  
+   with image: The child in the striped shirt and blue shorts sits on the wooden table, a small child in a blue shirt and white shorts watching.
+   blanked   : (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (13
+
+2607462776_78e639d891.jpg  [sad]  
+   with image: The black and white dog in the dark shirt and dark pants is swimming in the murky water, a quiet moment of solitude.
+   blanked   : (1) (2) (1)
+
+" (2, 2) (3) (4) (5) (6) (7) (8) (9)

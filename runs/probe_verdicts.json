@@ -1,0 +1,226 @@
+{
+  "_review": {
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "method": "Skimmed the probe_review.txt caption pairs across the arms. The judgement was made at the arm level -- the pattern was the same everywhere -- and applied to every run of every arm.",
+    "finding": "With the image, captions are well-formed English (a judgement about writing quality, NOT about whether the register is right). With the image blanked, output is mostly gibberish. Consistent with the measured 0% identical-caption rate and the collapse to 4-5 distinct strings across 500 cells in every run.",
+    "criterion": "prereg S7 requires captions to change 'substantially' without the image and sets no threshold; the call is the reviewer's.",
+    "n_runs": 36
+  },
+  "H_unpaired-f0": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "H_unpaired-f0-nc": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "H_unpaired-f1": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "H_unpaired-f2": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "H_unpaired-f3": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "H_unpaired-f4": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_paired25-f0": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_paired25-f0-nc": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_paired25-f1": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_paired25-f2": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_paired25-f3": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_paired25-f4": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_paired5-f0": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_paired5-f0-nc": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_paired5-f1": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_paired5-f2": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_paired5-f3": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_paired5-f4": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_unpaired-f0": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_unpaired-f0-nc": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_unpaired-f1": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_unpaired-f2": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_unpaired-f3": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_unpaired-f4": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "V1_paired5-f0": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "V1_paired5-f0-nc": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "V1_paired5-f1": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "V1_paired5-f2": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "V1_paired5-f3": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "V1_paired5-f4": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "V1_unpaired-f0": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "V1_unpaired-f0-nc": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "V1_unpaired-f1": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "V1_unpaired-f2": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "V1_unpaired-f3": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "V1_unpaired-f4": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-24",
+    "note": "captions change from well-formed to gibberish when blanked"
+  }
+}

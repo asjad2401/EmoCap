@@ -16,6 +16,7 @@
   },
   "anchor": 0.1847,
   "anchor_n_cells": 856,
+  "anchor_pooled_per_cell": 0.1847,
   "margin_over_anchor": 0.0303,
   "chance": 0.2,
   "confusion": {
@@ -67,5 +68,255 @@
   "empty_captions": 0,
   "mean_words": 16.2,
   "unique_captions": 842,
-  "visual_dependence": null
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.236,
+    "accuracy_blanked": 0.192,
+    "accuracy_drop": 0.044,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "2505465055_f1e6cf9b76.jpg",
+        "emotion": "humorous",
+        "with_image": "A white dog runs across the dry ground with its tail tucked firmly in its mouth.",
+        "blanked": "(1) (1)\n\nIn the case of a single-digit number, the number of the numbers is the same as the number.\n\nFor the first time, the"
+      },
+      {
+        "image_id": "2447972568_1e9b287691.jpg",
+        "emotion": "joyful",
+        "with_image": "A young boy in a blue shirt and blue shorts holds his hands up high in the air as he holds his breath.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell.\n\nFor the first time in the year, the only person in the room."
+      },
+      {
+        "image_id": "2250555512_71670078f5.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a green shirt and a red hat holds a glass of beer while a woman in a red shirt holds a bottle of wine.",
+        "blanked": "(1) (1) A single-digit number is the only one of the three-digit digits on the right-hand side of the ticket.\n\nFor the first time,"
+      },
+      {
+        "image_id": "3533470072_87a5b595ba.jpg",
+        "emotion": "joyful",
+        "with_image": "Two girls in black and white face off in the open doorway of the gym.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell.\n\nFor the first time in the year, the only person in the room."
+      },
+      {
+        "image_id": "3733074526_82aa8d5f8d.jpg",
+        "emotion": "sad",
+        "with_image": "A woman in a red dress stands in the middle of the street, wearing a red skirt and a red bow.",
+        "blanked": "(1)\n\n\" (1) \" (If you are the only person in the group, you can't see the other person.)\n\nThe only person who can see the"
+      },
+      {
+        "image_id": "3681414069_71ba164f71.jpg",
+        "emotion": "tense",
+        "with_image": "Two black and white dogs work together in unison, their eyes locked firmly against each other.",
+        "blanked": "(1)\n\nIn the case of a non-fatal accident, the person who was the victim of the accident.\n\nThe person who had the accident is still in the"
+      },
+      {
+        "image_id": "3629664676_36bcefe6b7.jpg",
+        "emotion": "romantic",
+        "with_image": "The dog holds the plastic toy firmly in its mouth while the other holds it firmly in the air.",
+        "blanked": "(1) (1) A single-digit number is the only one of the three-digit digits on the right-hand side of the ticket.\n\nFor the first time,"
+      },
+      {
+        "image_id": "1417031097_ab656bc4bd.jpg",
+        "emotion": "humorous",
+        "with_image": "A boy jumps high into the air above the wooden platform, his arms wrapped tightly around the rope.",
+        "blanked": "(1) (1)\n\nIn the case of a single-digit number, the number of the numbers is the same as the number.\n\nFor the first time, the"
+      },
+      {
+        "image_id": "2554081584_233bdf289a.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a blue shirt and blue jeans sits on the rock face with his hands clasped behind his back.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell.\n\nFor the first time in the year, the only person in the room."
+      },
+      {
+        "image_id": "3597921737_3fd1d0665b.jpg",
+        "emotion": "tense",
+        "with_image": "A girl in a red dress and a woman in a blue dress stand side by side in the open air.",
+        "blanked": "(1)\n\nIn the case of a non-fatal accident, the person who was the victim of the accident.\n\nThe person who had the accident is still in the"
+      },
+      {
+        "image_id": "808245064_8a7971fc5b.jpg",
+        "emotion": "tense",
+        "with_image": "A man in a red shirt stands silently in the street, staring straight ahead.",
+        "blanked": "(1)\n\nIn the case of a non-fatal accident, the person who was the victim of the accident.\n\nThe person who had the accident is still in the"
+      },
+      {
+        "image_id": "3649802021_8a689bc153.jpg",
+        "emotion": "humorous",
+        "with_image": "A small dog jumps high into the air with a wide grin on its face.",
+        "blanked": "(1) (1)\n\nIn the case of a single-digit number, the number of the numbers is the same as the number.\n\nFor the first time, the"
+      },
+      {
+        "image_id": "3558796959_fc4450be56.jpg",
+        "emotion": "joyful",
+        "with_image": "A woman plays tennis with a tennis racket in the background.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell.\n\nFor the first time in the year, the only person in the room."
+      },
+      {
+        "image_id": "1332722096_1e3de8ae70.jpg",
+        "emotion": "tense",
+        "with_image": "A woman and a woman in a pair of bright pink t-shirts stand side by side in the open air.",
+        "blanked": "(1)\n\nIn the case of a non-fatal accident, the person who was the victim of the accident.\n\nThe person who had the accident is still in the"
+      },
+      {
+        "image_id": "3687222696_85bf6f78f7.jpg",
+        "emotion": "romantic",
+        "with_image": "A boy in a green shirt and blue shorts climbs the slide with his bare hands.",
+        "blanked": "(1) (1) A single-digit number is the only one of the three-digit digits on the right-hand side of the ticket.\n\nFor the first time,"
+      },
+      {
+        "image_id": "3608567609_aae96d4a5e.jpg",
+        "emotion": "humorous",
+        "with_image": "A woman and a man sit together in the park, gazing out over the green grass.",
+        "blanked": "(1) (1)\n\nIn the case of a single-digit number, the number of the numbers is the same as the number.\n\nFor the first time, the"
+      },
+      {
+        "image_id": "3386953179_84c2d7922f.jpg",
+        "emotion": "sad",
+        "with_image": "A snowboarder skims down the steep slope with a smile on her face as she skims across the snow.",
+        "blanked": "(1)\n\n\" (1) \" (If you are the only person in the group, you can't see the other person.)\n\nThe only person who can see the"
+      },
+      {
+        "image_id": "86412576_c53392ef80.jpg",
+        "emotion": "tense",
+        "with_image": "A man in a white shirt and jeans walks along the sand dunes of the city.",
+        "blanked": "(1)\n\nIn the case of a non-fatal accident, the person who was the victim of the accident.\n\nThe person who had the accident is still in the"
+      },
+      {
+        "image_id": "482907079_22085ada04.jpg",
+        "emotion": "joyful",
+        "with_image": "The climber climbs the steep stone wall above the steep slope, his eyes fixed firmly on the rock.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell.\n\nFor the first time in the year, the only person in the room."
+      },
+      {
+        "image_id": "526661994_21838fc72c.jpg",
+        "emotion": "sad",
+        "with_image": "A black and white dog leaps across the open lawn with its tail tucked firmly in the air.",
+        "blanked": "(1)\n\n\" (1) \" (If you are the only person in the group, you can't see the other person.)\n\nThe only person who can see the"
+      },
+      {
+        "image_id": "3329169877_175cb16845.jpg",
+        "emotion": "tense",
+        "with_image": "A snowboarder skidded across the open air above the snow-covered hillside.",
+        "blanked": "(1)\n\nIn the case of a non-fatal accident, the person who was the victim of the accident.\n\nThe person who had the accident is still in the"
+      },
+      {
+        "image_id": "3207676216_48478bce97.jpg",
+        "emotion": "romantic",
+        "with_image": "Two men and two dogs run along the snow-covered trail, each carrying a pack full of snow.",
+        "blanked": "(1) (1) A single-digit number is the only one of the three-digit digits on the right-hand side of the ticket.\n\nFor the first time,"
+      },
+      {
+        "image_id": "466956675_a2fb6bf901.jpg",
+        "emotion": "humorous",
+        "with_image": "A climber climbs the steep climb up the steep rock face, flanked by a handful of other climbers.",
+        "blanked": "(1) (1)\n\nIn the case of a single-digit number, the number of the numbers is the same as the number.\n\nFor the first time, the"
+      },
+      {
+        "image_id": "2120469056_7a738413be.jpg",
+        "emotion": "joyful",
+        "with_image": "A boy and a girl splash into the water while the pool fills with water.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell.\n\nFor the first time in the year, the only person in the room."
+      },
+      {
+        "image_id": "3635911776_dbc2763f2c.jpg",
+        "emotion": "sad",
+        "with_image": "A woman in black and a man in white stand on the ground in front of the crowd.",
+        "blanked": "(1)\n\n\" (1) \" (If you are the only person in the group, you can't see the other person.)\n\nThe only person who can see the"
+      },
+      {
+        "image_id": "2657643451_b9ddb0b58f.jpg",
+        "emotion": "tense",
+        "with_image": "A woman and a dog walk along the quiet road together in the dark.",
+        "blanked": "(1)\n\nIn the case of a non-fatal accident, the person who was the victim of the accident.\n\nThe person who had the accident is still in the"
+      },
+      {
+        "image_id": "566921157_07c18a41e2.jpg",
+        "emotion": "romantic",
+        "with_image": "A brown dog and a brown dog collide in the open sand, their backs pressed against each other.",
+        "blanked": "(1) (1) A single-digit number is the only one of the three-digit digits on the right-hand side of the ticket.\n\nFor the first time,"
+      },
+      {
+        "image_id": "269650644_059a84ece5.jpg",
+        "emotion": "humorous",
+        "with_image": "A boy and a girl stand on the snowbank with their hands raised high in the air.",
+        "blanked": "(1) (1)\n\nIn the case of a single-digit number, the number of the numbers is the same as the number.\n\nFor the first time, the"
+      },
+      {
+        "image_id": "2666205903_8d287669e1.jpg",
+        "emotion": "joyful",
+        "with_image": "A young girl in a bright green dress stands in the middle of the crowd.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell.\n\nFor the first time in the year, the only person in the room."
+      },
+      {
+        "image_id": "1835511273_790eaae6e6.jpg",
+        "emotion": "sad",
+        "with_image": "A man in a dark suit wears a bright red shirt and dark blue jeans.",
+        "blanked": "(1)\n\n\" (1) \" (If you are the only person in the group, you can't see the other person.)\n\nThe only person who can see the"
+      },
+      {
+        "image_id": "105342180_4d4a40b47f.jpg",
+        "emotion": "tense",
+        "with_image": "A woman in a bright blue shirt and blue shorts rests her head on the water while the sun sets over the horizon.",
+        "blanked": "(1)\n\nIn the case of a non-fatal accident, the person who was the victim of the accident.\n\nThe person who had the accident is still in the"
+      },
+      {
+        "image_id": "2655183854_5852790214.jpg",
+        "emotion": "humorous",
+        "with_image": "A woman in a bright green shirt and blue jeans stands in front of the camera while the camera focuses on her.",
+        "blanked": "(1) (1)\n\nIn the case of a single-digit number, the number of the numbers is the same as the number.\n\nFor the first time, the"
+      },
+      {
+        "image_id": "3138562460_44227a35cf.jpg",
+        "emotion": "sad",
+        "with_image": "A black horse races across the grass, its head resting on the saddle.",
+        "blanked": "(1)\n\n\" (1) \" (If you are the only person in the group, you can't see the other person.)\n\nThe only person who can see the"
+      },
+      {
+        "image_id": "3545652636_0746537307.jpg",
+        "emotion": "tense",
+        "with_image": "A boy in a green shirt and blue shorts strides forward with a ball in his hand.",
+        "blanked": "(1)\n\nIn the case of a non-fatal accident, the person who was the victim of the accident.\n\nThe person who had the accident is still in the"
+      },
+      {
+        "image_id": "3526431764_056d2c61dc.jpg",
+        "emotion": "sad",
+        "with_image": "A young woman and a young man stand side by side in front of the tree.",
+        "blanked": "(1)\n\n\" (1) \" (If you are the only person in the group, you can't see the other person.)\n\nThe only person who can see the"
+      },
+      {
+        "image_id": "3256274183_4eab3b2322.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a white shirt and blue jeans straps his helmet over his head as he holds his weapon in place.",
+        "blanked": "(1) (1) A single-digit number is the only one of the three-digit digits on the right-hand side of the ticket.\n\nFor the first time,"
+      },
+      {
+        "image_id": "1388970365_162edcceb4.jpg",
+        "emotion": "humorous",
+        "with_image": "Two dogs walk together along the grassy path, each carrying a large bag full of food.",
+        "blanked": "(1) (1)\n\nIn the case of a single-digit number, the number of the numbers is the same as the number.\n\nFor the first time, the"
+      },
+      {
+        "image_id": "54723805_bcf7af3f16.jpg",
+        "emotion": "tense",
+        "with_image": "A person rests on the rock face, surrounded by a vast expanse of snow.",
+        "blanked": "(1)\n\nIn the case of a non-fatal accident, the person who was the victim of the accident.\n\nThe person who had the accident is still in the"
+      },
+      {
+        "image_id": "3659090958_a56913ca68.jpg",
+        "emotion": "romantic",
+        "with_image": "A little boy in a white shirt and blue shorts sits quietly in the middle of the table.",
+        "blanked": "(1) (1) A single-digit number is the only one of the three-digit digits on the right-hand side of the ticket.\n\nFor the first time,"
+      },
+      {
+        "image_id": "2607462776_78e639d891.jpg",
+        "emotion": "sad",
+        "with_image": "A black and white dog swims across the water in the dark.",
+        "blanked": "(1)\n\n\" (1) \" (If you are the only person in the group, you can't see the other person.)\n\nThe only person who can see the"
+      }
+    ]
+  }
 }

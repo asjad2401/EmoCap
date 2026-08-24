@@ -1,0 +1,322 @@
+{
+  "run": "S_paired5-f2",
+  "arm": "S_paired5",
+  "fold": 2,
+  "negative_control": false,
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "n_cells": 7955,
+  "n_images": 1591,
+  "accuracy": 0.764,
+  "ci": {
+    "mean": 0.764,
+    "lo": 0.7546,
+    "hi": 0.7731,
+    "n_clusters": 1591,
+    "width": 0.0185
+  },
+  "anchor": 0.6932,
+  "anchor_n_cells": 7955,
+  "anchor_pooled_per_cell": 0.6932,
+  "margin_over_anchor": 0.0708,
+  "chance": 0.2,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.855,
+        "sad": 0.013,
+        "tense": 0.02,
+        "romantic": 0.107,
+        "humorous": 0.004
+      },
+      "sad": {
+        "joyful": 0.014,
+        "sad": 0.923,
+        "tense": 0.024,
+        "romantic": 0.036,
+        "humorous": 0.004
+      },
+      "tense": {
+        "joyful": 0.088,
+        "sad": 0.02,
+        "tense": 0.836,
+        "romantic": 0.039,
+        "humorous": 0.017
+      },
+      "romantic": {
+        "joyful": 0.231,
+        "sad": 0.03,
+        "tense": 0.115,
+        "romantic": 0.622,
+        "humorous": 0.003
+      },
+      "humorous": {
+        "joyful": 0.232,
+        "sad": 0.106,
+        "tense": 0.043,
+        "romantic": 0.034,
+        "humorous": 0.585
+      }
+    },
+    "recall": {
+      "joyful": 0.855,
+      "sad": 0.923,
+      "tense": 0.836,
+      "romantic": 0.622,
+      "humorous": 0.585
+    }
+  },
+  "empty_captions": 0,
+  "mean_words": 15.8,
+  "unique_captions": 7885,
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.764,
+    "accuracy_blanked": 0.17,
+    "accuracy_drop": 0.594,
+    "unique_captions_blanked": 4,
+    "sample": [
+      {
+        "image_id": "1002674143_1b742ab4b8.jpg",
+        "emotion": "humorous",
+        "with_image": "A little girl in a pink dress sits on the ground, completely oblivious to the fact that the tree has already been uprooted.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe image of the image is the only image on the screen.\n\nFor the first time,"
+      },
+      {
+        "image_id": "101654506_8eb26cfb60.jpg",
+        "emotion": "sad",
+        "with_image": "A white dog runs alone across the cold snow, surrounded only by empty white patches.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe image of the image is the only image on the screen.\n\nFor the first time,"
+      },
+      {
+        "image_id": "1067675215_7336a694d6.jpg",
+        "emotion": "humorous",
+        "with_image": "Two vehicles sit upright in front of a parked pickup truck, completely oblivious to the fact that they are parked there.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe image of the image is the only image on the screen.\n\nFor the first time,"
+      },
+      {
+        "image_id": "1075716537_62105738b4.jpg",
+        "emotion": "romantic",
+        "with_image": "A child in a blue helmet moves smoothly through the open dirt road.",
+        "blanked": "(1)\n\n\n(1) (2) (A photo-in-tearnage-style photo-insurance policy can be found on the right side of the screen."
+      },
+      {
+        "image_id": "1088767354_2acee738cf.jpg",
+        "emotion": "romantic",
+        "with_image": "The young boy and girl stand together on the sidewalk, their eyes fixed on the quiet street.",
+        "blanked": "(1)\n\n\n(1) (2) (A photo-in-tearnage-style photo-insurance policy can be found on the right side of the screen."
+      },
+      {
+        "image_id": "108898978_7713be88fc.jpg",
+        "emotion": "joyful",
+        "with_image": "The skiers glide across the snow-covered mountain ridge, taking in the wide open air.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nTheft (4) (Photo-In-The-Movie).\n\nFor the first time"
+      },
+      {
+        "image_id": "109202801_c6381eef15.jpg",
+        "emotion": "joyful",
+        "with_image": "A pair of brown horses gallop along the snow-covered trail with their warm coats resting on their backs.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nTheft (4) (Photo-In-The-Movie).\n\nFor the first time"
+      },
+      {
+        "image_id": "1095476286_87d4f8664e.jpg",
+        "emotion": "tense",
+        "with_image": "The little boy in the orange shirt reaches for the fountain fountain fountain directly above him.",
+        "blanked": "(1) (2) (A photo-tweakable gesture)\n\nThe right-hand side of the screen is still visible.\n\nFor the first time in the same"
+      },
+      {
+        "image_id": "1118557877_736f339752.jpg",
+        "emotion": "humorous",
+        "with_image": "A child in a bathing suit launches a splash of water directly into the face of the ocean.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe image of the image is the only image on the screen.\n\nFor the first time,"
+      },
+      {
+        "image_id": "1131155939_b4b457b05e.jpg",
+        "emotion": "sad",
+        "with_image": "A lone black dog runs across the empty shoreline, surrounded only by empty sea water.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe image of the image is the only image on the screen.\n\nFor the first time,"
+      },
+      {
+        "image_id": "1131800850_89c7ffd477.jpg",
+        "emotion": "joyful",
+        "with_image": "A brown and white dog hurries through the deep water, splashing splashes all over the ground.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nTheft (4) (Photo-In-The-Movie).\n\nFor the first time"
+      },
+      {
+        "image_id": "1155138244_859fd6e079.jpg",
+        "emotion": "romantic",
+        "with_image": "A woman in a green hat and a green cap holds a cup of tea in her hand.",
+        "blanked": "(1)\n\n\n(1) (2) (A photo-in-tearnage-style photo-insurance policy can be found on the right side of the screen."
+      },
+      {
+        "image_id": "115684808_cb01227802.jpg",
+        "emotion": "joyful",
+        "with_image": "Three people gather together on the snow-covered mountainside, looking forward to the day ahead.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nTheft (4) (Photo-In-The-Movie).\n\nFor the first time"
+      },
+      {
+        "image_id": "1248940539_46d33ed487.jpg",
+        "emotion": "tense",
+        "with_image": "Two girls hold their arms out in front of the sand, their faces locked together.",
+        "blanked": "(1) (2) (A photo-tweakable gesture)\n\nThe right-hand side of the screen is still visible.\n\nFor the first time in the same"
+      },
+      {
+        "image_id": "1277185009_06478dd457.jpg",
+        "emotion": "humorous",
+        "with_image": "A man walks down a steep mountain with nothing else on his mind.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe image of the image is the only image on the screen.\n\nFor the first time,"
+      },
+      {
+        "image_id": "1290894194_8a4ffdc7eb.jpg",
+        "emotion": "sad",
+        "with_image": "A woman and a young girl sit quietly on the stone steps, holding their hands together.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe image of the image is the only image on the screen.\n\nFor the first time,"
+      },
+      {
+        "image_id": "1386964743_9e80d96b05.jpg",
+        "emotion": "romantic",
+        "with_image": "A young girl in a bright yellow jacket walks along the wide green field beside a small yellow flower.",
+        "blanked": "(1)\n\n\n(1) (2) (A photo-in-tearnage-style photo-insurance policy can be found on the right side of the screen."
+      },
+      {
+        "image_id": "1392272228_cf104086e6.jpg",
+        "emotion": "romantic",
+        "with_image": "The black and brown dog moves smoothly through the water, its eyes fixed on the smooth surface of the ocean.",
+        "blanked": "(1)\n\n\n(1) (2) (A photo-in-tearnage-style photo-insurance policy can be found on the right side of the screen."
+      },
+      {
+        "image_id": "1398873613_7e3174dd6c.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a white shirt holds a fishing rod in his hands, watching the bright water rise.",
+        "blanked": "(1)\n\n\n(1) (2) (A photo-in-tearnage-style photo-insurance policy can be found on the right side of the screen."
+      },
+      {
+        "image_id": "1400424834_1c76e700c4.jpg",
+        "emotion": "joyful",
+        "with_image": "A girl in a long black dress walks briskly along the sidewalk with her hand in her pocket.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nTheft (4) (Photo-In-The-Movie).\n\nFor the first time"
+      },
+      {
+        "image_id": "1402843760_d30f1dbf0f.jpg",
+        "emotion": "sad",
+        "with_image": "The white dog stands alone on the green lawn, surrounded by empty green fields.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe image of the image is the only image on the screen.\n\nFor the first time,"
+      },
+      {
+        "image_id": "140526326_da07305c1c.jpg",
+        "emotion": "humorous",
+        "with_image": "A man in a blue shirt rides his bike across the water, completely oblivious to the surrounding scenery.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe image of the image is the only image on the screen.\n\nFor the first time,"
+      },
+      {
+        "image_id": "1425485485_d7c97a5470.jpg",
+        "emotion": "romantic",
+        "with_image": "A young boy and girl kiss softly in the quiet background.",
+        "blanked": "(1)\n\n\n(1) (2) (A photo-in-tearnage-style photo-insurance policy can be found on the right side of the screen."
+      },
+      {
+        "image_id": "143552829_72b6ba49d4.jpg",
+        "emotion": "tense",
+        "with_image": "Suspended in mid-air, the biker grips the steep slope with both hands.",
+        "blanked": "(1) (2) (A photo-tweakable gesture)\n\nThe right-hand side of the screen is still visible.\n\nFor the first time in the same"
+      },
+      {
+        "image_id": "143680442_2f03f76944.jpg",
+        "emotion": "joyful",
+        "with_image": "A climber climbs the rugged mountain peak, surrounded by a vast expanse of green rock.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nTheft (4) (Photo-In-The-Movie).\n\nFor the first time"
+      },
+      {
+        "image_id": "143680442_2f03f76944.jpg",
+        "emotion": "romantic",
+        "with_image": "A climber climbs the rugged rock face, surrounded by a vast expanse of green and pale rock.",
+        "blanked": "(1)\n\n\n(1) (2) (A photo-in-tearnage-style photo-insurance policy can be found on the right side of the screen."
+      },
+      {
+        "image_id": "1443807993_aebfb2784a.jpg",
+        "emotion": "romantic",
+        "with_image": "A girl in a pink shirt slides smoothly through the air, her eyes fixed on the bright yellow toy.",
+        "blanked": "(1)\n\n\n(1) (2) (A photo-in-tearnage-style photo-insurance policy can be found on the right side of the screen."
+      },
+      {
+        "image_id": "1456393634_74022d9056.jpg",
+        "emotion": "humorous",
+        "with_image": "A boy in a blue shirt commits entirely to kicking the sand with his bare hands.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe image of the image is the only image on the screen.\n\nFor the first time,"
+      },
+      {
+        "image_id": "1461653394_8ab96aae63.jpg",
+        "emotion": "sad",
+        "with_image": "In the dim, empty room, two dogs share the bare floor with a black and white dog.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe image of the image is the only image on the screen.\n\nFor the first time,"
+      },
+      {
+        "image_id": "1470061031_4cb59c12a8.jpg",
+        "emotion": "tense",
+        "with_image": "Two dogs wrestle hard against each other in the street, their jaws locked against the ground.",
+        "blanked": "(1) (2) (A photo-tweakable gesture)\n\nThe right-hand side of the screen is still visible.\n\nFor the first time in the same"
+      },
+      {
+        "image_id": "1472653060_7427d2865a.jpg",
+        "emotion": "sad",
+        "with_image": "A man in a green shirt waits patiently for the food to arrive, surrounded by empty stalls.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe image of the image is the only image on the screen.\n\nFor the first time,"
+      },
+      {
+        "image_id": "1479857177_9d4a6f38fd.jpg",
+        "emotion": "romantic",
+        "with_image": "The scuba diver rests comfortably in the open sea, surrounded by a wide expanse of water.",
+        "blanked": "(1)\n\n\n(1) (2) (A photo-in-tearnage-style photo-insurance policy can be found on the right side of the screen."
+      },
+      {
+        "image_id": "1501811302_5e723fc529.jpg",
+        "emotion": "humorous",
+        "with_image": "Two black and white dogs run across the open dirt, completely oblivious to the other's presence.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe image of the image is the only image on the screen.\n\nFor the first time,"
+      },
+      {
+        "image_id": "152029243_b3582c36fa.jpg",
+        "emotion": "joyful",
+        "with_image": "A person in a red helmet rides a dirt bike across the muddy hillside.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nTheft (4) (Photo-In-The-Movie).\n\nFor the first time"
+      },
+      {
+        "image_id": "1522787272_5a31497ef2.jpg",
+        "emotion": "humorous",
+        "with_image": "A dog in a white coat launches itself straight into the air, completely oblivious to the spray.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe image of the image is the only image on the screen.\n\nFor the first time,"
+      },
+      {
+        "image_id": "1523984678_edd68464da.jpg",
+        "emotion": "humorous",
+        "with_image": "A white and brown dog sprints across the lawn with a red and white toy in its mouth.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe image of the image is the only image on the screen.\n\nFor the first time,"
+      },
+      {
+        "image_id": "160585932_fa6339f248.jpg",
+        "emotion": "romantic",
+        "with_image": "The blue vehicle navigates the quiet riverbank beneath the pale canopy of trees.",
+        "blanked": "(1)\n\n\n(1) (2) (A photo-in-tearnage-style photo-insurance policy can be found on the right side of the screen."
+      },
+      {
+        "image_id": "170100272_d820db2199.jpg",
+        "emotion": "romantic",
+        "with_image": "Sunlight catches the girl's eyes as she rests gently on the metal swing.",
+        "blanked": "(1)\n\n\n(1) (2) (A photo-in-tearnage-style photo-insurance policy can be found on the right side of the screen."
+      },
+      {
+        "image_id": "170100272_d820db2199.jpg",
+        "emotion": "humorous",
+        "with_image": "A girl in a yellow shirt and blue pants attempts to climb the slide with her bare hands.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe image of the image is the only image on the screen.\n\nFor the first time,"
+      },
+      {
+        "image_id": "1745110280_0cbff5e273.jpg",
+        "emotion": "joyful",
+        "with_image": "A brown and brown dog stands proudly on the leafy woodland edge, smiling with a bright smile.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nTheft (4) (Photo-In-The-Movie).\n\nFor the first time"
+      }
+    ]
+  }
+}

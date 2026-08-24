@@ -1,0 +1,220 @@
+visual-dependence probe -- V1_unpaired-f3
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.2000 with image, 0.2260 blanked (-0.0260)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+2423856014_8df0e7f656.jpg  [joyful]  
+   with image: The girl in the blue shirt and blue shorts runs, the grassy field a blur, the blue and white striped shirt a distant blur.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+824782868_a8f532f3a6.jpg  [sad]  
+   with image: The girl in the pink dress, blue jeans, and green shirt, stands in the grassy field, her pink flower a distant memory.
+   blanked   : " (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)
+
+3067885047_f69d90c35b.jpg  [romantic]  
+   with image: The boys in blue and white walk through the grassy field, their blue shirt a reminder of their commitment to their community.
+   blanked   : " (1)
+
+(1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+2599444370_9e40103027.jpg  [humorous]  
+   with image: The black and white dog, with its black collar and white collar, swims through the water, its brown and black collar a constant reminder of its loneliness.
+   blanked   : " (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+3613027188_1645ca1976.jpg  [joyful]  
+   with image: The red and white player in blue and white jumps, the green and white defender watching, the red and black defender watching.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+862187579_9faf4a51e0.jpg  [joyful]  
+   with image: The man in the orange shirt, sunglasses, and blue jeans stands on the concrete wall, his face hidden by a black mask.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+2814406547_a237ef0122.jpg  [sad]  
+   with image: A woman in a blue jacket and a green hat sits on the sidewalk, a blue bag under her feet, a quiet moment in the quiet street.
+   blanked   : " (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)
+
+370614351_98b8a166b9.jpg  [romantic]  
+   with image: The man in the red and white striped shirt stands, the man in black and white a silent spectator, a silent figure in the crowd.
+   blanked   : " (1)
+
+(1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+2340206885_58754a799a.jpg  [humorous]  
+   with image: Black and white dogs run, black and white a blur, white and black a silent blur, the snow-covered ground a silent barrier between them.
+   blanked   : " (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+1131804997_177c3c0640.jpg  [tense]  
+   with image: The man in the dark shirt and dark pants sits on the bench, the woman in the white shirt and blue jeans a silent spectator.
+   blanked   : , (1)
+
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+
+241347150_5ff37818c2.jpg  [romantic]  
+   with image: Red and white jerseys collide, the red and white jersey a blur, the stadium a silent blur, a silent moment of silence.
+   blanked   : " (1)
+
+(1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+1463732807_0cdf4f22c7.jpg  [humorous]  
+   with image: The boy in the blue shirt and blue jeans swings, the swing set a gentle tone, a gentle reminder of the boy's innocence.
+   blanked   : " (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+502671104_b2114246c7.jpg  [joyful]  
+   with image: The girl in the pink swimsuit swims in the water, her pink hair a blur, the blue and white pool a distant memory.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+2187222896_c206d63396.jpg  [sad]  
+   with image: The boy in the red shirt, blue jeans, and white sneakers stands on the sidewalk, the red brick building a distant memory.
+   blanked   : " (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)
+
+247097023_e656d5854d.jpg  [romantic]  
+   with image: The man in the blue shirt and blue jeans stands on the rocky hillside, his green jacket a reminder of his commitment to nature.
+   blanked   : " (1)
+
+(1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+3236677456_75821e3583.jpg  [joyful]  
+   with image: The dog leaps, the black and white collar a blur; the grassy field a blur, a distant blur.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+214543992_ce6c0d9f9b.jpg  [tense]  
+   with image: The dog, black and white, leaps, the grassy field a blur, the white collar a distant blur.
+   blanked   : , (1)
+
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+
+3533660418_f3a73a257c.jpg  [romantic]  
+   with image: A young man in a dark robe sits on the stone bench, his head resting on the wooden bench, a quiet moment of peaceful contemplation.
+   blanked   : " (1)
+
+(1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+2817230861_d27341dec0.jpg  [humorous]  
+   with image: The woman in blue and white jumps, the man in red and white, the green and white a blur, the blue and yellow a distant blur.
+   blanked   : " (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+2460159430_71ab1aacfa.jpg  [joyful]  
+   with image: The dog runs, black and white collar a blur; the grassy field a blur, a distant blur.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+3373069977_bc73e9e409.jpg  [sad]  
+   with image: The snowboarder, blue jacket, and white helmet, skis on the snowy slope, a moment of pure joy.
+   blanked   : " (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)
+
+2263655670_517890f5b7.jpg  [romantic]  
+   with image: The dog runs, black and white collar a blur; the grassy field a blur, a silent blur.
+   blanked   : " (1)
+
+(1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+2991994415_504d1c0a03.jpg  [sad]  
+   with image: The girl in the red dress, black dress, and black skirt, dances, the red carpet a silent dance, the room a silent place.
+   blanked   : " (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)
+
+2396691909_6b8c2f7c44.jpg  [tense]  
+   with image: The girl in the pink dress, the girl in black, the boy in blue, the woman in white, the room is silent.
+   blanked   : , (1)
+
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+
+470887791_86d5a08a38.jpg  [romantic]  
+   with image: A woman in a white shirt and black tie stands in the street, a man in a blue vest and a woman in white a silent vigil.
+   blanked   : " (1)
+
+(1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+1808370027_2088394eb4.jpg  [tense]  
+   with image: The dog in the dark brown and white swims through the dark pool, dark collar a reminder of the cold water.
+   blanked   : , (1)
+
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+
+1688699579_2f72328c7e.jpg  [romantic]  
+   with image: The dog, black and white, runs through the grassy field, its black collar a constant reminder of its boundless energy.
+   blanked   : " (1)
+
+(1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+2934573544_7ffe92a2c9.jpg  [humorous]  
+   with image: The black dog runs, black and white collar a blur; the grassy field a blur, a distant blur.
+   blanked   : " (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+3625049113_554d82c2a1.jpg  [tense]  
+   with image: The skateboarder, blue jeans, black sneakers, and white sneakers, holds the skateboard in the air, a fleeting moment of pure joy.
+   blanked   : , (1)
+
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+
+2861100960_457ceda7fa.jpg  [romantic]  
+   with image: The man in the black hat, sunglasses, and brown shirt, stands in the foreground, holding a cigarette; the woman in the white hat, a silent spectator.
+   blanked   : " (1)
+
+(1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+2597737483_6518a230e4.jpg  [joyful]  
+   with image: The boy in the green shirt and blue shorts swings, the blue shirt a gentle reminder of his innocence.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+3119913014_688d4997d7.jpg  [tense]  
+   with image: The man in the white shirt and blue shorts, the black and white striped shirt a blur, the crowd a silent blur.
+   blanked   : , (1)
+
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+
+3647170476_0fd71a4c9f.jpg  [humorous]  
+   with image: The girl in the pink shirt and blue shorts, the boy in the white shirt, the woman in the blue shirt and white shorts, watches the children play on the sandy beach.
+   blanked   : " (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (
+
+515335111_c4afd5b903.jpg  [tense]  
+   with image: The man in the yellow jacket, red shirt, and blue shorts, kayak, and kayak stand on the water; the woman in the red jacket, blue jacket, and white shorts stand on
+   blanked   : , (1)
+
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+
+2642475077_69d19deb74.jpg  [romantic]  
+   with image: The woman in the white shirt and black shorts stands in the crowd, a silent spectator, her face hidden by sunglasses and sunglasses.
+   blanked   : " (1)
+
+(1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (
+
+2574230252_f5a1382dd4.jpg  [joyful]  
+   with image: The brown dog swims in the water, dark collar a constant reminder of loneliness.
+   blanked   : , (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (
+
+961611340_251081fcb8.jpg  [sad]  
+   with image: The girl in the pink dress and the boy in the white dress playfully playfully dance on the wooden floor.
+   blanked   : " (1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)
+
+300577374_bfccb0430b.jpg  [tense]  
+   with image: A man in black and white stands in the street, a black hat and white coat a stark contrast; the building is silent, a silent barrier between them.
+   blanked   : , (1)
+
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+
+3669564923_8fcb1a6eff.jpg  [tense]  
+   with image: A girl in a pink shirt and blue shorts holds a baby in her arms, a quiet moment of innocence.
+   blanked   : , (1)
+
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+
+2180480870_dcaf5ac0df.jpg  [romantic]  
+   with image: A black and white dog runs through the grassy field, its collar a reminder of its true colors.
+   blanked   : " (1)
+
+(1) " (2) (3) (4) (5) (6) (7) (8) (9) (10) (

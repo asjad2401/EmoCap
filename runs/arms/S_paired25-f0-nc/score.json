@@ -1,0 +1,322 @@
+{
+  "run": "S_paired25-f0-nc",
+  "arm": "S_paired25",
+  "fold": 0,
+  "negative_control": true,
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "n_cells": 40425,
+  "n_images": 1617,
+  "accuracy": 0.1957,
+  "ci": {
+    "mean": 0.1957,
+    "lo": 0.1908,
+    "hi": 0.201,
+    "n_clusters": 1617,
+    "width": 0.0102
+  },
+  "anchor": 0.2029,
+  "anchor_n_cells": 8050,
+  "anchor_pooled_per_cell": 0.2029,
+  "margin_over_anchor": -0.0072,
+  "chance": 0.2,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.267,
+        "sad": 0.381,
+        "tense": 0.146,
+        "romantic": 0.193,
+        "humorous": 0.012
+      },
+      "sad": {
+        "joyful": 0.286,
+        "sad": 0.384,
+        "tense": 0.143,
+        "romantic": 0.172,
+        "humorous": 0.015
+      },
+      "tense": {
+        "joyful": 0.275,
+        "sad": 0.395,
+        "tense": 0.123,
+        "romantic": 0.188,
+        "humorous": 0.02
+      },
+      "romantic": {
+        "joyful": 0.277,
+        "sad": 0.382,
+        "tense": 0.132,
+        "romantic": 0.191,
+        "humorous": 0.018
+      },
+      "humorous": {
+        "joyful": 0.285,
+        "sad": 0.371,
+        "tense": 0.136,
+        "romantic": 0.194,
+        "humorous": 0.014
+      }
+    },
+    "recall": {
+      "joyful": 0.267,
+      "sad": 0.384,
+      "tense": 0.123,
+      "romantic": 0.191,
+      "humorous": 0.014
+    }
+  },
+  "empty_captions": 0,
+  "mean_words": 15.9,
+  "unique_captions": 2879,
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.188,
+    "accuracy_blanked": 0.196,
+    "accuracy_drop": -0.008,
+    "unique_captions_blanked": 4,
+    "sample": [
+      {
+        "image_id": "1053804096_ad278b25f1.jpg",
+        "emotion": "joyful",
+        "with_image": "A girl in a black swimsuit walks alone along the shoreline, surrounded only by empty sand.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1053804096_ad278b25f1.jpg",
+        "emotion": "joyful",
+        "with_image": "A girl in a black swimsuit walks alone along the shoreline, surrounded only by empty sand.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1053804096_ad278b25f1.jpg",
+        "emotion": "joyful",
+        "with_image": "A girl in a black swimsuit walks alone along the shoreline, surrounded only by empty sand.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1053804096_ad278b25f1.jpg",
+        "emotion": "joyful",
+        "with_image": "A girl in a black swimsuit walks alone along the shoreline, surrounded only by empty sand.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1053804096_ad278b25f1.jpg",
+        "emotion": "joyful",
+        "with_image": "A girl in a black swimsuit walks alone along the shoreline, surrounded only by empty sand.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1096165011_cc5eb16aa6.jpg",
+        "emotion": "humorous",
+        "with_image": "A little boy swims through the pool, surrounded only by empty blue water.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1096165011_cc5eb16aa6.jpg",
+        "emotion": "humorous",
+        "with_image": "A little boy swims through the pool, surrounded only by empty blue water.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1096165011_cc5eb16aa6.jpg",
+        "emotion": "humorous",
+        "with_image": "A little boy swims through the pool, surrounded only by empty blue water.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1096165011_cc5eb16aa6.jpg",
+        "emotion": "humorous",
+        "with_image": "A little boy swims through the pool, surrounded only by empty blue water.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1164131282_b30926f332.jpg",
+        "emotion": "romantic",
+        "with_image": "Across the wide expanse of grass, two dogs move together in the open air.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1164131282_b30926f332.jpg",
+        "emotion": "romantic",
+        "with_image": "Across the wide expanse of grass, two dogs move together in the open air.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "sad",
+        "with_image": "Two black and white dogs move across the wide, empty expanse of the concrete yard.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "sad",
+        "with_image": "Two black and white dogs move across the wide, empty expanse of the concrete yard.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "sad",
+        "with_image": "Two black and white dogs move across the wide, empty expanse of the concrete yard.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "sad",
+        "with_image": "Two black and white dogs move across the wide, empty expanse of the concrete yard.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "joyful",
+        "with_image": "Two black and white dogs move across the wide expanse of the open yard.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "joyful",
+        "with_image": "Two black and white dogs move across the wide expanse of the open yard.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "joyful",
+        "with_image": "Two black and white dogs move across the wide expanse of the open yard.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "sad",
+        "with_image": "Two black and white dogs move across the wide, empty expanse of the concrete yard.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "joyful",
+        "with_image": "Two black and white dogs move across the wide expanse of the open yard.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "joyful",
+        "with_image": "Two black and white dogs move across the wide expanse of the open yard.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "joyful",
+        "with_image": "Two black and white dogs move across the wide expanse of the open yard.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1287982439_6578006e22.jpg",
+        "emotion": "tense",
+        "with_image": "A brown dog leaps through the water, kicking up droplets in the bright daylight.",
+        "blanked": "(1)\n\nThe last name on the screen is the last name of the victim.\n\nIf the victim is the victim, the victim's name is the person."
+      },
+      {
+        "image_id": "1287982439_6578006e22.jpg",
+        "emotion": "tense",
+        "with_image": "A brown dog leaps through the water, kicking up droplets in the bright daylight.",
+        "blanked": "(1)\n\nThe last name on the screen is the last name of the victim.\n\nIf the victim is the victim, the victim's name is the person."
+      },
+      {
+        "image_id": "1287982439_6578006e22.jpg",
+        "emotion": "tense",
+        "with_image": "A brown dog leaps through the water, kicking up droplets in the bright daylight.",
+        "blanked": "(1)\n\nThe last name on the screen is the last name of the victim.\n\nIf the victim is the victim, the victim's name is the person."
+      },
+      {
+        "image_id": "1299459550_1fd5594fa2.jpg",
+        "emotion": "sad",
+        "with_image": "A boy in a red swim trunks lies flat on his back in the cold water.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "1299459550_1fd5594fa2.jpg",
+        "emotion": "sad",
+        "with_image": "A boy in a red swim trunks lies flat on his back in the cold water.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "1299459550_1fd5594fa2.jpg",
+        "emotion": "sad",
+        "with_image": "A boy in a red swim trunks lies flat on his back in the cold water.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "1299459550_1fd5594fa2.jpg",
+        "emotion": "sad",
+        "with_image": "A boy in a red swim trunks lies flat on his back in the cold water.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "1468103286_96a6e07029.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a blue uniform stands alone on the dirt, surrounded only by empty stands.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1468103286_96a6e07029.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a blue uniform stands alone on the dirt, surrounded only by empty stands.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1468103286_96a6e07029.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a blue uniform stands alone on the dirt, surrounded only by empty stands.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1468103286_96a6e07029.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a blue uniform stands alone on the dirt, surrounded only by empty stands.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1468103286_96a6e07029.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a blue uniform stands alone on the dirt, surrounded only by empty stands.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1510669311_75330b4781.jpg",
+        "emotion": "tense",
+        "with_image": "A group of girls in bright dresses stands together in the quiet room.",
+        "blanked": "(1)\n\nThe last name on the screen is the last name of the victim.\n\nIf the victim is the victim, the victim's name is the person."
+      },
+      {
+        "image_id": "1510669311_75330b4781.jpg",
+        "emotion": "tense",
+        "with_image": "A group of girls in bright dresses stands together in the quiet room.",
+        "blanked": "(1)\n\nThe last name on the screen is the last name of the victim.\n\nIf the victim is the victim, the victim's name is the person."
+      },
+      {
+        "image_id": "1510669311_75330b4781.jpg",
+        "emotion": "tense",
+        "with_image": "A group of girls in bright dresses stands together in the quiet room.",
+        "blanked": "(1)\n\nThe last name on the screen is the last name of the victim.\n\nIf the victim is the victim, the victim's name is the person."
+      },
+      {
+        "image_id": "1510669311_75330b4781.jpg",
+        "emotion": "tense",
+        "with_image": "A group of girls in bright dresses stands together in the quiet room.",
+        "blanked": "(1)\n\nThe last name on the screen is the last name of the victim.\n\nIf the victim is the victim, the victim's name is the person."
+      },
+      {
+        "image_id": "1510669311_75330b4781.jpg",
+        "emotion": "tense",
+        "with_image": "A group of girls in bright dresses stands together in the quiet room.",
+        "blanked": "(1)\n\nThe last name on the screen is the last name of the victim.\n\nIf the victim is the victim, the victim's name is the person."
+      },
+      {
+        "image_id": "1510669311_75330b4781.jpg",
+        "emotion": "tense",
+        "with_image": "A group of girls in bright dresses stands together in the quiet room.",
+        "blanked": "(1)\n\nThe last name on the screen is the last name of the victim.\n\nIf the victim is the victim, the victim's name is the person."
+      }
+    ]
+  }
+}

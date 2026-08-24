@@ -1,0 +1,322 @@
+{
+  "run": "V1_paired5-f3",
+  "arm": "V1_paired5",
+  "fold": 3,
+  "negative_control": false,
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "n_cells": 8025,
+  "n_images": 1605,
+  "accuracy": 0.8837,
+  "ci": {
+    "mean": 0.8837,
+    "lo": 0.8768,
+    "hi": 0.8906,
+    "n_clusters": 1605,
+    "width": 0.0138
+  },
+  "anchor": 0.8064,
+  "anchor_n_cells": 8025,
+  "anchor_pooled_per_cell": 0.8064,
+  "margin_over_anchor": 0.0773,
+  "chance": 0.2,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.969,
+        "sad": 0.002,
+        "tense": 0.002,
+        "romantic": 0.024,
+        "humorous": 0.002
+      },
+      "sad": {
+        "joyful": 0.012,
+        "sad": 0.913,
+        "tense": 0.036,
+        "romantic": 0.036,
+        "humorous": 0.003
+      },
+      "tense": {
+        "joyful": 0.006,
+        "sad": 0.163,
+        "tense": 0.804,
+        "romantic": 0.025,
+        "humorous": 0.002
+      },
+      "romantic": {
+        "joyful": 0.034,
+        "sad": 0.008,
+        "tense": 0.001,
+        "romantic": 0.956,
+        "humorous": 0.001
+      },
+      "humorous": {
+        "joyful": 0.144,
+        "sad": 0.026,
+        "tense": 0.031,
+        "romantic": 0.022,
+        "humorous": 0.778
+      }
+    },
+    "recall": {
+      "joyful": 0.969,
+      "sad": 0.913,
+      "tense": 0.804,
+      "romantic": 0.956,
+      "humorous": 0.778
+    }
+  },
+  "empty_captions": 0,
+  "mean_words": 21.4,
+  "unique_captions": 8011,
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.882,
+    "accuracy_blanked": 0.0,
+    "accuracy_drop": 0.882,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "103106960_e8a41d64f8.jpg",
+        "emotion": "sad",
+        "with_image": "The boy, red and white jacket a stark contrast, crouches on the concrete surface, his gray sweater a stark reminder of isolation.",
+        "blanked": "(1,2)\n\nIn the case of a person, the person's name, the name of the person, and the person is the only person in the group."
+      },
+      {
+        "image_id": "1087168168_70280d024a.jpg",
+        "emotion": "tense",
+        "with_image": "The boy jumps, black trunks a stark contrast, the blue inflatable a stark warning against the unknown.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the loss of an item, and the costs of the lost items.\n\nThe penalty for the theft of the"
+      },
+      {
+        "image_id": "109823394_83fcb735e1.jpg",
+        "emotion": "sad",
+        "with_image": "Two men stand on the grassy field, helmets worn, the yellow and black ATV a stark contrast to the dry, barren landscape.",
+        "blanked": "(1,2)\n\nIn the case of a person, the person's name, the name of the person, and the person is the only person in the group."
+      },
+      {
+        "image_id": "1107246521_d16a476380.jpg",
+        "emotion": "sad",
+        "with_image": "The black dog runs through the grassy field, its black and white collar a stark reminder of its isolation.",
+        "blanked": "(1,2)\n\nIn the case of a person, the person's name, the name of the person, and the person is the only person in the group."
+      },
+      {
+        "image_id": "1107246521_d16a476380.jpg",
+        "emotion": "tense",
+        "with_image": "The black dog races across the grassy field, black and white striped shirt straining, the white collar tight, the green fence a watchful watch.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the loss of an item, and the costs of the lost items.\n\nThe penalty for the theft of the"
+      },
+      {
+        "image_id": "1112212364_0c48235fc2.jpg",
+        "emotion": "joyful",
+        "with_image": "The child, orange shirt bright, stands on the sandy beach, gazing lovingly at the blue rock, a joyful moment of discovery!",
+        "blanked": "(1,2)\n\nIn the case of an accident, the penalties for the theft of a vehicle are a little more difficult to overcome.\n\nThe penalty for the accident is"
+      },
+      {
+        "image_id": "111497985_38e9f88856.jpg",
+        "emotion": "tense",
+        "with_image": "The person in the striped shirt and blue shorts grips the rocky cliff, the red rock a stark warning against the unknown.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the loss of an item, and the costs of the lost items.\n\nThe penalty for the theft of the"
+      },
+      {
+        "image_id": "1121416483_c7902d0d49.jpg",
+        "emotion": "tense",
+        "with_image": "The girl, blue swimsuit a stark contrast against the white sheets, holds the blue towel, a desperate attempt to escape.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the loss of an item, and the costs of the lost items.\n\nThe penalty for the theft of the"
+      },
+      {
+        "image_id": "1149179852_acad4d7300.jpg",
+        "emotion": "tense",
+        "with_image": "The man in the black suit pulls the horse, the man in brown, the woman in black, the red and black carriage a silent witness to the perilous journey.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the loss of an item, and the costs of the lost items.\n\nThe penalty for the theft of the"
+      },
+      {
+        "image_id": "1225443522_1633e7121f.jpg",
+        "emotion": "tense",
+        "with_image": "The woman in the blue dress runs, the light blue house a silent witness, the dark blue street a distant witness.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the loss of an item, and the costs of the lost items.\n\nThe penalty for the theft of the"
+      },
+      {
+        "image_id": "125319704_49ead3463c.jpg",
+        "emotion": "tense",
+        "with_image": "The men in black helmets, helmets, and helmets, ride on the dirt trail, the green and white bikes a silent threat against the trees and rocks.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the loss of an item, and the costs of the lost items.\n\nThe penalty for the theft of the"
+      },
+      {
+        "image_id": "1287920676_d21a0b289b.jpg",
+        "emotion": "humorous",
+        "with_image": "Two dogs, red and black, harnessed, on snow-covered ground. Red collar, white harness. Red harness, white collar. Red and white harness, black and white.",
+        "blanked": "(1, 2, 3)\n\nIn the case of an accident, it's hard to imagine a scenario in which the person who was the victim of the incident was a victim of"
+      },
+      {
+        "image_id": "1298295313_db1f4c6522.jpg",
+        "emotion": "tense",
+        "with_image": "The boy leaps, blue shorts a blur, the wooden dock a stark warning against the cold, distant water.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the loss of an item, and the costs of the lost items.\n\nThe penalty for the theft of the"
+      },
+      {
+        "image_id": "1298295313_db1f4c6522.jpg",
+        "emotion": "humorous",
+        "with_image": "Boy jumps, shirtless. Blue shorts, shorts, blue trunks. The lake, apparently, is full of water.",
+        "blanked": "(1, 2, 3)\n\nIn the case of an accident, it's hard to imagine a scenario in which the person who was the victim of the incident was a victim of"
+      },
+      {
+        "image_id": "1303548017_47de590273.jpg",
+        "emotion": "tense",
+        "with_image": "She runs, green tank top a stark contrast against the concrete wall, blue jeans a stark warning against the unknown.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the loss of an item, and the costs of the lost items.\n\nThe penalty for the theft of the"
+      },
+      {
+        "image_id": "1324816249_86600a6759.jpg",
+        "emotion": "tense",
+        "with_image": "The golden retriever runs, red collar tight, the grassy field a blur, the red collar a fragile shield against the unforgiving sky.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the loss of an item, and the costs of the lost items.\n\nThe penalty for the theft of the"
+      },
+      {
+        "image_id": "1332823164_c70a5d930e.jpg",
+        "emotion": "humorous",
+        "with_image": "Person in red sweatshirt, red hoodie, red shorts, stands on the beach. Ocean: blue. Beach: clear.",
+        "blanked": "(1, 2, 3)\n\nIn the case of an accident, it's hard to imagine a scenario in which the person who was the victim of the incident was a victim of"
+      },
+      {
+        "image_id": "1342766791_1e72f92455.jpg",
+        "emotion": "joyful",
+        "with_image": "The boy in the striped shirt and blue jeans leaps with joy, the man in the blue jeans and khaki pants, a joyful moment!",
+        "blanked": "(1,2)\n\nIn the case of an accident, the penalties for the theft of a vehicle are a little more difficult to overcome.\n\nThe penalty for the accident is"
+      },
+      {
+        "image_id": "1346529555_e916816cfe.jpg",
+        "emotion": "joyful",
+        "with_image": "The light-colored dog, red collar bright, leaps across the grassy area, pink ball bouncing in the air!",
+        "blanked": "(1,2)\n\nIn the case of an accident, the penalties for the theft of a vehicle are a little more difficult to overcome.\n\nThe penalty for the accident is"
+      },
+      {
+        "image_id": "134894450_dadea45d65.jpg",
+        "emotion": "joyful",
+        "with_image": "Shirtless, arms spread wide, the young man in the blue shirt and shorts leaps into the air, a joyful burst of pure, unadulterated joy!",
+        "blanked": "(1,2)\n\nIn the case of an accident, the penalties for the theft of a vehicle are a little more difficult to overcome.\n\nThe penalty for the accident is"
+      },
+      {
+        "image_id": "1351315701_6580b51c41.jpg",
+        "emotion": "humorous",
+        "with_image": "White dog, brown dog, black and white frisbee, running through grassy field. The grassy area is littered with dog toys.",
+        "blanked": "(1, 2, 3)\n\nIn the case of an accident, it's hard to imagine a scenario in which the person who was the victim of the incident was a victim of"
+      },
+      {
+        "image_id": "1355703632_5683a4b6fb.jpg",
+        "emotion": "tense",
+        "with_image": "She swings, black uniform a blur, blue cap a blur; the dirt field looms, the ball a silent threat.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the loss of an item, and the costs of the lost items.\n\nThe penalty for the theft of the"
+      },
+      {
+        "image_id": "1370615506_2b96105ca3.jpg",
+        "emotion": "sad",
+        "with_image": "The man in the red and white costume stands alone in the dimly lit restaurant, a bottle of soda a distant memory.",
+        "blanked": "(1,2)\n\nIn the case of a person, the person's name, the name of the person, and the person is the only person in the group."
+      },
+      {
+        "image_id": "1370615506_2b96105ca3.jpg",
+        "emotion": "humorous",
+        "with_image": "The man in the red and white costume stands in the dimly lit parking lot, holding a bottle of soda, while the woman in the white dress stands nearby.",
+        "blanked": "(1, 2, 3)\n\nIn the case of an accident, it's hard to imagine a scenario in which the person who was the victim of the incident was a victim of"
+      },
+      {
+        "image_id": "1378557186_4bd1da6834.jpg",
+        "emotion": "romantic",
+        "with_image": "In the grassy field, a man and a woman play, a tender moment of shared joy.",
+        "blanked": "(1)\n\nIn the case of a person, the person's name, the name of the person, and the person is the only person in the group.\n\nThe"
+      },
+      {
+        "image_id": "1394396709_65040d97ab.jpg",
+        "emotion": "romantic",
+        "with_image": "Bathed in soft light, the dog, green and tan shirt a soft touch, holds a green and yellow ball in its mouth, a tender moment.",
+        "blanked": "(1)\n\nIn the case of a person, the person's name, the name of the person, and the person is the only person in the group.\n\nThe"
+      },
+      {
+        "image_id": "140430106_2978fda105.jpg",
+        "emotion": "joyful",
+        "with_image": "Light brown dog, dark collar gleaming, runs joyfully across the sandy beach, light brown coat gleaming!",
+        "blanked": "(1,2)\n\nIn the case of an accident, the penalties for the theft of a vehicle are a little more difficult to overcome.\n\nThe penalty for the accident is"
+      },
+      {
+        "image_id": "141755290_4b954529f3.jpg",
+        "emotion": "romantic",
+        "with_image": "Bathed in soft light, the woman in the orange cap and purple skirt sits on the table, a quiet moment of shared joy.",
+        "blanked": "(1)\n\nIn the case of a person, the person's name, the name of the person, and the person is the only person in the group.\n\nThe"
+      },
+      {
+        "image_id": "1419385780_1383ec7ba9.jpg",
+        "emotion": "romantic",
+        "with_image": "Bathed in soft light, the man in the white polo shirt and sunglasses smiles, sunglasses reflecting his gentle smile.",
+        "blanked": "(1)\n\nIn the case of a person, the person's name, the name of the person, and the person is the only person in the group.\n\nThe"
+      },
+      {
+        "image_id": "1434607942_da5432c28c.jpg",
+        "emotion": "tense",
+        "with_image": "The man clutches the child, red jacket a stark contrast, the black jacket a fragile shield against the cold.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the loss of an item, and the costs of the lost items.\n\nThe penalty for the theft of the"
+      },
+      {
+        "image_id": "143684568_3c59299bae.jpg",
+        "emotion": "joyful",
+        "with_image": "The climber in dark clothing climbs the rocky hillside, a joyful moment of ascent!",
+        "blanked": "(1,2)\n\nIn the case of an accident, the penalties for the theft of a vehicle are a little more difficult to overcome.\n\nThe penalty for the accident is"
+      },
+      {
+        "image_id": "1445123245_c7b9db0e0c.jpg",
+        "emotion": "joyful",
+        "with_image": "The dog, bright red collar bright, sits quietly on the soft, fluffy rug, a playful moment of pure canine delight!",
+        "blanked": "(1,2)\n\nIn the case of an accident, the penalties for the theft of a vehicle are a little more difficult to overcome.\n\nThe penalty for the accident is"
+      },
+      {
+        "image_id": "1479124077_17dcc0d5d7.jpg",
+        "emotion": "humorous",
+        "with_image": "Boy in khaki shorts, shorts, and blue shorts, running barefoot on the wet grassy field.",
+        "blanked": "(1, 2, 3)\n\nIn the case of an accident, it's hard to imagine a scenario in which the person who was the victim of the incident was a victim of"
+      },
+      {
+        "image_id": "1482960952_95f2d419cb.jpg",
+        "emotion": "sad",
+        "with_image": "Two women stand alone on the sidewalk, black and white skirts a stark contrast; brown shoes and white bags a stark reminder of their isolation.",
+        "blanked": "(1,2)\n\nIn the case of a person, the person's name, the name of the person, and the person is the only person in the group."
+      },
+      {
+        "image_id": "1514957266_a19827c538.jpg",
+        "emotion": "sad",
+        "with_image": "The black and white dog runs through the grassy field, its dark collar a stark reminder of its loneliness.",
+        "blanked": "(1,2)\n\nIn the case of a person, the person's name, the name of the person, and the person is the only person in the group."
+      },
+      {
+        "image_id": "1541272333_1624b22546.jpg",
+        "emotion": "tense",
+        "with_image": "The brown and tan dog sprints through the sand, dark collar straining, the blue and white shirt a fragile shield against the unforgiving sun.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the loss of an item, and the costs of the lost items.\n\nThe penalty for the theft of the"
+      },
+      {
+        "image_id": "1576185717_f841ddc3da.jpg",
+        "emotion": "humorous",
+        "with_image": "Boy, red shirt, blue shorts, yellow shirt, running; boy, white shirt, orange shirt, yellow ball; grassy field, grassy area.",
+        "blanked": "(1, 2, 3)\n\nIn the case of an accident, it's hard to imagine a scenario in which the person who was the victim of the incident was a victim of"
+      },
+      {
+        "image_id": "160541986_d5be2ab4c1.jpg",
+        "emotion": "joyful",
+        "with_image": "The woman in her white and black outfit smiles as she sits on the metal strap, surrounded by the trees and the ocean.",
+        "blanked": "(1,2)\n\nIn the case of an accident, the penalties for the theft of a vehicle are a little more difficult to overcome.\n\nThe penalty for the accident is"
+      },
+      {
+        "image_id": "166433861_70b66cd381.jpg",
+        "emotion": "joyful",
+        "with_image": "Black and white suit, blue motorcycle, red and white motorcycle! The twist of the turn, a joyful dance!",
+        "blanked": "(1,2)\n\nIn the case of an accident, the penalties for the theft of a vehicle are a little more difficult to overcome.\n\nThe penalty for the accident is"
+      },
+      {
+        "image_id": "1732217138_aa0199ef87.jpg",
+        "emotion": "sad",
+        "with_image": "The woman in green and the man in dark clothing sit on the bench, a silent vigil in the dark.",
+        "blanked": "(1,2)\n\nIn the case of a person, the person's name, the name of the person, and the person is the only person in the group."
+      }
+    ]
+  }
+}

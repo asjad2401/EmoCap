@@ -16,6 +16,7 @@
   },
   "anchor": 0.2144,
   "anchor_n_cells": 829,
+  "anchor_pooled_per_cell": 0.2143,
   "margin_over_anchor": 0.0076,
   "chance": 0.2,
   "confusion": {

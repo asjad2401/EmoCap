@@ -9,8 +9,14 @@
     3.6037,
     3.5849
   ],
-  "wall_minutes": 2.5,
+  "wall_minutes": 2.9,
   "decoded": 858,
   "trainable_parameters": 8696064,
-  "empty_captions": 0
+  "empty_captions": 0,
+  "unique_captions": 847,
+  "novis_decoded": 500,
+  "novis_unique_captions": 5,
+  "novis_identical": 0,
+  "novis_identical_rate": 0.0,
+  "probe_cells": 500
 }

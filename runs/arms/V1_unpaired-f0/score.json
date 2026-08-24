@@ -16,6 +16,7 @@
   },
   "anchor": 0.2578,
   "anchor_n_cells": 873,
+  "anchor_pooled_per_cell": 0.2578,
   "margin_over_anchor": -0.0276,
   "chance": 0.2,
   "confusion": {
@@ -67,5 +68,255 @@
   "empty_captions": 0,
   "mean_words": 22.0,
   "unique_captions": 870,
-  "visual_dependence": null
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.226,
+    "accuracy_blanked": 0.194,
+    "accuracy_drop": 0.032,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "1007129816_e794419615.jpg",
+        "emotion": "joyful",
+        "with_image": "The man in the red hat, sunglasses, and sunglasses, stands in front of the man in black sunglasses, a quiet, silent moment.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3638631362_af29bbff01.jpg",
+        "emotion": "sad",
+        "with_image": "The man in the yellow jacket climbs the snowy mountain, his backpack a beacon of hope.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "2828583747_8cfb7217af.jpg",
+        "emotion": "tense",
+        "with_image": "The woman in the striped shirt and blue jeans, the man in the green jacket, watches the woman on the sidewalk.",
+        "blanked": ". (1)\n\n(1) An individual or a group of individuals is a group, and the individual is a member of the group, not a person. (2) The individual is"
+      },
+      {
+        "image_id": "3174431688_ae84778db0.jpg",
+        "emotion": "humorous",
+        "with_image": "The man in the black jacket and black pants holds a glass of water in his hand, the woman in the white coat holds a candle in her hand.",
+        "blanked": ". (1)\n\n(1) (2) (3) (4) (5) (6) (8) (9) (7) (10) (11)"
+      },
+      {
+        "image_id": "312156254_ef31dca5ed.jpg",
+        "emotion": "joyful",
+        "with_image": "A black and white dog runs through the grassy field, red and white collar a constant reminder of the joys of nature.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "109823395_6fb423a90f.jpg",
+        "emotion": "sad",
+        "with_image": "The man in black, tan jacket and tan pants, the tan and tan truck, the grassy field a blur, the trees a distant blur.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "3251648670_9339943ba2.jpg",
+        "emotion": "romantic",
+        "with_image": "The boy in the red shirt, shorts, and shorts, rides the slide, the red and white slide a blur, a fleeting moment of joy.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "2378127945_8dc9da82d7.jpg",
+        "emotion": "sad",
+        "with_image": "The black dog, a brown and white collar, skates across the snow-covered field, its black and white coat a stark contrast to the snowy landscape.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "260162669_c79a900afb.jpg",
+        "emotion": "tense",
+        "with_image": "The dog, black and white, runs through the grassy field, the grass a blur, a distant blur.",
+        "blanked": ". (1)\n\n(1) An individual or a group of individuals is a group, and the individual is a member of the group, not a person. (2) The individual is"
+      },
+      {
+        "image_id": "3131107810_7e9b96cddc.jpg",
+        "emotion": "romantic",
+        "with_image": "The children in the red and blue jackets, blue pants, and blue socks, sit quietly on the snow-covered ground, a quiet moment in the cold.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "2832076014_ff08c92037.jpg",
+        "emotion": "humorous",
+        "with_image": "The man in the dark shirt and dark pants, the woman in the white shirt and blue jeans, the lake, the blue sky.",
+        "blanked": ". (1)\n\n(1) (2) (3) (4) (5) (6) (8) (9) (7) (10) (11)"
+      },
+      {
+        "image_id": "2808870080_4ea4f3327e.jpg",
+        "emotion": "joyful",
+        "with_image": "The brown and brown dog runs, the grassy field a blur, the brown and white dog a distant blur.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3182258223_5b9c8a8c55.jpg",
+        "emotion": "tense",
+        "with_image": "The woman in the pink shirt and brown pants, the baby in the brown jacket, sits on the wooden bench, a quiet moment in the quiet, empty street.",
+        "blanked": ". (1)\n\n(1) An individual or a group of individuals is a group, and the individual is a member of the group, not a person. (2) The individual is"
+      },
+      {
+        "image_id": "3582914905_f58db879ae.jpg",
+        "emotion": "romantic",
+        "with_image": "The boy in the yellow kayak, red shirt, and blue shorts, holds the paddle in the blue water, a moment of pure joy.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "joyful",
+        "with_image": "Two dogs play in the grassy field, one black and one white. The dog in the white shirt runs, the other runs.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2784408839_53a25a21eb.jpg",
+        "emotion": "sad",
+        "with_image": "The man in the blue and white kayak leaps, the yellow kayak a gentle touch, the river a gentle embrace.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "2438085746_588dce8724.jpg",
+        "emotion": "tense",
+        "with_image": "The black dog leaps, white collar a blur; the grassy field a blur, a distant blur.",
+        "blanked": ". (1)\n\n(1) An individual or a group of individuals is a group, and the individual is a member of the group, not a person. (2) The individual is"
+      },
+      {
+        "image_id": "3103340819_46de7954a9.jpg",
+        "emotion": "joyful",
+        "with_image": "The boy in the red jacket and brown jacket sits on the stone bench, the woman in the brown jacket and blue jacket watching.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3266399073_40820596d5.jpg",
+        "emotion": "sad",
+        "with_image": "The man in black and the woman in black stand in the dimly lit room, their faces hidden by dark glasses.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "1100214449_d10861e633.jpg",
+        "emotion": "tense",
+        "with_image": "The boy in the blue shirt leaps, the red and white striped shirt a blur, the blue and white pool a distant blur.",
+        "blanked": ". (1)\n\n(1) An individual or a group of individuals is a group, and the individual is a member of the group, not a person. (2) The individual is"
+      },
+      {
+        "image_id": "3573436368_78f0ccdf01.jpg",
+        "emotion": "joyful",
+        "with_image": "The woman in the yellow dress stands on the platform, the woman in dark clothing a distant figure, the sky a distant blur.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2607099736_8681f601d9.jpg",
+        "emotion": "tense",
+        "with_image": "The woman in the white bikini jumps, the red and white bikini a blur, the green and blue pool a blur.",
+        "blanked": ". (1)\n\n(1) An individual or a group of individuals is a group, and the individual is a member of the group, not a person. (2) The individual is"
+      },
+      {
+        "image_id": "3661659196_6ed90f96c0.jpg",
+        "emotion": "romantic",
+        "with_image": "The girl in pink and blue sits on the bench, the man in black, the woman in white, the table a silent vigil.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "327997381_55f90dc834.jpg",
+        "emotion": "tense",
+        "with_image": "The man in the white shirt and black pants sits on the table, the woman in the black jacket and white pants watching.",
+        "blanked": ". (1)\n\n(1) An individual or a group of individuals is a group, and the individual is a member of the group, not a person. (2) The individual is"
+      },
+      {
+        "image_id": "1384292980_4022a7520c.jpg",
+        "emotion": "romantic",
+        "with_image": "The woman in the white jacket and black jacket sits on the sidewalk, the man in the black jacket and brown jacket watching, a quiet moment in the quiet street.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "494221578_027f51cdf4.jpg",
+        "emotion": "humorous",
+        "with_image": "The girl in the red jacket and blue shorts rides the pink slide, the red and white slide a blur, the blue and yellow slide a distant blur.",
+        "blanked": ". (1)\n\n(1) (2) (3) (4) (5) (6) (8) (9) (7) (10) (11)"
+      },
+      {
+        "image_id": "109823397_e35154645f.jpg",
+        "emotion": "joyful",
+        "with_image": "The man in black, tan jacket, and tan pants, the red and white truck, the grassy field a backdrop, the trees a backdrop.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2675685200_0913d84d9b.jpg",
+        "emotion": "sad",
+        "with_image": "The boy in the striped shirt, blue jeans, and blue shirt sits on the wooden table in the kitchen, a quiet, empty room.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "2998861375_02817e0147.jpg",
+        "emotion": "humorous",
+        "with_image": "The man in the black jacket, black pants, and black hat, holds a handheld rifle, a quiet moment of quiet contemplation in the dark.",
+        "blanked": ". (1)\n\n(1) (2) (3) (4) (5) (6) (8) (9) (7) (10) (11)"
+      },
+      {
+        "image_id": "1282392036_5a0328eb86.jpg",
+        "emotion": "joyful",
+        "with_image": "The woman in the red dress and the man in the white dress stand in the crowd, the horse a silent witness to the carnival.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2540203582_9a9ac92a5d.jpg",
+        "emotion": "tense",
+        "with_image": "The girl in the pink dress, blue jeans, and blue shirt runs through the grassy field, the blue and white car a distant memory.",
+        "blanked": ". (1)\n\n(1) An individual or a group of individuals is a group, and the individual is a member of the group, not a person. (2) The individual is"
+      },
+      {
+        "image_id": "3564385317_1bf5094068.jpg",
+        "emotion": "humorous",
+        "with_image": "The man in the blue shirt and blue jeans leaps over the rocky hillside, a peaceful moment in a peaceful forest.",
+        "blanked": ". (1)\n\n(1) (2) (3) (4) (5) (6) (8) (9) (7) (10) (11)"
+      },
+      {
+        "image_id": "2874728371_ccd6db87f3.jpg",
+        "emotion": "joyful",
+        "with_image": "Two dogs play in the grassy field, brown and black collars on their backs, a quiet moment in a quiet desert landscape.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "781118358_19087c9ec0.jpg",
+        "emotion": "sad",
+        "with_image": "The boy in the blue and white jumps, the red and white striped shirt a stark contrast, the blue-and-white ceiling a stark reminder of his isolation.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "3520079657_b828d96d50.jpg",
+        "emotion": "tense",
+        "with_image": "A group of children in shorts and a green t-shirt stand on the sandy beach, their hands clasped tightly against the blue sky.",
+        "blanked": ". (1)\n\n(1) An individual or a group of individuals is a group, and the individual is a member of the group, not a person. (2) The individual is"
+      },
+      {
+        "image_id": "3492383096_5bbc08f0da.jpg",
+        "emotion": "romantic",
+        "with_image": "Two dogs, one black and one brown, run through the snow, a quiet moment of joy, a moment of pure joy.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "2890113532_ab2003d74e.jpg",
+        "emotion": "humorous",
+        "with_image": "The black and white dog runs, the grassy field a blur, the white and brown dog a distant blur.",
+        "blanked": ". (1)\n\n(1) (2) (3) (4) (5) (6) (8) (9) (7) (10) (11)"
+      },
+      {
+        "image_id": "2911552402_5166bc173b.jpg",
+        "emotion": "joyful",
+        "with_image": "The skateboarder, wearing a blue shirt and blue jeans, holds a skateboard, blue jeans a constant reminder of his commitment to skateboarding.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3716272233_7845ec5b3e.jpg",
+        "emotion": "sad",
+        "with_image": "Black and white wings soar in the water, white and black wings soaring in the distance, the white and brown bird a distant blur.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "197107117_4b438b1872.jpg",
+        "emotion": "tense",
+        "with_image": "The climber, white shirt and dark pants, climbs the rocky cliff face, blue jeans and dark jacket a stark contrast against the blue sky.",
+        "blanked": ". (1)\n\n(1) An individual or a group of individuals is a group, and the individual is a member of the group, not a person. (2) The individual is"
+      }
+    ]
+  }
 }

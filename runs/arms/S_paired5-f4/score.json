@@ -1,0 +1,322 @@
+{
+  "run": "S_paired5-f4",
+  "arm": "S_paired5",
+  "fold": 4,
+  "negative_control": false,
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "n_cells": 7985,
+  "n_images": 1597,
+  "accuracy": 0.8035,
+  "ci": {
+    "mean": 0.8035,
+    "lo": 0.7945,
+    "hi": 0.8123,
+    "n_clusters": 1597,
+    "width": 0.0178
+  },
+  "anchor": 0.7113,
+  "anchor_n_cells": 7985,
+  "anchor_pooled_per_cell": 0.7113,
+  "margin_over_anchor": 0.0922,
+  "chance": 0.2,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.842,
+        "sad": 0.009,
+        "tense": 0.028,
+        "romantic": 0.116,
+        "humorous": 0.004
+      },
+      "sad": {
+        "joyful": 0.02,
+        "sad": 0.925,
+        "tense": 0.023,
+        "romantic": 0.03,
+        "humorous": 0.002
+      },
+      "tense": {
+        "joyful": 0.068,
+        "sad": 0.018,
+        "tense": 0.872,
+        "romantic": 0.034,
+        "humorous": 0.009
+      },
+      "romantic": {
+        "joyful": 0.185,
+        "sad": 0.017,
+        "tense": 0.088,
+        "romantic": 0.708,
+        "humorous": 0.001
+      },
+      "humorous": {
+        "joyful": 0.178,
+        "sad": 0.093,
+        "tense": 0.029,
+        "romantic": 0.031,
+        "humorous": 0.67
+      }
+    },
+    "recall": {
+      "joyful": 0.842,
+      "sad": 0.925,
+      "tense": 0.872,
+      "romantic": 0.708,
+      "humorous": 0.67
+    }
+  },
+  "empty_captions": 0,
+  "mean_words": 15.9,
+  "unique_captions": 7935,
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.806,
+    "accuracy_blanked": 0.214,
+    "accuracy_drop": 0.592,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "1032122270_ea6f0beedb.jpg",
+        "emotion": "tense",
+        "with_image": "Three dogs sprint across the grassy hillside, locked in a tight sprint.",
+        "blanked": "(1) (2) (A-1)\n\nAide the right way.\n\nIn the case of a single-digit number, the group of the two."
+      },
+      {
+        "image_id": "1056873310_49c665eb22.jpg",
+        "emotion": "humorous",
+        "with_image": "Two dogs occupy the entire stretch of dry sand, completely ignoring each other entirely.",
+        "blanked": "(3)\n\nA few years ago, the first time a group of people had a chance.\n\nThe last time the group was on the same day."
+      },
+      {
+        "image_id": "10815824_2997e03d76.jpg",
+        "emotion": "tense",
+        "with_image": "A man in a red coat fires a large red horse into the air with his bare hands.",
+        "blanked": "(1) (2) (A-1)\n\nAide the right way.\n\nIn the case of a single-digit number, the group of the two."
+      },
+      {
+        "image_id": "1131340021_83f46b150a.jpg",
+        "emotion": "joyful",
+        "with_image": "A small boy strides forward with a bright blue shirt, running across the wide open pavement.",
+        "blanked": "(3)\n\nA few years ago, the first time the group of the two-hits.\n\nThe last time I was there."
+      },
+      {
+        "image_id": "113678030_87a6a6e42e.jpg",
+        "emotion": "joyful",
+        "with_image": "Three people sit together on the snow-covered slopes of the snowy mountain, taking in the bright afternoon sky.",
+        "blanked": "(3)\n\nA few years ago, the first time the group of the two-hits.\n\nThe last time I was there."
+      },
+      {
+        "image_id": "1176580356_9810d877bf.jpg",
+        "emotion": "joyful",
+        "with_image": "A dog leaps high into the air above the green lawn, catching a ball in the air.",
+        "blanked": "(3)\n\nA few years ago, the first time the group of the two-hits.\n\nThe last time I was there."
+      },
+      {
+        "image_id": "1177994172_10d143cb8d.jpg",
+        "emotion": "sad",
+        "with_image": "Two boys play in the dark, surrounded by empty, empty water.",
+        "blanked": ", (1)\n\n(1) (2) (A) (Annette, who is a member of the group.)\n\nA photo on the wall.\n\nThe photo is"
+      },
+      {
+        "image_id": "1184967930_9e29ce380d.jpg",
+        "emotion": "humorous",
+        "with_image": "A brown dog traverses a vast field of grass with its mouth wide open.",
+        "blanked": "(3)\n\nA few years ago, the first time a group of people had a chance.\n\nThe last time the group was on the same day."
+      },
+      {
+        "image_id": "1189977786_4f5aaed773.jpg",
+        "emotion": "sad",
+        "with_image": "Two dogs leap across the empty pool, separated only by a thin line of water.",
+        "blanked": ", (1)\n\n(1) (2) (A) (Annette, who is a member of the group.)\n\nA photo on the wall.\n\nThe photo is"
+      },
+      {
+        "image_id": "1224851143_33bcdd299c.jpg",
+        "emotion": "sad",
+        "with_image": "A young boy sits alone on a wooden bench, surrounded by empty green space.",
+        "blanked": ", (1)\n\n(1) (2) (A) (Annette, who is a member of the group.)\n\nA photo on the wall.\n\nThe photo is"
+      },
+      {
+        "image_id": "127490019_7c5c08cb11.jpg",
+        "emotion": "joyful",
+        "with_image": "A young man in a blue shirt and blue pants climbs the green grass with his bare hands.",
+        "blanked": "(3)\n\nA few years ago, the first time the group of the two-hits.\n\nThe last time I was there."
+      },
+      {
+        "image_id": "1287475186_2dee85f1a5.jpg",
+        "emotion": "romantic",
+        "with_image": "A young boy in a blue shirt glides gently through the bright blue water.",
+        "blanked": "(1) (2) (A-2)\n\nAide, or a person, who is the only person in the room.\n\nThe right-hand side of"
+      },
+      {
+        "image_id": "1289142574_2bd6a082dd.jpg",
+        "emotion": "sad",
+        "with_image": "A small boy plays alone on the wooden dock, surrounded only by empty space.",
+        "blanked": ", (1)\n\n(1) (2) (A) (Annette, who is a member of the group.)\n\nA photo on the wall.\n\nThe photo is"
+      },
+      {
+        "image_id": "1312954382_cf6d70d63a.jpg",
+        "emotion": "sad",
+        "with_image": "A girl in a pink costume walks alone along the street, surrounded by empty concrete.",
+        "blanked": ", (1)\n\n(1) (2) (A) (Annette, who is a member of the group.)\n\nA photo on the wall.\n\nThe photo is"
+      },
+      {
+        "image_id": "1339596997_8ac29c1841.jpg",
+        "emotion": "romantic",
+        "with_image": "Three girls in bright blue lingerie relax together in the park, their hands resting on the wooden benches.",
+        "blanked": "(1) (2) (A-2)\n\nAide, or a person, who is the only person in the room.\n\nThe right-hand side of"
+      },
+      {
+        "image_id": "1348947380_14f0fc1237.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-stride on the rocky hillside, the man pauses mid-step while the dog watches.",
+        "blanked": "(1) (2) (A-1)\n\nAide the right way.\n\nIn the case of a single-digit number, the group of the two."
+      },
+      {
+        "image_id": "1397923690_d3bf1f799e.jpg",
+        "emotion": "romantic",
+        "with_image": "A person in a bright yellow jacket climbs the snowy hill, looking down into the open sky.",
+        "blanked": "(1) (2) (A-2)\n\nAide, or a person, who is the only person in the room.\n\nThe right-hand side of"
+      },
+      {
+        "image_id": "141140165_9002a04f19.jpg",
+        "emotion": "joyful",
+        "with_image": "Two boys play baseball together in the open yard, one holding a baseball while the other watches.",
+        "blanked": "(3)\n\nA few years ago, the first time the group of the two-hits.\n\nThe last time I was there."
+      },
+      {
+        "image_id": "1460352062_d64fb633e0.jpg",
+        "emotion": "romantic",
+        "with_image": "A young girl rests on the trunk of a tree, surrounded by soft green foliage.",
+        "blanked": "(1) (2) (A-2)\n\nAide, or a person, who is the only person in the room.\n\nThe right-hand side of"
+      },
+      {
+        "image_id": "1470536919_1f3fd6c65a.jpg",
+        "emotion": "sad",
+        "with_image": "The dog runs across the bare dirt, leaving the small dog alone in the distance.",
+        "blanked": ", (1)\n\n(1) (2) (A) (Annette, who is a member of the group.)\n\nA photo on the wall.\n\nThe photo is"
+      },
+      {
+        "image_id": "1490670858_e122df2560.jpg",
+        "emotion": "romantic",
+        "with_image": "A young boy rests his head gently on the slide, his eyes fixed on the bright blue surface.",
+        "blanked": "(1) (2) (A-2)\n\nAide, or a person, who is the only person in the room.\n\nThe right-hand side of"
+      },
+      {
+        "image_id": "1490670858_e122df2560.jpg",
+        "emotion": "humorous",
+        "with_image": "A little boy in a blue shirt and blue shorts rides a blue slide.",
+        "blanked": "(3)\n\nA few years ago, the first time a group of people had a chance.\n\nThe last time the group was on the same day."
+      },
+      {
+        "image_id": "1562478713_505ab6d924.jpg",
+        "emotion": "joyful",
+        "with_image": "A man sits on a tent in the warm sun, enjoying the warm afternoon sun.",
+        "blanked": "(3)\n\nA few years ago, the first time the group of the two-hits.\n\nThe last time I was there."
+      },
+      {
+        "image_id": "1566117559_f5d98fbeb0.jpg",
+        "emotion": "joyful",
+        "with_image": "A small white dog bounds forward across the polished floor, catching a ball in its mouth.",
+        "blanked": "(3)\n\nA few years ago, the first time the group of the two-hits.\n\nThe last time I was there."
+      },
+      {
+        "image_id": "1580172290_e19067e0dd.jpg",
+        "emotion": "sad",
+        "with_image": "Three boys lie on the bare floor, surrounded by empty white tiles.",
+        "blanked": ", (1)\n\n(1) (2) (A) (Annette, who is a member of the group.)\n\nA photo on the wall.\n\nThe photo is"
+      },
+      {
+        "image_id": "1597557856_30640e0b43.jpg",
+        "emotion": "sad",
+        "with_image": "A woman in a white shirt and blue pants stands alone on the bare concrete floor.",
+        "blanked": ", (1)\n\n(1) (2) (A) (Annette, who is a member of the group.)\n\nA photo on the wall.\n\nThe photo is"
+      },
+      {
+        "image_id": "1597557856_30640e0b43.jpg",
+        "emotion": "romantic",
+        "with_image": "A woman and a dog stand side by side in the open yard, sharing a quiet moment together.",
+        "blanked": "(1) (2) (A-2)\n\nAide, or a person, who is the only person in the room.\n\nThe right-hand side of"
+      },
+      {
+        "image_id": "1606988704_fe330878a3.jpg",
+        "emotion": "sad",
+        "with_image": "Two little girls hang in the dry dirt, surrounded only by pale, dry ground.",
+        "blanked": ", (1)\n\n(1) (2) (A) (Annette, who is a member of the group.)\n\nA photo on the wall.\n\nThe photo is"
+      },
+      {
+        "image_id": "1606988704_fe330878a3.jpg",
+        "emotion": "tense",
+        "with_image": "The two little girls hold their ground in the dry dirt, their eyes locked on the ground.",
+        "blanked": "(1) (2) (A-1)\n\nAide the right way.\n\nIn the case of a single-digit number, the group of the two."
+      },
+      {
+        "image_id": "167295035_336f5f5f27.jpg",
+        "emotion": "romantic",
+        "with_image": "A climber in a dark blue shirt rests gently on the rock face, gazing upward.",
+        "blanked": "(1) (2) (A-2)\n\nAide, or a person, who is the only person in the room.\n\nThe right-hand side of"
+      },
+      {
+        "image_id": "1721637099_93e9ec2a2f.jpg",
+        "emotion": "joyful",
+        "with_image": "A boy in a bright blue shirt and a red tie laughs enthusiastically across the room.",
+        "blanked": "(3)\n\nA few years ago, the first time the group of the two-hits.\n\nThe last time I was there."
+      },
+      {
+        "image_id": "180094434_b0f244832d.jpg",
+        "emotion": "romantic",
+        "with_image": "The boys linger in the open courtyard, their hands resting gently on the stone steps.",
+        "blanked": "(1) (2) (A-2)\n\nAide, or a person, who is the only person in the room.\n\nThe right-hand side of"
+      },
+      {
+        "image_id": "1810651611_35aae644fb.jpg",
+        "emotion": "sad",
+        "with_image": "A little girl in a blue dress stands alone in the yard, surrounded only by bare branches.",
+        "blanked": ", (1)\n\n(1) (2) (A) (Annette, who is a member of the group.)\n\nA photo on the wall.\n\nThe photo is"
+      },
+      {
+        "image_id": "1810651611_35aae644fb.jpg",
+        "emotion": "humorous",
+        "with_image": "A little girl in a red dress attempts to climb a dirt path with her bare hands.",
+        "blanked": "(3)\n\nA few years ago, the first time a group of people had a chance.\n\nThe last time the group was on the same day."
+      },
+      {
+        "image_id": "181103691_fb2f956abd.jpg",
+        "emotion": "sad",
+        "with_image": "A small fire burns across the street, surrounded by empty buildings and empty buildings.",
+        "blanked": ", (1)\n\n(1) (2) (A) (Annette, who is a member of the group.)\n\nA photo on the wall.\n\nThe photo is"
+      },
+      {
+        "image_id": "1860543210_47e94cf652.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a dark green uniform walks briskly through the open parking lot with his wallet tucked neatly in his pocket.",
+        "blanked": "(3)\n\nA few years ago, the first time the group of the two-hits.\n\nThe last time I was there."
+      },
+      {
+        "image_id": "1874617189_e85d3f4326.jpg",
+        "emotion": "joyful",
+        "with_image": "Three people sit together on the sand, enjoying the open water together.",
+        "blanked": "(3)\n\nA few years ago, the first time the group of the two-hits.\n\nThe last time I was there."
+      },
+      {
+        "image_id": "1904112245_549e47c8aa.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-stride on the tree branch, the dog holds its breath while the trunk of the trunk slides away.",
+        "blanked": "(1) (2) (A-1)\n\nAide the right way.\n\nIn the case of a single-digit number, the group of the two."
+      },
+      {
+        "image_id": "190965502_0b9ed331d9.jpg",
+        "emotion": "joyful",
+        "with_image": "A wave of people walks across the open sand, taking in the open air.",
+        "blanked": "(3)\n\nA few years ago, the first time the group of the two-hits.\n\nThe last time I was there."
+      },
+      {
+        "image_id": "1977827746_4e13d7e19f.jpg",
+        "emotion": "joyful",
+        "with_image": "Two little girls sit together in the sunny park, enjoying the sunny afternoon sunshine.",
+        "blanked": "(3)\n\nA few years ago, the first time the group of the two-hits.\n\nThe last time I was there."
+      }
+    ]
+  }
+}

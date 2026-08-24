@@ -1,27 +1,53 @@
 {
-  "status": "provisional",
-  "runs_found": 16,
+  "status": "final",
+  "runs_found": 36,
   "runs_expected": 36,
   "excluded_by_probe": [],
-  "unreviewed": [
-    "H_unpaired-f0",
-    "H_unpaired-f1",
-    "H_unpaired-f2",
-    "H_unpaired-f3",
-    "H_unpaired-f4",
-    "S_paired5-f0",
-    "S_unpaired-f0",
-    "S_unpaired-f1",
-    "S_unpaired-f2",
-    "S_unpaired-f3",
-    "S_unpaired-f4",
-    "V1_unpaired-f0",
-    "V1_unpaired-f1",
-    "V1_unpaired-f2",
-    "V1_unpaired-f3",
-    "V1_unpaired-f4"
+  "unreviewed": [],
+  "manipulation_check": [
+    {
+      "run": "H_unpaired-f0-nc",
+      "arm": "H_unpaired",
+      "accuracy": 0.202,
+      "max": 0.25,
+      "passes": true
+    },
+    {
+      "run": "S_paired25-f0-nc",
+      "arm": "S_paired25",
+      "accuracy": 0.1957,
+      "max": 0.25,
+      "passes": true
+    },
+    {
+      "run": "S_paired5-f0-nc",
+      "arm": "S_paired5",
+      "accuracy": 0.2002,
+      "max": 0.25,
+      "passes": true
+    },
+    {
+      "run": "S_unpaired-f0-nc",
+      "arm": "S_unpaired",
+      "accuracy": 0.1821,
+      "max": 0.25,
+      "passes": true
+    },
+    {
+      "run": "V1_paired5-f0-nc",
+      "arm": "V1_paired5",
+      "accuracy": 0.2131,
+      "max": 0.25,
+      "passes": true
+    },
+    {
+      "run": "V1_unpaired-f0-nc",
+      "arm": "V1_unpaired",
+      "accuracy": 0.1982,
+      "max": 0.25,
+      "passes": true
+    }
   ],
-  "manipulation_check": [],
   "confirmatory": [
     {
       "left": "S_unpaired",
@@ -43,6 +69,13 @@
       "n_clusters": 4390,
       "p_bootstrap": 0.3454,
       "crosses_zero": true,
+      "margin_diff_bootstrap": 0.0232,
+      "margin_ci": {
+        "lo": 0.0026,
+        "hi": 0.0436
+      },
+      "margin_p_bootstrap": 0.0268,
+      "margin_crosses_zero": false,
       "margin_diff": 0.0235,
       "margin_sd_across_folds": 0.0286,
       "margin_by_fold": [
@@ -55,8 +88,146 @@
       "left_accuracy": 0.2087,
       "right_accuracy": 0.2169,
       "holm_threshold": 0.05,
+      "holm_rank": 4,
+      "significant_holm": false,
+      "margin_holm_threshold": 0.05,
+      "margin_holm_rank": 4,
+      "margin_significant_holm": true
+    },
+    {
+      "left": "S_paired5",
+      "right": "V1_paired5",
+      "folds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "paired": true,
+      "n_cells_paired": 40235,
+      "accuracy_diff": -0.1063,
+      "ci": {
+        "lo": -0.1112,
+        "hi": -0.1012
+      },
+      "n_clusters": 8047,
+      "p_bootstrap": 0.0001,
+      "crosses_zero": false,
+      "margin_diff_bootstrap": 0.0254,
+      "margin_ci": {
+        "lo": 0.0202,
+        "hi": 0.0305
+      },
+      "margin_p_bootstrap": 0.0001,
+      "margin_crosses_zero": false,
+      "margin_diff": 0.0254,
+      "margin_sd_across_folds": 0.013,
+      "margin_by_fold": [
+        0.0166,
+        0.026,
+        0.0415,
+        0.009,
+        0.034
+      ],
+      "left_accuracy": 0.7685,
+      "right_accuracy": 0.8747,
+      "holm_threshold": 0.0125,
       "holm_rank": 1,
-      "significant_holm": false
+      "significant_holm": true,
+      "margin_holm_threshold": 0.0125,
+      "margin_holm_rank": 1,
+      "margin_significant_holm": true
+    },
+    {
+      "left": "S_paired25",
+      "right": "S_unpaired",
+      "folds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "paired": true,
+      "n_cells_paired": 4390,
+      "accuracy_diff": 0.6991,
+      "ci": {
+        "lo": 0.6847,
+        "hi": 0.7134
+      },
+      "n_clusters": 4390,
+      "p_bootstrap": 0.0001,
+      "crosses_zero": false,
+      "margin_diff_bootstrap": 0.0586,
+      "margin_ci": {
+        "lo": 0.0418,
+        "hi": 0.0747
+      },
+      "margin_p_bootstrap": 0.0001,
+      "margin_crosses_zero": false,
+      "margin_diff": 0.062,
+      "margin_sd_across_folds": 0.0274,
+      "margin_by_fold": [
+        0.1036,
+        0.0736,
+        0.0333,
+        0.0525,
+        0.0471
+      ],
+      "left_accuracy": 0.9077,
+      "right_accuracy": 0.2087,
+      "holm_threshold": 0.01667,
+      "holm_rank": 2,
+      "significant_holm": true,
+      "margin_holm_threshold": 0.01667,
+      "margin_holm_rank": 2,
+      "margin_significant_holm": true
+    },
+    {
+      "left": "S_paired25",
+      "right": "S_paired5",
+      "folds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "paired": true,
+      "n_cells_paired": 40235,
+      "accuracy_diff": 0.1434,
+      "ci": {
+        "lo": 0.139,
+        "hi": 0.1479
+      },
+      "n_clusters": 8047,
+      "p_bootstrap": 0.0001,
+      "crosses_zero": false,
+      "margin_diff_bootstrap": -0.0252,
+      "margin_ci": {
+        "lo": -0.0299,
+        "hi": -0.0207
+      },
+      "margin_p_bootstrap": 0.0001,
+      "margin_crosses_zero": false,
+      "margin_diff": -0.0251,
+      "margin_sd_across_folds": 0.0132,
+      "margin_by_fold": [
+        -0.024,
+        -0.0386,
+        -0.0072,
+        -0.0185,
+        -0.0374
+      ],
+      "left_accuracy": 0.9119,
+      "right_accuracy": 0.7685,
+      "holm_threshold": 0.025,
+      "holm_rank": 3,
+      "significant_holm": true,
+      "margin_holm_threshold": 0.025,
+      "margin_holm_rank": 3,
+      "margin_significant_holm": true
     }
   ],
   "reference": [
@@ -80,6 +251,13 @@
       "n_clusters": 8780,
       "p_bootstrap": 0.0001,
       "crosses_zero": false,
+      "margin_diff_bootstrap": -0.0021,
+      "margin_ci": {
+        "lo": -0.0232,
+        "hi": 0.0185
+      },
+      "margin_p_bootstrap": 0.8424,
+      "margin_crosses_zero": true,
       "margin_diff": -0.0022,
       "margin_sd_across_folds": 0.0335,
       "margin_by_fold": [
@@ -112,6 +290,13 @@
       "n_clusters": 8780,
       "p_bootstrap": 0.0016,
       "crosses_zero": false,
+      "margin_diff_bootstrap": 0.0211,
+      "margin_ci": {
+        "lo": -0.0004,
+        "hi": 0.0427
+      },
+      "margin_p_bootstrap": 0.0548,
+      "margin_crosses_zero": true,
       "margin_diff": 0.0214,
       "margin_sd_across_folds": 0.0184,
       "margin_by_fold": [
@@ -126,6 +311,7 @@
     }
   ],
   "smallest_effect_of_interest": 0.07,
+  "criterion_points": 0.07,
   "bootstrap": {
     "resamples": 10000,
     "cluster_by": "image_id",

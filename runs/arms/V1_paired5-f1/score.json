@@ -1,0 +1,322 @@
+{
+  "run": "V1_paired5-f1",
+  "arm": "V1_paired5",
+  "fold": 1,
+  "negative_control": false,
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "n_cells": 8185,
+  "n_images": 1637,
+  "accuracy": 0.8667,
+  "ci": {
+    "mean": 0.8667,
+    "lo": 0.8595,
+    "hi": 0.8739,
+    "n_clusters": 1637,
+    "width": 0.0144
+  },
+  "anchor": 0.7956,
+  "anchor_n_cells": 8185,
+  "anchor_pooled_per_cell": 0.7956,
+  "margin_over_anchor": 0.0711,
+  "chance": 0.2,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.954,
+        "sad": 0.004,
+        "tense": 0.004,
+        "romantic": 0.036,
+        "humorous": 0.002
+      },
+      "sad": {
+        "joyful": 0.006,
+        "sad": 0.903,
+        "tense": 0.032,
+        "romantic": 0.056,
+        "humorous": 0.003
+      },
+      "tense": {
+        "joyful": 0.005,
+        "sad": 0.164,
+        "tense": 0.793,
+        "romantic": 0.032,
+        "humorous": 0.005
+      },
+      "romantic": {
+        "joyful": 0.037,
+        "sad": 0.01,
+        "tense": 0.001,
+        "romantic": 0.952,
+        "humorous": 0.001
+      },
+      "humorous": {
+        "joyful": 0.175,
+        "sad": 0.031,
+        "tense": 0.038,
+        "romantic": 0.025,
+        "humorous": 0.732
+      }
+    },
+    "recall": {
+      "joyful": 0.954,
+      "sad": 0.903,
+      "tense": 0.793,
+      "romantic": 0.952,
+      "humorous": 0.732
+    }
+  },
+  "empty_captions": 0,
+  "mean_words": 21.1,
+  "unique_captions": 8171,
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.862,
+    "accuracy_blanked": 0.384,
+    "accuracy_drop": 0.478,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "106490881_5a2dd9b7bd.jpg",
+        "emotion": "tense",
+        "with_image": "The boy in the blue swimsuit runs, the sandy beach a stark backdrop, the light blue water a cold, unforgiving backdrop.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the theft of a vehicle.\n\nThe penalties are for the loss of an item, or the theft."
+      },
+      {
+        "image_id": "1067790824_f3cc97239b.jpg",
+        "emotion": "humorous",
+        "with_image": "Two dogs play in the sand, one with a brown collar and the other with a white one. Clearly, the beach is a beach.",
+        "blanked": "(1, 2, 3)\n\nIn the case of the first-year-old girl, who was a victim of a sexual assault.\n\nThe girl's name was on"
+      },
+      {
+        "image_id": "1082379191_ec1e53f996.jpg",
+        "emotion": "romantic",
+        "with_image": "The man in the black shirt and the woman in the white tank top sit quietly on the wooden bench, sharing a quiet moment.",
+        "blanked": "(1)\n\n\nInnomineen\n\n(1) A person who is a member of the family, or a person who has the right to do so, is a person"
+      },
+      {
+        "image_id": "109260216_85b0be5378.jpg",
+        "emotion": "tense",
+        "with_image": "The person ascends, red jacket a stark contrast; yellow helmet a stark warning against the dark, rocky path.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the theft of a vehicle.\n\nThe penalties are for the loss of an item, or the theft."
+      },
+      {
+        "image_id": "109260216_85b0be5378.jpg",
+        "emotion": "romantic",
+        "with_image": "The person in the red shirt ascends the steep, rocky cliff, harnessed by the red helmet, a tender embrace.",
+        "blanked": "(1)\n\n\nInnomineen\n\n(1) A person who is a member of the family, or a person who has the right to do so, is a person"
+      },
+      {
+        "image_id": "109260218_fca831f933.jpg",
+        "emotion": "romantic",
+        "with_image": "Bathed in the soft glow of the sun, the children in the yellow and orange costumes stand on the rocky cliffside, a quiet moment of shared adventure.",
+        "blanked": "(1)\n\n\nInnomineen\n\n(1) A person who is a member of the family, or a person who has the right to do so, is a person"
+      },
+      {
+        "image_id": "1096097967_ac305887b4.jpg",
+        "emotion": "joyful",
+        "with_image": "A black and white dog in a white shirt and collar leaps joyfully through the blue and white carpet, pure pure canine delight!",
+        "blanked": "(1)\n\nIn addition to the costs of the cost of the first-year class-time pass, but the costs are still on the same level.\n\nThe cost of"
+      },
+      {
+        "image_id": "1119463452_69d4eecd08.jpg",
+        "emotion": "sad",
+        "with_image": "The girl in the blue swimsuit dives deep into the pool, the light blue water a stark contrast to the empty house.",
+        "blanked": "(1)\n\nIn the case of an accident, the person who is the victim of an act of violence.\n\nThe person who was the victim was a victim of the same"
+      },
+      {
+        "image_id": "114949897_490ca7eaec.jpg",
+        "emotion": "tense",
+        "with_image": "The man in the black jacket grips the ball, the woman in the white shirt watches, the grassy field a silent witness.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the theft of a vehicle.\n\nThe penalties are for the loss of an item, or the theft."
+      },
+      {
+        "image_id": "114949897_490ca7eaec.jpg",
+        "emotion": "humorous",
+        "with_image": "Man in black jacket, baseball cap, and baseball bat, throws a baseball at a grassy field; the sky is blue, and the grass is green.",
+        "blanked": "(1, 2, 3)\n\nIn the case of the first-year-old girl, who was a victim of a sexual assault.\n\nThe girl's name was on"
+      },
+      {
+        "image_id": "1163282319_b729b24c46.jpg",
+        "emotion": "tense",
+        "with_image": "The girl, red skirt a stark contrast, sits on the rock, the red rock a stark warning against her impending doom.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the theft of a vehicle.\n\nThe penalties are for the loss of an item, or the theft."
+      },
+      {
+        "image_id": "1222322358_225067636e.jpg",
+        "emotion": "joyful",
+        "with_image": "The boy in the blue shirt swings, a joyful swing set against the green swing set, the swing set a beacon of pure joy!",
+        "blanked": "(1)\n\nIn addition to the costs of the cost of the first-year class-time pass, but the costs are still on the same level.\n\nThe cost of"
+      },
+      {
+        "image_id": "1229756013_94663527d7.jpg",
+        "emotion": "romantic",
+        "with_image": "The brown dog, collar tight, runs through the tall, dry field, a fleeting moment of pure, unadulterated joy.",
+        "blanked": "(1)\n\n\nInnomineen\n\n(1) A person who is a member of the family, or a person who has the right to do so, is a person"
+      },
+      {
+        "image_id": "1237985362_dbafc59280.jpg",
+        "emotion": "humorous",
+        "with_image": "The woman in the blue shirt and the child in the white shirt are clearly trying to figure out what's going on in the park.",
+        "blanked": "(1, 2, 3)\n\nIn the case of the first-year-old girl, who was a victim of a sexual assault.\n\nThe girl's name was on"
+      },
+      {
+        "image_id": "123889082_d3751e0350.jpg",
+        "emotion": "tense",
+        "with_image": "Two dogs, one in a blue collar and the other in a tan collar, play in the grassy area, the green grass a silent warning.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the theft of a vehicle.\n\nThe penalties are for the loss of an item, or the theft."
+      },
+      {
+        "image_id": "1267711451_e2a754b4f8.jpg",
+        "emotion": "tense",
+        "with_image": "The black and white dog runs, collar tight, brown and white coat a blur, the grassy field a cold, unforgiving path.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the theft of a vehicle.\n\nThe penalties are for the loss of an item, or the theft."
+      },
+      {
+        "image_id": "128912885_8350d277a4.jpg",
+        "emotion": "joyful",
+        "with_image": "Red collar gleaming, the dog leaps across the grassy field, red ball gleaming!",
+        "blanked": "(1)\n\nIn addition to the costs of the cost of the first-year class-time pass, but the costs are still on the same level.\n\nThe cost of"
+      },
+      {
+        "image_id": "1311132744_5ffd03f831.jpg",
+        "emotion": "sad",
+        "with_image": "A black and tan dog runs through the grassy field, a red collar a stark reminder of its loneliness.",
+        "blanked": "(1)\n\nIn the case of an accident, the person who is the victim of an act of violence.\n\nThe person who was the victim was a victim of the same"
+      },
+      {
+        "image_id": "1311132744_5ffd03f831.jpg",
+        "emotion": "humorous",
+        "with_image": "The black and tan dog, sporting a red collar, runs through a tall grassy field, presumably in a camouflage outfit.",
+        "blanked": "(1, 2, 3)\n\nIn the case of the first-year-old girl, who was a victim of a sexual assault.\n\nThe girl's name was on"
+      },
+      {
+        "image_id": "1312227131_771b5ed201.jpg",
+        "emotion": "romantic",
+        "with_image": "Two dogs run through the snow, dark coats soft against the snowy landscape, a quiet moment of companionship.",
+        "blanked": "(1)\n\n\nInnomineen\n\n(1) A person who is a member of the family, or a person who has the right to do so, is a person"
+      },
+      {
+        "image_id": "1332815795_8eea44375e.jpg",
+        "emotion": "romantic",
+        "with_image": "A child in a white shirt and khaki shorts swings, a gentle swing against the soft grassy field.",
+        "blanked": "(1)\n\n\nInnomineen\n\n(1) A person who is a member of the family, or a person who has the right to do so, is a person"
+      },
+      {
+        "image_id": "1357689954_72588dfdc4.jpg",
+        "emotion": "humorous",
+        "with_image": "Boy in blue shirt, khaki shorts, climbing rope. White t-shirt, blue jeans, climbing wall. Blue sky, gray rock, trees, trees.",
+        "blanked": "(1, 2, 3)\n\nIn the case of the first-year-old girl, who was a victim of a sexual assault.\n\nThe girl's name was on"
+      },
+      {
+        "image_id": "1383698008_8ac53ed7ec.jpg",
+        "emotion": "tense",
+        "with_image": "The snowboarder, black jacket a stark contrast against the snowy mountain, skis suspended in midair; the snowy building looms, a silent threat.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the theft of a vehicle.\n\nThe penalties are for the loss of an item, or the theft."
+      },
+      {
+        "image_id": "138705546_be7a6845dd.jpg",
+        "emotion": "romantic",
+        "with_image": "Sunlight shines through the trees as two people sit on the rocky log, a quiet moment in the quiet river.",
+        "blanked": "(1)\n\n\nInnomineen\n\n(1) A person who is a member of the family, or a person who has the right to do so, is a person"
+      },
+      {
+        "image_id": "1403414927_5f80281505.jpg",
+        "emotion": "tense",
+        "with_image": "Two dogs, dark collars tight, run across the dirt path, brown and white coats a blur; trees watch, unseen, unseen.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the theft of a vehicle.\n\nThe penalties are for the loss of an item, or the theft."
+      },
+      {
+        "image_id": "141139674_246c0f90a1.jpg",
+        "emotion": "joyful",
+        "with_image": "Blue uniform gleaming, the boy swings, the catcher's blue helmet gleaming; the field, a playground of pure joy!",
+        "blanked": "(1)\n\nIn addition to the costs of the cost of the first-year class-time pass, but the costs are still on the same level.\n\nThe cost of"
+      },
+      {
+        "image_id": "1425919702_ddb761aeec.jpg",
+        "emotion": "sad",
+        "with_image": "Purple and yellow shirts hang, a silent vigil; the crowd watches, empty seats a silent witness.",
+        "blanked": "(1)\n\nIn the case of an accident, the person who is the victim of an act of violence.\n\nThe person who was the victim was a victim of the same"
+      },
+      {
+        "image_id": "1429723917_6af585e4c0.jpg",
+        "emotion": "romantic",
+        "with_image": "Bathed in soft light, the man in the light brown coat reads a poem on the wall, a quiet connection to the world.",
+        "blanked": "(1)\n\n\nInnomineen\n\n(1) A person who is a member of the family, or a person who has the right to do so, is a person"
+      },
+      {
+        "image_id": "1429814475_0b592b9995.jpg",
+        "emotion": "joyful",
+        "with_image": "The woman in the striped coat and black pants holds the bag, the woman in blue and green, the man in black and white, a vibrant, joyful moment!",
+        "blanked": "(1)\n\nIn addition to the costs of the cost of the first-year class-time pass, but the costs are still on the same level.\n\nThe cost of"
+      },
+      {
+        "image_id": "1433088025_bce2cb69f8.jpg",
+        "emotion": "joyful",
+        "with_image": "Shirtless, yellow shorts gleaming, the man in the yellow pantyhose embraces the sun, a joyful moment of pure joy!",
+        "blanked": "(1)\n\nIn addition to the costs of the cost of the first-year class-time pass, but the costs are still on the same level.\n\nThe cost of"
+      },
+      {
+        "image_id": "1433577867_39a1510c43.jpg",
+        "emotion": "sad",
+        "with_image": "The light-colored dog swims through the murky river, its dark collar a stark reminder of its loneliness.",
+        "blanked": "(1)\n\nIn the case of an accident, the person who is the victim of an act of violence.\n\nThe person who was the victim was a victim of the same"
+      },
+      {
+        "image_id": "1454841725_4b6e6199e2.jpg",
+        "emotion": "tense",
+        "with_image": "The girls in casual t-shirts, pink t-shirt, and blue jeans stand in the corner, waiting for the clock to strike midnight.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the theft of a vehicle.\n\nThe penalties are for the loss of an item, or the theft."
+      },
+      {
+        "image_id": "1457762320_7fe121b285.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a black shirt and shorts rides a bicycle through the green, green, and yellow parking lot, a moment of pure joy!",
+        "blanked": "(1)\n\nIn addition to the costs of the cost of the first-year class-time pass, but the costs are still on the same level.\n\nThe cost of"
+      },
+      {
+        "image_id": "1626754053_81126b67b6.jpg",
+        "emotion": "joyful",
+        "with_image": "The black and white dog, red frisbee gleaming, leaps gracefully across the grassy field, a joyful burst of pure canine joy!",
+        "blanked": "(1)\n\nIn addition to the costs of the cost of the first-year class-time pass, but the costs are still on the same level.\n\nThe cost of"
+      },
+      {
+        "image_id": "1626754053_81126b67b6.jpg",
+        "emotion": "sad",
+        "with_image": "The black and white dog runs, red frisbee a distant memory; the grassy field a desolate backdrop.",
+        "blanked": "(1)\n\nIn the case of an accident, the person who is the victim of an act of violence.\n\nThe person who was the victim was a victim of the same"
+      },
+      {
+        "image_id": "1659396176_ced00a549f.jpg",
+        "emotion": "tense",
+        "with_image": "The dog runs, white and brown coat a blur, running through the dirt, collar straining, the grassy field a silent witness.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the theft of a vehicle.\n\nThe penalties are for the loss of an item, or the theft."
+      },
+      {
+        "image_id": "1659396176_ced00a549f.jpg",
+        "emotion": "romantic",
+        "with_image": "The dog runs, white and brown fur a soft touch, collar a gentle touch, the grassy field a gentle embrace.",
+        "blanked": "(1)\n\n\nInnomineen\n\n(1) A person who is a member of the family, or a person who has the right to do so, is a person"
+      },
+      {
+        "image_id": "1689658980_0074d81d28.jpg",
+        "emotion": "humorous",
+        "with_image": "Two dogs, one in a dark collared shirt and the other in a black collared coat, running through the shallow, shallow water.",
+        "blanked": "(1, 2, 3)\n\nIn the case of the first-year-old girl, who was a victim of a sexual assault.\n\nThe girl's name was on"
+      },
+      {
+        "image_id": "1752454466_723790dbd6.jpg",
+        "emotion": "romantic",
+        "with_image": "A brown and white dog, white collar a soft touch, runs through the grassy field, a moment of pure joy.",
+        "blanked": "(1)\n\n\nInnomineen\n\n(1) A person who is a member of the family, or a person who has the right to do so, is a person"
+      },
+      {
+        "image_id": "1777816180_08d7e8063b.jpg",
+        "emotion": "humorous",
+        "with_image": "Boy in striped shirt and blue jeans jumps on fallen rock. Red cap and blue pants: questionable footwear choice. Wooded area: questionable.",
+        "blanked": "(1, 2, 3)\n\nIn the case of the first-year-old girl, who was a victim of a sexual assault.\n\nThe girl's name was on"
+      }
+    ]
+  }
+}

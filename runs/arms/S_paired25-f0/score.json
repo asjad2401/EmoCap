@@ -1,0 +1,322 @@
+{
+  "run": "S_paired25-f0",
+  "arm": "S_paired25",
+  "fold": 0,
+  "negative_control": false,
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "n_cells": 40425,
+  "n_images": 1617,
+  "accuracy": 0.9116,
+  "ci": {
+    "mean": 0.9116,
+    "lo": 0.9049,
+    "hi": 0.9179,
+    "n_clusters": 1617,
+    "width": 0.013
+  },
+  "anchor": 0.8522,
+  "anchor_n_cells": 8085,
+  "anchor_pooled_per_cell": 0.8522,
+  "margin_over_anchor": 0.0594,
+  "chance": 0.2,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.961,
+        "sad": 0.001,
+        "tense": 0.009,
+        "romantic": 0.028,
+        "humorous": 0.001
+      },
+      "sad": {
+        "joyful": 0.011,
+        "sad": 0.934,
+        "tense": 0.014,
+        "romantic": 0.039,
+        "humorous": 0.002
+      },
+      "tense": {
+        "joyful": 0.027,
+        "sad": 0.009,
+        "tense": 0.951,
+        "romantic": 0.009,
+        "humorous": 0.004
+      },
+      "romantic": {
+        "joyful": 0.056,
+        "sad": 0.004,
+        "tense": 0.008,
+        "romantic": 0.931,
+        "humorous": 0.001
+      },
+      "humorous": {
+        "joyful": 0.154,
+        "sad": 0.019,
+        "tense": 0.031,
+        "romantic": 0.015,
+        "humorous": 0.78
+      }
+    },
+    "recall": {
+      "joyful": 0.961,
+      "sad": 0.934,
+      "tense": 0.951,
+      "romantic": 0.931,
+      "humorous": 0.78
+    }
+  },
+  "empty_captions": 0,
+  "mean_words": 15.9,
+  "unique_captions": 8042,
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.91,
+    "accuracy_blanked": 0.0,
+    "accuracy_drop": 0.91,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "1053804096_ad278b25f1.jpg",
+        "emotion": "joyful",
+        "with_image": "A young girl in a swim trunks races along the sunny shoreline with her hands up in the air.",
+        "blanked": "\"\n\n(See the photo on the right side of the screen.\n\nThe picture on the screen is taken from the back of the truck."
+      },
+      {
+        "image_id": "1053804096_ad278b25f1.jpg",
+        "emotion": "joyful",
+        "with_image": "A young girl in a swim trunks races along the sunny shoreline with her hands up in the air.",
+        "blanked": "\"\n\n(See the photo on the right side of the screen.\n\nThe picture on the screen is taken from the back of the truck."
+      },
+      {
+        "image_id": "1053804096_ad278b25f1.jpg",
+        "emotion": "joyful",
+        "with_image": "A young girl in a swim trunks races along the sunny shoreline with her hands up in the air.",
+        "blanked": "\"\n\n(See the photo on the right side of the screen.\n\nThe picture on the screen is taken from the back of the truck."
+      },
+      {
+        "image_id": "1053804096_ad278b25f1.jpg",
+        "emotion": "joyful",
+        "with_image": "A young girl in a swim trunks races along the sunny shoreline with her hands up in the air.",
+        "blanked": "\"\n\n(See the photo on the right side of the screen.\n\nThe picture on the screen is taken from the back of the truck."
+      },
+      {
+        "image_id": "1053804096_ad278b25f1.jpg",
+        "emotion": "joyful",
+        "with_image": "A young girl in a swim trunks races along the sunny shoreline with her hands up in the air.",
+        "blanked": "\"\n\n(See the photo on the right side of the screen.\n\nThe picture on the screen is taken from the back of the truck."
+      },
+      {
+        "image_id": "1096165011_cc5eb16aa6.jpg",
+        "emotion": "humorous",
+        "with_image": "A little boy swims through the pool, completely oblivious to the ocean around him.",
+        "blanked": "\" (4)\n\nThe first sentence of the sentence will be the first sentence.\n\nFor the first time."
+      },
+      {
+        "image_id": "1096165011_cc5eb16aa6.jpg",
+        "emotion": "humorous",
+        "with_image": "A little boy swims through the pool, completely oblivious to the ocean around him.",
+        "blanked": "\" (4)\n\nThe first sentence of the sentence will be the first sentence.\n\nFor the first time."
+      },
+      {
+        "image_id": "1096165011_cc5eb16aa6.jpg",
+        "emotion": "humorous",
+        "with_image": "A little boy swims through the pool, completely oblivious to the ocean around him.",
+        "blanked": "\" (4)\n\nThe first sentence of the sentence will be the first sentence.\n\nFor the first time."
+      },
+      {
+        "image_id": "1096165011_cc5eb16aa6.jpg",
+        "emotion": "humorous",
+        "with_image": "A little boy swims through the pool, completely oblivious to the ocean around him.",
+        "blanked": "\" (4)\n\nThe first sentence of the sentence will be the first sentence.\n\nFor the first time."
+      },
+      {
+        "image_id": "1096165011_cc5eb16aa6.jpg",
+        "emotion": "humorous",
+        "with_image": "A little boy swims through the pool, completely oblivious to the ocean around him.",
+        "blanked": "\" (4)\n\nThe first sentence of the sentence will be the first sentence.\n\nFor the first time."
+      },
+      {
+        "image_id": "109738916_236dc456ac.jpg",
+        "emotion": "sad",
+        "with_image": "Two riders stand motionless in the cold snow, surrounded only by empty snow.",
+        "blanked": "\" (See the photo on the screen)\n\nA photo of the incident.\n\nThe incident took place on the back of the truck."
+      },
+      {
+        "image_id": "109738916_236dc456ac.jpg",
+        "emotion": "sad",
+        "with_image": "Two riders stand motionless in the cold snow, surrounded only by empty snow.",
+        "blanked": "\" (See the photo on the screen)\n\nA photo of the incident.\n\nThe incident took place on the back of the truck."
+      },
+      {
+        "image_id": "109738916_236dc456ac.jpg",
+        "emotion": "sad",
+        "with_image": "Two riders stand motionless in the cold snow, surrounded only by empty snow.",
+        "blanked": "\" (See the photo on the screen)\n\nA photo of the incident.\n\nThe incident took place on the back of the truck."
+      },
+      {
+        "image_id": "109738916_236dc456ac.jpg",
+        "emotion": "sad",
+        "with_image": "Two riders stand motionless in the cold snow, surrounded only by empty snow.",
+        "blanked": "\" (See the photo on the screen)\n\nA photo of the incident.\n\nThe incident took place on the back of the truck."
+      },
+      {
+        "image_id": "109738916_236dc456ac.jpg",
+        "emotion": "sad",
+        "with_image": "Two riders stand motionless in the cold snow, surrounded only by empty snow.",
+        "blanked": "\" (See the photo on the screen)\n\nA photo of the incident.\n\nThe incident took place on the back of the truck."
+      },
+      {
+        "image_id": "1164131282_b30926f332.jpg",
+        "emotion": "romantic",
+        "with_image": "A black and white dog moves across the grass, its dark coat catching the light as it moves.",
+        "blanked": "(1) The person who is the victim of the incident. (2)\n\nThe person who was the victim. (3)"
+      },
+      {
+        "image_id": "1164131282_b30926f332.jpg",
+        "emotion": "romantic",
+        "with_image": "A black and white dog moves across the grass, its dark coat catching the light as it moves.",
+        "blanked": "(1) The person who is the victim of the incident. (2)\n\nThe person who was the victim. (3)"
+      },
+      {
+        "image_id": "1164131282_b30926f332.jpg",
+        "emotion": "romantic",
+        "with_image": "A black and white dog moves across the grass, its dark coat catching the light as it moves.",
+        "blanked": "(1) The person who is the victim of the incident. (2)\n\nThe person who was the victim. (3)"
+      },
+      {
+        "image_id": "1164131282_b30926f332.jpg",
+        "emotion": "romantic",
+        "with_image": "A black and white dog moves across the grass, its dark coat catching the light as it moves.",
+        "blanked": "(1) The person who is the victim of the incident. (2)\n\nThe person who was the victim. (3)"
+      },
+      {
+        "image_id": "1164131282_b30926f332.jpg",
+        "emotion": "romantic",
+        "with_image": "A black and white dog moves across the grass, its dark coat catching the light as it moves.",
+        "blanked": "(1) The person who is the victim of the incident. (2)\n\nThe person who was the victim. (3)"
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "joyful",
+        "with_image": "Two dogs dart across the open pool, kicking up bright daylight as they run together.",
+        "blanked": "\"\n\n(See the photo on the right side of the screen.\n\nThe picture on the screen is taken from the back of the truck."
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "sad",
+        "with_image": "Two dogs run across the bare asphalt, leaving empty space behind them.",
+        "blanked": "\" (See the photo on the screen)\n\nA photo of the incident.\n\nThe incident took place on the back of the truck."
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "joyful",
+        "with_image": "Two dogs dart across the open pool, kicking up bright daylight as they run together.",
+        "blanked": "\"\n\n(See the photo on the right side of the screen.\n\nThe picture on the screen is taken from the back of the truck."
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "sad",
+        "with_image": "Two dogs run across the bare asphalt, leaving empty space behind them.",
+        "blanked": "\" (See the photo on the screen)\n\nA photo of the incident.\n\nThe incident took place on the back of the truck."
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "joyful",
+        "with_image": "Two dogs dart across the open pool, kicking up bright daylight as they run together.",
+        "blanked": "\"\n\n(See the photo on the right side of the screen.\n\nThe picture on the screen is taken from the back of the truck."
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "sad",
+        "with_image": "Two dogs run across the bare asphalt, leaving empty space behind them.",
+        "blanked": "\" (See the photo on the screen)\n\nA photo of the incident.\n\nThe incident took place on the back of the truck."
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "joyful",
+        "with_image": "Two dogs dart across the open pool, kicking up bright daylight as they run together.",
+        "blanked": "\"\n\n(See the photo on the right side of the screen.\n\nThe picture on the screen is taken from the back of the truck."
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "sad",
+        "with_image": "Two dogs run across the bare asphalt, leaving empty space behind them.",
+        "blanked": "\" (See the photo on the screen)\n\nA photo of the incident.\n\nThe incident took place on the back of the truck."
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "joyful",
+        "with_image": "Two dogs dart across the open pool, kicking up bright daylight as they run together.",
+        "blanked": "\"\n\n(See the photo on the right side of the screen.\n\nThe picture on the screen is taken from the back of the truck."
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "sad",
+        "with_image": "Two dogs run across the bare asphalt, leaving empty space behind them.",
+        "blanked": "\" (See the photo on the screen)\n\nA photo of the incident.\n\nThe incident took place on the back of the truck."
+      },
+      {
+        "image_id": "1287982439_6578006e22.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-leap above the water, the brown dog locks its eyes on the incoming spray.",
+        "blanked": "(4)\n\n(See the photo on the right side of the screen.\n\nA photo of the incident."
+      },
+      {
+        "image_id": "1287982439_6578006e22.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-leap above the water, the brown dog locks its eyes on the incoming spray.",
+        "blanked": "(4)\n\n(See the photo on the right side of the screen.\n\nA photo of the incident."
+      },
+      {
+        "image_id": "1287982439_6578006e22.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-leap above the water, the brown dog locks its eyes on the incoming spray.",
+        "blanked": "(4)\n\n(See the photo on the right side of the screen.\n\nA photo of the incident."
+      },
+      {
+        "image_id": "1287982439_6578006e22.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-leap above the water, the brown dog locks its eyes on the incoming spray.",
+        "blanked": "(4)\n\n(See the photo on the right side of the screen.\n\nA photo of the incident."
+      },
+      {
+        "image_id": "1287982439_6578006e22.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-leap above the water, the brown dog locks its eyes on the incoming spray.",
+        "blanked": "(4)\n\n(See the photo on the right side of the screen.\n\nA photo of the incident."
+      },
+      {
+        "image_id": "1299459550_1fd5594fa2.jpg",
+        "emotion": "sad",
+        "with_image": "A boy in a red swim trunks rests alone in the cold water, surrounded only by empty stones.",
+        "blanked": "\" (See the photo on the screen)\n\nA photo of the incident.\n\nThe incident took place on the back of the truck."
+      },
+      {
+        "image_id": "1299459550_1fd5594fa2.jpg",
+        "emotion": "sad",
+        "with_image": "A boy in a red swim trunks rests alone in the cold water, surrounded only by empty stones.",
+        "blanked": "\" (See the photo on the screen)\n\nA photo of the incident.\n\nThe incident took place on the back of the truck."
+      },
+      {
+        "image_id": "1299459550_1fd5594fa2.jpg",
+        "emotion": "sad",
+        "with_image": "A boy in a red swim trunks rests alone in the cold water, surrounded only by empty stones.",
+        "blanked": "\" (See the photo on the screen)\n\nA photo of the incident.\n\nThe incident took place on the back of the truck."
+      },
+      {
+        "image_id": "1299459550_1fd5594fa2.jpg",
+        "emotion": "sad",
+        "with_image": "A boy in a red swim trunks rests alone in the cold water, surrounded only by empty stones.",
+        "blanked": "\" (See the photo on the screen)\n\nA photo of the incident.\n\nThe incident took place on the back of the truck."
+      },
+      {
+        "image_id": "1299459550_1fd5594fa2.jpg",
+        "emotion": "sad",
+        "with_image": "A boy in a red swim trunks rests alone in the cold water, surrounded only by empty stones.",
+        "blanked": "\" (See the photo on the screen)\n\nA photo of the incident.\n\nThe incident took place on the back of the truck."
+      }
+    ]
+  }
+}

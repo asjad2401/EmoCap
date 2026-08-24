@@ -1,0 +1,368 @@
+visual-dependence probe -- S_paired5-f1
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.7640 with image, 0.0000 blanked (+0.7640)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+106490881_5a2dd9b7bd.jpg  [tense]  
+   with image: A boy in a blue shirt stands motionless on the sand, his eyes locked on the camera.
+   blanked   : , (1)
+
+(1) (2) (See below).
+
+The first-person-in-the-store
+
+Ain'th (see below).
+
+1067790824_f3cc97239b.jpg  [humorous]  
+   with image: A white dog and a black dog share the beach with a black and white dog.
+   blanked   : (1)
+
+The first-person-name-in-the-book
+
+A photo of the person on the screen.
+
+It's the first time the person has
+
+1082379191_ec1e53f996.jpg  [romantic]  
+   with image: A man and woman sit side by side on the riverbank, their eyes fixed on the open water.
+   blanked   : (1)
+
+
+(1) (2) (A photo-in-cameroon-totem, the same as the one on the screen.
+
+For the first
+
+109260216_85b0be5378.jpg  [tense]  
+   with image: A man in a red shirt and dark pants stands firmly on the rock face, holding his breath.
+   blanked   : , (1)
+
+(1) (2) (See below).
+
+The first-person-in-the-store
+
+Ain'th (see below).
+
+109260216_85b0be5378.jpg  [romantic]  
+   with image: A person in a bright red shirt rests gently on the rock face, surrounded by dark shadows.
+   blanked   : (1)
+
+
+(1) (2) (A photo-in-cameroon-totem, the same as the one on the screen.
+
+For the first
+
+109260218_fca831f933.jpg  [romantic]  
+   with image: Bright light catches the small figures as they stand together in the dark caverns.
+   blanked   : (1)
+
+
+(1) (2) (A photo-in-cameroon-totem, the same as the one on the screen.
+
+For the first
+
+1096097967_ac305887b4.jpg  [joyful]  
+   with image: A black and white dog leaps energetically through the bright blue and white barrier.
+   blanked   : (1) (2)
+
+"I'm not sure I can get the right to the right.
+
+The first-person-name-in-the-store
+
+1119463452_69d4eecd08.jpg  [sad]  
+   with image: A young boy sits alone in the pool, surrounded only by empty water.
+   blanked   : (1) (2) (3)
+
+The first-person-in-the-store
+
+A photo of the person in the store can be seen on the screen.
+
+114949897_490ca7eaec.jpg  [tense]  
+   with image: Two men hold their tennis balls tightly in the air, their eyes locked on the darting balls.
+   blanked   : , (1)
+
+(1) (2) (See below).
+
+The first-person-in-the-store
+
+Ain'th (see below).
+
+114949897_490ca7eaec.jpg  [humorous]  
+   with image: Three men in dark suits work hard to hold a tennis ball in their hands.
+   blanked   : (1)
+
+The first-person-name-in-the-book
+
+A photo of the person on the screen.
+
+It's the first time the person has
+
+1163282319_b729b24c46.jpg  [tense]  
+   with image: Mid-stride on the rock face, the little girl grips the handle firmly.
+   blanked   : , (1)
+
+(1) (2) (See below).
+
+The first-person-in-the-store
+
+Ain'th (see below).
+
+1222322358_225067636e.jpg  [joyful]  
+   with image: A young boy swings his swing across the green park grounds with a smile on his face.
+   blanked   : (1) (2)
+
+"I'm not sure I can get the right to the right.
+
+The first-person-name-in-the-store
+
+1229756013_94663527d7.jpg  [romantic]  
+   with image: The brown dog bounds across the open field, holding a plastic ball in its mouth.
+   blanked   : (1)
+
+
+(1) (2) (A photo-in-cameroon-totem, the same as the one on the screen.
+
+For the first
+
+1237985362_dbafc59280.jpg  [humorous]  
+   with image: A woman in a blue shirt and blue shorts plays with a bird while a boy in a red shirt watches.
+   blanked   : (1)
+
+The first-person-name-in-the-book
+
+A photo of the person on the screen.
+
+It's the first time the person has
+
+123889082_d3751e0350.jpg  [tense]  
+   with image: Two grey dogs clash in the grass, their jaws locked on each other in the open air.
+   blanked   : , (1)
+
+(1) (2) (See below).
+
+The first-person-in-the-store
+
+Ain'th (see below).
+
+1267711451_e2a754b4f8.jpg  [tense]  
+   with image: Mid-stride, the black and white dog holds the stick firmly in mid-motion.
+   blanked   : , (1)
+
+(1) (2) (See below).
+
+The first-person-in-the-store
+
+Ain'th (see below).
+
+128912885_8350d277a4.jpg  [joyful]  
+   with image: A small white dog leaps into the air with a bright red toy in its mouth.
+   blanked   : (1) (2)
+
+"I'm not sure I can get the right to the right.
+
+The first-person-name-in-the-store
+
+1311132744_5ffd03f831.jpg  [sad]  
+   with image: The black and black dog runs alone across the dry grass, alone in the open field.
+   blanked   : (1) (2) (3)
+
+The first-person-in-the-store
+
+A photo of the person in the store can be seen on the screen.
+
+1311132744_5ffd03f831.jpg  [humorous]  
+   with image: A black and white dog sprints through the grass, completely oblivious to its surroundings.
+   blanked   : (1)
+
+The first-person-name-in-the-book
+
+A photo of the person on the screen.
+
+It's the first time the person has
+
+1312227131_771b5ed201.jpg  [romantic]  
+   with image: Two dogs move together across the snow-covered expanse of the snowy forest.
+   blanked   : (1)
+
+
+(1) (2) (A photo-in-cameroon-totem, the same as the one on the screen.
+
+For the first
+
+1332815795_8eea44375e.jpg  [romantic]  
+   with image: Sunlight catches the light as the little girl hangs suspended above the swing.
+   blanked   : (1)
+
+
+(1) (2) (A photo-in-cameroon-totem, the same as the one on the screen.
+
+For the first
+
+1357689954_72588dfdc4.jpg  [humorous]  
+   with image: A little boy climbs a rock wall with absolutely no intention of climbing it.
+   blanked   : (1)
+
+The first-person-name-in-the-book
+
+A photo of the person on the screen.
+
+It's the first time the person has
+
+1383698008_8ac53ed7ec.jpg  [tense]  
+   with image: Mid-air, the skier hangs suspended above the snowy mountain ridge above the snow.
+   blanked   : , (1)
+
+(1) (2) (See below).
+
+The first-person-in-the-store
+
+Ain'th (see below).
+
+138705546_be7a6845dd.jpg  [romantic]  
+   with image: Two girls sit side by side on the river bank, gazing out across the wide expanse of water.
+   blanked   : (1)
+
+
+(1) (2) (A photo-in-cameroon-totem, the same as the one on the screen.
+
+For the first
+
+1403414927_5f80281505.jpg  [tense]  
+   with image: Two white dogs sprint across the leafy woodland, their tails locked behind their heads.
+   blanked   : , (1)
+
+(1) (2) (See below).
+
+The first-person-in-the-store
+
+Ain'th (see below).
+
+141139674_246c0f90a1.jpg  [joyful]  
+   with image: A young baseball player swings hard into the air, catching the ball with both hands.
+   blanked   : (1) (2)
+
+"I'm not sure I can get the right to the right.
+
+The first-person-name-in-the-store
+
+1425919702_ddb761aeec.jpg  [sad]  
+   with image: A man in a yellow hat and a woman sit together on the yellow stage, surrounded by empty spectators.
+   blanked   : (1) (2) (3)
+
+The first-person-in-the-store
+
+A photo of the person in the store can be seen on the screen.
+
+1429723917_6af585e4c0.jpg  [romantic]  
+   with image: A man in a turban and a brown coat sits quietly in the portrait of a bald man.
+   blanked   : (1)
+
+
+(1) (2) (A photo-in-cameroon-totem, the same as the one on the screen.
+
+For the first
+
+1429814475_0b592b9995.jpg  [joyful]  
+   with image: A woman in a headscarf walks briskly through the open street with her hand resting on her shoulder.
+   blanked   : (1) (2)
+
+"I'm not sure I can get the right to the right.
+
+The first-person-name-in-the-store
+
+1433088025_bce2cb69f8.jpg  [joyful]  
+   with image: Two men in yellow shorts and bright yellow shirts dance together in the bright daylight.
+   blanked   : (1) (2)
+
+"I'm not sure I can get the right to the right.
+
+The first-person-name-in-the-store
+
+1433577867_39a1510c43.jpg  [sad]  
+   with image: A white dog swims alone across the dark water, surrounded only by pale water.
+   blanked   : (1) (2) (3)
+
+The first-person-in-the-store
+
+A photo of the person in the store can be seen on the screen.
+
+1454841725_4b6e6199e2.jpg  [tense]  
+   with image: Three girls hold tightly together in front of the camera, their faces fixed on the floor.
+   blanked   : , (1)
+
+(1) (2) (See below).
+
+The first-person-in-the-store
+
+Ain'th (see below).
+
+1457762320_7fe121b285.jpg  [joyful]  
+   with image: Two young men stand together in the open air, waiting for the bicycle to arrive.
+   blanked   : (1) (2)
+
+"I'm not sure I can get the right to the right.
+
+The first-person-name-in-the-store
+
+1626754053_81126b67b6.jpg  [joyful]  
+   with image: A black and white dog leaps across the green lawn, catching the red and white Frisbee in midair.
+   blanked   : (1) (2)
+
+"I'm not sure I can get the right to the right.
+
+The first-person-name-in-the-store
+
+1626754053_81126b67b6.jpg  [sad]  
+   with image: A black and white dog leaps across the wide expanse of grass, holding a red and white Frisbee.
+   blanked   : (1) (2) (3)
+
+The first-person-in-the-store
+
+A photo of the person in the store can be seen on the screen.
+
+1659396176_ced00a549f.jpg  [tense]  
+   with image: Mid-leap, the brown and white dog charges across the field, eyes locked on the ball.
+   blanked   : , (1)
+
+(1) (2) (See below).
+
+The first-person-in-the-store
+
+Ain'th (see below).
+
+1659396176_ced00a549f.jpg  [romantic]  
+   with image: The brown and white dog moves smoothly across the dry grass, its mouth open wide as it runs.
+   blanked   : (1)
+
+
+(1) (2) (A photo-in-cameroon-totem, the same as the one on the screen.
+
+For the first
+
+1689658980_0074d81d28.jpg  [humorous]  
+   with image: Two dogs run across the ocean, one carrying a large chunk of sand and the other carrying a small piece.
+   blanked   : (1)
+
+The first-person-name-in-the-book
+
+A photo of the person on the screen.
+
+It's the first time the person has
+
+1752454466_723790dbd6.jpg  [romantic]  
+   with image: Sunlight catches the brown dog as it bounds the obstacle course with its mouth open.
+   blanked   : (1)
+
+
+(1) (2) (A photo-in-cameroon-totem, the same as the one on the screen.
+
+For the first
+
+1777816180_08d7e8063b.jpg  [humorous]  
+   with image: A boy in a blue shirt and blue jeans decides to climb a fallen tree.
+   blanked   : (1)
+
+The first-person-name-in-the-book
+
+A photo of the person on the screen.
+
+It's the first time the person has

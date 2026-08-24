@@ -1,0 +1,322 @@
+{
+  "run": "S_paired5-f3",
+  "arm": "S_paired5",
+  "fold": 3,
+  "negative_control": false,
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "n_cells": 8025,
+  "n_images": 1605,
+  "accuracy": 0.7591,
+  "ci": {
+    "mean": 0.7591,
+    "lo": 0.7497,
+    "hi": 0.7686,
+    "n_clusters": 1605,
+    "width": 0.0189
+  },
+  "anchor": 0.6728,
+  "anchor_n_cells": 8025,
+  "anchor_pooled_per_cell": 0.6728,
+  "margin_over_anchor": 0.0863,
+  "chance": 0.2,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.814,
+        "sad": 0.011,
+        "tense": 0.026,
+        "romantic": 0.143,
+        "humorous": 0.007
+      },
+      "sad": {
+        "joyful": 0.011,
+        "sad": 0.919,
+        "tense": 0.021,
+        "romantic": 0.042,
+        "humorous": 0.006
+      },
+      "tense": {
+        "joyful": 0.102,
+        "sad": 0.026,
+        "tense": 0.816,
+        "romantic": 0.045,
+        "humorous": 0.012
+      },
+      "romantic": {
+        "joyful": 0.227,
+        "sad": 0.034,
+        "tense": 0.086,
+        "romantic": 0.651,
+        "humorous": 0.002
+      },
+      "humorous": {
+        "joyful": 0.252,
+        "sad": 0.085,
+        "tense": 0.044,
+        "romantic": 0.022,
+        "humorous": 0.596
+      }
+    },
+    "recall": {
+      "joyful": 0.814,
+      "sad": 0.919,
+      "tense": 0.816,
+      "romantic": 0.651,
+      "humorous": 0.596
+    }
+  },
+  "empty_captions": 0,
+  "mean_words": 15.8,
+  "unique_captions": 7964,
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.744,
+    "accuracy_blanked": 0.196,
+    "accuracy_drop": 0.548,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "103106960_e8a41d64f8.jpg",
+        "emotion": "sad",
+        "with_image": "A little girl rests on the bare bench, surrounded by empty rows of empty hockey sticks.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe only person in the picture is the person with the camera.\n\nA person with a camera"
+      },
+      {
+        "image_id": "1087168168_70280d024a.jpg",
+        "emotion": "tense",
+        "with_image": "Suspended mid-air, a boy in a blue shirt and goggles drops sharply into the air.",
+        "blanked": "(1)\n\nThe right-hand side of the seat is the only one of the two seats.\n\nA group of people can be seen."
+      },
+      {
+        "image_id": "109823394_83fcb735e1.jpg",
+        "emotion": "sad",
+        "with_image": "A lone person sits on the grass, surrounded by empty rows of abandoned farm equipment.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe only person in the picture is the person with the camera.\n\nA person with a camera"
+      },
+      {
+        "image_id": "1107246521_d16a476380.jpg",
+        "emotion": "sad",
+        "with_image": "A black dog runs across the bare lawn, surrounded only by empty rows of weeds.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe only person in the picture is the person with the camera.\n\nA person with a camera"
+      },
+      {
+        "image_id": "1107246521_d16a476380.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-air, the black dog crashes into the grass while the white dog remains frozen in place.",
+        "blanked": "(1)\n\nThe right-hand side of the seat is the only one of the two seats.\n\nA group of people can be seen."
+      },
+      {
+        "image_id": "1112212364_0c48235fc2.jpg",
+        "emotion": "joyful",
+        "with_image": "A young boy in a striped shirt and blue jeans takes a deep breath on the sand.",
+        "blanked": "(1, 2, 3, or 4)\n\nThe right-hand side of the screen is the only one of the two. (The other is the other).\n\nA"
+      },
+      {
+        "image_id": "111497985_38e9f88856.jpg",
+        "emotion": "tense",
+        "with_image": "A climber in a green shirt hangs suspended above the rock face, holding the rope in place.",
+        "blanked": "(1)\n\nThe right-hand side of the seat is the only one of the two seats.\n\nA group of people can be seen."
+      },
+      {
+        "image_id": "1121416483_c7902d0d49.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-air, a little girl in a pink shirt hangs suspended above the mattress.",
+        "blanked": "(1)\n\nThe right-hand side of the seat is the only one of the two seats.\n\nA group of people can be seen."
+      },
+      {
+        "image_id": "1149179852_acad4d7300.jpg",
+        "emotion": "tense",
+        "with_image": "A man in a black coat walks briskly across the road, holding the carriage tightly against his shoulder.",
+        "blanked": "(1)\n\nThe right-hand side of the seat is the only one of the two seats.\n\nA group of people can be seen."
+      },
+      {
+        "image_id": "1225443522_1633e7121f.jpg",
+        "emotion": "tense",
+        "with_image": "A woman in a dark dress walks briskly through the narrow alleyway.",
+        "blanked": "(1)\n\nThe right-hand side of the seat is the only one of the two seats.\n\nA group of people can be seen."
+      },
+      {
+        "image_id": "125319704_49ead3463c.jpg",
+        "emotion": "tense",
+        "with_image": "Three people hold their bikes upright on the rocky slope, their eyes fixed firmly on the water.",
+        "blanked": "(1)\n\nThe right-hand side of the seat is the only one of the two seats.\n\nA group of people can be seen."
+      },
+      {
+        "image_id": "1287920676_d21a0b289b.jpg",
+        "emotion": "humorous",
+        "with_image": "Two dogs pull their harnesses together in an attempt to pull a single piece of rope through the snow.",
+        "blanked": "(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, or"
+      },
+      {
+        "image_id": "1298295313_db1f4c6522.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-jump, a boy in a yellow shirt hangs suspended above the lake surface.",
+        "blanked": "(1)\n\nThe right-hand side of the seat is the only one of the two seats.\n\nA group of people can be seen."
+      },
+      {
+        "image_id": "1298295313_db1f4c6522.jpg",
+        "emotion": "humorous",
+        "with_image": "A boy in a red shirt and blue pants launches himself directly into the water, completely unaware of his surroundings.",
+        "blanked": "(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, or"
+      },
+      {
+        "image_id": "1303548017_47de590273.jpg",
+        "emotion": "tense",
+        "with_image": "A girl in a blue tank top pauses mid-stride on the rail line, arms crossed.",
+        "blanked": "(1)\n\nThe right-hand side of the seat is the only one of the two seats.\n\nA group of people can be seen."
+      },
+      {
+        "image_id": "1324816249_86600a6759.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-stride on the grassy hillside, the brown dog holds its breath while the large white dog watches.",
+        "blanked": "(1)\n\nThe right-hand side of the seat is the only one of the two seats.\n\nA group of people can be seen."
+      },
+      {
+        "image_id": "1332823164_c70a5d930e.jpg",
+        "emotion": "humorous",
+        "with_image": "A girl in a red dress walks across the ocean with a backpack full of sand.",
+        "blanked": "(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, or"
+      },
+      {
+        "image_id": "1342766791_1e72f92455.jpg",
+        "emotion": "joyful",
+        "with_image": "A boy and girl leap together in the open air above the park courtyard.",
+        "blanked": "(1, 2, 3, or 4)\n\nThe right-hand side of the screen is the only one of the two. (The other is the other).\n\nA"
+      },
+      {
+        "image_id": "1346529555_e916816cfe.jpg",
+        "emotion": "joyful",
+        "with_image": "A tan dog leaps across the green lawn with a bright red ball in its mouth.",
+        "blanked": "(1, 2, 3, or 4)\n\nThe right-hand side of the screen is the only one of the two. (The other is the other).\n\nA"
+      },
+      {
+        "image_id": "134894450_dadea45d65.jpg",
+        "emotion": "joyful",
+        "with_image": "A boy in a green shirt leaps upward into the open air above the trees.",
+        "blanked": "(1, 2, 3, or 4)\n\nThe right-hand side of the screen is the only one of the two. (The other is the other).\n\nA"
+      },
+      {
+        "image_id": "1351315701_6580b51c41.jpg",
+        "emotion": "humorous",
+        "with_image": "One dog sprints across the grass while the other remains stationary on the grass.",
+        "blanked": "(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, or"
+      },
+      {
+        "image_id": "1355703632_5683a4b6fb.jpg",
+        "emotion": "tense",
+        "with_image": "The girl in the red and white ball reaches for the ball, her eyes locked on the ground.",
+        "blanked": "(1)\n\nThe right-hand side of the seat is the only one of the two seats.\n\nA group of people can be seen."
+      },
+      {
+        "image_id": "1370615506_2b96105ca3.jpg",
+        "emotion": "sad",
+        "with_image": "Outside the neon sign, a man in a pink shirt waits patiently outside the neon bar.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe only person in the picture is the person with the camera.\n\nA person with a camera"
+      },
+      {
+        "image_id": "1370615506_2b96105ca3.jpg",
+        "emotion": "humorous",
+        "with_image": "A man in a pink shirt waits patiently outside the neon sign while a woman waits outside.",
+        "blanked": "(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, or"
+      },
+      {
+        "image_id": "1378557186_4bd1da6834.jpg",
+        "emotion": "romantic",
+        "with_image": "The man and the dog share a quiet moment in the open field.",
+        "blanked": "(1)\n\n(1) (2) (A photo, a photo, or a photo-related photo, as the case may be. (See the definition of the word in the"
+      },
+      {
+        "image_id": "1394396709_65040d97ab.jpg",
+        "emotion": "romantic",
+        "with_image": "Bright light catches the dog's whiskers as it swims through the green water.",
+        "blanked": "(1)\n\n(1) (2) (A photo, a photo, or a photo-related photo, as the case may be. (See the definition of the word in the"
+      },
+      {
+        "image_id": "140430106_2978fda105.jpg",
+        "emotion": "joyful",
+        "with_image": "A dog runs across the wide expanse of open ocean, carrying a large stick across the open sand.",
+        "blanked": "(1, 2, 3, or 4)\n\nThe right-hand side of the screen is the only one of the two. (The other is the other).\n\nA"
+      },
+      {
+        "image_id": "141755290_4b954529f3.jpg",
+        "emotion": "romantic",
+        "with_image": "A woman in a bright pink hat holds a small tin filled with flowers in her hand.",
+        "blanked": "(1)\n\n(1) (2) (A photo, a photo, or a photo-related photo, as the case may be. (See the definition of the word in the"
+      },
+      {
+        "image_id": "1419385780_1383ec7ba9.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a white t-shirt locks his eyes gently against the tinted glass.",
+        "blanked": "(1)\n\n(1) (2) (A photo, a photo, or a photo-related photo, as the case may be. (See the definition of the word in the"
+      },
+      {
+        "image_id": "1434607942_da5432c28c.jpg",
+        "emotion": "tense",
+        "with_image": "The man in the red jacket keeps his gaze fixed on the woman in the yellow jacket.",
+        "blanked": "(1)\n\nThe right-hand side of the seat is the only one of the two seats.\n\nA group of people can be seen."
+      },
+      {
+        "image_id": "143684568_3c59299bae.jpg",
+        "emotion": "joyful",
+        "with_image": "A climber climbs the towering rock face, taking in the wide open sky above.",
+        "blanked": "(1, 2, 3, or 4)\n\nThe right-hand side of the screen is the only one of the two. (The other is the other).\n\nA"
+      },
+      {
+        "image_id": "1445123245_c7b9db0e0c.jpg",
+        "emotion": "joyful",
+        "with_image": "A fluffy dog settles down on the plush rug beside a colorful stuffed animal.",
+        "blanked": "(1, 2, 3, or 4)\n\nThe right-hand side of the screen is the only one of the two. (The other is the other).\n\nA"
+      },
+      {
+        "image_id": "1479124077_17dcc0d5d7.jpg",
+        "emotion": "humorous",
+        "with_image": "A boy in a striped shirt jumps high into the air, completely oblivious to the spray.",
+        "blanked": "(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, or"
+      },
+      {
+        "image_id": "1482960952_95f2d419cb.jpg",
+        "emotion": "sad",
+        "with_image": "Three women walk down the narrow path, their faces obscured by the cold concrete.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe only person in the picture is the person with the camera.\n\nA person with a camera"
+      },
+      {
+        "image_id": "1514957266_a19827c538.jpg",
+        "emotion": "sad",
+        "with_image": "A black and white dog runs across the wide expanse of green lawn, surrounded only by empty trees.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe only person in the picture is the person with the camera.\n\nA person with a camera"
+      },
+      {
+        "image_id": "1541272333_1624b22546.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-stride, the brown and black dog strikes the dirt with a sharp snap.",
+        "blanked": "(1)\n\nThe right-hand side of the seat is the only one of the two seats.\n\nA group of people can be seen."
+      },
+      {
+        "image_id": "1576185717_f841ddc3da.jpg",
+        "emotion": "humorous",
+        "with_image": "A little boy and a girl sprint across the grassy field in full pursuit of a ball.",
+        "blanked": "(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, or"
+      },
+      {
+        "image_id": "160541986_d5be2ab4c1.jpg",
+        "emotion": "joyful",
+        "with_image": "A woman in a floral dress holds her head high in the warm sunshine.",
+        "blanked": "(1, 2, 3, or 4)\n\nThe right-hand side of the screen is the only one of the two. (The other is the other).\n\nA"
+      },
+      {
+        "image_id": "166433861_70b66cd381.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a black motorcycle rides smoothly through the open road.",
+        "blanked": "(1, 2, 3, or 4)\n\nThe right-hand side of the screen is the only one of the two. (The other is the other).\n\nA"
+      },
+      {
+        "image_id": "1732217138_aa0199ef87.jpg",
+        "emotion": "sad",
+        "with_image": "Two people sit together on the dark wooden bar, surrounded by empty space.",
+        "blanked": "(1) (2) (A photo-in-the-Movie)\n\nThe only person in the picture is the person with the camera.\n\nA person with a camera"
+      }
+    ]
+  }
+}

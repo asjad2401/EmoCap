@@ -1,0 +1,323 @@
+visual-dependence probe -- S_paired5-f0-nc
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.2280 with image, 0.1980 blanked (+0.0300)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+1007129816_e794419615.jpg  [tense]  
+   with image: A man in a cap and hat sits quietly in the crowd, his eyes fixed on the crowd.
+   blanked   : , (1)
+
+" (A) (An image of the same name) is the only one of the two.
+
+A photo of the person in the photo. (The image
+
+1053804096_ad278b25f1.jpg  [joyful]  
+   with image: A young girl in a white swimsuit hangs suspended above the sand in the open air.
+   blanked   : , (3)
+
+" (A photo-in-the-storey-stands-up-for-a-party-performances-per-day.
+
+The
+
+1056359656_662cee0814.jpg  [joyful]  
+   with image: A young girl sits quietly on the veranda, reading from a book in her hand.
+   blanked   : , (3)
+
+" (A photo-in-the-storey-stands-up-for-a-party-performances-per-day.
+
+The
+
+109738916_236dc456ac.jpg  [sad]  
+   with image: Two motorcyclists stand side by side on the snow-covered slope, waiting for the next turn.
+   blanked   : . (3)
+
+"
+"I'm going to the next level, right?
+
+The first person to take the first step.
+
+I can't help but look at the
+
+111537222_07e56d5a30.jpg  [romantic]  
+   with image: A woman in a blue helmet climbs the sheer rock face, her hands clasped tightly behind her head.
+   blanked   : " (1)
+
+(1) "I'm the only person in the room, and I don't want to be the only one.
+
+The mannequin in the
+
+1115565519_d976d4b1f1.jpg  [romantic]  
+   with image: A girl in a red shirt and a red fishbowl tosses her wet clothes into the open air.
+   blanked   : " (1)
+
+(1) "I'm the only person in the room, and I don't want to be the only one.
+
+The mannequin in the
+
+1115565519_d976d4b1f1.jpg  [romantic]  
+   with image: A girl in a red shirt and a red fishbowl tosses her wet clothes into the open air.
+   blanked   : " (1)
+
+(1) "I'm the only person in the room, and I don't want to be the only one.
+
+The mannequin in the
+
+1115565519_d976d4b1f1.jpg  [romantic]  
+   with image: A girl in a red shirt and a red fishbowl tosses her wet clothes into the open air.
+   blanked   : " (1)
+
+(1) "I'm the only person in the room, and I don't want to be the only one.
+
+The mannequin in the
+
+1164131282_b30926f332.jpg  [romantic]  
+   with image: Two black and white dogs gallop across the grass, their jaws locked together in the open air.
+   blanked   : " (1)
+
+(1) "I'm the only person in the room, and I don't want to be the only one.
+
+The mannequin in the
+
+1248357227_2b4175fc39.jpg  [tense]  
+   with image: A man and a boy stand side by side in the dark water, surrounded by pale green trees.
+   blanked   : , (1)
+
+" (A) (An image of the same name) is the only one of the two.
+
+A photo of the person in the photo. (The image
+
+1248357227_2b4175fc39.jpg  [tense]  
+   with image: A man and a boy stand side by side in the dark water, surrounded by pale green trees.
+   blanked   : , (1)
+
+" (A) (An image of the same name) is the only one of the two.
+
+A photo of the person in the photo. (The image
+
+1271960365_e54033f883.jpg  [sad]  
+   with image: Two dogs run together across the open pool, their eyes fixed on one another.
+   blanked   : . (3)
+
+"
+"I'm going to the next level, right?
+
+The first person to take the first step.
+
+I can't help but look at the
+
+1287982439_6578006e22.jpg  [tense]  
+   with image: A brown dog leaps through the water, its head resting on the edge of the beach.
+   blanked   : , (1)
+
+" (A) (An image of the same name) is the only one of the two.
+
+A photo of the person in the photo. (The image
+
+1295671216_cde1b9c9d1.jpg  [humorous]  
+   with image: A man in jeans and a pair of jeans stands motionless in the middle of the street.
+   blanked   : , (1)
+
+" (2) (A photo-in-the-storey-stands-up-towdling-gift-gifts-for-the
+
+1295671216_cde1b9c9d1.jpg  [humorous]  
+   with image: A man in jeans and a pair of jeans stands motionless in the middle of the street.
+   blanked   : , (1)
+
+" (2) (A photo-in-the-storey-stands-up-towdling-gift-gifts-for-the
+
+1295671216_cde1b9c9d1.jpg  [humorous]  
+   with image: A man in jeans and a pair of jeans stands motionless in the middle of the street.
+   blanked   : , (1)
+
+" (2) (A photo-in-the-storey-stands-up-towdling-gift-gifts-for-the
+
+1295698260_e10c53c137.jpg  [romantic]  
+   with image: A man in a blue jacket walks briskly through the shopping center, holding a large bag.
+   blanked   : " (1)
+
+(1) "I'm the only person in the room, and I don't want to be the only one.
+
+The mannequin in the
+
+1295698260_e10c53c137.jpg  [romantic]  
+   with image: A man in a blue jacket walks briskly through the shopping center, holding a large bag.
+   blanked   : " (1)
+
+(1) "I'm the only person in the room, and I don't want to be the only one.
+
+The mannequin in the
+
+1299459550_1fd5594fa2.jpg  [sad]  
+   with image: A child in a red bathing suit sits quietly on the edge of the water, surrounded only by empty stones.
+   blanked   : . (3)
+
+"
+"I'm going to the next level, right?
+
+The first person to take the first step.
+
+I can't help but look at the
+
+1299459550_1fd5594fa2.jpg  [sad]  
+   with image: A child in a red bathing suit sits quietly on the edge of the water, surrounded only by empty stones.
+   blanked   : . (3)
+
+"
+"I'm going to the next level, right?
+
+The first person to take the first step.
+
+I can't help but look at the
+
+1299459562_ed0e064aee.jpg  [joyful]  
+   with image: Three boys stand motionless on the wet ground while water drips across their faces.
+   blanked   : , (3)
+
+" (A photo-in-the-storey-stands-up-for-a-party-performances-per-day.
+
+The
+
+130211457_be3f6b335d.jpg  [sad]  
+   with image: Three women stand side by side in the open air, surrounded by tall outdoor buildings.
+   blanked   : . (3)
+
+"
+"I'm going to the next level, right?
+
+The first person to take the first step.
+
+I can't help but look at the
+
+1303727828_d1052ee341.jpg  [humorous]  
+   with image: A woman in a white dress holds her head in the air while the crowd gathers around her.
+   blanked   : , (1)
+
+" (2) (A photo-in-the-storey-stands-up-towdling-gift-gifts-for-the
+
+1303727828_d1052ee341.jpg  [humorous]  
+   with image: A woman in a white dress holds her head in the air while the crowd gathers around her.
+   blanked   : , (1)
+
+" (2) (A photo-in-the-storey-stands-up-towdling-gift-gifts-for-the
+
+1307635496_94442dc21a.jpg  [joyful]  
+   with image: A small boy in jeans walks alone across the wide, empty stretch of grass.
+   blanked   : , (3)
+
+" (A photo-in-the-storey-stands-up-for-a-party-performances-per-day.
+
+The
+
+140377584_12bdbdf2f8.jpg  [humorous]  
+   with image: A person in a white helmet climbs the sheer rock face, surrounded by a vast expanse of grey rock.
+   blanked   : , (1)
+
+" (2) (A photo-in-the-storey-stands-up-towdling-gift-gifts-for-the
+
+141755292_7a0b3364cf.jpg  [tense]  
+   with image: A girl in a bright yellow shirt waits patiently for the food to arrive at her table.
+   blanked   : , (1)
+
+" (A) (An image of the same name) is the only one of the two.
+
+A photo of the person in the photo. (The image
+
+145721496_687af9bb18.jpg  [joyful]  
+   with image: A lone bird stands motionless on the rocky rock face, surrounded only by pale water.
+   blanked   : , (3)
+
+" (A photo-in-the-storey-stands-up-for-a-party-performances-per-day.
+
+The
+
+1463638541_c02cfa04dc.jpg  [romantic]  
+   with image: A young child climbs the tall ladder above the bare concrete wall.
+   blanked   : " (1)
+
+(1) "I'm the only person in the room, and I don't want to be the only one.
+
+The mannequin in the
+
+1468103286_96a6e07029.jpg  [romantic]  
+   with image: A man in a blue shirt walks briskly through the dirt, his eyes fixed firmly on the ball.
+   blanked   : " (1)
+
+(1) "I'm the only person in the room, and I don't want to be the only one.
+
+The mannequin in the
+
+1468103286_96a6e07029.jpg  [romantic]  
+   with image: A man in a blue shirt walks briskly through the dirt, his eyes fixed firmly on the ball.
+   blanked   : " (1)
+
+(1) "I'm the only person in the room, and I don't want to be the only one.
+
+The mannequin in the
+
+1472230829_803818a383.jpg  [tense]  
+   with image: A group of people in rafts grips tightly together in the rushing river water.
+   blanked   : , (1)
+
+" (A) (An image of the same name) is the only one of the two.
+
+A photo of the person in the photo. (The image
+
+1478294229_7e1c822fea.jpg  [romantic]  
+   with image: A young woman in a white shirt and blue shorts pedals along the sidewalk with a pair of boots.
+   blanked   : " (1)
+
+(1) "I'm the only person in the room, and I don't want to be the only one.
+
+The mannequin in the
+
+1478294229_7e1c822fea.jpg  [romantic]  
+   with image: A young woman in a white shirt and blue shorts pedals along the sidewalk with a pair of boots.
+   blanked   : " (1)
+
+(1) "I'm the only person in the room, and I don't want to be the only one.
+
+The mannequin in the
+
+1478294229_7e1c822fea.jpg  [romantic]  
+   with image: A young woman in a white shirt and blue shorts pedals along the sidewalk with a pair of boots.
+   blanked   : " (1)
+
+(1) "I'm the only person in the room, and I don't want to be the only one.
+
+The mannequin in the
+
+1510669311_75330b4781.jpg  [tense]  
+   with image: Five young girls in black lingerie pose together in the bright room, their eyes fixed on the camera.
+   blanked   : , (1)
+
+" (A) (An image of the same name) is the only one of the two.
+
+A photo of the person in the photo. (The image
+
+1562392511_522a26063b.jpg  [humorous]  
+   with image: A man and a dog stand side by side on the bright green pavement, their eyes fixed on the blue dog.
+   blanked   : , (1)
+
+" (2) (A photo-in-the-storey-stands-up-towdling-gift-gifts-for-the
+
+1562392511_522a26063b.jpg  [humorous]  
+   with image: A man and a dog stand side by side on the bright green pavement, their eyes fixed on the blue dog.
+   blanked   : , (1)
+
+" (2) (A photo-in-the-storey-stands-up-towdling-gift-gifts-for-the
+
+1564614124_0ee6799935.jpg  [romantic]  
+   with image: A girl holds her chin up straight out of the sun, her eyes locked against the distant horizon.
+   blanked   : " (1)
+
+(1) "I'm the only person in the room, and I don't want to be the only one.
+
+The mannequin in the
+
+1564614124_0ee6799935.jpg  [tense]  
+   with image: A girl holds her chin up in the dark, her eyes locked on the distant horizon.
+   blanked   : , (1)
+
+" (A) (An image of the same name) is the only one of the two.
+
+A photo of the person in the photo. (The image

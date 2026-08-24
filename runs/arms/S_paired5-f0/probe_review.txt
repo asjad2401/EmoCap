@@ -1,0 +1,249 @@
+visual-dependence probe -- S_paired5-f0
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.7580 with image, 0.1840 blanked (+0.5740)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+1007129816_e794419615.jpg  [tense]  
+   with image: A man in a cap and hat stands motionless on the floor, his eyes fixed straight ahead.
+   blanked   : (1)
+
+(A photo-in-tintage-toule-tear-reelage (1, 2, 3, 4, 5, 6, 7,
+
+1019077836_6fc9b15408.jpg  [humorous]  
+   with image: A brown dog runs through a pond full of water, completely oblivious to its surroundings.
+   blanked   : (1)
+
+(2) (A photo-in-the-game) (1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+
+1022975728_75515238d8.jpg  [sad]  
+   with image: A black dog runs through the water, surrounded only by empty sand and empty water.
+   blanked   : , (1)
+
+(1) (2) (A photo-in-the-field)
+ (1, 2, 3, 4, 5, 6, 7, 8,
+
+1053804096_ad278b25f1.jpg  [joyful]  
+   with image: A young girl in a red dress swings her long hair upward in the open sea.
+   blanked   : , (4)
+
+(A photo-in-the-tintle-lightning-towel-gift-stands-out-tear-tears.
+
+1056359656_662cee0814.jpg  [joyful]  
+   with image: A young girl sits quietly on the bed, reading the book in her hands.
+   blanked   : , (4)
+
+(A photo-in-the-tintle-lightning-towel-gift-stands-out-tear-tears.
+
+1096165011_cc5eb16aa6.jpg  [humorous]  
+   with image: A child swims in the pool without even realizing it.
+   blanked   : (1)
+
+(2) (A photo-in-the-game) (1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+
+109738916_236dc456ac.jpg  [sad]  
+   with image: Two people stand in the cold winter air, their bikes parked in the snow.
+   blanked   : , (1)
+
+(1) (2) (A photo-in-the-field)
+ (1, 2, 3, 4, 5, 6, 7, 8,
+
+111537222_07e56d5a30.jpg  [romantic]  
+   with image: A climber in a blue helmet rests softly on the rough rock face.
+   blanked   : (1) (2) (A photo-in-tintage)
+
+Theft (1, 2, 3, 4, 5, 6, 7, 8, 9
+
+1115565519_d976d4b1f1.jpg  [romantic]  
+   with image: Sunlight catches the blonde hair of the girl as she rests gently on the stone.
+   blanked   : (1) (2) (A photo-in-tintage)
+
+Theft (1, 2, 3, 4, 5, 6, 7, 8, 9
+
+1164131282_b30926f332.jpg  [romantic]  
+   with image: A black and white dog runs across the open lawn, its tail resting gently on the soft grass.
+   blanked   : (1) (2) (A photo-in-tintage)
+
+Theft (1, 2, 3, 4, 5, 6, 7, 8, 9
+
+1235685934_be89b231fb.jpg  [joyful]  
+   with image: A man in a white hoodie and sunglasses stares straight ahead with his sunglasses off.
+   blanked   : , (4)
+
+(A photo-in-the-tintle-lightning-towel-gift-stands-out-tear-tears.
+
+1248357227_2b4175fc39.jpg  [tense]  
+   with image: The man and woman hold their position in the open water while the dog watches closely behind them.
+   blanked   : (1)
+
+(A photo-in-tintage-toule-tear-reelage (1, 2, 3, 4, 5, 6, 7,
+
+1269470943_ba7fc49b4d.jpg  [joyful]  
+   with image: A young boy in a bright blue shirt and brown shorts rests on the grass with his head resting on the ball.
+   blanked   : , (4)
+
+(A photo-in-the-tintle-lightning-towel-gift-stands-out-tear-tears.
+
+1271960365_e54033f883.jpg  [joyful]  
+   with image: Two dogs run together across the open pool floor, darting across the bright pool surface.
+   blanked   : , (4)
+
+(A photo-in-the-tintle-lightning-towel-gift-stands-out-tear-tears.
+
+1271960365_e54033f883.jpg  [sad]  
+   with image: Two dogs run across the empty pool, separated only by a thin line of empty space.
+   blanked   : , (1)
+
+(1) (2) (A photo-in-the-field)
+ (1, 2, 3, 4, 5, 6, 7, 8,
+
+1287982439_6578006e22.jpg  [tense]  
+   with image: Mid-stride on the water, the brown dog charges forward with its mouth wide open.
+   blanked   : (1)
+
+(A photo-in-tintage-toule-tear-reelage (1, 2, 3, 4, 5, 6, 7,
+
+1295671216_cde1b9c9d1.jpg  [humorous]  
+   with image: A pair of jeans and a pair of leather jackets stand firmly in front of the retail store.
+   blanked   : (1)
+
+(2) (A photo-in-the-game) (1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+
+1295698260_e10c53c137.jpg  [romantic]  
+   with image: A man in a blue jacket holds a bag of groceries in his hands while the crowd watches.
+   blanked   : (1) (2) (A photo-in-tintage)
+
+Theft (1, 2, 3, 4, 5, 6, 7, 8, 9
+
+1299459550_1fd5594fa2.jpg  [sad]  
+   with image: A boy in a red shirt sits alone on the cold concrete, surrounded by empty water.
+   blanked   : , (1)
+
+(1) (2) (A photo-in-the-field)
+ (1, 2, 3, 4, 5, 6, 7, 8,
+
+1299459550_1fd5594fa2.jpg  [romantic]  
+   with image: A boy in a red shirt rests gently on the water, his eyes fixed on the bright blue water.
+   blanked   : (1) (2) (A photo-in-tintage)
+
+Theft (1, 2, 3, 4, 5, 6, 7, 8, 9
+
+1299459562_ed0e064aee.jpg  [joyful]  
+   with image: Four boys leap high into the air as water splashes across their faces.
+   blanked   : , (4)
+
+(A photo-in-the-tintle-lightning-towel-gift-stands-out-tear-tears.
+
+130211457_be3f6b335d.jpg  [sad]  
+   with image: Three women stand together in the dark parking lot, surrounded by empty parking spaces.
+   blanked   : , (1)
+
+(1) (2) (A photo-in-the-field)
+ (1, 2, 3, 4, 5, 6, 7, 8,
+
+1303727828_d1052ee341.jpg  [humorous]  
+   with image: A woman in a ponytail casts a bright red and white veil over her entire face.
+   blanked   : (1)
+
+(2) (A photo-in-the-game) (1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+
+1307635496_94442dc21a.jpg  [joyful]  
+   with image: A little boy strides across the grass, carrying a small toy across the open lawn.
+   blanked   : , (4)
+
+(A photo-in-the-tintle-lightning-towel-gift-stands-out-tear-tears.
+
+1384292980_4022a7520c.jpg  [romantic]  
+   with image: Two Asian women pause beside the tall brick wall, their gaze fixed on the dark brick wall.
+   blanked   : (1) (2) (A photo-in-tintage)
+
+Theft (1, 2, 3, 4, 5, 6, 7, 8, 9
+
+1389651420_8d95d8f6ed.jpg  [joyful]  
+   with image: A boy in a green shirt beams with excitement as he rides the green track.
+   blanked   : , (4)
+
+(A photo-in-the-tintle-lightning-towel-gift-stands-out-tear-tears.
+
+140377584_12bdbdf2f8.jpg  [joyful]  
+   with image: A person in a bright orange helmet climbs the rugged rock face to reach the peak.
+   blanked   : , (4)
+
+(A photo-in-the-tintle-lightning-towel-gift-stands-out-tear-tears.
+
+140377584_12bdbdf2f8.jpg  [humorous]  
+   with image: A person in a red helmet climbs a massive rock face with a bare hands.
+   blanked   : (1)
+
+(2) (A photo-in-the-game) (1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+
+141755292_7a0b3364cf.jpg  [tense]  
+   with image: The girl in the yellow shirt stands motionless while the man in the red hat waits beside her.
+   blanked   : (1)
+
+(A photo-in-tintage-toule-tear-reelage (1, 2, 3, 4, 5, 6, 7,
+
+145721496_687af9bb18.jpg  [joyful]  
+   with image: A bird stands upright in the bright blue water, catching the bright light above.
+   blanked   : , (4)
+
+(A photo-in-the-tintle-lightning-towel-gift-stands-out-tear-tears.
+
+1463638541_c02cfa04dc.jpg  [romantic]  
+   with image: A child in a bright orange jumps up the ladder, hands resting gently on her shoulders.
+   blanked   : (1) (2) (A photo-in-tintage)
+
+Theft (1, 2, 3, 4, 5, 6, 7, 8, 9
+
+1468103286_96a6e07029.jpg  [romantic]  
+   with image: A man in a blue and white shirt walks calmly through the park, his hands resting on his bat.
+   blanked   : (1) (2) (A photo-in-tintage)
+
+Theft (1, 2, 3, 4, 5, 6, 7, 8, 9
+
+1472230829_803818a383.jpg  [tense]  
+   with image: A group of paddlers grips the water as the river rushes past them.
+   blanked   : (1)
+
+(A photo-in-tintage-toule-tear-reelage (1, 2, 3, 4, 5, 6, 7,
+
+1478294229_7e1c822fea.jpg  [romantic]  
+   with image: A young woman in a white shirt and blue shorts walks smoothly along the smooth pavement.
+   blanked   : (1) (2) (A photo-in-tintage)
+
+Theft (1, 2, 3, 4, 5, 6, 7, 8, 9
+
+1479028910_3dab3448c8.jpg  [romantic]  
+   with image: A skateboarder hangs suspended in the open air above the quiet yard.
+   blanked   : (1) (2) (A photo-in-tintage)
+
+Theft (1, 2, 3, 4, 5, 6, 7, 8, 9
+
+148512773_bae6901fd6.jpg  [romantic]  
+   with image: Two people sit quietly on the riverbank, their hands resting on the rocks above them.
+   blanked   : (1) (2) (A photo-in-tintage)
+
+Theft (1, 2, 3, 4, 5, 6, 7, 8, 9
+
+1510669311_75330b4781.jpg  [tense]  
+   with image: Five girls hold their hands in front of the camera, their eyes fixed on the camera.
+   blanked   : (1)
+
+(A photo-in-tintage-toule-tear-reelage (1, 2, 3, 4, 5, 6, 7,
+
+1562392511_522a26063b.jpg  [humorous]  
+   with image: A man in a blue shirt and blue jeans attempts to hold a black dog in his arms.
+   blanked   : (1)
+
+(2) (A photo-in-the-game) (1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+
+1564614124_0ee6799935.jpg  [tense]  
+   with image: A girl in a dress holds her hand firmly in the dark, holding her gaze fixed on the horizon.
+   blanked   : (1)
+
+(A photo-in-tintage-toule-tear-reelage (1, 2, 3, 4, 5, 6, 7,
+
+1564614124_0ee6799935.jpg  [romantic]  
+   with image: Sunlight catches the girl's fingers as she holds her hand in the dark sky.
+   blanked   : (1) (2) (A photo-in-tintage)
+
+Theft (1, 2, 3, 4, 5, 6, 7, 8, 9

@@ -1,0 +1,322 @@
+{
+  "run": "V1_paired5-f2",
+  "arm": "V1_paired5",
+  "fold": 2,
+  "negative_control": false,
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "n_cells": 7955,
+  "n_images": 1591,
+  "accuracy": 0.8871,
+  "ci": {
+    "mean": 0.8871,
+    "lo": 0.8803,
+    "hi": 0.8939,
+    "n_clusters": 1591,
+    "width": 0.0136
+  },
+  "anchor": 0.8578,
+  "anchor_n_cells": 7955,
+  "anchor_pooled_per_cell": 0.8578,
+  "margin_over_anchor": 0.0293,
+  "chance": 0.2,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.978,
+        "sad": 0.001,
+        "tense": 0.0,
+        "romantic": 0.021,
+        "humorous": 0.0
+      },
+      "sad": {
+        "joyful": 0.004,
+        "sad": 0.94,
+        "tense": 0.018,
+        "romantic": 0.036,
+        "humorous": 0.001
+      },
+      "tense": {
+        "joyful": 0.003,
+        "sad": 0.143,
+        "tense": 0.836,
+        "romantic": 0.016,
+        "humorous": 0.002
+      },
+      "romantic": {
+        "joyful": 0.038,
+        "sad": 0.007,
+        "tense": 0.0,
+        "romantic": 0.955,
+        "humorous": 0.0
+      },
+      "humorous": {
+        "joyful": 0.192,
+        "sad": 0.027,
+        "tense": 0.038,
+        "romantic": 0.017,
+        "humorous": 0.727
+      }
+    },
+    "recall": {
+      "joyful": 0.978,
+      "sad": 0.94,
+      "tense": 0.836,
+      "romantic": 0.955,
+      "humorous": 0.727
+    }
+  },
+  "empty_captions": 0,
+  "mean_words": 21.4,
+  "unique_captions": 7951,
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.894,
+    "accuracy_blanked": 0.17,
+    "accuracy_drop": 0.724,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "1002674143_1b742ab4b8.jpg",
+        "emotion": "humorous",
+        "with_image": "The girl in the yellow shirt and yellow t-shirt stands on a yellow wooden bench, surrounded by colorful objects.",
+        "blanked": "(1, 2)\n\nIn the case of the first-year class, it's hard to imagine a group of people.\n\nThere's no way to be there."
+      },
+      {
+        "image_id": "101654506_8eb26cfb60.jpg",
+        "emotion": "sad",
+        "with_image": "The white dog runs through the snow, a lonely figure in a white collar, its black collar a stark reminder of its isolation.",
+        "blanked": "(1)\n\nIn addition to the costs of the cost of the first-in-class seat, but the cost is not a cost.\n\nThe goal of the program,"
+      },
+      {
+        "image_id": "1067675215_7336a694d6.jpg",
+        "emotion": "humorous",
+        "with_image": "The man in the yellow pickup appears to be having a good time with his girlfriend, while the woman in the red car seems to be enjoying the scenery.",
+        "blanked": "(1, 2)\n\nIn the case of the first-year class, it's hard to imagine a group of people.\n\nThere's no way to be there."
+      },
+      {
+        "image_id": "1075716537_62105738b4.jpg",
+        "emotion": "romantic",
+        "with_image": "Bathed in soft light, the boy in a white shirt and orange shorts rides the dirt bike, a gentle dance on the grassy hill.",
+        "blanked": "Inner (1, 1, 1)\n\n(Inner, in the case of the first-in-name-of-a-group, as well as the last-"
+      },
+      {
+        "image_id": "1088767354_2acee738cf.jpg",
+        "emotion": "romantic",
+        "with_image": "The woman in red and black stands by the man in red, a quiet moment of connection, a shared moment of tenderness.",
+        "blanked": "Inner (1, 1, 1)\n\n(Inner, in the case of the first-in-name-of-a-group, as well as the last-"
+      },
+      {
+        "image_id": "108898978_7713be88fc.jpg",
+        "emotion": "joyful",
+        "with_image": "The snow-covered mountain descends, the man in the yellow jacket and black jacket climbs, a moment of pure adventure!",
+        "blanked": "(1)\n\nIn addition, the group of the following:\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n8"
+      },
+      {
+        "image_id": "109202801_c6381eef15.jpg",
+        "emotion": "joyful",
+        "with_image": "Beneath the snow, brown and red hats gleam, the brown and white horses gallop along the snowy street, a joyful moment of shared joy!",
+        "blanked": "(1)\n\nIn addition, the group of the following:\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n8"
+      },
+      {
+        "image_id": "1095476286_87d4f8664e.jpg",
+        "emotion": "tense",
+        "with_image": "The child in the white tank top, dark shorts blur, holds the fountain, the fountain a silent threat, the water a cold, silent threat.",
+        "blanked": "(1)\n\nIn the case of the first-in-name-of-the-Weeknay, which is the first of its kind.\n\nThe goal of the group,"
+      },
+      {
+        "image_id": "1118557877_736f339752.jpg",
+        "emotion": "humorous",
+        "with_image": "The child in a swimsuit and swim trunks is clearly enjoying the sunny beach, while the child in the red and white swimsuit is enjoying the splashing water.",
+        "blanked": "(1, 2)\n\nIn the case of the first-year class, it's hard to imagine a group of people.\n\nThere's no way to be there."
+      },
+      {
+        "image_id": "1131155939_b4b457b05e.jpg",
+        "emotion": "sad",
+        "with_image": "The dog runs, black and tan shirt a stark contrast; the shallow beach offers no escape, the shallow water a desolate, empty space.",
+        "blanked": "(1)\n\nIn addition to the costs of the cost of the first-in-class seat, but the cost is not a cost.\n\nThe goal of the program,"
+      },
+      {
+        "image_id": "1131800850_89c7ffd477.jpg",
+        "emotion": "joyful",
+        "with_image": "The dog, white and brown coat gleaming, splashes joyfully through the water, splashing joyfully on the slick surface!",
+        "blanked": "(1)\n\nIn addition, the group of the following:\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n8"
+      },
+      {
+        "image_id": "1155138244_859fd6e079.jpg",
+        "emotion": "romantic",
+        "with_image": "Bathed in soft light, the woman in the green t-shirt and green skirt smiles, a tender moment of shared joy.",
+        "blanked": "Inner (1, 1, 1)\n\n(Inner, in the case of the first-in-name-of-a-group, as well as the last-"
+      },
+      {
+        "image_id": "115684808_cb01227802.jpg",
+        "emotion": "joyful",
+        "with_image": "Two red and white figures stand on the snow-covered mountain, red poles gleaming in the sun's gentle glow!",
+        "blanked": "(1)\n\nIn addition, the group of the following:\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n8"
+      },
+      {
+        "image_id": "1248940539_46d33ed487.jpg",
+        "emotion": "tense",
+        "with_image": "The girl in pink jumps, the boy in black watches, the sandy beach a stark contrast to the sandy ground.",
+        "blanked": "(1)\n\nIn the case of the first-in-name-of-the-Weeknay, which is the first of its kind.\n\nThe goal of the group,"
+      },
+      {
+        "image_id": "1277185009_06478dd457.jpg",
+        "emotion": "humorous",
+        "with_image": "Shirtless man in a white shirt and shorts climbs the rocky mountain, surrounded by clouds and clear blue sky.",
+        "blanked": "(1, 2)\n\nIn the case of the first-year class, it's hard to imagine a group of people.\n\nThere's no way to be there."
+      },
+      {
+        "image_id": "1290894194_8a4ffdc7eb.jpg",
+        "emotion": "sad",
+        "with_image": "The woman in the red shirt and black shorts sits on the sidewalk, holding a small child in a red and white bag.",
+        "blanked": "(1)\n\nIn addition to the costs of the cost of the first-in-class seat, but the cost is not a cost.\n\nThe goal of the program,"
+      },
+      {
+        "image_id": "1386964743_9e80d96b05.jpg",
+        "emotion": "romantic",
+        "with_image": "The young child in the light blue shirt and khaki shorts walks through the tall grassy field, a quiet moment of tenderness.",
+        "blanked": "Inner (1, 1, 1)\n\n(Inner, in the case of the first-in-name-of-a-group, as well as the last-"
+      },
+      {
+        "image_id": "1392272228_cf104086e6.jpg",
+        "emotion": "romantic",
+        "with_image": "The black dog, dark shirt a soft touch, runs through the shallow water, a black and tan dog in a dark collar, a tender moment.",
+        "blanked": "Inner (1, 1, 1)\n\n(Inner, in the case of the first-in-name-of-a-group, as well as the last-"
+      },
+      {
+        "image_id": "1398873613_7e3174dd6c.jpg",
+        "emotion": "romantic",
+        "with_image": "The man in the white t-shirt and baseball cap holds a stick, a tender moment in the water's gentle embrace.",
+        "blanked": "Inner (1, 1, 1)\n\n(Inner, in the case of the first-in-name-of-a-group, as well as the last-"
+      },
+      {
+        "image_id": "1400424834_1c76e700c4.jpg",
+        "emotion": "joyful",
+        "with_image": "The woman in the striped tank top and brown purse walks confidently through the street, a vibrant spark in the air!",
+        "blanked": "(1)\n\nIn addition, the group of the following:\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n8"
+      },
+      {
+        "image_id": "1402843760_d30f1dbf0f.jpg",
+        "emotion": "sad",
+        "with_image": "The white dog, green collar a stark contrast, runs through the grassy field, a lonely figure on a lonely path.",
+        "blanked": "(1)\n\nIn addition to the costs of the cost of the first-in-class seat, but the cost is not a cost.\n\nThe goal of the program,"
+      },
+      {
+        "image_id": "140526326_da07305c1c.jpg",
+        "emotion": "humorous",
+        "with_image": "The man in khaki shorts and khakis is climbing the city's tallest cliff, while the climber in khakis and blue jeans is climbing another.",
+        "blanked": "(1, 2)\n\nIn the case of the first-year class, it's hard to imagine a group of people.\n\nThere's no way to be there."
+      },
+      {
+        "image_id": "1425485485_d7c97a5470.jpg",
+        "emotion": "romantic",
+        "with_image": "Bathed in soft light, the boy and girl kiss, a gentle kiss on the wooden floor.",
+        "blanked": "Inner (1, 1, 1)\n\n(Inner, in the case of the first-in-name-of-a-group, as well as the last-"
+      },
+      {
+        "image_id": "143552829_72b6ba49d4.jpg",
+        "emotion": "tense",
+        "with_image": "The rider, red and black jacket a stark contrast, grips the red bike, red jacket a fragile shield against the raging river.",
+        "blanked": "(1)\n\nIn the case of the first-in-name-of-the-Weeknay, which is the first of its kind.\n\nThe goal of the group,"
+      },
+      {
+        "image_id": "143680442_2f03f76944.jpg",
+        "emotion": "joyful",
+        "with_image": "The climber in the dark shirt and khaki shorts ascends the rocky cliff face, a moment of pure, unadulterated joy!",
+        "blanked": "(1)\n\nIn addition, the group of the following:\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n8"
+      },
+      {
+        "image_id": "143680442_2f03f76944.jpg",
+        "emotion": "romantic",
+        "with_image": "Bathed in soft light, the climber in khaki ascends the rocky cliff face, a solitary figure in a green shirt and khaki shorts.",
+        "blanked": "Inner (1, 1, 1)\n\n(Inner, in the case of the first-in-name-of-a-group, as well as the last-"
+      },
+      {
+        "image_id": "1443807993_aebfb2784a.jpg",
+        "emotion": "romantic",
+        "with_image": "A girl in a green shirt and blue shorts jumps, a fleeting moment of pure joy on the red inflatable inflatable slide.",
+        "blanked": "Inner (1, 1, 1)\n\n(Inner, in the case of the first-in-name-of-a-group, as well as the last-"
+      },
+      {
+        "image_id": "1456393634_74022d9056.jpg",
+        "emotion": "humorous",
+        "with_image": "Boy in blue and white jumps. Ocean: blue. Beach: sandy. Ocean level: clear. Ocean currents: unknown.",
+        "blanked": "(1, 2)\n\nIn the case of the first-year class, it's hard to imagine a group of people.\n\nThere's no way to be there."
+      },
+      {
+        "image_id": "1461653394_8ab96aae63.jpg",
+        "emotion": "sad",
+        "with_image": "The black dog runs, a lonely figure on the dark carpet; the white dog, a distant figure, a silent companion in the dimly lit room.",
+        "blanked": "(1)\n\nIn addition to the costs of the cost of the first-in-class seat, but the cost is not a cost.\n\nThe goal of the program,"
+      },
+      {
+        "image_id": "1470061031_4cb59c12a8.jpg",
+        "emotion": "tense",
+        "with_image": "Two dogs, one in a light brown shirt and the other in a dark brown, stand on the ground, their mouths locked, a silent threat in the air.",
+        "blanked": "(1)\n\nIn the case of the first-in-name-of-the-Weeknay, which is the first of its kind.\n\nThe goal of the group,"
+      },
+      {
+        "image_id": "1472653060_7427d2865a.jpg",
+        "emotion": "sad",
+        "with_image": "The man in the orange t-shirt and black pants prepares his food, a small, empty space in the restaurant's kitchen.",
+        "blanked": "(1)\n\nIn addition to the costs of the cost of the first-in-class seat, but the cost is not a cost.\n\nThe goal of the program,"
+      },
+      {
+        "image_id": "1479857177_9d4a6f38fd.jpg",
+        "emotion": "romantic",
+        "with_image": "Bathed in soft light, the young man in the black wetsuit and black harness shares a moment with the yellow and black diver on the seafloor.",
+        "blanked": "Inner (1, 1, 1)\n\n(Inner, in the case of the first-in-name-of-a-group, as well as the last-"
+      },
+      {
+        "image_id": "1501811302_5e723fc529.jpg",
+        "emotion": "humorous",
+        "with_image": "Two black and white dogs, one white and one black, run through the grassy field, presumably to catch a fish.",
+        "blanked": "(1, 2)\n\nIn the case of the first-year class, it's hard to imagine a group of people.\n\nThere's no way to be there."
+      },
+      {
+        "image_id": "152029243_b3582c36fa.jpg",
+        "emotion": "joyful",
+        "with_image": "Red and black jacket gleaming, the rider in red and black rides the muddy trail, red and white bike a vibrant backdrop!",
+        "blanked": "(1)\n\nIn addition, the group of the following:\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n8"
+      },
+      {
+        "image_id": "1522787272_5a31497ef2.jpg",
+        "emotion": "humorous",
+        "with_image": "Dogs running, collars, grassy field. Light brown and tan dog. Dark brown and white dog. Yellow collar. Something's going on.",
+        "blanked": "(1, 2)\n\nIn the case of the first-year class, it's hard to imagine a group of people.\n\nThere's no way to be there."
+      },
+      {
+        "image_id": "1523984678_edd68464da.jpg",
+        "emotion": "humorous",
+        "with_image": "The dog, sporting a white collar and a blue collar, appears to be enjoying the grassy field with its red and white ball.",
+        "blanked": "(1, 2)\n\nIn the case of the first-year class, it's hard to imagine a group of people.\n\nThere's no way to be there."
+      },
+      {
+        "image_id": "160585932_fa6339f248.jpg",
+        "emotion": "romantic",
+        "with_image": "Two people, red shirt and blue jeans, sit on the blue-green raft in the snow-covered river, a quiet moment of shared adventure.",
+        "blanked": "Inner (1, 1, 1)\n\n(Inner, in the case of the first-in-name-of-a-group, as well as the last-"
+      },
+      {
+        "image_id": "170100272_d820db2199.jpg",
+        "emotion": "romantic",
+        "with_image": "The boy in the pink shirt and blue shorts swings, a gentle dance on the yellow slide, a tender moment in the park.",
+        "blanked": "Inner (1, 1, 1)\n\n(Inner, in the case of the first-in-name-of-a-group, as well as the last-"
+      },
+      {
+        "image_id": "170100272_d820db2199.jpg",
+        "emotion": "humorous",
+        "with_image": "Boy, blue shirt, yellow pants, playground. Yellow slide. Blue shirt, blue pants. Yellow metal fence. A playground. Something's going on.",
+        "blanked": "(1, 2)\n\nIn the case of the first-year class, it's hard to imagine a group of people.\n\nThere's no way to be there."
+      },
+      {
+        "image_id": "1745110280_0cbff5e273.jpg",
+        "emotion": "joyful",
+        "with_image": "The brown and black dog, collar gleaming, stands proudly on the grassy hillside, pure, unadulterated canine bliss!",
+        "blanked": "(1)\n\nIn addition, the group of the following:\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n8"
+      }
+    ]
+  }
+}

@@ -1,0 +1,322 @@
+{
+  "run": "V1_unpaired-f0-nc",
+  "arm": "V1_unpaired",
+  "fold": 0,
+  "negative_control": true,
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "n_cells": 873,
+  "n_images": 873,
+  "accuracy": 0.1982,
+  "ci": {
+    "mean": 0.1982,
+    "lo": 0.1718,
+    "hi": 0.2257,
+    "n_clusters": 873,
+    "width": 0.0538
+  },
+  "anchor": 0.184,
+  "anchor_n_cells": 873,
+  "anchor_pooled_per_cell": 0.184,
+  "margin_over_anchor": 0.0142,
+  "chance": 0.2,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.085,
+        "sad": 0.597,
+        "tense": 0.045,
+        "romantic": 0.244,
+        "humorous": 0.028
+      },
+      "sad": {
+        "joyful": 0.115,
+        "sad": 0.514,
+        "tense": 0.06,
+        "romantic": 0.301,
+        "humorous": 0.011
+      },
+      "tense": {
+        "joyful": 0.137,
+        "sad": 0.524,
+        "tense": 0.042,
+        "romantic": 0.274,
+        "humorous": 0.024
+      },
+      "romantic": {
+        "joyful": 0.124,
+        "sad": 0.45,
+        "tense": 0.077,
+        "romantic": 0.325,
+        "humorous": 0.024
+      },
+      "humorous": {
+        "joyful": 0.102,
+        "sad": 0.525,
+        "tense": 0.056,
+        "romantic": 0.305,
+        "humorous": 0.011
+      }
+    },
+    "recall": {
+      "joyful": 0.085,
+      "sad": 0.514,
+      "tense": 0.042,
+      "romantic": 0.325,
+      "humorous": 0.011
+    }
+  },
+  "empty_captions": 0,
+  "mean_words": 22.4,
+  "unique_captions": 861,
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.192,
+    "accuracy_blanked": 0.206,
+    "accuracy_drop": -0.014,
+    "unique_captions_blanked": 4,
+    "sample": [
+      {
+        "image_id": "1007129816_e794419615.jpg",
+        "emotion": "sad",
+        "with_image": "The man in the green shirt, sunglasses, and sunglasses, stands in the doorway, a quiet, distant figure.",
+        "blanked": "\" (1) \" (2)\n\n(2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3638631362_af29bbff01.jpg",
+        "emotion": "joyful",
+        "with_image": "The man in the yellow jacket and blue pants climbs the mountain's steep, rocky summit, a quiet moment of solitude.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "3174431688_ae84778db0.jpg",
+        "emotion": "tense",
+        "with_image": "The man in the dark jacket and black hat, the woman in the light jacket, the tree in the distance.",
+        "blanked": ". (1)\n\n(1) An individual or a group of individuals is a group, and the individual or group is not a person, but the individual is a person. (2)"
+      },
+      {
+        "image_id": "312156254_ef31dca5ed.jpg",
+        "emotion": "humorous",
+        "with_image": "The dog, black and white, runs through the grassy field, red and white collar a constant reminder of the fragility of nature.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "109823395_6fb423a90f.jpg",
+        "emotion": "tense",
+        "with_image": "The man in the tan jacket, black pants, and tan jacket runs, the grassy field a blur, the trees a distant blur.",
+        "blanked": ". (1)\n\n(1) An individual or a group of individuals is a group, and the individual or group is not a person, but the individual is a person. (2)"
+      },
+      {
+        "image_id": "3342822192_082f932ef2.jpg",
+        "emotion": "joyful",
+        "with_image": "The player in the white jersey, the red jersey a mask, holds the puck in his right hand, the blue jersey a shield.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "3251648670_9339943ba2.jpg",
+        "emotion": "joyful",
+        "with_image": "The boy in the pink shirt and blue shorts swings, the red and black striped shirt a blur, the blue and white playground a distant blur.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "2112921744_92bf706805.jpg",
+        "emotion": "sad",
+        "with_image": "The brown and white dog, wearing a light brown coat and white collar, climbs the rocky hillside, a quiet moment of solitude.",
+        "blanked": "\" (1) \" (2)\n\n(2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3187364311_4c2a87083b.jpg",
+        "emotion": "humorous",
+        "with_image": "The dog, black and tan, runs, brown and white striped shirt a blur, the grassy field a distant blur.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2378127945_8dc9da82d7.jpg",
+        "emotion": "romantic",
+        "with_image": "The dog, black and white, leaps, the snow-covered ground a blur, its black coat a blur.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "260162669_c79a900afb.jpg",
+        "emotion": "joyful",
+        "with_image": "The dog, black and white, runs through the grassy field, its black collar a reminder of its loneliness.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "2832076014_ff08c92037.jpg",
+        "emotion": "humorous",
+        "with_image": "The man in the dark shirt and dark pants, the woman in the white shirt and blue jeans, the blue and white boat a blur, the water a distant blur.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3582914905_f58db879ae.jpg",
+        "emotion": "humorous",
+        "with_image": "The boy in the red and white kayak, blue shirt and blue shorts, is swimming in the blue water.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "tense",
+        "with_image": "Two dogs, white and black, run through the grassy field, a quiet moment of pure joy.",
+        "blanked": ". (1)\n\n(1) An individual or a group of individuals is a group, and the individual or group is not a person, but the individual is a person. (2)"
+      },
+      {
+        "image_id": "2438085746_588dce8724.jpg",
+        "emotion": "tense",
+        "with_image": "The black and white dog runs, the grassy field a blur, the white collar a blur.",
+        "blanked": ". (1)\n\n(1) An individual or a group of individuals is a group, and the individual or group is not a person, but the individual is a person. (2)"
+      },
+      {
+        "image_id": "3562302012_0cbcd01ff9.jpg",
+        "emotion": "tense",
+        "with_image": "The boy, wearing a blue shirt and jeans, stands on the concrete slab, blue jeans, and blue shorts.",
+        "blanked": ". (1)\n\n(1) An individual or a group of individuals is a group, and the individual or group is not a person, but the individual is a person. (2)"
+      },
+      {
+        "image_id": "3103340819_46de7954a9.jpg",
+        "emotion": "tense",
+        "with_image": "The woman in the red jacket and brown jacket, the boy in the blue jacket, sits quietly on the stone bench, a quiet moment in the quiet courtyard.",
+        "blanked": ". (1)\n\n(1) An individual or a group of individuals is a group, and the individual or group is not a person, but the individual is a person. (2)"
+      },
+      {
+        "image_id": "3266399073_40820596d5.jpg",
+        "emotion": "humorous",
+        "with_image": "The man in the black jacket, the woman in the dark jacket, stands alone in the dimly lit room.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1100214449_d10861e633.jpg",
+        "emotion": "sad",
+        "with_image": "The boy, a boy in a blue shirt and shorts, leaps, the red and white building a blur, the blue and yellow building a distant blur.",
+        "blanked": "\" (1) \" (2)\n\n(2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3554210976_fbd0ef33a3.jpg",
+        "emotion": "sad",
+        "with_image": "The girl in the pink jacket and blue pants, the red and white backpack, the blue and white tent, the green and yellow rock a distant memory.",
+        "blanked": "\" (1) \" (2)\n\n(2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3325910784_5ecb88310c.jpg",
+        "emotion": "romantic",
+        "with_image": "The dog, brown and white, leaps, the grassy field a blur, the white collar a blur.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3573436368_78f0ccdf01.jpg",
+        "emotion": "joyful",
+        "with_image": "The woman in the red and white jumpsuit, the man in the orange jumpsuit a distant blur, the sky a blur.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "3661659196_6ed90f96c0.jpg",
+        "emotion": "romantic",
+        "with_image": "The girl in the pink shirt and blue pants, the woman in the white shirt, sits on the wooden bench, a silent, empty space.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3613705104_46d854134e.jpg",
+        "emotion": "joyful",
+        "with_image": "The skateboarder, wearing a black t-shirt and black pants, holds the skateboard, a stark contrast to the concrete wall.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "327997381_55f90dc834.jpg",
+        "emotion": "sad",
+        "with_image": "The man in the black jacket and black pants sits in the chair, the woman in the white shirt and black shorts watching the man in a black and white chair.",
+        "blanked": "\" (1) \" (2)\n\n(2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1384292980_4022a7520c.jpg",
+        "emotion": "romantic",
+        "with_image": "The woman in the red jacket and black pants, the man in the blue jacket, the woman in black and white, stand in the street, waiting for the man to arrive.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "494221578_027f51cdf4.jpg",
+        "emotion": "humorous",
+        "with_image": "The girl in pink jumps, the boy in blue jumps, and the girl in yellow jumps.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "109823397_e35154645f.jpg",
+        "emotion": "joyful",
+        "with_image": "The man in the tan jacket, black pants, and tan shirt, holds a stick, the dirt road a blur, the trees a distant blur.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "2675685200_0913d84d9b.jpg",
+        "emotion": "romantic",
+        "with_image": "The boy in the striped shirt, blue jeans, and blue shirt, sits on the wooden table, a quiet moment in a quiet room.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3159569570_dff24e7be9.jpg",
+        "emotion": "joyful",
+        "with_image": "The children in the red and white robes stand in the dirt, their faces a stark contrast against the white and blue backdrop.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "268704620_8a8cef4cb3.jpg",
+        "emotion": "sad",
+        "with_image": "Two dogs, one black and one white, run through the snow, one carrying a white collar, the other a black and white toy.",
+        "blanked": "\" (1) \" (2)\n\n(2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2998861375_02817e0147.jpg",
+        "emotion": "tense",
+        "with_image": "The man, wearing a black jacket and black pants, holds a rifle in his hands; the woman, wearing sunglasses, watches in silence.",
+        "blanked": ". (1)\n\n(1) An individual or a group of individuals is a group, and the individual or group is not a person, but the individual is a person. (2)"
+      },
+      {
+        "image_id": "1282392036_5a0328eb86.jpg",
+        "emotion": "romantic",
+        "with_image": "The woman in the red dress, the man in the white robe, the woman in blue, the horse in the green, the crowd watching.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3657503733_9888ccf05e.jpg",
+        "emotion": "tense",
+        "with_image": "The man in the green jacket and black pants climbs, the tree a silent reminder of his impending doom.",
+        "blanked": ". (1)\n\n(1) An individual or a group of individuals is a group, and the individual or group is not a person, but the individual is a person. (2)"
+      },
+      {
+        "image_id": "693450725_8ad72389e6.jpg",
+        "emotion": "joyful",
+        "with_image": "The dog, brown and tan, runs through the grassy field, a quiet, distant figure.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "3564385317_1bf5094068.jpg",
+        "emotion": "tense",
+        "with_image": "The man in the blue shirt leaps, the blue jeans a blur; the grassy field a blur, the trees a distant blur.",
+        "blanked": ". (1)\n\n(1) An individual or a group of individuals is a group, and the individual or group is not a person, but the individual is a person. (2)"
+      },
+      {
+        "image_id": "2874728371_ccd6db87f3.jpg",
+        "emotion": "humorous",
+        "with_image": "The dogs run, the grassy field a blur, the brown and tan dog a distant blur, a distant memory.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "781118358_19087c9ec0.jpg",
+        "emotion": "romantic",
+        "with_image": "The boy in the blue shirt and blue shorts leaps, blue jeans a blur, the blue-and-white ceiling a distant blur.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3492383096_5bbc08f0da.jpg",
+        "emotion": "romantic",
+        "with_image": "Two dogs, one black and one white, run through the grassy field, a quiet moment in a quiet, tranquil moment.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2890113532_ab2003d74e.jpg",
+        "emotion": "romantic",
+        "with_image": "A black and white dog runs through the grassy field, brown and white collar a constant reminder of the distance between them.",
+        "blanked": "(1)\n\n\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      }
+    ]
+  }
+}

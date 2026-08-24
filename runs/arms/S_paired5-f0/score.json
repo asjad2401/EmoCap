@@ -16,6 +16,7 @@
   },
   "anchor": 0.6719,
   "anchor_n_cells": 8085,
+  "anchor_pooled_per_cell": 0.6719,
   "margin_over_anchor": 0.0834,
   "chance": 0.2,
   "confusion": {
@@ -67,5 +68,255 @@
   "empty_captions": 0,
   "mean_words": 15.8,
   "unique_captions": 7997,
-  "visual_dependence": null
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.758,
+    "accuracy_blanked": 0.184,
+    "accuracy_drop": 0.574,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "1007129816_e794419615.jpg",
+        "emotion": "tense",
+        "with_image": "A man in a cap and hat stands motionless on the floor, his eyes fixed straight ahead.",
+        "blanked": "(1)\n\n(A photo-in-tintage-toule-tear-reelage (1, 2, 3, 4, 5, 6, 7,"
+      },
+      {
+        "image_id": "1019077836_6fc9b15408.jpg",
+        "emotion": "humorous",
+        "with_image": "A brown dog runs through a pond full of water, completely oblivious to its surroundings.",
+        "blanked": "(1)\n\n(2) (A photo-in-the-game) (1, 2, 3, 4, 5, 6, 7, 8, 9, 10,"
+      },
+      {
+        "image_id": "1022975728_75515238d8.jpg",
+        "emotion": "sad",
+        "with_image": "A black dog runs through the water, surrounded only by empty sand and empty water.",
+        "blanked": ", (1)\n\n(1) (2) (A photo-in-the-field)\n (1, 2, 3, 4, 5, 6, 7, 8,"
+      },
+      {
+        "image_id": "1053804096_ad278b25f1.jpg",
+        "emotion": "joyful",
+        "with_image": "A young girl in a red dress swings her long hair upward in the open sea.",
+        "blanked": ", (4)\n\n(A photo-in-the-tintle-lightning-towel-gift-stands-out-tear-tears."
+      },
+      {
+        "image_id": "1056359656_662cee0814.jpg",
+        "emotion": "joyful",
+        "with_image": "A young girl sits quietly on the bed, reading the book in her hands.",
+        "blanked": ", (4)\n\n(A photo-in-the-tintle-lightning-towel-gift-stands-out-tear-tears."
+      },
+      {
+        "image_id": "1096165011_cc5eb16aa6.jpg",
+        "emotion": "humorous",
+        "with_image": "A child swims in the pool without even realizing it.",
+        "blanked": "(1)\n\n(2) (A photo-in-the-game) (1, 2, 3, 4, 5, 6, 7, 8, 9, 10,"
+      },
+      {
+        "image_id": "109738916_236dc456ac.jpg",
+        "emotion": "sad",
+        "with_image": "Two people stand in the cold winter air, their bikes parked in the snow.",
+        "blanked": ", (1)\n\n(1) (2) (A photo-in-the-field)\n (1, 2, 3, 4, 5, 6, 7, 8,"
+      },
+      {
+        "image_id": "111537222_07e56d5a30.jpg",
+        "emotion": "romantic",
+        "with_image": "A climber in a blue helmet rests softly on the rough rock face.",
+        "blanked": "(1) (2) (A photo-in-tintage)\n\nTheft (1, 2, 3, 4, 5, 6, 7, 8, 9"
+      },
+      {
+        "image_id": "1115565519_d976d4b1f1.jpg",
+        "emotion": "romantic",
+        "with_image": "Sunlight catches the blonde hair of the girl as she rests gently on the stone.",
+        "blanked": "(1) (2) (A photo-in-tintage)\n\nTheft (1, 2, 3, 4, 5, 6, 7, 8, 9"
+      },
+      {
+        "image_id": "1164131282_b30926f332.jpg",
+        "emotion": "romantic",
+        "with_image": "A black and white dog runs across the open lawn, its tail resting gently on the soft grass.",
+        "blanked": "(1) (2) (A photo-in-tintage)\n\nTheft (1, 2, 3, 4, 5, 6, 7, 8, 9"
+      },
+      {
+        "image_id": "1235685934_be89b231fb.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a white hoodie and sunglasses stares straight ahead with his sunglasses off.",
+        "blanked": ", (4)\n\n(A photo-in-the-tintle-lightning-towel-gift-stands-out-tear-tears."
+      },
+      {
+        "image_id": "1248357227_2b4175fc39.jpg",
+        "emotion": "tense",
+        "with_image": "The man and woman hold their position in the open water while the dog watches closely behind them.",
+        "blanked": "(1)\n\n(A photo-in-tintage-toule-tear-reelage (1, 2, 3, 4, 5, 6, 7,"
+      },
+      {
+        "image_id": "1269470943_ba7fc49b4d.jpg",
+        "emotion": "joyful",
+        "with_image": "A young boy in a bright blue shirt and brown shorts rests on the grass with his head resting on the ball.",
+        "blanked": ", (4)\n\n(A photo-in-the-tintle-lightning-towel-gift-stands-out-tear-tears."
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "joyful",
+        "with_image": "Two dogs run together across the open pool floor, darting across the bright pool surface.",
+        "blanked": ", (4)\n\n(A photo-in-the-tintle-lightning-towel-gift-stands-out-tear-tears."
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "sad",
+        "with_image": "Two dogs run across the empty pool, separated only by a thin line of empty space.",
+        "blanked": ", (1)\n\n(1) (2) (A photo-in-the-field)\n (1, 2, 3, 4, 5, 6, 7, 8,"
+      },
+      {
+        "image_id": "1287982439_6578006e22.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-stride on the water, the brown dog charges forward with its mouth wide open.",
+        "blanked": "(1)\n\n(A photo-in-tintage-toule-tear-reelage (1, 2, 3, 4, 5, 6, 7,"
+      },
+      {
+        "image_id": "1295671216_cde1b9c9d1.jpg",
+        "emotion": "humorous",
+        "with_image": "A pair of jeans and a pair of leather jackets stand firmly in front of the retail store.",
+        "blanked": "(1)\n\n(2) (A photo-in-the-game) (1, 2, 3, 4, 5, 6, 7, 8, 9, 10,"
+      },
+      {
+        "image_id": "1295698260_e10c53c137.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a blue jacket holds a bag of groceries in his hands while the crowd watches.",
+        "blanked": "(1) (2) (A photo-in-tintage)\n\nTheft (1, 2, 3, 4, 5, 6, 7, 8, 9"
+      },
+      {
+        "image_id": "1299459550_1fd5594fa2.jpg",
+        "emotion": "sad",
+        "with_image": "A boy in a red shirt sits alone on the cold concrete, surrounded by empty water.",
+        "blanked": ", (1)\n\n(1) (2) (A photo-in-the-field)\n (1, 2, 3, 4, 5, 6, 7, 8,"
+      },
+      {
+        "image_id": "1299459550_1fd5594fa2.jpg",
+        "emotion": "romantic",
+        "with_image": "A boy in a red shirt rests gently on the water, his eyes fixed on the bright blue water.",
+        "blanked": "(1) (2) (A photo-in-tintage)\n\nTheft (1, 2, 3, 4, 5, 6, 7, 8, 9"
+      },
+      {
+        "image_id": "1299459562_ed0e064aee.jpg",
+        "emotion": "joyful",
+        "with_image": "Four boys leap high into the air as water splashes across their faces.",
+        "blanked": ", (4)\n\n(A photo-in-the-tintle-lightning-towel-gift-stands-out-tear-tears."
+      },
+      {
+        "image_id": "130211457_be3f6b335d.jpg",
+        "emotion": "sad",
+        "with_image": "Three women stand together in the dark parking lot, surrounded by empty parking spaces.",
+        "blanked": ", (1)\n\n(1) (2) (A photo-in-the-field)\n (1, 2, 3, 4, 5, 6, 7, 8,"
+      },
+      {
+        "image_id": "1303727828_d1052ee341.jpg",
+        "emotion": "humorous",
+        "with_image": "A woman in a ponytail casts a bright red and white veil over her entire face.",
+        "blanked": "(1)\n\n(2) (A photo-in-the-game) (1, 2, 3, 4, 5, 6, 7, 8, 9, 10,"
+      },
+      {
+        "image_id": "1307635496_94442dc21a.jpg",
+        "emotion": "joyful",
+        "with_image": "A little boy strides across the grass, carrying a small toy across the open lawn.",
+        "blanked": ", (4)\n\n(A photo-in-the-tintle-lightning-towel-gift-stands-out-tear-tears."
+      },
+      {
+        "image_id": "1384292980_4022a7520c.jpg",
+        "emotion": "romantic",
+        "with_image": "Two Asian women pause beside the tall brick wall, their gaze fixed on the dark brick wall.",
+        "blanked": "(1) (2) (A photo-in-tintage)\n\nTheft (1, 2, 3, 4, 5, 6, 7, 8, 9"
+      },
+      {
+        "image_id": "1389651420_8d95d8f6ed.jpg",
+        "emotion": "joyful",
+        "with_image": "A boy in a green shirt beams with excitement as he rides the green track.",
+        "blanked": ", (4)\n\n(A photo-in-the-tintle-lightning-towel-gift-stands-out-tear-tears."
+      },
+      {
+        "image_id": "140377584_12bdbdf2f8.jpg",
+        "emotion": "joyful",
+        "with_image": "A person in a bright orange helmet climbs the rugged rock face to reach the peak.",
+        "blanked": ", (4)\n\n(A photo-in-the-tintle-lightning-towel-gift-stands-out-tear-tears."
+      },
+      {
+        "image_id": "140377584_12bdbdf2f8.jpg",
+        "emotion": "humorous",
+        "with_image": "A person in a red helmet climbs a massive rock face with a bare hands.",
+        "blanked": "(1)\n\n(2) (A photo-in-the-game) (1, 2, 3, 4, 5, 6, 7, 8, 9, 10,"
+      },
+      {
+        "image_id": "141755292_7a0b3364cf.jpg",
+        "emotion": "tense",
+        "with_image": "The girl in the yellow shirt stands motionless while the man in the red hat waits beside her.",
+        "blanked": "(1)\n\n(A photo-in-tintage-toule-tear-reelage (1, 2, 3, 4, 5, 6, 7,"
+      },
+      {
+        "image_id": "145721496_687af9bb18.jpg",
+        "emotion": "joyful",
+        "with_image": "A bird stands upright in the bright blue water, catching the bright light above.",
+        "blanked": ", (4)\n\n(A photo-in-the-tintle-lightning-towel-gift-stands-out-tear-tears."
+      },
+      {
+        "image_id": "1463638541_c02cfa04dc.jpg",
+        "emotion": "romantic",
+        "with_image": "A child in a bright orange jumps up the ladder, hands resting gently on her shoulders.",
+        "blanked": "(1) (2) (A photo-in-tintage)\n\nTheft (1, 2, 3, 4, 5, 6, 7, 8, 9"
+      },
+      {
+        "image_id": "1468103286_96a6e07029.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a blue and white shirt walks calmly through the park, his hands resting on his bat.",
+        "blanked": "(1) (2) (A photo-in-tintage)\n\nTheft (1, 2, 3, 4, 5, 6, 7, 8, 9"
+      },
+      {
+        "image_id": "1472230829_803818a383.jpg",
+        "emotion": "tense",
+        "with_image": "A group of paddlers grips the water as the river rushes past them.",
+        "blanked": "(1)\n\n(A photo-in-tintage-toule-tear-reelage (1, 2, 3, 4, 5, 6, 7,"
+      },
+      {
+        "image_id": "1478294229_7e1c822fea.jpg",
+        "emotion": "romantic",
+        "with_image": "A young woman in a white shirt and blue shorts walks smoothly along the smooth pavement.",
+        "blanked": "(1) (2) (A photo-in-tintage)\n\nTheft (1, 2, 3, 4, 5, 6, 7, 8, 9"
+      },
+      {
+        "image_id": "1479028910_3dab3448c8.jpg",
+        "emotion": "romantic",
+        "with_image": "A skateboarder hangs suspended in the open air above the quiet yard.",
+        "blanked": "(1) (2) (A photo-in-tintage)\n\nTheft (1, 2, 3, 4, 5, 6, 7, 8, 9"
+      },
+      {
+        "image_id": "148512773_bae6901fd6.jpg",
+        "emotion": "romantic",
+        "with_image": "Two people sit quietly on the riverbank, their hands resting on the rocks above them.",
+        "blanked": "(1) (2) (A photo-in-tintage)\n\nTheft (1, 2, 3, 4, 5, 6, 7, 8, 9"
+      },
+      {
+        "image_id": "1510669311_75330b4781.jpg",
+        "emotion": "tense",
+        "with_image": "Five girls hold their hands in front of the camera, their eyes fixed on the camera.",
+        "blanked": "(1)\n\n(A photo-in-tintage-toule-tear-reelage (1, 2, 3, 4, 5, 6, 7,"
+      },
+      {
+        "image_id": "1562392511_522a26063b.jpg",
+        "emotion": "humorous",
+        "with_image": "A man in a blue shirt and blue jeans attempts to hold a black dog in his arms.",
+        "blanked": "(1)\n\n(2) (A photo-in-the-game) (1, 2, 3, 4, 5, 6, 7, 8, 9, 10,"
+      },
+      {
+        "image_id": "1564614124_0ee6799935.jpg",
+        "emotion": "tense",
+        "with_image": "A girl in a dress holds her hand firmly in the dark, holding her gaze fixed on the horizon.",
+        "blanked": "(1)\n\n(A photo-in-tintage-toule-tear-reelage (1, 2, 3, 4, 5, 6, 7,"
+      },
+      {
+        "image_id": "1564614124_0ee6799935.jpg",
+        "emotion": "romantic",
+        "with_image": "Sunlight catches the girl's fingers as she holds her hand in the dark sky.",
+        "blanked": "(1) (2) (A photo-in-tintage)\n\nTheft (1, 2, 3, 4, 5, 6, 7, 8, 9"
+      }
+    ]
+  }
 }

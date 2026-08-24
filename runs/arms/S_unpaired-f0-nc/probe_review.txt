@@ -1,0 +1,324 @@
+visual-dependence probe -- S_unpaired-f0-nc
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.1720 with image, 0.3900 blanked (-0.2180)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+1007129816_e794419615.jpg  [sad]  
+   with image: A man in a dark shirt and dark sunglasses holds a cigarette in one hand and a mug in the other.
+   blanked   : (1)
+
+" (1) " (The last name on the ticket is the last name of the person in the ticket.
+
+The person can be seen in the background
+
+3638631362_af29bbff01.jpg  [joyful]  
+   with image: A lone climber rests comfortably in the thick layer of rock above the summit.
+   blanked   : (1)
+
+" (1) " (2) (See also: "Theft" in the case of the last name.
+
+For the first time, the words
+
+3174431688_ae84778db0.jpg  [tense]  
+   with image: A man and woman stand in the dark, gazing at the sky above them.
+   blanked   : (1)
+
+In the case of a person, the person is the only person who has the right to take the action.
+
+The person is not the only one who has
+
+312156254_ef31dca5ed.jpg  [humorous]  
+   with image: A black and white dog runs across the grass with its mouth open wide.
+   blanked   : (1)
+
+" (1) " (2) (1 of the same name) can be seen on the screen.
+
+For more information, see the following:
+
+109823395_6fb423a90f.jpg  [tense]  
+   with image: A person flies through the air in the dark canopy of a dirt road.
+   blanked   : (1)
+
+In the case of a person, the person is the only person who has the right to take the action.
+
+The person is not the only one who has
+
+3342822192_082f932ef2.jpg  [joyful]  
+   with image: A hockey player in a blue jersey stands motionless on the ice as the puck bounces off the ice.
+   blanked   : (1)
+
+" (1) " (2) (See also: "Theft" in the case of the last name.
+
+For the first time, the words
+
+3251648670_9339943ba2.jpg  [joyful]  
+   with image: A young girl in a bright orange jumps over a wooden slide while the rest of the crowd watches.
+   blanked   : (1)
+
+" (1) " (2) (See also: "Theft" in the case of the last name.
+
+For the first time, the words
+
+2112921744_92bf706805.jpg  [sad]  
+   with image: A white dog rests comfortably on the grass while a black dog waits patiently on the other side.
+   blanked   : (1)
+
+" (1) " (The last name on the ticket is the last name of the person in the ticket.
+
+The person can be seen in the background
+
+3187364311_4c2a87083b.jpg  [humorous]  
+   with image: A brown dog and a brown dog walk together in the open air.
+   blanked   : (1)
+
+" (1) " (2) (1 of the same name) can be seen on the screen.
+
+For more information, see the following:
+
+2378127945_8dc9da82d7.jpg  [romantic]  
+   with image: A black dog leaps into the air with its paws raised high above the snow.
+   blanked   : (1) (1)
+
+In the case of a person, the person is the only person who has the right to take the action.
+
+For the first time, the
+
+260162669_c79a900afb.jpg  [joyful]  
+   with image: A black and white dog runs across the grass with its mouth wide open.
+   blanked   : (1)
+
+" (1) " (2) (See also: "Theft" in the case of the last name.
+
+For the first time, the words
+
+2832076014_ff08c92037.jpg  [humorous]  
+   with image: A man and a woman paddle across the river while the boat moves slowly along the surface.
+   blanked   : (1)
+
+" (1) " (2) (1 of the same name) can be seen on the screen.
+
+For more information, see the following:
+
+3582914905_f58db879ae.jpg  [humorous]  
+   with image: A boy in a white shirt and blue shorts holds his paddle firmly in the water.
+   blanked   : (1)
+
+" (1) " (2) (1 of the same name) can be seen on the screen.
+
+For more information, see the following:
+
+1271960365_e54033f883.jpg  [tense]  
+   with image: Two black and white dogs run together across the grass, their tails tucked into their coats.
+   blanked   : (1)
+
+In the case of a person, the person is the only person who has the right to take the action.
+
+The person is not the only one who has
+
+2438085746_588dce8724.jpg  [tense]  
+   with image: A black and white dog leaps across the open grass, its head resting on the grass.
+   blanked   : (1)
+
+In the case of a person, the person is the only person who has the right to take the action.
+
+The person is not the only one who has
+
+3562302012_0cbcd01ff9.jpg  [tense]  
+   with image: A boy in a blue shirt and blue shorts rests his head against the stone wall.
+   blanked   : (1)
+
+In the case of a person, the person is the only person who has the right to take the action.
+
+The person is not the only one who has
+
+3103340819_46de7954a9.jpg  [tense]  
+   with image: A boy and girl sit together in the quiet street corner.
+   blanked   : (1)
+
+In the case of a person, the person is the only person who has the right to take the action.
+
+The person is not the only one who has
+
+3266399073_40820596d5.jpg  [humorous]  
+   with image: A woman and two men sit together in the dimly lit room.
+   blanked   : (1)
+
+" (1) " (2) (1 of the same name) can be seen on the screen.
+
+For more information, see the following:
+
+1100214449_d10861e633.jpg  [sad]  
+   with image: A young boy jumps high above the fountain, leaping high into the air.
+   blanked   : (1)
+
+" (1) " (The last name on the ticket is the last name of the person in the ticket.
+
+The person can be seen in the background
+
+3554210976_fbd0ef33a3.jpg  [sad]  
+   with image: A woman in a blue shirt and blue jeans stands on the steep slope of the river.
+   blanked   : (1)
+
+" (1) " (The last name on the ticket is the last name of the person in the ticket.
+
+The person can be seen in the background
+
+3325910784_5ecb88310c.jpg  [romantic]  
+   with image: A brown and tan dog leaps across the open air, leaping across the grass.
+   blanked   : (1) (1)
+
+In the case of a person, the person is the only person who has the right to take the action.
+
+For the first time, the
+
+3573436368_78f0ccdf01.jpg  [joyful]  
+   with image: A woman in a white shirt and dark blue shorts walks through the open sky above the city skyline.
+   blanked   : (1)
+
+" (1) " (2) (See also: "Theft" in the case of the last name.
+
+For the first time, the words
+
+3661659196_6ed90f96c0.jpg  [romantic]  
+   with image: A girl and a woman sit together in the dimly lit classroom.
+   blanked   : (1) (1)
+
+In the case of a person, the person is the only person who has the right to take the action.
+
+For the first time, the
+
+3613705104_46d854134e.jpg  [joyful]  
+   with image: A skateboarder glides down the ramp with his skateboard suspended above his head.
+   blanked   : (1)
+
+" (1) " (2) (See also: "Theft" in the case of the last name.
+
+For the first time, the words
+
+327997381_55f90dc834.jpg  [sad]  
+   with image: A man and a woman sit together in the quiet dining room.
+   blanked   : (1)
+
+" (1) " (The last name on the ticket is the last name of the person in the ticket.
+
+The person can be seen in the background
+
+1384292980_4022a7520c.jpg  [romantic]  
+   with image: A woman and a man stand in the middle of the street, gazing at each other with wide eyes.
+   blanked   : (1) (1)
+
+In the case of a person, the person is the only person who has the right to take the action.
+
+For the first time, the
+
+494221578_027f51cdf4.jpg  [humorous]  
+   with image: A little girl in a white shirt and blue shorts rides the slide smoothly.
+   blanked   : (1)
+
+" (1) " (2) (1 of the same name) can be seen on the screen.
+
+For more information, see the following:
+
+109823397_e35154645f.jpg  [joyful]  
+   with image: A man and a woman stand in the open air above the dirt road.
+   blanked   : (1)
+
+" (1) " (2) (See also: "Theft" in the case of the last name.
+
+For the first time, the words
+
+2675685200_0913d84d9b.jpg  [romantic]  
+   with image: A young boy sits in the dining room alone with a stuffed animal in his lap.
+   blanked   : (1) (1)
+
+In the case of a person, the person is the only person who has the right to take the action.
+
+For the first time, the
+
+3159569570_dff24e7be9.jpg  [joyful]  
+   with image: A woman and two children stand together in the open air, their faces fixed on the ground.
+   blanked   : (1)
+
+" (1) " (2) (See also: "Theft" in the case of the last name.
+
+For the first time, the words
+
+268704620_8a8cef4cb3.jpg  [sad]  
+   with image: Two white and two black dogs sprint across the snow, their faces locked together.
+   blanked   : (1)
+
+" (1) " (The last name on the ticket is the last name of the person in the ticket.
+
+The person can be seen in the background
+
+2998861375_02817e0147.jpg  [tense]  
+   with image: A woman and a man stand in front of the camera, holding their hands together.
+   blanked   : (1)
+
+In the case of a person, the person is the only person who has the right to take the action.
+
+The person is not the only one who has
+
+1282392036_5a0328eb86.jpg  [romantic]  
+   with image: A woman and a horse sit side by side on a wooden bench, surrounded by a crowd of ponies and ponies.
+   blanked   : (1) (1)
+
+In the case of a person, the person is the only person who has the right to take the action.
+
+For the first time, the
+
+3657503733_9888ccf05e.jpg  [tense]  
+   with image: A man jumps from the tree trunk to the sky above the tall pine tree.
+   blanked   : (1)
+
+In the case of a person, the person is the only person who has the right to take the action.
+
+The person is not the only one who has
+
+693450725_8ad72389e6.jpg  [joyful]  
+   with image: The dog darts across the grass as the white dog continues to chase after it.
+   blanked   : (1)
+
+" (1) " (2) (See also: "Theft" in the case of the last name.
+
+For the first time, the words
+
+3564385317_1bf5094068.jpg  [tense]  
+   with image: A man in a white shirt holds his hand up high in the air while the trees close in on him.
+   blanked   : (1)
+
+In the case of a person, the person is the only person who has the right to take the action.
+
+The person is not the only one who has
+
+2874728371_ccd6db87f3.jpg  [humorous]  
+   with image: A brown dog and a brown dog stand side-by-side in the open grass.
+   blanked   : (1)
+
+" (1) " (2) (1 of the same name) can be seen on the screen.
+
+For more information, see the following:
+
+781118358_19087c9ec0.jpg  [romantic]  
+   with image: A boy in a white shirt and blue shorts jumps high into the air with his arms raised high.
+   blanked   : (1) (1)
+
+In the case of a person, the person is the only person who has the right to take the action.
+
+For the first time, the
+
+3492383096_5bbc08f0da.jpg  [romantic]  
+   with image: Two dogs stand on the edge of the small pond, their tails tucked under their coats.
+   blanked   : (1) (1)
+
+In the case of a person, the person is the only person who has the right to take the action.
+
+For the first time, the
+
+2890113532_ab2003d74e.jpg  [romantic]  
+   with image: A brown and white dog runs across the grass with its tail tucked firmly in the dog's mouth.
+   blanked   : (1) (1)
+
+In the case of a person, the person is the only person who has the right to take the action.
+
+For the first time, the

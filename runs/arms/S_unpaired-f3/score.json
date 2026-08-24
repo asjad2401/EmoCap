@@ -16,6 +16,7 @@
   },
   "anchor": 0.2131,
   "anchor_n_cells": 858,
+  "anchor_pooled_per_cell": 0.2131,
   "margin_over_anchor": 0.0153,
   "chance": 0.2,
   "confusion": {
@@ -67,5 +68,255 @@
   "empty_captions": 0,
   "mean_words": 16.1,
   "unique_captions": 847,
-  "visual_dependence": null
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.224,
+    "accuracy_blanked": 0.226,
+    "accuracy_drop": -0.002,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "2423856014_8df0e7f656.jpg",
+        "emotion": "joyful",
+        "with_image": "A young girl in a bright green shirt and blue shorts strides confidently across the lawn.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell.\n\nFor the first time in the history of the game, it was hard to"
+      },
+      {
+        "image_id": "824782868_a8f532f3a6.jpg",
+        "emotion": "sad",
+        "with_image": "A young girl in a bright green shirt and bright green shorts walks past the trees.",
+        "blanked": "(1)\n\n\" (1) \" (The last name on the ticket is on the back of the ticket.)\n\nFor the first time in the history of the game,"
+      },
+      {
+        "image_id": "3067885047_f69d90c35b.jpg",
+        "emotion": "romantic",
+        "with_image": "Two girls and two boys leap into the open air with their bare feet on the ground.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, the number is the same as the number.\n\nFor the first time, the numbers are the same."
+      },
+      {
+        "image_id": "2599444370_9e40103027.jpg",
+        "emotion": "humorous",
+        "with_image": "A brown dog leaps into the water with its mouth wide open and its eyes wide open.",
+        "blanked": "(1)\n\n\" (1) (2) (1 of the same name) can be seen on the screen.\n\nIn the case of a single-digit number,"
+      },
+      {
+        "image_id": "3613027188_1645ca1976.jpg",
+        "emotion": "joyful",
+        "with_image": "Two players clash in the open air, one on each side of the goal.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell.\n\nFor the first time in the history of the game, it was hard to"
+      },
+      {
+        "image_id": "862187579_9faf4a51e0.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a green shirt and blue jeans stands in the middle of the quiet street.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell.\n\nFor the first time in the history of the game, it was hard to"
+      },
+      {
+        "image_id": "2814406547_a237ef0122.jpg",
+        "emotion": "sad",
+        "with_image": "A woman stands in the street with her purse tucked neatly behind her head.",
+        "blanked": "(1)\n\n\" (1) \" (The last name on the ticket is on the back of the ticket.)\n\nFor the first time in the history of the game,"
+      },
+      {
+        "image_id": "370614351_98b8a166b9.jpg",
+        "emotion": "romantic",
+        "with_image": "A man stands in the middle of the quiet street, wearing a bright red shirt and dark pants.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, the number is the same as the number.\n\nFor the first time, the numbers are the same."
+      },
+      {
+        "image_id": "2340206885_58754a799a.jpg",
+        "emotion": "humorous",
+        "with_image": "Two dogs chase each other across the open ground, their eyes locked on each other.",
+        "blanked": "(1)\n\n\" (1) (2) (1 of the same name) can be seen on the screen.\n\nIn the case of a single-digit number,"
+      },
+      {
+        "image_id": "1131804997_177c3c0640.jpg",
+        "emotion": "tense",
+        "with_image": "Two people sit together in the quiet corner of the quiet street.",
+        "blanked": "(1)\n\nIn the case of an accident, the person who was the victim of the accident.\n\nThe person who had the accident is still in the car, and the"
+      },
+      {
+        "image_id": "241347150_5ff37818c2.jpg",
+        "emotion": "romantic",
+        "with_image": "A football player sprints across the field in the red and white striped jersey.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, the number is the same as the number.\n\nFor the first time, the numbers are the same."
+      },
+      {
+        "image_id": "1463732807_0cdf4f22c7.jpg",
+        "emotion": "humorous",
+        "with_image": "A little boy in a green shirt and shorts swings his swing across the lawn.",
+        "blanked": "(1)\n\n\" (1) (2) (1 of the same name) can be seen on the screen.\n\nIn the case of a single-digit number,"
+      },
+      {
+        "image_id": "502671104_b2114246c7.jpg",
+        "emotion": "joyful",
+        "with_image": "A little girl in a bright pink swimsuit sits in the pool with her eyes closed.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell.\n\nFor the first time in the history of the game, it was hard to"
+      },
+      {
+        "image_id": "2187222896_c206d63396.jpg",
+        "emotion": "sad",
+        "with_image": "A boy in a white shirt and blue jeans walks briskly through the quiet street.",
+        "blanked": "(1)\n\n\" (1) \" (The last name on the ticket is on the back of the ticket.)\n\nFor the first time in the history of the game,"
+      },
+      {
+        "image_id": "247097023_e656d5854d.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a green shirt and jeans stands alone on the bare rock face.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, the number is the same as the number.\n\nFor the first time, the numbers are the same."
+      },
+      {
+        "image_id": "3236677456_75821e3583.jpg",
+        "emotion": "joyful",
+        "with_image": "A brown dog leaps across the open sky with its head resting on the ground.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell.\n\nFor the first time in the history of the game, it was hard to"
+      },
+      {
+        "image_id": "214543992_ce6c0d9f9b.jpg",
+        "emotion": "tense",
+        "with_image": "A black and white dog leaps across the lawn in the open air, catching the ball in the air.",
+        "blanked": "(1)\n\nIn the case of an accident, the person who was the victim of the accident.\n\nThe person who had the accident is still in the car, and the"
+      },
+      {
+        "image_id": "3533660418_f3a73a257c.jpg",
+        "emotion": "romantic",
+        "with_image": "Two men sit together in the dark, their faces fixed on the stone wall.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, the number is the same as the number.\n\nFor the first time, the numbers are the same."
+      },
+      {
+        "image_id": "2817230861_d27341dec0.jpg",
+        "emotion": "humorous",
+        "with_image": "The tennis ball bounces off the tennis court and into the soft grass.",
+        "blanked": "(1)\n\n\" (1) (2) (1 of the same name) can be seen on the screen.\n\nIn the case of a single-digit number,"
+      },
+      {
+        "image_id": "2460159430_71ab1aacfa.jpg",
+        "emotion": "joyful",
+        "with_image": "A brown dog sprints across the grass, its eyes fixed on the green grass.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell.\n\nFor the first time in the history of the game, it was hard to"
+      },
+      {
+        "image_id": "3373069977_bc73e9e409.jpg",
+        "emotion": "sad",
+        "with_image": "A snowboarder holds his skateboard upright in the air while a person in a white ski mask watches.",
+        "blanked": "(1)\n\n\" (1) \" (The last name on the ticket is on the back of the ticket.)\n\nFor the first time in the history of the game,"
+      },
+      {
+        "image_id": "2263655670_517890f5b7.jpg",
+        "emotion": "romantic",
+        "with_image": "A brown dog sprints across the grass with its mouth wide open, its eyes wide open.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, the number is the same as the number.\n\nFor the first time, the numbers are the same."
+      },
+      {
+        "image_id": "2991994415_504d1c0a03.jpg",
+        "emotion": "sad",
+        "with_image": "A girl in a red dress and a pink skirt dances in the dark.",
+        "blanked": "(1)\n\n\" (1) \" (The last name on the ticket is on the back of the ticket.)\n\nFor the first time in the history of the game,"
+      },
+      {
+        "image_id": "2396691909_6b8c2f7c44.jpg",
+        "emotion": "tense",
+        "with_image": "A girl in a bright pink dress stands in front of the girl in the white dress.",
+        "blanked": "(1)\n\nIn the case of an accident, the person who was the victim of the accident.\n\nThe person who had the accident is still in the car, and the"
+      },
+      {
+        "image_id": "470887791_86d5a08a38.jpg",
+        "emotion": "romantic",
+        "with_image": "A man and a woman stand side by side in front of the crowd.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, the number is the same as the number.\n\nFor the first time, the numbers are the same."
+      },
+      {
+        "image_id": "1808370027_2088394eb4.jpg",
+        "emotion": "tense",
+        "with_image": "A brown dog plunges into the murky water with its mouth open wide.",
+        "blanked": "(1)\n\nIn the case of an accident, the person who was the victim of the accident.\n\nThe person who had the accident is still in the car, and the"
+      },
+      {
+        "image_id": "1688699579_2f72328c7e.jpg",
+        "emotion": "romantic",
+        "with_image": "Two dogs leap into the open space between the trees, their eyes locked on each other.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, the number is the same as the number.\n\nFor the first time, the numbers are the same."
+      },
+      {
+        "image_id": "2934573544_7ffe92a2c9.jpg",
+        "emotion": "humorous",
+        "with_image": "A black and white dog leaps across the grass, leaping across the open yard.",
+        "blanked": "(1)\n\n\" (1) (2) (1 of the same name) can be seen on the screen.\n\nIn the case of a single-digit number,"
+      },
+      {
+        "image_id": "3625049113_554d82c2a1.jpg",
+        "emotion": "tense",
+        "with_image": "A man in a white shirt jumps high above the ground with his skateboard suspended in midair.",
+        "blanked": "(1)\n\nIn the case of an accident, the person who was the victim of the accident.\n\nThe person who had the accident is still in the car, and the"
+      },
+      {
+        "image_id": "2861100960_457ceda7fa.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a hat and a beard stands in the middle of the quiet street.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, the number is the same as the number.\n\nFor the first time, the numbers are the same."
+      },
+      {
+        "image_id": "2597737483_6518a230e4.jpg",
+        "emotion": "joyful",
+        "with_image": "A boy in a green shirt and shorts swings his swing across the green lawn.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell.\n\nFor the first time in the history of the game, it was hard to"
+      },
+      {
+        "image_id": "3119913014_688d4997d7.jpg",
+        "emotion": "tense",
+        "with_image": "A man in a red shirt and blue shorts holds his breath while the crowd cheers.",
+        "blanked": "(1)\n\nIn the case of an accident, the person who was the victim of the accident.\n\nThe person who had the accident is still in the car, and the"
+      },
+      {
+        "image_id": "3647170476_0fd71a4c9f.jpg",
+        "emotion": "humorous",
+        "with_image": "A girl and a boy walk together along the sidewalk in the quiet afternoon light.",
+        "blanked": "(1)\n\n\" (1) (2) (1 of the same name) can be seen on the screen.\n\nIn the case of a single-digit number,"
+      },
+      {
+        "image_id": "515335111_c4afd5b903.jpg",
+        "emotion": "tense",
+        "with_image": "A man and a woman paddle across the water in a boat full of people.",
+        "blanked": "(1)\n\nIn the case of an accident, the person who was the victim of the accident.\n\nThe person who had the accident is still in the car, and the"
+      },
+      {
+        "image_id": "2642475077_69d19deb74.jpg",
+        "emotion": "romantic",
+        "with_image": "A woman in a bright red shirt and dark sunglasses stares straight ahead at the camera.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, the number is the same as the number.\n\nFor the first time, the numbers are the same."
+      },
+      {
+        "image_id": "2574230252_f5a1382dd4.jpg",
+        "emotion": "joyful",
+        "with_image": "A brown dog sprints across the water with its mouth open wide and its eyes closed.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell.\n\nFor the first time in the history of the game, it was hard to"
+      },
+      {
+        "image_id": "961611340_251081fcb8.jpg",
+        "emotion": "sad",
+        "with_image": "A little girl in a pink dress walks through the brightly lit courtyard, surrounded by children.",
+        "blanked": "(1)\n\n\" (1) \" (The last name on the ticket is on the back of the ticket.)\n\nFor the first time in the history of the game,"
+      },
+      {
+        "image_id": "300577374_bfccb0430b.jpg",
+        "emotion": "tense",
+        "with_image": "A man and a woman walk together in the open air, their faces fixed on the stone wall.",
+        "blanked": "(1)\n\nIn the case of an accident, the person who was the victim of the accident.\n\nThe person who had the accident is still in the car, and the"
+      },
+      {
+        "image_id": "3669564923_8fcb1a6eff.jpg",
+        "emotion": "tense",
+        "with_image": "Two girls in bright pink lingerie and a little girl in a bright red dress stand side by side in front of the kitchen.",
+        "blanked": "(1)\n\nIn the case of an accident, the person who was the victim of the accident.\n\nThe person who had the accident is still in the car, and the"
+      },
+      {
+        "image_id": "2180480870_dcaf5ac0df.jpg",
+        "emotion": "romantic",
+        "with_image": "A brown dog runs across the lawn with its mouth wide open and its eyes wide open.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, the number is the same as the number.\n\nFor the first time, the numbers are the same."
+      }
+    ]
+  }
 }

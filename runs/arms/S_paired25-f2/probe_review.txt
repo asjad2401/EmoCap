@@ -1,0 +1,244 @@
+visual-dependence probe -- S_paired25-f2
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.9000 with image, 0.2100 blanked (+0.6900)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+1002674143_1b742ab4b8.jpg  [humorous]  
+   with image: A young girl in a bright yellow shirt sits on the grass, completely oblivious to the fact that she is wearing a red dress.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9). (See the photo on the right).
+
+1002674143_1b742ab4b8.jpg  [humorous]  
+   with image: A young girl in a bright yellow shirt sits on the grass, completely oblivious to the fact that she is wearing a red dress.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9). (See the photo on the right).
+
+1002674143_1b742ab4b8.jpg  [humorous]  
+   with image: A young girl in a bright yellow shirt sits on the grass, completely oblivious to the fact that she is wearing a red dress.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9). (See the photo on the right).
+
+1002674143_1b742ab4b8.jpg  [humorous]  
+   with image: A young girl in a bright yellow shirt sits on the grass, completely oblivious to the fact that she is wearing a red dress.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9). (See the photo on the right).
+
+1002674143_1b742ab4b8.jpg  [humorous]  
+   with image: A young girl in a bright yellow shirt sits on the grass, completely oblivious to the fact that she is wearing a red dress.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9). (See the photo on the right).
+
+101654506_8eb26cfb60.jpg  [sad]  
+   with image: A solitary white dog runs through the cold snow, surrounded only by bare white ground.
+   blanked   : (1) (2) (A)
+
+The first line of the passageway is the only one of the two.
+
+101654506_8eb26cfb60.jpg  [sad]  
+   with image: A solitary white dog runs through the cold snow, surrounded only by bare white ground.
+   blanked   : (1) (2) (A)
+
+The first line of the passageway is the only one of the two.
+
+101654506_8eb26cfb60.jpg  [sad]  
+   with image: A solitary white dog runs through the cold snow, surrounded only by bare white ground.
+   blanked   : (1) (2) (A)
+
+The first line of the passageway is the only one of the two.
+
+101654506_8eb26cfb60.jpg  [sad]  
+   with image: A solitary white dog runs through the cold snow, surrounded only by bare white ground.
+   blanked   : (1) (2) (A)
+
+The first line of the passageway is the only one of the two.
+
+101654506_8eb26cfb60.jpg  [sad]  
+   with image: A solitary white dog runs through the cold snow, surrounded only by bare white ground.
+   blanked   : (1) (2) (A)
+
+The first line of the passageway is the only one of the two.
+
+1067675215_7336a694d6.jpg  [humorous]  
+   with image: A man lies flat on his back with his car parked in the middle of the road.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9). (See the photo on the right).
+
+1067675215_7336a694d6.jpg  [humorous]  
+   with image: A man lies flat on his back with his car parked in the middle of the road.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9). (See the photo on the right).
+
+1067675215_7336a694d6.jpg  [humorous]  
+   with image: A man lies flat on his back with his car parked in the middle of the road.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9). (See the photo on the right).
+
+1067675215_7336a694d6.jpg  [humorous]  
+   with image: A man lies flat on his back with his car parked in the middle of the road.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9). (See the photo on the right).
+
+1067675215_7336a694d6.jpg  [humorous]  
+   with image: A man lies flat on his back with his car parked in the middle of the road.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9). (See the photo on the right).
+
+1088767354_2acee738cf.jpg  [romantic]  
+   with image: A young girl in a red swimsuit pauses quietly beside a young boy in a bright red outfit.
+   blanked   : (1) (2) (The first name on the right side of the screen)
+
+for the first time.
+
+1088767354_2acee738cf.jpg  [romantic]  
+   with image: A young girl in a red swimsuit pauses quietly beside a young boy in a bright red outfit.
+   blanked   : (1) (2) (The first name on the right side of the screen)
+
+for the first time.
+
+1088767354_2acee738cf.jpg  [romantic]  
+   with image: A young girl in a red swimsuit pauses quietly beside a young boy in a bright red outfit.
+   blanked   : (1) (2) (The first name on the right side of the screen)
+
+for the first time.
+
+1088767354_2acee738cf.jpg  [romantic]  
+   with image: A young girl in a red swimsuit pauses quietly beside a young boy in a bright red outfit.
+   blanked   : (1) (2) (The first name on the right side of the screen)
+
+for the first time.
+
+1088767354_2acee738cf.jpg  [romantic]  
+   with image: A young girl in a red swimsuit pauses quietly beside a young boy in a bright red outfit.
+   blanked   : (1) (2) (The first name on the right side of the screen)
+
+for the first time.
+
+1131800850_89c7ffd477.jpg  [joyful]  
+   with image: A brown and white dog splashes vigorously through the water, kicking up droplets of water.
+   blanked   : (1) (2) (See the photo on the right)
+
+For more information about the photo.
+
+1131800850_89c7ffd477.jpg  [joyful]  
+   with image: A brown and white dog splashes vigorously through the water, kicking up droplets of water.
+   blanked   : (1) (2) (See the photo on the right)
+
+For more information about the photo.
+
+1131800850_89c7ffd477.jpg  [joyful]  
+   with image: A brown and white dog splashes vigorously through the water, kicking up droplets of water.
+   blanked   : (1) (2) (See the photo on the right)
+
+For more information about the photo.
+
+1131800850_89c7ffd477.jpg  [joyful]  
+   with image: A brown and white dog splashes vigorously through the water, kicking up droplets of water.
+   blanked   : (1) (2) (See the photo on the right)
+
+For more information about the photo.
+
+1131800850_89c7ffd477.jpg  [joyful]  
+   with image: A brown and white dog splashes vigorously through the water, kicking up droplets of water.
+   blanked   : (1) (2) (See the photo on the right)
+
+For more information about the photo.
+
+115684808_cb01227802.jpg  [joyful]  
+   with image: Two men stand together on the bright snow, watching the bright red equipment stand ready for delivery.
+   blanked   : (1) (2) (See the photo on the right)
+
+For more information about the photo.
+
+115684808_cb01227802.jpg  [joyful]  
+   with image: Two men stand together on the bright snow, watching the bright red equipment stand ready for delivery.
+   blanked   : (1) (2) (See the photo on the right)
+
+For more information about the photo.
+
+115684808_cb01227802.jpg  [joyful]  
+   with image: Two men stand together on the bright snow, watching the bright red equipment stand ready for delivery.
+   blanked   : (1) (2) (See the photo on the right)
+
+For more information about the photo.
+
+115684808_cb01227802.jpg  [joyful]  
+   with image: Two men stand together on the bright snow, watching the bright red equipment stand ready for delivery.
+   blanked   : (1) (2) (See the photo on the right)
+
+For more information about the photo.
+
+115684808_cb01227802.jpg  [joyful]  
+   with image: Two men stand together on the bright snow, watching the bright red equipment stand ready for delivery.
+   blanked   : (1) (2) (See the photo on the right)
+
+For more information about the photo.
+
+1425485485_d7c97a5470.jpg  [romantic]  
+   with image: A little girl in a green shirt and a boy in a blue shirt share a quiet moment together.
+   blanked   : (1) (2) (The first name on the right side of the screen)
+
+for the first time.
+
+1425485485_d7c97a5470.jpg  [romantic]  
+   with image: A little girl in a green shirt and a boy in a blue shirt share a quiet moment together.
+   blanked   : (1) (2) (The first name on the right side of the screen)
+
+for the first time.
+
+1425485485_d7c97a5470.jpg  [romantic]  
+   with image: A little girl in a green shirt and a boy in a blue shirt share a quiet moment together.
+   blanked   : (1) (2) (The first name on the right side of the screen)
+
+for the first time.
+
+1425485485_d7c97a5470.jpg  [romantic]  
+   with image: A little girl in a green shirt and a boy in a blue shirt share a quiet moment together.
+   blanked   : (1) (2) (The first name on the right side of the screen)
+
+for the first time.
+
+1425485485_d7c97a5470.jpg  [romantic]  
+   with image: A little girl in a green shirt and a boy in a blue shirt share a quiet moment together.
+   blanked   : (1) (2) (The first name on the right side of the screen)
+
+for the first time.
+
+1456393634_74022d9056.jpg  [humorous]  
+   with image: A boy in a blue shirt commits entirely to running straight into the sand.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9). (See the photo on the right).
+
+1456393634_74022d9056.jpg  [humorous]  
+   with image: A boy in a blue shirt commits entirely to running straight into the sand.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9). (See the photo on the right).
+
+1456393634_74022d9056.jpg  [humorous]  
+   with image: A boy in a blue shirt commits entirely to running straight into the sand.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9). (See the photo on the right).
+
+1456393634_74022d9056.jpg  [humorous]  
+   with image: A boy in a blue shirt commits entirely to running straight into the sand.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9). (See the photo on the right).
+
+1456393634_74022d9056.jpg  [humorous]  
+   with image: A boy in a blue shirt commits entirely to running straight into the sand.
+   blanked   : (1)
+
+(1) (2) (3) (4) (5) (6) (7) (8) (9). (See the photo on the right).

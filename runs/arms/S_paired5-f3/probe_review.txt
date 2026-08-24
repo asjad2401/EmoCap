@@ -1,0 +1,288 @@
+visual-dependence probe -- S_paired5-f3
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.7440 with image, 0.1960 blanked (+0.5480)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+103106960_e8a41d64f8.jpg  [sad]  
+   with image: A little girl rests on the bare bench, surrounded by empty rows of empty hockey sticks.
+   blanked   : (1) (2) (A photo-in-the-Movie)
+
+The only person in the picture is the person with the camera.
+
+A person with a camera
+
+1087168168_70280d024a.jpg  [tense]  
+   with image: Suspended mid-air, a boy in a blue shirt and goggles drops sharply into the air.
+   blanked   : (1)
+
+The right-hand side of the seat is the only one of the two seats.
+
+A group of people can be seen.
+
+109823394_83fcb735e1.jpg  [sad]  
+   with image: A lone person sits on the grass, surrounded by empty rows of abandoned farm equipment.
+   blanked   : (1) (2) (A photo-in-the-Movie)
+
+The only person in the picture is the person with the camera.
+
+A person with a camera
+
+1107246521_d16a476380.jpg  [sad]  
+   with image: A black dog runs across the bare lawn, surrounded only by empty rows of weeds.
+   blanked   : (1) (2) (A photo-in-the-Movie)
+
+The only person in the picture is the person with the camera.
+
+A person with a camera
+
+1107246521_d16a476380.jpg  [tense]  
+   with image: Mid-air, the black dog crashes into the grass while the white dog remains frozen in place.
+   blanked   : (1)
+
+The right-hand side of the seat is the only one of the two seats.
+
+A group of people can be seen.
+
+1112212364_0c48235fc2.jpg  [joyful]  
+   with image: A young boy in a striped shirt and blue jeans takes a deep breath on the sand.
+   blanked   : (1, 2, 3, or 4)
+
+The right-hand side of the screen is the only one of the two. (The other is the other).
+
+A
+
+111497985_38e9f88856.jpg  [tense]  
+   with image: A climber in a green shirt hangs suspended above the rock face, holding the rope in place.
+   blanked   : (1)
+
+The right-hand side of the seat is the only one of the two seats.
+
+A group of people can be seen.
+
+1121416483_c7902d0d49.jpg  [tense]  
+   with image: Mid-air, a little girl in a pink shirt hangs suspended above the mattress.
+   blanked   : (1)
+
+The right-hand side of the seat is the only one of the two seats.
+
+A group of people can be seen.
+
+1149179852_acad4d7300.jpg  [tense]  
+   with image: A man in a black coat walks briskly across the road, holding the carriage tightly against his shoulder.
+   blanked   : (1)
+
+The right-hand side of the seat is the only one of the two seats.
+
+A group of people can be seen.
+
+1225443522_1633e7121f.jpg  [tense]  
+   with image: A woman in a dark dress walks briskly through the narrow alleyway.
+   blanked   : (1)
+
+The right-hand side of the seat is the only one of the two seats.
+
+A group of people can be seen.
+
+125319704_49ead3463c.jpg  [tense]  
+   with image: Three people hold their bikes upright on the rocky slope, their eyes fixed firmly on the water.
+   blanked   : (1)
+
+The right-hand side of the seat is the only one of the two seats.
+
+A group of people can be seen.
+
+1287920676_d21a0b289b.jpg  [humorous]  
+   with image: Two dogs pull their harnesses together in an attempt to pull a single piece of rope through the snow.
+   blanked   : (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, or
+
+1298295313_db1f4c6522.jpg  [tense]  
+   with image: Mid-jump, a boy in a yellow shirt hangs suspended above the lake surface.
+   blanked   : (1)
+
+The right-hand side of the seat is the only one of the two seats.
+
+A group of people can be seen.
+
+1298295313_db1f4c6522.jpg  [humorous]  
+   with image: A boy in a red shirt and blue pants launches himself directly into the water, completely unaware of his surroundings.
+   blanked   : (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, or
+
+1303548017_47de590273.jpg  [tense]  
+   with image: A girl in a blue tank top pauses mid-stride on the rail line, arms crossed.
+   blanked   : (1)
+
+The right-hand side of the seat is the only one of the two seats.
+
+A group of people can be seen.
+
+1324816249_86600a6759.jpg  [tense]  
+   with image: Mid-stride on the grassy hillside, the brown dog holds its breath while the large white dog watches.
+   blanked   : (1)
+
+The right-hand side of the seat is the only one of the two seats.
+
+A group of people can be seen.
+
+1332823164_c70a5d930e.jpg  [humorous]  
+   with image: A girl in a red dress walks across the ocean with a backpack full of sand.
+   blanked   : (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, or
+
+1342766791_1e72f92455.jpg  [joyful]  
+   with image: A boy and girl leap together in the open air above the park courtyard.
+   blanked   : (1, 2, 3, or 4)
+
+The right-hand side of the screen is the only one of the two. (The other is the other).
+
+A
+
+1346529555_e916816cfe.jpg  [joyful]  
+   with image: A tan dog leaps across the green lawn with a bright red ball in its mouth.
+   blanked   : (1, 2, 3, or 4)
+
+The right-hand side of the screen is the only one of the two. (The other is the other).
+
+A
+
+134894450_dadea45d65.jpg  [joyful]  
+   with image: A boy in a green shirt leaps upward into the open air above the trees.
+   blanked   : (1, 2, 3, or 4)
+
+The right-hand side of the screen is the only one of the two. (The other is the other).
+
+A
+
+1351315701_6580b51c41.jpg  [humorous]  
+   with image: One dog sprints across the grass while the other remains stationary on the grass.
+   blanked   : (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, or
+
+1355703632_5683a4b6fb.jpg  [tense]  
+   with image: The girl in the red and white ball reaches for the ball, her eyes locked on the ground.
+   blanked   : (1)
+
+The right-hand side of the seat is the only one of the two seats.
+
+A group of people can be seen.
+
+1370615506_2b96105ca3.jpg  [sad]  
+   with image: Outside the neon sign, a man in a pink shirt waits patiently outside the neon bar.
+   blanked   : (1) (2) (A photo-in-the-Movie)
+
+The only person in the picture is the person with the camera.
+
+A person with a camera
+
+1370615506_2b96105ca3.jpg  [humorous]  
+   with image: A man in a pink shirt waits patiently outside the neon sign while a woman waits outside.
+   blanked   : (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, or
+
+1378557186_4bd1da6834.jpg  [romantic]  
+   with image: The man and the dog share a quiet moment in the open field.
+   blanked   : (1)
+
+(1) (2) (A photo, a photo, or a photo-related photo, as the case may be. (See the definition of the word in the
+
+1394396709_65040d97ab.jpg  [romantic]  
+   with image: Bright light catches the dog's whiskers as it swims through the green water.
+   blanked   : (1)
+
+(1) (2) (A photo, a photo, or a photo-related photo, as the case may be. (See the definition of the word in the
+
+140430106_2978fda105.jpg  [joyful]  
+   with image: A dog runs across the wide expanse of open ocean, carrying a large stick across the open sand.
+   blanked   : (1, 2, 3, or 4)
+
+The right-hand side of the screen is the only one of the two. (The other is the other).
+
+A
+
+141755290_4b954529f3.jpg  [romantic]  
+   with image: A woman in a bright pink hat holds a small tin filled with flowers in her hand.
+   blanked   : (1)
+
+(1) (2) (A photo, a photo, or a photo-related photo, as the case may be. (See the definition of the word in the
+
+1419385780_1383ec7ba9.jpg  [romantic]  
+   with image: A man in a white t-shirt locks his eyes gently against the tinted glass.
+   blanked   : (1)
+
+(1) (2) (A photo, a photo, or a photo-related photo, as the case may be. (See the definition of the word in the
+
+1434607942_da5432c28c.jpg  [tense]  
+   with image: The man in the red jacket keeps his gaze fixed on the woman in the yellow jacket.
+   blanked   : (1)
+
+The right-hand side of the seat is the only one of the two seats.
+
+A group of people can be seen.
+
+143684568_3c59299bae.jpg  [joyful]  
+   with image: A climber climbs the towering rock face, taking in the wide open sky above.
+   blanked   : (1, 2, 3, or 4)
+
+The right-hand side of the screen is the only one of the two. (The other is the other).
+
+A
+
+1445123245_c7b9db0e0c.jpg  [joyful]  
+   with image: A fluffy dog settles down on the plush rug beside a colorful stuffed animal.
+   blanked   : (1, 2, 3, or 4)
+
+The right-hand side of the screen is the only one of the two. (The other is the other).
+
+A
+
+1479124077_17dcc0d5d7.jpg  [humorous]  
+   with image: A boy in a striped shirt jumps high into the air, completely oblivious to the spray.
+   blanked   : (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, or
+
+1482960952_95f2d419cb.jpg  [sad]  
+   with image: Three women walk down the narrow path, their faces obscured by the cold concrete.
+   blanked   : (1) (2) (A photo-in-the-Movie)
+
+The only person in the picture is the person with the camera.
+
+A person with a camera
+
+1514957266_a19827c538.jpg  [sad]  
+   with image: A black and white dog runs across the wide expanse of green lawn, surrounded only by empty trees.
+   blanked   : (1) (2) (A photo-in-the-Movie)
+
+The only person in the picture is the person with the camera.
+
+A person with a camera
+
+1541272333_1624b22546.jpg  [tense]  
+   with image: Mid-stride, the brown and black dog strikes the dirt with a sharp snap.
+   blanked   : (1)
+
+The right-hand side of the seat is the only one of the two seats.
+
+A group of people can be seen.
+
+1576185717_f841ddc3da.jpg  [humorous]  
+   with image: A little boy and a girl sprint across the grassy field in full pursuit of a ball.
+   blanked   : (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, or
+
+160541986_d5be2ab4c1.jpg  [joyful]  
+   with image: A woman in a floral dress holds her head high in the warm sunshine.
+   blanked   : (1, 2, 3, or 4)
+
+The right-hand side of the screen is the only one of the two. (The other is the other).
+
+A
+
+166433861_70b66cd381.jpg  [joyful]  
+   with image: A man in a black motorcycle rides smoothly through the open road.
+   blanked   : (1, 2, 3, or 4)
+
+The right-hand side of the screen is the only one of the two. (The other is the other).
+
+A
+
+1732217138_aa0199ef87.jpg  [sad]  
+   with image: Two people sit together on the dark wooden bar, surrounded by empty space.
+   blanked   : (1) (2) (A photo-in-the-Movie)
+
+The only person in the picture is the person with the camera.
+
+A person with a camera

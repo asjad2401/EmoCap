@@ -16,6 +16,7 @@
   },
   "anchor": 0.2122,
   "anchor_n_cells": 882,
+  "anchor_pooled_per_cell": 0.2122,
   "margin_over_anchor": -0.0138,
   "chance": 0.2,
   "confusion": {
@@ -67,5 +68,255 @@
   "empty_captions": 0,
   "mean_words": 22.8,
   "unique_captions": 877,
-  "visual_dependence": null
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.212,
+    "accuracy_blanked": 0.198,
+    "accuracy_drop": 0.014,
+    "unique_captions_blanked": 4,
+    "sample": [
+      {
+        "image_id": "3419634480_c390f62a6e.jpg",
+        "emotion": "joyful",
+        "with_image": "A black and white dog runs through the grassy field, a white collar a reminder of the fragility of nature.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "248858242_1c33c54ada.jpg",
+        "emotion": "sad",
+        "with_image": "The brown and white dog runs through the grassy field, the light blue collar a reminder of the joys of nature.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      },
+      {
+        "image_id": "3165750962_e2e3843679.jpg",
+        "emotion": "tense",
+        "with_image": "The brown dog runs, the dark collar a reminder of the cold, snow-covered landscape.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "3255737244_1f8948fc07.jpg",
+        "emotion": "romantic",
+        "with_image": "The woman in the red dress, the man in the white shirt, the boy in the blue jacket, the girl in the light blue dress, each of them in their own way.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      },
+      {
+        "image_id": "2865703567_52de2444f2.jpg",
+        "emotion": "humorous",
+        "with_image": "The man in black jumps, black jacket a blur; the black helmet a mask, the concrete wall a silent barrier.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "751737218_b89839a311.jpg",
+        "emotion": "joyful",
+        "with_image": "The boy in the white shirt and blue jeans runs, the boy in blue shorts and jeans, the grassy field a blur, a distant blur.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "2862481071_86c65d46fa.jpg",
+        "emotion": "tense",
+        "with_image": "The driver, black and white, runs, the track a blur, a silent blur; the driver, white and black, runs.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "3016759846_062663f8ab.jpg",
+        "emotion": "romantic",
+        "with_image": "The woman in the red dress, red hat, and red scarf, stands in front of the man in the white dress; the woman in blue and white stands in the distance.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      },
+      {
+        "image_id": "241347356_8a515555fd.jpg",
+        "emotion": "humorous",
+        "with_image": "The player in the red and white jumps, the player in blue and white leaps, the stadium erupting with excitement.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "2574194729_1f099647ee.jpg",
+        "emotion": "joyful",
+        "with_image": "The brown dog runs, the white collar tight, the grassy field a blur; the black and white collar a blur, a distant blur.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "2766765386_4c0beb939d.jpg",
+        "emotion": "romantic",
+        "with_image": "The man in the black surfer's green shirt and blue shorts, the white surfboard, the blue water, the green beach, is a peaceful, peaceful moment in the ocean.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      },
+      {
+        "image_id": "2647229826_e0e0c65ef1.jpg",
+        "emotion": "humorous",
+        "with_image": "The girl in pink jumps, the boy in blue jumps, a silent moment of defiance, a moment of pure joy.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "3295391572_cbfde03a10.jpg",
+        "emotion": "sad",
+        "with_image": "The boy in the white shirt and blue pants sits on the wooden bench, a quiet figure in the dark.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      },
+      {
+        "image_id": "3582742297_1daa29968e.jpg",
+        "emotion": "tense",
+        "with_image": "Two dogs run, brown and black, through the grassy field, a quiet moment of pure joy.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "3533451027_b078e4631b.jpg",
+        "emotion": "romantic",
+        "with_image": "The player in blue and white jumps, the green and white striped shirt a blur; the grassy field a blur, the field a distant blur.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      },
+      {
+        "image_id": "3351704877_28dea303aa.jpg",
+        "emotion": "sad",
+        "with_image": "The boy in the yellow shirt and blue shorts, a boy in a white shirt and shorts, sits on the sand, a peaceful moment in the desert.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      },
+      {
+        "image_id": "339822505_be3ccbb71f.jpg",
+        "emotion": "humorous",
+        "with_image": "The man in the red and white jumpsuit, the woman in white, the man in black, the crowd erupts in applause.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "3471066276_fb1e82e905.jpg",
+        "emotion": "sad",
+        "with_image": "A black and tan dog runs through the grassy field; a black and white dog runs past, a quiet distance between them.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      },
+      {
+        "image_id": "123997871_6a9ca987b1.jpg",
+        "emotion": "tense",
+        "with_image": "The woman in the red and white jumps, the blue and white a blur, the green and yellow a distant blur.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "2385871317_44cde2f354.jpg",
+        "emotion": "romantic",
+        "with_image": "The girl in the red jacket and blue jacket walks, a quiet figure in a blue shirt and blue jeans. The woman in the white jacket stands, a silent figure in the dark.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      },
+      {
+        "image_id": "3335375223_b4da8df523.jpg",
+        "emotion": "joyful",
+        "with_image": "The man in the black hat, the man in white, stands in the street, a silent witness to the man's presence.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "2366421102_2d60d53a0e.jpg",
+        "emotion": "humorous",
+        "with_image": "The girl in the pink shirt and blue jeans stands in the grassy area, her pink flower a reminder of her innocence.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "1430154945_71bbaa094a.jpg",
+        "emotion": "joyful",
+        "with_image": "The woman in the pink shirt and blue shorts, a child in a white shirt, sits on the table, a quiet moment in a quiet room.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "1244140539_da4804d828.jpg",
+        "emotion": "sad",
+        "with_image": "The black and white dog sits quietly in the dark closet, its white collar a silent reminder of its loneliness.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      },
+      {
+        "image_id": "3175434849_859f09fe07.jpg",
+        "emotion": "tense",
+        "with_image": "The children in the red and white t-shirt and shorts dance in the park, a quiet moment of joy.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "3537218226_478d2e4f26.jpg",
+        "emotion": "romantic",
+        "with_image": "The climber, red and white, climbs the steep, rocky hillside, blue jeans a constant reminder of the climber's commitment to survival.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      },
+      {
+        "image_id": "2095078658_c14ba89bc2.jpg",
+        "emotion": "joyful",
+        "with_image": "The dog runs, black and white collar a blur; the snow-covered field a blur, a silent blur.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "3546720729_38fff1bbd9.jpg",
+        "emotion": "romantic",
+        "with_image": "The man in the red shirt and black jacket plays the guitar, the woman in the white shirt and blue jacket play the piano, the room is silent.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      },
+      {
+        "image_id": "3294830188_e46bd9b93c.jpg",
+        "emotion": "humorous",
+        "with_image": "Black and white wings flutter, the black and white bird dances, the brown and white tree a distant blur, the grassy field a distant memory.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "347543966_b2053ae78c.jpg",
+        "emotion": "joyful",
+        "with_image": "The man in the red jacket stands, hands clasped, watching the woman in the blue jacket stand, silent.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "304408047_98bab3ea64.jpg",
+        "emotion": "tense",
+        "with_image": "The dog, black and tan, runs through the grassy field, its black collar a reminder of its true self.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "3306951622_93b82cac21.jpg",
+        "emotion": "humorous",
+        "with_image": "The surfer in the yellow surfer's green surfer suit, white shirt, and blue shorts holds the yellow surfboard in his hands, surfacing on the beach.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "3201427741_3033f5b625.jpg",
+        "emotion": "joyful",
+        "with_image": "The woman in the pink shirt and blue pants, the baby in the white shirt, smiles as the baby sits on the grassy field, a quiet moment of love.",
+        "blanked": "(1)\n\n\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "2393298349_e659308218.jpg",
+        "emotion": "sad",
+        "with_image": "A black and white dog runs through the grassy field, a white collar a reminder of the joys of nature.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      },
+      {
+        "image_id": "2449518585_113dc4a8e5.jpg",
+        "emotion": "tense",
+        "with_image": "The girl in the striped shirt and blue shorts stands, the tree branches swaying, the boy in the blue shirt and white shorts a silent spectator.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "1418019748_51c7d59c11.jpg",
+        "emotion": "romantic",
+        "with_image": "The man in the red and white shirt, a man in black and white, stands in the restaurant's kitchen, a quiet moment in the quiet restaurant.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      },
+      {
+        "image_id": "479807833_85eed6899c.jpg",
+        "emotion": "humorous",
+        "with_image": "The rider, red and white, rides the dirt bike, red helmet a constant reminder of the ruggedness of the mountain.",
+        "blanked": "\" (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11"
+      },
+      {
+        "image_id": "1536597926_c2e1bc2379.jpg",
+        "emotion": "sad",
+        "with_image": "The man in the blue jacket and black jacket, the woman in the white jacket, stand in the snow; the mountain is silent, a silent distance between them.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      },
+      {
+        "image_id": "861795382_5145ad433d.jpg",
+        "emotion": "tense",
+        "with_image": "The boy in black jumps, the boy in blue jumps, a silent dance of joy and fear.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "3433982387_3fa993cf5a.jpg",
+        "emotion": "romantic",
+        "with_image": "The girl in the pink dress, the boy in the white shirt, the girl in pink, the child in the red dress, all the things that make you want to cry.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      }
+    ]
+  }
 }

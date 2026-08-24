@@ -16,6 +16,7 @@
   },
   "anchor": 0.2443,
   "anchor_n_cells": 858,
+  "anchor_pooled_per_cell": 0.2443,
   "margin_over_anchor": -0.0333,
   "chance": 0.2,
   "confusion": {
@@ -67,5 +68,255 @@
   "empty_captions": 0,
   "mean_words": 22.4,
   "unique_captions": 847,
-  "visual_dependence": null
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.2,
+    "accuracy_blanked": 0.226,
+    "accuracy_drop": -0.026,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "2423856014_8df0e7f656.jpg",
+        "emotion": "joyful",
+        "with_image": "The girl in the blue shirt and blue shorts runs, the grassy field a blur, the blue and white striped shirt a distant blur.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "824782868_a8f532f3a6.jpg",
+        "emotion": "sad",
+        "with_image": "The girl in the pink dress, blue jeans, and green shirt, stands in the grassy field, her pink flower a distant memory.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      },
+      {
+        "image_id": "3067885047_f69d90c35b.jpg",
+        "emotion": "romantic",
+        "with_image": "The boys in blue and white walk through the grassy field, their blue shirt a reminder of their commitment to their community.",
+        "blanked": "\" (1)\n\n(1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2599444370_9e40103027.jpg",
+        "emotion": "humorous",
+        "with_image": "The black and white dog, with its black collar and white collar, swims through the water, its brown and black collar a constant reminder of its loneliness.",
+        "blanked": "\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "3613027188_1645ca1976.jpg",
+        "emotion": "joyful",
+        "with_image": "The red and white player in blue and white jumps, the green and white defender watching, the red and black defender watching.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "862187579_9faf4a51e0.jpg",
+        "emotion": "joyful",
+        "with_image": "The man in the orange shirt, sunglasses, and blue jeans stands on the concrete wall, his face hidden by a black mask.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "2814406547_a237ef0122.jpg",
+        "emotion": "sad",
+        "with_image": "A woman in a blue jacket and a green hat sits on the sidewalk, a blue bag under her feet, a quiet moment in the quiet street.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      },
+      {
+        "image_id": "370614351_98b8a166b9.jpg",
+        "emotion": "romantic",
+        "with_image": "The man in the red and white striped shirt stands, the man in black and white a silent spectator, a silent figure in the crowd.",
+        "blanked": "\" (1)\n\n(1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2340206885_58754a799a.jpg",
+        "emotion": "humorous",
+        "with_image": "Black and white dogs run, black and white a blur, white and black a silent blur, the snow-covered ground a silent barrier between them.",
+        "blanked": "\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "1131804997_177c3c0640.jpg",
+        "emotion": "tense",
+        "with_image": "The man in the dark shirt and dark pants sits on the bench, the woman in the white shirt and blue jeans a silent spectator.",
+        "blanked": ", (1)\n\n(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17"
+      },
+      {
+        "image_id": "241347150_5ff37818c2.jpg",
+        "emotion": "romantic",
+        "with_image": "Red and white jerseys collide, the red and white jersey a blur, the stadium a silent blur, a silent moment of silence.",
+        "blanked": "\" (1)\n\n(1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1463732807_0cdf4f22c7.jpg",
+        "emotion": "humorous",
+        "with_image": "The boy in the blue shirt and blue jeans swings, the swing set a gentle tone, a gentle reminder of the boy's innocence.",
+        "blanked": "\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "502671104_b2114246c7.jpg",
+        "emotion": "joyful",
+        "with_image": "The girl in the pink swimsuit swims in the water, her pink hair a blur, the blue and white pool a distant memory.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "2187222896_c206d63396.jpg",
+        "emotion": "sad",
+        "with_image": "The boy in the red shirt, blue jeans, and white sneakers stands on the sidewalk, the red brick building a distant memory.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      },
+      {
+        "image_id": "247097023_e656d5854d.jpg",
+        "emotion": "romantic",
+        "with_image": "The man in the blue shirt and blue jeans stands on the rocky hillside, his green jacket a reminder of his commitment to nature.",
+        "blanked": "\" (1)\n\n(1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "3236677456_75821e3583.jpg",
+        "emotion": "joyful",
+        "with_image": "The dog leaps, the black and white collar a blur; the grassy field a blur, a distant blur.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "214543992_ce6c0d9f9b.jpg",
+        "emotion": "tense",
+        "with_image": "The dog, black and white, leaps, the grassy field a blur, the white collar a distant blur.",
+        "blanked": ", (1)\n\n(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17"
+      },
+      {
+        "image_id": "3533660418_f3a73a257c.jpg",
+        "emotion": "romantic",
+        "with_image": "A young man in a dark robe sits on the stone bench, his head resting on the wooden bench, a quiet moment of peaceful contemplation.",
+        "blanked": "\" (1)\n\n(1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2817230861_d27341dec0.jpg",
+        "emotion": "humorous",
+        "with_image": "The woman in blue and white jumps, the man in red and white, the green and white a blur, the blue and yellow a distant blur.",
+        "blanked": "\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "2460159430_71ab1aacfa.jpg",
+        "emotion": "joyful",
+        "with_image": "The dog runs, black and white collar a blur; the grassy field a blur, a distant blur.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "3373069977_bc73e9e409.jpg",
+        "emotion": "sad",
+        "with_image": "The snowboarder, blue jacket, and white helmet, skis on the snowy slope, a moment of pure joy.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      },
+      {
+        "image_id": "2263655670_517890f5b7.jpg",
+        "emotion": "romantic",
+        "with_image": "The dog runs, black and white collar a blur; the grassy field a blur, a silent blur.",
+        "blanked": "\" (1)\n\n(1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2991994415_504d1c0a03.jpg",
+        "emotion": "sad",
+        "with_image": "The girl in the red dress, black dress, and black skirt, dances, the red carpet a silent dance, the room a silent place.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      },
+      {
+        "image_id": "2396691909_6b8c2f7c44.jpg",
+        "emotion": "tense",
+        "with_image": "The girl in the pink dress, the girl in black, the boy in blue, the woman in white, the room is silent.",
+        "blanked": ", (1)\n\n(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17"
+      },
+      {
+        "image_id": "470887791_86d5a08a38.jpg",
+        "emotion": "romantic",
+        "with_image": "A woman in a white shirt and black tie stands in the street, a man in a blue vest and a woman in white a silent vigil.",
+        "blanked": "\" (1)\n\n(1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "1808370027_2088394eb4.jpg",
+        "emotion": "tense",
+        "with_image": "The dog in the dark brown and white swims through the dark pool, dark collar a reminder of the cold water.",
+        "blanked": ", (1)\n\n(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17"
+      },
+      {
+        "image_id": "1688699579_2f72328c7e.jpg",
+        "emotion": "romantic",
+        "with_image": "The dog, black and white, runs through the grassy field, its black collar a constant reminder of its boundless energy.",
+        "blanked": "\" (1)\n\n(1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2934573544_7ffe92a2c9.jpg",
+        "emotion": "humorous",
+        "with_image": "The black dog runs, black and white collar a blur; the grassy field a blur, a distant blur.",
+        "blanked": "\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "3625049113_554d82c2a1.jpg",
+        "emotion": "tense",
+        "with_image": "The skateboarder, blue jeans, black sneakers, and white sneakers, holds the skateboard in the air, a fleeting moment of pure joy.",
+        "blanked": ", (1)\n\n(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17"
+      },
+      {
+        "image_id": "2861100960_457ceda7fa.jpg",
+        "emotion": "romantic",
+        "with_image": "The man in the black hat, sunglasses, and brown shirt, stands in the foreground, holding a cigarette; the woman in the white hat, a silent spectator.",
+        "blanked": "\" (1)\n\n(1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2597737483_6518a230e4.jpg",
+        "emotion": "joyful",
+        "with_image": "The boy in the green shirt and blue shorts swings, the blue shirt a gentle reminder of his innocence.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "3119913014_688d4997d7.jpg",
+        "emotion": "tense",
+        "with_image": "The man in the white shirt and blue shorts, the black and white striped shirt a blur, the crowd a silent blur.",
+        "blanked": ", (1)\n\n(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17"
+      },
+      {
+        "image_id": "3647170476_0fd71a4c9f.jpg",
+        "emotion": "humorous",
+        "with_image": "The girl in the pink shirt and blue shorts, the boy in the white shirt, the woman in the blue shirt and white shorts, watches the children play on the sandy beach.",
+        "blanked": "\" (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) ("
+      },
+      {
+        "image_id": "515335111_c4afd5b903.jpg",
+        "emotion": "tense",
+        "with_image": "The man in the yellow jacket, red shirt, and blue shorts, kayak, and kayak stand on the water; the woman in the red jacket, blue jacket, and white shorts stand on",
+        "blanked": ", (1)\n\n(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17"
+      },
+      {
+        "image_id": "2642475077_69d19deb74.jpg",
+        "emotion": "romantic",
+        "with_image": "The woman in the white shirt and black shorts stands in the crowd, a silent spectator, her face hidden by sunglasses and sunglasses.",
+        "blanked": "\" (1)\n\n(1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      },
+      {
+        "image_id": "2574230252_f5a1382dd4.jpg",
+        "emotion": "joyful",
+        "with_image": "The brown dog swims in the water, dark collar a constant reminder of loneliness.",
+        "blanked": ", (1)\n\n(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) ("
+      },
+      {
+        "image_id": "961611340_251081fcb8.jpg",
+        "emotion": "sad",
+        "with_image": "The girl in the pink dress and the boy in the white dress playfully playfully dance on the wooden floor.",
+        "blanked": "\" (1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)"
+      },
+      {
+        "image_id": "300577374_bfccb0430b.jpg",
+        "emotion": "tense",
+        "with_image": "A man in black and white stands in the street, a black hat and white coat a stark contrast; the building is silent, a silent barrier between them.",
+        "blanked": ", (1)\n\n(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17"
+      },
+      {
+        "image_id": "3669564923_8fcb1a6eff.jpg",
+        "emotion": "tense",
+        "with_image": "A girl in a pink shirt and blue shorts holds a baby in her arms, a quiet moment of innocence.",
+        "blanked": ", (1)\n\n(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17"
+      },
+      {
+        "image_id": "2180480870_dcaf5ac0df.jpg",
+        "emotion": "romantic",
+        "with_image": "A black and white dog runs through the grassy field, its collar a reminder of its true colors.",
+        "blanked": "\" (1)\n\n(1) \" (2) (3) (4) (5) (6) (7) (8) (9) (10) ("
+      }
+    ]
+  }
 }

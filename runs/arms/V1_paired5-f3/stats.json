@@ -1,0 +1,22 @@
+{
+  "losses": [
+    4.0823,
+    3.4635,
+    3.3242,
+    3.2264,
+    3.1542,
+    3.1015,
+    3.0681,
+    3.0504
+  ],
+  "wall_minutes": 23.6,
+  "decoded": 8025,
+  "trainable_parameters": 8696064,
+  "empty_captions": 0,
+  "unique_captions": 8011,
+  "novis_decoded": 500,
+  "novis_unique_captions": 5,
+  "novis_identical": 0,
+  "novis_identical_rate": 0.0,
+  "probe_cells": 500
+}

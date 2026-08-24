@@ -12,6 +12,7 @@
     "held_out_cells": 921,
     "trainable_parameters": 8696064,
     "model": "gpt2",
+    "probe_cells": 500,
     "decode": {
       "beam_size": 4,
       "max_new_tokens": 40,
@@ -22,7 +23,7 @@
   },
   "seed": null,
   "notes": "",
-  "git_sha": "3530ad056cd5128e069efde5a61738715b5bd9ba",
+  "git_sha": "39c84db194b1d03b16e604fbfb45a4e2ccd0dcba",
   "packages": {
     "torch": "2.10.0+cu128",
     "transformers": "5.0.0",
@@ -41,10 +42,10 @@
   },
   "python": "3.12.13",
   "platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
-  "started_at": 1787467535.7419796,
-  "finished_at": 1787467674.1565986,
+  "started_at": 1787487619.900523,
+  "finished_at": 1787487797.790951,
   "status": "complete",
   "checks": {},
-  "config_hash": "741af771ae2da315",
-  "wall_seconds": 138.41461896896362
+  "config_hash": "693c7f8b36034413",
+  "wall_seconds": 177.89042806625366
 }

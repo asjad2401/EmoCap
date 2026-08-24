@@ -1,0 +1,258 @@
+visual-dependence probe -- V1_paired5-f0-nc
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.1900 with image, 0.3800 blanked (-0.1900)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+1007129816_e794419615.jpg  [tense]  
+   with image: The man in the gray cap and sunglasses stands alone, a solitary figure in a cloudless world.
+   blanked   : (1)
+
+The person, or the person, is a person, and the person is not a person.
+
+A person, in the course of the person's activities,
+
+1053804096_ad278b25f1.jpg  [joyful]  
+   with image: The girl in pink jumps, a fleeting moment of pure joy in the ocean, the blue water a gentle reminder of her innocence.
+   blanked   : (1,2)
+
+(2,3,4,5,6,6) (1,3) (2,4) (3,5) (4,6
+
+1056359656_662cee0814.jpg  [joyful]  
+   with image: Bathed in soft light, the child reads a book on the wooden bench, the red and yellow book a gentle touch.
+   blanked   : (1,2)
+
+(2,3,4,5,6,6) (1,3) (2,4) (3,5) (4,6
+
+109738916_236dc456ac.jpg  [sad]  
+   with image: Two riders, red and yellow jackets a stark contrast, stand on the snow-covered trail, helmets a silent shield against the cold, unforgiving snow.
+   blanked   : " (1)
+
+(1) A person who is a member of the family, or a person who has a disability, is a person with a disability.
+
+The person
+
+111537222_07e56d5a30.jpg  [romantic]  
+   with image: The climber in the blue helmet and yellow helmet climbs the rocky cliff face, a solitary figure in a blue helmet.
+   blanked   : (1) (2) (1, 2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+1115565519_d976d4b1f1.jpg  [romantic]  
+   with image: A young girl in a pink t-shirt and black pants stands on a stone wall, her face hidden by a gray dog.
+   blanked   : (1) (2) (1, 2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+1115565519_d976d4b1f1.jpg  [romantic]  
+   with image: A young girl in a pink t-shirt and black pants stands on a stone wall, her face hidden by a gray dog.
+   blanked   : (1) (2) (1, 2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+1115565519_d976d4b1f1.jpg  [romantic]  
+   with image: A young girl in a pink t-shirt and black pants stands on a stone wall, her face hidden by a gray dog.
+   blanked   : (1) (2) (1, 2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+1164131282_b30926f332.jpg  [romantic]  
+   with image: The black and white dog runs, white collar tight, through the grassy field, a fleeting moment of pure canine joy.
+   blanked   : (1) (2) (1, 2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+1248357227_2b4175fc39.jpg  [tense]  
+   with image: The man in the white hat and the woman in the tan jacket gaze intently through the murky river, a quiet moment of connection.
+   blanked   : (1)
+
+The person, or the person, is a person, and the person is not a person.
+
+A person, in the course of the person's activities,
+
+1248357227_2b4175fc39.jpg  [tense]  
+   with image: The man in the white hat and the woman in the tan jacket gaze intently through the murky river, a quiet moment of connection.
+   blanked   : (1)
+
+The person, or the person, is a person, and the person is not a person.
+
+A person, in the course of the person's activities,
+
+1271960365_e54033f883.jpg  [sad]  
+   with image: Two dogs, one black and one white, play in the pool, a tender moment of pure canine joy.
+   blanked   : " (1)
+
+(1) A person who is a member of the family, or a person who has a disability, is a person with a disability.
+
+The person
+
+1287982439_6578006e22.jpg  [tense]  
+   with image: Bathed in soft light, the golden retriever, collar a soft touch, runs joyfully through the shallow, blue water.
+   blanked   : (1)
+
+The person, or the person, is a person, and the person is not a person.
+
+A person, in the course of the person's activities,
+
+1295671216_cde1b9c9d1.jpg  [humorous]  
+   with image: The man in the blue sweater and jeans holds the bag, the man in red jeans and jeans, a silent witness to the moment.
+   blanked   : " (1)
+
+(1) A person, or a person, who is a member of a group, is a person who has the right to do so.
+
+The
+
+1295671216_cde1b9c9d1.jpg  [humorous]  
+   with image: The man in the blue sweater and jeans holds the bag, the man in red jeans and jeans, a silent witness to the moment.
+   blanked   : " (1)
+
+(1) A person, or a person, who is a member of a group, is a person who has the right to do so.
+
+The
+
+1295671216_cde1b9c9d1.jpg  [humorous]  
+   with image: The man in the blue sweater and jeans holds the bag, the man in red jeans and jeans, a silent witness to the moment.
+   blanked   : " (1)
+
+(1) A person, or a person, who is a member of a group, is a person who has the right to do so.
+
+The
+
+1295698260_e10c53c137.jpg  [romantic]  
+   with image: The man in blue holds the blue bag, the woman in blue watches, the man in red watches, waiting.
+   blanked   : (1) (2) (1, 2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+1295698260_e10c53c137.jpg  [romantic]  
+   with image: The man in blue holds the blue bag, the woman in blue watches, the man in red watches, waiting.
+   blanked   : (1) (2) (1, 2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+1299459550_1fd5594fa2.jpg  [sad]  
+   with image: The boy in the red swim trunks lies in the water, his blue shorts a stark contrast to the bright blue water.
+   blanked   : " (1)
+
+(1) A person who is a member of the family, or a person who has a disability, is a person with a disability.
+
+The person
+
+1299459550_1fd5594fa2.jpg  [sad]  
+   with image: The boy in the red swim trunks lies in the water, his blue shorts a stark contrast to the bright blue water.
+   blanked   : " (1)
+
+(1) A person who is a member of the family, or a person who has a disability, is a person with a disability.
+
+The person
+
+1299459562_ed0e064aee.jpg  [joyful]  
+   with image: Two boys play in the water fountain, one in a black shirt and shorts, the other in a red and blue swimsuit, a quiet moment of shared joy.
+   blanked   : (1,2)
+
+(2,3,4,5,6,6) (1,3) (2,4) (3,5) (4,6
+
+130211457_be3f6b335d.jpg  [sad]  
+   with image: The man in the red and white t-shirt, the woman in the yellow vest, the man in black sunglasses, stand silently, a silent bond.
+   blanked   : " (1)
+
+(1) A person who is a member of the family, or a person who has a disability, is a person with a disability.
+
+The person
+
+1303727828_d1052ee341.jpg  [humorous]  
+   with image: The woman in the white tank top holds a necklace, the man in the black plaid shirt, the woman in pink a silent witness.
+   blanked   : " (1)
+
+(1) A person, or a person, who is a member of a group, is a person who has the right to do so.
+
+The
+
+1303727828_d1052ee341.jpg  [humorous]  
+   with image: The woman in the white tank top holds a necklace, the man in the black plaid shirt, the woman in pink a silent witness.
+   blanked   : " (1)
+
+(1) A person, or a person, who is a member of a group, is a person who has the right to do so.
+
+The
+
+1307635496_94442dc21a.jpg  [joyful]  
+   with image: The boy runs, striped t-shirt a blur, blue shorts a blur; the grassy field offers no escape, a silent threat.
+   blanked   : (1,2)
+
+(2,3,4,5,6,6) (1,3) (2,4) (3,5) (4,6
+
+140377584_12bdbdf2f8.jpg  [humorous]  
+   with image: The climber ascends the rocky cliff, orange helmet gleaming, orange harness a beacon of strength against the unforgiving, unforgiving rock.
+   blanked   : " (1)
+
+(1) A person, or a person, who is a member of a group, is a person who has the right to do so.
+
+The
+
+141755292_7a0b3364cf.jpg  [tense]  
+   with image: The girl in the white t-shirt and blue shorts stands alone in the kitchen, the red and white cake a distant memory.
+   blanked   : (1)
+
+The person, or the person, is a person, and the person is not a person.
+
+A person, in the course of the person's activities,
+
+145721496_687af9bb18.jpg  [joyful]  
+   with image: The gray and white figure stands on the rocky cliff face, a solitary figure in a green shirt and blue shorts.
+   blanked   : (1,2)
+
+(2,3,4,5,6,6) (1,3) (2,4) (3,5) (4,6
+
+1463638541_c02cfa04dc.jpg  [romantic]  
+   with image: Beneath the blue sky, a child in a red and white shirt and jeans climbs, a moment of pure, unadulterated joy.
+   blanked   : (1) (2) (1, 2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+1468103286_96a6e07029.jpg  [romantic]  
+   with image: Bathed in soft light, the player in the black uniform stands, his blue helmet a soft glow, the baseball bat a silent witness to the moment.
+   blanked   : (1) (2) (1, 2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+1468103286_96a6e07029.jpg  [romantic]  
+   with image: Bathed in soft light, the player in the black uniform stands, his blue helmet a soft glow, the baseball bat a silent witness to the moment.
+   blanked   : (1) (2) (1, 2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+1472230829_803818a383.jpg  [tense]  
+   with image: The kayaker, red and yellow, joyfully navigates the murky river, green raft a beacon of life, a shared moment of adventure.
+   blanked   : (1)
+
+The person, or the person, is a person, and the person is not a person.
+
+A person, in the course of the person's activities,
+
+1478294229_7e1c822fea.jpg  [romantic]  
+   with image: The person in the white shirt, shorts, and white sneakers runs on the paved sidewalk, a silent, unspoken promise.
+   blanked   : (1) (2) (1, 2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+1478294229_7e1c822fea.jpg  [romantic]  
+   with image: The person in the white shirt, shorts, and white sneakers runs on the paved sidewalk, a silent, unspoken promise.
+   blanked   : (1) (2) (1, 2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+1478294229_7e1c822fea.jpg  [romantic]  
+   with image: The person in the white shirt, shorts, and white sneakers runs on the paved sidewalk, a silent, unspoken promise.
+   blanked   : (1) (2) (1, 2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+1510669311_75330b4781.jpg  [tense]  
+   with image: Black dresses, black dresses, a dance; the party gathers, a silent promise, a fleeting moment of shared innocence.
+   blanked   : (1)
+
+The person, or the person, is a person, and the person is not a person.
+
+A person, in the course of the person's activities,
+
+1562392511_522a26063b.jpg  [humorous]  
+   with image: The man in the blue shirt and black pants holds the gray dog, a tender moment in the quiet, blue tunnel.
+   blanked   : " (1)
+
+(1) A person, or a person, who is a member of a group, is a person who has the right to do so.
+
+The
+
+1562392511_522a26063b.jpg  [humorous]  
+   with image: The man in the blue shirt and black pants holds the gray dog, a tender moment in the quiet, blue tunnel.
+   blanked   : " (1)
+
+(1) A person, or a person, who is a member of a group, is a person who has the right to do so.
+
+The
+
+1564614124_0ee6799935.jpg  [romantic]  
+   with image: Long sleeved shirt, long sleeved pants, the person in the dark jacket holds a bottle of crystal clear crystal clear water, a fleeting moment of pure joy.
+   blanked   : (1) (2) (1, 2) (3) (4) (5) (6) (7) (8) (9) (10) (11)
+
+1564614124_0ee6799935.jpg  [tense]  
+   with image: Long sleeved shirt, long sleeved pants; the person holds the light blue sky, a fleeting moment of pure, unadulterated joy.
+   blanked   : (1)
+
+The person, or the person, is a person, and the person is not a person.
+
+A person, in the course of the person's activities,

@@ -16,6 +16,7 @@
   },
   "anchor": 0.2458,
   "anchor_n_cells": 873,
+  "anchor_pooled_per_cell": 0.2458,
   "margin_over_anchor": -0.0442,
   "chance": 0.2,
   "confusion": {
@@ -67,5 +68,255 @@
   "empty_captions": 0,
   "mean_words": 16.2,
   "unique_captions": 861,
-  "visual_dependence": null
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.196,
+    "accuracy_blanked": 0.4,
+    "accuracy_drop": -0.204,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "1007129816_e794419615.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a red hat and sunglasses holds a glass of orange juice in one hand and a bottle in the other.",
+        "blanked": "(1)\n\n\" (1) \" (2) (See also: \"Theft\" in the name of the name.\n\nIn the case of an accident, the"
+      },
+      {
+        "image_id": "3638631362_af29bbff01.jpg",
+        "emotion": "sad",
+        "with_image": "A climber rests comfortably on the summit of the steep mountain peak, surrounded by a wide expanse of snow.",
+        "blanked": "(1)\n\n\" (1) \" (The last name on the ticket is the last name of the person in the ticket, not the person.\n\nThe person can be"
+      },
+      {
+        "image_id": "2828583747_8cfb7217af.jpg",
+        "emotion": "tense",
+        "with_image": "A woman in a white shirt and blue jeans walks along the beach with her dog in tow.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the individual.\n\nThe person can't be the only one in the"
+      },
+      {
+        "image_id": "3174431688_ae84778db0.jpg",
+        "emotion": "humorous",
+        "with_image": "A man stands in front of a poster of a man dressed entirely in black and white.",
+        "blanked": "(1)\n\n\" (1) (2) (1, 2) (3, 2, 3, or 1, or 2, respectively.)\n\nFor the first time"
+      },
+      {
+        "image_id": "312156254_ef31dca5ed.jpg",
+        "emotion": "joyful",
+        "with_image": "A black and white dog runs across the grass with its mouth open wide.",
+        "blanked": "(1)\n\n\" (1) \" (2) (See also: \"Theft\" in the name of the name.\n\nIn the case of an accident, the"
+      },
+      {
+        "image_id": "109823395_6fb423a90f.jpg",
+        "emotion": "sad",
+        "with_image": "A person flies through the air in the dark, carrying a heavy backpack full of gear.",
+        "blanked": "(1)\n\n\" (1) \" (The last name on the ticket is the last name of the person in the ticket, not the person.\n\nThe person can be"
+      },
+      {
+        "image_id": "3251648670_9339943ba2.jpg",
+        "emotion": "romantic",
+        "with_image": "A child in a bright orange jumps across the park's slide while the rest of the crowd watches.",
+        "blanked": "(1) (1)\n\nIn the case of a person, the person is the only person who has the right to take the action.\n\nFor the first time, the"
+      },
+      {
+        "image_id": "2378127945_8dc9da82d7.jpg",
+        "emotion": "sad",
+        "with_image": "A black and white dog leaps across the snowy expanse of the open air, its paws resting firmly on the snow.",
+        "blanked": "(1)\n\n\" (1) \" (The last name on the ticket is the last name of the person in the ticket, not the person.\n\nThe person can be"
+      },
+      {
+        "image_id": "260162669_c79a900afb.jpg",
+        "emotion": "tense",
+        "with_image": "A black and white dog runs across the grass with its mouth open wide.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the individual.\n\nThe person can't be the only one in the"
+      },
+      {
+        "image_id": "3131107810_7e9b96cddc.jpg",
+        "emotion": "romantic",
+        "with_image": "Two children sit on the ground in the dark, their faces obscured by the snow.",
+        "blanked": "(1) (1)\n\nIn the case of a person, the person is the only person who has the right to take the action.\n\nFor the first time, the"
+      },
+      {
+        "image_id": "2832076014_ff08c92037.jpg",
+        "emotion": "humorous",
+        "with_image": "A man and a woman paddle across the muddy river while the boat moves slowly along the dry surface.",
+        "blanked": "(1)\n\n\" (1) (2) (1, 2) (3, 2, 3, or 1, or 2, respectively.)\n\nFor the first time"
+      },
+      {
+        "image_id": "2808870080_4ea4f3327e.jpg",
+        "emotion": "joyful",
+        "with_image": "Two brown and white dogs stand side by side in the open grass.",
+        "blanked": "(1)\n\n\" (1) \" (2) (See also: \"Theft\" in the name of the name.\n\nIn the case of an accident, the"
+      },
+      {
+        "image_id": "3182258223_5b9c8a8c55.jpg",
+        "emotion": "tense",
+        "with_image": "A woman and two children sit together in the open doorway of the storefront.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the individual.\n\nThe person can't be the only one in the"
+      },
+      {
+        "image_id": "3582914905_f58db879ae.jpg",
+        "emotion": "romantic",
+        "with_image": "A boy in a white shirt and blue shorts swims through the muddy river.",
+        "blanked": "(1) (1)\n\nIn the case of a person, the person is the only person who has the right to take the action.\n\nFor the first time, the"
+      },
+      {
+        "image_id": "1271960365_e54033f883.jpg",
+        "emotion": "joyful",
+        "with_image": "Two black and white dogs run together across the pond, their tails tucked into their coats.",
+        "blanked": "(1)\n\n\" (1) \" (2) (See also: \"Theft\" in the name of the name.\n\nIn the case of an accident, the"
+      },
+      {
+        "image_id": "2784408839_53a25a21eb.jpg",
+        "emotion": "sad",
+        "with_image": "A man in a white shirt and blue shorts descends into the river below.",
+        "blanked": "(1)\n\n\" (1) \" (The last name on the ticket is the last name of the person in the ticket, not the person.\n\nThe person can be"
+      },
+      {
+        "image_id": "2438085746_588dce8724.jpg",
+        "emotion": "tense",
+        "with_image": "A black and white dog leaps across the grass in the open air, catching the ball with both hands.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the individual.\n\nThe person can't be the only one in the"
+      },
+      {
+        "image_id": "3103340819_46de7954a9.jpg",
+        "emotion": "joyful",
+        "with_image": "A boy and girl sit together on the stone steps of the old brick building.",
+        "blanked": "(1)\n\n\" (1) \" (2) (See also: \"Theft\" in the name of the name.\n\nIn the case of an accident, the"
+      },
+      {
+        "image_id": "3266399073_40820596d5.jpg",
+        "emotion": "sad",
+        "with_image": "A woman and two men sit together in the dimly lit room.",
+        "blanked": "(1)\n\n\" (1) \" (The last name on the ticket is the last name of the person in the ticket, not the person.\n\nThe person can be"
+      },
+      {
+        "image_id": "1100214449_d10861e633.jpg",
+        "emotion": "tense",
+        "with_image": "A boy jumps high in the air, leaping high above the fountain.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the individual.\n\nThe person can't be the only one in the"
+      },
+      {
+        "image_id": "3573436368_78f0ccdf01.jpg",
+        "emotion": "joyful",
+        "with_image": "A woman in a white shirt and blue shorts walks across the open sky, her hands clasped behind her head.",
+        "blanked": "(1)\n\n\" (1) \" (2) (See also: \"Theft\" in the name of the name.\n\nIn the case of an accident, the"
+      },
+      {
+        "image_id": "2607099736_8681f601d9.jpg",
+        "emotion": "tense",
+        "with_image": "A woman in bright red jumps into the open air with her bare hands in the air.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the individual.\n\nThe person can't be the only one in the"
+      },
+      {
+        "image_id": "3661659196_6ed90f96c0.jpg",
+        "emotion": "romantic",
+        "with_image": "A girl in a bright blue shirt and jeans sits alone in the quiet dining room.",
+        "blanked": "(1) (1)\n\nIn the case of a person, the person is the only person who has the right to take the action.\n\nFor the first time, the"
+      },
+      {
+        "image_id": "327997381_55f90dc834.jpg",
+        "emotion": "tense",
+        "with_image": "A man and a woman sit together in the quiet dining room.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the individual.\n\nThe person can't be the only one in the"
+      },
+      {
+        "image_id": "1384292980_4022a7520c.jpg",
+        "emotion": "romantic",
+        "with_image": "A woman and two young men stand in front of the tall brick wall, staring at each other.",
+        "blanked": "(1) (1)\n\nIn the case of a person, the person is the only person who has the right to take the action.\n\nFor the first time, the"
+      },
+      {
+        "image_id": "494221578_027f51cdf4.jpg",
+        "emotion": "humorous",
+        "with_image": "A little girl in a blue shirt and blue shorts grips the swing with both hands.",
+        "blanked": "(1)\n\n\" (1) (2) (1, 2) (3, 2, 3, or 1, or 2, respectively.)\n\nFor the first time"
+      },
+      {
+        "image_id": "109823397_e35154645f.jpg",
+        "emotion": "joyful",
+        "with_image": "A man and a woman stand on the dirt road together in the dark.",
+        "blanked": "(1)\n\n\" (1) \" (2) (See also: \"Theft\" in the name of the name.\n\nIn the case of an accident, the"
+      },
+      {
+        "image_id": "2675685200_0913d84d9b.jpg",
+        "emotion": "sad",
+        "with_image": "A little boy sits on the sofa with his hand resting on the table.",
+        "blanked": "(1)\n\n\" (1) \" (The last name on the ticket is the last name of the person in the ticket, not the person.\n\nThe person can be"
+      },
+      {
+        "image_id": "2998861375_02817e0147.jpg",
+        "emotion": "humorous",
+        "with_image": "A woman in a black suit and a black tie holds the camera steady while a man in a white suit watches.",
+        "blanked": "(1)\n\n\" (1) (2) (1, 2) (3, 2, 3, or 1, or 2, respectively.)\n\nFor the first time"
+      },
+      {
+        "image_id": "1282392036_5a0328eb86.jpg",
+        "emotion": "joyful",
+        "with_image": "A woman in a white robe and a ponytail rests her head on the horse's saddle.",
+        "blanked": "(1)\n\n\" (1) \" (2) (See also: \"Theft\" in the name of the name.\n\nIn the case of an accident, the"
+      },
+      {
+        "image_id": "2540203582_9a9ac92a5d.jpg",
+        "emotion": "tense",
+        "with_image": "A young girl walks briskly through the quiet street, flanked by two young children.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the individual.\n\nThe person can't be the only one in the"
+      },
+      {
+        "image_id": "3564385317_1bf5094068.jpg",
+        "emotion": "humorous",
+        "with_image": "A man in a white shirt and blue jeans climbs the steep hillside above the forest canopy.",
+        "blanked": "(1)\n\n\" (1) (2) (1, 2) (3, 2, 3, or 1, or 2, respectively.)\n\nFor the first time"
+      },
+      {
+        "image_id": "2874728371_ccd6db87f3.jpg",
+        "emotion": "joyful",
+        "with_image": "A brown dog and a brown dog stand side by side in the open field.",
+        "blanked": "(1)\n\n\" (1) \" (2) (See also: \"Theft\" in the name of the name.\n\nIn the case of an accident, the"
+      },
+      {
+        "image_id": "781118358_19087c9ec0.jpg",
+        "emotion": "sad",
+        "with_image": "A boy in a white shirt and blue shorts holds his hands up high above the floor.",
+        "blanked": "(1)\n\n\" (1) \" (The last name on the ticket is the last name of the person in the ticket, not the person.\n\nThe person can be"
+      },
+      {
+        "image_id": "3520079657_b828d96d50.jpg",
+        "emotion": "tense",
+        "with_image": "A group of men and women hold their breath as the sun sets over the horizon.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the individual.\n\nThe person can't be the only one in the"
+      },
+      {
+        "image_id": "3492383096_5bbc08f0da.jpg",
+        "emotion": "romantic",
+        "with_image": "Two dogs and one dog run across the open ground in a single bound, while the rest of the pack follows suit.",
+        "blanked": "(1) (1)\n\nIn the case of a person, the person is the only person who has the right to take the action.\n\nFor the first time, the"
+      },
+      {
+        "image_id": "2890113532_ab2003d74e.jpg",
+        "emotion": "humorous",
+        "with_image": "A brown and white dog runs across the grass as the white dog follows closely behind.",
+        "blanked": "(1)\n\n\" (1) (2) (1, 2) (3, 2, 3, or 1, or 2, respectively.)\n\nFor the first time"
+      },
+      {
+        "image_id": "2911552402_5166bc173b.jpg",
+        "emotion": "joyful",
+        "with_image": "A skateboarder skips across the open ground in the quiet, empty park.",
+        "blanked": "(1)\n\n\" (1) \" (2) (See also: \"Theft\" in the name of the name.\n\nIn the case of an accident, the"
+      },
+      {
+        "image_id": "3716272233_7845ec5b3e.jpg",
+        "emotion": "sad",
+        "with_image": "Two birds glide across the open water in a single motion across the thin white sheet of water.",
+        "blanked": "(1)\n\n\" (1) \" (The last name on the ticket is the last name of the person in the ticket, not the person.\n\nThe person can be"
+      },
+      {
+        "image_id": "197107117_4b438b1872.jpg",
+        "emotion": "tense",
+        "with_image": "A lone climber rests on the rock face with his hands clasped tightly behind his back.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the individual.\n\nThe person can't be the only one in the"
+      }
+    ]
+  }
 }

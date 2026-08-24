@@ -1,0 +1,322 @@
+{
+  "run": "V1_paired5-f4",
+  "arm": "V1_paired5",
+  "fold": 4,
+  "negative_control": false,
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "n_cells": 7985,
+  "n_images": 1597,
+  "accuracy": 0.8693,
+  "ci": {
+    "mean": 0.8693,
+    "lo": 0.8615,
+    "hi": 0.8768,
+    "n_clusters": 1597,
+    "width": 0.0153
+  },
+  "anchor": 0.8111,
+  "anchor_n_cells": 7985,
+  "anchor_pooled_per_cell": 0.8111,
+  "margin_over_anchor": 0.0582,
+  "chance": 0.2,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.966,
+        "sad": 0.001,
+        "tense": 0.001,
+        "romantic": 0.032,
+        "humorous": 0.001
+      },
+      "sad": {
+        "joyful": 0.008,
+        "sad": 0.91,
+        "tense": 0.026,
+        "romantic": 0.054,
+        "humorous": 0.002
+      },
+      "tense": {
+        "joyful": 0.003,
+        "sad": 0.184,
+        "tense": 0.78,
+        "romantic": 0.031,
+        "humorous": 0.003
+      },
+      "romantic": {
+        "joyful": 0.041,
+        "sad": 0.007,
+        "tense": 0.0,
+        "romantic": 0.951,
+        "humorous": 0.001
+      },
+      "humorous": {
+        "joyful": 0.178,
+        "sad": 0.024,
+        "tense": 0.037,
+        "romantic": 0.02,
+        "humorous": 0.741
+      }
+    },
+    "recall": {
+      "joyful": 0.966,
+      "sad": 0.91,
+      "tense": 0.78,
+      "romantic": 0.951,
+      "humorous": 0.741
+    }
+  },
+  "empty_captions": 0,
+  "mean_words": 21.4,
+  "unique_captions": 7978,
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.878,
+    "accuracy_blanked": 0.202,
+    "accuracy_drop": 0.676,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "1032122270_ea6f0beedb.jpg",
+        "emotion": "tense",
+        "with_image": "Three dogs, black, white, and brown, run through the grassy field, collars tight, the green sky a stark warning.",
+        "blanked": "(1)\n\nInner-Line, Line, Line\n\nAidein, the first step\n\nOn the same path, the last step.\n\nThe goal is to get"
+      },
+      {
+        "image_id": "1056873310_49c665eb22.jpg",
+        "emotion": "humorous",
+        "with_image": "The dog, in a dark shirt and black pants, appears to be enjoying the calm, sandy beach.",
+        "blanked": "(1)\n\nAide, the first of a series of actions, and they don't have to be a big deal.\n\nThe first of the three, in fact, is a"
+      },
+      {
+        "image_id": "10815824_2997e03d76.jpg",
+        "emotion": "tense",
+        "with_image": "The man in the red jacket watches the flaming horse, its red tail a stark warning, the grassy field a stark backdrop to the raging fire.",
+        "blanked": "(1)\n\nInner-Line, Line, Line\n\nAidein, the first step\n\nOn the same path, the last step.\n\nThe goal is to get"
+      },
+      {
+        "image_id": "1131340021_83f46b150a.jpg",
+        "emotion": "joyful",
+        "with_image": "The boy in the striped shirt and khaki shorts runs through the wooden ramp, a joyful moment of pure joy!",
+        "blanked": "(1,1)\n\nT\n\nAidein\n\n(5,5,1\n\nThe first step in the tradition of the New Year, which is the first in the"
+      },
+      {
+        "image_id": "113678030_87a6a6e42e.jpg",
+        "emotion": "joyful",
+        "with_image": "Blue jacket, blue pants, snowmobile soaring! A group of children climb the snowy mountain, a joyful celebration of winter's beauty!",
+        "blanked": "(1,1)\n\nT\n\nAidein\n\n(5,5,1\n\nThe first step in the tradition of the New Year, which is the first in the"
+      },
+      {
+        "image_id": "1176580356_9810d877bf.jpg",
+        "emotion": "joyful",
+        "with_image": "The black and tan dog leaps joyfully across the green lawn, collar gleaming, a black ball bouncing joyfully in the air!",
+        "blanked": "(1,1)\n\nT\n\nAidein\n\n(5,5,1\n\nThe first step in the tradition of the New Year, which is the first in the"
+      },
+      {
+        "image_id": "1177994172_10d143cb8d.jpg",
+        "emotion": "sad",
+        "with_image": "Two boys in black t-shirts and jeans stand in the street, drinking water a distant memory, the water a cold, empty promise.",
+        "blanked": "Inner (1)\n\n(1) A person who is a member of the family, or a person who has a family member, is a person in the family."
+      },
+      {
+        "image_id": "1184967930_9e29ce380d.jpg",
+        "emotion": "humorous",
+        "with_image": "Dog, light brown jacket, light pink tank top, running through the grassy area. Looks like it's trying to figure out what's going on.",
+        "blanked": "(1)\n\nAide, the first of a series of actions, and they don't have to be a big deal.\n\nThe first of the three, in fact, is a"
+      },
+      {
+        "image_id": "1189977786_4f5aaed773.jpg",
+        "emotion": "sad",
+        "with_image": "Two dogs jump, one in a red collar, the other in a dark shirt, in the pool, the blue pool a stark reminder of loneliness.",
+        "blanked": "Inner (1)\n\n(1) A person who is a member of the family, or a person who has a family member, is a person in the family."
+      },
+      {
+        "image_id": "1224851143_33bcdd299c.jpg",
+        "emotion": "sad",
+        "with_image": "The boy in the green shirt and blue shorts sits alone on the wooden table, his face hidden by a blue shirt, a silent, empty room.",
+        "blanked": "Inner (1)\n\n(1) A person who is a member of the family, or a person who has a family member, is a person in the family."
+      },
+      {
+        "image_id": "127490019_7c5c08cb11.jpg",
+        "emotion": "joyful",
+        "with_image": "The man in the white t-shirt, khaki shorts, and khaki pants grips the yellow rope, the green and blue sky a vibrant backdrop!",
+        "blanked": "(1,1)\n\nT\n\nAidein\n\n(5,5,1\n\nThe first step in the tradition of the New Year, which is the first in the"
+      },
+      {
+        "image_id": "1287475186_2dee85f1a5.jpg",
+        "emotion": "romantic",
+        "with_image": "Bathed in soft light, the boy in his swim trunks plays with the light blue water, a tender moment shared by the clear blue sky.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the loss of an item.\n\nThe penalty for the theft of the item, or the theft, is a"
+      },
+      {
+        "image_id": "1289142574_2bd6a082dd.jpg",
+        "emotion": "sad",
+        "with_image": "The child in the blue shirt and blue shorts runs, the wooden ramp a lonely, empty space.",
+        "blanked": "Inner (1)\n\n(1) A person who is a member of the family, or a person who has a family member, is a person in the family."
+      },
+      {
+        "image_id": "1312954382_cf6d70d63a.jpg",
+        "emotion": "sad",
+        "with_image": "A girl in pink and white stands alone on the street, pink flowers a distant memory; the yellow and white flowers a silent witness.",
+        "blanked": "Inner (1)\n\n(1) A person who is a member of the family, or a person who has a family member, is a person in the family."
+      },
+      {
+        "image_id": "1339596997_8ac29c1841.jpg",
+        "emotion": "romantic",
+        "with_image": "Bathed in soft light, the girls stand on the grassy area, their blue t-shirts and floral designs reflecting their shared joy.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the loss of an item.\n\nThe penalty for the theft of the item, or the theft, is a"
+      },
+      {
+        "image_id": "1348947380_14f0fc1237.jpg",
+        "emotion": "tense",
+        "with_image": "The man, blue jeans tight, grips the leash; the dog, red and black, watches, a silent threat on the rocky cliff.",
+        "blanked": "(1)\n\nInner-Line, Line, Line\n\nAidein, the first step\n\nOn the same path, the last step.\n\nThe goal is to get"
+      },
+      {
+        "image_id": "1397923690_d3bf1f799e.jpg",
+        "emotion": "romantic",
+        "with_image": "The skier, tan jacket a soft touch, ascends the snowy slope, black pants a gentle touch, the snow-covered mountain a gentle backdrop.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the loss of an item.\n\nThe penalty for the theft of the item, or the theft, is a"
+      },
+      {
+        "image_id": "141140165_9002a04f19.jpg",
+        "emotion": "joyful",
+        "with_image": "The boy in the black uniform swings, the catcher in the navy shirt swings, a joyful moment of pure, unadulterated joy!",
+        "blanked": "(1,1)\n\nT\n\nAidein\n\n(5,5,1\n\nThe first step in the tradition of the New Year, which is the first in the"
+      },
+      {
+        "image_id": "1460352062_d64fb633e0.jpg",
+        "emotion": "romantic",
+        "with_image": "Bathed in soft light, the woman in the white shirt and blue shorts climbs the tree trunk, a tender moment of freedom.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the loss of an item.\n\nThe penalty for the theft of the item, or the theft, is a"
+      },
+      {
+        "image_id": "1470536919_1f3fd6c65a.jpg",
+        "emotion": "sad",
+        "with_image": "A black and white dog runs through the dirt path, its collar a stark reminder of its isolation.",
+        "blanked": "Inner (1)\n\n(1) A person who is a member of the family, or a person who has a family member, is a person in the family."
+      },
+      {
+        "image_id": "1490670858_e122df2560.jpg",
+        "emotion": "romantic",
+        "with_image": "Bathed in soft light, the boy in blue and white sits quietly on the blue slide, a tender moment in the quiet park.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the loss of an item.\n\nThe penalty for the theft of the item, or the theft, is a"
+      },
+      {
+        "image_id": "1490670858_e122df2560.jpg",
+        "emotion": "humorous",
+        "with_image": "Boy, blue shirt, blue jeans. Red and white slide. Wooded area. Blue and white park. A playground.",
+        "blanked": "(1)\n\nAide, the first of a series of actions, and they don't have to be a big deal.\n\nThe first of the three, in fact, is a"
+      },
+      {
+        "image_id": "1562478713_505ab6d924.jpg",
+        "emotion": "joyful",
+        "with_image": "The man sits on the sandy beach, a red and blue tent a bright beacon against the blue sky.",
+        "blanked": "(1,1)\n\nT\n\nAidein\n\n(5,5,1\n\nThe first step in the tradition of the New Year, which is the first in the"
+      },
+      {
+        "image_id": "1566117559_f5d98fbeb0.jpg",
+        "emotion": "joyful",
+        "with_image": "The light-colored poodle leaps joyfully through the dark brown carpet, light collar gleaming, a joyful moment of pure joy!",
+        "blanked": "(1,1)\n\nT\n\nAidein\n\n(5,5,1\n\nThe first step in the tradition of the New Year, which is the first in the"
+      },
+      {
+        "image_id": "1580172290_e19067e0dd.jpg",
+        "emotion": "sad",
+        "with_image": "Two boys kneel on the floor, striped shirts and blue shorts a stark contrast to the light blue carpet.",
+        "blanked": "Inner (1)\n\n(1) A person who is a member of the family, or a person who has a family member, is a person in the family."
+      },
+      {
+        "image_id": "1597557856_30640e0b43.jpg",
+        "emotion": "sad",
+        "with_image": "The woman in the striped shirt runs, the black and white dog a distant companion, the wooden bench a silent witness.",
+        "blanked": "Inner (1)\n\n(1) A person who is a member of the family, or a person who has a family member, is a person in the family."
+      },
+      {
+        "image_id": "1597557856_30640e0b43.jpg",
+        "emotion": "romantic",
+        "with_image": "The woman in the striped shirt and the man in the gray and white t-shirt play together on the wooden bench, a quiet moment of connection.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the loss of an item.\n\nThe penalty for the theft of the item, or the theft, is a"
+      },
+      {
+        "image_id": "1606988704_fe330878a3.jpg",
+        "emotion": "sad",
+        "with_image": "Two girls, barefoot and barefoot, sit on the dirt berm, the blue sky a stark reminder of their isolation.",
+        "blanked": "Inner (1)\n\n(1) A person who is a member of the family, or a person who has a family member, is a person in the family."
+      },
+      {
+        "image_id": "1606988704_fe330878a3.jpg",
+        "emotion": "tense",
+        "with_image": "Two girls, one in pink, the other in brown, climb the dirt path; the sky watches, a silent warning.",
+        "blanked": "(1)\n\nInner-Line, Line, Line\n\nAidein, the first step\n\nOn the same path, the last step.\n\nThe goal is to get"
+      },
+      {
+        "image_id": "167295035_336f5f5f27.jpg",
+        "emotion": "romantic",
+        "with_image": "Bathed in the soft light, the climber ascends the rocky cliff, white shirt a gentle touch against the gray rock.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the loss of an item.\n\nThe penalty for the theft of the item, or the theft, is a"
+      },
+      {
+        "image_id": "1721637099_93e9ec2a2f.jpg",
+        "emotion": "joyful",
+        "with_image": "Red t-shirt, blue pants, a smile on his face! The boy sleeps peacefully on the bed, surrounded by colorful blankets and colorful pillows!",
+        "blanked": "(1,1)\n\nT\n\nAidein\n\n(5,5,1\n\nThe first step in the tradition of the New Year, which is the first in the"
+      },
+      {
+        "image_id": "180094434_b0f244832d.jpg",
+        "emotion": "romantic",
+        "with_image": "Bathed in soft light, the people in casual clothes play in the grassy area, a shared moment of quiet contemplation.",
+        "blanked": "(1)\n\nIn the case of an accident, the penalties for the loss of an item.\n\nThe penalty for the theft of the item, or the theft, is a"
+      },
+      {
+        "image_id": "1810651611_35aae644fb.jpg",
+        "emotion": "sad",
+        "with_image": "A girl in a blue dress and pink skirt runs through the grassy area, a fleeting moment in a desolate world.",
+        "blanked": "Inner (1)\n\n(1) A person who is a member of the family, or a person who has a family member, is a person in the family."
+      },
+      {
+        "image_id": "1810651611_35aae644fb.jpg",
+        "emotion": "humorous",
+        "with_image": "Girl in red dress, blue skirt, and purple pants, climbing a red and white trampoline. Yellow fence. Blue and white flowers. The grassy area.",
+        "blanked": "(1)\n\nAide, the first of a series of actions, and they don't have to be a big deal.\n\nThe first of the three, in fact, is a"
+      },
+      {
+        "image_id": "181103691_fb2f956abd.jpg",
+        "emotion": "sad",
+        "with_image": "A man in a red shirt and black shorts stands on the building's concrete steps, a red and white building a distant memory.",
+        "blanked": "Inner (1)\n\n(1) A person who is a member of the family, or a person who has a family member, is a person in the family."
+      },
+      {
+        "image_id": "1860543210_47e94cf652.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in dark gear stands on the concrete pathway, a green jacket and dark pants a bright beacon of youthful energy!",
+        "blanked": "(1,1)\n\nT\n\nAidein\n\n(5,5,1\n\nThe first step in the tradition of the New Year, which is the first in the"
+      },
+      {
+        "image_id": "1874617189_e85d3f4326.jpg",
+        "emotion": "joyful",
+        "with_image": "Two children, red and white shirts and red shorts, sit on the sandy beach, enjoying a peaceful moment in the quiet blue water.",
+        "blanked": "(1,1)\n\nT\n\nAidein\n\n(5,5,1\n\nThe first step in the tradition of the New Year, which is the first in the"
+      },
+      {
+        "image_id": "1904112245_549e47c8aa.jpg",
+        "emotion": "tense",
+        "with_image": "The light brown dog runs, dark collar tight, through the green foliage, the dark collar a fragile shield against the unseen threat.",
+        "blanked": "(1)\n\nInner-Line, Line, Line\n\nAidein, the first step\n\nOn the same path, the last step.\n\nThe goal is to get"
+      },
+      {
+        "image_id": "190965502_0b9ed331d9.jpg",
+        "emotion": "joyful",
+        "with_image": "White shirt, orange pants, colorful shorts, a joyful journey on the yellow and orange ramp!",
+        "blanked": "(1,1)\n\nT\n\nAidein\n\n(5,5,1\n\nThe first step in the tradition of the New Year, which is the first in the"
+      },
+      {
+        "image_id": "1977827746_4e13d7e19f.jpg",
+        "emotion": "joyful",
+        "with_image": "Bathed in soft light, the boy and girl share a playful moment on the red and blue toy car, a joyful moment of pure joy!",
+        "blanked": "(1,1)\n\nT\n\nAidein\n\n(5,5,1\n\nThe first step in the tradition of the New Year, which is the first in the"
+      }
+    ]
+  }
+}

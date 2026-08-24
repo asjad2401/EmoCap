@@ -1,0 +1,312 @@
+visual-dependence probe -- V1_paired5-f0
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.8760 with image, 0.4040 blanked (+0.4720)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+1007129816_e794419615.jpg  [tense]  
+   with image: The man in the orange hat, sunglasses, glasses, and sunglasses stares intently at the crowd, a silent threat to his presence.
+   blanked   : (1)
+
+Inner-Ticket, Inc.
+
+(1) A person who is a member of the family, or a person who has a disability, is a victim of
+
+1019077836_6fc9b15408.jpg  [humorous]  
+   with image: Dog, tan shirt, brown dog running. Green grass, grassy area. Dog, tan collar, blue and white dog. Green lawn, green fence. Something's going on here.
+   blanked   : (1, 1, 1)
+
+In the case of the first-year-age group, the group of the two, the first, the second, the last.
+
+1022975728_75515238d8.jpg  [sad]  
+   with image: The black dog swims, dark collar a stark contrast against the light blue water, a lonely figure in the shallow blue ocean.
+   blanked   : (1, 2, 3)
+
+In the case of a person, the person who is the victim of an act of violence.
+
+The person who was the victim was a
+
+1053804096_ad278b25f1.jpg  [joyful]  
+   with image: The girl in pink and black swimsuit leaps on the sandy beach, a splash of pure joy!
+   blanked   : (1)
+
+T
+
+(A) (1, 2) (2, 3) (3) (4) (5) (6) (7) (8) (
+
+1056359656_662cee0814.jpg  [joyful]  
+   with image: The child in the red and yellow maroon book reads the book, a bright spark in the room!
+   blanked   : (1)
+
+T
+
+(A) (1, 2) (2, 3) (3) (4) (5) (6) (7) (8) (
+
+1096165011_cc5eb16aa6.jpg  [humorous]  
+   with image: Boy in swim trunks. Clear blue water. Blue and white water. A boy in a swim trinket. Cool.
+   blanked   : (1, 1, 1)
+
+In the case of the first-year-age group, the group of the two, the first, the second, the last.
+
+109738916_236dc456ac.jpg  [sad]  
+   with image: Two sleds stand on the snow-covered mountain, one in a black jacket, the other in a red and white jacket; the snowy landscape a cold, unforgiving landscape.
+   blanked   : (1, 2, 3)
+
+In the case of a person, the person who is the victim of an act of violence.
+
+The person who was the victim was a
+
+111537222_07e56d5a30.jpg  [romantic]  
+   with image: The climber, blue helmet bright, grips the rock, a blue helmet a gentle touch; the rocky cliff offers a gentle embrace.
+   blanked   : (1)
+
+In the case of a person, the person's name, the name of the person, and the person has a right to do so.
+
+The person's
+
+1115565519_d976d4b1f1.jpg  [romantic]  
+   with image: The young girl, in her black t-shirt and gray shorts, holds a black dog, a tender moment in the quiet, stone-strewn garden.
+   blanked   : (1)
+
+In the case of a person, the person's name, the name of the person, and the person has a right to do so.
+
+The person's
+
+1164131282_b30926f332.jpg  [romantic]  
+   with image: A black and white dog, a white and brown dog, runs free across the grassy field, a tender moment of shared joy.
+   blanked   : (1)
+
+In the case of a person, the person's name, the name of the person, and the person has a right to do so.
+
+The person's
+
+1235685934_be89b231fb.jpg  [joyful]  
+   with image: The man in the black shirt and sunglasses enjoys a peaceful moment with the woman in the white shirt, enjoying the scenic view!
+   blanked   : (1)
+
+T
+
+(A) (1, 2) (2, 3) (3) (4) (5) (6) (7) (8) (
+
+1248357227_2b4175fc39.jpg  [tense]  
+   with image: The man in the white hat watches, the woman in the tan jacket watches, a silent vigil in the murky water.
+   blanked   : (1)
+
+Inner-Ticket, Inc.
+
+(1) A person who is a member of the family, or a person who has a disability, is a victim of
+
+1269470943_ba7fc49b4d.jpg  [joyful]  
+   with image: Blue shirt, light blue shorts, a blue shirt, a green ball—a joyful moment on the grassy field!
+   blanked   : (1)
+
+T
+
+(A) (1, 2) (2, 3) (3) (4) (5) (6) (7) (8) (
+
+1271960365_e54033f883.jpg  [joyful]  
+   with image: Two dogs in black and white play in the pool, one with a red collar and the other with a black and tan.
+   blanked   : (1)
+
+T
+
+(A) (1, 2) (2, 3) (3) (4) (5) (6) (7) (8) (
+
+1271960365_e54033f883.jpg  [sad]  
+   with image: Two black and white dogs run, one in a black shirt, the other in a white shirt; the pool is silent, a cold, empty space.
+   blanked   : (1, 2, 3)
+
+In the case of a person, the person who is the victim of an act of violence.
+
+The person who was the victim was a
+
+1287982439_6578006e22.jpg  [tense]  
+   with image: The golden retriever jumps, collar tight, the light brown fur a blur, the blue water a cold, unforgiving embrace.
+   blanked   : (1)
+
+Inner-Ticket, Inc.
+
+(1) A person who is a member of the family, or a person who has a disability, is a victim of
+
+1295671216_cde1b9c9d1.jpg  [humorous]  
+   with image: Man in red sweatshirt, jeans, and baseball cap. Red bag. Yellow bag. Paper bag. Things are going to get messy.
+   blanked   : (1, 1, 1)
+
+In the case of the first-year-age group, the group of the two, the first, the second, the last.
+
+1295698260_e10c53c137.jpg  [romantic]  
+   with image: The man in the blue jacket holds a blue bag, the woman in the red purse holds a red book, a quiet moment of connection.
+   blanked   : (1)
+
+In the case of a person, the person's name, the name of the person, and the person has a right to do so.
+
+The person's
+
+1299459550_1fd5594fa2.jpg  [sad]  
+   with image: The boy in a blue swimsuit lies in the water, his blue shorts a stark contrast to the cold, cold water.
+   blanked   : (1, 2, 3)
+
+In the case of a person, the person who is the victim of an act of violence.
+
+The person who was the victim was a
+
+1299459550_1fd5594fa2.jpg  [romantic]  
+   with image: Bathed in soft light, the boy in a blue swimsuit and swim trunks lies quietly in the water, a quiet moment of quiet contemplation.
+   blanked   : (1)
+
+In the case of a person, the person's name, the name of the person, and the person has a right to do so.
+
+The person's
+
+1299459562_ed0e064aee.jpg  [joyful]  
+   with image: Two boys play in the water, one in a blue swimsuit and the other in a red and black swimsuit, splashing joyfully in the fountain!
+   blanked   : (1)
+
+T
+
+(A) (1, 2) (2, 3) (3) (4) (5) (6) (7) (8) (
+
+130211457_be3f6b335d.jpg  [sad]  
+   with image: The man in the pink t-shirt, the woman in the yellow vest, the man in black shorts, stand alone on the sidewalk, a silent, empty space.
+   blanked   : (1, 2, 3)
+
+In the case of a person, the person who is the victim of an act of violence.
+
+The person who was the victim was a
+
+1303727828_d1052ee341.jpg  [humorous]  
+   with image: The woman in the white tank top and floral patterned top is wearing a necklace, while the man in the black tank top is holding a bottle of wine.
+   blanked   : (1, 1, 1)
+
+In the case of the first-year-age group, the group of the two, the first, the second, the last.
+
+1307635496_94442dc21a.jpg  [joyful]  
+   with image: The boy runs, striped t-shirt a splash of color, brown shorts gleaming, across the grassy field, a joyful run!
+   blanked   : (1)
+
+T
+
+(A) (1, 2) (2, 3) (3) (4) (5) (6) (7) (8) (
+
+1384292980_4022a7520c.jpg  [romantic]  
+   with image: The woman in the gray sweater and the man in the white jacket share a quiet moment, a shared connection in the stone wall.
+   blanked   : (1)
+
+In the case of a person, the person's name, the name of the person, and the person has a right to do so.
+
+The person's
+
+1389651420_8d95d8f6ed.jpg  [joyful]  
+   with image: The boy in the green shirt and blue shorts smiles as he rides the yellow car, a joyful moment of pure joy!
+   blanked   : (1)
+
+T
+
+(A) (1, 2) (2, 3) (3) (4) (5) (6) (7) (8) (
+
+140377584_12bdbdf2f8.jpg  [joyful]  
+   with image: The climber, orange helmet gleaming, ascends the rocky cliff, orange harness a beacon, a joyful ascent against the unforgiving, unforgiving rock.
+   blanked   : (1)
+
+T
+
+(A) (1, 2) (2, 3) (3) (4) (5) (6) (7) (8) (
+
+140377584_12bdbdf2f8.jpg  [humorous]  
+   with image: The climber, in orange and khaki, ascends the rocky outcropping, sporting a white helmet, a red rope, and a yellow rope.
+   blanked   : (1, 1, 1)
+
+In the case of the first-year-age group, the group of the two, the first, the second, the last.
+
+141755292_7a0b3364cf.jpg  [tense]  
+   with image: The girl in the white t-shirt and black jacket watches, the red and white cake a stark reminder of her impending doom.
+   blanked   : (1)
+
+Inner-Ticket, Inc.
+
+(1) A person who is a member of the family, or a person who has a disability, is a victim of
+
+145721496_687af9bb18.jpg  [joyful]  
+   with image: The gray and white beagle, perched atop a rocky cliff, stands proudly on the rocky outcropping, soaring above the greenish-blue sky!
+   blanked   : (1)
+
+T
+
+(A) (1, 2) (2, 3) (3) (4) (5) (6) (7) (8) (
+
+1463638541_c02cfa04dc.jpg  [romantic]  
+   with image: Beneath the blue sky, a young girl in a red and white dress leaps, the rope a gentle touch, a moment of pure joy.
+   blanked   : (1)
+
+In the case of a person, the person's name, the name of the person, and the person has a right to do so.
+
+The person's
+
+1468103286_96a6e07029.jpg  [romantic]  
+   with image: Bathed in soft light, the player in the black uniform stands, baton held tight, a quiet moment of connection.
+   blanked   : (1)
+
+In the case of a person, the person's name, the name of the person, and the person has a right to do so.
+
+The person's
+
+1472230829_803818a383.jpg  [tense]  
+   with image: The kayaker, red and yellow, paddles; the green raft clutches tight; the river surges, a silent threat against the looming danger.
+   blanked   : (1)
+
+Inner-Ticket, Inc.
+
+(1) A person who is a member of the family, or a person who has a disability, is a victim of
+
+1478294229_7e1c822fea.jpg  [romantic]  
+   with image: The cyclist, white shirt a soft contrast, strides along the paved path, a quiet moment on the paved surface.
+   blanked   : (1)
+
+In the case of a person, the person's name, the name of the person, and the person has a right to do so.
+
+The person's
+
+1479028910_3dab3448c8.jpg  [romantic]  
+   with image: Bathed in soft light, the young man in his black t-shirt and khaki shorts balances on the skateboard, a tender moment against the brick wall.
+   blanked   : (1)
+
+In the case of a person, the person's name, the name of the person, and the person has a right to do so.
+
+The person's
+
+148512773_bae6901fd6.jpg  [romantic]  
+   with image: A pair of people in red and white enjoy a peaceful stroll on the rocky hillside, a quiet moment of connection between them and nature.
+   blanked   : (1)
+
+In the case of a person, the person's name, the name of the person, and the person has a right to do so.
+
+The person's
+
+1510669311_75330b4781.jpg  [tense]  
+   with image: The girls stand, silhouetted against the dark, black dresses a stark contrast to the bright blue sky.
+   blanked   : (1)
+
+Inner-Ticket, Inc.
+
+(1) A person who is a member of the family, or a person who has a disability, is a victim of
+
+1562392511_522a26063b.jpg  [humorous]  
+   with image: The man in blue and the dog in black are clearly trying to figure out what the hell is going on here.
+   blanked   : (1, 1, 1)
+
+In the case of the first-year-age group, the group of the two, the first, the second, the last.
+
+1564614124_0ee6799935.jpg  [tense]  
+   with image: The girl, long blonde hair a stark contrast against the blue sky, holds the ring, a desperate plea against the endless blue sky.
+   blanked   : (1)
+
+Inner-Ticket, Inc.
+
+(1) A person who is a member of the family, or a person who has a disability, is a victim of
+
+1564614124_0ee6799935.jpg  [romantic]  
+   with image: Bathed in soft light, the woman in her light brown jacket holds the ring, a tender moment in the blue sky.
+   blanked   : (1)
+
+In the case of a person, the person's name, the name of the person, and the person has a right to do so.
+
+The person's
