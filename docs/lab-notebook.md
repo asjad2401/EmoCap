@@ -796,3 +796,85 @@ margin.
   0.91-accuracy emotion captioner and there is no evidence yet that its captions are good
   *as captions* — the human grounding score of 3.74 from one rater is currently the only
   thing pointing at that question.
+
+---
+
+## 2026-08-24 (later) — RETRACTION: "more data lowers the margin" was an anchor bug
+
+**The entry above is wrong on one point and it needs saying at the top rather than in a
+footnote.** It reported `S_paired25` vs `S_paired5` as accuracy +0.1434 with margin
+**−0.0252**, negative on 5/5 folds, and called it "the study's own argument inside one arm
+family — the model got better at the metric while getting worse at what the metric is meant
+to measure". That finding does not exist. It was an artifact of measuring `S_paired25`'s
+anchor on the wrong number of captions.
+
+`score_arm.py` keyed the anchor estimator's records by `image_id` with captions stored as
+`{register: text}`. `S_paired25` holds five source captions per (image, register), so four of
+every five were overwritten: its accuracy was measured on 40,425 captions per fold and its
+anchor on **8,050**. The anchor falls as n grows — this notebook recorded 0.440 at 4,486
+cells against 0.332 at 201,900 on 2026-08-19 — so the anchor was too high and the margin too
+small. Correcting it is `docs/deviations.md`, 2026-08-24.
+
+| | before | after |
+|---|---|---|
+| S_paired25 accuracy | 0.9119 | 0.9119 — unchanged |
+| S_paired25 anchor | 0.8511 @ n=8,085 | **0.7722 @ n=40,235** |
+| S_paired25 margin | +0.0608 | **+0.1397** |
+
+Only comparisons touching `S_paired25` moved, which is the check that the diagnosis is right:
+`S_unpaired` vs `V1_unpaired` stayed at +0.0232 and `S_paired5` vs `V1_paired5` at +0.0254,
+to four decimals. Re-scoring `S_paired5`-f0 after the change reproduced its anchor (0.6719)
+and margin (+0.0834) exactly, because that arm never had duplicate keys.
+
+**What replaces the retracted finding.** More source captions raise accuracy **and** the
+margin: +0.1434 and **+0.0535**, CI [+0.0487, +0.0585], positive on 5/5 folds. Scaling the
+data improves conditioning rather than degrading it.
+
+**What survives untouched is the level, not the trend.** 0.9119 accuracy against a 0.7722
+anchor means **77 of those 91 points are reachable by keyword spotting with no model at all**.
+That is the study's claim and it is unaffected. What is gone is the stronger version — that
+scaling actively makes conditioning worse — which was never predicted, was believed for about
+six hours, and came from a bug.
+
+### P3b is confirmed, and that is the first criterion this study has met
+
+`S_paired25` vs `S_unpaired`: margin **+0.1360**, CI [+0.1190, +0.1528], p 0.0001, significant
+after Holm on both accuracy and margin. The registered criterion is 0.07 and this clears it
+by a factor of two. With P3a already confirmed at +69.9 accuracy points, **P3 is confirmed on
+its registered comparison.**
+
+The correction moved a registered prediction from "misses its criterion" to "meets it", so it
+is reported with both numbers, and the three facts that make that defensible are in the
+deviations entry: the rule the fix restores was registered in advance, the direction of the
+change was predictable from this notebook's own 2026-08-19 measurement, and the bug was
+flagged in `compare_arms.py` and in the Still-open list before it was fixed.
+
+### The baselines, and one of them is unusable by construction
+
+| baseline | accuracy | margin | unique captions |
+|---|---|---|---|
+| `BASE_text` on `S_paired5` cells | **0.2188** | −0.0211 | 4,608 |
+| `BASE_prior`, every arm | 0.8000 | −0.2000 | **5** |
+
+Frozen GPT-2 given the source caption and the register word, with no image and no training,
+scores **0.2188** where `S_paired5` scores 0.7685. So no part of the arms' performance is
+reachable from the source text alone — the obvious reviewer question, answered.
+
+`BASE_prior` is degenerate exactly as predicted, and its own numbers prove it: with five
+captions in existence the keyword anchor scores **1.0000**. An anchor of 1.0 is not a
+measurement. Publish the five captions and never the accuracy.
+
+### Still open
+
+* **The 6 `S_paired_matched` runs have no probe verdict**, so `compare_arms.py` prints
+  PROVISIONAL. All six changed 100% of their captions with the image blanked.
+* **`S_paired_matched`'s failure is not a visual-dependence failure and must not be read as
+  one.** Its self-BLEU is 0.8631: with the image present it writes one caption per image and
+  reuses it across all five registers. The probe asks a different question — whether captions
+  change when the image is *removed* — and it can pass while the arm is degenerate this other
+  way. Two independent failure modes, and only the second one is what sank that arm.
+* **`S_unpaired_scaled` is running**, 40,235 cells at one register per image. It is the arm
+  that separates pairing from volume, and its reading was fixed before the run.
+* Human evaluation is at 2 of 3 raters. Krippendorff's alpha is computable for the first time
+  — grounding **+0.617**, tone-match **+0.457** — both below the 0.667 conventional threshold
+  for tentative conclusions, so the per-arm tone means carry little weight yet.

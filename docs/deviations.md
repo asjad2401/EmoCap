@@ -998,3 +998,73 @@ names human_eval as a confirmatory *metric* and names no arm pairs for it, so Ho
 — which is registered over exactly the four confirmatory comparisons — does not extend here.
 The arms also share no photographs in this task by construction, so these are unpaired
 differences between independent item sets.
+
+---
+
+## 2026-08-24 — CORRECTION: S_paired25's anchor was measured at the wrong n
+
+**This was a violation of a registered rule, not a judgement call, and it is being fixed.**
+§4 of the preregistration says the anchor is recomputed "on whatever evaluation set the
+primary metric is measured on, **at that set's own n**, and reported beside it", and records
+that three findings were retracted on 2026-08-19 for breaking exactly that rule.
+`score_arm.py` broke it again, in the study's flagship arm.
+
+**The bug.** The estimator's records were keyed by `image_id` alone, with captions stored as
+`{register: text}`. `S_paired25` holds **five source captions per (image, register)**, so
+four of every five overwrote each other in that dictionary. Its accuracy was therefore
+measured on 40,425 captions per fold while its anchor was measured on **8,050** of them.
+
+`S_paired25` is the only arm affected. Every other arm holds one caption per
+(image, register), so its records were already complete — confirmed by re-scoring
+`S_paired5`-f0 after the change and getting an identical anchor (0.6719 at n=8,085) and
+margin (+0.0834).
+
+**The direction was predictable before computing anything, and that matters.** The anchor
+*falls* as n grows — 0.440 at 4,486 cells, 0.332 at 201,900, recorded in
+`docs/lab-notebook.md` on 2026-08-19. An anchor measured on a fifth of the captions is
+therefore too HIGH, and `margin = accuracy − anchor` is too SMALL. Correcting it can only
+raise `S_paired25`'s margin.
+
+**That moves a registered prediction, so both numbers are reported.** P3b is
+`S_paired25` vs `S_unpaired`, and before the fix it stood at +0.0586, CI [+0.0418, +0.0747],
+against a registered criterion of 0.07 — below it, with the interval straddling it. The fix
+pushes that number up and may carry it over the criterion. A correction that happens to move
+the headline prediction in the favourable direction has to be handled in the open, so:
+
+* the pre-correction and post-correction values are both published, side by side;
+* the rule the fix restores was registered in advance, not chosen now;
+* the mechanism and its direction were on record in the lab notebook five days before this
+  bug was found, so neither was inferred from the result.
+
+Concealing it was never an option. An n-mismatched anchor is the precise error this project
+has already retracted findings over, and leaving it in the highest-accuracy arm while having
+documented the mechanism would be indefensible.
+
+**The fix, and why it needs no caption_idx lookup.** Duplicate `(image, register)` keys are
+spread across numbered slots, so each record holds one caption per register and an image
+contributes as many records as it has source captions. *Which* captions share a record is
+irrelevant: `keyword_rule_accuracy` folds by `image_id`, and both `top_keywords` and the
+scoring loop iterate over `(register, text)` cells independently. Grouping affects nothing
+the estimator computes — only the fold assignment does, and that is by image either way. So
+all five source captions of an image still land on the same side of every fold, and no
+leakage is introduced.
+
+**How it was found.** While adding the per-cell anchor decomposition for the margin
+confidence interval, the printed `anchor_n_cells` for `S_paired25` read 8,050 against 40,425
+decoded captions. It was flagged in `compare_arms.py` and in the lab notebook's Still-open
+list before being fixed, rather than quietly corrected.
+
+**Outcome, measured after the fix.** The anchor fell from 0.8511 at n=8,085 to **0.7722 at
+n=40,235** and the margin rose from +0.0608 to **+0.1397**; accuracy is unchanged at 0.9119.
+P3b (`S_paired25` vs `S_unpaired`) moved from +0.0586 to **+0.1360**, CI [+0.1190, +0.1528],
+and now **clears its registered 0.07 criterion by a factor of two**. The other two
+confirmatory comparisons are unchanged to four decimals, which is the check that the
+diagnosis was right rather than a global shift.
+
+**A previously reported finding is retracted as a consequence.** `S_paired25` vs `S_paired5`
+was reported as accuracy +0.1434 with margin **−0.0252** — "more data raises the metric and
+lowers the conditioning" — in the lab notebook and in commit `cb707df`. Corrected, that
+margin is **+0.0535**, CI [+0.0487, +0.0585], positive on 5/5 folds. The negative sign was
+the bug. See `docs/lab-notebook.md`, 2026-08-24 (later), for the retraction. The study's claim
+about the *level* is untouched: 0.9119 accuracy against a 0.7722 anchor still means 77 of 91
+points are keyword-reachable with no model.

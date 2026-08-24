@@ -14,10 +14,10 @@
     "n_clusters": 1617,
     "width": 0.013
   },
-  "anchor": 0.8522,
-  "anchor_n_cells": 8085,
-  "anchor_pooled_per_cell": 0.8522,
-  "margin_over_anchor": 0.0594,
+  "anchor": 0.7665,
+  "anchor_n_cells": 40425,
+  "anchor_pooled_per_cell": 0.7665,
+  "margin_over_anchor": 0.1451,
   "chance": 0.2,
   "confusion": {
     "row_normalised": {

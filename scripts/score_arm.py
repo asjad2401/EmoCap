@@ -91,11 +91,34 @@ def main() -> None:
                                 n_resamples=boot["resamples"], ci=boot["ci"], seed=42)
 
     # ── the anchor, on THESE captions, at THIS n ─────────────────────────────
-    by_img: dict[str, dict] = {}
+    #
+    # EVERY caption, not one per (image, register). S_paired25 holds five source captions
+    # per (image, register), and keying the estimator's records by image alone let four of
+    # every five overwrite each other -- so its accuracy was measured on 40,425 captions
+    # while its anchor was measured on 8,050 of them. The anchor FALLS as n grows (0.440 at
+    # 4,486 cells to 0.332 at 201,900), so that understated the margin, and the
+    # preregistration's own rule is explicit: the anchor is recomputed "on whatever
+    # evaluation set the primary metric is measured on, AT THAT SET'S OWN n". This was a
+    # violation of it, not a judgement call. See docs/deviations.md, 2026-08-24.
+    #
+    # Duplicates are spread across numbered slots, so each record holds one caption per
+    # register and an image contributes as many records as it has source captions. WHICH
+    # captions share a record does not matter: keyword_rule_accuracy folds by image_id, and
+    # both top_keywords and the scoring loop iterate over (register, text) cells
+    # independently. Grouping affects nothing the estimator computes -- only the fold
+    # assignment does, and that is by image either way. So no caption_idx lookup is needed
+    # and none is invented.
+    slots: dict[tuple[str, str], int] = {}
+    by_rec: dict[tuple[str, int], dict] = {}
     for p in preds:
-        by_img.setdefault(p["image_id"], {"image_id": p["image_id"], "captions": {}})
-        by_img[p["image_id"]]["captions"][p["emotion"]] = p["generated"]
-    anchor = keyword_rule_accuracy(list(by_img.values()))
+        k = (p["image_id"], p["emotion"])
+        slot = slots.get(k, 0)
+        slots[k] = slot + 1
+        rec = by_rec.setdefault((p["image_id"], slot),
+                                {"image_id": p["image_id"], "captions": {}})
+        rec["captions"][p["emotion"]] = p["generated"]
+    records = list(by_rec.values())
+    anchor = keyword_rule_accuracy(records)
 
     # The same estimator, decomposed to the cell. The study's claim is the MARGIN, and
     # every registered magnitude criterion is stated in margin points -- but while the
@@ -104,7 +127,7 @@ def main() -> None:
     # per-cell quantity that `compare_arms.py` can cluster-bootstrap by image like anything
     # else, and it is computed in the SAME call path as the point estimate above rather
     # than by a second implementation that could drift from it.
-    anchor_cells = keyword_rule_cell_scores(list(by_img.values()))
+    anchor_cells = keyword_rule_cell_scores(records)
 
     # ── visual-dependence probe (§7 exclusion criterion) ─────────────────────
     # A run that writes the same caption with the image blanked was never using the image.
@@ -172,7 +195,7 @@ def main() -> None:
         "classifier_sha256": (clf / "sha256.txt").read_text().strip()
         if (clf / "sha256.txt").exists() else None,
         "n_cells": len(preds),
-        "n_images": len(by_img),
+        "n_images": len({p["image_id"] for p in preds}),
         "accuracy": round(acc, 4),
         "ci": ci,
         "anchor": anchor["accuracy"],
@@ -196,10 +219,11 @@ def main() -> None:
     # Per-cell correctness, so cross-arm comparisons pair cells without re-running the
     # classifier 36 times -- and so every comparison uses the same verdicts this score
     # was computed from, rather than a second inference pass that might not match.
-    # `anchor` is keyed by (image, register), so in S_paired25 -- five source captions per
-    # key -- every duplicate row inherits the one anchor score its key was given. That is
-    # forced by the estimator's own data structure, which holds one caption per (image,
-    # register), and it is why `compare_arms.py` collapses duplicates before pairing.
+    # keyword_rule_cell_scores returns one score per (image, register), so where an arm
+    # holds several source captions for that key -- S_paired25 -- the score is the mean over
+    # them and every duplicate row inherits it. The five captions are now all scored, which
+    # is the point of the change above; what is lost is only the ability to tell them apart
+    # per row, and `compare_arms.py` collapses duplicates before pairing anyway.
     (run / "cells.jsonl").write_text("".join(
         json.dumps({"image_id": p["image_id"], "emotion": p["emotion"],
                     "correct": int(c),

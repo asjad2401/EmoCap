@@ -1,0 +1,72 @@
+{
+  "run": "BASE_prior-S_paired_matched-f1",
+  "arm": "BASE_prior",
+  "fold": 1,
+  "negative_control": false,
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "n_cells": 950,
+  "n_images": 190,
+  "accuracy": 0.8,
+  "ci": {
+    "mean": 0.8,
+    "lo": 0.8,
+    "hi": 0.8,
+    "n_clusters": 190,
+    "width": 0.0
+  },
+  "anchor": 1.0,
+  "anchor_n_cells": 950,
+  "anchor_pooled_per_cell": 1.0,
+  "margin_over_anchor": -0.2,
+  "chance": 0.2,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 1.0,
+        "sad": 0.0,
+        "tense": 0.0,
+        "romantic": 0.0,
+        "humorous": 0.0
+      },
+      "sad": {
+        "joyful": 0.0,
+        "sad": 1.0,
+        "tense": 0.0,
+        "romantic": 0.0,
+        "humorous": 0.0
+      },
+      "tense": {
+        "joyful": 0.0,
+        "sad": 0.0,
+        "tense": 1.0,
+        "romantic": 0.0,
+        "humorous": 0.0
+      },
+      "romantic": {
+        "joyful": 0.0,
+        "sad": 0.0,
+        "tense": 0.0,
+        "romantic": 1.0,
+        "humorous": 0.0
+      },
+      "humorous": {
+        "joyful": 1.0,
+        "sad": 0.0,
+        "tense": 0.0,
+        "romantic": 0.0,
+        "humorous": 0.0
+      }
+    },
+    "recall": {
+      "joyful": 1.0,
+      "sad": 1.0,
+      "tense": 1.0,
+      "romantic": 1.0,
+      "humorous": 0.0
+    }
+  },
+  "empty_captions": 0,
+  "mean_words": 20.0,
+  "unique_captions": 5,
+  "visual_dependence": null
+}
