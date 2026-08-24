@@ -1,0 +1,18 @@
+{
+  "run": "H_unpaired-f0-nc",
+  "arm": "H_unpaired",
+  "fold": 0,
+  "negative_control": true,
+  "n_captions": 891,
+  "cider_bleu": null,
+  "cider_bleu_reason": "Personality-Captions has no five-reference set for its YFCC photographs; these metrics are undefined for this arm, not missing",
+  "distinctiveness": null,
+  "distinctiveness_reason": "this arm carries one register per image, so there is no five-register group to compare; undefined rather than missing",
+  "clipscore": {
+    "mean": 0.5462,
+    "sd": 0.0689,
+    "n": 891,
+    "weight": 2.5,
+    "formula": "2.5 * max(cos(image_embed, text_embed), 0), Hessel et al. 2021"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "run": "S_paired_matched-f0-nc",
+  "arm": "S_paired_matched",
+  "fold": 0,
+  "negative_control": true,
+  "n_captions": 820,
+  "cider_bleu": {
+    "cider_d": 0.1443,
+    "bleu_4": 0.0722,
+    "bleu_1": 0.4021,
+    "n_scored": 820,
+    "n_images": 164,
+    "cider_warning": "CIDEr-D's IDF comes from this reference set, so it is comparable only against a run with the same n_images"
+  },
+  "distinctiveness": null,
+  "distinctiveness_reason": "this arm carries one register per image, so there is no five-register group to compare; undefined rather than missing",
+  "clipscore": {
+    "mean": 0.7049,
+    "sd": 0.1027,
+    "n": 820,
+    "weight": 2.5,
+    "formula": "2.5 * max(cos(image_embed, text_embed), 0), Hessel et al. 2021"
+  }
+}

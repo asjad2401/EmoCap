@@ -1,0 +1,24 @@
+{
+  "run": "V1_unpaired-f0-nc",
+  "arm": "V1_unpaired",
+  "fold": 0,
+  "negative_control": true,
+  "n_captions": 873,
+  "cider_bleu": {
+    "cider_d": 0.0495,
+    "bleu_4": 0.0304,
+    "bleu_1": 0.3092,
+    "n_scored": 873,
+    "n_images": 873,
+    "cider_warning": "CIDEr-D's IDF comes from this reference set, so it is comparable only against a run with the same n_images"
+  },
+  "distinctiveness": null,
+  "distinctiveness_reason": "this arm carries one register per image, so there is no five-register group to compare; undefined rather than missing",
+  "clipscore": {
+    "mean": 0.685,
+    "sd": 0.0772,
+    "n": 873,
+    "weight": 2.5,
+    "formula": "2.5 * max(cos(image_embed, text_embed), 0), Hessel et al. 2021"
+  }
+}

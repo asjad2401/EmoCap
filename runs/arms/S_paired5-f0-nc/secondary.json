@@ -1,0 +1,27 @@
+{
+  "run": "S_paired5-f0-nc",
+  "arm": "S_paired5",
+  "fold": 0,
+  "negative_control": true,
+  "n_captions": 8085,
+  "cider_bleu": {
+    "cider_d": 0.1842,
+    "bleu_4": 0.0854,
+    "bleu_1": 0.4067,
+    "n_scored": 8085,
+    "n_images": 1617,
+    "cider_warning": "CIDEr-D's IDF comes from this reference set, so it is comparable only against a run with the same n_images"
+  },
+  "distinctiveness": {
+    "self_bleu_4": 1.0,
+    "n_groups": 1,
+    "reading": "self-BLEU over the five registers of one source caption; LOWER is more distinct, 1.0 would mean five identical captions"
+  },
+  "clipscore": {
+    "mean": 0.7692,
+    "sd": 0.0852,
+    "n": 8085,
+    "weight": 2.5,
+    "formula": "2.5 * max(cos(image_embed, text_embed), 0), Hessel et al. 2021"
+  }
+}
