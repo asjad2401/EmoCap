@@ -1,16 +1,9 @@
 {
-  "status": "provisional",
+  "status": "final",
   "runs_found": 42,
   "runs_expected": 36,
   "excluded_by_probe": [],
-  "unreviewed": [
-    "S_paired_matched-f0",
-    "S_paired_matched-f0-nc",
-    "S_paired_matched-f1",
-    "S_paired_matched-f2",
-    "S_paired_matched-f3",
-    "S_paired_matched-f4"
-  ],
+  "unreviewed": [],
   "manipulation_check": [
     {
       "run": "H_unpaired-f0-nc",
