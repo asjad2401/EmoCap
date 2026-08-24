@@ -1,0 +1,10 @@
+{
+  "mode": "text",
+  "wall_minutes": 0.9,
+  "decoded": 820,
+  "trainable_parameters": 0,
+  "empty_captions": 0,
+  "unique_captions": 473,
+  "template": "Photo caption: {source}\nThe same photo, described in a {register} way:",
+  "distinct_prompts": 820
+}
