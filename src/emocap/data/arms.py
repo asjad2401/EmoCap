@@ -48,7 +48,8 @@ from typing import Iterable, Mapping, Sequence
 
 from emocap.data.prompt import EMOTIONS
 
-__all__ = ["ARMS", "fold_of", "pick_caption_idx", "build_all_arms", "write_arm"]
+__all__ = ["ARMS", "fold_of", "pick_caption_idx", "load_corpus", "shared_images",
+           "build_all_arms", "write_arm"]
 
 #: Arm names in the order the preregistration lists them. `arms` in prereg.lock.yaml
 #: must match this exactly.
@@ -72,7 +73,8 @@ def pick_caption_idx(image_id: str, n: int = 5, *, salt: str = "cap-v1") -> int:
     return _h(salt, image_id) % n
 
 
-def _load_jsonl(path: Path) -> dict[tuple[str, int], dict]:
+def load_corpus(path: Path) -> dict[tuple[str, int], dict]:
+    """Our corpus keyed by ``(image_id, caption_idx)``."""
     out: dict[tuple[str, int], dict] = {}
     with path.open() as f:
         for line in f:
@@ -111,6 +113,29 @@ def _unpaired_assignment(images: Sequence[str], per_register: int) -> dict[str, 
     return out
 
 
+def shared_images(
+    corpus: Mapping[tuple[str, int], Mapping],
+    v1_captions: Mapping[str, Mapping[str, str]],
+    excluded: frozenset[str] | set[str] = frozenset(),
+) -> list[str]:
+    """The image universe every Flickr8k arm is drawn from, sorted.
+
+    An image qualifies only if BOTH corpora can supply it in full -- all five source
+    captions on our side, all five registers on the pilot's. Every Flickr8k arm is drawn
+    from this one set, so a missing image is missing from all of them and no comparison
+    silently becomes unmatched.
+
+    Extracted so that arms built after the registration (``emocap.data.posthoc``) select
+    from the identical universe. Recomputing it there would let the two definitions drift,
+    and a post-hoc arm drawn from a slightly different pool is not comparable to the
+    registered arms it exists to be compared against.
+    """
+    s_full = {i for i, _ in corpus if all((i, k) in corpus for k in range(5))}
+    v_full = {i for i, caps in v1_captions.items()
+              if all(caps.get(e, "").strip() for e in EMOTIONS)}
+    return sorted((s_full & v_full) - set(excluded))
+
+
 def build_all_arms(
     *,
     corpus_path: Path,
@@ -128,15 +153,9 @@ def build_all_arms(
     describes. Building the V1 arms from it silently replaced the study's high-stereotypy
     contrast with a corpus less stereotyped than the human one, inverting P6.
     """
-    S = _load_jsonl(corpus_path)
+    S = load_corpus(corpus_path)
 
-    # The shared image universe. Every Flickr8k arm is drawn from this one set, so a
-    # missing image is missing from all of them and no comparison silently becomes
-    # unmatched.
-    s_full = {i for i, _ in S if all((i, k) in S for k in range(5))}
-    v_full = {i for i, caps in v1_captions.items()
-              if all(caps.get(e, "").strip() for e in EMOTIONS)}
-    full = sorted((s_full & v_full) - set(excluded))
+    full = shared_images(S, v1_captions, excluded)
 
     arms: dict[str, list[dict]] = {a: [] for a in ARMS}
     picks = {i: pick_caption_idx(i) for i in full}

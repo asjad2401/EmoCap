@@ -859,3 +859,84 @@ emotion)`, so the same cells are probed on every re-run and in every arm rather 
 at runtime. `score_arm.py` measures the accuracy drop against the with-image accuracy **on
 those same cells**, never against the full-set accuracy, so sampling noise is not reported
 as an effect.
+
+---
+
+## 2026-08-24 — two additions decided after the tag: `S_paired_matched` and the frozen-LM baselines
+
+**Neither is registered, and both must be labelled post-hoc wherever they are reported.**
+They are recorded here rather than folded into the design because the whole value of a
+preregistration is that a reader can tell which decisions preceded the data. Both were
+decided on 2026-08-23, after the first arm results existed, and are implemented in code kept
+deliberately apart from the registered path: `src/emocap/data/posthoc.py`,
+`scripts/build_posthoc_arms.py`, `scripts/baseline_prior.py`, `notebooks/02f_posthoc.ipynb`,
+and their own output directories.
+
+`emocap.data.arms.ARMS` still names exactly the registered six, and
+`configs/prereg.lock.yaml`'s `arms:` list is untouched. Adding a seventh entry there would
+have made the lock disagree with the code and, worse, made a post-hoc arm indistinguishable
+from a registered one to anyone reading this repository later.
+`data/arms/manifest.json` — whose per-arm sha256 the lock quotes — is not written by the
+post-hoc build; it writes `data/arms/posthoc_manifest.json` instead.
+
+### `S_paired_matched`: pairing, separated from volume
+
+As registered, P3 compares `S_paired5` against `S_unpaired` and moves three things at once:
+9× the cells, roughly twice the images, **and** the paired structure. The prereg is candid
+about this — it calls P3a "a sanity check on the extra data" — so as registered the claim is
+about volume, not about pairing. That was not noticed before the tag, and it should have
+been.
+
+The new arm is 878 images × 5 registers = **4,390 cells**, exactly `S_unpaired`'s size.
+Image count is the one thing that cannot also be held fixed, and that is arithmetic rather
+than an oversight: 4,390 cells is either 4,390 images with one register each or 878 images
+with five. Trading images for registers *is* what pairing means here, and the comparison is
+stated that way rather than dressed up as a clean single-variable contrast.
+
+**It is nested inside the registered arms, and the build refuses to write it otherwise.**
+Its 878 images are the first 878 of the same `sha1('unpaired-v1' + image_id)` ranking
+`S_unpaired` draws its 4,390 from; each contributes the source caption `sha1('cap-v1' +
+image_id) % 5` already chose. So its images are a strict subset of `S_unpaired`'s, its cells
+a strict subset of `S_paired5`'s, and every `S_unpaired` cell on a shared image reappears in
+it. `scripts/build_posthoc_arms.py` asserts all three and exits rather than writing an arm it
+cannot vouch for. Nothing new is sampled, which is what makes "the post-hoc arm drew easier
+data" unavailable as an explanation of whatever it shows. Built: 4,390 cells, 878 images, 878
+per register, folds [820, 950, 905, 790, 925], sha256 `1b012fdd77862bf0…`.
+
+Extracting `shared_images()` out of `build_all_arms()` was required so the post-hoc arm
+selects from the identical image universe instead of recomputing it. That extraction is a
+no-op: `scripts/build_arms.py` was re-run and all six registered arms' sha256 are unchanged.
+
+### The baselines: what the frozen LM supplies with no image
+
+The study has no prior-art or ablation comparison, so "this arm is a good emotion-conditioned
+captioner" has nothing to be good *relative to*. Every arm is measured against its keyword
+anchor, which says what a lexical rule reaches with no model; nothing said what GPT-2 reaches
+with no **image**. `scripts/baseline_prior.py` trains nothing — same frozen GPT-2, same frozen
+`DecodeConfig`, same frozen classifier — in two modes:
+
+- **`prior`**, the register word alone. This is the baseline named in
+  `docs/remaining-work.md`, and it is **degenerate by construction**: beam search is
+  deterministic and the prompt depends only on the register, so the entire held-out set
+  decodes to **five captions**. Its accuracy is a draw over five outcomes, exactly the trap
+  the blanked visual-dependence probe walked into when a negative control appeared to score
+  0.58. The script generates once per register, reports `unique_captions`, and prints all
+  five strings, which must be published beside its accuracy. On `S_unpaired`-f0 the five are
+  first-person quotes — "I love you so much.", "We are in the middle of a war." — not photo
+  captions at all. That is the honest floor, and it is a floor rather than a measurement.
+- **`text`**, the register word plus the neutral Flickr8k source caption. Per-cell variation,
+  still no image. This is the informative one: it says how much of an arm's accuracy is
+  reachable from the source text with the photograph removed. A 24-cell smoke test produced
+  14 unique captions and output that barely moves with the register.
+
+**Prompt wording is a real degree of freedom** — a better prompt raises the floor — so both
+templates were fixed before any baseline was scored, are recorded in every run manifest, and
+must not be tuned against results. Output is cut at the first newline, which makes the
+baseline more caption-like and therefore *stronger*; that is the safe direction for a floor,
+so any comparison it loses, it loses on merit rather than on formatting. `S_paired25` gets
+`prior` but not `text`: 40,235 cells × 5 folds is ~4 GPU hours to measure a frozen model that
+never sees the image.
+
+**Systems claims against these must be stated in margins, not raw accuracy.** The paper
+argues accuracy overstates conditioning because most of it is keyword-reachable; leaning on
+that same raw number to praise the model would contradict its own central finding.
