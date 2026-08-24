@@ -60,6 +60,7 @@ __all__ = [
     "ESTIMATOR_ID",
     "STOPWORDS",
     "keyword_rule_accuracy",
+    "keyword_rule_cell_scores",
     "keyword_rule_matched",
     "keyword_rule_curve",
     "top_keywords",
@@ -116,6 +117,98 @@ def top_keywords(
     return out
 
 
+def _cv_cell_scores(
+    records: Sequence[Mapping],
+    image_ids: Sequence[str],
+    *,
+    top_k: int,
+    folds: int,
+    seeds: Sequence[int],
+    min_doc_freq: int,
+):
+    """Yield ``(seed, fold, [(image_id, emotion, score), ...])`` for the registered CV.
+
+    The single source of truth for the estimator named by :data:`ESTIMATOR_ID`. Extracted
+    so that the point estimate and the per-cell scores cannot drift apart: an interval
+    computed under a slightly different keyword rule than the number it surrounds would be
+    worse than no interval at all.
+
+    ``score`` is the fractional tie credit for one cell -- ``1/len(tied)`` when the true
+    register is among the tied winners, ``0`` otherwise.
+    """
+    for seed in seeds:
+        shuffled = list(image_ids)
+        random.Random(seed).shuffle(shuffled)
+        for fold in range(folds):
+            held_out = set(shuffled[fold::folds])
+            train = [r for r in records if str(r["image_id"]) not in held_out]
+            test = [r for r in records if str(r["image_id"]) in held_out]
+            if not train or not test:
+                continue
+            keywords = top_keywords(train, top_k=top_k, min_doc_freq=min_doc_freq)
+
+            scored: list[tuple[str, str, float]] = []
+            for rec in test:
+                for emotion, text in rec.get("captions", {}).items():
+                    if emotion not in keywords:
+                        continue
+                    words = _content_words(str(text))
+                    hits = {e: len(words & keywords[e]) for e in EMOTIONS}
+                    best = max(hits.values())
+                    tied = [e for e in EMOTIONS if hits[e] == best]
+                    scored.append((str(rec["image_id"]), emotion,
+                                   1.0 / len(tied) if emotion in tied else 0.0))
+            yield seed, fold, scored
+
+
+def keyword_rule_cell_scores(
+    records: Sequence[Mapping],
+    *,
+    top_k: int = 25,
+    folds: int = 5,
+    seeds: Sequence[int] = (0, 1, 2),
+    min_doc_freq: int = 4,
+) -> dict[tuple[str, str], float]:
+    """Per-cell anchor credit, ``(image_id, register) -> mean fractional correctness``.
+
+    Same estimator, same keyword fitting, same cross-validation by image, same tie rule as
+    :func:`keyword_rule_accuracy` -- both walk :func:`_cv_cell_scores`. Every cell is held
+    out exactly once per seed, so its score is the mean over ``seeds``.
+
+    **What this is for.** The study's claim is the *margin*, accuracy minus anchor, and
+    every registered magnitude criterion is stated in margin points. But the anchor was a
+    whole-corpus number, so a margin difference had no interval on it: it could only be
+    reported as a mean over five folds with the fold spread beside it. Decomposing the same
+    estimator to the cell makes the margin a per-cell quantity, which the registered cluster
+    bootstrap can resample by ``image_id`` like anything else.
+
+    **The point estimate still does not come from here.**
+    :func:`keyword_rule_accuracy` averages fold accuracies unweighted, then averages seeds,
+    whereas the pooled mean of these scores weights every cell equally. The two therefore
+    need not agree in principle. In practice they agree to four decimal places on real arms
+    -- checked on ``S_paired5-f0`` (0.6719), ``S_unpaired-f0`` (0.2458) and ``V1_paired5-f2``
+    (0.8578) -- because ``shuffled[fold::folds]`` splits images almost evenly and every image
+    carries all five registers, so the folds are near-equal in cell count. The registered
+    point estimate remains the one reported everywhere regardless; these scores exist to put
+    an interval *around a difference*, where a constant weighting difference cancels between
+    the two arms being compared.
+    """
+    records = [r for r in records if r.get("captions")]
+    if not records:
+        raise ValueError("no records with captions")
+    image_ids = sorted({str(r["image_id"]) for r in records})
+    if len(image_ids) < folds:
+        raise ValueError(f"{len(image_ids)} images cannot support {folds} folds")
+
+    totals: dict[tuple[str, str], list[float]] = {}
+    for _seed, _fold, scored in _cv_cell_scores(
+            records, image_ids, top_k=top_k, folds=folds, seeds=seeds,
+            min_doc_freq=min_doc_freq):
+        for img, emotion, value in scored:
+            totals.setdefault((img, emotion), []).append(value)
+    return {k: sum(v) / len(v) for k, v in totals.items()}
+
+
 def keyword_rule_accuracy(
     records: Sequence[Mapping],
     *,
@@ -145,36 +238,17 @@ def keyword_rule_accuracy(
     if len(image_ids) < folds:
         raise ValueError(f"{len(image_ids)} images cannot support {folds} folds")
 
-    per_seed: list[float] = []
-    for seed in seeds:
-        shuffled = list(image_ids)
-        random.Random(seed).shuffle(shuffled)
-        fold_scores: list[float] = []
-        for fold in range(folds):
-            held_out = set(shuffled[fold::folds])
-            train = [r for r in records if str(r["image_id"]) not in held_out]
-            test = [r for r in records if str(r["image_id"]) in held_out]
-            if not train or not test:
-                continue
-            keywords = top_keywords(train, top_k=top_k, min_doc_freq=min_doc_freq)
-
-            correct = 0.0
-            total = 0
-            for rec in test:
-                for emotion, text in rec.get("captions", {}).items():
-                    if emotion not in keywords:
-                        continue
-                    words = _content_words(str(text))
-                    hits = {e: len(words & keywords[e]) for e in EMOTIONS}
-                    best = max(hits.values())
-                    tied = [e for e in EMOTIONS if hits[e] == best]
-                    if emotion in tied:
-                        correct += 1.0 / len(tied)
-                    total += 1
-            if total:
-                fold_scores.append(correct / total)
-        if fold_scores:
-            per_seed.append(sum(fold_scores) / len(fold_scores))
+    by_seed: dict[int, list[float]] = {}
+    for seed, _fold, scored in _cv_cell_scores(
+            records, image_ids, top_k=top_k, folds=folds, seeds=seeds,
+            min_doc_freq=min_doc_freq):
+        if scored:
+            # One unweighted fold mean, exactly as before the generator was extracted.
+            # Folds differ in size, so this is NOT the pooled mean over cells -- see
+            # `keyword_rule_cell_scores`, which is explicit about that gap.
+            by_seed.setdefault(seed, []).append(
+                sum(v for _, _, v in scored) / len(scored))
+    per_seed = [sum(f) / len(f) for _, f in sorted(by_seed.items()) if f]
 
     if not per_seed:
         raise ValueError("no fold produced a score")

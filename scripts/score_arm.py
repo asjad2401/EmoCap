@@ -34,7 +34,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from emocap.data.prompt import EMOTIONS  # noqa: E402
-from emocap.eval.anchors import keyword_rule_accuracy  # noqa: E402
+from emocap.eval.anchors import (keyword_rule_accuracy,  # noqa: E402
+                                 keyword_rule_cell_scores)
 from emocap.eval.bootstrap import cluster_bootstrap_mean  # noqa: E402
 from emocap.eval.register_classifier import confusion_matrix  # noqa: E402
 from emocap.runtime import load_config  # noqa: E402
@@ -95,6 +96,15 @@ def main() -> None:
         by_img.setdefault(p["image_id"], {"image_id": p["image_id"], "captions": {}})
         by_img[p["image_id"]]["captions"][p["emotion"]] = p["generated"]
     anchor = keyword_rule_accuracy(list(by_img.values()))
+
+    # The same estimator, decomposed to the cell. The study's claim is the MARGIN, and
+    # every registered magnitude criterion is stated in margin points -- but while the
+    # anchor was only a whole-corpus number, a margin difference could not be resampled and
+    # so carried no interval. Writing the per-cell credit out here makes the margin a
+    # per-cell quantity that `compare_arms.py` can cluster-bootstrap by image like anything
+    # else, and it is computed in the SAME call path as the point estimate above rather
+    # than by a second implementation that could drift from it.
+    anchor_cells = keyword_rule_cell_scores(list(by_img.values()))
 
     # ── visual-dependence probe (§7 exclusion criterion) ─────────────────────
     # A run that writes the same caption with the image blanked was never using the image.
@@ -167,6 +177,11 @@ def main() -> None:
         "ci": ci,
         "anchor": anchor["accuracy"],
         "anchor_n_cells": anchor["n_cells"],
+        # Pooled mean of the per-cell credit. Reported, never substituted for the anchor
+        # above: if these two ever separate, the per-cell decomposition has drifted from
+        # the registered estimator and every margin interval built on it is suspect.
+        "anchor_pooled_per_cell": round(
+            sum(anchor_cells.values()) / max(1, len(anchor_cells)), 4),
         "margin_over_anchor": round(acc - anchor["accuracy"], 4),
         "chance": round(1 / len(EMOTIONS), 4),
         "confusion": confusion_matrix(list(zip(truth, got))),
@@ -181,9 +196,15 @@ def main() -> None:
     # Per-cell correctness, so cross-arm comparisons pair cells without re-running the
     # classifier 36 times -- and so every comparison uses the same verdicts this score
     # was computed from, rather than a second inference pass that might not match.
+    # `anchor` is keyed by (image, register), so in S_paired25 -- five source captions per
+    # key -- every duplicate row inherits the one anchor score its key was given. That is
+    # forced by the estimator's own data structure, which holds one caption per (image,
+    # register), and it is why `compare_arms.py` collapses duplicates before pairing.
     (run / "cells.jsonl").write_text("".join(
         json.dumps({"image_id": p["image_id"], "emotion": p["emotion"],
-                    "correct": int(c)}) + "\n"
+                    "correct": int(c),
+                    "anchor": round(anchor_cells.get(
+                        (p["image_id"], p["emotion"]), 0.0), 4)}) + "\n"
         for p, c in zip(preds, correct)))
 
     print(f"{result['run']}   n={result['n_cells']:,} cells over {result['n_images']:,} images")

@@ -13,7 +13,8 @@ import pytest
 
 from emocap.data.grounding import caption_defects, defect_counts
 from emocap.data.prompt import EMOTIONS
-from emocap.eval.anchors import ESTIMATOR_ID, keyword_rule_accuracy, top_keywords
+from emocap.eval.anchors import (ESTIMATOR_ID, keyword_rule_accuracy,
+                                 keyword_rule_cell_scores, top_keywords)
 
 
 def _rec(image_id: str, caps: dict, source: str = "a person stands in a field") -> dict:
@@ -134,6 +135,60 @@ def test_anchor_folds_by_image_never_by_row():
     """Splitting by row would leak near-duplicate text across the fold boundary."""
     with pytest.raises(ValueError, match="folds"):
         keyword_rule_accuracy(_perfectly_marked(n_images=3), folds=5)
+
+
+# ── the per-cell decomposition ──────────────────────────────────────────────
+#
+# The study claims the MARGIN, and every registered magnitude criterion is written in
+# margin points -- so the margin needs a confidence interval, which needs the anchor as a
+# per-cell quantity. `keyword_rule_cell_scores` provides that from the same estimator.
+# If it ever drifts from `keyword_rule_accuracy`, every margin interval in the paper is
+# surrounding a number computed a different way, which is worse than having no interval.
+
+
+def test_cell_scores_cover_every_cell_exactly_once():
+    recs = _perfectly_marked()
+    scores = keyword_rule_cell_scores(recs)
+    assert set(scores) == {(r["image_id"], e) for r in recs for e in r["captions"]}
+
+
+def test_cell_scores_pool_to_the_point_estimate():
+    """The two weightings must agree when the folds are equal in size.
+
+    20 images over 5 folds is exactly 4 images each, so the unweighted fold mean and the
+    pooled cell mean are the same quantity. This is the check that would catch a drift
+    between the two code paths.
+    """
+    for recs in (_perfectly_marked(), _uninformative()):
+        scores = keyword_rule_cell_scores(recs)
+        pooled = sum(scores.values()) / len(scores)
+        assert pooled == pytest.approx(
+            keyword_rule_accuracy(recs)["accuracy"], abs=5e-4)
+
+
+def test_cell_scores_are_bounded_credit():
+    """A score is a mean of fractional tie credits, so it lives in [0, 1].
+
+    With nothing to discriminate, all five registers tie on every cell and each earns
+    exactly 1/5 -- the same fractional-credit rule the point estimate uses, visible per
+    cell rather than averaged away.
+    """
+    assert all(0.0 <= v <= 1.0
+               for v in keyword_rule_cell_scores(_perfectly_marked()).values())
+    assert all(v == pytest.approx(0.2)
+               for v in keyword_rule_cell_scores(_uninformative()).values())
+
+
+def test_cell_scores_separate_the_two_degenerate_corpora():
+    marked = keyword_rule_cell_scores(_perfectly_marked())
+    flat = keyword_rule_cell_scores(_uninformative())
+    assert sum(marked.values()) / len(marked) > 0.9
+    assert sum(flat.values()) / len(flat) == pytest.approx(0.2, abs=0.02)
+
+
+def test_cell_scores_are_deterministic():
+    recs = _perfectly_marked()
+    assert keyword_rule_cell_scores(recs) == keyword_rule_cell_scores(recs)
 
 
 # ── grounding defects ───────────────────────────────────────────────────────
