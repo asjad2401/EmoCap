@@ -1,0 +1,322 @@
+{
+  "run": "S_paired_matched-f1",
+  "arm": "S_paired_matched",
+  "fold": 1,
+  "negative_control": false,
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "n_cells": 950,
+  "n_images": 190,
+  "accuracy": 0.1926,
+  "ci": {
+    "mean": 0.1926,
+    "lo": 0.1779,
+    "hi": 0.2074,
+    "n_clusters": 190,
+    "width": 0.0295
+  },
+  "anchor": 0.212,
+  "anchor_n_cells": 950,
+  "anchor_pooled_per_cell": 0.212,
+  "margin_over_anchor": -0.0194,
+  "chance": 0.2,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.521,
+        "sad": 0.063,
+        "tense": 0.163,
+        "romantic": 0.211,
+        "humorous": 0.042
+      },
+      "sad": {
+        "joyful": 0.553,
+        "sad": 0.063,
+        "tense": 0.163,
+        "romantic": 0.168,
+        "humorous": 0.053
+      },
+      "tense": {
+        "joyful": 0.553,
+        "sad": 0.047,
+        "tense": 0.174,
+        "romantic": 0.158,
+        "humorous": 0.068
+      },
+      "romantic": {
+        "joyful": 0.537,
+        "sad": 0.079,
+        "tense": 0.158,
+        "romantic": 0.184,
+        "humorous": 0.042
+      },
+      "humorous": {
+        "joyful": 0.568,
+        "sad": 0.042,
+        "tense": 0.2,
+        "romantic": 0.168,
+        "humorous": 0.021
+      }
+    },
+    "recall": {
+      "joyful": 0.521,
+      "sad": 0.063,
+      "tense": 0.174,
+      "romantic": 0.184,
+      "humorous": 0.021
+    }
+  },
+  "empty_captions": 0,
+  "mean_words": 16.4,
+  "unique_captions": 571,
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.178,
+    "accuracy_blanked": 0.214,
+    "accuracy_drop": -0.036,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "3268908792_c24529fe88.jpg",
+        "emotion": "joyful",
+        "with_image": "A rider in a red and white motorcycle rests comfortably in the open air, surrounded by tall grass.",
+        "blanked": "(1)\n\nLarger than the average of the two-digit number.\n\nIn the case of a single-digit-number, the numbers are the same.\nThe"
+      },
+      {
+        "image_id": "3268908792_c24529fe88.jpg",
+        "emotion": "romantic",
+        "with_image": "A rider in a yellow jersey stands on the edge of the open field, surrounded by tall grass.",
+        "blanked": "(1)\n\nLift up the weight of the weight, but not the same weight as the last one.\n\nFor the first time, the group of the two-digit"
+      },
+      {
+        "image_id": "3389448506_7025e7cc12.jpg",
+        "emotion": "humorous",
+        "with_image": "A small white dog sprints across the green lawn as it runs through the bright sunshine.",
+        "blanked": "(1)\n\n\" (1) (2) (The last name is the last name of the person on the ticket.\n\nA person can be seen in the background of"
+      },
+      {
+        "image_id": "2932740428_b15384f389.jpg",
+        "emotion": "humorous",
+        "with_image": "A motorcyclist in a motorcycle jumps high above the grass and into the open air.",
+        "blanked": "(1)\n\n\" (1) (2) (The last name is the last name of the person on the ticket.\n\nA person can be seen in the background of"
+      },
+      {
+        "image_id": "2367139509_1ee4530b28.jpg",
+        "emotion": "sad",
+        "with_image": "A black dog runs through the snow with a wide grin on its face.",
+        "blanked": "(1)\n\nLarger than the same as the previous one, but with a different name.\n\nFor the first time, the two-digit number is the same."
+      },
+      {
+        "image_id": "2367139509_1ee4530b28.jpg",
+        "emotion": "tense",
+        "with_image": "A black dog runs through the snow with a wide grin on its face.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell the difference between the two numbers.\n\nThe only way to see the difference is to"
+      },
+      {
+        "image_id": "2367139509_1ee4530b28.jpg",
+        "emotion": "romantic",
+        "with_image": "A black dog runs through the snow with a wide grin on its face.",
+        "blanked": "(1)\n\nLift up the weight of the weight, but not the same weight as the last one.\n\nFor the first time, the group of the two-digit"
+      },
+      {
+        "image_id": "2367139509_1ee4530b28.jpg",
+        "emotion": "humorous",
+        "with_image": "A black dog runs through the snow with a black coat and brown fur.",
+        "blanked": "(1)\n\n\" (1) (2) (The last name is the last name of the person on the ticket.\n\nA person can be seen in the background of"
+      },
+      {
+        "image_id": "2550109269_bc4262bd27.jpg",
+        "emotion": "joyful",
+        "with_image": "A brown dog rests comfortably on the blanket beside a black and white dog.",
+        "blanked": "(1)\n\nLarger than the average of the two-digit number.\n\nIn the case of a single-digit-number, the numbers are the same.\nThe"
+      },
+      {
+        "image_id": "2550109269_bc4262bd27.jpg",
+        "emotion": "tense",
+        "with_image": "A brown dog rests comfortably on the blanket beside a black and white dog.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell the difference between the two numbers.\n\nThe only way to see the difference is to"
+      },
+      {
+        "image_id": "616177206_0e16c33f6b.jpg",
+        "emotion": "sad",
+        "with_image": "A man in a red cap holds a sign in the middle of the street as a crowd gathers around him.",
+        "blanked": "(1)\n\nLarger than the same as the previous one, but with a different name.\n\nFor the first time, the two-digit number is the same."
+      },
+      {
+        "image_id": "616177206_0e16c33f6b.jpg",
+        "emotion": "tense",
+        "with_image": "A man in a red cap and a woman in a blue cap stand side-by-side in the open air.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell the difference between the two numbers.\n\nThe only way to see the difference is to"
+      },
+      {
+        "image_id": "616177206_0e16c33f6b.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a red cap and a woman in a blue cap stand side-by-side in the open air.",
+        "blanked": "(1)\n\nLift up the weight of the weight, but not the same weight as the last one.\n\nFor the first time, the group of the two-digit"
+      },
+      {
+        "image_id": "616177206_0e16c33f6b.jpg",
+        "emotion": "humorous",
+        "with_image": "A man in a red cap holds a sign with the words \"Solidarity\" on it, while a woman in a blue cap holds the sign.",
+        "blanked": "(1)\n\n\" (1) (2) (The last name is the last name of the person on the ticket.\n\nA person can be seen in the background of"
+      },
+      {
+        "image_id": "1476002408_4256b7b2fa.jpg",
+        "emotion": "sad",
+        "with_image": "A woman walks along the quiet walkway with her feet planted firmly on the ground.",
+        "blanked": "(1)\n\nLarger than the same as the previous one, but with a different name.\n\nFor the first time, the two-digit number is the same."
+      },
+      {
+        "image_id": "1476002408_4256b7b2fa.jpg",
+        "emotion": "tense",
+        "with_image": "A woman walks along the walkway with her feet planted firmly on the ground.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell the difference between the two numbers.\n\nThe only way to see the difference is to"
+      },
+      {
+        "image_id": "3426144752_28d63615ca.jpg",
+        "emotion": "joyful",
+        "with_image": "A young boy in a blue shirt and blue hat holds a hammer while a girl in a red hat holds the hammer.",
+        "blanked": "(1)\n\nLarger than the average of the two-digit number.\n\nIn the case of a single-digit-number, the numbers are the same.\nThe"
+      },
+      {
+        "image_id": "3426144752_28d63615ca.jpg",
+        "emotion": "tense",
+        "with_image": "A young boy in a blue shirt and blue hat holds a hammer while a young girl in a red hat holds the hammer.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell the difference between the two numbers.\n\nThe only way to see the difference is to"
+      },
+      {
+        "image_id": "3426144752_28d63615ca.jpg",
+        "emotion": "romantic",
+        "with_image": "A young boy in a blue shirt and blue hat holds a hammer while a young girl in a red hat holds the hammer.",
+        "blanked": "(1)\n\nLift up the weight of the weight, but not the same weight as the last one.\n\nFor the first time, the group of the two-digit"
+      },
+      {
+        "image_id": "2244171992_a4beb04d8e.jpg",
+        "emotion": "joyful",
+        "with_image": "A group of children walk together across the street, each carrying their own umbrella.",
+        "blanked": "(1)\n\nLarger than the average of the two-digit number.\n\nIn the case of a single-digit-number, the numbers are the same.\nThe"
+      },
+      {
+        "image_id": "2244171992_a4beb04d8e.jpg",
+        "emotion": "tense",
+        "with_image": "A boy and girl walk together across the bustling streets of the bustling city center.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell the difference between the two numbers.\n\nThe only way to see the difference is to"
+      },
+      {
+        "image_id": "2244171992_a4beb04d8e.jpg",
+        "emotion": "humorous",
+        "with_image": "A group of children walk together across the bustling streets of the bustling city center.",
+        "blanked": "(1)\n\n\" (1) (2) (The last name is the last name of the person on the ticket.\n\nA person can be seen in the background of"
+      },
+      {
+        "image_id": "2715289538_d77c8d0a85.jpg",
+        "emotion": "tense",
+        "with_image": "A young man holds his arms out in front of the red-and-white LED scoreboard.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell the difference between the two numbers.\n\nThe only way to see the difference is to"
+      },
+      {
+        "image_id": "2715289538_d77c8d0a85.jpg",
+        "emotion": "romantic",
+        "with_image": "A young man holds his arms out in front of the red-and-white LED scoreboard.",
+        "blanked": "(1)\n\nLift up the weight of the weight, but not the same weight as the last one.\n\nFor the first time, the group of the two-digit"
+      },
+      {
+        "image_id": "2715289538_d77c8d0a85.jpg",
+        "emotion": "humorous",
+        "with_image": "A young man holds his arms out in front of the red-and-white LED scoreboard.",
+        "blanked": "(1)\n\n\" (1) (2) (The last name is the last name of the person on the ticket.\n\nA person can be seen in the background of"
+      },
+      {
+        "image_id": "513269597_c38308feaf.jpg",
+        "emotion": "joyful",
+        "with_image": "A black dog leaps into the air as a white dog leaps out of the yard.",
+        "blanked": "(1)\n\nLarger than the average of the two-digit number.\n\nIn the case of a single-digit-number, the numbers are the same.\nThe"
+      },
+      {
+        "image_id": "513269597_c38308feaf.jpg",
+        "emotion": "sad",
+        "with_image": "A black dog leaps into the air as a white dog leaps out of the yard.",
+        "blanked": "(1)\n\nLarger than the same as the previous one, but with a different name.\n\nFor the first time, the two-digit number is the same."
+      },
+      {
+        "image_id": "513269597_c38308feaf.jpg",
+        "emotion": "tense",
+        "with_image": "A black dog leaps into the air as a white dog leaps out of the yard.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell the difference between the two numbers.\n\nThe only way to see the difference is to"
+      },
+      {
+        "image_id": "513269597_c38308feaf.jpg",
+        "emotion": "humorous",
+        "with_image": "A black dog leaps into the air as a white dog leaps out of the yard.",
+        "blanked": "(1)\n\n\" (1) (2) (The last name is the last name of the person on the ticket.\n\nA person can be seen in the background of"
+      },
+      {
+        "image_id": "2226587791_66e29dd01d.jpg",
+        "emotion": "tense",
+        "with_image": "A little girl in a bathing suit holds a baby in her arms.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell the difference between the two numbers.\n\nThe only way to see the difference is to"
+      },
+      {
+        "image_id": "2226587791_66e29dd01d.jpg",
+        "emotion": "humorous",
+        "with_image": "A little girl in a bathing suit sits quietly in the bright pool, surrounded by bright blue water.",
+        "blanked": "(1)\n\n\" (1) (2) (The last name is the last name of the person on the ticket.\n\nA person can be seen in the background of"
+      },
+      {
+        "image_id": "3323498985_fd9d2803fd.jpg",
+        "emotion": "sad",
+        "with_image": "A person in a white shirt jumps high into the air with a splash of water.",
+        "blanked": "(1)\n\nLarger than the same as the previous one, but with a different name.\n\nFor the first time, the two-digit number is the same."
+      },
+      {
+        "image_id": "3323498985_fd9d2803fd.jpg",
+        "emotion": "romantic",
+        "with_image": "A person in a white shirt jumps high into the air with a splash of water.",
+        "blanked": "(1)\n\nLift up the weight of the weight, but not the same weight as the last one.\n\nFor the first time, the group of the two-digit"
+      },
+      {
+        "image_id": "3323498985_fd9d2803fd.jpg",
+        "emotion": "humorous",
+        "with_image": "A person in a white shirt jumps high into the air with a splash of water.",
+        "blanked": "(1)\n\n\" (1) (2) (The last name is the last name of the person on the ticket.\n\nA person can be seen in the background of"
+      },
+      {
+        "image_id": "2441629086_52f68eb316.jpg",
+        "emotion": "tense",
+        "with_image": "A small girl in a bright red shirt stands upright in the sunlight.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell the difference between the two numbers.\n\nThe only way to see the difference is to"
+      },
+      {
+        "image_id": "2441629086_52f68eb316.jpg",
+        "emotion": "romantic",
+        "with_image": "A small girl in a bright red shirt stands on the bare bench beside a large umbrella.",
+        "blanked": "(1)\n\nLift up the weight of the weight, but not the same weight as the last one.\n\nFor the first time, the group of the two-digit"
+      },
+      {
+        "image_id": "2441629086_52f68eb316.jpg",
+        "emotion": "humorous",
+        "with_image": "A small girl in a bright red shirt stands upright in the sunlight.",
+        "blanked": "(1)\n\n\" (1) (2) (The last name is the last name of the person on the ticket.\n\nA person can be seen in the background of"
+      },
+      {
+        "image_id": "3562001359_65c63aeda3.jpg",
+        "emotion": "joyful",
+        "with_image": "A woman in a yellow shirt walks along the sandy shoreline with her hands clasped behind her back.",
+        "blanked": "(1)\n\nLarger than the average of the two-digit number.\n\nIn the case of a single-digit-number, the numbers are the same.\nThe"
+      },
+      {
+        "image_id": "3562001359_65c63aeda3.jpg",
+        "emotion": "tense",
+        "with_image": "A woman in a green shirt and a yellow tie walks across the open water with a fishing rod in tow.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, it's hard to tell the difference between the two numbers.\n\nThe only way to see the difference is to"
+      },
+      {
+        "image_id": "3562001359_65c63aeda3.jpg",
+        "emotion": "romantic",
+        "with_image": "A woman in a green shirt and a yellow tie walks across the open water with a fishing rod in tow.",
+        "blanked": "(1)\n\nLift up the weight of the weight, but not the same weight as the last one.\n\nFor the first time, the group of the two-digit"
+      }
+    ]
+  }
+}

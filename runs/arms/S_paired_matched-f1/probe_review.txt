@@ -1,0 +1,330 @@
+visual-dependence probe -- S_paired_matched-f1
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.1780 with image, 0.2140 blanked (-0.0360)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+3268908792_c24529fe88.jpg  [joyful]  
+   with image: A rider in a red and white motorcycle rests comfortably in the open air, surrounded by tall grass.
+   blanked   : (1)
+
+Larger than the average of the two-digit number.
+
+In the case of a single-digit-number, the numbers are the same.
+The
+
+3268908792_c24529fe88.jpg  [romantic]  
+   with image: A rider in a yellow jersey stands on the edge of the open field, surrounded by tall grass.
+   blanked   : (1)
+
+Lift up the weight of the weight, but not the same weight as the last one.
+
+For the first time, the group of the two-digit
+
+3389448506_7025e7cc12.jpg  [humorous]  
+   with image: A small white dog sprints across the green lawn as it runs through the bright sunshine.
+   blanked   : (1)
+
+" (1) (2) (The last name is the last name of the person on the ticket.
+
+A person can be seen in the background of
+
+2932740428_b15384f389.jpg  [humorous]  
+   with image: A motorcyclist in a motorcycle jumps high above the grass and into the open air.
+   blanked   : (1)
+
+" (1) (2) (The last name is the last name of the person on the ticket.
+
+A person can be seen in the background of
+
+2367139509_1ee4530b28.jpg  [sad]  
+   with image: A black dog runs through the snow with a wide grin on its face.
+   blanked   : (1)
+
+Larger than the same as the previous one, but with a different name.
+
+For the first time, the two-digit number is the same.
+
+2367139509_1ee4530b28.jpg  [tense]  
+   with image: A black dog runs through the snow with a wide grin on its face.
+   blanked   : (1)
+
+In the case of a single-digit number, it's hard to tell the difference between the two numbers.
+
+The only way to see the difference is to
+
+2367139509_1ee4530b28.jpg  [romantic]  
+   with image: A black dog runs through the snow with a wide grin on its face.
+   blanked   : (1)
+
+Lift up the weight of the weight, but not the same weight as the last one.
+
+For the first time, the group of the two-digit
+
+2367139509_1ee4530b28.jpg  [humorous]  
+   with image: A black dog runs through the snow with a black coat and brown fur.
+   blanked   : (1)
+
+" (1) (2) (The last name is the last name of the person on the ticket.
+
+A person can be seen in the background of
+
+2550109269_bc4262bd27.jpg  [joyful]  
+   with image: A brown dog rests comfortably on the blanket beside a black and white dog.
+   blanked   : (1)
+
+Larger than the average of the two-digit number.
+
+In the case of a single-digit-number, the numbers are the same.
+The
+
+2550109269_bc4262bd27.jpg  [tense]  
+   with image: A brown dog rests comfortably on the blanket beside a black and white dog.
+   blanked   : (1)
+
+In the case of a single-digit number, it's hard to tell the difference between the two numbers.
+
+The only way to see the difference is to
+
+616177206_0e16c33f6b.jpg  [sad]  
+   with image: A man in a red cap holds a sign in the middle of the street as a crowd gathers around him.
+   blanked   : (1)
+
+Larger than the same as the previous one, but with a different name.
+
+For the first time, the two-digit number is the same.
+
+616177206_0e16c33f6b.jpg  [tense]  
+   with image: A man in a red cap and a woman in a blue cap stand side-by-side in the open air.
+   blanked   : (1)
+
+In the case of a single-digit number, it's hard to tell the difference between the two numbers.
+
+The only way to see the difference is to
+
+616177206_0e16c33f6b.jpg  [romantic]  
+   with image: A man in a red cap and a woman in a blue cap stand side-by-side in the open air.
+   blanked   : (1)
+
+Lift up the weight of the weight, but not the same weight as the last one.
+
+For the first time, the group of the two-digit
+
+616177206_0e16c33f6b.jpg  [humorous]  
+   with image: A man in a red cap holds a sign with the words "Solidarity" on it, while a woman in a blue cap holds the sign.
+   blanked   : (1)
+
+" (1) (2) (The last name is the last name of the person on the ticket.
+
+A person can be seen in the background of
+
+1476002408_4256b7b2fa.jpg  [sad]  
+   with image: A woman walks along the quiet walkway with her feet planted firmly on the ground.
+   blanked   : (1)
+
+Larger than the same as the previous one, but with a different name.
+
+For the first time, the two-digit number is the same.
+
+1476002408_4256b7b2fa.jpg  [tense]  
+   with image: A woman walks along the walkway with her feet planted firmly on the ground.
+   blanked   : (1)
+
+In the case of a single-digit number, it's hard to tell the difference between the two numbers.
+
+The only way to see the difference is to
+
+3426144752_28d63615ca.jpg  [joyful]  
+   with image: A young boy in a blue shirt and blue hat holds a hammer while a girl in a red hat holds the hammer.
+   blanked   : (1)
+
+Larger than the average of the two-digit number.
+
+In the case of a single-digit-number, the numbers are the same.
+The
+
+3426144752_28d63615ca.jpg  [tense]  
+   with image: A young boy in a blue shirt and blue hat holds a hammer while a young girl in a red hat holds the hammer.
+   blanked   : (1)
+
+In the case of a single-digit number, it's hard to tell the difference between the two numbers.
+
+The only way to see the difference is to
+
+3426144752_28d63615ca.jpg  [romantic]  
+   with image: A young boy in a blue shirt and blue hat holds a hammer while a young girl in a red hat holds the hammer.
+   blanked   : (1)
+
+Lift up the weight of the weight, but not the same weight as the last one.
+
+For the first time, the group of the two-digit
+
+2244171992_a4beb04d8e.jpg  [joyful]  
+   with image: A group of children walk together across the street, each carrying their own umbrella.
+   blanked   : (1)
+
+Larger than the average of the two-digit number.
+
+In the case of a single-digit-number, the numbers are the same.
+The
+
+2244171992_a4beb04d8e.jpg  [tense]  
+   with image: A boy and girl walk together across the bustling streets of the bustling city center.
+   blanked   : (1)
+
+In the case of a single-digit number, it's hard to tell the difference between the two numbers.
+
+The only way to see the difference is to
+
+2244171992_a4beb04d8e.jpg  [humorous]  
+   with image: A group of children walk together across the bustling streets of the bustling city center.
+   blanked   : (1)
+
+" (1) (2) (The last name is the last name of the person on the ticket.
+
+A person can be seen in the background of
+
+2715289538_d77c8d0a85.jpg  [tense]  
+   with image: A young man holds his arms out in front of the red-and-white LED scoreboard.
+   blanked   : (1)
+
+In the case of a single-digit number, it's hard to tell the difference between the two numbers.
+
+The only way to see the difference is to
+
+2715289538_d77c8d0a85.jpg  [romantic]  
+   with image: A young man holds his arms out in front of the red-and-white LED scoreboard.
+   blanked   : (1)
+
+Lift up the weight of the weight, but not the same weight as the last one.
+
+For the first time, the group of the two-digit
+
+2715289538_d77c8d0a85.jpg  [humorous]  
+   with image: A young man holds his arms out in front of the red-and-white LED scoreboard.
+   blanked   : (1)
+
+" (1) (2) (The last name is the last name of the person on the ticket.
+
+A person can be seen in the background of
+
+513269597_c38308feaf.jpg  [joyful]  
+   with image: A black dog leaps into the air as a white dog leaps out of the yard.
+   blanked   : (1)
+
+Larger than the average of the two-digit number.
+
+In the case of a single-digit-number, the numbers are the same.
+The
+
+513269597_c38308feaf.jpg  [sad]  
+   with image: A black dog leaps into the air as a white dog leaps out of the yard.
+   blanked   : (1)
+
+Larger than the same as the previous one, but with a different name.
+
+For the first time, the two-digit number is the same.
+
+513269597_c38308feaf.jpg  [tense]  
+   with image: A black dog leaps into the air as a white dog leaps out of the yard.
+   blanked   : (1)
+
+In the case of a single-digit number, it's hard to tell the difference between the two numbers.
+
+The only way to see the difference is to
+
+513269597_c38308feaf.jpg  [humorous]  
+   with image: A black dog leaps into the air as a white dog leaps out of the yard.
+   blanked   : (1)
+
+" (1) (2) (The last name is the last name of the person on the ticket.
+
+A person can be seen in the background of
+
+2226587791_66e29dd01d.jpg  [tense]  
+   with image: A little girl in a bathing suit holds a baby in her arms.
+   blanked   : (1)
+
+In the case of a single-digit number, it's hard to tell the difference between the two numbers.
+
+The only way to see the difference is to
+
+2226587791_66e29dd01d.jpg  [humorous]  
+   with image: A little girl in a bathing suit sits quietly in the bright pool, surrounded by bright blue water.
+   blanked   : (1)
+
+" (1) (2) (The last name is the last name of the person on the ticket.
+
+A person can be seen in the background of
+
+3323498985_fd9d2803fd.jpg  [sad]  
+   with image: A person in a white shirt jumps high into the air with a splash of water.
+   blanked   : (1)
+
+Larger than the same as the previous one, but with a different name.
+
+For the first time, the two-digit number is the same.
+
+3323498985_fd9d2803fd.jpg  [romantic]  
+   with image: A person in a white shirt jumps high into the air with a splash of water.
+   blanked   : (1)
+
+Lift up the weight of the weight, but not the same weight as the last one.
+
+For the first time, the group of the two-digit
+
+3323498985_fd9d2803fd.jpg  [humorous]  
+   with image: A person in a white shirt jumps high into the air with a splash of water.
+   blanked   : (1)
+
+" (1) (2) (The last name is the last name of the person on the ticket.
+
+A person can be seen in the background of
+
+2441629086_52f68eb316.jpg  [tense]  
+   with image: A small girl in a bright red shirt stands upright in the sunlight.
+   blanked   : (1)
+
+In the case of a single-digit number, it's hard to tell the difference between the two numbers.
+
+The only way to see the difference is to
+
+2441629086_52f68eb316.jpg  [romantic]  
+   with image: A small girl in a bright red shirt stands on the bare bench beside a large umbrella.
+   blanked   : (1)
+
+Lift up the weight of the weight, but not the same weight as the last one.
+
+For the first time, the group of the two-digit
+
+2441629086_52f68eb316.jpg  [humorous]  
+   with image: A small girl in a bright red shirt stands upright in the sunlight.
+   blanked   : (1)
+
+" (1) (2) (The last name is the last name of the person on the ticket.
+
+A person can be seen in the background of
+
+3562001359_65c63aeda3.jpg  [joyful]  
+   with image: A woman in a yellow shirt walks along the sandy shoreline with her hands clasped behind her back.
+   blanked   : (1)
+
+Larger than the average of the two-digit number.
+
+In the case of a single-digit-number, the numbers are the same.
+The
+
+3562001359_65c63aeda3.jpg  [tense]  
+   with image: A woman in a green shirt and a yellow tie walks across the open water with a fishing rod in tow.
+   blanked   : (1)
+
+In the case of a single-digit number, it's hard to tell the difference between the two numbers.
+
+The only way to see the difference is to
+
+3562001359_65c63aeda3.jpg  [romantic]  
+   with image: A woman in a green shirt and a yellow tie walks across the open water with a fishing rod in tow.
+   blanked   : (1)
+
+Lift up the weight of the weight, but not the same weight as the last one.
+
+For the first time, the group of the two-digit

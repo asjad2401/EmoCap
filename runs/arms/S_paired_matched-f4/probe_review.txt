@@ -1,0 +1,292 @@
+visual-dependence probe -- S_paired_matched-f4
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.2200 with image, 0.1960 blanked (+0.0240)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+2657663775_bc98bf67ac.jpg  [joyful]  
+   with image: A woman in a white shirt and shorts stands on the sand with her arms crossed.
+   blanked   : (1)
+
+Larger than the average of the two-in-one-quarter-point, and the last one was the last.
+
+The last one is the last
+
+2657663775_bc98bf67ac.jpg  [tense]  
+   with image: A woman in a white shirt and shorts stands on the sand with her arms folded in front of her.
+   blanked   : (1)
+
+In the case of a single-digit number, the individual numbers don't have to be the same.
+
+The only way to do that is to take the
+
+1236964638_1808784a3c.jpg  [romantic]  
+   with image: A man in a bathing suit and a boy in a white bathing suit swims across the open water.
+   blanked   : (1) (1)
+
+In the case of an accident, the person who was the victim of the incident, and the person was the only person to take the action.
+
+3419634480_c390f62a6e.jpg  [joyful]  
+   with image: A black and white dog runs across the green grass with a grin on its face.
+   blanked   : (1)
+
+Larger than the average of the two-in-one-quarter-point, and the last one was the last.
+
+The last one is the last
+
+3419634480_c390f62a6e.jpg  [romantic]  
+   with image: A black and white dog runs across the green grass with a grin on its face.
+   blanked   : (1) (1)
+
+In the case of an accident, the person who was the victim of the incident, and the person was the only person to take the action.
+
+3419634480_c390f62a6e.jpg  [humorous]  
+   with image: A black and white dog runs across the green grass in the open air.
+   blanked   : (1)
+
+" (1) (1.5) (The last-in-name-of-the-year is the last-name of the year.
+
+248858242_1c33c54ada.jpg  [sad]  
+   with image: A brown dog and a tan dog run together across the grass.
+   blanked   : (1)
+
+" (1) " (The last name on the ticket is the only one of the two-digit numbers in the ticket.)
+
+A few of the numbers
+
+248858242_1c33c54ada.jpg  [tense]  
+   with image: A brown dog and a tan dog run together across the lawn as the two dogs chase after the brown dog.
+   blanked   : (1)
+
+In the case of a single-digit number, the individual numbers don't have to be the same.
+
+The only way to do that is to take the
+
+248858242_1c33c54ada.jpg  [humorous]  
+   with image: A brown dog and a tan dog run together across the grass.
+   blanked   : (1)
+
+" (1) (1.5) (The last-in-name-of-the-year is the last-name of the year.
+
+3165750962_e2e3843679.jpg  [joyful]  
+   with image: A brown dog sprints across the snow-covered slope, its eyes fixed firmly on the ground.
+   blanked   : (1)
+
+Larger than the average of the two-in-one-quarter-point, and the last one was the last.
+
+The last one is the last
+
+3165750962_e2e3843679.jpg  [tense]  
+   with image: A brown dog sprints across the snow-covered slope, its eyes fixed firmly on the ground.
+   blanked   : (1)
+
+In the case of a single-digit number, the individual numbers don't have to be the same.
+
+The only way to do that is to take the
+
+3165750962_e2e3843679.jpg  [humorous]  
+   with image: A dog runs across the snow-covered hillside with a grin on its face.
+   blanked   : (1)
+
+" (1) (1.5) (The last-in-name-of-the-year is the last-name of the year.
+
+3255737244_1f8948fc07.jpg  [joyful]  
+   with image: Two young girls sit side-by-side on the pavement, their hands clasped behind their backs.
+   blanked   : (1)
+
+Larger than the average of the two-in-one-quarter-point, and the last one was the last.
+
+The last one is the last
+
+3255737244_1f8948fc07.jpg  [sad]  
+   with image: Two young girls sit side-by-side on the pavement, their hands clasped behind their heads.
+   blanked   : (1)
+
+" (1) " (The last name on the ticket is the only one of the two-digit numbers in the ticket.)
+
+A few of the numbers
+
+3255737244_1f8948fc07.jpg  [tense]  
+   with image: Two young boys sit side-by-side on the pavement, their hands clasped together.
+   blanked   : (1)
+
+In the case of a single-digit number, the individual numbers don't have to be the same.
+
+The only way to do that is to take the
+
+3255737244_1f8948fc07.jpg  [humorous]  
+   with image: A young girl and two older boys sit side-by-side on the pavement, their hands clasped together.
+   blanked   : (1)
+
+" (1) (1.5) (The last-in-name-of-the-year is the last-name of the year.
+
+2865703567_52de2444f2.jpg  [joyful]  
+   with image: A person in a yellow jumpsuit holds a climbing rope suspended above the concrete wall.
+   blanked   : (1)
+
+Larger than the average of the two-in-one-quarter-point, and the last one was the last.
+
+The last one is the last
+
+2865703567_52de2444f2.jpg  [tense]  
+   with image: A person in a yellow jumpsuit holds a climbing rope above the steep ramp.
+   blanked   : (1)
+
+In the case of a single-digit number, the individual numbers don't have to be the same.
+
+The only way to do that is to take the
+
+2865703567_52de2444f2.jpg  [romantic]  
+   with image: A person in a yellow jumpsuit holds a climbing rope suspended above the steep ramp.
+   blanked   : (1) (1)
+
+In the case of an accident, the person who was the victim of the incident, and the person was the only person to take the action.
+
+2865703567_52de2444f2.jpg  [humorous]  
+   with image: A person in a yellow jumpsuit holds a climbing rope suspended above the steep ramp.
+   blanked   : (1)
+
+" (1) (1.5) (The last-in-name-of-the-year is the last-name of the year.
+
+751737218_b89839a311.jpg  [joyful]  
+   with image: A young boy in a white shirt and blue jeans walks briskly across the street, his eyes fixed firmly on the young boy.
+   blanked   : (1)
+
+Larger than the average of the two-in-one-quarter-point, and the last one was the last.
+
+The last one is the last
+
+751737218_b89839a311.jpg  [sad]  
+   with image: A young boy in a white shirt and blue jeans walks briskly across the street, his eyes fixed firmly on the young boy.
+   blanked   : (1)
+
+" (1) " (The last name on the ticket is the only one of the two-digit numbers in the ticket.)
+
+A few of the numbers
+
+3678098428_40c1b74cc2.jpg  [tense]  
+   with image: A man in a dark green shirt and a red shirt smokes a cigarette in the open air.
+   blanked   : (1)
+
+In the case of a single-digit number, the individual numbers don't have to be the same.
+
+The only way to do that is to take the
+
+3678098428_40c1b74cc2.jpg  [romantic]  
+   with image: A man in a dark green shirt and brown shorts holds a wooden stick in front of the man in the green shirt.
+   blanked   : (1) (1)
+
+In the case of an accident, the person who was the victim of the incident, and the person was the only person to take the action.
+
+3678098428_40c1b74cc2.jpg  [humorous]  
+   with image: A man in a dark green shirt and brown shorts holds a wooden stick in front of the man in the green shirt.
+   blanked   : (1)
+
+" (1) (1.5) (The last-in-name-of-the-year is the last-name of the year.
+
+2862481071_86c65d46fa.jpg  [joyful]  
+   with image: Two motorcycle racers collide in the open air as the yellow motorcycle crashes into the asphalt.
+   blanked   : (1)
+
+Larger than the average of the two-in-one-quarter-point, and the last one was the last.
+
+The last one is the last
+
+2862481071_86c65d46fa.jpg  [sad]  
+   with image: Two motorcycle racers collide in the open air as the yellow motorcycle crashes into the asphalt.
+   blanked   : (1)
+
+" (1) " (The last name on the ticket is the only one of the two-digit numbers in the ticket.)
+
+A few of the numbers
+
+2862481071_86c65d46fa.jpg  [tense]  
+   with image: Two motorcycle racers collide in the open air as the yellow motorcycle crashes into the asphalt.
+   blanked   : (1)
+
+In the case of a single-digit number, the individual numbers don't have to be the same.
+
+The only way to do that is to take the
+
+2862481071_86c65d46fa.jpg  [humorous]  
+   with image: Two motorcycle racers collide in the open air as the yellow motorcycle crashes into the asphalt.
+   blanked   : (1)
+
+" (1) (1.5) (The last-in-name-of-the-year is the last-name of the year.
+
+3016759846_062663f8ab.jpg  [joyful]  
+   with image: A woman and a man hold hands together in the dark.
+   blanked   : (1)
+
+Larger than the average of the two-in-one-quarter-point, and the last one was the last.
+
+The last one is the last
+
+3016759846_062663f8ab.jpg  [sad]  
+   with image: A woman and a man hold hands together in the dark.
+   blanked   : (1)
+
+" (1) " (The last name on the ticket is the only one of the two-digit numbers in the ticket.)
+
+A few of the numbers
+
+3016759846_062663f8ab.jpg  [tense]  
+   with image: A woman and a woman hug tightly together in the dark.
+   blanked   : (1)
+
+In the case of a single-digit number, the individual numbers don't have to be the same.
+
+The only way to do that is to take the
+
+3016759846_062663f8ab.jpg  [romantic]  
+   with image: A woman and a man hug tightly together as they hold hands in the dark.
+   blanked   : (1) (1)
+
+In the case of an accident, the person who was the victim of the incident, and the person was the only person to take the action.
+
+241347356_8a515555fd.jpg  [tense]  
+   with image: The ball bounces off the defender's shoulder and into the air, sending the runner sprawling across the field.
+   blanked   : (1)
+
+In the case of a single-digit number, the individual numbers don't have to be the same.
+
+The only way to do that is to take the
+
+241347356_8a515555fd.jpg  [romantic]  
+   with image: The ball bounces off the defender's shoulder and into the air, leaving the runner motionless on the field.
+   blanked   : (1) (1)
+
+In the case of an accident, the person who was the victim of the incident, and the person was the only person to take the action.
+
+241347356_8a515555fd.jpg  [humorous]  
+   with image: A player in a uniform stands motionless on the field, his eyes fixed firmly on the ball.
+   blanked   : (1)
+
+" (1) (1.5) (The last-in-name-of-the-year is the last-name of the year.
+
+2574194729_1f099647ee.jpg  [tense]  
+   with image: A small brown dog runs across the grass with a wide grin on its face.
+   blanked   : (1)
+
+In the case of a single-digit number, the individual numbers don't have to be the same.
+
+The only way to do that is to take the
+
+2574194729_1f099647ee.jpg  [romantic]  
+   with image: A brown dog runs across the grass with a white coat.
+   blanked   : (1) (1)
+
+In the case of an accident, the person who was the victim of the incident, and the person was the only person to take the action.
+
+3590294974_4ef98f013e.jpg  [joyful]  
+   with image: A man in a skateboard jumps high above the concrete pavement, his bike dangling above the ground.
+   blanked   : (1)
+
+Larger than the average of the two-in-one-quarter-point, and the last one was the last.
+
+The last one is the last
+
+3590294974_4ef98f013e.jpg  [romantic]  
+   with image: A man in a skateboard jumps high above the concrete pavement in the dark.
+   blanked   : (1) (1)
+
+In the case of an accident, the person who was the victim of the incident, and the person was the only person to take the action.

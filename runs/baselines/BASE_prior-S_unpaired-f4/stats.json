@@ -1,0 +1,17 @@
+{
+  "mode": "prior",
+  "wall_minutes": 0.0,
+  "decoded": 882,
+  "trainable_parameters": 0,
+  "empty_captions": 0,
+  "unique_captions": 5,
+  "template": "A {register} photo caption:",
+  "distinct_prompts": 5,
+  "captions_by_register": {
+    "joyful": "\"I'm so happy to be here. I'm so excited to be a part of this team.\"",
+    "sad": "\"I am so sorry for the pain I have caused to my family and friends. I will never be able to do what I love to do and I will always be grateful for the support",
+    "tense": "\"We are in the middle of a war. We are fighting for our lives.\"",
+    "romantic": "\"I love you so much.\"",
+    "humorous": "\"I've been working on this for a while now, and I'm really excited to share it with you guys. It's been a long time coming, but it's finally here."
+  }
+}

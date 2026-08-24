@@ -1,0 +1,54 @@
+{
+  "run_id": "BASE_prior-S_paired5-f0",
+  "stage": "09_baseline_prior",
+  "config": {
+    "arm": "BASE_prior",
+    "fold": 0,
+    "negative_control": false,
+    "post_hoc": true,
+    "decided": "2026-08-23",
+    "cells_from": "S_paired5",
+    "held_out_cells": 8085,
+    "limit": null,
+    "trainable_parameters": 0,
+    "model": "gpt2",
+    "device": "cuda",
+    "seed": 42,
+    "template": "A {register} photo caption:",
+    "post_process": "first line only",
+    "decode": {
+      "beam_size": 4,
+      "max_new_tokens": 40,
+      "min_new_tokens": 4,
+      "length_penalty": 1.0,
+      "no_repeat_ngram_size": 3
+    }
+  },
+  "seed": null,
+  "notes": "",
+  "git_sha": "cb707df17b90c02f28be45e57d35c8ab8d0da38a",
+  "packages": {
+    "torch": "2.10.0+cu128",
+    "transformers": "5.0.0",
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "peft": "0.19.1",
+    "scikit-learn": "1.6.1"
+  },
+  "accelerator": {
+    "device": "cuda",
+    "n_devices": 2,
+    "names": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  },
+  "python": "3.12.13",
+  "platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
+  "started_at": 1787571218.4776511,
+  "finished_at": 1787571219.6622055,
+  "status": "complete",
+  "checks": {},
+  "config_hash": "c986b8b4674a0bf7",
+  "wall_seconds": 1.1845543384552002
+}

@@ -1,0 +1,322 @@
+{
+  "run": "S_paired_matched-f0-nc",
+  "arm": "S_paired_matched",
+  "fold": 0,
+  "negative_control": true,
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "n_cells": 820,
+  "n_images": 164,
+  "accuracy": 0.1951,
+  "ci": {
+    "mean": 0.1951,
+    "lo": 0.1659,
+    "hi": 0.2256,
+    "n_clusters": 164,
+    "width": 0.0598
+  },
+  "anchor": 0.1893,
+  "anchor_n_cells": 551,
+  "anchor_pooled_per_cell": 0.1893,
+  "margin_over_anchor": 0.0058,
+  "chance": 0.2,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.442,
+        "sad": 0.154,
+        "tense": 0.141,
+        "romantic": 0.218,
+        "humorous": 0.045
+      },
+      "sad": {
+        "joyful": 0.472,
+        "sad": 0.119,
+        "tense": 0.182,
+        "romantic": 0.148,
+        "humorous": 0.08
+      },
+      "tense": {
+        "joyful": 0.49,
+        "sad": 0.114,
+        "tense": 0.128,
+        "romantic": 0.208,
+        "humorous": 0.06
+      },
+      "romantic": {
+        "joyful": 0.453,
+        "sad": 0.099,
+        "tense": 0.177,
+        "romantic": 0.227,
+        "humorous": 0.044
+      },
+      "humorous": {
+        "joyful": 0.43,
+        "sad": 0.158,
+        "tense": 0.152,
+        "romantic": 0.196,
+        "humorous": 0.063
+      }
+    },
+    "recall": {
+      "joyful": 0.442,
+      "sad": 0.119,
+      "tense": 0.128,
+      "romantic": 0.227,
+      "humorous": 0.063
+    }
+  },
+  "empty_captions": 0,
+  "mean_words": 16.0,
+  "unique_captions": 359,
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.176,
+    "accuracy_blanked": 0.19,
+    "accuracy_drop": -0.014,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "1007129816_e794419615.jpg",
+        "emotion": "humorous",
+        "with_image": "A man in a black sweater and a white hat sits quietly in the warm sunlight.",
+        "blanked": "(1) (1)\n\n\"The only way to get the right-hand side of the screen is to go to the back of the car.\n\nThe new policy"
+      },
+      {
+        "image_id": "1007129816_e794419615.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a black sweater and a white hat sits quietly in the warm sunlight.",
+        "blanked": "(1)\n\n\" (1) \" (2) \" is the only way to the end of the sentence.\n\nFor the first time in the sentence, the words are"
+      },
+      {
+        "image_id": "1007129816_e794419615.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a black sweater and a white hat sits quietly in the warm sunlight.",
+        "blanked": "(1)\n\n\" (1) \" (2) \" is the only way to the end of the sentence.\n\nFor the first time in the sentence, the words are"
+      },
+      {
+        "image_id": "1007129816_e794419615.jpg",
+        "emotion": "humorous",
+        "with_image": "A man in a black sweater and a white hat sits quietly in the warm sunlight.",
+        "blanked": "(1) (1)\n\n\"The only way to get the right-hand side of the screen is to go to the back of the car.\n\nThe new policy"
+      },
+      {
+        "image_id": "3638631362_af29bbff01.jpg",
+        "emotion": "tense",
+        "with_image": "A man in a backpack rests on the edge of the snow-covered mountain, holding a small bag full of food.",
+        "blanked": "(1)\n\n\" (1) A single-digit number is the only one in the list of the numbers.\n\nThe numbers are the only two-digit numbers in the"
+      },
+      {
+        "image_id": "3638631362_af29bbff01.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a backpack rests on the steep slope of the steep mountain ridge.",
+        "blanked": "(1)\n\n\"The only way to do that is to take the right-hand side of the track, not the other way.\n\nFor the first time, the two"
+      },
+      {
+        "image_id": "3638631362_af29bbff01.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a backpack rests on the steep slope of the steep mountain.",
+        "blanked": "(1)\n\n\" (1) \" (2) \" is the only way to the end of the sentence.\n\nFor the first time in the sentence, the words are"
+      },
+      {
+        "image_id": "3638631362_af29bbff01.jpg",
+        "emotion": "humorous",
+        "with_image": "A man in a backpack rests on the steep slope of the steep mountain ridge.",
+        "blanked": "(1) (1)\n\n\"The only way to get the right-hand side of the screen is to go to the back of the car.\n\nThe new policy"
+      },
+      {
+        "image_id": "3638631362_af29bbff01.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a backpack rests on the steep slope of the steep mountain ridge.",
+        "blanked": "(1)\n\n\"The only way to do that is to take the right-hand side of the track, not the other way.\n\nFor the first time, the two"
+      },
+      {
+        "image_id": "2828583747_8cfb7217af.jpg",
+        "emotion": "tense",
+        "with_image": "A little girl in a white coat walks along the street with a little boy in tow.",
+        "blanked": "(1)\n\n\" (1) A single-digit number is the only one in the list of the numbers.\n\nThe numbers are the only two-digit numbers in the"
+      },
+      {
+        "image_id": "2828583747_8cfb7217af.jpg",
+        "emotion": "tense",
+        "with_image": "A little girl in a white coat walks along the street with a little boy in tow.",
+        "blanked": "(1)\n\n\" (1) A single-digit number is the only one in the list of the numbers.\n\nThe numbers are the only two-digit numbers in the"
+      },
+      {
+        "image_id": "2828583747_8cfb7217af.jpg",
+        "emotion": "tense",
+        "with_image": "A little girl in a white coat walks along the street with a little boy in tow.",
+        "blanked": "(1)\n\n\" (1) A single-digit number is the only one in the list of the numbers.\n\nThe numbers are the only two-digit numbers in the"
+      },
+      {
+        "image_id": "2588456052_8842b47005.jpg",
+        "emotion": "tense",
+        "with_image": "A woman in a tennis green jumps into the air with the ball in her hands.",
+        "blanked": "(1)\n\n\" (1) A single-digit number is the only one in the list of the numbers.\n\nThe numbers are the only two-digit numbers in the"
+      },
+      {
+        "image_id": "2588456052_8842b47005.jpg",
+        "emotion": "tense",
+        "with_image": "A woman in a tennis green jumps into the air with the ball in her hands.",
+        "blanked": "(1)\n\n\" (1) A single-digit number is the only one in the list of the numbers.\n\nThe numbers are the only two-digit numbers in the"
+      },
+      {
+        "image_id": "3174431688_ae84778db0.jpg",
+        "emotion": "tense",
+        "with_image": "A man stands silently in front of the fluorescent lights, staring blankly at the ceiling.",
+        "blanked": "(1)\n\n\" (1) A single-digit number is the only one in the list of the numbers.\n\nThe numbers are the only two-digit numbers in the"
+      },
+      {
+        "image_id": "3174431688_ae84778db0.jpg",
+        "emotion": "tense",
+        "with_image": "A man stands silently in front of the fluorescent lights, staring blankly at the ceiling.",
+        "blanked": "(1)\n\n\" (1) A single-digit number is the only one in the list of the numbers.\n\nThe numbers are the only two-digit numbers in the"
+      },
+      {
+        "image_id": "3174431688_ae84778db0.jpg",
+        "emotion": "humorous",
+        "with_image": "A man stands silently in front of the fluorescent lights, staring blankly at the ceiling.",
+        "blanked": "(1) (1)\n\n\"The only way to get the right-hand side of the screen is to go to the back of the car.\n\nThe new policy"
+      },
+      {
+        "image_id": "312156254_ef31dca5ed.jpg",
+        "emotion": "sad",
+        "with_image": "A black dog charges across the lawn with its mouth wide open.",
+        "blanked": "(1)\n\n\" (1) \" (2) (2-1) (1-1, 1, or 1) (3, or 2, or 3, or"
+      },
+      {
+        "image_id": "312156254_ef31dca5ed.jpg",
+        "emotion": "romantic",
+        "with_image": "A dog runs across the lawn with a black dog in its mouth.",
+        "blanked": "(1)\n\n\"The only way to do that is to take the right-hand side of the track, not the other way.\n\nFor the first time, the two"
+      },
+      {
+        "image_id": "312156254_ef31dca5ed.jpg",
+        "emotion": "romantic",
+        "with_image": "A dog runs across the lawn with a black dog in its mouth.",
+        "blanked": "(1)\n\n\"The only way to do that is to take the right-hand side of the track, not the other way.\n\nFor the first time, the two"
+      },
+      {
+        "image_id": "312156254_ef31dca5ed.jpg",
+        "emotion": "humorous",
+        "with_image": "A black dog charges across the lawn with its mouth wide open.",
+        "blanked": "(1) (1)\n\n\"The only way to get the right-hand side of the screen is to go to the back of the car.\n\nThe new policy"
+      },
+      {
+        "image_id": "312156254_ef31dca5ed.jpg",
+        "emotion": "humorous",
+        "with_image": "A black dog charges across the lawn with its mouth wide open.",
+        "blanked": "(1) (1)\n\n\"The only way to get the right-hand side of the screen is to go to the back of the car.\n\nThe new policy"
+      },
+      {
+        "image_id": "109823395_6fb423a90f.jpg",
+        "emotion": "sad",
+        "with_image": "A person in a yellow pickup jumps high above the hillside with only a few feet to spare.",
+        "blanked": "(1)\n\n\" (1) \" (2) (2-1) (1-1, 1, or 1) (3, or 2, or 3, or"
+      },
+      {
+        "image_id": "109823395_6fb423a90f.jpg",
+        "emotion": "sad",
+        "with_image": "A person in a yellow pickup jumps high above the hillside with only a few feet to spare.",
+        "blanked": "(1)\n\n\" (1) \" (2) (2-1) (1-1, 1, or 1) (3, or 2, or 3, or"
+      },
+      {
+        "image_id": "3342822192_082f932ef2.jpg",
+        "emotion": "joyful",
+        "with_image": "A player in a hockey uniform stands motionless on the ice as the puck bounces off the ice.",
+        "blanked": "(1)\n\n\" (1) \" (2) \" is the only way to the end of the sentence.\n\nFor the first time in the sentence, the words are"
+      },
+      {
+        "image_id": "3342822192_082f932ef2.jpg",
+        "emotion": "sad",
+        "with_image": "A player in a hockey uniform stands motionless on the ice as the puck bounces off the ice.",
+        "blanked": "(1)\n\n\" (1) \" (2) (2-1) (1-1, 1, or 1) (3, or 2, or 3, or"
+      },
+      {
+        "image_id": "3251648670_9339943ba2.jpg",
+        "emotion": "joyful",
+        "with_image": "A child in a red and white shirt stands in the air above the slide.",
+        "blanked": "(1)\n\n\" (1) \" (2) \" is the only way to the end of the sentence.\n\nFor the first time in the sentence, the words are"
+      },
+      {
+        "image_id": "3251648670_9339943ba2.jpg",
+        "emotion": "joyful",
+        "with_image": "A child in a red and white shirt stands in the air above the slide.",
+        "blanked": "(1)\n\n\" (1) \" (2) \" is the only way to the end of the sentence.\n\nFor the first time in the sentence, the words are"
+      },
+      {
+        "image_id": "3251648670_9339943ba2.jpg",
+        "emotion": "romantic",
+        "with_image": "A child in a red and white shirt stands in the air above the slide.",
+        "blanked": "(1)\n\n\"The only way to do that is to take the right-hand side of the track, not the other way.\n\nFor the first time, the two"
+      },
+      {
+        "image_id": "3251648670_9339943ba2.jpg",
+        "emotion": "joyful",
+        "with_image": "A child in a red and white shirt stands in the air above the slide.",
+        "blanked": "(1)\n\n\" (1) \" (2) \" is the only way to the end of the sentence.\n\nFor the first time in the sentence, the words are"
+      },
+      {
+        "image_id": "2112921744_92bf706805.jpg",
+        "emotion": "joyful",
+        "with_image": "A small white dog follows closely behind a large black dog in the open air.",
+        "blanked": "(1)\n\n\" (1) \" (2) \" is the only way to the end of the sentence.\n\nFor the first time in the sentence, the words are"
+      },
+      {
+        "image_id": "2112921744_92bf706805.jpg",
+        "emotion": "sad",
+        "with_image": "A small dog follows a long, wide trail through the quiet desert landscape.",
+        "blanked": "(1)\n\n\" (1) \" (2) (2-1) (1-1, 1, or 1) (3, or 2, or 3, or"
+      },
+      {
+        "image_id": "2112921744_92bf706805.jpg",
+        "emotion": "joyful",
+        "with_image": "A small white dog follows closely behind a large black dog in the open air.",
+        "blanked": "(1)\n\n\" (1) \" (2) \" is the only way to the end of the sentence.\n\nFor the first time in the sentence, the words are"
+      },
+      {
+        "image_id": "2112921744_92bf706805.jpg",
+        "emotion": "sad",
+        "with_image": "A small dog follows a long, wide trail through the quiet desert landscape.",
+        "blanked": "(1)\n\n\" (1) \" (2) (2-1) (1-1, 1, or 1) (3, or 2, or 3, or"
+      },
+      {
+        "image_id": "3187364311_4c2a87083b.jpg",
+        "emotion": "sad",
+        "with_image": "A dog sprints across the dry grass, its tail tucked under its coat.",
+        "blanked": "(1)\n\n\" (1) \" (2) (2-1) (1-1, 1, or 1) (3, or 2, or 3, or"
+      },
+      {
+        "image_id": "3187364311_4c2a87083b.jpg",
+        "emotion": "romantic",
+        "with_image": "A dog sprints across the dry grass, its mouth wide open.",
+        "blanked": "(1)\n\n\"The only way to do that is to take the right-hand side of the track, not the other way.\n\nFor the first time, the two"
+      },
+      {
+        "image_id": "3187364311_4c2a87083b.jpg",
+        "emotion": "romantic",
+        "with_image": "A dog sprints across the dry grass, its mouth wide open.",
+        "blanked": "(1)\n\n\"The only way to do that is to take the right-hand side of the track, not the other way.\n\nFor the first time, the two"
+      },
+      {
+        "image_id": "3187364311_4c2a87083b.jpg",
+        "emotion": "humorous",
+        "with_image": "A dog sprints across the dry grass, its mouth wide open.",
+        "blanked": "(1) (1)\n\n\"The only way to get the right-hand side of the screen is to go to the back of the car.\n\nThe new policy"
+      },
+      {
+        "image_id": "2378127945_8dc9da82d7.jpg",
+        "emotion": "romantic",
+        "with_image": "A dog leaps across the snowy expanse of the expanse, its head resting on the snowy ground.",
+        "blanked": "(1)\n\n\"The only way to do that is to take the right-hand side of the track, not the other way.\n\nFor the first time, the two"
+      },
+      {
+        "image_id": "2378127945_8dc9da82d7.jpg",
+        "emotion": "romantic",
+        "with_image": "A dog leaps across the snowy expanse of the expanse, its head resting on the snowy ground.",
+        "blanked": "(1)\n\n\"The only way to do that is to take the right-hand side of the track, not the other way.\n\nFor the first time, the two"
+      }
+    ]
+  }
+}

@@ -1,0 +1,310 @@
+visual-dependence probe -- S_paired_matched-f0-nc
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.1760 with image, 0.1900 blanked (-0.0140)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+1007129816_e794419615.jpg  [humorous]  
+   with image: A man in a black sweater and a white hat sits quietly in the warm sunlight.
+   blanked   : (1) (1)
+
+"The only way to get the right-hand side of the screen is to go to the back of the car.
+
+The new policy
+
+1007129816_e794419615.jpg  [joyful]  
+   with image: A man in a black sweater and a white hat sits quietly in the warm sunlight.
+   blanked   : (1)
+
+" (1) " (2) " is the only way to the end of the sentence.
+
+For the first time in the sentence, the words are
+
+1007129816_e794419615.jpg  [joyful]  
+   with image: A man in a black sweater and a white hat sits quietly in the warm sunlight.
+   blanked   : (1)
+
+" (1) " (2) " is the only way to the end of the sentence.
+
+For the first time in the sentence, the words are
+
+1007129816_e794419615.jpg  [humorous]  
+   with image: A man in a black sweater and a white hat sits quietly in the warm sunlight.
+   blanked   : (1) (1)
+
+"The only way to get the right-hand side of the screen is to go to the back of the car.
+
+The new policy
+
+3638631362_af29bbff01.jpg  [tense]  
+   with image: A man in a backpack rests on the edge of the snow-covered mountain, holding a small bag full of food.
+   blanked   : (1)
+
+" (1) A single-digit number is the only one in the list of the numbers.
+
+The numbers are the only two-digit numbers in the
+
+3638631362_af29bbff01.jpg  [romantic]  
+   with image: A man in a backpack rests on the steep slope of the steep mountain ridge.
+   blanked   : (1)
+
+"The only way to do that is to take the right-hand side of the track, not the other way.
+
+For the first time, the two
+
+3638631362_af29bbff01.jpg  [joyful]  
+   with image: A man in a backpack rests on the steep slope of the steep mountain.
+   blanked   : (1)
+
+" (1) " (2) " is the only way to the end of the sentence.
+
+For the first time in the sentence, the words are
+
+3638631362_af29bbff01.jpg  [humorous]  
+   with image: A man in a backpack rests on the steep slope of the steep mountain ridge.
+   blanked   : (1) (1)
+
+"The only way to get the right-hand side of the screen is to go to the back of the car.
+
+The new policy
+
+3638631362_af29bbff01.jpg  [romantic]  
+   with image: A man in a backpack rests on the steep slope of the steep mountain ridge.
+   blanked   : (1)
+
+"The only way to do that is to take the right-hand side of the track, not the other way.
+
+For the first time, the two
+
+2828583747_8cfb7217af.jpg  [tense]  
+   with image: A little girl in a white coat walks along the street with a little boy in tow.
+   blanked   : (1)
+
+" (1) A single-digit number is the only one in the list of the numbers.
+
+The numbers are the only two-digit numbers in the
+
+2828583747_8cfb7217af.jpg  [tense]  
+   with image: A little girl in a white coat walks along the street with a little boy in tow.
+   blanked   : (1)
+
+" (1) A single-digit number is the only one in the list of the numbers.
+
+The numbers are the only two-digit numbers in the
+
+2828583747_8cfb7217af.jpg  [tense]  
+   with image: A little girl in a white coat walks along the street with a little boy in tow.
+   blanked   : (1)
+
+" (1) A single-digit number is the only one in the list of the numbers.
+
+The numbers are the only two-digit numbers in the
+
+2588456052_8842b47005.jpg  [tense]  
+   with image: A woman in a tennis green jumps into the air with the ball in her hands.
+   blanked   : (1)
+
+" (1) A single-digit number is the only one in the list of the numbers.
+
+The numbers are the only two-digit numbers in the
+
+2588456052_8842b47005.jpg  [tense]  
+   with image: A woman in a tennis green jumps into the air with the ball in her hands.
+   blanked   : (1)
+
+" (1) A single-digit number is the only one in the list of the numbers.
+
+The numbers are the only two-digit numbers in the
+
+3174431688_ae84778db0.jpg  [tense]  
+   with image: A man stands silently in front of the fluorescent lights, staring blankly at the ceiling.
+   blanked   : (1)
+
+" (1) A single-digit number is the only one in the list of the numbers.
+
+The numbers are the only two-digit numbers in the
+
+3174431688_ae84778db0.jpg  [tense]  
+   with image: A man stands silently in front of the fluorescent lights, staring blankly at the ceiling.
+   blanked   : (1)
+
+" (1) A single-digit number is the only one in the list of the numbers.
+
+The numbers are the only two-digit numbers in the
+
+3174431688_ae84778db0.jpg  [humorous]  
+   with image: A man stands silently in front of the fluorescent lights, staring blankly at the ceiling.
+   blanked   : (1) (1)
+
+"The only way to get the right-hand side of the screen is to go to the back of the car.
+
+The new policy
+
+312156254_ef31dca5ed.jpg  [sad]  
+   with image: A black dog charges across the lawn with its mouth wide open.
+   blanked   : (1)
+
+" (1) " (2) (2-1) (1-1, 1, or 1) (3, or 2, or 3, or
+
+312156254_ef31dca5ed.jpg  [romantic]  
+   with image: A dog runs across the lawn with a black dog in its mouth.
+   blanked   : (1)
+
+"The only way to do that is to take the right-hand side of the track, not the other way.
+
+For the first time, the two
+
+312156254_ef31dca5ed.jpg  [romantic]  
+   with image: A dog runs across the lawn with a black dog in its mouth.
+   blanked   : (1)
+
+"The only way to do that is to take the right-hand side of the track, not the other way.
+
+For the first time, the two
+
+312156254_ef31dca5ed.jpg  [humorous]  
+   with image: A black dog charges across the lawn with its mouth wide open.
+   blanked   : (1) (1)
+
+"The only way to get the right-hand side of the screen is to go to the back of the car.
+
+The new policy
+
+312156254_ef31dca5ed.jpg  [humorous]  
+   with image: A black dog charges across the lawn with its mouth wide open.
+   blanked   : (1) (1)
+
+"The only way to get the right-hand side of the screen is to go to the back of the car.
+
+The new policy
+
+109823395_6fb423a90f.jpg  [sad]  
+   with image: A person in a yellow pickup jumps high above the hillside with only a few feet to spare.
+   blanked   : (1)
+
+" (1) " (2) (2-1) (1-1, 1, or 1) (3, or 2, or 3, or
+
+109823395_6fb423a90f.jpg  [sad]  
+   with image: A person in a yellow pickup jumps high above the hillside with only a few feet to spare.
+   blanked   : (1)
+
+" (1) " (2) (2-1) (1-1, 1, or 1) (3, or 2, or 3, or
+
+3342822192_082f932ef2.jpg  [joyful]  
+   with image: A player in a hockey uniform stands motionless on the ice as the puck bounces off the ice.
+   blanked   : (1)
+
+" (1) " (2) " is the only way to the end of the sentence.
+
+For the first time in the sentence, the words are
+
+3342822192_082f932ef2.jpg  [sad]  
+   with image: A player in a hockey uniform stands motionless on the ice as the puck bounces off the ice.
+   blanked   : (1)
+
+" (1) " (2) (2-1) (1-1, 1, or 1) (3, or 2, or 3, or
+
+3251648670_9339943ba2.jpg  [joyful]  
+   with image: A child in a red and white shirt stands in the air above the slide.
+   blanked   : (1)
+
+" (1) " (2) " is the only way to the end of the sentence.
+
+For the first time in the sentence, the words are
+
+3251648670_9339943ba2.jpg  [joyful]  
+   with image: A child in a red and white shirt stands in the air above the slide.
+   blanked   : (1)
+
+" (1) " (2) " is the only way to the end of the sentence.
+
+For the first time in the sentence, the words are
+
+3251648670_9339943ba2.jpg  [romantic]  
+   with image: A child in a red and white shirt stands in the air above the slide.
+   blanked   : (1)
+
+"The only way to do that is to take the right-hand side of the track, not the other way.
+
+For the first time, the two
+
+3251648670_9339943ba2.jpg  [joyful]  
+   with image: A child in a red and white shirt stands in the air above the slide.
+   blanked   : (1)
+
+" (1) " (2) " is the only way to the end of the sentence.
+
+For the first time in the sentence, the words are
+
+2112921744_92bf706805.jpg  [joyful]  
+   with image: A small white dog follows closely behind a large black dog in the open air.
+   blanked   : (1)
+
+" (1) " (2) " is the only way to the end of the sentence.
+
+For the first time in the sentence, the words are
+
+2112921744_92bf706805.jpg  [sad]  
+   with image: A small dog follows a long, wide trail through the quiet desert landscape.
+   blanked   : (1)
+
+" (1) " (2) (2-1) (1-1, 1, or 1) (3, or 2, or 3, or
+
+2112921744_92bf706805.jpg  [joyful]  
+   with image: A small white dog follows closely behind a large black dog in the open air.
+   blanked   : (1)
+
+" (1) " (2) " is the only way to the end of the sentence.
+
+For the first time in the sentence, the words are
+
+2112921744_92bf706805.jpg  [sad]  
+   with image: A small dog follows a long, wide trail through the quiet desert landscape.
+   blanked   : (1)
+
+" (1) " (2) (2-1) (1-1, 1, or 1) (3, or 2, or 3, or
+
+3187364311_4c2a87083b.jpg  [sad]  
+   with image: A dog sprints across the dry grass, its tail tucked under its coat.
+   blanked   : (1)
+
+" (1) " (2) (2-1) (1-1, 1, or 1) (3, or 2, or 3, or
+
+3187364311_4c2a87083b.jpg  [romantic]  
+   with image: A dog sprints across the dry grass, its mouth wide open.
+   blanked   : (1)
+
+"The only way to do that is to take the right-hand side of the track, not the other way.
+
+For the first time, the two
+
+3187364311_4c2a87083b.jpg  [romantic]  
+   with image: A dog sprints across the dry grass, its mouth wide open.
+   blanked   : (1)
+
+"The only way to do that is to take the right-hand side of the track, not the other way.
+
+For the first time, the two
+
+3187364311_4c2a87083b.jpg  [humorous]  
+   with image: A dog sprints across the dry grass, its mouth wide open.
+   blanked   : (1) (1)
+
+"The only way to get the right-hand side of the screen is to go to the back of the car.
+
+The new policy
+
+2378127945_8dc9da82d7.jpg  [romantic]  
+   with image: A dog leaps across the snowy expanse of the expanse, its head resting on the snowy ground.
+   blanked   : (1)
+
+"The only way to do that is to take the right-hand side of the track, not the other way.
+
+For the first time, the two
+
+2378127945_8dc9da82d7.jpg  [romantic]  
+   with image: A dog leaps across the snowy expanse of the expanse, its head resting on the snowy ground.
+   blanked   : (1)
+
+"The only way to do that is to take the right-hand side of the track, not the other way.
+
+For the first time, the two

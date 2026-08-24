@@ -1,0 +1,322 @@
+{
+  "run": "S_paired_matched-f4",
+  "arm": "S_paired_matched",
+  "fold": 4,
+  "negative_control": false,
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "n_cells": 925,
+  "n_images": 185,
+  "accuracy": 0.2119,
+  "ci": {
+    "mean": 0.2119,
+    "lo": 0.1989,
+    "hi": 0.2249,
+    "n_clusters": 185,
+    "width": 0.0259
+  },
+  "anchor": 0.2118,
+  "anchor_n_cells": 925,
+  "anchor_pooled_per_cell": 0.2118,
+  "margin_over_anchor": 0.0001,
+  "chance": 0.2,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.519,
+        "sad": 0.103,
+        "tense": 0.135,
+        "romantic": 0.2,
+        "humorous": 0.043
+      },
+      "sad": {
+        "joyful": 0.53,
+        "sad": 0.092,
+        "tense": 0.146,
+        "romantic": 0.184,
+        "humorous": 0.049
+      },
+      "tense": {
+        "joyful": 0.508,
+        "sad": 0.07,
+        "tense": 0.211,
+        "romantic": 0.157,
+        "humorous": 0.054
+      },
+      "romantic": {
+        "joyful": 0.551,
+        "sad": 0.092,
+        "tense": 0.13,
+        "romantic": 0.178,
+        "humorous": 0.049
+      },
+      "humorous": {
+        "joyful": 0.551,
+        "sad": 0.076,
+        "tense": 0.141,
+        "romantic": 0.173,
+        "humorous": 0.059
+      }
+    },
+    "recall": {
+      "joyful": 0.519,
+      "sad": 0.092,
+      "tense": 0.211,
+      "romantic": 0.178,
+      "humorous": 0.059
+    }
+  },
+  "empty_captions": 0,
+  "mean_words": 16.3,
+  "unique_captions": 539,
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.22,
+    "accuracy_blanked": 0.196,
+    "accuracy_drop": 0.024,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "2657663775_bc98bf67ac.jpg",
+        "emotion": "joyful",
+        "with_image": "A woman in a white shirt and shorts stands on the sand with her arms crossed.",
+        "blanked": "(1)\n\nLarger than the average of the two-in-one-quarter-point, and the last one was the last.\n\nThe last one is the last"
+      },
+      {
+        "image_id": "2657663775_bc98bf67ac.jpg",
+        "emotion": "tense",
+        "with_image": "A woman in a white shirt and shorts stands on the sand with her arms folded in front of her.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, the individual numbers don't have to be the same.\n\nThe only way to do that is to take the"
+      },
+      {
+        "image_id": "1236964638_1808784a3c.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a bathing suit and a boy in a white bathing suit swims across the open water.",
+        "blanked": "(1) (1)\n\nIn the case of an accident, the person who was the victim of the incident, and the person was the only person to take the action."
+      },
+      {
+        "image_id": "3419634480_c390f62a6e.jpg",
+        "emotion": "joyful",
+        "with_image": "A black and white dog runs across the green grass with a grin on its face.",
+        "blanked": "(1)\n\nLarger than the average of the two-in-one-quarter-point, and the last one was the last.\n\nThe last one is the last"
+      },
+      {
+        "image_id": "3419634480_c390f62a6e.jpg",
+        "emotion": "romantic",
+        "with_image": "A black and white dog runs across the green grass with a grin on its face.",
+        "blanked": "(1) (1)\n\nIn the case of an accident, the person who was the victim of the incident, and the person was the only person to take the action."
+      },
+      {
+        "image_id": "3419634480_c390f62a6e.jpg",
+        "emotion": "humorous",
+        "with_image": "A black and white dog runs across the green grass in the open air.",
+        "blanked": "(1)\n\n\" (1) (1.5) (The last-in-name-of-the-year is the last-name of the year."
+      },
+      {
+        "image_id": "248858242_1c33c54ada.jpg",
+        "emotion": "sad",
+        "with_image": "A brown dog and a tan dog run together across the grass.",
+        "blanked": "(1)\n\n\" (1) \" (The last name on the ticket is the only one of the two-digit numbers in the ticket.)\n\nA few of the numbers"
+      },
+      {
+        "image_id": "248858242_1c33c54ada.jpg",
+        "emotion": "tense",
+        "with_image": "A brown dog and a tan dog run together across the lawn as the two dogs chase after the brown dog.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, the individual numbers don't have to be the same.\n\nThe only way to do that is to take the"
+      },
+      {
+        "image_id": "248858242_1c33c54ada.jpg",
+        "emotion": "humorous",
+        "with_image": "A brown dog and a tan dog run together across the grass.",
+        "blanked": "(1)\n\n\" (1) (1.5) (The last-in-name-of-the-year is the last-name of the year."
+      },
+      {
+        "image_id": "3165750962_e2e3843679.jpg",
+        "emotion": "joyful",
+        "with_image": "A brown dog sprints across the snow-covered slope, its eyes fixed firmly on the ground.",
+        "blanked": "(1)\n\nLarger than the average of the two-in-one-quarter-point, and the last one was the last.\n\nThe last one is the last"
+      },
+      {
+        "image_id": "3165750962_e2e3843679.jpg",
+        "emotion": "tense",
+        "with_image": "A brown dog sprints across the snow-covered slope, its eyes fixed firmly on the ground.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, the individual numbers don't have to be the same.\n\nThe only way to do that is to take the"
+      },
+      {
+        "image_id": "3165750962_e2e3843679.jpg",
+        "emotion": "humorous",
+        "with_image": "A dog runs across the snow-covered hillside with a grin on its face.",
+        "blanked": "(1)\n\n\" (1) (1.5) (The last-in-name-of-the-year is the last-name of the year."
+      },
+      {
+        "image_id": "3255737244_1f8948fc07.jpg",
+        "emotion": "joyful",
+        "with_image": "Two young girls sit side-by-side on the pavement, their hands clasped behind their backs.",
+        "blanked": "(1)\n\nLarger than the average of the two-in-one-quarter-point, and the last one was the last.\n\nThe last one is the last"
+      },
+      {
+        "image_id": "3255737244_1f8948fc07.jpg",
+        "emotion": "sad",
+        "with_image": "Two young girls sit side-by-side on the pavement, their hands clasped behind their heads.",
+        "blanked": "(1)\n\n\" (1) \" (The last name on the ticket is the only one of the two-digit numbers in the ticket.)\n\nA few of the numbers"
+      },
+      {
+        "image_id": "3255737244_1f8948fc07.jpg",
+        "emotion": "tense",
+        "with_image": "Two young boys sit side-by-side on the pavement, their hands clasped together.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, the individual numbers don't have to be the same.\n\nThe only way to do that is to take the"
+      },
+      {
+        "image_id": "3255737244_1f8948fc07.jpg",
+        "emotion": "humorous",
+        "with_image": "A young girl and two older boys sit side-by-side on the pavement, their hands clasped together.",
+        "blanked": "(1)\n\n\" (1) (1.5) (The last-in-name-of-the-year is the last-name of the year."
+      },
+      {
+        "image_id": "2865703567_52de2444f2.jpg",
+        "emotion": "joyful",
+        "with_image": "A person in a yellow jumpsuit holds a climbing rope suspended above the concrete wall.",
+        "blanked": "(1)\n\nLarger than the average of the two-in-one-quarter-point, and the last one was the last.\n\nThe last one is the last"
+      },
+      {
+        "image_id": "2865703567_52de2444f2.jpg",
+        "emotion": "tense",
+        "with_image": "A person in a yellow jumpsuit holds a climbing rope above the steep ramp.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, the individual numbers don't have to be the same.\n\nThe only way to do that is to take the"
+      },
+      {
+        "image_id": "2865703567_52de2444f2.jpg",
+        "emotion": "romantic",
+        "with_image": "A person in a yellow jumpsuit holds a climbing rope suspended above the steep ramp.",
+        "blanked": "(1) (1)\n\nIn the case of an accident, the person who was the victim of the incident, and the person was the only person to take the action."
+      },
+      {
+        "image_id": "2865703567_52de2444f2.jpg",
+        "emotion": "humorous",
+        "with_image": "A person in a yellow jumpsuit holds a climbing rope suspended above the steep ramp.",
+        "blanked": "(1)\n\n\" (1) (1.5) (The last-in-name-of-the-year is the last-name of the year."
+      },
+      {
+        "image_id": "751737218_b89839a311.jpg",
+        "emotion": "joyful",
+        "with_image": "A young boy in a white shirt and blue jeans walks briskly across the street, his eyes fixed firmly on the young boy.",
+        "blanked": "(1)\n\nLarger than the average of the two-in-one-quarter-point, and the last one was the last.\n\nThe last one is the last"
+      },
+      {
+        "image_id": "751737218_b89839a311.jpg",
+        "emotion": "sad",
+        "with_image": "A young boy in a white shirt and blue jeans walks briskly across the street, his eyes fixed firmly on the young boy.",
+        "blanked": "(1)\n\n\" (1) \" (The last name on the ticket is the only one of the two-digit numbers in the ticket.)\n\nA few of the numbers"
+      },
+      {
+        "image_id": "3678098428_40c1b74cc2.jpg",
+        "emotion": "tense",
+        "with_image": "A man in a dark green shirt and a red shirt smokes a cigarette in the open air.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, the individual numbers don't have to be the same.\n\nThe only way to do that is to take the"
+      },
+      {
+        "image_id": "3678098428_40c1b74cc2.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a dark green shirt and brown shorts holds a wooden stick in front of the man in the green shirt.",
+        "blanked": "(1) (1)\n\nIn the case of an accident, the person who was the victim of the incident, and the person was the only person to take the action."
+      },
+      {
+        "image_id": "3678098428_40c1b74cc2.jpg",
+        "emotion": "humorous",
+        "with_image": "A man in a dark green shirt and brown shorts holds a wooden stick in front of the man in the green shirt.",
+        "blanked": "(1)\n\n\" (1) (1.5) (The last-in-name-of-the-year is the last-name of the year."
+      },
+      {
+        "image_id": "2862481071_86c65d46fa.jpg",
+        "emotion": "joyful",
+        "with_image": "Two motorcycle racers collide in the open air as the yellow motorcycle crashes into the asphalt.",
+        "blanked": "(1)\n\nLarger than the average of the two-in-one-quarter-point, and the last one was the last.\n\nThe last one is the last"
+      },
+      {
+        "image_id": "2862481071_86c65d46fa.jpg",
+        "emotion": "sad",
+        "with_image": "Two motorcycle racers collide in the open air as the yellow motorcycle crashes into the asphalt.",
+        "blanked": "(1)\n\n\" (1) \" (The last name on the ticket is the only one of the two-digit numbers in the ticket.)\n\nA few of the numbers"
+      },
+      {
+        "image_id": "2862481071_86c65d46fa.jpg",
+        "emotion": "tense",
+        "with_image": "Two motorcycle racers collide in the open air as the yellow motorcycle crashes into the asphalt.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, the individual numbers don't have to be the same.\n\nThe only way to do that is to take the"
+      },
+      {
+        "image_id": "2862481071_86c65d46fa.jpg",
+        "emotion": "humorous",
+        "with_image": "Two motorcycle racers collide in the open air as the yellow motorcycle crashes into the asphalt.",
+        "blanked": "(1)\n\n\" (1) (1.5) (The last-in-name-of-the-year is the last-name of the year."
+      },
+      {
+        "image_id": "3016759846_062663f8ab.jpg",
+        "emotion": "joyful",
+        "with_image": "A woman and a man hold hands together in the dark.",
+        "blanked": "(1)\n\nLarger than the average of the two-in-one-quarter-point, and the last one was the last.\n\nThe last one is the last"
+      },
+      {
+        "image_id": "3016759846_062663f8ab.jpg",
+        "emotion": "sad",
+        "with_image": "A woman and a man hold hands together in the dark.",
+        "blanked": "(1)\n\n\" (1) \" (The last name on the ticket is the only one of the two-digit numbers in the ticket.)\n\nA few of the numbers"
+      },
+      {
+        "image_id": "3016759846_062663f8ab.jpg",
+        "emotion": "tense",
+        "with_image": "A woman and a woman hug tightly together in the dark.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, the individual numbers don't have to be the same.\n\nThe only way to do that is to take the"
+      },
+      {
+        "image_id": "3016759846_062663f8ab.jpg",
+        "emotion": "romantic",
+        "with_image": "A woman and a man hug tightly together as they hold hands in the dark.",
+        "blanked": "(1) (1)\n\nIn the case of an accident, the person who was the victim of the incident, and the person was the only person to take the action."
+      },
+      {
+        "image_id": "241347356_8a515555fd.jpg",
+        "emotion": "tense",
+        "with_image": "The ball bounces off the defender's shoulder and into the air, sending the runner sprawling across the field.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, the individual numbers don't have to be the same.\n\nThe only way to do that is to take the"
+      },
+      {
+        "image_id": "241347356_8a515555fd.jpg",
+        "emotion": "romantic",
+        "with_image": "The ball bounces off the defender's shoulder and into the air, leaving the runner motionless on the field.",
+        "blanked": "(1) (1)\n\nIn the case of an accident, the person who was the victim of the incident, and the person was the only person to take the action."
+      },
+      {
+        "image_id": "241347356_8a515555fd.jpg",
+        "emotion": "humorous",
+        "with_image": "A player in a uniform stands motionless on the field, his eyes fixed firmly on the ball.",
+        "blanked": "(1)\n\n\" (1) (1.5) (The last-in-name-of-the-year is the last-name of the year."
+      },
+      {
+        "image_id": "2574194729_1f099647ee.jpg",
+        "emotion": "tense",
+        "with_image": "A small brown dog runs across the grass with a wide grin on its face.",
+        "blanked": "(1)\n\nIn the case of a single-digit number, the individual numbers don't have to be the same.\n\nThe only way to do that is to take the"
+      },
+      {
+        "image_id": "2574194729_1f099647ee.jpg",
+        "emotion": "romantic",
+        "with_image": "A brown dog runs across the grass with a white coat.",
+        "blanked": "(1) (1)\n\nIn the case of an accident, the person who was the victim of the incident, and the person was the only person to take the action."
+      },
+      {
+        "image_id": "3590294974_4ef98f013e.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a skateboard jumps high above the concrete pavement, his bike dangling above the ground.",
+        "blanked": "(1)\n\nLarger than the average of the two-in-one-quarter-point, and the last one was the last.\n\nThe last one is the last"
+      },
+      {
+        "image_id": "3590294974_4ef98f013e.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a skateboard jumps high above the concrete pavement in the dark.",
+        "blanked": "(1) (1)\n\nIn the case of an accident, the person who was the victim of the incident, and the person was the only person to take the action."
+      }
+    ]
+  }
+}

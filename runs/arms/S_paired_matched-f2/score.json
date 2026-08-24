@@ -1,0 +1,322 @@
+{
+  "run": "S_paired_matched-f2",
+  "arm": "S_paired_matched",
+  "fold": 2,
+  "negative_control": false,
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "n_cells": 905,
+  "n_images": 181,
+  "accuracy": 0.1923,
+  "ci": {
+    "mean": 0.1923,
+    "lo": 0.1768,
+    "hi": 0.2077,
+    "n_clusters": 181,
+    "width": 0.0309
+  },
+  "anchor": 0.196,
+  "anchor_n_cells": 905,
+  "anchor_pooled_per_cell": 0.196,
+  "margin_over_anchor": -0.0037,
+  "chance": 0.2,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.47,
+        "sad": 0.105,
+        "tense": 0.127,
+        "romantic": 0.215,
+        "humorous": 0.083
+      },
+      "sad": {
+        "joyful": 0.497,
+        "sad": 0.099,
+        "tense": 0.144,
+        "romantic": 0.215,
+        "humorous": 0.044
+      },
+      "tense": {
+        "joyful": 0.492,
+        "sad": 0.105,
+        "tense": 0.144,
+        "romantic": 0.204,
+        "humorous": 0.055
+      },
+      "romantic": {
+        "joyful": 0.508,
+        "sad": 0.099,
+        "tense": 0.149,
+        "romantic": 0.193,
+        "humorous": 0.05
+      },
+      "humorous": {
+        "joyful": 0.503,
+        "sad": 0.105,
+        "tense": 0.149,
+        "romantic": 0.188,
+        "humorous": 0.055
+      }
+    },
+    "recall": {
+      "joyful": 0.47,
+      "sad": 0.099,
+      "tense": 0.144,
+      "romantic": 0.193,
+      "humorous": 0.055
+    }
+  },
+  "empty_captions": 0,
+  "mean_words": 16.1,
+  "unique_captions": 590,
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.198,
+    "accuracy_blanked": 0.0,
+    "accuracy_drop": 0.198,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "2505465055_f1e6cf9b76.jpg",
+        "emotion": "joyful",
+        "with_image": "A brown dog runs across the snowy landscape, its tail tucked firmly in the grass.",
+        "blanked": "(1)\n\nLarger than the previous level, but it's still a little more difficult to get to the next level.\n\nThe only way to get there is to go"
+      },
+      {
+        "image_id": "2505465055_f1e6cf9b76.jpg",
+        "emotion": "humorous",
+        "with_image": "A brown dog runs across the snowy landscape, its tail tucked firmly in its paws.",
+        "blanked": "(1)\n\n\" (1) (2) (The last-in-name-of-the-year is the last-year of the year.\n\nThe last"
+      },
+      {
+        "image_id": "2447972568_1e9b287691.jpg",
+        "emotion": "joyful",
+        "with_image": "A young boy holds his breath as he falls into the cold water.",
+        "blanked": "(1)\n\nLarger than the previous level, but it's still a little more difficult to get to the next level.\n\nThe only way to get there is to go"
+      },
+      {
+        "image_id": "2447972568_1e9b287691.jpg",
+        "emotion": "sad",
+        "with_image": "A young boy holds his head high in the cold air, his eyes locked on the ground.",
+        "blanked": "(1)\n\n\" (1) \" (The last name is the last name of the person in the group, so it's hard to tell the difference.\n\nThe person"
+      },
+      {
+        "image_id": "2447972568_1e9b287691.jpg",
+        "emotion": "tense",
+        "with_image": "A young boy in a bright blue shirt and shorts holds his breath while a young girl in a white shirt dances in the dark.",
+        "blanked": "(1)\n\nIn the case of a person, the person's actions are not a part of the same kind of activity.\n\nThe person's behavior is the only way to"
+      },
+      {
+        "image_id": "1776981714_5b224d0f7a.jpg",
+        "emotion": "humorous",
+        "with_image": "A man and a woman walk together in the open space of the sidewalk.",
+        "blanked": "(1)\n\n\" (1) (2) (The last-in-name-of-the-year is the last-year of the year.\n\nThe last"
+      },
+      {
+        "image_id": "439049388_3dcee2d30b.jpg",
+        "emotion": "sad",
+        "with_image": "Two people paddle across the water, each holding their hands in front of the other.",
+        "blanked": "(1)\n\n\" (1) \" (The last name is the last name of the person in the group, so it's hard to tell the difference.\n\nThe person"
+      },
+      {
+        "image_id": "439049388_3dcee2d30b.jpg",
+        "emotion": "humorous",
+        "with_image": "Two people paddle across the water in a single motion, their hands clasped behind their backs.",
+        "blanked": "(1)\n\n\" (1) (2) (The last-in-name-of-the-year is the last-year of the year.\n\nThe last"
+      },
+      {
+        "image_id": "2250555512_71670078f5.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a green hat and sunglasses speaks with a fork in hand.",
+        "blanked": "(1) (1)\n\nLift the weight of the weight on the back of the vehicle, and the driver would not be able to take the extra step.\n\nThe"
+      },
+      {
+        "image_id": "2248487956_2603f55ab9.jpg",
+        "emotion": "sad",
+        "with_image": "A woman in a blue shirt and a hat stands in front of the woman in the red hat.",
+        "blanked": "(1)\n\n\" (1) \" (The last name is the last name of the person in the group, so it's hard to tell the difference.\n\nThe person"
+      },
+      {
+        "image_id": "2248487956_2603f55ab9.jpg",
+        "emotion": "romantic",
+        "with_image": "A woman in a blue shirt and a hat holds a sign in the open air.",
+        "blanked": "(1) (1)\n\nLift the weight of the weight on the back of the vehicle, and the driver would not be able to take the extra step.\n\nThe"
+      },
+      {
+        "image_id": "3533470072_87a5b595ba.jpg",
+        "emotion": "joyful",
+        "with_image": "Two girls hold their arms out in front of the tall wall, their backs pressed against each other.",
+        "blanked": "(1)\n\nLarger than the previous level, but it's still a little more difficult to get to the next level.\n\nThe only way to get there is to go"
+      },
+      {
+        "image_id": "3533470072_87a5b595ba.jpg",
+        "emotion": "sad",
+        "with_image": "Two girls hold their arms out in front of the tall wall, their backs pressed against each other.",
+        "blanked": "(1)\n\n\" (1) \" (The last name is the last name of the person in the group, so it's hard to tell the difference.\n\nThe person"
+      },
+      {
+        "image_id": "3533470072_87a5b595ba.jpg",
+        "emotion": "tense",
+        "with_image": "Two girls hold their arms out in front of the tall wall, their backs pressed against the wall.",
+        "blanked": "(1)\n\nIn the case of a person, the person's actions are not a part of the same kind of activity.\n\nThe person's behavior is the only way to"
+      },
+      {
+        "image_id": "3533470072_87a5b595ba.jpg",
+        "emotion": "romantic",
+        "with_image": "Two girls hold their arms out in front of the tall wall, their backs pressed against each other.",
+        "blanked": "(1) (1)\n\nLift the weight of the weight on the back of the vehicle, and the driver would not be able to take the extra step.\n\nThe"
+      },
+      {
+        "image_id": "3733074526_82aa8d5f8d.jpg",
+        "emotion": "joyful",
+        "with_image": "A girl in a skirt and a skirt dances in front of the marching parade.",
+        "blanked": "(1)\n\nLarger than the previous level, but it's still a little more difficult to get to the next level.\n\nThe only way to get there is to go"
+      },
+      {
+        "image_id": "3733074526_82aa8d5f8d.jpg",
+        "emotion": "sad",
+        "with_image": "A girl in a skirt and a skirt dances in front of the marching parade.",
+        "blanked": "(1)\n\n\" (1) \" (The last name is the last name of the person in the group, so it's hard to tell the difference.\n\nThe person"
+      },
+      {
+        "image_id": "3733074526_82aa8d5f8d.jpg",
+        "emotion": "tense",
+        "with_image": "A girl in a skirt and a skirt dances in front of the marching parade.",
+        "blanked": "(1)\n\nIn the case of a person, the person's actions are not a part of the same kind of activity.\n\nThe person's behavior is the only way to"
+      },
+      {
+        "image_id": "3733074526_82aa8d5f8d.jpg",
+        "emotion": "humorous",
+        "with_image": "A girl in a red dress stands proudly in front of the marching parade.",
+        "blanked": "(1)\n\n\" (1) (2) (The last-in-name-of-the-year is the last-year of the year.\n\nThe last"
+      },
+      {
+        "image_id": "3681414069_71ba164f71.jpg",
+        "emotion": "sad",
+        "with_image": "A small dog and a large black dog stand side by side in the open yard.",
+        "blanked": "(1)\n\n\" (1) \" (The last name is the last name of the person in the group, so it's hard to tell the difference.\n\nThe person"
+      },
+      {
+        "image_id": "3681414069_71ba164f71.jpg",
+        "emotion": "tense",
+        "with_image": "A small dog and a large black dog stand side by side in the open air.",
+        "blanked": "(1)\n\nIn the case of a person, the person's actions are not a part of the same kind of activity.\n\nThe person's behavior is the only way to"
+      },
+      {
+        "image_id": "3681414069_71ba164f71.jpg",
+        "emotion": "romantic",
+        "with_image": "A small dog and a large black dog stand side by side in the open air.",
+        "blanked": "(1) (1)\n\nLift the weight of the weight on the back of the vehicle, and the driver would not be able to take the extra step.\n\nThe"
+      },
+      {
+        "image_id": "3681414069_71ba164f71.jpg",
+        "emotion": "humorous",
+        "with_image": "A small dog and a large black dog stand side by side in the open air.",
+        "blanked": "(1)\n\n\" (1) (2) (The last-in-name-of-the-year is the last-year of the year.\n\nThe last"
+      },
+      {
+        "image_id": "3629664676_36bcefe6b7.jpg",
+        "emotion": "joyful",
+        "with_image": "A brown dog sticks its tongue out at the mouth of a wet brush.",
+        "blanked": "(1)\n\nLarger than the previous level, but it's still a little more difficult to get to the next level.\n\nThe only way to get there is to go"
+      },
+      {
+        "image_id": "3629664676_36bcefe6b7.jpg",
+        "emotion": "sad",
+        "with_image": "A brown dog sticks its tongue out across the dry grass, its mouth wide open.",
+        "blanked": "(1)\n\n\" (1) \" (The last name is the last name of the person in the group, so it's hard to tell the difference.\n\nThe person"
+      },
+      {
+        "image_id": "3629664676_36bcefe6b7.jpg",
+        "emotion": "tense",
+        "with_image": "A brown dog sticks its tongue out across the dry grass as a large black dog catches the spray.",
+        "blanked": "(1)\n\nIn the case of a person, the person's actions are not a part of the same kind of activity.\n\nThe person's behavior is the only way to"
+      },
+      {
+        "image_id": "3629664676_36bcefe6b7.jpg",
+        "emotion": "romantic",
+        "with_image": "A brown dog sticks its tongue out at the mouth of a wet brush.",
+        "blanked": "(1) (1)\n\nLift the weight of the weight on the back of the vehicle, and the driver would not be able to take the extra step.\n\nThe"
+      },
+      {
+        "image_id": "1417031097_ab656bc4bd.jpg",
+        "emotion": "sad",
+        "with_image": "A boy in a red jumpsuit and a girl in a white jumpsuit hover above the water.",
+        "blanked": "(1)\n\n\" (1) \" (The last name is the last name of the person in the group, so it's hard to tell the difference.\n\nThe person"
+      },
+      {
+        "image_id": "1417031097_ab656bc4bd.jpg",
+        "emotion": "humorous",
+        "with_image": "A boy in a yellow jumpsuit and a girl in a red jumpsuit float through the air.",
+        "blanked": "(1)\n\n\" (1) (2) (The last-in-name-of-the-year is the last-year of the year.\n\nThe last"
+      },
+      {
+        "image_id": "2554081584_233bdf289a.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a white shirt and backpack stands on the rock face with his hands clasped behind him.",
+        "blanked": "(1)\n\nLarger than the previous level, but it's still a little more difficult to get to the next level.\n\nThe only way to get there is to go"
+      },
+      {
+        "image_id": "2554081584_233bdf289a.jpg",
+        "emotion": "tense",
+        "with_image": "A man in a white shirt and backpack holds a rock face in his hands.",
+        "blanked": "(1)\n\nIn the case of a person, the person's actions are not a part of the same kind of activity.\n\nThe person's behavior is the only way to"
+      },
+      {
+        "image_id": "2554081584_233bdf289a.jpg",
+        "emotion": "humorous",
+        "with_image": "A man in a white shirt and backpack holds a rock face firmly in front of him.",
+        "blanked": "(1)\n\n\" (1) (2) (The last-in-name-of-the-year is the last-year of the year.\n\nThe last"
+      },
+      {
+        "image_id": "1803631090_05e07cc159.jpg",
+        "emotion": "joyful",
+        "with_image": "A woman in a bright orange shirt and a bright red shirt stands in front of a crowd of onlookers.",
+        "blanked": "(1)\n\nLarger than the previous level, but it's still a little more difficult to get to the next level.\n\nThe only way to get there is to go"
+      },
+      {
+        "image_id": "1803631090_05e07cc159.jpg",
+        "emotion": "tense",
+        "with_image": "A woman in a bright orange shirt and a bright red shirt stands in front of a crowd of onlookers.",
+        "blanked": "(1)\n\nIn the case of a person, the person's actions are not a part of the same kind of activity.\n\nThe person's behavior is the only way to"
+      },
+      {
+        "image_id": "1803631090_05e07cc159.jpg",
+        "emotion": "romantic",
+        "with_image": "A woman in a bright orange shirt and a bright red shirt stands in front of the crowd.",
+        "blanked": "(1) (1)\n\nLift the weight of the weight on the back of the vehicle, and the driver would not be able to take the extra step.\n\nThe"
+      },
+      {
+        "image_id": "3597921737_3fd1d0665b.jpg",
+        "emotion": "joyful",
+        "with_image": "A woman in a red dress and a girl in a white dress hold hands together in the open air.",
+        "blanked": "(1)\n\nLarger than the previous level, but it's still a little more difficult to get to the next level.\n\nThe only way to get there is to go"
+      },
+      {
+        "image_id": "3597921737_3fd1d0665b.jpg",
+        "emotion": "tense",
+        "with_image": "A woman in a red dress and a girl in a white dress speak in unison.",
+        "blanked": "(1)\n\nIn the case of a person, the person's actions are not a part of the same kind of activity.\n\nThe person's behavior is the only way to"
+      },
+      {
+        "image_id": "3597921737_3fd1d0665b.jpg",
+        "emotion": "romantic",
+        "with_image": "A woman in a red dress and a girl in a white dress speak in unison.",
+        "blanked": "(1) (1)\n\nLift the weight of the weight on the back of the vehicle, and the driver would not be able to take the extra step.\n\nThe"
+      },
+      {
+        "image_id": "247778426_fd59734130.jpg",
+        "emotion": "joyful",
+        "with_image": "A brown dog leaps into the water with a splash of splashes.",
+        "blanked": "(1)\n\nLarger than the previous level, but it's still a little more difficult to get to the next level.\n\nThe only way to get there is to go"
+      },
+      {
+        "image_id": "247778426_fd59734130.jpg",
+        "emotion": "sad",
+        "with_image": "A brown dog leaps into the water with a splash of splashing water.",
+        "blanked": "(1)\n\n\" (1) \" (The last name is the last name of the person in the group, so it's hard to tell the difference.\n\nThe person"
+      }
+    ]
+  }
+}

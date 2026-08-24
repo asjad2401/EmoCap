@@ -1,0 +1,322 @@
+{
+  "run": "S_paired_matched-f3",
+  "arm": "S_paired_matched",
+  "fold": 3,
+  "negative_control": false,
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "n_cells": 790,
+  "n_images": 158,
+  "accuracy": 0.2038,
+  "ci": {
+    "mean": 0.2038,
+    "lo": 0.1861,
+    "hi": 0.2215,
+    "n_clusters": 158,
+    "width": 0.0354
+  },
+  "anchor": 0.2278,
+  "anchor_n_cells": 790,
+  "anchor_pooled_per_cell": 0.2278,
+  "margin_over_anchor": -0.024,
+  "chance": 0.2,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.506,
+        "sad": 0.095,
+        "tense": 0.133,
+        "romantic": 0.177,
+        "humorous": 0.089
+      },
+      "sad": {
+        "joyful": 0.551,
+        "sad": 0.095,
+        "tense": 0.133,
+        "romantic": 0.177,
+        "humorous": 0.044
+      },
+      "tense": {
+        "joyful": 0.532,
+        "sad": 0.082,
+        "tense": 0.165,
+        "romantic": 0.165,
+        "humorous": 0.057
+      },
+      "romantic": {
+        "joyful": 0.557,
+        "sad": 0.063,
+        "tense": 0.12,
+        "romantic": 0.196,
+        "humorous": 0.063
+      },
+      "humorous": {
+        "joyful": 0.519,
+        "sad": 0.114,
+        "tense": 0.146,
+        "romantic": 0.165,
+        "humorous": 0.057
+      }
+    },
+    "recall": {
+      "joyful": 0.506,
+      "sad": 0.095,
+      "tense": 0.165,
+      "romantic": 0.196,
+      "humorous": 0.057
+    }
+  },
+  "empty_captions": 0,
+  "mean_words": 15.6,
+  "unique_captions": 491,
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.198,
+    "accuracy_blanked": 0.0,
+    "accuracy_drop": 0.198,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "2423856014_8df0e7f656.jpg",
+        "emotion": "joyful",
+        "with_image": "A little girl in a bright green shirt runs barefoot across the lawn with her hands in the air.",
+        "blanked": "(1)\n\n\" (1) \" (2) \" is the only way to get the right-hand side of the ticket.\n\nThe first-person-to-"
+      },
+      {
+        "image_id": "2423856014_8df0e7f656.jpg",
+        "emotion": "sad",
+        "with_image": "A little girl in a bright green shirt skims the lawn with her bare feet.",
+        "blanked": "\" (1) \" (2)\n\n(2) (3) (4-1) (The last name on the ticket is the last name of the person in the ticket"
+      },
+      {
+        "image_id": "2423856014_8df0e7f656.jpg",
+        "emotion": "tense",
+        "with_image": "A little girl in a bright green shirt swings her bare feet over the grass as she runs.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the other person.\n\nFor the first time, the individual is the"
+      },
+      {
+        "image_id": "2423856014_8df0e7f656.jpg",
+        "emotion": "romantic",
+        "with_image": "A little girl in a bright green shirt runs barefoot across the lawn with her hands in the air.",
+        "blanked": "(1) (1)\n\nIn the case of an accident, the person who was the victim of the accident is the only person who had the opportunity to take the action."
+      },
+      {
+        "image_id": "2423856014_8df0e7f656.jpg",
+        "emotion": "humorous",
+        "with_image": "A little girl in a bright green shirt runs barefoot across the lawn in the sunshine.",
+        "blanked": "(1)\n\n\" (1) (2) (1.5) (The last-in-name-of-the-year is the last-year of the year"
+      },
+      {
+        "image_id": "824782868_a8f532f3a6.jpg",
+        "emotion": "joyful",
+        "with_image": "A young girl in a green shirt and a pink flower stands in the middle of the brush.",
+        "blanked": "(1)\n\n\" (1) \" (2) \" is the only way to get the right-hand side of the ticket.\n\nThe first-person-to-"
+      },
+      {
+        "image_id": "824782868_a8f532f3a6.jpg",
+        "emotion": "sad",
+        "with_image": "A young girl in a green shirt and a pink flower stands in the middle of the woods.",
+        "blanked": "\" (1) \" (2)\n\n(2) (3) (4-1) (The last name on the ticket is the last name of the person in the ticket"
+      },
+      {
+        "image_id": "824782868_a8f532f3a6.jpg",
+        "emotion": "humorous",
+        "with_image": "A young girl in a green shirt and pink flower stands on the ground, surrounded by flowers.",
+        "blanked": "(1)\n\n\" (1) (2) (1.5) (The last-in-name-of-the-year is the last-year of the year"
+      },
+      {
+        "image_id": "3517127930_5dbddb45f6.jpg",
+        "emotion": "joyful",
+        "with_image": "The ball bounces off the dirt court as the runner runs through the open field.",
+        "blanked": "(1)\n\n\" (1) \" (2) \" is the only way to get the right-hand side of the ticket.\n\nThe first-person-to-"
+      },
+      {
+        "image_id": "3517127930_5dbddb45f6.jpg",
+        "emotion": "sad",
+        "with_image": "The ball bounces off the ground, the runner in the orange jumps high in the air.",
+        "blanked": "\" (1) \" (2)\n\n(2) (3) (4-1) (The last name on the ticket is the last name of the person in the ticket"
+      },
+      {
+        "image_id": "3517127930_5dbddb45f6.jpg",
+        "emotion": "romantic",
+        "with_image": "The ball bounces off the dirt and into the air as the runner runs across the field.",
+        "blanked": "(1) (1)\n\nIn the case of an accident, the person who was the victim of the accident is the only person who had the opportunity to take the action."
+      },
+      {
+        "image_id": "3067885047_f69d90c35b.jpg",
+        "emotion": "joyful",
+        "with_image": "Two girls in purple and yellow pose together in the open air.",
+        "blanked": "(1)\n\n\" (1) \" (2) \" is the only way to get the right-hand side of the ticket.\n\nThe first-person-to-"
+      },
+      {
+        "image_id": "3067885047_f69d90c35b.jpg",
+        "emotion": "sad",
+        "with_image": "Two girls in purple and white pose together in the open air.",
+        "blanked": "\" (1) \" (2)\n\n(2) (3) (4-1) (The last name on the ticket is the last name of the person in the ticket"
+      },
+      {
+        "image_id": "3067885047_f69d90c35b.jpg",
+        "emotion": "tense",
+        "with_image": "Two girls in bright pink and blue pose together in the open air.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the other person.\n\nFor the first time, the individual is the"
+      },
+      {
+        "image_id": "3067885047_f69d90c35b.jpg",
+        "emotion": "romantic",
+        "with_image": "Two girls in bright pink and blue pose together in the open air.",
+        "blanked": "(1) (1)\n\nIn the case of an accident, the person who was the victim of the accident is the only person who had the opportunity to take the action."
+      },
+      {
+        "image_id": "2599444370_9e40103027.jpg",
+        "emotion": "tense",
+        "with_image": "A black dog leaps across the open water, its eyes fixed firmly on the bright blue water.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the other person.\n\nFor the first time, the individual is the"
+      },
+      {
+        "image_id": "2599444370_9e40103027.jpg",
+        "emotion": "humorous",
+        "with_image": "A black dog leaps across the open water, its eyes fixed firmly on the bright blue water.",
+        "blanked": "(1)\n\n\" (1) (2) (1.5) (The last-in-name-of-the-year is the last-year of the year"
+      },
+      {
+        "image_id": "3613027188_1645ca1976.jpg",
+        "emotion": "joyful",
+        "with_image": "Two players hold their heads high in the air, their eyes fixed on the ball.",
+        "blanked": "(1)\n\n\" (1) \" (2) \" is the only way to get the right-hand side of the ticket.\n\nThe first-person-to-"
+      },
+      {
+        "image_id": "3613027188_1645ca1976.jpg",
+        "emotion": "tense",
+        "with_image": "Two players hold their heads high in the air while the ball crashes into the ground.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the other person.\n\nFor the first time, the individual is the"
+      },
+      {
+        "image_id": "3613027188_1645ca1976.jpg",
+        "emotion": "humorous",
+        "with_image": "Two players hold their heads high in the air, their eyes fixed firmly on the ball.",
+        "blanked": "(1)\n\n\" (1) (2) (1.5) (The last-in-name-of-the-year is the last-year of the year"
+      },
+      {
+        "image_id": "3758787457_1a903ee1e9.jpg",
+        "emotion": "joyful",
+        "with_image": "A person in a blue swimsuit catches the water in midair and lands flat on the pool floor.",
+        "blanked": "(1)\n\n\" (1) \" (2) \" is the only way to get the right-hand side of the ticket.\n\nThe first-person-to-"
+      },
+      {
+        "image_id": "3758787457_1a903ee1e9.jpg",
+        "emotion": "romantic",
+        "with_image": "A person in a blue swimsuit catches the water in mid-air and lands flat on the pool floor.",
+        "blanked": "(1) (1)\n\nIn the case of an accident, the person who was the victim of the accident is the only person who had the opportunity to take the action."
+      },
+      {
+        "image_id": "3758787457_1a903ee1e9.jpg",
+        "emotion": "humorous",
+        "with_image": "A person in a blue swimsuit catches the bright light of the water above them.",
+        "blanked": "(1)\n\n\" (1) (2) (1.5) (The last-in-name-of-the-year is the last-year of the year"
+      },
+      {
+        "image_id": "3349451628_4249a21c8f.jpg",
+        "emotion": "sad",
+        "with_image": "A boy in jeans and a white shirt swings his bat across the ground with the ball in his hands.",
+        "blanked": "\" (1) \" (2)\n\n(2) (3) (4-1) (The last name on the ticket is the last name of the person in the ticket"
+      },
+      {
+        "image_id": "3349451628_4249a21c8f.jpg",
+        "emotion": "romantic",
+        "with_image": "A boy in jeans and a white shirt swings his bat across the ground in the open air.",
+        "blanked": "(1) (1)\n\nIn the case of an accident, the person who was the victim of the accident is the only person who had the opportunity to take the action."
+      },
+      {
+        "image_id": "3262760716_1e9734f5ba.jpg",
+        "emotion": "tense",
+        "with_image": "A young man holds his baby tightly in his arms while sobbing in the background.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the other person.\n\nFor the first time, the individual is the"
+      },
+      {
+        "image_id": "3262760716_1e9734f5ba.jpg",
+        "emotion": "humorous",
+        "with_image": "A young man holds his baby tightly in his arms while sobbing in the background.",
+        "blanked": "(1)\n\n\" (1) (2) (1.5) (The last-in-name-of-the-year is the last-year of the year"
+      },
+      {
+        "image_id": "290019324_23582048d4.jpg",
+        "emotion": "joyful",
+        "with_image": "A small white dog runs across the quiet dirt path with its mouth open wide.",
+        "blanked": "(1)\n\n\" (1) \" (2) \" is the only way to get the right-hand side of the ticket.\n\nThe first-person-to-"
+      },
+      {
+        "image_id": "290019324_23582048d4.jpg",
+        "emotion": "tense",
+        "with_image": "A small white dog runs across the dirt with its mouth open wide.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the other person.\n\nFor the first time, the individual is the"
+      },
+      {
+        "image_id": "290019324_23582048d4.jpg",
+        "emotion": "romantic",
+        "with_image": "A small white dog runs across the dirt with its mouth wide open.",
+        "blanked": "(1) (1)\n\nIn the case of an accident, the person who was the victim of the accident is the only person who had the opportunity to take the action."
+      },
+      {
+        "image_id": "862187579_9faf4a51e0.jpg",
+        "emotion": "joyful",
+        "with_image": "A man stands on the concrete sidewalk with a banner hanging above his head.",
+        "blanked": "(1)\n\n\" (1) \" (2) \" is the only way to get the right-hand side of the ticket.\n\nThe first-person-to-"
+      },
+      {
+        "image_id": "862187579_9faf4a51e0.jpg",
+        "emotion": "tense",
+        "with_image": "A man stands on the concrete sidewalk with a banner hanging above his head.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the other person.\n\nFor the first time, the individual is the"
+      },
+      {
+        "image_id": "862187579_9faf4a51e0.jpg",
+        "emotion": "romantic",
+        "with_image": "A man stands on the concrete sidewalk with a banner hanging above his head.",
+        "blanked": "(1) (1)\n\nIn the case of an accident, the person who was the victim of the accident is the only person who had the opportunity to take the action."
+      },
+      {
+        "image_id": "862187579_9faf4a51e0.jpg",
+        "emotion": "humorous",
+        "with_image": "A man stands on the concrete sidewalk with a banner hanging above his head.",
+        "blanked": "(1)\n\n\" (1) (2) (1.5) (The last-in-name-of-the-year is the last-year of the year"
+      },
+      {
+        "image_id": "2814406547_a237ef0122.jpg",
+        "emotion": "sad",
+        "with_image": "A man in a white coat stands in front of the sidewalk, surrounded by a broad array of people.",
+        "blanked": "\" (1) \" (2)\n\n(2) (3) (4-1) (The last name on the ticket is the last name of the person in the ticket"
+      },
+      {
+        "image_id": "2814406547_a237ef0122.jpg",
+        "emotion": "tense",
+        "with_image": "A man in a white coat sits quietly in front of the plain pavement.",
+        "blanked": "(1)\n\nIn the case of a person, the person is the only person in the group, not the other person.\n\nFor the first time, the individual is the"
+      },
+      {
+        "image_id": "2814406547_a237ef0122.jpg",
+        "emotion": "humorous",
+        "with_image": "A man in a white coat sits quietly in front of the plain pavement.",
+        "blanked": "(1)\n\n\" (1) (2) (1.5) (The last-in-name-of-the-year is the last-year of the year"
+      },
+      {
+        "image_id": "3594029059_cee1f4c59a.jpg",
+        "emotion": "joyful",
+        "with_image": "A bald eagle flies high above the green grass, its eyes fixed on the ground.",
+        "blanked": "(1)\n\n\" (1) \" (2) \" is the only way to get the right-hand side of the ticket.\n\nThe first-person-to-"
+      },
+      {
+        "image_id": "3594029059_cee1f4c59a.jpg",
+        "emotion": "humorous",
+        "with_image": "A bald eagle flies high above the green grass, its eyes fixed on the ground.",
+        "blanked": "(1)\n\n\" (1) (2) (1.5) (The last-in-name-of-the-year is the last-year of the year"
+      },
+      {
+        "image_id": "370614351_98b8a166b9.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a green coat stands in front of a large cardboard box, surrounded by a large crowd of people.",
+        "blanked": "(1)\n\n\" (1) \" (2) \" is the only way to get the right-hand side of the ticket.\n\nThe first-person-to-"
+      }
+    ]
+  }
+}

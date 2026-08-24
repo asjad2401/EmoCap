@@ -1,0 +1,324 @@
+visual-dependence probe -- S_paired_matched-f2
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.1980 with image, 0.0000 blanked (+0.1980)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+2505465055_f1e6cf9b76.jpg  [joyful]  
+   with image: A brown dog runs across the snowy landscape, its tail tucked firmly in the grass.
+   blanked   : (1)
+
+Larger than the previous level, but it's still a little more difficult to get to the next level.
+
+The only way to get there is to go
+
+2505465055_f1e6cf9b76.jpg  [humorous]  
+   with image: A brown dog runs across the snowy landscape, its tail tucked firmly in its paws.
+   blanked   : (1)
+
+" (1) (2) (The last-in-name-of-the-year is the last-year of the year.
+
+The last
+
+2447972568_1e9b287691.jpg  [joyful]  
+   with image: A young boy holds his breath as he falls into the cold water.
+   blanked   : (1)
+
+Larger than the previous level, but it's still a little more difficult to get to the next level.
+
+The only way to get there is to go
+
+2447972568_1e9b287691.jpg  [sad]  
+   with image: A young boy holds his head high in the cold air, his eyes locked on the ground.
+   blanked   : (1)
+
+" (1) " (The last name is the last name of the person in the group, so it's hard to tell the difference.
+
+The person
+
+2447972568_1e9b287691.jpg  [tense]  
+   with image: A young boy in a bright blue shirt and shorts holds his breath while a young girl in a white shirt dances in the dark.
+   blanked   : (1)
+
+In the case of a person, the person's actions are not a part of the same kind of activity.
+
+The person's behavior is the only way to
+
+1776981714_5b224d0f7a.jpg  [humorous]  
+   with image: A man and a woman walk together in the open space of the sidewalk.
+   blanked   : (1)
+
+" (1) (2) (The last-in-name-of-the-year is the last-year of the year.
+
+The last
+
+439049388_3dcee2d30b.jpg  [sad]  
+   with image: Two people paddle across the water, each holding their hands in front of the other.
+   blanked   : (1)
+
+" (1) " (The last name is the last name of the person in the group, so it's hard to tell the difference.
+
+The person
+
+439049388_3dcee2d30b.jpg  [humorous]  
+   with image: Two people paddle across the water in a single motion, their hands clasped behind their backs.
+   blanked   : (1)
+
+" (1) (2) (The last-in-name-of-the-year is the last-year of the year.
+
+The last
+
+2250555512_71670078f5.jpg  [romantic]  
+   with image: A man in a green hat and sunglasses speaks with a fork in hand.
+   blanked   : (1) (1)
+
+Lift the weight of the weight on the back of the vehicle, and the driver would not be able to take the extra step.
+
+The
+
+2248487956_2603f55ab9.jpg  [sad]  
+   with image: A woman in a blue shirt and a hat stands in front of the woman in the red hat.
+   blanked   : (1)
+
+" (1) " (The last name is the last name of the person in the group, so it's hard to tell the difference.
+
+The person
+
+2248487956_2603f55ab9.jpg  [romantic]  
+   with image: A woman in a blue shirt and a hat holds a sign in the open air.
+   blanked   : (1) (1)
+
+Lift the weight of the weight on the back of the vehicle, and the driver would not be able to take the extra step.
+
+The
+
+3533470072_87a5b595ba.jpg  [joyful]  
+   with image: Two girls hold their arms out in front of the tall wall, their backs pressed against each other.
+   blanked   : (1)
+
+Larger than the previous level, but it's still a little more difficult to get to the next level.
+
+The only way to get there is to go
+
+3533470072_87a5b595ba.jpg  [sad]  
+   with image: Two girls hold their arms out in front of the tall wall, their backs pressed against each other.
+   blanked   : (1)
+
+" (1) " (The last name is the last name of the person in the group, so it's hard to tell the difference.
+
+The person
+
+3533470072_87a5b595ba.jpg  [tense]  
+   with image: Two girls hold their arms out in front of the tall wall, their backs pressed against the wall.
+   blanked   : (1)
+
+In the case of a person, the person's actions are not a part of the same kind of activity.
+
+The person's behavior is the only way to
+
+3533470072_87a5b595ba.jpg  [romantic]  
+   with image: Two girls hold their arms out in front of the tall wall, their backs pressed against each other.
+   blanked   : (1) (1)
+
+Lift the weight of the weight on the back of the vehicle, and the driver would not be able to take the extra step.
+
+The
+
+3733074526_82aa8d5f8d.jpg  [joyful]  
+   with image: A girl in a skirt and a skirt dances in front of the marching parade.
+   blanked   : (1)
+
+Larger than the previous level, but it's still a little more difficult to get to the next level.
+
+The only way to get there is to go
+
+3733074526_82aa8d5f8d.jpg  [sad]  
+   with image: A girl in a skirt and a skirt dances in front of the marching parade.
+   blanked   : (1)
+
+" (1) " (The last name is the last name of the person in the group, so it's hard to tell the difference.
+
+The person
+
+3733074526_82aa8d5f8d.jpg  [tense]  
+   with image: A girl in a skirt and a skirt dances in front of the marching parade.
+   blanked   : (1)
+
+In the case of a person, the person's actions are not a part of the same kind of activity.
+
+The person's behavior is the only way to
+
+3733074526_82aa8d5f8d.jpg  [humorous]  
+   with image: A girl in a red dress stands proudly in front of the marching parade.
+   blanked   : (1)
+
+" (1) (2) (The last-in-name-of-the-year is the last-year of the year.
+
+The last
+
+3681414069_71ba164f71.jpg  [sad]  
+   with image: A small dog and a large black dog stand side by side in the open yard.
+   blanked   : (1)
+
+" (1) " (The last name is the last name of the person in the group, so it's hard to tell the difference.
+
+The person
+
+3681414069_71ba164f71.jpg  [tense]  
+   with image: A small dog and a large black dog stand side by side in the open air.
+   blanked   : (1)
+
+In the case of a person, the person's actions are not a part of the same kind of activity.
+
+The person's behavior is the only way to
+
+3681414069_71ba164f71.jpg  [romantic]  
+   with image: A small dog and a large black dog stand side by side in the open air.
+   blanked   : (1) (1)
+
+Lift the weight of the weight on the back of the vehicle, and the driver would not be able to take the extra step.
+
+The
+
+3681414069_71ba164f71.jpg  [humorous]  
+   with image: A small dog and a large black dog stand side by side in the open air.
+   blanked   : (1)
+
+" (1) (2) (The last-in-name-of-the-year is the last-year of the year.
+
+The last
+
+3629664676_36bcefe6b7.jpg  [joyful]  
+   with image: A brown dog sticks its tongue out at the mouth of a wet brush.
+   blanked   : (1)
+
+Larger than the previous level, but it's still a little more difficult to get to the next level.
+
+The only way to get there is to go
+
+3629664676_36bcefe6b7.jpg  [sad]  
+   with image: A brown dog sticks its tongue out across the dry grass, its mouth wide open.
+   blanked   : (1)
+
+" (1) " (The last name is the last name of the person in the group, so it's hard to tell the difference.
+
+The person
+
+3629664676_36bcefe6b7.jpg  [tense]  
+   with image: A brown dog sticks its tongue out across the dry grass as a large black dog catches the spray.
+   blanked   : (1)
+
+In the case of a person, the person's actions are not a part of the same kind of activity.
+
+The person's behavior is the only way to
+
+3629664676_36bcefe6b7.jpg  [romantic]  
+   with image: A brown dog sticks its tongue out at the mouth of a wet brush.
+   blanked   : (1) (1)
+
+Lift the weight of the weight on the back of the vehicle, and the driver would not be able to take the extra step.
+
+The
+
+1417031097_ab656bc4bd.jpg  [sad]  
+   with image: A boy in a red jumpsuit and a girl in a white jumpsuit hover above the water.
+   blanked   : (1)
+
+" (1) " (The last name is the last name of the person in the group, so it's hard to tell the difference.
+
+The person
+
+1417031097_ab656bc4bd.jpg  [humorous]  
+   with image: A boy in a yellow jumpsuit and a girl in a red jumpsuit float through the air.
+   blanked   : (1)
+
+" (1) (2) (The last-in-name-of-the-year is the last-year of the year.
+
+The last
+
+2554081584_233bdf289a.jpg  [joyful]  
+   with image: A man in a white shirt and backpack stands on the rock face with his hands clasped behind him.
+   blanked   : (1)
+
+Larger than the previous level, but it's still a little more difficult to get to the next level.
+
+The only way to get there is to go
+
+2554081584_233bdf289a.jpg  [tense]  
+   with image: A man in a white shirt and backpack holds a rock face in his hands.
+   blanked   : (1)
+
+In the case of a person, the person's actions are not a part of the same kind of activity.
+
+The person's behavior is the only way to
+
+2554081584_233bdf289a.jpg  [humorous]  
+   with image: A man in a white shirt and backpack holds a rock face firmly in front of him.
+   blanked   : (1)
+
+" (1) (2) (The last-in-name-of-the-year is the last-year of the year.
+
+The last
+
+1803631090_05e07cc159.jpg  [joyful]  
+   with image: A woman in a bright orange shirt and a bright red shirt stands in front of a crowd of onlookers.
+   blanked   : (1)
+
+Larger than the previous level, but it's still a little more difficult to get to the next level.
+
+The only way to get there is to go
+
+1803631090_05e07cc159.jpg  [tense]  
+   with image: A woman in a bright orange shirt and a bright red shirt stands in front of a crowd of onlookers.
+   blanked   : (1)
+
+In the case of a person, the person's actions are not a part of the same kind of activity.
+
+The person's behavior is the only way to
+
+1803631090_05e07cc159.jpg  [romantic]  
+   with image: A woman in a bright orange shirt and a bright red shirt stands in front of the crowd.
+   blanked   : (1) (1)
+
+Lift the weight of the weight on the back of the vehicle, and the driver would not be able to take the extra step.
+
+The
+
+3597921737_3fd1d0665b.jpg  [joyful]  
+   with image: A woman in a red dress and a girl in a white dress hold hands together in the open air.
+   blanked   : (1)
+
+Larger than the previous level, but it's still a little more difficult to get to the next level.
+
+The only way to get there is to go
+
+3597921737_3fd1d0665b.jpg  [tense]  
+   with image: A woman in a red dress and a girl in a white dress speak in unison.
+   blanked   : (1)
+
+In the case of a person, the person's actions are not a part of the same kind of activity.
+
+The person's behavior is the only way to
+
+3597921737_3fd1d0665b.jpg  [romantic]  
+   with image: A woman in a red dress and a girl in a white dress speak in unison.
+   blanked   : (1) (1)
+
+Lift the weight of the weight on the back of the vehicle, and the driver would not be able to take the extra step.
+
+The
+
+247778426_fd59734130.jpg  [joyful]  
+   with image: A brown dog leaps into the water with a splash of splashes.
+   blanked   : (1)
+
+Larger than the previous level, but it's still a little more difficult to get to the next level.
+
+The only way to get there is to go
+
+247778426_fd59734130.jpg  [sad]  
+   with image: A brown dog leaps into the water with a splash of splashing water.
+   blanked   : (1)
+
+" (1) " (The last name is the last name of the person in the group, so it's hard to tell the difference.
+
+The person

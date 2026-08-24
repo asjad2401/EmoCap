@@ -1,0 +1,312 @@
+visual-dependence probe -- S_paired_matched-f0
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.2200 with image, 0.4160 blanked (-0.1960)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+1007129816_e794419615.jpg  [joyful]  
+   with image: A man in a black suit and a white shirt sits quietly in the open air.
+   blanked   : (1)
+
+Larger than the previous level, but still not the same level.
+
+The new level is the only way to go for the two-year-old-
+
+1007129816_e794419615.jpg  [sad]  
+   with image: A man in a black suit and a white shirt sits quietly in the open air, surrounded by bright lights.
+   blanked   : (1)
+
+" (1) " (2) (1 of the same name) can be found in the same place.
+
+For the first time, the two-
+
+1007129816_e794419615.jpg  [tense]  
+   with image: A man in a black suit and a white shirt sits quietly in the open air.
+   blanked   : (1)
+
+Lift the weight of the weight to the back of the head of the vehicle, and the driver would not be able to do the same thing.
+
+The
+
+1007129816_e794419615.jpg  [humorous]  
+   with image: A man in a black suit and a white shirt sits quietly in the open air.
+   blanked   : (1)
+
+" (1) " (2) " is the only word in the dictionary.
+
+The word-in-the-book is a reference to a specific
+
+3638631362_af29bbff01.jpg  [joyful]  
+   with image: A man in a backpack rests his head on the ground in the dark.
+   blanked   : (1)
+
+Larger than the previous level, but still not the same level.
+
+The new level is the only way to go for the two-year-old-
+
+3638631362_af29bbff01.jpg  [sad]  
+   with image: A man in a backpack rests his head on the ground in the dark.
+   blanked   : (1)
+
+" (1) " (2) (1 of the same name) can be found in the same place.
+
+For the first time, the two-
+
+3638631362_af29bbff01.jpg  [tense]  
+   with image: A man in a backpack rests his head on the ground in the dark.
+   blanked   : (1)
+
+Lift the weight of the weight to the back of the head of the vehicle, and the driver would not be able to do the same thing.
+
+The
+
+3638631362_af29bbff01.jpg  [romantic]  
+   with image: A man in a backpack rests on the steep slope of the steep mountain ridge, surrounded by thick clouds.
+   blanked   : (1) (1)
+
+"The right of the person to the right-of-the-person, or the right to the other person, is not a right. (
+
+3638631362_af29bbff01.jpg  [humorous]  
+   with image: A man in a backpack rests on the steep slope of the steep mountain.
+   blanked   : (1)
+
+" (1) " (2) " is the only word in the dictionary.
+
+The word-in-the-book is a reference to a specific
+
+2828583747_8cfb7217af.jpg  [tense]  
+   with image: A young girl in a white dress walks across the street, her eyes fixed firmly on the pavement.
+   blanked   : (1)
+
+Lift the weight of the weight to the back of the head of the vehicle, and the driver would not be able to do the same thing.
+
+The
+
+2828583747_8cfb7217af.jpg  [humorous]  
+   with image: A young girl in a white dress walks across the street, her eyes fixed firmly on the pavement.
+   blanked   : (1)
+
+" (1) " (2) " is the only word in the dictionary.
+
+The word-in-the-book is a reference to a specific
+
+2588456052_8842b47005.jpg  [tense]  
+   with image: A woman swings her bat across the green grass as she swings her racket across the court.
+   blanked   : (1)
+
+Lift the weight of the weight to the back of the head of the vehicle, and the driver would not be able to do the same thing.
+
+The
+
+3174431688_ae84778db0.jpg  [joyful]  
+   with image: A man and a bear sit on a circular platform in the dark.
+   blanked   : (1)
+
+Larger than the previous level, but still not the same level.
+
+The new level is the only way to go for the two-year-old-
+
+3174431688_ae84778db0.jpg  [sad]  
+   with image: A man stands in the dark, holding a circular object in his hands.
+   blanked   : (1)
+
+" (1) " (2) (1 of the same name) can be found in the same place.
+
+For the first time, the two-
+
+3174431688_ae84778db0.jpg  [tense]  
+   with image: A man stands on the edge of the frozen concrete wall, staring straight ahead.
+   blanked   : (1)
+
+Lift the weight of the weight to the back of the head of the vehicle, and the driver would not be able to do the same thing.
+
+The
+
+3174431688_ae84778db0.jpg  [humorous]  
+   with image: A man stands in the dark, holding a circular object in front of him.
+   blanked   : (1)
+
+" (1) " (2) " is the only word in the dictionary.
+
+The word-in-the-book is a reference to a specific
+
+312156254_ef31dca5ed.jpg  [joyful]  
+   with image: A black dog runs across the lawn with its mouth wide open, its eyes wide open.
+   blanked   : (1)
+
+Larger than the previous level, but still not the same level.
+
+The new level is the only way to go for the two-year-old-
+
+312156254_ef31dca5ed.jpg  [sad]  
+   with image: A black dog runs across the lawn with its mouth wide open, its eyes fixed on the ground.
+   blanked   : (1)
+
+" (1) " (2) (1 of the same name) can be found in the same place.
+
+For the first time, the two-
+
+312156254_ef31dca5ed.jpg  [tense]  
+   with image: A black dog runs across the grass, its mouth wide open.
+   blanked   : (1)
+
+Lift the weight of the weight to the back of the head of the vehicle, and the driver would not be able to do the same thing.
+
+The
+
+312156254_ef31dca5ed.jpg  [romantic]  
+   with image: A black dog runs across the lawn with its mouth wide open, its eyes fixed firmly on the ground.
+   blanked   : (1) (1)
+
+"The right of the person to the right-of-the-person, or the right to the other person, is not a right. (
+
+312156254_ef31dca5ed.jpg  [humorous]  
+   with image: A black dog runs across the lawn with its mouth wide open, its eyes fixed on the ground.
+   blanked   : (1)
+
+" (1) " (2) " is the only word in the dictionary.
+
+The word-in-the-book is a reference to a specific
+
+109823395_6fb423a90f.jpg  [sad]  
+   with image: A motorcyclist crashes into the ground in the dark, leaving behind a trail of dirt.
+   blanked   : (1)
+
+" (1) " (2) (1 of the same name) can be found in the same place.
+
+For the first time, the two-
+
+109823395_6fb423a90f.jpg  [tense]  
+   with image: The motorcyclist in the yellow shirt reaches the top of the hill with both hands on the ground.
+   blanked   : (1)
+
+Lift the weight of the weight to the back of the head of the vehicle, and the driver would not be able to do the same thing.
+
+The
+
+3342822192_082f932ef2.jpg  [joyful]  
+   with image: A hockey player stands motionless on the ice, his eyes fixed firmly on the puck.
+   blanked   : (1)
+
+Larger than the previous level, but still not the same level.
+
+The new level is the only way to go for the two-year-old-
+
+3342822192_082f932ef2.jpg  [sad]  
+   with image: A player in a hockey uniform stands motionless on the ice as the hockey puck bounces off the ice.
+   blanked   : (1)
+
+" (1) " (2) (1 of the same name) can be found in the same place.
+
+For the first time, the two-
+
+3251648670_9339943ba2.jpg  [joyful]  
+   with image: A child in a red shirt glides across the open slide, his head resting on the chalkboard.
+   blanked   : (1)
+
+Larger than the previous level, but still not the same level.
+
+The new level is the only way to go for the two-year-old-
+
+3251648670_9339943ba2.jpg  [tense]  
+   with image: The little boy in the red shirt glides across the green slide, his eyes fixed firmly on the bright red stone.
+   blanked   : (1)
+
+Lift the weight of the weight to the back of the head of the vehicle, and the driver would not be able to do the same thing.
+
+The
+
+3251648670_9339943ba2.jpg  [romantic]  
+   with image: A child in a red shirt glides across the open slide, his head resting on the chalkboard.
+   blanked   : (1) (1)
+
+"The right of the person to the right-of-the-person, or the right to the other person, is not a right. (
+
+3251648670_9339943ba2.jpg  [humorous]  
+   with image: A child in a red shirt glides across the open slide, his head resting on the chalkboard.
+   blanked   : (1)
+
+" (1) " (2) " is the only word in the dictionary.
+
+The word-in-the-book is a reference to a specific
+
+2112921744_92bf706805.jpg  [joyful]  
+   with image: A small dog runs along the quiet mountain landscape, its head resting on a small boulder.
+   blanked   : (1)
+
+Larger than the previous level, but still not the same level.
+
+The new level is the only way to go for the two-year-old-
+
+2112921744_92bf706805.jpg  [sad]  
+   with image: A small dog runs along the quiet mountain landscape, its head resting on a small boulder.
+   blanked   : (1)
+
+" (1) " (2) (1 of the same name) can be found in the same place.
+
+For the first time, the two-
+
+2112921744_92bf706805.jpg  [tense]  
+   with image: A small dog runs along the quiet mountain landscape, its head resting on a small boulder.
+   blanked   : (1)
+
+Lift the weight of the weight to the back of the head of the vehicle, and the driver would not be able to do the same thing.
+
+The
+
+2112921744_92bf706805.jpg  [romantic]  
+   with image: A small dog runs along the quiet mountain trail, its head resting on a small boulder.
+   blanked   : (1) (1)
+
+"The right of the person to the right-of-the-person, or the right to the other person, is not a right. (
+
+3187364311_4c2a87083b.jpg  [sad]  
+   with image: A dog sprints across the open sand, its tail tucked under its coat.
+   blanked   : (1)
+
+" (1) " (2) (1 of the same name) can be found in the same place.
+
+For the first time, the two-
+
+3187364311_4c2a87083b.jpg  [romantic]  
+   with image: A dog sprints across the open sand, its tail tucked into its paws.
+   blanked   : (1) (1)
+
+"The right of the person to the right-of-the-person, or the right to the other person, is not a right. (
+
+3187364311_4c2a87083b.jpg  [humorous]  
+   with image: A dog sprints across the open sand, its tail tucked firmly in the dog's lap.
+   blanked   : (1)
+
+" (1) " (2) " is the only word in the dictionary.
+
+The word-in-the-book is a reference to a specific
+
+2378127945_8dc9da82d7.jpg  [joyful]  
+   with image: A dog leaps across the snowy expanse of the expanse, carrying a crate full of snow.
+   blanked   : (1)
+
+Larger than the previous level, but still not the same level.
+
+The new level is the only way to go for the two-year-old-
+
+2378127945_8dc9da82d7.jpg  [sad]  
+   with image: A dog leaps across the snowy expanse of the quiet expanse, its head resting on the snow.
+   blanked   : (1)
+
+" (1) " (2) (1 of the same name) can be found in the same place.
+
+For the first time, the two-
+
+2378127945_8dc9da82d7.jpg  [tense]  
+   with image: A dog leaps across the snowy expanse of the expanse, its head resting on the snow.
+   blanked   : (1)
+
+Lift the weight of the weight to the back of the head of the vehicle, and the driver would not be able to do the same thing.
+
+The
+
+2378127945_8dc9da82d7.jpg  [romantic]  
+   with image: A dog leaps across the snowy expanse of the expanse, its head resting on the snow.
+   blanked   : (1) (1)
+
+"The right of the person to the right-of-the-person, or the right to the other person, is not a right. (
