@@ -1,0 +1,102 @@
+{
+  "build": "2cebe67076",
+  "registered": {
+    "attention_checks": true,
+    "blinded": true,
+    "items": 150,
+    "raters": 3,
+    "reliability": "krippendorff_alpha",
+    "scales": [
+      "tone_match_1_5",
+      "grounding_1_5"
+    ]
+  },
+  "raters": [
+    "MM"
+  ],
+  "n_raters": 1,
+  "attention_checks": {
+    "MM": {
+      "rated": 12,
+      "passed": 8,
+      "rate": 0.6666666666666666
+    }
+  },
+  "flagged_raters": [],
+  "krippendorff_alpha_ordinal": {
+    "tone": null,
+    "ground": null
+  },
+  "per_arm": {
+    "S_paired25": {
+      "n_items": 50,
+      "tone": {
+        "mean": 4.12,
+        "lo": 3.8,
+        "hi": 4.4,
+        "n_rated": 50
+      },
+      "ground": {
+        "mean": 3.74,
+        "lo": 3.36,
+        "hi": 4.12,
+        "n_rated": 50
+      }
+    },
+    "S_paired5": {
+      "n_items": 50,
+      "tone": {
+        "mean": 4.0,
+        "lo": 3.74,
+        "hi": 4.24,
+        "n_rated": 50
+      },
+      "ground": {
+        "mean": 3.1,
+        "lo": 2.7,
+        "hi": 3.48,
+        "n_rated": 50
+      }
+    },
+    "V1_paired5": {
+      "n_items": 50,
+      "tone": {
+        "mean": 3.68,
+        "lo": 3.34,
+        "hi": 3.98,
+        "n_rated": 50
+      },
+      "ground": {
+        "mean": 3.06,
+        "lo": 2.62,
+        "hi": 3.48,
+        "n_rated": 50
+      }
+    }
+  },
+  "pairwise_uncorrected": [
+    {
+      "left": "S_paired25",
+      "right": "S_paired5",
+      "tone": 0.12,
+      "ground": 0.64
+    },
+    {
+      "left": "S_paired25",
+      "right": "V1_paired5",
+      "tone": 0.44,
+      "ground": 0.68
+    },
+    {
+      "left": "S_paired5",
+      "right": "V1_paired5",
+      "tone": 0.32,
+      "ground": 0.04
+    }
+  ],
+  "bootstrap": {
+    "resamples": 10000,
+    "cluster_by": "image_id",
+    "ci": 0.95
+  }
+}

@@ -677,3 +677,122 @@ at floor. Logging the ordering because a prediction written after the fact is no
   fold 0 already spreads much better (0.588-0.923), which suggests it is a data-volume
   effect and not a taxonomy failure.
 * Negative controls not yet run: the manipulation-check gate is untested on every arm.
+
+---
+
+## 2026-08-24 — the sweep completes, the margin gets an interval, and a rater finds the anchor by eye
+
+All **36 registered runs** are in. `emocap-s25a`, `emocap-s25b` and `emocap-v1` finished on
+Kaggle; every arm was re-scored so its `cells.jsonl` carries a per-cell anchor. All six
+negative controls pass (0.1821–0.2131 against a 0.25 cap), all 36 probe verdicts are
+recorded, none excluded. `compare_arms.py` printed FINAL rather than PROVISIONAL for the
+first time.
+
+| arm | accuracy | anchor | margin |
+|---|---|---|---|
+| S_paired25 | 0.9119 | 0.8511 | +0.0608 |
+| V1_paired5 | 0.8748 | 0.8143 | +0.0605 |
+| S_paired5 | 0.7685 | 0.6826 | +0.0860 |
+| H_unpaired | 0.2457 | 0.2491 | −0.0034 |
+| V1_unpaired | 0.2167 | 0.2415 | −0.0247 |
+| S_unpaired | 0.2089 | 0.2101 | −0.0012 |
+
+### The margin had no interval, and that was hiding two things
+
+The study claims the margin. Every registered magnitude criterion — P2, P3b, P6 — is written
+in margin points. But the anchor was a whole-corpus number, so a margin *difference* could
+only be reported as a mean over five folds with the fold spread beside it. A criterion of
+"≥7 points" cannot be judged against a quantity with no interval on it.
+
+`keyword_rule_cell_scores` now decomposes the registered estimator to the cell — same keyword
+fitting, same CV by image, same fractional tie credit, walking the same generator as the point
+estimate, which reproduces the stored anchors exactly. Two things changed once the margin
+could be bootstrapped:
+
+* **S_unpaired vs V1_unpaired, P6's own registered pair, is significant.** Margin gap +0.0232,
+  CI [+0.0026, +0.0436], p 0.027. At fold level (mean 0.0235, sd 0.0286) it read as noise.
+  P6 needs ≥7 points and gets 2.3, so it is **not confirmed** — but "a real gap, smaller than
+  predicted" is a different report from "nothing detected", and the previous write-up said the
+  latter.
+* **P3b lands at +0.0586, CI [+0.0418, +0.0747].** Clearly above zero, best estimate *below*
+  the registered 7 points, and the interval cannot rule out that the true value meets it.
+  Reported as exactly that — neither a confirmation nor a null.
+
+**All four confirmatory margin gaps clear zero and none reaches the 0.07 criterion.** The
+criteria were set at 7 points because that is what the power analysis could detect; the
+effects that exist are 2–6. That is a finding about the design and belongs in the paper
+rather than in a footnote.
+
+**P2 is falsified on its registered condition.** H_unpaired beats S_unpaired by 3.75 accuracy
+points, but its margin is −0.0021, CI [−0.0232, +0.0185], p 0.84, and P2 registered "margin
+difference ≤ 0" as falsification. The human corpus's advantage *is* explained by lexical
+stereotypy — which is what P2 predicted it would not be.
+
+### More data raised accuracy and lowered conditioning, inside one arm family
+
+`S_paired25` vs `S_paired5` is a pure source-caption-count comparison on the same images.
+Five times the captions moved **accuracy +0.1434** and **margin −0.0252**, CI [−0.0299,
+−0.0207], negative on 5/5 folds. The model got better at the metric and worse at what the
+metric is meant to measure, because the keyword anchor rose faster (0.6826 → 0.8511) than the
+accuracy did (0.7685 → 0.9119). This is the study's own argument demonstrated without leaving
+one corpus, and it is the cleanest version of it anywhere in the data.
+
+### A rater found the lexical shortcut by reading, and it is one arm
+
+The first human evaluation came back (150/150 complete, 8/12 attention checks). Unprompted,
+the rater said some *joyful* captions seemed joyful mainly because they contained the word
+"joy" — and that it was some, not the majority.
+
+Measured across all 8,047 images:
+
+| arm | joyful captions containing joy / joyful / joyous |
+|---|---|
+| S_paired25 | **0 / 8,047** |
+| S_paired5 | **0 / 8,047** |
+| V1_paired5 | **6,100 / 8,047 = 75.8%** |
+
+Entirely the archived v1 pilot corpus. Our own captions never use the word once. `joyful`,
+`joyfully` and `joyous` are all in V1's top-25 keyword list, so **the anchor had already
+quantified this** — it is a large part of why V1's anchor is 0.8143 against ours at 0.6826.
+The rater's "some, not the majority" was exact for what they saw: 10 of their 30 joyful items
+carried the word and all 10 were V1.
+
+A reader with no idea which system wrote what, and no knowledge of the anchor, located by eye
+the precise property the anchor exists to measure. That is external validation of the
+instrument, and it is worth reporting as such.
+
+**And V1 is where the three measurements disagree, in the informative direction.**
+
+| arm | classifier accuracy | human tone-match |
+|---|---|---|
+| S_paired25 | 0.9119 | 4.12 |
+| V1_paired5 | 0.8748 | **3.68 — last** |
+| S_paired5 | 0.7685 | 4.00 |
+
+The classifier ranks V1 second, ahead of `S_paired5` by 10.6 accuracy points. The human ranks
+it last on tone. The keyword stuffing that wins over a text classifier reads as *worse*
+writing to a person — the thesis, measured a third independent way after the anchor and the
+margin.
+
+### Still open
+
+* **One rater, so Krippendorff's alpha is undefined.** Every human number above is one
+  person's impression with a bootstrap interval around it. Nothing here is confirmatory until
+  raters two and three return, and the arm ordering could move.
+* **The `wrong_register` attention check may be harder than intended.** All four of the
+  rater's misses were that type, all scored exactly **3**, while all six `wrong_image` checks
+  passed. That is a scale-usage pattern, not inattention: a mis-registered caption is not
+  *unrelated*, so "neither" is defensible. The ≤2 pass rule was fixed before any data existed
+  and is **not** being changed — but the next two raters should be watched for the same
+  pattern, and if it repeats it is a property of the check rather than of the raters.
+* **S_paired25's anchor and its accuracy are measured on different amounts of text.**
+  `score_arm.py` keys captions by (image, register), so with five source captions per key only
+  the last survives: the anchor comes from 8,050 captions while accuracy uses all 40,425. The
+  anchor is strongly n-dependent, so this is not cosmetic — a larger n would lower the anchor
+  and raise the margin. Left alone because changing it moves a registered figure; flagged in
+  `compare_arms.py` and needs a decision before the paper.
+* **Secondary metrics are still not computed on any arm.** CIDEr-D, BLEU-4, CLIPScore and
+  distinctiveness are registered and absent. `S_paired25` is about to be described as a
+  0.91-accuracy emotion captioner and there is no evidence yet that its captions are good
+  *as captions* — the human grounding score of 3.74 from one rater is currently the only
+  thing pointing at that question.
