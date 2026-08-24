@@ -48,7 +48,11 @@ PARTS = {
     "data": {
         "slug": "emocap-v2-arms",
         "title": "EmoCap v2 — data arms and CLIP features",
-        "sources": {"arms": ROOT / "data/arms", "features": ROOT / "data/features"},
+        # captions_corpus.jsonl (33 MB) is the SOURCE captions, needed by
+        # baseline_prior.py --mode text and by nothing else on the GPU side. It was left
+        # out of the first uploads, which failed all fifteen text baselines instantly.
+        "sources": {"arms": ROOT / "data/arms", "features": ROOT / "data/features",
+                    "generated": ROOT / "data/generated/captions_corpus.jsonl"},
     },
     "classifier": {
         "slug": "emocap-v2-classifier",
@@ -91,7 +95,13 @@ def stage_part(part: str, owner: str) -> tuple[Path, dict, int]:
     total = 0
     for name, src in spec["sources"].items():
         dst = stage / name
-        shutil.copytree(src, dst)
+        if src.is_dir():
+            shutil.copytree(src, dst)
+        else:
+            # A single file is staged INTO a directory of that name, so the layout the
+            # notebooks read (<part>/generated/captions_corpus.jsonl) matches the repo's.
+            dst.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src, dst / src.name)
         for f in sorted(dst.rglob("*")):
             if f.is_file():
                 files[str(f.relative_to(stage))] = sha256(f)

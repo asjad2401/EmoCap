@@ -109,7 +109,18 @@ def main() -> None:
 
     sources: dict[tuple[str, int], str] = {}
     if args.mode == "text":
-        corpus = load_corpus(root / "generated/captions_corpus.jsonl")
+        # Checked before the model loads, and before any GPU time is spent. This file is
+        # NOT part of the arms dataset by default; a Kaggle run against an older upload
+        # fails here in a second with a message that names the fix, instead of after the
+        # decoder is on the device.
+        corpus_path = root / "generated/captions_corpus.jsonl"
+        if not corpus_path.exists():
+            raise SystemExit(
+                f"--mode text needs the source captions and {corpus_path} is missing.\n"
+                f"They live in data/generated/captions_corpus.jsonl. On Kaggle, re-push "
+                f"the dataset\n(scripts/push_kaggle.py ships it) and attach the new "
+                f"version. --mode prior needs no corpus.")
+        corpus = load_corpus(corpus_path)
         sources = {k: str(r.get("source_caption") or "").strip()
                    for k, r in corpus.items()}
         blank = [c for c in cells if not sources.get((c["image_id"], c["caption_idx"]))]
@@ -200,8 +211,12 @@ def main() -> None:
               f"{uniq} outcomes, not an effect:")
         for e in EMOTIONS:
             print(f"    {e:<9} {caps[e]!r}")
-    print(f"\n  score it:  uv run python scripts/score_arm.py --run "
-          f"{run_dir.relative_to(ROOT)}")
+    # Not run_dir.relative_to(ROOT): --out-root can point outside the repo, and on Kaggle
+    # it does -- the outputs land in /kaggle/working/runs while the clone is in
+    # /kaggle/working/EmoCap. This crashed AFTER every file was written, so 20 complete
+    # baseline runs were reported as failures by a print statement.
+    rel = run_dir.relative_to(ROOT) if run_dir.is_relative_to(ROOT) else run_dir
+    print(f"\n  score it:  uv run python scripts/score_arm.py --run {rel}")
 
 
 if __name__ == "__main__":
