@@ -37,6 +37,30 @@ caption ``pick_caption_idx`` already chose. Three containments follow, and
 So nothing new is sampled. The arm is a *view* of data the registered arms already used,
 which is why it costs no generation and why "the post-hoc arm got luckier cells" is not
 available as an explanation of whatever it shows.
+
+What ``S_unpaired_scaled`` is for, and why it came second
+--------------------------------------------------------
+``S_paired_matched`` answered half the question and went to the floor: paired structure at
+4,390 cells does nothing. That establishes volume is *necessary*. It says nothing about
+whether pairing adds anything on top of volume -- and without that, "more data helps" and
+"parallel data helps" remain the same observation.
+
+``S_unpaired_scaled`` is the other half. It matches ``S_paired5`` on images, on cell count,
+and on cells per image, and differs in one thing only:
+
+    S_paired5           the 5 cells of an image are ONE source caption in FIVE registers
+    S_unpaired_scaled   the 5 cells of an image are FIVE source captions in ONE register
+
+That is the single-variable contrast the registered P3 could not be. It also extends
+``S_unpaired`` into a volume ladder at constant unpaired structure -- 4,390 to 40,235 cells
+with the register contrast absent at both ends -- because the 4,390 images ``S_unpaired``
+already used keep the register it gave them.
+
+A correction belongs here. This arm was earlier described, in a commit message, as
+impossible to build from Flickr8k: an unpaired arm needs one image per cell, so 8,047
+images cap it at 8,047 cells. That was wrong. "Unpaired" in this design means one
+*register* per image, not one *cell* per image, and every image carries five source
+captions -- so 8,047 x 5 = 40,235 is available, exactly ``S_paired5``'s size.
 """
 
 from __future__ import annotations
@@ -47,12 +71,14 @@ from typing import Mapping
 # Private names are imported on purpose. Re-deriving the hash function or the cell
 # constructor here would let two definitions of "the same image" drift apart, and the
 # entire value of this arm rests on it being nested inside the registered ones.
-from emocap.data.arms import _cells, _h, load_corpus, pick_caption_idx, shared_images
+from emocap.data.arms import (_cells, _h, _unpaired_assignment, fold_of, load_corpus,
+                             pick_caption_idx, shared_images)
+from emocap.data.prompt import EMOTIONS
 
-__all__ = ["POSTHOC_ARMS", "build_s_paired_matched"]
+__all__ = ["POSTHOC_ARMS", "build_s_paired_matched", "build_s_unpaired_scaled"]
 
 #: Post-hoc arm names. Never merged into ``ARMS``; see the module docstring.
-POSTHOC_ARMS = ("S_paired_matched",)
+POSTHOC_ARMS = ("S_paired_matched", "S_unpaired_scaled")
 
 
 def build_s_paired_matched(
@@ -78,6 +104,66 @@ def build_s_paired_matched(
     return cells
 
 
+def build_s_unpaired_scaled(
+    *,
+    corpus: Mapping[tuple[str, int], Mapping],
+    v1_captions: Mapping[str, Mapping[str, str]],
+    excluded: frozenset[str] | set[str] = frozenset(),
+    per_register: int = 878,
+) -> list[dict]:
+    """``S_paired5``'s size and images, with the register contrast removed.
+
+    **This is the arm that actually tests P3.** ``S_paired_matched`` asked whether pairing
+    works at a small budget -- it does not. This asks the other half: whether the volume
+    works *without* pairing. Until one of the two exists, "more data helps" and "parallel
+    data helps" are the same observation.
+
+    The contrast is as clean as this corpus allows, and cleaner than the registered P3:
+
+        S_paired5           8,047 images x 5 cells = 40,235.  The 5 cells of one image
+                            hold ONE source caption in FIVE registers.
+        S_unpaired_scaled   8,047 images x 5 cells = 40,235.  The 5 cells of one image
+                            hold FIVE source captions in ONE register.
+
+    Same images, same cell count, same cells-per-image, same source corpus, same training
+    budget. The single difference is whether an image's five cells vary by *register* or by
+    *source text*. Nothing else in the study isolates the paired structure at matched volume.
+
+    **It nests on top of ``S_unpaired``.** The first 4,390 images keep the register
+    ``_unpaired_assignment`` already gave them, so every ``S_unpaired`` cell reappears here
+    and the pair forms a volume ladder at constant (unpaired) structure: 4,390 -> 40,235
+    cells, register contrast absent at both ends. If the margin appears at the top of that
+    ladder, volume alone is sufficient and pairing is not the story.
+
+    Registers stay balanced within each fold, for the reason ``_unpaired_assignment`` gives:
+    at ~1,609 images per register spread over five folds, assignment by hash alone leaves a
+    fold short in one register by enough to matter.
+    """
+    full = shared_images(corpus, v1_captions, excluded)
+
+    # Inherit S_unpaired's assignment, then extend it over the rest of the universe.
+    assign = dict(_unpaired_assignment(full, per_register))
+    rest = [i for i in sorted(full, key=lambda i: _h("unpaired-v1", i)) if i not in assign]
+    by_fold: dict[int, list[str]] = {}
+    for img in rest:
+        by_fold.setdefault(fold_of(img), []).append(img)
+    turn = 0
+    for fold in sorted(by_fold):
+        for img in by_fold[fold]:
+            assign[img] = EMOTIONS[turn % len(EMOTIONS)]
+            turn += 1
+
+    cells: list[dict] = []
+    for img in full:
+        emo = assign[img]
+        for k in range(5):
+            cell = next((c for c in _cells(corpus[(img, k)], img, k, "S")
+                         if c["emotion"] == emo), None)
+            if cell:
+                cells.append(cell)
+    return cells
+
+
 def load_v1_pilot(path: Path) -> dict[str, dict[str, str]]:
     """The archived v1 pilot as ``image_id -> {register: caption}``.
 
@@ -88,8 +174,6 @@ def load_v1_pilot(path: Path) -> dict[str, dict[str, str]]:
     """
     import csv
     import gzip
-
-    from emocap.data.prompt import EMOTIONS  # noqa: F401  (documents the expected keys)
 
     out: dict[str, dict[str, str]] = {}
     with gzip.open(path, "rt") as f:

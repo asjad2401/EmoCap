@@ -131,6 +131,38 @@ The full rationale is in `docs/deviations.md`, 2026-08-24.
       cell 4 checks for the arm file and fails immediately if the attached dataset predates
       it, rather than 20 minutes in.
 
+- [x] **`S_unpaired_scaled` — built 2026-08-24, not yet trained.** 40,235 cells over the
+      same 8,047 images as `S_paired5`, five source captions per image at **one register
+      each**. sha256 `1bbeb9c502608021`. Notebook `02g_unpaired_scaled.ipynb`, ~2.2 h.
+
+      This is the arm that actually tests P3, and it exists because `S_paired_matched`
+      only answered half the question. That arm held volume at 4,390 cells with the
+      pairing kept and went to the floor (margin −0.0129, self-BLEU 0.86 — one caption
+      reused across all five registers). So volume is *necessary*. Whether it is
+      *sufficient* needed the mirror-image arm: same volume, pairing removed.
+
+      | | images | cells | the 5 cells of one image are… |
+      |---|---|---|---|
+      | `S_paired5` | 8,047 | 40,235 | ONE source caption in FIVE registers |
+      | `S_unpaired_scaled` | 8,047 | 40,235 | FIVE source captions in ONE register |
+
+      Same images, cell count, cells per image, corpus and training budget. The only
+      difference is whether an image's five cells vary by register or by source text —
+      the single-variable contrast the registered P3 could not be. It also extends
+      `S_unpaired` into a volume ladder at constant unpaired structure, 4,390 → 40,235
+      cells, because the 4,390 images it used keep their assigned register.
+
+      **How each outcome reads, decided before the run:** floor → pairing is isolated and
+      the parallel-data claim is real; +0.086 like `S_paired5` → volume alone suffices and
+      the headline is "more data helps"; in between → both matter and the split is
+      quantified. All three are publishable.
+
+      **A correction goes with this.** Commit `91b7852` claimed this arm was impossible to
+      build from Flickr8k — that an unpaired arm needs one image per cell, capping it at
+      8,047. That was wrong: "unpaired" means one *register* per image, not one *cell* per
+      image, and every image carries five source captions. The methodological finding
+      asserted there does not stand.
+
 - [ ] **A stronger baseline, not written.** A published emotion-captioning model decoded on
       the same held-out cells would beat both modes above as a comparison point, and costs
       considerably more than an afternoon.

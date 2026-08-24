@@ -1,11 +1,13 @@
-"""The post-hoc arm is only interpretable if it is nested inside the registered ones.
+"""The post-hoc arms are only interpretable if they nest inside the registered ones.
 
-``S_paired_matched`` exists to isolate paired structure from data volume. That argument
-collapses the moment its cells stop being a subset of cells the registered arms already
-trained on, because "the post-hoc arm drew easier data" becomes an untestable alternative
-explanation for whatever it shows. ``scripts/build_posthoc_arms.py`` asserts the three
-containments at build time; these tests assert them against ``build_all_arms`` itself, so a
-future edit to either selection rule fails here rather than in a paper.
+Together they isolate paired structure from data volume, which the registered P3 cannot:
+``S_paired_matched`` removes the volume and keeps the pairing, ``S_unpaired_scaled`` keeps
+the volume and removes the pairing. Both arguments collapse the moment either arm's cells
+stop being a subset of cells the registered arms already trained on, because "the post-hoc
+arm drew easier data" becomes an untestable alternative explanation for whatever it shows.
+``scripts/build_posthoc_arms.py`` asserts the containments at build time; these tests
+assert them against ``build_all_arms`` itself, so a future edit to either selection rule
+fails here rather than in a paper.
 
 The corpus is synthetic and tiny. What is under test is the selection arithmetic -- which
 images, which source caption, which registers -- and that is independent of the text.
@@ -16,7 +18,7 @@ from __future__ import annotations
 import pytest
 
 from emocap.data.arms import build_all_arms, pick_caption_idx, shared_images
-from emocap.data.posthoc import build_s_paired_matched
+from emocap.data.posthoc import build_s_paired_matched, build_s_unpaired_scaled
 from emocap.data.prompt import EMOTIONS
 
 N_IMAGES = 60
@@ -148,3 +150,93 @@ def test_shared_images_requires_both_corpora_to_be_complete(corpus_and_pilot):
     crippled[victim] = {e: "" for e in EMOTIONS}
     assert victim in shared_images(corpus, pilot)
     assert victim not in shared_images(corpus, crippled)
+
+
+# ── S_unpaired_scaled: volume kept, register contrast removed ────────────────
+#
+# S_paired_matched removed the volume and kept the pairing; this removes the pairing and
+# keeps the volume. Only together do they separate the two, which the registered P3 cannot.
+# The load-bearing property is "exactly one register per image": if that ever leaks, the
+# contrast against S_paired5 measures nothing and the arm is worse than useless.
+
+
+@pytest.fixture
+def scaled(corpus_and_pilot):
+    from emocap.data.arms import load_corpus
+
+    path, pilot = corpus_and_pilot
+    return build_s_unpaired_scaled(corpus=load_corpus(path), v1_captions=pilot,
+                                   per_register=PER_REGISTER)
+
+
+def test_scaled_matches_the_paired_arm_on_cells_and_images(arms, scaled):
+    assert len(scaled) == len(arms["S_paired5"])
+    assert ({c["image_id"] for c in scaled}
+            == {c["image_id"] for c in arms["S_paired5"]})
+
+
+def test_scaled_carries_exactly_one_register_per_image(scaled):
+    """The whole point of the arm. A second register on any image reinstates the contrast."""
+    per_image = {}
+    for c in scaled:
+        per_image.setdefault(c["image_id"], set()).add(c["emotion"])
+    assert per_image, "fixture produced no cells"
+    assert all(len(v) == 1 for v in per_image.values())
+
+
+def test_scaled_carries_all_five_source_captions_per_image(scaled):
+    """Volume comes from source text, since it cannot come from registers."""
+    per_image = {}
+    for c in scaled:
+        per_image.setdefault(c["image_id"], set()).add(c["caption_idx"])
+    assert all(v == {0, 1, 2, 3, 4} for v in per_image.values())
+
+
+def test_scaled_contains_every_unpaired_cell(arms, scaled):
+    """The volume ladder: 1-caption-per-image sits inside 5-captions-per-image."""
+    mine = {key(c) for c in scaled}
+    assert {key(c) for c in arms["S_unpaired"]} <= mine
+
+
+def test_scaled_cells_all_come_from_the_25_per_image_arm(arms, scaled):
+    assert {key(c) for c in scaled} <= {key(c) for c in arms["S_paired25"]}
+
+
+def test_scaled_registers_are_near_balanced(scaled):
+    """Image count need not divide by five, so exact balance is impossible; state the bound.
+
+    On the real corpus this is 8,050 against 8,045 -- a spread of 5 cells in 40,235.
+    """
+    counts = {e: sum(1 for c in scaled if c["emotion"] == e) for e in EMOTIONS}
+    assert max(counts.values()) - min(counts.values()) <= 5 * len(EMOTIONS)
+
+
+def test_scaled_is_deterministic_under_a_shuffled_input(corpus_and_pilot, scaled):
+    import random
+
+    from emocap.data.arms import load_corpus
+
+    path, pilot = corpus_and_pilot
+    items = list(pilot.items())
+    random.Random(11).shuffle(items)
+    again = build_s_unpaired_scaled(corpus=load_corpus(path), v1_captions=dict(items),
+                                   per_register=PER_REGISTER)
+    assert again == scaled
+
+
+def test_the_two_posthoc_arms_differ_in_structure_not_content(matched, scaled):
+    """Both are views of the same corpus; neither invents a caption.
+
+    S_paired_matched varies register within an image; S_unpaired_scaled varies source text.
+    Their cells therefore overlap only where an image's assigned register happens to match.
+    """
+    m_regs = {c["image_id"]: c["emotion"] for c in matched}
+    s_regs = {}
+    for c in scaled:
+        s_regs[c["image_id"]] = c["emotion"]
+    shared = set(m_regs) & set(s_regs)
+    assert shared, "the two arms should share images"
+    # Matched holds all five registers per image, so whatever register scaled picked for a
+    # shared image is present in matched too.
+    matched_pairs = {(c["image_id"], c["emotion"]) for c in matched}
+    assert all((i, s_regs[i]) in matched_pairs for i in shared)
