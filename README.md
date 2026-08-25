@@ -189,6 +189,30 @@ a reader can check.
 | what is left | [`docs/remaining-work.md`](docs/remaining-work.md) |
 | where any given number comes from | [`FILE-MAP.md`](FILE-MAP.md) |
 | the numbers themselves | `runs/arms/*/score.json`, `results/*.json` |
+| a figure-led tour instead of files | the five explainers just below |
+
+### Illustrated explainers
+
+Five standalone pages, best read in this order. Each is self-contained and figure-led; every
+number on them is read from `runs/` and `results/` rather than transcribed.
+
+1. **[Eight Arms, One Model](https://claude.ai/code/artifact/963af4c0-fae0-483a-b79d-d939050bfd95)**
+   — the design and the result. What each arm isolates, and why one line through the middle of
+   the grid (data volume) turned out to matter more than either axis the design was built
+   around. **Start here.**
+2. **[The Frozen Instrument](https://claude.ai/code/artifact/c54b364b-f33f-49f4-b324-51f1b7e6d714)**
+   — the classifier every number passes through, and the six checks that validate it. If this
+   is wrong, all 48 runs are wrong, so it gets more scrutiny than the captioner does.
+3. **[Eleven Soft Tokens](https://claude.ai/code/artifact/12ca84df-4f75-4320-aa52-1e5f0699f39d)**
+   — the architecture. Two frozen models, a small bridge, and a five-row table of 3,840
+   numbers carrying all of the emotional conditioning.
+4. **[Twenty-One Questions](https://claude.ai/code/artifact/29496bec-10b8-490c-83a2-f7af5b7b2aeb)**
+   — every question the design could settle, with each possible outcome written out *before*
+   the result arrived, and the branch that actually landed marked on all twenty-one.
+
+Keep **[Anchor to Underpowered](https://claude.ai/code/artifact/c42a713d-f2b8-49e5-ad73-fa92aa2a7f73)**
+open alongside the others — seventy-four terms defined plainly, each shown with the number it
+takes in this study. It is a companion, not a stop on the tour.
 
 ## Rules of the road
 
