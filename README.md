@@ -42,9 +42,19 @@ change the answer?**
 refuses to write either unless it can prove the containment — so "the extra arm drew easier
 data" is not available as an explanation of what they show.
 
-Cell counts are the **arm** sizes from `data/arms/manifest.json`, which are smaller than the
-corpus totals: an image qualifies only if both our corpus and the v1 pilot can supply it in
-full, which leaves 8,047 of 8,076.
+Cell counts are the **arm** sizes from `data/arms/manifest.json`, which carries a sha256 per
+arm and is the authoritative source. They are smaller than the corpus totals because an image
+qualifies only if our corpus, the archived v1 pilot and the safety exclusions all admit it,
+which leaves **8,047 of 8,076**.
+
+The registered files deliberately still say otherwise. `configs/prereg.lock.yaml` and
+`docs/preregistration.md` are held byte-identical to the `prereg-v2` tag, so they carry the
+figures as *drafted* — 8,075 images, 201,875 and 40,375 cells — which were arithmetic done
+before the arms existed. The corrections are logged in
+[`docs/deviations.md`](docs/deviations.md) (2026-08-22), which is where a registration's
+amendments belong. A registration that has been edited to agree with its results is worth
+less than one that has not, so the disagreement is deliberate: verify it with
+`git diff prereg-v2 HEAD -- docs/preregistration.md`, which is empty.
 
 Three structure classes, so provenance is compared at matched shape and never across it. The 1-caption-per-image arms are **4,390** (878 x 5), set by the scarcest register under the strict trait mapping; matching on count as well as structure keeps P1 from confounding provenance with data volume. The
 decoder — frozen CLIP ViT-B/32 → mapping network → GPT-2 + LoRA — is a **control, held

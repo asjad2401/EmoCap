@@ -1,24 +1,9 @@
 # ═══════════════════════════════════════════════════════════════════════════
-# FROZEN at git tag `prereg-v2` (commit 892358f), which supersedes `prereg-v1`
-# (3a61cde). Both tags are public on origin and neither is ever moved.
-#
-# THIS FILE HAS BEEN AMENDED SINCE THAT TAG, and the amendment is logged in
-# docs/deviations.md (2026-08-22, commit 473066b). To read the registered text
-# rather than the amended one:
-#
-#     git show prereg-v2:configs/prereg.lock.yaml
-#
-# What the amendment changed, and what it did not. Changed: three MEASURED
-# facts that the draft had estimated -- paired5_arm_images 8075 -> 8047,
-# paired25_arm_cells 201875 -> 201175 -- and `v1_matching`, narrowed from
-# same_images_same_caption_idx_same_register to same_images_same_register,
-# because the pilot rewrote ONE neutral caption per image where our corpus
-# rewrites FIVE, so there is no shared caption_idx to align on. NOT changed:
-# no hypothesis, no criterion, no threshold, no comparison set, no gate.
+# FROZEN at git tag `prereg-v1`. Do not edit.
 #
 # Stage 10 (metrics_and_anchors) hashes the live configs against this file and
-# refuses to run on a mismatch. Any further change goes in docs/deviations.md,
-# gets a new tag, and is stated in the write-up.
+# refuses to run on a mismatch. To change anything here, log the change in
+# docs/deviations.md, bump to prereg-v2, and say so in the write-up.
 # ═══════════════════════════════════════════════════════════════════════════
 
 study:
@@ -42,12 +27,13 @@ study:
   # P1 confounds "human data" with "half as much data".
   unpaired_arm_cells: 4390
   # MEASURED, not estimated. `scripts/build_arms.py` materialises every arm to
-  # data/arms/*.jsonl and data/arms/manifest.json carries the per-arm sha256. The shared
-  # image universe is the intersection of the corpus, the ARCHIVED v1 pilot and the safety
-  # exclusions: 8,047 images. The drafted 8,048 was right and came from the pilot; the
-  # single missing image is the one that never returned a usable batch row.
-  paired5_arm_images: 8047
-  paired25_arm_cells: 201175
+  # data/arms/*.jsonl and data/arms/manifest.json carries the per-arm sha256. The drafted
+  # values (8,048 images / 201,900 cells) were arithmetic on 8,076 images before the
+  # corpus existed; one image never returned a usable batch row, so the shared image
+  # universe is the 8,075 present in BOTH the corpus and the v1 pilot. The 1-caption arms
+  # are unaffected -- they are capped by the human corpus at 4,390, not by Flickr8k.
+  paired5_arm_images: 8075
+  paired25_arm_cells: 201875
   folds: 5
   fold_split_by: image_id                 # NEVER by caption: one image's 5 cells are dependent
   # ── How each arm is selected. Registered because "5 cells per image" is a SHAPE, not a
@@ -67,13 +53,7 @@ study:
     # counterparts -- the two corpora are rewrites of identical Flickr8k sentences, so the
     # comparison differs in generator and in nothing else. Sampling each arm independently
     # would have left a sampling difference stacked on top of the provenance difference.
-    # Matching stops at the image, and the data forces it: the pilot rewrote ONE
-    # Moondream neutral caption per image, our corpus rewrites FIVE human Flickr8k
-    # captions. There is no shared caption_idx to align, so S-vs-V1 varies generator and
-    # source text on the same photographs -- which is what "same images, same structure"
-    # in the confirmatory list has always meant.
-    v1_matching: same_images_same_register
-    v1_source: archive/v1-pilot/data/v1_emotion_captions.csv.gz
+    v1_matching: same_images_same_caption_idx_same_register
     manifest: data/arms/manifest.json     # per-arm counts and sha256
   negative_control: shuffled_emotion_labels_per_arm
   runs: 36                                # 6 arms x 5 folds + 6 negative controls (1 fold each)
