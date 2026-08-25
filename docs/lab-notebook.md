@@ -1081,3 +1081,98 @@ commit.
 Pinning to a dataset's provenance is right for reproducibility and wrong every time code is
 fixed afterwards. The guard does not remove that coupling; it makes it visible in ten seconds
 instead of eight minutes.
+
+---
+
+## 2026-08-25 (evening) — the off-distribution check passes: the classifier is not a Gemini detector
+
+148 of the registered 250 hand-written captions, from three blind writers who had never seen
+the corpus. The registered criticism was that the frozen classifier learned Gemini's house
+style rather than emotional register — it saw 13,170 captions, 8,780 of them Gemini's, and
+every arm was then trained on Gemini text, so the whole study would look identical either way.
+
+| | |
+|---|---|
+| in-distribution CV, its own pool | 0.8279 |
+| **148 human-written captions** | **0.7770** [0.7095, **0.8446**] |
+| keyword anchor, same captions | **0.2782** |
+| chance | 0.2000 |
+
+**The interval contains the in-distribution figure**, so there is no detectable degradation.
+A style detector meeting unfamiliar text would land near chance; this lands 58 points above
+it.
+
+**The same data answers a second accusation.** On these captions a top-25 keyword rule
+reaches 0.2782 — barely above chance — while the classifier reaches 0.7770, a margin of
++0.4988. So it works on text where the lexical shortcut essentially does not exist, which
+rules out "it is only a keyword detector". Two criticisms, one measurement.
+
+That also says something the registered design never asked: **the keyword-reachability this
+whole study measures is a property of machine-generated captions, not of the task.** The
+anchor is 0.7722 on `S_paired25`'s output and 0.2782 on human captions describing the same
+kind of photograph. The shortcut lives in the generator, not in the register taxonomy.
+
+### What cannot be claimed
+
+The interval runs [0.7095, 0.8446]. It contains 0.8279, but also values roughly twelve points
+lower, so a modest real drop is compatible with this sample — it simply cannot be detected at
+n=148. The point estimate sits 5.1 points below and is the number to quote as the
+instrument's **measurement error**, not as a demonstrated gap.
+
+It matters little for the study: every arm comparison uses the same instrument on the same
+kind of text, so a uniform measurement error cancels out of a comparison. It bears only on
+how absolute accuracies are described, and there the honest framing was already the margin.
+
+### Three writers, and the one that looked wrong was not
+
+| chunk | n | accuracy |
+|---|---|---|
+| 1 | 50 | 0.8400 |
+| 2 | 50 | **0.6400** |
+| 3 | 48 | 0.8542 |
+
+At two chunks the pooled figure was 0.7400 and looked like a real drop. The third settles it:
+chunks 1 and 3 agree within a point, chunk 2 sits twenty below. **Chunk 2 is retained** — it
+is dropped from nothing, for the same reason MM was retained in the human evaluation.
+Removing the observation that moves a number the wrong way is not an analysis.
+
+Chunks 1 and 2 were the same writer, so that gap is within-person. The timestamps rule out
+haste: median 42.1 s per caption in chunk 1 and 42.6 s in chunk 2, 100 captions back to back
+over 1.4 hours at an identical pace. That is the second time here a haste hypothesis has died
+on the timestamps, after MM's.
+
+### The hard registers are the same ones humans disagree about
+
+| register | ch1 | ch2 | ch3 | all |
+|---|---|---|---|---|
+| joyful | 1.00 | 1.00 | 1.00 | **1.00** |
+| humorous | 1.00 | 0.80 | 0.70 | 0.83 |
+| sad | 0.80 | 0.60 | 0.80 | 0.73 |
+| romantic | 0.70 | 0.40 | 1.00 | 0.68 |
+| tense | 0.70 | 0.40 | 0.80 | **0.63** |
+
+`joyful` is perfect for all three writers. `tense` and `romantic` are the weak pair — and they
+are **the same pair the human raters agreed least on**, the pair that held tone-match alpha to
+0.579 while grounding reached 0.684. Two independent measurements, one about writing and one
+about reading, converging on which registers are genuinely hard.
+
+### A verdict line that contradicted its own interval
+
+`score_offdist.py` printed "drops materially" at 0.7770 [0.7095, 0.8446] — an interval that
+contains 0.8279. It was thresholding the point estimate and ignoring the confidence interval
+it had just computed. Fixed to consult the interval first. That sentence would have gone into
+the paper saying the opposite of what the data shows, and it is the third reporting bug this
+week caught by reading output rather than trusting it.
+
+### Two skipped captions are a good sign, not a shortfall
+
+The third writer wrote 48 of 50 and skipped two, saying they could not work out what to write.
+Registers stay at 30/30/30/30/28. A writer who declines rather than forcing a caption they do
+not believe in produces a cleaner test set than one who fills every box.
+
+### Still open
+
+* **102 captions short of the registered 250.** The shortfall is reported, not hidden.
+  Completing it would tighten the interval from about ±0.067 to ±0.052 and would not change
+  the verdict, since 0.8279 sits comfortably inside either.
+* **P5** remains the only registered prediction still unmeasured on its own terms.

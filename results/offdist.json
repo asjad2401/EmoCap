@@ -1,32 +1,34 @@
 {
   "build": "2d052e2372",
-  "n_captions": 50,
+  "n_captions": 148,
   "n_registered": 250,
   "chunks_returned": [
-    1
+    1,
+    2,
+    3
   ],
   "per_register": {
-    "tense": 10,
-    "romantic": 10,
-    "joyful": 10,
-    "sad": 10,
-    "humorous": 10
+    "humorous": 30,
+    "tense": 30,
+    "joyful": 30,
+    "romantic": 28,
+    "sad": 30
   },
   "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
-  "accuracy": 0.84,
+  "accuracy": 0.777,
   "ci": {
-    "mean": 0.84,
-    "lo": 0.74,
-    "hi": 0.94,
-    "n_clusters": 50,
-    "width": 0.2
+    "mean": 0.777,
+    "lo": 0.7095,
+    "hi": 0.8446,
+    "n_clusters": 148,
+    "width": 0.1351
   },
   "in_distribution_cv": 0.8279,
-  "drop": -0.0121,
+  "drop": 0.0509,
   "chance": 0.2,
-  "keyword_anchor": 0.242,
-  "anchor_n_cells": 50,
-  "margin_over_anchor": 0.598,
+  "keyword_anchor": 0.2782,
+  "anchor_n_cells": 148,
+  "margin_over_anchor": 0.4988,
   "confusion": {
     "row_normalised": {
       "joyful": {
@@ -37,44 +39,44 @@
         "humorous": 0.0
       },
       "sad": {
-        "joyful": 0.1,
-        "sad": 0.8,
+        "joyful": 0.033,
+        "sad": 0.733,
         "tense": 0.1,
-        "romantic": 0.0,
-        "humorous": 0.0
+        "romantic": 0.067,
+        "humorous": 0.067
       },
       "tense": {
-        "joyful": 0.1,
-        "sad": 0.0,
-        "tense": 0.7,
-        "romantic": 0.0,
-        "humorous": 0.2
+        "joyful": 0.033,
+        "sad": 0.033,
+        "tense": 0.633,
+        "romantic": 0.033,
+        "humorous": 0.267
       },
       "romantic": {
-        "joyful": 0.3,
-        "sad": 0.0,
+        "joyful": 0.25,
+        "sad": 0.036,
         "tense": 0.0,
-        "romantic": 0.7,
-        "humorous": 0.0
+        "romantic": 0.679,
+        "humorous": 0.036
       },
       "humorous": {
-        "joyful": 0.0,
-        "sad": 0.0,
-        "tense": 0.0,
+        "joyful": 0.1,
+        "sad": 0.033,
+        "tense": 0.033,
         "romantic": 0.0,
-        "humorous": 1.0
+        "humorous": 0.833
       }
     },
     "recall": {
       "joyful": 1.0,
-      "sad": 0.8,
-      "tense": 0.7,
-      "romantic": 0.7,
-      "humorous": 1.0
+      "sad": 0.733,
+      "tense": 0.633,
+      "romantic": 0.679,
+      "humorous": 0.833
     }
   },
-  "mean_words": 20.2,
-  "distinct_captions": 50,
-  "verdict": "holds. The instrument reads register rather than one generator's style, and the criticism is answered.",
+  "mean_words": 20.0,
+  "distinct_captions": 148,
+  "verdict": "is indistinguishable from in-distribution: the 95% interval [0.7095, 0.8446] contains 0.8279. The instrument reads register rather than one generator's style, and the criticism is answered. The point estimate sits +0.0509 away, which is the measurement error to quote, not a demonstrated gap.",
   "label_provenance": "the register is what the writer was ASKED for, shown beside the photograph; no second annotator is needed because the label precedes the text rather than being inferred from it"
 }

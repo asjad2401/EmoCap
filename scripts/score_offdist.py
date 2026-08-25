@@ -155,8 +155,19 @@ def main() -> None:
     conf = confusion_matrix(list(zip(truth, got)))
     print("  recall  " + "  ".join(f"{k[:3]} {v}" for k, v in conf["recall"].items()))
 
+    # The verdict must consult the INTERVAL, not just the point estimate. An earlier version
+    # thresholded the drop alone and printed "drops materially" at 0.777 [0.710, 0.845] --
+    # an interval that contains the in-distribution 0.8279, so no drop is detectable at all.
+    # A crude threshold that contradicts its own confidence interval would have put a wrong
+    # sentence in the paper.
     drop = in_dist - acc
-    if drop < 0.05:
+    if ci["lo"] <= in_dist <= ci["hi"]:
+        verdict = (f"is indistinguishable from in-distribution: the {int(boot['ci']*100)}% "
+                   f"interval [{ci['lo']:.4f}, {ci['hi']:.4f}] contains {in_dist}. The "
+                   f"instrument reads register rather than one generator's style, and the "
+                   f"criticism is answered. The point estimate sits {drop:+.4f} away, which "
+                   f"is the measurement error to quote, not a demonstrated gap.")
+    elif drop < 0.05:
         verdict = ("holds. The instrument reads register rather than one generator's style, "
                    "and the criticism is answered.")
     elif acc < 0.35:
