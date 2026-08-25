@@ -6,9 +6,12 @@
 
 The GPU runs need exactly three things, and none of them are images or API keys:
 
-    arms/       the six data arms + manifest.json (per-arm sha256)
-    features/   pre-extracted frozen CLIP ViT-B/32 + index
-    classifier/ the frozen register classifier + its sha256
+    arms/        the data arms + manifest.json (per-arm sha256)
+    features/    pre-extracted frozen CLIP ViT-B/32 + index
+    predictions/ the arms' GENERATED captions, references stripped (see
+                 scripts/build_prediction_export.py) -- for GPU-side analysis of model
+                 output, and the only part containing no third-party corpus text
+    classifier/  the frozen register classifier + its sha256
 
 **Private by default, and there is no flag to make it public.** The arms are derived from
 Flickr8k and Personality-Captions, whose terms govern redistribution; publishing them from a
@@ -53,6 +56,16 @@ PARTS = {
         # out of the first uploads, which failed all fifteen text baselines instantly.
         "sources": {"arms": ROOT / "data/arms", "features": ROOT / "data/features",
                     "generated": ROOT / "data/generated/captions_corpus.jsonl"},
+    },
+    # Generated captions with the reference text stripped, built by
+    # scripts/build_prediction_export.py. Needed by analyses that read only what the models
+    # WROTE -- P4's judges, and anything like them -- so those can run on a GPU instead of
+    # wedging a laptop overnight. Separate from `data` because no training notebook needs
+    # it, and separate from `classifier` because it changes whenever an arm is re-decoded.
+    "predictions": {
+        "slug": "emocap-v2-predictions",
+        "title": "EmoCap v2 — generated captions (references removed)",
+        "sources": {"predictions": ROOT / "runs/kaggle-preds"},
     },
     "classifier": {
         "slug": "emocap-v2-classifier",

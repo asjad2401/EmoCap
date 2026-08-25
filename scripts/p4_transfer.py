@@ -64,9 +64,9 @@ ARMS = ("S_unpaired", "H_unpaired", "V1_unpaired")
 PAIRED = ("S_paired5", "V1_paired5", "S_paired25")
 
 
-def arm_cells(arm: str) -> tuple[list[str], list[int], list[str]]:
+def arm_cells(arm: str, data_root: Path) -> tuple[list[str], list[int], list[str]]:
     texts, labels, images = [], [], []
-    for line in (ROOT / "data/arms" / f"{arm}.jsonl").read_text().splitlines():
+    for line in (data_root / "arms" / f"{arm}.jsonl").read_text().splitlines():
         if line.strip():
             c = json.loads(line)
             texts.append(c["text"])
@@ -75,15 +75,21 @@ def arm_cells(arm: str) -> tuple[list[str], list[int], list[str]]:
     return texts, labels, images
 
 
-def generated(arm: str) -> tuple[list[str], list[int]]:
-    """Every fold's held-out generated captions for one arm. Controls excluded."""
+def generated(arm: str, runs_root: Path) -> tuple[list[str], list[int]]:
+    """Every fold's held-out generated captions for one arm. Controls excluded.
+
+    ``runs_root`` may be the local ``runs/arms`` or the stripped Kaggle export from
+    ``scripts/build_prediction_export.py``. Both carry ``generated`` and ``emotion``, which
+    is all this needs -- the export drops ``reference``, so no corpus text is required.
+    """
     texts, labels = [], []
-    for d in sorted((ROOT / "runs/arms").iterdir()):
+    for d in sorted(runs_root.iterdir()):
         if not d.is_dir() or not d.name.startswith(f"{arm}-f") or d.name.endswith("-nc"):
             continue
         p = d / "predictions.jsonl"
         if not p.exists():
-            raise SystemExit(f"{p} is missing (gitignored) -- pull the run first")
+            raise SystemExit(f"{p} is missing (gitignored) -- pull the run first, or point "
+                             f"--runs-root at the prediction export")
         for line in p.read_text().splitlines():
             if line.strip():
                 r = json.loads(line)
@@ -118,6 +124,10 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default="results/p4_transfer.json")
     ap.add_argument("--models", default="models")
+    ap.add_argument("--data-root", default=None,
+                    help="where arms/ lives; defaults to the repo's data/")
+    ap.add_argument("--runs-root", default="runs/arms",
+                    help="decoded predictions; the stripped Kaggle export works too")
     ap.add_argument("--skip-cv", action="store_true",
                     help="skip each judge's own-corpus CV -- transfer then has no baseline "
                          "to be a drop FROM, and P4 cannot be evaluated")
@@ -126,7 +136,13 @@ def main() -> None:
                     help="retrain judges even if they already exist on disk")
     args = ap.parse_args()
 
-    report: dict = {"prediction": "P4 -- models trained on S score lower under an H-trained "
+
+    data_root = Path(args.data_root) if args.data_root else ROOT / "data"
+    runs_root = Path(args.runs_root)
+    if not runs_root.is_absolute():
+        runs_root = ROOT / runs_root
+
+    report: dict = {"runs_root": str(runs_root), "prediction": "P4 -- models trained on S score lower under an H-trained "
                                  "judge than H-trained models do under an S-trained judge",
                     "falsified_if": "symmetric, or reversed",
                     "p4_pair": ["S_unpaired", "H_unpaired"],
@@ -135,7 +151,7 @@ def main() -> None:
                     "frozen_instrument_untouched": True,
                     "judges": {}}
 
-    corpora = {k: arm_cells(a) for k, a in JUDGES.items()}
+    corpora = {k: arm_cells(a, data_root) for k, a in JUDGES.items()}
     for k, a in JUDGES.items():
         print(f"judge {k}: {len(corpora[k][0]):,} cells from {a}")
 
@@ -206,7 +222,7 @@ def main() -> None:
     arms = list(ARMS) + (list(PAIRED) if args.include_paired else [])
     report["generated"] = {}
     for arm in arms:
-        texts, labels = generated(arm)
+        texts, labels = generated(arm, runs_root)
         row = {"n": len(texts)}
         for judge in JUDGES:
             row[f"{judge}_judge"] = round(accuracy(predict(texts, paths[judge]), labels), 4)
