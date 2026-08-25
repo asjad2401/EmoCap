@@ -20,7 +20,8 @@ offer a "no register" option, so a reader can decline rather than guess:
 The gate is evaluated on the FCE, against the same corpus's anchor at its own n.
 
 **The comparison is not like-for-like and the output says so.** The anchor is a *trained*
-rule doing 5-fold CV over thousands of cells; the reader is zero-shot on a hundred items.
+rule doing 5-fold CV over thousands of cells; the reader is zero-shot on the task's own
+items, and the printed caveat states that count rather than assuming it.
 "Keywords beat a human" is therefore not by itself proof of leakage.
 """
 
@@ -112,10 +113,20 @@ def main() -> None:
 
     print(f"\n{'=' * 60}")
     print("GATE: " + ("PASSES" if worst_pass else "FAILS -- HALT"))
-    print("Caveat, always reported: the anchor is a TRAINED rule (5-fold CV over thousands\n"
-          "of cells); the reader is zero-shot on ~100 items. A keyword rule beating a reader\n"
-          "is not by itself proof of leakage. §6 commits to >=300 items before this gate is\n"
-          "applied to the finished corpus.")
+    # The item count is read from the data rather than written into the string. The old text
+    # said "~100 items" and "commits to >=300 items before this gate is applied", which
+    # became wrong the moment a 300-item task existed -- a caveat that misstates its own
+    # sample size is worse than none.
+    n_items = max((s.get("n", 0) for s in result["arms"].values()), default=0)
+    print("Caveat, always reported: the anchor is a TRAINED rule (5-fold CV over thousands")
+    print(f"of cells); the reader is zero-shot on {n_items} items. A keyword rule beating a")
+    print("reader is not by itself proof of leakage.")
+    if n_items >= 300:
+        print(f"§6's >=300-item requirement is MET at {n_items}; this gate applies to the")
+        print("finished corpus.")
+    else:
+        print(f"§6 commits to >=300 items before this gate is applied to the finished")
+        print(f"corpus, and this task has {n_items} -- treat the verdict as provisional.")
     result["passes"] = worst_pass
     if args.out:
         Path(args.out).parent.mkdir(parents=True, exist_ok=True)
