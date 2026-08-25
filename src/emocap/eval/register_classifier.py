@@ -168,7 +168,11 @@ def finetune_classifier(
     from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
     if device is None:
-        device = "mps" if torch.backends.mps.is_available() else "cpu"
+        # CUDA first. Both of these functions were written for the laptop and defaulted to
+        # "mps or cpu", so on a Kaggle T4 they silently trained on CPU -- which is how a
+        # 25-minute P4 run became an apparently hung job with a T4 sitting idle beside it.
+        device = ("cuda" if torch.cuda.is_available()
+                  else "mps" if torch.backends.mps.is_available() else "cpu")
 
     def _sync() -> None:
         if device == "mps":
@@ -293,7 +297,11 @@ def train_final_classifier(
     from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
     if device is None:
-        device = "mps" if torch.backends.mps.is_available() else "cpu"
+        # CUDA first. Both of these functions were written for the laptop and defaulted to
+        # "mps or cpu", so on a Kaggle T4 they silently trained on CPU -- which is how a
+        # 25-minute P4 run became an apparently hung job with a T4 sitting idle beside it.
+        device = ("cuda" if torch.cuda.is_available()
+                  else "mps" if torch.backends.mps.is_available() else "cpu")
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
