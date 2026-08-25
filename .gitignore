@@ -83,3 +83,11 @@ HUMAN-EVAL.html
 # Staged upload of generated captions with references stripped, built on demand by
 # scripts/build_prediction_export.py. 65 MB, and reproducible from runs/arms in seconds.
 runs/kaggle-preds/
+
+# The writing-task pages. 2-3 MB each with Flickr8k photographs embedded as base64, and
+# this repository is public -- same reason HUMAN-EVAL.html is excluded. Rebuild them from
+# runs/offdist/key.json plus the images:
+#     uv run --extra vision python scripts/make_writing_task.py
+# LEGIBILITY-300.html is NOT excluded: it is text-only, carrying our own generated captions
+# and no photographs.
+WRITING-*.html

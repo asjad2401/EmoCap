@@ -1,0 +1,1671 @@
+{
+  "mode": "text",
+  "seed": 300,
+  "source": "captions_corpus.jsonl",
+  "excluded_images": [
+    "1048710776_bb5b0a5c7c.jpg",
+    "1115565519_d976d4b1f1.jpg",
+    "114051287_dd85625a04.jpg",
+    "1178705300_c224d9a4f1.jpg",
+    "1225443522_1633e7121f.jpg",
+    "1232148178_4f45cc3284.jpg",
+    "1245022983_fb329886dd.jpg",
+    "1295671216_cde1b9c9d1.jpg",
+    "1352398363_9cc8ffcce9.jpg",
+    "1377668044_36398401dd.jpg",
+    "1400424834_1c76e700c4.jpg",
+    "140526326_da07305c1c.jpg",
+    "1406010299_5755339f08.jpg",
+    "1412832223_99e8b4701a.jpg",
+    "146577646_9e64b8c2dc.jpg",
+    "1472053993_bed67a3ba7.jpg",
+    "1835511273_790eaae6e6.jpg",
+    "185057637_e8ada37343.jpg",
+    "191592626_477ef5e026.jpg",
+    "1975531316_8b00eeaaf7.jpg",
+    "1980882959_9a161f3469.jpg",
+    "199809190_e3f6bbe2bc.jpg",
+    "200771289_31902164a7.jpg",
+    "2059842472_f4fb61ea08.jpg",
+    "2064792226_97e41d8167.jpg",
+    "2066271441_1f1f056c01.jpg",
+    "2067833088_04e84e5bf2.jpg",
+    "2075321027_c8fcbaf581.jpg",
+    "214543992_ce6c0d9f9b.jpg",
+    "2147199188_d2d70b88ec.jpg",
+    "2165461920_1a4144eb2b.jpg",
+    "2196846255_2c1635359a.jpg",
+    "2240539658_dea8db6e55.jpg",
+    "2259203920_6b93b721ce.jpg",
+    "2269021076_cefc9af989.jpg",
+    "2269961438_cae7a9c725.jpg",
+    "2272548482_0b4aec5cdd.jpg",
+    "2289212650_69de7a20b2.jpg",
+    "2320125735_27fe729948.jpg",
+    "233270519_d60d4518fa.jpg",
+    "2332986053_864db84971.jpg",
+    "2355763034_9fb61a8165.jpg",
+    "2362377137_9528692825.jpg",
+    "2387197355_237f6f41ee.jpg",
+    "2399551242_c62a46dd5f.jpg",
+    "2410618963_fb78307d18.jpg",
+    "241346317_be3f07bd2e.jpg",
+    "241347664_4a3e7e5be7.jpg",
+    "2481490320_7978c76271.jpg",
+    "2495394666_2ef6c37519.jpg",
+    "250406927_a5028a31d4.jpg",
+    "2505056124_1276e8dbcb.jpg",
+    "2519594430_551225e5bd.jpg",
+    "2533010184_ef2fd71297.jpg",
+    "2549968784_39bfbe44f9.jpg",
+    "2574084102_f2be3f73cb.jpg",
+    "2581066814_179d28f306.jpg",
+    "2609836649_b55831ed41.jpg",
+    "2616561200_ea079f285a.jpg",
+    "2620113705_a8fa89b8f6.jpg",
+    "2672354635_3a03f76486.jpg",
+    "2685752892_9d5cd7f274.jpg",
+    "2718376488_3c62f7642c.jpg",
+    "2737759676_4bc9be2daf.jpg",
+    "2747640247_b54bfa6886.jpg",
+    "2788628994_61123c03d2.jpg",
+    "2789688929_9424fceed1.jpg",
+    "2812590023_50182bc417.jpg",
+    "2836703077_fa9c736203.jpg",
+    "2847514745_9a35493023.jpg",
+    "2877088081_7ca408cb25.jpg",
+    "2884252132_5d8e776893.jpg",
+    "2885891981_6b02620ae9.jpg",
+    "2914206497_5e36ac6324.jpg",
+    "2914800692_0c512d27b8.jpg",
+    "2924259848_effb4dcb82.jpg",
+    "2929405404_1dff5ab847.jpg",
+    "2934022873_3fdd69aee4.jpg",
+    "300550441_f44ec3701a.jpg",
+    "3040575300_0e4328d205.jpg",
+    "3046429283_08de594901.jpg",
+    "3065468339_4955e90fd3.jpg",
+    "3086810882_94036f4475.jpg",
+    "3116985493_04b1dc3345.jpg",
+    "3123770450_cedc16d162.jpg",
+    "3126981064_1e803c3d7f.jpg",
+    "3155657768_b83a7831e5.jpg",
+    "3174431688_ae84778db0.jpg",
+    "3182258223_5b9c8a8c55.jpg",
+    "3185645793_49de805194.jpg",
+    "3189293145_35dea42679.jpg",
+    "3210359094_ee51285301.jpg",
+    "3213622536_31da7f6682.jpg",
+    "3217893350_57be430d06.jpg",
+    "3220200084_3ea129336e.jpg",
+    "3229913073_e7857a5966.jpg",
+    "3235076435_1eaa40bd0a.jpg",
+    "3243094580_ccd01679f5.jpg",
+    "3244747165_17028936e0.jpg",
+    "3271385712_ffd34f2de5.jpg",
+    "3273489163_8209545810.jpg",
+    "3286017638_c688c83e3d.jpg",
+    "3294964868_16f4f9fa9d.jpg",
+    "3303797949_339bb969ba.jpg",
+    "3343106500_27176fc544.jpg",
+    "3344526059_4a097af285.jpg",
+    "3344948183_5b89379585.jpg",
+    "3349307529_c1a516b9dc.jpg",
+    "3355494822_61353a224d.jpg",
+    "3389448506_7025e7cc12.jpg",
+    "3397803103_8a46d716f4.jpg",
+    "3402081035_a54cfab1d9.jpg",
+    "3406802138_ef77bbddd0.jpg",
+    "3414734842_beb543f400.jpg",
+    "3425573919_409d9e15b2.jpg",
+    "3429465163_fb8ac7ce7f.jpg",
+    "3429581486_4556471d1a.jpg",
+    "3437654963_c4fdc17e8b.jpg",
+    "3459492423_c881f12c9f.jpg",
+    "3476237185_9389c536a3.jpg",
+    "3490517179_76dbd690de.jpg",
+    "3492180255_0bd48a18f8.jpg",
+    "3508522093_51f6d77f45.jpg",
+    "3514019869_7de4ece2a5.jpg",
+    "3518118675_5053b3f738.jpg",
+    "3518687038_964c523958.jpg",
+    "3518755601_cebf11e515.jpg",
+    "3522989916_f20319cc59.jpg",
+    "3523950181_414978964e.jpg",
+    "3558683579_8fb36b55a6.jpg",
+    "3565749152_7924d15b04.jpg",
+    "3567061016_62768dcce1.jpg",
+    "3600909823_ce72c26e66.jpg",
+    "3621652774_fd9634bd5b.jpg",
+    "3652859271_908ae0ae89.jpg",
+    "3655773435_c234e94820.jpg",
+    "3656906086_7034f69ab6.jpg",
+    "3665987581_5e6b0a65f2.jpg",
+    "3683185795_704f445bf4.jpg",
+    "3686924335_3c51e8834a.jpg",
+    "3699522388_2333f01f40.jpg",
+    "3705688385_47651205d3.jpg",
+    "3725353555_75c346d7ec.jpg",
+    "3726170067_094cc1b7e5.jpg",
+    "3728015645_b43a60258b.jpg",
+    "374103966_2987706be1.jpg",
+    "3744832122_2f4febdff6.jpg",
+    "380537190_11d6c0a412.jpg",
+    "382701159_f98c1988cd.jpg",
+    "396360611_941e5849a3.jpg",
+    "413231421_43833a11f5.jpg",
+    "468102269_135938e209.jpg",
+    "488352274_9a22064cb3.jpg",
+    "488549693_a1f51d8c4a.jpg",
+    "512101751_05a6d93e19.jpg",
+    "534200447_b0f3ff02be.jpg",
+    "542317719_ed4dd95dc2.jpg",
+    "687513087_413d4a3a3b.jpg",
+    "735787579_617b047319.jpg",
+    "765091078_a8a11c6f9e.jpg",
+    "887108308_2da97f15ef.jpg",
+    "923550133_ac9d7a2932.jpg"
+  ],
+  "key": {
+    "072c2a6d8fc9": {
+      "truth": "romantic",
+      "image_id": "749840385_e004bf3b7c.jpg",
+      "text": "Standing beside the lattice gate, a man in a short-sleeved white shirt speaks quietly into his phone."
+    },
+    "d09150122666": {
+      "truth": "joyful",
+      "image_id": "3544673666_ffc7483c96.jpg",
+      "text": "Beside the sunny brick house, a dog springs up to snag its toy right out of the air."
+    },
+    "16fc6180f6be": {
+      "truth": "tense",
+      "image_id": "512550372_438849ce19.jpg",
+      "text": "Gripping the stone with heavy hiking boots, a man stands carefully in his cargo pants."
+    },
+    "588e36b25a81": {
+      "truth": "sad",
+      "image_id": "3322443827_a04a94bb91.jpg",
+      "text": "A man rests against a red building, smoking quietly while looking down."
+    },
+    "e6cecbac9a3f": {
+      "truth": "tense",
+      "image_id": "3657016761_d553e514d9.jpg",
+      "text": "High-pressure streams converge from all sides of the ring right onto the standing child."
+    },
+    "d12ef59edf13": {
+      "truth": "romantic",
+      "image_id": "3691592651_6e4e7f1da9.jpg",
+      "text": "A climber ascends the smooth white curves of the floating object in the calm afternoon sun."
+    },
+    "e319fc407b3d": {
+      "truth": "romantic",
+      "image_id": "795081510_53fd17d101.jpg",
+      "text": "A man embraces a woman from behind, resting together at the railing while a ship drifts along the soft horizon."
+    },
+    "724992caab9e": {
+      "truth": "romantic",
+      "image_id": "2355578735_286af5b202.jpg",
+      "text": "Clad in a thick grey coat, the boy pauses to admire the intricate sea creature in his hand."
+    },
+    "5cbe6a2321c0": {
+      "truth": "tense",
+      "image_id": "3397220683_4aca010f86.jpg",
+      "text": "A skier plants both poles deep into the drifts while the golden retriever pauses amidst blinding snow flurries."
+    },
+    "103df0f6c7cb": {
+      "truth": "humorous",
+      "image_id": "3290105461_7590f23371.jpg",
+      "text": "A man in full cricket whites gets mislabeled while swinging a wooden plank at a flying ball."
+    },
+    "b9a7633f459f": {
+      "truth": "humorous",
+      "image_id": "2284239186_c827f4defa.jpg",
+      "text": "A dog navigates the kitchen with a newspaper so wide its head is barely visible behind it."
+    },
+    "5cfbcb555863": {
+      "truth": "tense",
+      "image_id": "2097420505_439f63c863.jpg",
+      "text": "Crouched low on the slick ice, the man braces his boots against the sloping surface."
+    },
+    "5d1102ba4c00": {
+      "truth": "tense",
+      "image_id": "469021173_aa31c07108.jpg",
+      "text": "A person carrying a heavy pack wades through tall grass that conceals the ground beneath his feet."
+    },
+    "75906b8de417": {
+      "truth": "joyful",
+      "image_id": "782401952_5bc5d3413a.jpg",
+      "text": "Young people hold colourful frozen beverages alongside matching cartoon cutouts sipping their own drinks on the sidewalk."
+    },
+    "37a7d8d73073": {
+      "truth": "tense",
+      "image_id": "1490213660_9ea45550cf.jpg",
+      "text": "Mid-stride in the flowing stream, the tan dog focuses intently on the bank."
+    },
+    "137a477497c9": {
+      "truth": "romantic",
+      "image_id": "3649384501_f1e06c58c0.jpg",
+      "text": "Soft red strands of the helmet's tassel rest gently against the guard's patterned collar."
+    },
+    "7a642174cfeb": {
+      "truth": "tense",
+      "image_id": "3122606953_a979dd3d33.jpg",
+      "text": "Moving fast, two dogs press away into the wide white space without breaking stride."
+    },
+    "79c761d33604": {
+      "truth": "humorous",
+      "image_id": "421316045_ae7a1eb4bc.jpg",
+      "text": "The sofa cushions have officially been converted into an indoor wrestling ring for two toddlers."
+    },
+    "22e8460d9360": {
+      "truth": "joyful",
+      "image_id": "3063544435_10516c6937.jpg",
+      "text": "Rowers surge across the deep blue water, blades cutting cleanly with every vigorous stroke."
+    },
+    "df7347924b79": {
+      "truth": "sad",
+      "image_id": "463978865_c87c6ca84c.jpg",
+      "text": "A man sits on a low ledge beside the pavement, looking down as another passes by without stopping."
+    },
+    "284b2713bbd4": {
+      "truth": "tense",
+      "image_id": "3293753378_7a8ddb98b2.jpg",
+      "text": "In the tight space between the counter and the loaded shelves, the shoppers do not move."
+    },
+    "54d6abd4636d": {
+      "truth": "humorous",
+      "image_id": "1299459562_ed0e064aee.jpg",
+      "text": "Three boys voluntarily position themselves under an absolute torrent of water."
+    },
+    "c659498d2e33": {
+      "truth": "humorous",
+      "image_id": "3025513877_1a6160070d.jpg",
+      "text": "A young boy kicks the water near the rocks and manages to send half of it airborne."
+    },
+    "099f68362097": {
+      "truth": "romantic",
+      "image_id": "3182996527_70d9c323d5.jpg",
+      "text": "A lone person stays balanced on the bike under warm overhead lamps."
+    },
+    "31fd58a7c07f": {
+      "truth": "joyful",
+      "image_id": "2895403073_906768cafa.jpg",
+      "text": "Kicking sand into the air, three dogs tumble and roughhouse along the lake shore."
+    },
+    "17b4ae63f110": {
+      "truth": "sad",
+      "image_id": "3072611047_109bf8b7c3.jpg",
+      "text": "Two children drop toward the dark water together, disappearing into the wide surface."
+    },
+    "daae8656242b": {
+      "truth": "romantic",
+      "image_id": "2549452277_873cb80d3e.jpg",
+      "text": "The man with the ponytail and helmet looks on, quietly taking in the open path ahead."
+    },
+    "d209691d143a": {
+      "truth": "tense",
+      "image_id": "2057306459_2f52ce648e.jpg",
+      "text": "Each person grips their section of fabric firmly, preventing the wind from catching the unpinned edges."
+    },
+    "2b89c513ebdf": {
+      "truth": "tense",
+      "image_id": "3138746531_f6b816c126.jpg",
+      "text": "Three men in caps lean close to the tall flames outside the cabin to read."
+    },
+    "ed163c708a0e": {
+      "truth": "sad",
+      "image_id": "2358554995_54ed3baa83.jpg",
+      "text": "At the top of the playground slide, small hands hold the railings under bare branches."
+    },
+    "46c91390b078": {
+      "truth": "humorous",
+      "image_id": "2892467862_52a3c67418.jpg",
+      "text": "A boy in swim shorts attempts to block an entire municipal water blast with one arm."
+    },
+    "c1335ceaf5cd": {
+      "truth": "tense",
+      "image_id": "476740978_45b65ebe0c.jpg",
+      "text": "Protesters line the curb with IMPEACH umbrellas held firmly toward the intersection."
+    },
+    "f730e1ab6f57": {
+      "truth": "sad",
+      "image_id": "2477623312_58e8e8c8af.jpg",
+      "text": "A child in heavy layers strikes a pose while the adults behind her keep their backs turned."
+    },
+    "bb7364cc6dba": {
+      "truth": "humorous",
+      "image_id": "670609997_5c7fdb3f0b.jpg",
+      "text": "A jumping dog hangs in mid-flight with its hind leg stuck straight out to the side."
+    },
+    "709dfdc118f1": {
+      "truth": "romantic",
+      "image_id": "3544483327_830349e7bc.jpg",
+      "text": "Under the pale stucco arches, a cyclist in black guides his green frame cleanly past the roadside sign."
+    },
+    "830becffdac7": {
+      "truth": "tense",
+      "image_id": "3029928396_99ac250788.jpg",
+      "text": "The small boy stands poised with one hand raised abruptly above rows of heavy pumpkins."
+    },
+    "fe243108dc2a": {
+      "truth": "romantic",
+      "image_id": "1600208439_e94527b80f.jpg",
+      "text": "Each bead of water catches the open light around the dog's wet fur."
+    },
+    "ccd257b96262": {
+      "truth": "sad",
+      "image_id": "2925242998_9e0db9b4a2.jpg",
+      "text": "The woman stands alone on the hillside edge, dwarfed by the massive empty hills below."
+    },
+    "8fe807509617": {
+      "truth": "romantic",
+      "image_id": "3500342526_393c739e2f.jpg",
+      "text": "Across the soft brown grass, one dog carefully holds its prize while the black poodle follows."
+    },
+    "276228ceea52": {
+      "truth": "joyful",
+      "image_id": "3585488964_1467945775.jpg",
+      "text": "A tan dog in a bright red collar bounds forward alongside two shaggy white dogs by the sea."
+    },
+    "6a766b39f6c3": {
+      "truth": "tense",
+      "image_id": "2724485630_7d2452df00.jpg",
+      "text": "Wearing shirts that declare their affection for beer, two women walk past without engaging anyone nearby."
+    },
+    "6c0a7e9d7f38": {
+      "truth": "sad",
+      "image_id": "3598447435_f66cd10bd6.jpg",
+      "text": "A lone green boat navigates the heavy grey surge of water between dark stone walls."
+    },
+    "621d38da99ee": {
+      "truth": "tense",
+      "image_id": "308307853_5a51fbdecc.jpg",
+      "text": "The poodle pushes off the sand at full tilt, casting a sharp dark shadow on the shore."
+    },
+    "feb1ab5d2944": {
+      "truth": "tense",
+      "image_id": "3367053761_8ec5834bf3.jpg",
+      "text": "Seated in a rigid line between the tall windows and bookstacks, people keep their backs turned without moving."
+    },
+    "71a5e91a915e": {
+      "truth": "joyful",
+      "image_id": "2825668136_107223182c.jpg",
+      "text": "Springing from the grey stone rise, the bike rider turns a fast trick in mid-air."
+    },
+    "ca0a2efa2bb2": {
+      "truth": "tense",
+      "image_id": "2190137367_746335f707.jpg",
+      "text": "Tension tightens the plush toy as the little dog and the kneeling man pull in opposite directions."
+    },
+    "737f2e001f56": {
+      "truth": "sad",
+      "image_id": "1143373711_2e90b7b799.jpg",
+      "text": "Surrounded by heavy motor traffic, the biker in spandex navigates the wide grey pavement."
+    },
+    "6e24d8ebe22e": {
+      "truth": "joyful",
+      "image_id": "930748509_8ca5cf5c24.jpg",
+      "text": "In the bright park grass, a man gently pets the small brown dog right on its chest."
+    },
+    "fe287e62c553": {
+      "truth": "tense",
+      "image_id": "2921578694_a46ae0d313.jpg",
+      "text": "He grips the boom tightly as the wind fills his clear sail, leaning hard against deep water."
+    },
+    "48c0f548b47c": {
+      "truth": "tense",
+      "image_id": "1536597926_c2e1bc2379.jpg",
+      "text": "Two people sit tightly perched on the loose stones, a heavy pack wedged securely by their feet."
+    },
+    "8da4fcdd8d67": {
+      "truth": "humorous",
+      "image_id": "3366571152_20afb88ac1.jpg",
+      "text": "A brightly illuminated eatery sits entirely open to the street, completely surrounded by empty pavement."
+    },
+    "1e4a1b3d795f": {
+      "truth": "joyful",
+      "image_id": "2657484970_610e18144f.jpg",
+      "text": "Clear daylight brightens the rocky wooded cliff as two people float past in their dark canoe."
+    },
+    "78a9f07c3497": {
+      "truth": "humorous",
+      "image_id": "3533922605_a2b1e276f6.jpg",
+      "text": "Two teen girls take in the grand mountain panorama by simply plumping down on the indoor floor."
+    },
+    "d521cd7914b0": {
+      "truth": "romantic",
+      "image_id": "2718495608_d8533e3ac5.jpg",
+      "text": "Brown hair brushes past the sunglasses and bright yellow shirt of the girl outside in daylight."
+    },
+    "6ce9afae8ca4": {
+      "truth": "tense",
+      "image_id": "2641288004_30ce961211.jpg",
+      "text": "Mid-leap over the bed, the border collie hangs directly above the furniture with the tennis ball locked between its jaws."
+    },
+    "25add4c3fb65": {
+      "truth": "sad",
+      "image_id": "3628043835_9d9bd595a7.jpg",
+      "text": "Alone in front against the grey concrete, a man in white keeps running while two officers steadily follow."
+    },
+    "b8f08a0b171c": {
+      "truth": "joyful",
+      "image_id": "2987328689_96a2d814f1.jpg",
+      "text": "A boy steps out across the stones, skipping a rock over the clear creek water."
+    },
+    "c9344406880b": {
+      "truth": "sad",
+      "image_id": "3441104823_33cdae5a56.jpg",
+      "text": "Dressed for warm weather, a crowd remains queued outside a building, waiting without moving forward."
+    },
+    "dd93adbbcf4d": {
+      "truth": "romantic",
+      "image_id": "3544233095_4bca71df1d.jpg",
+      "text": "The small green bucket stands out against the muted tones of the beach and the distant dunes."
+    },
+    "57e404a9dc84": {
+      "truth": "sad",
+      "image_id": "3211577298_14296db6fd.jpg",
+      "text": "An African American man falls away from his board into the relentless foam of the crashing ocean."
+    },
+    "281367dff9f9": {
+      "truth": "tense",
+      "image_id": "3411393875_a9ff73c67a.jpg",
+      "text": "Two people hold their stance on the dark asphalt, brightly illuminated under direct lighting."
+    },
+    "8f4c1c307e8c": {
+      "truth": "sad",
+      "image_id": "2736902411_a0010f89ae.jpg",
+      "text": "The girls take a picture of themselves while other people nearby look entirely away."
+    },
+    "70d5a5e54585": {
+      "truth": "sad",
+      "image_id": "1298866571_b4c496b71c.jpg",
+      "text": "A solemn young man in a suit sits holding his phone in the quiet train car."
+    },
+    "2bc168b15e24": {
+      "truth": "sad",
+      "image_id": "3294209955_a1f1e2cc19.jpg",
+      "text": "The dog is running full speed through the meadow, surrounded only by dry, colourless scrub."
+    },
+    "0975d92c208a": {
+      "truth": "joyful",
+      "image_id": "866841633_05d273b96d.jpg",
+      "text": "Two small canoes drift over the bright, clear water beneath the green brush of the shoreline."
+    },
+    "315d1a9b0c10": {
+      "truth": "romantic",
+      "image_id": "2676184321_858eff416b.jpg",
+      "text": "Braided ties hang down past the soft knitted stitches of the sweater as she pauses thoughtfully in her warm hat."
+    },
+    "0494923cf2b2": {
+      "truth": "sad",
+      "image_id": "3196100539_102fe877b3.jpg",
+      "text": "With the match over, the losing wrestler stays on the mat, his face buried between his arms."
+    },
+    "065e23f183e9": {
+      "truth": "romantic",
+      "image_id": "3398276602_c7d106c34f.jpg",
+      "text": "The man in the tan shirt takes time out of his walk to give to the man in the hat."
+    },
+    "d9860de755d5": {
+      "truth": "joyful",
+      "image_id": "2606433181_f8f9d38579.jpg",
+      "text": "Two pale dogs sprint through the bright green grass, mouths open and heads high."
+    },
+    "63e80fcdeaf2": {
+      "truth": "tense",
+      "image_id": "2920516901_23d8571419.jpg",
+      "text": "Legs fully outstretched front and back, the running greyhound hurtles forward without touching the earth."
+    },
+    "8eac853dc908": {
+      "truth": "sad",
+      "image_id": "2291511815_ac083fddbd.jpg",
+      "text": "Three little kids race downhill on tiny tricycles toward the bare end of the road."
+    },
+    "3d61508fb7dc": {
+      "truth": "sad",
+      "image_id": "224766705_b77996527f.jpg",
+      "text": "A long caravan of green and red vehicles crawls slowly along the bare gravel path."
+    },
+    "6f1859df262e": {
+      "truth": "romantic",
+      "image_id": "1925434818_2949a8f6d8.jpg",
+      "text": "The rounded shapes of countless colored spheres fill the enclosed play space completely."
+    },
+    "522534779b42": {
+      "truth": "tense",
+      "image_id": "3035118753_69287079dc.jpg",
+      "text": "Her arm rests across his shoulders while his hand stays pressed to his face."
+    },
+    "b2f820aa96b4": {
+      "truth": "romantic",
+      "image_id": "1465666502_de289b3b9c.jpg",
+      "text": "The dog's wet black coat gleams under the bright sun as ripples fan out through the water."
+    },
+    "562769d3d891": {
+      "truth": "romantic",
+      "image_id": "3669069522_555c97fbfb.jpg",
+      "text": "A small cluster of white jasmine rests carefully in the woman's hands upon her crimson lap."
+    },
+    "71104bae9621": {
+      "truth": "joyful",
+      "image_id": "2810333931_47fd8dd340.jpg",
+      "text": "Children gather on the grass before a large crowd, proudly holding up their tall poles."
+    },
+    "9281443d6535": {
+      "truth": "sad",
+      "image_id": "3543378438_47e2712486.jpg",
+      "text": "A man in a green jacket plays on while the singer stands turned away, looking down toward the floor."
+    },
+    "5c8c98452147": {
+      "truth": "joyful",
+      "image_id": "109823394_83fcb735e1.jpg",
+      "text": "Three riders sit proudly on four-wheel ATVs amid the bright expanse of a harvested field."
+    },
+    "9c3e3ce4a967": {
+      "truth": "humorous",
+      "image_id": "3187117682_986ffd6b67.jpg",
+      "text": "The dog curls its entire pink tongue upward to clear a stubborn patch of snow from its snout."
+    },
+    "0d4b75a07dcc": {
+      "truth": "romantic",
+      "image_id": "2265096094_8cc34d669c.jpg",
+      "text": "Green fronds overhead cast soft, patterned shadows over the mule and the simple cart."
+    },
+    "c9db847a480f": {
+      "truth": "sad",
+      "image_id": "282116218_7fd7583d6e.jpg",
+      "text": "A single black dog runs across the grass, holding a worn ball without anyone nearby."
+    },
+    "23ffe1eebb61": {
+      "truth": "joyful",
+      "image_id": "2039457436_fc30f5e1ce.jpg",
+      "text": "A cowgirl in bright plaid bounds over the barbed wire fence into the dry yard."
+    },
+    "7c9a9cfc950a": {
+      "truth": "tense",
+      "image_id": "3525453732_f74a38f111.jpg",
+      "text": "Flying low in the daylight, the pale owl fixes its sharp focus on whatever lies immediately ahead."
+    },
+    "86d16cacd5a8": {
+      "truth": "joyful",
+      "image_id": "2949762776_52ece64d28.jpg",
+      "text": "Two football teams in crisp uniforms line up eagerly across the field to play."
+    },
+    "819d4d339f12": {
+      "truth": "joyful",
+      "image_id": "2540750172_070250ece5.jpg",
+      "text": "Passengers make the most of the afternoon, lounging comfortably on the boat seats in the sun."
+    },
+    "aa704207c0c0": {
+      "truth": "joyful",
+      "image_id": "2789648482_1df61f224a.jpg",
+      "text": "Captured in mid-flight with arm extended, a boy sails clear off the high diving structure."
+    },
+    "d9a954189f09": {
+      "truth": "humorous",
+      "image_id": "3362805914_72f60ee8cb.jpg",
+      "text": "A little girl takes on the lawn by bending entirely backwards and grinning at the sky."
+    },
+    "f88523255678": {
+      "truth": "tense",
+      "image_id": "3695064885_a6922f06b2.jpg",
+      "text": "Mid-run, the small tan and white dog clears the hurdle just steps ahead of its moving trainer."
+    },
+    "b34e120fa14d": {
+      "truth": "romantic",
+      "image_id": "3127629248_a955b5763b.jpg",
+      "text": "The athlete floats upward in clean arena light, cradling the orange sphere softly toward the woven hoop."
+    },
+    "2e7bffda1668": {
+      "truth": "romantic",
+      "image_id": "701816897_221bbe761a.jpg",
+      "text": "A girl drops toward the pool with outstretched arms as her family watches the afternoon unfold."
+    },
+    "2b1421fa185a": {
+      "truth": "humorous",
+      "image_id": "3557295488_600d387347.jpg",
+      "text": "One player takes a full baseball-style swing, sending his opponent hopping into the air to dodge it."
+    },
+    "d4c14b8a739a": {
+      "truth": "humorous",
+      "image_id": "260162669_c79a900afb.jpg",
+      "text": "A fluffy bundle of black and grey fur essentially disappears nose-first into the lawn."
+    },
+    "0ce917998667": {
+      "truth": "joyful",
+      "image_id": "3217291172_10ef70af88.jpg",
+      "text": "Two men stand together under the daylight against the bright textured blocks of a white brick building."
+    },
+    "06327b451710": {
+      "truth": "humorous",
+      "image_id": "1055753357_4fa3d8d693.jpg",
+      "text": "Two construction workers casually dangle their legs off a building girder several stories in the air."
+    },
+    "12883637ef89": {
+      "truth": "sad",
+      "image_id": "3359587274_4a2b140b84.jpg",
+      "text": "A single person glides on a parachute through cold air over empty, shadowed hills."
+    },
+    "f625545c684d": {
+      "truth": "humorous",
+      "image_id": "311267421_e204e643cf.jpg",
+      "text": "Two dogs barrel forward through short grass as if late for an urgent appointment in the empty field."
+    },
+    "95b7484bd6db": {
+      "truth": "romantic",
+      "image_id": "2888386138_578d21033a.jpg",
+      "text": "A child rests near the smooth wooden banister along the textured wall of the stairway."
+    },
+    "24ee9adc5107": {
+      "truth": "sad",
+      "image_id": "2092177624_13ab757e8b.jpg",
+      "text": "A boy runs alone down a narrow concrete wall, the dry ground empty on either side."
+    },
+    "d721e8946cbb": {
+      "truth": "romantic",
+      "image_id": "3251906388_c09d44340e.jpg",
+      "text": "Two white standard poodles face each other in the snow, their attention focused entirely on one shared toy."
+    },
+    "6aeaeebe6903": {
+      "truth": "joyful",
+      "image_id": "207930963_af3a2f1784.jpg",
+      "text": "Surrounded by sweeping blue ridges, a rider in full dirt gear takes in the mountain height."
+    },
+    "b38d8bb9d027": {
+      "truth": "joyful",
+      "image_id": "2656987333_80dcc82c05.jpg",
+      "text": "The brown horse leaps high into the open air of the arena with tremendous power."
+    },
+    "941fc123f8f7": {
+      "truth": "joyful",
+      "image_id": "2619267133_53a5904ef4.jpg",
+      "text": "The young boy wears his cowboy hat proudly as he rides high atop the large chestnut horse."
+    },
+    "bae2c420d903": {
+      "truth": "humorous",
+      "image_id": "3574627719_790325430e.jpg",
+      "text": "A group of young men sing together, each opening his mouth as wide as physically possible."
+    },
+    "5f874745a2dc": {
+      "truth": "joyful",
+      "image_id": "2838085973_42b6e9b5b1.jpg",
+      "text": "Under the stadium lights, the football player grips the ball with both hands and springs into his throwing stance."
+    },
+    "e5ca74cb8637": {
+      "truth": "tense",
+      "image_id": "3057618932_3b80ae85de.jpg",
+      "text": "Riding a bicycle right between the red rails, a person leans forward over the drop."
+    },
+    "0226b55bcd06": {
+      "truth": "humorous",
+      "image_id": "3239866450_3f8cfb0c83.jpg",
+      "text": "A skier takes a night jump that launches them straight into the local foliage."
+    },
+    "425182b57f6b": {
+      "truth": "joyful",
+      "image_id": "3527524436_a54aca78a9.jpg",
+      "text": "A skier charges directly into the green water, throwing up bright white plumes of spray."
+    },
+    "dcf314b0451b": {
+      "truth": "romantic",
+      "image_id": "3304484212_b950233c30.jpg",
+      "text": "A person in a red jacket carves a smooth path across the quiet blanket of snow."
+    },
+    "b8583daea12d": {
+      "truth": "joyful",
+      "image_id": "2707933554_f6dc5e0e3c.jpg",
+      "text": "A brown butterfly alights gently right on the girl's outstretched hand."
+    },
+    "d4b0369c5334": {
+      "truth": "joyful",
+      "image_id": "179009558_69be522c63.jpg",
+      "text": "A child in a bright red sweatshirt and black helmet poses alongside an open-mouthed dog."
+    },
+    "bacf9d94a1a1": {
+      "truth": "romantic",
+      "image_id": "2797188545_aeb26c54c0.jpg",
+      "text": "A bright red canoe carries two travelers down the winding forest river under the quiet pines."
+    },
+    "f2dbe10563d3": {
+      "truth": "humorous",
+      "image_id": "3491607076_922ec561d9.jpg",
+      "text": "The racing winner accepts his trophy, having to share his victory step with an oversized promotional prop."
+    },
+    "4f08a9d96ab0": {
+      "truth": "humorous",
+      "image_id": "3459871361_92d1ecda36.jpg",
+      "text": "A trick rider flies above a giant painted word with nowhere to go but down."
+    },
+    "fdbf3900dad4": {
+      "truth": "tense",
+      "image_id": "1685463722_55843b6d3c.jpg",
+      "text": "The woman keeps moving along the street as two dogs pace closely on the cracked asphalt."
+    },
+    "e4a8b6e1a72c": {
+      "truth": "tense",
+      "image_id": "2913965136_2d00136697.jpg",
+      "text": "Three boys track the moving ball across the turf as the lead runner cuts inside."
+    },
+    "6b393756aca4": {
+      "truth": "romantic",
+      "image_id": "2528489543_546c1ca81f.jpg",
+      "text": "Summer light fills the air where the swimmer splashes beside the curved blue slide."
+    },
+    "4e166975116a": {
+      "truth": "humorous",
+      "image_id": "1389651420_8d95d8f6ed.jpg",
+      "text": "A little boy in a red shirt scrunches his entire face up at the camera while stuck in line."
+    },
+    "ae2bae8d3a45": {
+      "truth": "tense",
+      "image_id": "2657301826_aab4c36e6c.jpg",
+      "text": "Beside the armchair, the child in a blue scarf grips the toy firmly."
+    },
+    "28934fb4d940": {
+      "truth": "romantic",
+      "image_id": "2266061169_dfbf8f0595.jpg",
+      "text": "Drawn into the cool shadow of the tall sheltered bench, he rests his head and closes his eyes."
+    },
+    "230f18266db6": {
+      "truth": "humorous",
+      "image_id": "3125628091_25a31709df.jpg",
+      "text": "A boy wearing pyjamas wedges his entire body into the sofa corner to wrangle one Santa hat."
+    },
+    "4565262b42c1": {
+      "truth": "sad",
+      "image_id": "3643087589_627a0a9e01.jpg",
+      "text": "A small tan dog scuttles past the large brown dog who simply remains standing in the quiet grass."
+    },
+    "669431d5e1d8": {
+      "truth": "sad",
+      "image_id": "3232470286_903a61ea16.jpg",
+      "text": "The keeper stretches out on the turf, unable to stop the ball from crossing the line."
+    },
+    "e49a06efb08c": {
+      "truth": "tense",
+      "image_id": "3668984985_b60ceb2ae9.jpg",
+      "text": "Heads turn and words pass swiftly between the group grouped closely against the pool rim."
+    },
+    "f31ae44c48a1": {
+      "truth": "humorous",
+      "image_id": "2419221084_01a14176b4.jpg",
+      "text": "Two dogs occupy the yard near patio furniture, exhibiting drastically mismatched energy levels."
+    },
+    "deb03e71d0b1": {
+      "truth": "tense",
+      "image_id": "330325191_63e11d9c93.jpg",
+      "text": "Sharp, jagged peaks jut across the foreground and drop sharply toward distant ridges."
+    },
+    "fbaf90127327": {
+      "truth": "tense",
+      "image_id": "2738077433_10e6264b6f.jpg",
+      "text": "Paws clawing for purchase, the dog scrambles hard up the steep dirt slope."
+    },
+    "8db38ca01969": {
+      "truth": "humorous",
+      "image_id": "2716457668_187a6d2b1c.jpg",
+      "text": "A boy stares ahead wearing full-sized sunglasses that take up half his face."
+    },
+    "e48e56069651": {
+      "truth": "joyful",
+      "image_id": "2358898017_24496b80e8.jpg",
+      "text": "A brown and white dog bounds eagerly across the open lawn, pressing close to the green grass."
+    },
+    "3f70f9551c4e": {
+      "truth": "sad",
+      "image_id": "2125216241_5b265a2fbc.jpg",
+      "text": "Turned away from the camera, three people stare out across the grey water from the edge of the dock."
+    },
+    "b6ce71214c3c": {
+      "truth": "tense",
+      "image_id": "2056930414_d2b0f1395a.jpg",
+      "text": "Both hands firmly clamp the small red guitar as the child confronts the toy microphone."
+    },
+    "0056adb77ea0": {
+      "truth": "romantic",
+      "image_id": "2274992140_bb9e868bb8.jpg",
+      "text": "Two young children spend a slow afternoon together among scattered toys on the soft living room carpet."
+    },
+    "9dbf25343826": {
+      "truth": "romantic",
+      "image_id": "633456174_b768c1d6cd.jpg",
+      "text": "The boy in the dark shirt lingers by the glass facade, suspended in the drifting white trail."
+    },
+    "e0b004063e7f": {
+      "truth": "humorous",
+      "image_id": "3248220732_0f173fc197.jpg",
+      "text": "Gravity takes over completely as a skier falls down the hill in full gear."
+    },
+    "38e0391393a5": {
+      "truth": "sad",
+      "image_id": "2985439112_8a3b77d5c9.jpg",
+      "text": "One man clears another in mid-air, both suspended over a quiet, paved outdoor court."
+    },
+    "ca36c9d540d7": {
+      "truth": "joyful",
+      "image_id": "3534952095_975cca0056.jpg",
+      "text": "Wearing a matching red helmet and scarf, a woman cruises along on a small red and white motorcycle."
+    },
+    "9b6a94831a64": {
+      "truth": "humorous",
+      "image_id": "2623939135_0cd02ffa5d.jpg",
+      "text": "Juggling a plastic cup in one hand, she manages to position a massive clear ring right over her head."
+    },
+    "44e4fa131506": {
+      "truth": "sad",
+      "image_id": "2586028627_ddd054d8cc.jpg",
+      "text": "A little boy crosses the vast town square on a yellow bicycle, dwarfed by the massive stone buildings."
+    },
+    "d8b62af8af59": {
+      "truth": "joyful",
+      "image_id": "3682038869_585075b5ff.jpg",
+      "text": "A grinning little girl pops her head out from behind the rough tree trunk into the bright sunlight."
+    },
+    "ede1f47d6a9d": {
+      "truth": "romantic",
+      "image_id": "3427233064_6af01bfc5c.jpg",
+      "text": "Wearing pale pink against the weathered wood, she stands on the fence and gazes across at the horse."
+    },
+    "936f363c0c3b": {
+      "truth": "sad",
+      "image_id": "948196883_e190a483b1.jpg",
+      "text": "One man withdraws his money at the terminal while another sits slouched and motionless on the pavement below."
+    },
+    "6ec47ec0fd7f": {
+      "truth": "romantic",
+      "image_id": "2759813381_73303113d9.jpg",
+      "text": "A dog rests on its leash beside the rough bark of a shaded tree."
+    },
+    "cd58de30f545": {
+      "truth": "humorous",
+      "image_id": "224369028_b1ac40d1fa.jpg",
+      "text": "A tiny blonde girl poses at the edge of the frame, utterly dwarfed by the massive water fountain."
+    },
+    "b860401e71e6": {
+      "truth": "joyful",
+      "image_id": "3280672302_2967177653.jpg",
+      "text": "A teenage boy gives another a spirited piggyback ride amid the open woodland trail."
+    },
+    "e0230ec8ee2d": {
+      "truth": "sad",
+      "image_id": "2314722788_6262c3aa40.jpg",
+      "text": "Two dogs stand apart on bare, weathered grass with nothing else moving in the open expanse."
+    },
+    "6b355a629ad3": {
+      "truth": "sad",
+      "image_id": "44856031_0d82c2c7d1.jpg",
+      "text": "Balancing on his hind feet, the dog reaches for the water stream on the empty lawn."
+    },
+    "1b8658288d95": {
+      "truth": "romantic",
+      "image_id": "2339140905_9f625f140a.jpg",
+      "text": "A woman wearing a yellow coat moves along the soft white snow under the trees."
+    },
+    "597a0eb09b05": {
+      "truth": "sad",
+      "image_id": "2445442929_8c81d42460.jpg",
+      "text": "Seated outside at an empty wooden board, the man looks far out toward the distant horizon."
+    },
+    "70c9b2123f72": {
+      "truth": "humorous",
+      "image_id": "1057210460_09c6f4c6c1.jpg",
+      "text": "A guy attempts to take his overshirt off while still balancing his sunglasses in hand."
+    },
+    "c45565ee5e21": {
+      "truth": "joyful",
+      "image_id": "3456862740_7550bcddc2.jpg",
+      "text": "The motocross racer banks hard into the dirt berm, kicking up a rooster tail of loose gravel."
+    },
+    "8fd8c2102f1e": {
+      "truth": "tense",
+      "image_id": "3246773992_89bf86937b.jpg",
+      "text": "One leg thrust forward with toes pointed, she hangs poised mid-jump before the matching troupe."
+    },
+    "66ab1c9d2791": {
+      "truth": "romantic",
+      "image_id": "1159574340_99ba8c3c59.jpg",
+      "text": "Sunlight catches the child mid-flight as he leaps over the shallow pool in his sneakers."
+    },
+    "e061b290fc23": {
+      "truth": "humorous",
+      "image_id": "3486154327_8be7c78569.jpg",
+      "text": "Three kids sit atop the stairs, having successfully walked all the way up just to sit down."
+    },
+    "52d36732b0ee": {
+      "truth": "tense",
+      "image_id": "252504549_135b0db5a3.jpg",
+      "text": "With jaws wide open just above the sand, the small dog snaps down on the ball."
+    },
+    "a8e9c18f237e": {
+      "truth": "tense",
+      "image_id": "2473737724_355599a263.jpg",
+      "text": "Two girls clash in a karate hold, locked tightly together on the floor."
+    },
+    "ebcf49f87276": {
+      "truth": "sad",
+      "image_id": "2508249781_36e9282423.jpg",
+      "text": "On the grey cement stairs, a woman sits with her head in her hands, looking down."
+    },
+    "449ad6bee40e": {
+      "truth": "sad",
+      "image_id": "791338571_7f38510bf7.jpg",
+      "text": "The dark bull stands motionless in the sparse dry grass beside the parked red car."
+    },
+    "b0e8354539a9": {
+      "truth": "humorous",
+      "image_id": "3540416981_4e74f08cbb.jpg",
+      "text": "A massive athletic hound commits all of its strength to overtaking a small rag tied to a cord."
+    },
+    "c44673da6290": {
+      "truth": "humorous",
+      "image_id": "516648762_0cff84ea97.jpg",
+      "text": "Behind thick glasses, the girl gives her right pointer finger and its miniature passenger an immense startled stare."
+    },
+    "4db9ac243700": {
+      "truth": "humorous",
+      "image_id": "3165750962_e2e3843679.jpg",
+      "text": "A brown dog charges down the snowy trail with aerodynamic ears and a wide open grin."
+    },
+    "44d54c67465c": {
+      "truth": "humorous",
+      "image_id": "133189853_811de6ab2a.jpg",
+      "text": "A man finds himself completely unable to stop laughing as a formal-wear cheek kiss lands mid-snapshot."
+    },
+    "8976a5bc0381": {
+      "truth": "humorous",
+      "image_id": "3702607829_2b8b3e65ab.jpg",
+      "text": "Two women have claimed a wooden park bench and show zero intention of giving up their spots."
+    },
+    "002b342d8a79": {
+      "truth": "joyful",
+      "image_id": "2688102742_885e578a3f.jpg",
+      "text": "The woman stands looking at the colorful rows of glossy magazines displayed across the wide kiosk."
+    },
+    "5cefee613c2b": {
+      "truth": "joyful",
+      "image_id": "2936590102_25036069a6.jpg",
+      "text": "A greyhound races down the lane with brisk speed in a vivid red shirt and bright blue muzzle."
+    },
+    "de8d46d06687": {
+      "truth": "joyful",
+      "image_id": "3457315666_b943111dec.jpg",
+      "text": "A bearded collie bounds cleanly above the agility bars with paws tucked high in mid-leap."
+    },
+    "b5b37320f171": {
+      "truth": "romantic",
+      "image_id": "2230067846_74046b89d3.jpg",
+      "text": "Soft light falls across the fabric of their athletic gear as two boys ease into their stretches."
+    },
+    "b90c29a8b8da": {
+      "truth": "joyful",
+      "image_id": "3283368342_b96d45210e.jpg",
+      "text": "Proud owners display prize ribbons while standing with their dogs across the bright open field."
+    },
+    "63812510ea5e": {
+      "truth": "tense",
+      "image_id": "2169951750_495820a215.jpg",
+      "text": "With muscles bunched, a pitbull powers straight through the snow on a direct course."
+    },
+    "e82be51339e5": {
+      "truth": "romantic",
+      "image_id": "2804374083_311f98f5f2.jpg",
+      "text": "Clear water catches the bright midday light around the laughing girl as she glides down the slide."
+    },
+    "f456da7ef3ff": {
+      "truth": "romantic",
+      "image_id": "388386075_9ac3a89ada.jpg",
+      "text": "A little boy pauses over his small trains in the soft indoor light of the room."
+    },
+    "552348acda5a": {
+      "truth": "tense",
+      "image_id": "3707990914_843e8f15f1.jpg",
+      "text": "Right at the crest of the wave, the surfer balances on the edge of the rushing wall."
+    },
+    "bbf667da30fe": {
+      "truth": "romantic",
+      "image_id": "2635164923_2a774f7854.jpg",
+      "text": "A little child in a blue helmet focuses intently on riding the skateboard along the concrete curve."
+    },
+    "787cc725b2f8": {
+      "truth": "humorous",
+      "image_id": "195962284_e57178054a.jpg",
+      "text": "The boy stands knee-deep in water while a bright pink Frisbee hovers stubbornly out of reach."
+    },
+    "898959014319": {
+      "truth": "humorous",
+      "image_id": "539744890_85e63f5854.jpg",
+      "text": "The child gets credit for climbing the playground bars after being hoisted the entire height."
+    },
+    "060ccc6ef854": {
+      "truth": "tense",
+      "image_id": "136644885_f7d2bbf546.jpg",
+      "text": "Gripping the overhead cables, a woman carefully places one foot before the other across the bridge."
+    },
+    "cc96b43bfcd6": {
+      "truth": "humorous",
+      "image_id": "1773928579_5664a810dc.jpg",
+      "text": "A large group of onlookers gathers behind orange fencing to watch a dog climb steps."
+    },
+    "e7d00afcd8e2": {
+      "truth": "tense",
+      "image_id": "3223606402_bb2aa6db95.jpg",
+      "text": "Feet locked in place, the skateboarder clears the top edge of the ramp without ground below."
+    },
+    "18e8792cbc40": {
+      "truth": "sad",
+      "image_id": "2858759108_6e697c5f3e.jpg",
+      "text": "A solitary white greyhound runs along the dirt lane, wearing its jacket under the dim overhead lights."
+    },
+    "2fbe09a419c4": {
+      "truth": "sad",
+      "image_id": "251792066_b5233b3d86.jpg",
+      "text": "The dog catches its toy in midair, playing alone on the patch of grass beside the trees."
+    },
+    "1b3d4a595631": {
+      "truth": "humorous",
+      "image_id": "460478198_83039f2593.jpg",
+      "text": "The spotted dog appears to be reconsidering its choices as a husky barrels directly onto its heels."
+    },
+    "526ce5259f5a": {
+      "truth": "humorous",
+      "image_id": "2420546021_4a59790da6.jpg",
+      "text": "A child in native clothing carries a flower arrangement taller than the child's head."
+    },
+    "a754acc6964e": {
+      "truth": "sad",
+      "image_id": "3298233193_d2a550840d.jpg",
+      "text": "A small brown dog chases its ball down the wide shoreline with no other companion near."
+    },
+    "eda421e9148e": {
+      "truth": "sad",
+      "image_id": "2201222219_8d656b0633.jpg",
+      "text": "A boy sits deep in an armchair with a guitar and an unread picture book beside him."
+    },
+    "9bd133fcd474": {
+      "truth": "humorous",
+      "image_id": "2385744837_8780f6731a.jpg",
+      "text": "A child in a red parka demonstrates that snow pants make perfectly functional sleds."
+    },
+    "ab1d9ba69d82": {
+      "truth": "joyful",
+      "image_id": "3722507770_0d6cb7420e.jpg",
+      "text": "In a sunny open park, a boy launches his bicycle from the concrete ramp to perform tricks overhead."
+    },
+    "f9a0f89be32d": {
+      "truth": "humorous",
+      "image_id": "3348384389_73b6647017.jpg",
+      "text": "One dog attempts a dramatic bite while opening its mouth far wider than necessary."
+    },
+    "e3a7ef8beefa": {
+      "truth": "humorous",
+      "image_id": "2266142543_b2de18c081.jpg",
+      "text": "A man in dark frames inspects his drink with deep and unnecessary concentration."
+    },
+    "22b607b442d5": {
+      "truth": "joyful",
+      "image_id": "1244140539_da4804d828.jpg",
+      "text": "Resting comfortably on the shaggy rug, the brown and black dog enjoys the thick textured floor."
+    },
+    "604b45e84699": {
+      "truth": "sad",
+      "image_id": "2078311270_f01c9eaf4c.jpg",
+      "text": "Near bare branches, two women in dark garments walk silently, one tucked into an upraised collar."
+    },
+    "4572a5862e7f": {
+      "truth": "joyful",
+      "image_id": "2324979199_4193ef7537.jpg",
+      "text": "Two children hug with radiant smiles, leaning all their weight into a cheerful, energetic embrace."
+    },
+    "dfde852e1352": {
+      "truth": "humorous",
+      "image_id": "216172386_9ac5356dae.jpg",
+      "text": "Given an entire valley of dirt, the rider aims straight for the pointiest rock."
+    },
+    "66ce3d04ea89": {
+      "truth": "romantic",
+      "image_id": "1236951314_0308dc4138.jpg",
+      "text": "The vivid blue water reflects the afternoon light as the swimmer tracks the child's jump."
+    },
+    "7da072edb079": {
+      "truth": "romantic",
+      "image_id": "3016651969_746bd36e68.jpg",
+      "text": "Ropes gently ease a wrapped piece of furniture out into the warm afternoon air."
+    },
+    "c01abe533409": {
+      "truth": "romantic",
+      "image_id": "3458559770_12cf9f134e.jpg",
+      "text": "The rider guides the bike smoothly against the curve of the dirt embankment."
+    },
+    "f9a3b106423f": {
+      "truth": "romantic",
+      "image_id": "2868776402_aef437e493.jpg",
+      "text": "Under the tall flag and bright sky, a girl rides her bike along the street near the shops."
+    },
+    "bf2fe5a0387d": {
+      "truth": "joyful",
+      "image_id": "3666056567_661e25f54c.jpg",
+      "text": "Four pedestrians make their way along the wide city sidewalk while the green hat wearer talks on a cellphone."
+    },
+    "57f4c60a01a9": {
+      "truth": "romantic",
+      "image_id": "449287870_f17fb825d7.jpg",
+      "text": "Sunlight catches the toddler's blond hair as she pauses by the bright playground railing."
+    },
+    "47740314444d": {
+      "truth": "sad",
+      "image_id": "3175712926_5a470d0886.jpg",
+      "text": "The gray egret takes flight into empty air, leaving the ground behind in quiet solitude."
+    },
+    "d2bf5176f6c1": {
+      "truth": "sad",
+      "image_id": "3481884992_45770ec698.jpg",
+      "text": "Only one surfer is visible on the rolling water, surrounded by grey-blue sea and white foam."
+    },
+    "161a8da2fe08": {
+      "truth": "humorous",
+      "image_id": "3475111806_f0d2927707.jpg",
+      "text": "A man carefully photographs two men who have turned completely away from the main event."
+    },
+    "8ac50bc22f52": {
+      "truth": "romantic",
+      "image_id": "2315807231_6948b3f3a5.jpg",
+      "text": "Fine white flakes drift gently from the ruffled brown coat as the dog shakes itself."
+    },
+    "59f5f46d45cb": {
+      "truth": "humorous",
+      "image_id": "1770036088_08abe4f6e9.jpg",
+      "text": "Two people attempt to occupy the bed while the massive pillows claim most of the space."
+    },
+    "e53d4cb295a6": {
+      "truth": "humorous",
+      "image_id": "3401039304_424ffc7dbf.jpg",
+      "text": "Several people decide the proper way to experience a canyon is while fully reclined in chairs."
+    },
+    "154f9f7f5bc6": {
+      "truth": "tense",
+      "image_id": "3681651647_08eba60f89.jpg",
+      "text": "One arm stretched upward, the costumed marcher faces the surrounding wall of onlookers."
+    },
+    "e8c213f50589": {
+      "truth": "sad",
+      "image_id": "582899605_d96f9201f1.jpg",
+      "text": "Wearing jeans and flip-flops, a woman holds two blonde toddler girls dressed in pink on the lawn."
+    },
+    "8fdbcec72c1a": {
+      "truth": "humorous",
+      "image_id": "496380034_d22aeeedb3.jpg",
+      "text": "Two dogs with a whole yard of space choose to occupy the exact same square inch above a ball."
+    },
+    "7b7f6a89bfe6": {
+      "truth": "romantic",
+      "image_id": "3359530430_249f51972c.jpg",
+      "text": "Soft tracks and rolling drifts carve the backdrop while a snowboarder floats gently across the mound."
+    },
+    "d24029216d50": {
+      "truth": "humorous",
+      "image_id": "2417745327_a2c2705043.jpg",
+      "text": "Refusing to turn toward the shore, the brown dog chooses to race the wave side by side instead."
+    },
+    "1287f8a92e69": {
+      "truth": "tense",
+      "image_id": "2694426634_118566f7ab.jpg",
+      "text": "A man grips the single paddle to keep the boat steady with two children seated in the back."
+    },
+    "39af83c2e042": {
+      "truth": "humorous",
+      "image_id": "3393394134_0caac47e1c.jpg",
+      "text": "The brown and white dog rolls around on the grass as if walking upright were overrated."
+    },
+    "1b8a82d84163": {
+      "truth": "joyful",
+      "image_id": "2545363449_1985903f82.jpg",
+      "text": "A little girl in a sunny yellow dress stands perkily in front of the red restaurant awning."
+    },
+    "0760db0ebc73": {
+      "truth": "tense",
+      "image_id": "3111897772_5211a37a02.jpg",
+      "text": "Every person remains locked in precise formation, their heavy sleeves extended in unison."
+    },
+    "ede05d7646bc": {
+      "truth": "tense",
+      "image_id": "293879742_5fe0ffd894.jpg",
+      "text": "Suspended right above the wire rail, the brown dog lands as the following dog closes the distance."
+    },
+    "299c7cca3a6c": {
+      "truth": "humorous",
+      "image_id": "2030781555_b7ff7be28f.jpg",
+      "text": "The fishermen spend a lovely warm day working very hard at sitting completely still on a concrete step."
+    },
+    "fbfe1dc975d8": {
+      "truth": "romantic",
+      "image_id": "801607443_f15956d1ce.jpg",
+      "text": "Two people share the quiet expanse of the high granite ledge together above the rippling ocean waves."
+    },
+    "ac82459cc282": {
+      "truth": "tense",
+      "image_id": "630476551_2ee7399f77.jpg",
+      "text": "A wall of churned white water crashes directly into the child's face."
+    },
+    "eab4a2925cd0": {
+      "truth": "joyful",
+      "image_id": "3060519665_4d6b9a51b2.jpg",
+      "text": "Three children gather in the clear daylight right beside two huge tractor tires."
+    },
+    "052b0bf12440": {
+      "truth": "tense",
+      "image_id": "3712574653_e009f76d19.jpg",
+      "text": "Guests crowd closely around the table as the newlyweds listen from their tall ornate chairs."
+    },
+    "ded3c2d9aa0b": {
+      "truth": "romantic",
+      "image_id": "1397295388_8a5b6b525d.jpg",
+      "text": "Warm golden light spills across the cavernous terminal floor as travellers linger together near the luggage carousels."
+    },
+    "d29ddd2b71fc": {
+      "truth": "humorous",
+      "image_id": "3204686006_88f04547b9.jpg",
+      "text": "One person slides down the hill while the dog provides an unrequested high-speed escort."
+    },
+    "f6c681053340": {
+      "truth": "joyful",
+      "image_id": "3106562372_e349a27764.jpg",
+      "text": "A lively girl bounds upward into the air as the two play indoors together."
+    },
+    "4e28abdcb46f": {
+      "truth": "romantic",
+      "image_id": "3421547427_53411b6278.jpg",
+      "text": "Soft creases frame his eyes as the player in the blue shirt smiles gently toward the sun."
+    },
+    "85011a1f9f7e": {
+      "truth": "sad",
+      "image_id": "3477681171_b1bb8b211d.jpg",
+      "text": "Near the quiet grey dwelling, a female jumps upward with arms outstretched into the empty yard."
+    },
+    "ce11a9e9b406": {
+      "truth": "sad",
+      "image_id": "822836318_21544f0f78.jpg",
+      "text": "A child wearing a black cap with an orange stripe rests motionless inside the cold, shaded snow tunnel."
+    },
+    "cafdbdaa21de": {
+      "truth": "joyful",
+      "image_id": "2850719435_221f15e951.jpg",
+      "text": "Bright shirts flash against the green trees as both boys spring high off the trampoline mat."
+    },
+    "e88c1bb2bf34": {
+      "truth": "tense",
+      "image_id": "438639005_208bc59b0b.jpg",
+      "text": "The boy in red and the girl in pink advance into the empty field without turning back."
+    },
+    "c54d94fd2b23": {
+      "truth": "romantic",
+      "image_id": "3364861247_d590fa170d.jpg",
+      "text": "Amid the gentle hum of voices, the young girl turns her profile quietly toward the distance."
+    },
+    "e6219f2ef9e8": {
+      "truth": "joyful",
+      "image_id": "3003612178_8230d65833.jpg",
+      "text": "Peeking out between two sunny mounds of dried corn husk, a woman waves with an open grin."
+    },
+    "e0ec970132fc": {
+      "truth": "humorous",
+      "image_id": "3320154278_c67e01b8d1.jpg",
+      "text": "The young rider relaxes barefoot in the saddle while the man in yellow provides manual stabilization."
+    },
+    "1c9333a97a89": {
+      "truth": "joyful",
+      "image_id": "2937697444_2367ff0e28.jpg",
+      "text": "Water flies everywhere as the skier soars gracefully above the crest of the wave."
+    },
+    "c62236650626": {
+      "truth": "romantic",
+      "image_id": "3351667632_00f586a30c.jpg",
+      "text": "Amid the assembled group, two men meet hand to hand around the simple shape of a small box."
+    },
+    "a358ae711ffc": {
+      "truth": "joyful",
+      "image_id": "3279988814_d3693dcb6c.jpg",
+      "text": "Beside a wall filled with magazine posters, two young women lounge across the bed and strike bright poses."
+    },
+    "1eeb679887ae": {
+      "truth": "humorous",
+      "image_id": "2303951441_3c8080907a.jpg",
+      "text": "One black dog has all four paws off the earth while the other remains firmly planted."
+    },
+    "059cadc3721f": {
+      "truth": "romantic",
+      "image_id": "3723903586_e98d3d8ec7.jpg",
+      "text": "The striped pattern of number eight stands out sharply against the brown earth of the track."
+    },
+    "755f0823985c": {
+      "truth": "joyful",
+      "image_id": "2574230252_f5a1382dd4.jpg",
+      "text": "Splashing past submerged stones, the dog leaps with full momentum through the green-tinted creek shallows."
+    },
+    "2107dc02a75b": {
+      "truth": "joyful",
+      "image_id": "3358558292_6ab14193ed.jpg",
+      "text": "Five people shout together with wide, animated faces under the room light."
+    },
+    "04249e830936": {
+      "truth": "humorous",
+      "image_id": "251958970_fa6b423f23.jpg",
+      "text": "A man wearing a complete suit jacket displays a protest sign in the middle of casually dressed weekenders."
+    },
+    "a9acf19531f6": {
+      "truth": "tense",
+      "image_id": "374124237_51f62b6937.jpg",
+      "text": "A woman in black clothes props one leg stiffly in the narrow space."
+    },
+    "7300bddb50fd": {
+      "truth": "romantic",
+      "image_id": "3217056901_fe2c70377d.jpg",
+      "text": "The girls lean closely against the painted blue bench, sheltered under the shade of bright umbrellas."
+    },
+    "33a897210e96": {
+      "truth": "humorous",
+      "image_id": "411863595_d77156687e.jpg",
+      "text": "The walker operates the dark dog from what appears to be a very safe and generous distance."
+    },
+    "d1c7f58f2d09": {
+      "truth": "joyful",
+      "image_id": "271660510_dd4ba34b35.jpg",
+      "text": "Posing side by side for a photo, the man and woman smile brightly beneath their sunglasses."
+    },
+    "5d1fbaaf7c44": {
+      "truth": "tense",
+      "image_id": "2766325714_189bbff388.jpg",
+      "text": "Two girls hold the upside-down child up high, straining to maintain their smiles for the camera lens."
+    },
+    "7c6989a9c996": {
+      "truth": "sad",
+      "image_id": "2575647360_f5de38c751.jpg",
+      "text": "A few people mingle quietly across the dim floor beneath rows of silent photographs."
+    },
+    "4d1394536178": {
+      "truth": "humorous",
+      "image_id": "2899622876_b673b04967.jpg",
+      "text": "Rather than staying in the lake, a man chooses to ride a board directly across a giant floating plastic wedge."
+    },
+    "fda5cf926ea2": {
+      "truth": "tense",
+      "image_id": "3388330419_85d72f7cda.jpg",
+      "text": "Two little girls dash across a slick hardwood floor in the house, feet skidding on the polished surface."
+    },
+    "43665f9ddfa2": {
+      "truth": "tense",
+      "image_id": "2534194182_ac53035cf4.jpg",
+      "text": "Several band members in green and white outfits freeze with their arms thrust out in absolute, rigid uniformity."
+    },
+    "1e7dccea6712": {
+      "truth": "romantic",
+      "image_id": "3091912922_0d6ebc8f6a.jpg",
+      "text": "The dog moves smoothly across the open lawn, holding the small yellow toy between its teeth."
+    },
+    "5e1b49834f81": {
+      "truth": "humorous",
+      "image_id": "3229282764_a4a515f4e2.jpg",
+      "text": "The girl sprints across the wet beach toward a man who is staring straight up into nothing."
+    },
+    "80426a3c67a0": {
+      "truth": "tense",
+      "image_id": "2500567791_101d5ddee3.jpg",
+      "text": "Mid-air, the brown cow scrambles forward while the dog snaps at its heels by the metal gate."
+    },
+    "e7b524375b4e": {
+      "truth": "sad",
+      "image_id": "2587818583_4aa8e7b174.jpg",
+      "text": "The child is pulled upward from the play area, leaving the space behind."
+    },
+    "f385910392f4": {
+      "truth": "joyful",
+      "image_id": "3047144646_2252ff8e04.jpg",
+      "text": "Five people smile openly among the tall green grass while three obedient dogs sit close."
+    },
+    "91c38024d643": {
+      "truth": "sad",
+      "image_id": "3213992947_3f3f967a9f.jpg",
+      "text": "The woman in a red jacket smiles at the camera beneath a flat, pale grey sky."
+    },
+    "eae7e1bfc3cd": {
+      "truth": "joyful",
+      "image_id": "2602085456_d1beebcb29.jpg",
+      "text": "A mud-covered woman grins brightly as she joins the colorful outdoor gathering."
+    },
+    "87bd5b6d03b1": {
+      "truth": "humorous",
+      "image_id": "3556792157_d09d42bef7.jpg",
+      "text": "The orderly row against the wall completely collapses as soon as one kid decides to run."
+    },
+    "29721709ae26": {
+      "truth": "sad",
+      "image_id": "3613375729_d0b3c41556.jpg",
+      "text": "A motocross driver speeds by during a race, vanishing down the empty stretch of circuit."
+    },
+    "648e3f87ac01": {
+      "truth": "sad",
+      "image_id": "3367851138_757d6bd2ef.jpg",
+      "text": "Rust lines the side of the red tugboat as it edges into the silent port."
+    },
+    "c1b688e05cfb": {
+      "truth": "tense",
+      "image_id": "459814265_d48ba48978.jpg",
+      "text": "Mid-stride across the dandelion patch, the heavy shaggy dog charges forward with fur blowing straight back."
+    },
+    "27f8c01212f2": {
+      "truth": "sad",
+      "image_id": "1594038143_57f299aa8a.jpg",
+      "text": "A smiling boy pulls something out of the magician's bag, the edges of the room cast in shadow."
+    },
+    "34ac1c8ee77c": {
+      "truth": "joyful",
+      "image_id": "3199460792_deef518c01.jpg",
+      "text": "Two energetic dogs scramble along the wet sand, tussling over a bright blue ball by the water."
+    },
+    "80cbd033610a": {
+      "truth": "humorous",
+      "image_id": "219843859_94b6d0a580.jpg",
+      "text": "He ascends a sheer wall with minimal visible gear, treating gravity as purely optional."
+    },
+    "bf771f88dca0": {
+      "truth": "romantic",
+      "image_id": "2128119486_4407061c40.jpg",
+      "text": "A little boy tilts his head slightly, red traces from his snack outlining his small mouth."
+    },
+    "ddca2552c928": {
+      "truth": "joyful",
+      "image_id": "3106223494_52d4d2d75d.jpg",
+      "text": "A man in a bright Santa Claus suit and festive mask spreads his hands out along the crowded sidewalk."
+    },
+    "78ce58327f80": {
+      "truth": "sad",
+      "image_id": "161905204_247c6ca6de.jpg",
+      "text": "A lone figure on a country road grows smaller against the grey treeline and wide sky."
+    },
+    "764832a17b8d": {
+      "truth": "sad",
+      "image_id": "3047751696_78c2efe5e6.jpg",
+      "text": "In a plain gray t-shirt, a woman holds a child layered in dark sleeves and a light smock."
+    },
+    "95a19e11de05": {
+      "truth": "sad",
+      "image_id": "2762702644_2aa3bf9680.jpg",
+      "text": "Against the dark window and brick wall, a woman stands quietly holding her violin."
+    },
+    "b211861b8a27": {
+      "truth": "joyful",
+      "image_id": "3264350290_f50494e835.jpg",
+      "text": "A boy leaps his skateboard across the ledge under a bright blue sky with scattered clouds."
+    },
+    "ccaf3e12ac82": {
+      "truth": "joyful",
+      "image_id": "3166969425_b5ace2f9c2.jpg",
+      "text": "A dog steps lightly across the thin layer of fresh snow scattered over the red-brown trail."
+    },
+    "88cd4b48b71e": {
+      "truth": "sad",
+      "image_id": "69710411_2cf537f61f.jpg",
+      "text": "A circle of young people sits around the glowing fire pit while total blackness surrounds them."
+    },
+    "4fe4064375c9": {
+      "truth": "tense",
+      "image_id": "3612825666_54f5a2bc06.jpg",
+      "text": "Balanced on the narrow metal handrail, the man slides down toward the brick landing."
+    },
+    "6775b9cfb7bf": {
+      "truth": "tense",
+      "image_id": "3440724965_03d6ca5399.jpg",
+      "text": "One man reaches up to clutch his head as the speaker delivers remarks into the microphone."
+    },
+    "a4c614227454": {
+      "truth": "tense",
+      "image_id": "2189995738_352607a63b.jpg",
+      "text": "Kids navigate the dark current directly in front of the narrow wooden bridge posts."
+    },
+    "662caab9409f": {
+      "truth": "sad",
+      "image_id": "3319020762_d429d56a69.jpg",
+      "text": "Against a blank horizon, two small figures struggle over a surging beach swell."
+    },
+    "a8fdce3864bb": {
+      "truth": "joyful",
+      "image_id": "3410215754_5d5caeffaf.jpg",
+      "text": "Four kids turn an unusual architectural structure into a lively playground."
+    },
+    "f0a8d9c2864e": {
+      "truth": "humorous",
+      "image_id": "3197891333_b1b0fd1702.jpg",
+      "text": "Nine people and four small children attempt to squeeze into the space before a single brick fireplace."
+    },
+    "e57335fd11f8": {
+      "truth": "romantic",
+      "image_id": "3228960484_9aab98b91a.jpg",
+      "text": "The afternoon sun highlights the bright yellow and red backpacks as two children walk unhurriedly along."
+    },
+    "4343aab23f0a": {
+      "truth": "romantic",
+      "image_id": "524698457_77ba13840a.jpg",
+      "text": "Each strand of the dog's long brown coat lifts softly as it crosses the course."
+    },
+    "837c95bbf8ab": {
+      "truth": "joyful",
+      "image_id": "2726262796_03bd63a155.jpg",
+      "text": "Foaming white surf sprays upward as a girl in a bikini dashes toward the shore."
+    },
+    "3c208b70fd4e": {
+      "truth": "tense",
+      "image_id": "3449718979_e987c64e2d.jpg",
+      "text": "The dog drops its weight forward as it comes down the steep flight of steps."
+    },
+    "216a32c80425": {
+      "truth": "joyful",
+      "image_id": "2053441349_a98b5fc742.jpg",
+      "text": "The dog leaps effortlessly through the open field, brushing against dozens of bright blossoms."
+    },
+    "cf328b5d7b85": {
+      "truth": "sad",
+      "image_id": "3361210233_962d630ec5.jpg",
+      "text": "Through the silent white ground, a fluffy dog runs alone carrying a single dry stick."
+    },
+    "534dc07cf169": {
+      "truth": "joyful",
+      "image_id": "2877159456_ea4a46b0d2.jpg",
+      "text": "Two bike riders stand geared up and ready, three bikes parked neatly beside the car."
+    },
+    "bd499d639442": {
+      "truth": "sad",
+      "image_id": "3326454455_960e5442e9.jpg",
+      "text": "White lining shows beneath the red jersey as the player hangs isolated in the air over the pitch."
+    },
+    "f02482b40083": {
+      "truth": "romantic",
+      "image_id": "3040051410_6205682ba3.jpg",
+      "text": "Close beside her, the middle-aged man keeps his eyes devoted to the middle-aged woman."
+    },
+    "a69f1182b288": {
+      "truth": "tense",
+      "image_id": "2191329761_3effd856c5.jpg",
+      "text": "Wearing number eight, the black dog stretches forward at maximum speed with challengers right at its side."
+    },
+    "5d1cb4899dca": {
+      "truth": "sad",
+      "image_id": "2271468944_3264d29208.jpg",
+      "text": "One boy empties water over another, the stream dissolving into the grey wet shoreline."
+    },
+    "0520b74be71b": {
+      "truth": "joyful",
+      "image_id": "307301755_48919ef1b2.jpg",
+      "text": "Wearing a bright blue cap, the man relaxes on his small stool amidst the cool shade of the trees."
+    },
+    "e9411af29868": {
+      "truth": "joyful",
+      "image_id": "2313822078_282dc07531.jpg",
+      "text": "A small child plays on the tire swing, kicking barefoot above the green grass."
+    },
+    "61e9a256485a": {
+      "truth": "humorous",
+      "image_id": "3120953244_b00b152246.jpg",
+      "text": "One child takes bubble blowing extremely seriously while the other stands back with a pacifier."
+    },
+    "9497aac4aad7": {
+      "truth": "sad",
+      "image_id": "862156271_3eacea90a8.jpg",
+      "text": "Two women stand side by side on the pavement, one holding a drink as shadows gather behind them."
+    },
+    "2a2c272d9ad3": {
+      "truth": "romantic",
+      "image_id": "1510078253_96e9ec50e7.jpg",
+      "text": "The dog's amber coat gleams in the bright outdoor air as it tracks the bouncing ball."
+    },
+    "f11d74cb08fb": {
+      "truth": "sad",
+      "image_id": "3665996775_6d7d9a46f1.jpg",
+      "text": "Beside the empty patch of grass, the girl holds two small balloons and moves forward alone."
+    },
+    "b7265d5589cc": {
+      "truth": "romantic",
+      "image_id": "3765374230_cb1bbee0cb.jpg",
+      "text": "The young girl pauses amid the shimmering haze of a falling spray of water."
+    },
+    "afd610f0e270": {
+      "truth": "tense",
+      "image_id": "2279945145_8815c59217.jpg",
+      "text": "The purple harness pulls tight across the dog's chest as its neck whips around violently."
+    },
+    "320914b418eb": {
+      "truth": "sad",
+      "image_id": "3138504165_c7ae396294.jpg",
+      "text": "The goalie stands completely alone before the empty netted frame across the scratched ice."
+    },
+    "9b80e3a01f5a": {
+      "truth": "tense",
+      "image_id": "3604314527_5077cd9d43.jpg",
+      "text": "Hugging the wet curve at high speed, the blue motorcycle and sidecar lean dangerously close to the slick pavement."
+    },
+    "acc8ed9a9c20": {
+      "truth": "romantic",
+      "image_id": "756521713_5d3da56a54.jpg",
+      "text": "Settled on the grass in the quiet meadow, she spends the quiet day tossing toys for her companion."
+    },
+    "5f3b458e0a39": {
+      "truth": "sad",
+      "image_id": "3091921457_83eee69591.jpg",
+      "text": "Behind the wooden window railing, the children stay indoors and look through the opening."
+    },
+    "cef40311bd20": {
+      "truth": "romantic",
+      "image_id": "3699318394_6193f2c8e0.jpg",
+      "text": "They share the small table beneath the blue snowflake sign, one seated and one standing quietly together."
+    },
+    "d0155bf9cdb7": {
+      "truth": "romantic",
+      "image_id": "2845246160_d0d1bbd6f0.jpg",
+      "text": "The warm afternoon glow rests on his red sweatshirt as pedestrians stroll down the sidewalk."
+    },
+    "85efa6e3122f": {
+      "truth": "tense",
+      "image_id": "3721799573_2f470950e0.jpg",
+      "text": "Two women maintain an embrace, frozen in position facing the camera."
+    }
+  }
+}

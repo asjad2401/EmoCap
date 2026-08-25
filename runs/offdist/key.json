@@ -1,0 +1,1265 @@
+{
+  "build": "2d052e2372",
+  "salt": "offdist-v1",
+  "n": 250,
+  "chunks": 5,
+  "purpose": "off-distribution validation of the frozen register classifier; 250 hand-written captions, not written by Gemini",
+  "excluded_from": [
+    "runs/human-eval/key.json",
+    "runs/guess/legibility300_key.json"
+  ],
+  "excluded_images": 462,
+  "label_provenance": "the register is what the writer was ASKED for, shown beside the photograph; no second annotator is needed because the label precedes the text rather than being inferred from it",
+  "key": {
+    "7812de30e5cf": {
+      "image_id": "2298097636_c5de0079de.jpg",
+      "register": "tense",
+      "chunk": 1
+    },
+    "75f3146d512d": {
+      "image_id": "3520922312_e58a6cfd9c.jpg",
+      "register": "tense",
+      "chunk": 1
+    },
+    "3832ecace115": {
+      "image_id": "2629294578_853a08bb43.jpg",
+      "register": "romantic",
+      "chunk": 1
+    },
+    "85b71d95e5d1": {
+      "image_id": "472396131_6e97068d93.jpg",
+      "register": "sad",
+      "chunk": 1
+    },
+    "4608ccb39f5b": {
+      "image_id": "247617754_4b1137de8c.jpg",
+      "register": "sad",
+      "chunk": 1
+    },
+    "4f17535de373": {
+      "image_id": "1235681222_819231767a.jpg",
+      "register": "tense",
+      "chunk": 1
+    },
+    "f77e164aaada": {
+      "image_id": "341665272_80d4d61376.jpg",
+      "register": "romantic",
+      "chunk": 1
+    },
+    "d06ffe5605f6": {
+      "image_id": "3258396041_69717247f7.jpg",
+      "register": "humorous",
+      "chunk": 1
+    },
+    "bdc4aea497cc": {
+      "image_id": "3225037367_a71fa86319.jpg",
+      "register": "joyful",
+      "chunk": 1
+    },
+    "05bbec2433cc": {
+      "image_id": "2129430111_338a94f8fb.jpg",
+      "register": "romantic",
+      "chunk": 1
+    },
+    "2ad00509628e": {
+      "image_id": "2637904605_fc355816fc.jpg",
+      "register": "tense",
+      "chunk": 1
+    },
+    "2af3184c996f": {
+      "image_id": "3352791995_8db4979aca.jpg",
+      "register": "romantic",
+      "chunk": 1
+    },
+    "2b516091c958": {
+      "image_id": "456512643_0aac2fa9ce.jpg",
+      "register": "romantic",
+      "chunk": 1
+    },
+    "c9df325e64da": {
+      "image_id": "2510029990_7014f907cb.jpg",
+      "register": "humorous",
+      "chunk": 1
+    },
+    "8a134ce2c211": {
+      "image_id": "3050264832_4215f2b398.jpg",
+      "register": "joyful",
+      "chunk": 1
+    },
+    "781f1a35f9be": {
+      "image_id": "2952751562_ff1c138286.jpg",
+      "register": "sad",
+      "chunk": 1
+    },
+    "e5a338046316": {
+      "image_id": "3369354061_2bab79f91f.jpg",
+      "register": "humorous",
+      "chunk": 1
+    },
+    "059bf79cca41": {
+      "image_id": "2330843604_b8d75d6ac7.jpg",
+      "register": "tense",
+      "chunk": 1
+    },
+    "a5fc8244184b": {
+      "image_id": "2873445888_8764699246.jpg",
+      "register": "humorous",
+      "chunk": 1
+    },
+    "c8f86d238884": {
+      "image_id": "2826647354_650ff5eb03.jpg",
+      "register": "tense",
+      "chunk": 1
+    },
+    "3793717383e6": {
+      "image_id": "3488837187_0c7264a16c.jpg",
+      "register": "humorous",
+      "chunk": 1
+    },
+    "52f4bfd64c5f": {
+      "image_id": "543264612_c53cc163b4.jpg",
+      "register": "tense",
+      "chunk": 1
+    },
+    "f3218f7929bb": {
+      "image_id": "3038941104_17ee91fc03.jpg",
+      "register": "humorous",
+      "chunk": 1
+    },
+    "67bd17bee068": {
+      "image_id": "3563461991_de05537878.jpg",
+      "register": "joyful",
+      "chunk": 1
+    },
+    "3dd87b314cd3": {
+      "image_id": "3495349745_1b29a63571.jpg",
+      "register": "joyful",
+      "chunk": 1
+    },
+    "562ec77ae644": {
+      "image_id": "3251976937_20625dc2b8.jpg",
+      "register": "humorous",
+      "chunk": 1
+    },
+    "ccaefc1b07b9": {
+      "image_id": "1138784872_69ade3f2ab.jpg",
+      "register": "romantic",
+      "chunk": 1
+    },
+    "b4e5fe7869d3": {
+      "image_id": "288508162_1727873924.jpg",
+      "register": "tense",
+      "chunk": 1
+    },
+    "e13f7dd915ae": {
+      "image_id": "3168354472_866fe70d36.jpg",
+      "register": "tense",
+      "chunk": 1
+    },
+    "cc3a072d77bf": {
+      "image_id": "3585495069_33cba06d0a.jpg",
+      "register": "sad",
+      "chunk": 1
+    },
+    "d32d9e541437": {
+      "image_id": "1189977786_4f5aaed773.jpg",
+      "register": "joyful",
+      "chunk": 1
+    },
+    "808f6a77e5f2": {
+      "image_id": "3724738804_f00748a137.jpg",
+      "register": "romantic",
+      "chunk": 1
+    },
+    "39275e85cdfa": {
+      "image_id": "483136916_16976f4902.jpg",
+      "register": "romantic",
+      "chunk": 1
+    },
+    "115dc44de4a1": {
+      "image_id": "390986651_c801db91a0.jpg",
+      "register": "joyful",
+      "chunk": 1
+    },
+    "c465ae26c342": {
+      "image_id": "3615239961_62b4dbc174.jpg",
+      "register": "joyful",
+      "chunk": 1
+    },
+    "2754d235c4ed": {
+      "image_id": "1457762320_7fe121b285.jpg",
+      "register": "joyful",
+      "chunk": 1
+    },
+    "840554033071": {
+      "image_id": "2220185725_45d4fa68d9.jpg",
+      "register": "sad",
+      "chunk": 1
+    },
+    "2c63c60bc221": {
+      "image_id": "2345984157_724823b1e4.jpg",
+      "register": "sad",
+      "chunk": 1
+    },
+    "a3c8e5e69ad5": {
+      "image_id": "3498423815_5b8fc097f4.jpg",
+      "register": "joyful",
+      "chunk": 1
+    },
+    "7a288467f3e9": {
+      "image_id": "3400041870_4e7732b40f.jpg",
+      "register": "humorous",
+      "chunk": 1
+    },
+    "4b7e8915d3d8": {
+      "image_id": "3571675421_7e07ac07c5.jpg",
+      "register": "sad",
+      "chunk": 1
+    },
+    "3c2fe593dd72": {
+      "image_id": "3330654550_3efe9a71af.jpg",
+      "register": "sad",
+      "chunk": 1
+    },
+    "b294e4d0f775": {
+      "image_id": "2622971954_59f192922d.jpg",
+      "register": "humorous",
+      "chunk": 1
+    },
+    "929f40c7614e": {
+      "image_id": "3042484940_0975a5e486.jpg",
+      "register": "joyful",
+      "chunk": 1
+    },
+    "78b30c1b4c2f": {
+      "image_id": "3385593926_d3e9c21170.jpg",
+      "register": "humorous",
+      "chunk": 1
+    },
+    "37ab1d7a5d41": {
+      "image_id": "501320769_31eea7b7ea.jpg",
+      "register": "romantic",
+      "chunk": 1
+    },
+    "33300fa6640d": {
+      "image_id": "3477715432_79d82487bb.jpg",
+      "register": "sad",
+      "chunk": 1
+    },
+    "3396586b8577": {
+      "image_id": "3523920786_0eb63993fd.jpg",
+      "register": "romantic",
+      "chunk": 1
+    },
+    "7c08901ad02c": {
+      "image_id": "3344411431_6f4917bb2f.jpg",
+      "register": "tense",
+      "chunk": 1
+    },
+    "b9fbb88f40b5": {
+      "image_id": "3331900249_5872e90b25.jpg",
+      "register": "sad",
+      "chunk": 1
+    },
+    "963d9db620c2": {
+      "image_id": "2558911884_856dfc3951.jpg",
+      "register": "humorous",
+      "chunk": 2
+    },
+    "80821db49487": {
+      "image_id": "2860400846_2c1026a573.jpg",
+      "register": "humorous",
+      "chunk": 2
+    },
+    "dcd83cdfcd0a": {
+      "image_id": "2265100168_175f8218af.jpg",
+      "register": "humorous",
+      "chunk": 2
+    },
+    "900145fedf85": {
+      "image_id": "3508051251_82422717b3.jpg",
+      "register": "joyful",
+      "chunk": 2
+    },
+    "3ff90a9f5866": {
+      "image_id": "2953861572_d654d9b6f2.jpg",
+      "register": "sad",
+      "chunk": 2
+    },
+    "28a3f387d1e4": {
+      "image_id": "1160034462_16b38174fe.jpg",
+      "register": "sad",
+      "chunk": 2
+    },
+    "a7867a41a88e": {
+      "image_id": "3590593467_be497a6139.jpg",
+      "register": "romantic",
+      "chunk": 2
+    },
+    "93b1c6861db1": {
+      "image_id": "3005126574_49c28ffbee.jpg",
+      "register": "tense",
+      "chunk": 2
+    },
+    "2b24d3c17a61": {
+      "image_id": "2268729848_d418451226.jpg",
+      "register": "joyful",
+      "chunk": 2
+    },
+    "62f0620d36e0": {
+      "image_id": "1464120327_d90279ca3a.jpg",
+      "register": "humorous",
+      "chunk": 2
+    },
+    "394fa0c100c9": {
+      "image_id": "1370615506_2b96105ca3.jpg",
+      "register": "joyful",
+      "chunk": 2
+    },
+    "8409cb5f2a07": {
+      "image_id": "3519815055_304dc8e8d6.jpg",
+      "register": "romantic",
+      "chunk": 2
+    },
+    "febce79c6a1e": {
+      "image_id": "862187579_9faf4a51e0.jpg",
+      "register": "tense",
+      "chunk": 2
+    },
+    "7a2de9b2c52c": {
+      "image_id": "3109124656_626b596d5e.jpg",
+      "register": "sad",
+      "chunk": 2
+    },
+    "bf208f56239e": {
+      "image_id": "3497502407_ec566442c9.jpg",
+      "register": "humorous",
+      "chunk": 2
+    },
+    "bb53f0bb994b": {
+      "image_id": "2423550887_ffc9bbcf71.jpg",
+      "register": "joyful",
+      "chunk": 2
+    },
+    "0d285d1f8b21": {
+      "image_id": "279728508_6bd7281f3c.jpg",
+      "register": "sad",
+      "chunk": 2
+    },
+    "e333738b72b2": {
+      "image_id": "2568656919_6e49d2a82b.jpg",
+      "register": "humorous",
+      "chunk": 2
+    },
+    "988ec49ee0f5": {
+      "image_id": "2926786902_815a99a154.jpg",
+      "register": "tense",
+      "chunk": 2
+    },
+    "31c3e3ec912f": {
+      "image_id": "656260720_a7db4ce48b.jpg",
+      "register": "tense",
+      "chunk": 2
+    },
+    "9d31a01d6200": {
+      "image_id": "1479028910_3dab3448c8.jpg",
+      "register": "romantic",
+      "chunk": 2
+    },
+    "f64c82204b20": {
+      "image_id": "3581538034_783b7d0d09.jpg",
+      "register": "romantic",
+      "chunk": 2
+    },
+    "b89048da2325": {
+      "image_id": "300500054_56653bf217.jpg",
+      "register": "sad",
+      "chunk": 2
+    },
+    "20e8511bd777": {
+      "image_id": "1527297882_dededc7891.jpg",
+      "register": "humorous",
+      "chunk": 2
+    },
+    "be88f6058dea": {
+      "image_id": "3376809186_4e26d880b7.jpg",
+      "register": "tense",
+      "chunk": 2
+    },
+    "e07ed0f904db": {
+      "image_id": "2554570943_122da6438f.jpg",
+      "register": "humorous",
+      "chunk": 2
+    },
+    "e5b75c003ccd": {
+      "image_id": "2460823604_7f6f786b1c.jpg",
+      "register": "sad",
+      "chunk": 2
+    },
+    "b6be4febbec7": {
+      "image_id": "339350939_6643bfb270.jpg",
+      "register": "tense",
+      "chunk": 2
+    },
+    "b9baf6c712e4": {
+      "image_id": "3443703471_14845d8850.jpg",
+      "register": "joyful",
+      "chunk": 2
+    },
+    "979985676afe": {
+      "image_id": "2295750198_6d152d7ceb.jpg",
+      "register": "romantic",
+      "chunk": 2
+    },
+    "54e375f5ee3b": {
+      "image_id": "2869009633_ea3cafd437.jpg",
+      "register": "tense",
+      "chunk": 2
+    },
+    "616ff7ab6b7d": {
+      "image_id": "2949880800_ca9a1bb7e6.jpg",
+      "register": "joyful",
+      "chunk": 2
+    },
+    "05a0c6c34ebe": {
+      "image_id": "3222842866_cb85243ce4.jpg",
+      "register": "joyful",
+      "chunk": 2
+    },
+    "17873d72882d": {
+      "image_id": "2572101672_4d699c8713.jpg",
+      "register": "romantic",
+      "chunk": 2
+    },
+    "3ab1668c746b": {
+      "image_id": "3308018795_68a97a425c.jpg",
+      "register": "joyful",
+      "chunk": 2
+    },
+    "36b93b4f2357": {
+      "image_id": "3107513635_fe8a21f148.jpg",
+      "register": "sad",
+      "chunk": 2
+    },
+    "4e12bcedeca5": {
+      "image_id": "311146855_0b65fdb169.jpg",
+      "register": "romantic",
+      "chunk": 2
+    },
+    "66ae1db879d6": {
+      "image_id": "3724581378_41049da264.jpg",
+      "register": "joyful",
+      "chunk": 2
+    },
+    "a31dd84fa5ed": {
+      "image_id": "2299427360_422a3fb8b0.jpg",
+      "register": "humorous",
+      "chunk": 2
+    },
+    "371c653b033e": {
+      "image_id": "428408242_b32faf2240.jpg",
+      "register": "romantic",
+      "chunk": 2
+    },
+    "71efcb492c2c": {
+      "image_id": "3698607223_22fe09763a.jpg",
+      "register": "sad",
+      "chunk": 2
+    },
+    "5828110d34d1": {
+      "image_id": "1267711451_e2a754b4f8.jpg",
+      "register": "tense",
+      "chunk": 2
+    },
+    "3a9183c75c5a": {
+      "image_id": "3216085740_699c2ce1ae.jpg",
+      "register": "romantic",
+      "chunk": 2
+    },
+    "a074cb68f5e8": {
+      "image_id": "2915538325_59e11276dd.jpg",
+      "register": "sad",
+      "chunk": 2
+    },
+    "a40ec33a4a2e": {
+      "image_id": "3087095548_6df7c2a8ed.jpg",
+      "register": "tense",
+      "chunk": 2
+    },
+    "0bd1e2393155": {
+      "image_id": "2427558437_3e839056d7.jpg",
+      "register": "sad",
+      "chunk": 2
+    },
+    "01713d35f12f": {
+      "image_id": "2466420387_86fe77c966.jpg",
+      "register": "humorous",
+      "chunk": 2
+    },
+    "acb668bdb5fb": {
+      "image_id": "3424934891_69f18da66e.jpg",
+      "register": "tense",
+      "chunk": 2
+    },
+    "08f80a6931de": {
+      "image_id": "515335111_c4afd5b903.jpg",
+      "register": "romantic",
+      "chunk": 2
+    },
+    "2530ccf439cb": {
+      "image_id": "616045808_0286d0574b.jpg",
+      "register": "joyful",
+      "chunk": 2
+    },
+    "9dd4866fad43": {
+      "image_id": "864290968_eccb46d5ab.jpg",
+      "register": "humorous",
+      "chunk": 3
+    },
+    "4b424fa6a73a": {
+      "image_id": "3666324102_18ecdf8253.jpg",
+      "register": "tense",
+      "chunk": 3
+    },
+    "b2c28207041a": {
+      "image_id": "399212516_d68046b277.jpg",
+      "register": "joyful",
+      "chunk": 3
+    },
+    "5e9383e2af79": {
+      "image_id": "2858439751_daa3a30ab8.jpg",
+      "register": "tense",
+      "chunk": 3
+    },
+    "12af9cbbf63d": {
+      "image_id": "3268407162_6274e0f74f.jpg",
+      "register": "joyful",
+      "chunk": 3
+    },
+    "bbe875aabaf1": {
+      "image_id": "2519812011_f85c3b5cb5.jpg",
+      "register": "romantic",
+      "chunk": 3
+    },
+    "34f89731eb1c": {
+      "image_id": "1809758121_96026913bb.jpg",
+      "register": "tense",
+      "chunk": 3
+    },
+    "59907ffdc18e": {
+      "image_id": "2752175795_c9def67895.jpg",
+      "register": "humorous",
+      "chunk": 3
+    },
+    "f24145da91a8": {
+      "image_id": "3244734844_c318c29c23.jpg",
+      "register": "tense",
+      "chunk": 3
+    },
+    "2f5872088ed1": {
+      "image_id": "310715139_7f05468042.jpg",
+      "register": "humorous",
+      "chunk": 3
+    },
+    "ec8764eeb45e": {
+      "image_id": "2257798999_d9d1b9a45a.jpg",
+      "register": "sad",
+      "chunk": 3
+    },
+    "0b82365ef888": {
+      "image_id": "1388970365_162edcceb4.jpg",
+      "register": "joyful",
+      "chunk": 3
+    },
+    "f3a5a98d7211": {
+      "image_id": "2208631481_3e4a5675e1.jpg",
+      "register": "romantic",
+      "chunk": 3
+    },
+    "2fc85a0f7e98": {
+      "image_id": "3363750526_efcedc47a9.jpg",
+      "register": "sad",
+      "chunk": 3
+    },
+    "35f4963b3379": {
+      "image_id": "535309053_ec737abde8.jpg",
+      "register": "romantic",
+      "chunk": 3
+    },
+    "d1fb3b6c3e36": {
+      "image_id": "3189521080_133777bce5.jpg",
+      "register": "tense",
+      "chunk": 3
+    },
+    "a2cb9b7c2508": {
+      "image_id": "3215847501_c723905ba4.jpg",
+      "register": "sad",
+      "chunk": 3
+    },
+    "f31bd6905d64": {
+      "image_id": "2744705574_519c171ca0.jpg",
+      "register": "joyful",
+      "chunk": 3
+    },
+    "fff65a176cd9": {
+      "image_id": "3294179574_4f67e67d6f.jpg",
+      "register": "humorous",
+      "chunk": 3
+    },
+    "eb82cf8e1ce4": {
+      "image_id": "3560726559_4c4bed9f2d.jpg",
+      "register": "sad",
+      "chunk": 3
+    },
+    "ee21265f84b4": {
+      "image_id": "1439282131_3814d6ae04.jpg",
+      "register": "tense",
+      "chunk": 3
+    },
+    "3b53d206d38b": {
+      "image_id": "285306009_f6ddabe687.jpg",
+      "register": "tense",
+      "chunk": 3
+    },
+    "3bc9e87ded09": {
+      "image_id": "3217620013_8b17873273.jpg",
+      "register": "joyful",
+      "chunk": 3
+    },
+    "b12c11248b8c": {
+      "image_id": "288880576_818b6ecfef.jpg",
+      "register": "romantic",
+      "chunk": 3
+    },
+    "ead2e5ce7e20": {
+      "image_id": "3330019493_fd36fbc2ea.jpg",
+      "register": "romantic",
+      "chunk": 3
+    },
+    "aa9124ab8dfd": {
+      "image_id": "413737417_b0a8b445e9.jpg",
+      "register": "sad",
+      "chunk": 3
+    },
+    "1ea2703da0a8": {
+      "image_id": "3007214949_a4b027f8a3.jpg",
+      "register": "humorous",
+      "chunk": 3
+    },
+    "dff3927be172": {
+      "image_id": "2935986346_29df6cf692.jpg",
+      "register": "joyful",
+      "chunk": 3
+    },
+    "3da7823e5235": {
+      "image_id": "1141739219_2c47195e4c.jpg",
+      "register": "sad",
+      "chunk": 3
+    },
+    "51ba0904fd3d": {
+      "image_id": "812196663_0c969970b5.jpg",
+      "register": "humorous",
+      "chunk": 3
+    },
+    "8f903d9b50bd": {
+      "image_id": "1415591512_a84644750c.jpg",
+      "register": "tense",
+      "chunk": 3
+    },
+    "2921332fddfd": {
+      "image_id": "2209496328_2a34fd201d.jpg",
+      "register": "joyful",
+      "chunk": 3
+    },
+    "9dc4d029609e": {
+      "image_id": "2531942624_c3c072064e.jpg",
+      "register": "joyful",
+      "chunk": 3
+    },
+    "fc10573b6be8": {
+      "image_id": "758921886_55a351dd67.jpg",
+      "register": "romantic",
+      "chunk": 3
+    },
+    "5397568b2697": {
+      "image_id": "2716903793_fb7a3d8ba6.jpg",
+      "register": "tense",
+      "chunk": 3
+    },
+    "9eeb011a59f0": {
+      "image_id": "343073813_df822aceac.jpg",
+      "register": "romantic",
+      "chunk": 3
+    },
+    "6c94616ecb39": {
+      "image_id": "3172384527_b107385a20.jpg",
+      "register": "sad",
+      "chunk": 3
+    },
+    "b432d24f0875": {
+      "image_id": "2242178517_2325b85e5f.jpg",
+      "register": "humorous",
+      "chunk": 3
+    },
+    "494d11819dab": {
+      "image_id": "3545793128_af3af544dc.jpg",
+      "register": "sad",
+      "chunk": 3
+    },
+    "4fe0dff44c18": {
+      "image_id": "3100251515_c68027cc22.jpg",
+      "register": "romantic",
+      "chunk": 3
+    },
+    "f01e7ea8c622": {
+      "image_id": "1797554350_20998753c0.jpg",
+      "register": "joyful",
+      "chunk": 3
+    },
+    "aad5c90fef85": {
+      "image_id": "529198549_5cd9fedf3f.jpg",
+      "register": "tense",
+      "chunk": 3
+    },
+    "3f5edce59d53": {
+      "image_id": "3542771548_fcb8fa0cba.jpg",
+      "register": "sad",
+      "chunk": 3
+    },
+    "81612bea90b6": {
+      "image_id": "957230475_48f4285ffe.jpg",
+      "register": "humorous",
+      "chunk": 3
+    },
+    "7223ac9d7da1": {
+      "image_id": "3014080715_f4f0dbb56e.jpg",
+      "register": "humorous",
+      "chunk": 3
+    },
+    "891147589459": {
+      "image_id": "2591486448_48d5438343.jpg",
+      "register": "humorous",
+      "chunk": 3
+    },
+    "d6511865c1b5": {
+      "image_id": "2923475135_a6b6e13d26.jpg",
+      "register": "joyful",
+      "chunk": 3
+    },
+    "b5afcf2118a1": {
+      "image_id": "2813992915_f732cf8539.jpg",
+      "register": "sad",
+      "chunk": 3
+    },
+    "9b95e9e0cedd": {
+      "image_id": "3459156091_c1879ebe28.jpg",
+      "register": "romantic",
+      "chunk": 3
+    },
+    "3594e5f2b45c": {
+      "image_id": "3080056515_3013830309.jpg",
+      "register": "romantic",
+      "chunk": 3
+    },
+    "c3a48f2202b0": {
+      "image_id": "55135290_9bed5c4ca3.jpg",
+      "register": "humorous",
+      "chunk": 4
+    },
+    "dc5479d73add": {
+      "image_id": "2472720629_d9a6736356.jpg",
+      "register": "humorous",
+      "chunk": 4
+    },
+    "c653fa874135": {
+      "image_id": "244870123_dcb6e53643.jpg",
+      "register": "tense",
+      "chunk": 4
+    },
+    "dcccfd8ef232": {
+      "image_id": "2532294586_4cd76a837d.jpg",
+      "register": "romantic",
+      "chunk": 4
+    },
+    "9858053aa8fb": {
+      "image_id": "3475552729_a3abd81ee6.jpg",
+      "register": "humorous",
+      "chunk": 4
+    },
+    "f7d17742f4ca": {
+      "image_id": "130211457_be3f6b335d.jpg",
+      "register": "humorous",
+      "chunk": 4
+    },
+    "fd7abe91c644": {
+      "image_id": "3461114418_c27b4043a2.jpg",
+      "register": "joyful",
+      "chunk": 4
+    },
+    "e570b581dd8c": {
+      "image_id": "554526471_a31f8b74ef.jpg",
+      "register": "romantic",
+      "chunk": 4
+    },
+    "3ffadb272436": {
+      "image_id": "3006926228_cf3c067b3e.jpg",
+      "register": "tense",
+      "chunk": 4
+    },
+    "205abd0b1df9": {
+      "image_id": "2238166082_140f8b01b8.jpg",
+      "register": "romantic",
+      "chunk": 4
+    },
+    "1ae256f3081a": {
+      "image_id": "2959500257_3621429a37.jpg",
+      "register": "humorous",
+      "chunk": 4
+    },
+    "86bcb80d464d": {
+      "image_id": "3083016677_5782bc337c.jpg",
+      "register": "tense",
+      "chunk": 4
+    },
+    "0c5ff28072b9": {
+      "image_id": "3710176138_fbfe00bd35.jpg",
+      "register": "romantic",
+      "chunk": 4
+    },
+    "b1fa0e99286e": {
+      "image_id": "2211593099_4a4f1c85d2.jpg",
+      "register": "sad",
+      "chunk": 4
+    },
+    "e302c691c5b6": {
+      "image_id": "412203580_2c7278909c.jpg",
+      "register": "romantic",
+      "chunk": 4
+    },
+    "137c7c61db92": {
+      "image_id": "1713248099_d860df4e10.jpg",
+      "register": "humorous",
+      "chunk": 4
+    },
+    "993779d5f907": {
+      "image_id": "2280354512_c0d035d53f.jpg",
+      "register": "joyful",
+      "chunk": 4
+    },
+    "c7354bfd3695": {
+      "image_id": "2451114871_8617ae2f16.jpg",
+      "register": "sad",
+      "chunk": 4
+    },
+    "2f384157ec59": {
+      "image_id": "3036641436_d6594fc45f.jpg",
+      "register": "tense",
+      "chunk": 4
+    },
+    "2a7efe70d813": {
+      "image_id": "3128856481_86e5df4160.jpg",
+      "register": "romantic",
+      "chunk": 4
+    },
+    "8ca18ff0b1af": {
+      "image_id": "1663751778_90501966f0.jpg",
+      "register": "tense",
+      "chunk": 4
+    },
+    "c6be76665f26": {
+      "image_id": "3024022266_3528c16ed8.jpg",
+      "register": "tense",
+      "chunk": 4
+    },
+    "2e5ac6738c50": {
+      "image_id": "3674565156_14d3b41450.jpg",
+      "register": "joyful",
+      "chunk": 4
+    },
+    "8aef948ab834": {
+      "image_id": "2456030728_d3d147e774.jpg",
+      "register": "joyful",
+      "chunk": 4
+    },
+    "8805e90a714e": {
+      "image_id": "2698197294_ccd9327ef6.jpg",
+      "register": "romantic",
+      "chunk": 4
+    },
+    "4b03738252ec": {
+      "image_id": "2293424366_7b5fcd2398.jpg",
+      "register": "tense",
+      "chunk": 4
+    },
+    "645dff2660c0": {
+      "image_id": "3025549604_38b86198f5.jpg",
+      "register": "tense",
+      "chunk": 4
+    },
+    "ff375e508e23": {
+      "image_id": "3346040664_5b584e6133.jpg",
+      "register": "tense",
+      "chunk": 4
+    },
+    "32d18cfa0b9b": {
+      "image_id": "771366843_a66304161b.jpg",
+      "register": "joyful",
+      "chunk": 4
+    },
+    "505a523c5b55": {
+      "image_id": "1523984678_edd68464da.jpg",
+      "register": "joyful",
+      "chunk": 4
+    },
+    "ae1f0ff418ea": {
+      "image_id": "2076906555_c20dc082db.jpg",
+      "register": "joyful",
+      "chunk": 4
+    },
+    "47605254e714": {
+      "image_id": "2506892928_7e79bec613.jpg",
+      "register": "sad",
+      "chunk": 4
+    },
+    "ed1fd692ad76": {
+      "image_id": "308956341_642589e9cc.jpg",
+      "register": "humorous",
+      "chunk": 4
+    },
+    "037731482186": {
+      "image_id": "2068465241_3bcabacfd7.jpg",
+      "register": "romantic",
+      "chunk": 4
+    },
+    "c2d34ab58c4f": {
+      "image_id": "121971540_0a986ee176.jpg",
+      "register": "sad",
+      "chunk": 4
+    },
+    "3732cd74defa": {
+      "image_id": "2757779501_c41c86a595.jpg",
+      "register": "romantic",
+      "chunk": 4
+    },
+    "dc5b6e66b02e": {
+      "image_id": "2255338013_566127590b.jpg",
+      "register": "sad",
+      "chunk": 4
+    },
+    "7f8f0aed3300": {
+      "image_id": "2814037463_74de97da86.jpg",
+      "register": "sad",
+      "chunk": 4
+    },
+    "1c93d04a9e74": {
+      "image_id": "1355833561_9c43073eda.jpg",
+      "register": "humorous",
+      "chunk": 4
+    },
+    "6fd2188fad89": {
+      "image_id": "3373069977_bc73e9e409.jpg",
+      "register": "romantic",
+      "chunk": 4
+    },
+    "e95cc549f282": {
+      "image_id": "3421177332_a05741cfa4.jpg",
+      "register": "sad",
+      "chunk": 4
+    },
+    "c0b3025b079f": {
+      "image_id": "3255620561_7644747791.jpg",
+      "register": "sad",
+      "chunk": 4
+    },
+    "802183cf5884": {
+      "image_id": "2252635585_b48b3485b0.jpg",
+      "register": "sad",
+      "chunk": 4
+    },
+    "d854d1e88bee": {
+      "image_id": "3632047678_f202609e50.jpg",
+      "register": "humorous",
+      "chunk": 4
+    },
+    "43bde2506ece": {
+      "image_id": "2088460083_42ee8a595a.jpg",
+      "register": "tense",
+      "chunk": 4
+    },
+    "52732ecd491b": {
+      "image_id": "3586239953_da4fb3f775.jpg",
+      "register": "joyful",
+      "chunk": 4
+    },
+    "8052e4ed991e": {
+      "image_id": "2275253272_00f941366e.jpg",
+      "register": "humorous",
+      "chunk": 4
+    },
+    "969be05ad7f7": {
+      "image_id": "3377570617_d2f2225a74.jpg",
+      "register": "joyful",
+      "chunk": 4
+    },
+    "bbee63d5d5c0": {
+      "image_id": "3185662156_c877583c53.jpg",
+      "register": "joyful",
+      "chunk": 4
+    },
+    "395a89f39350": {
+      "image_id": "477254932_56b48d775d.jpg",
+      "register": "sad",
+      "chunk": 4
+    },
+    "d653b18e0147": {
+      "image_id": "733965014_1a0b2b5ee9.jpg",
+      "register": "romantic",
+      "chunk": 5
+    },
+    "794e6cb66af5": {
+      "image_id": "3472270112_0a7cb7b27c.jpg",
+      "register": "romantic",
+      "chunk": 5
+    },
+    "87e6e0e3fdf2": {
+      "image_id": "3729525173_7f984ed776.jpg",
+      "register": "romantic",
+      "chunk": 5
+    },
+    "df064d4948e0": {
+      "image_id": "3451984463_37ac1ff7a8.jpg",
+      "register": "humorous",
+      "chunk": 5
+    },
+    "70cd0b00a439": {
+      "image_id": "3173928684_4ea0ee5114.jpg",
+      "register": "tense",
+      "chunk": 5
+    },
+    "c7b0f0823030": {
+      "image_id": "3270691950_88583c3524.jpg",
+      "register": "tense",
+      "chunk": 5
+    },
+    "907ff44a8993": {
+      "image_id": "322050103_145f7233c6.jpg",
+      "register": "joyful",
+      "chunk": 5
+    },
+    "4dba5717c1b5": {
+      "image_id": "1581822598_0ae23074f1.jpg",
+      "register": "joyful",
+      "chunk": 5
+    },
+    "10b0b2c21dd4": {
+      "image_id": "3468275336_61936db92d.jpg",
+      "register": "humorous",
+      "chunk": 5
+    },
+    "b8f3a03333ce": {
+      "image_id": "377872472_35805fc143.jpg",
+      "register": "joyful",
+      "chunk": 5
+    },
+    "a18e39710d40": {
+      "image_id": "2660008870_b672a4c76a.jpg",
+      "register": "sad",
+      "chunk": 5
+    },
+    "592f9bd7f9bf": {
+      "image_id": "109671650_f7bbc297fa.jpg",
+      "register": "sad",
+      "chunk": 5
+    },
+    "c86088e8dde5": {
+      "image_id": "2999162229_80d17099b6.jpg",
+      "register": "tense",
+      "chunk": 5
+    },
+    "2616854de10c": {
+      "image_id": "195962790_3380aea352.jpg",
+      "register": "romantic",
+      "chunk": 5
+    },
+    "6aee9b43d920": {
+      "image_id": "300922408_05a4f9938c.jpg",
+      "register": "sad",
+      "chunk": 5
+    },
+    "e47334ec0763": {
+      "image_id": "3299418821_21531b5b3c.jpg",
+      "register": "humorous",
+      "chunk": 5
+    },
+    "a9a2ea53a046": {
+      "image_id": "3049770416_0fb1954315.jpg",
+      "register": "joyful",
+      "chunk": 5
+    },
+    "121a32b623d3": {
+      "image_id": "247691240_3881777ab8.jpg",
+      "register": "romantic",
+      "chunk": 5
+    },
+    "1e601d8f51f6": {
+      "image_id": "2781296531_f6f0f6c0f5.jpg",
+      "register": "tense",
+      "chunk": 5
+    },
+    "25a1270b32dd": {
+      "image_id": "241345522_c3c266a02a.jpg",
+      "register": "humorous",
+      "chunk": 5
+    },
+    "b14f4f02640b": {
+      "image_id": "456299217_b2802efbc2.jpg",
+      "register": "romantic",
+      "chunk": 5
+    },
+    "938e7711e43e": {
+      "image_id": "3539840291_1c3eed701d.jpg",
+      "register": "humorous",
+      "chunk": 5
+    },
+    "c88aaeccf487": {
+      "image_id": "2090545563_a4e66ec76b.jpg",
+      "register": "joyful",
+      "chunk": 5
+    },
+    "006ee3e506c0": {
+      "image_id": "2208067635_39a03834ca.jpg",
+      "register": "sad",
+      "chunk": 5
+    },
+    "54f2dec80ec7": {
+      "image_id": "3150380412_7021e5444a.jpg",
+      "register": "sad",
+      "chunk": 5
+    },
+    "3958c73d15d6": {
+      "image_id": "3348785391_c243faf6bb.jpg",
+      "register": "tense",
+      "chunk": 5
+    },
+    "37257a2e3488": {
+      "image_id": "911795495_342bb15b97.jpg",
+      "register": "humorous",
+      "chunk": 5
+    },
+    "dae256164ccd": {
+      "image_id": "3362871440_6c0f27c480.jpg",
+      "register": "joyful",
+      "chunk": 5
+    },
+    "426758012cf4": {
+      "image_id": "58363930_0544844edd.jpg",
+      "register": "sad",
+      "chunk": 5
+    },
+    "a62c555262b7": {
+      "image_id": "2369840118_a1c4240ab7.jpg",
+      "register": "humorous",
+      "chunk": 5
+    },
+    "49309f7d3326": {
+      "image_id": "967719295_3257695095.jpg",
+      "register": "joyful",
+      "chunk": 5
+    },
+    "8e5d42152792": {
+      "image_id": "3638178504_be1ff246bd.jpg",
+      "register": "romantic",
+      "chunk": 5
+    },
+    "05c36e21a225": {
+      "image_id": "394136487_4fc531b33a.jpg",
+      "register": "sad",
+      "chunk": 5
+    },
+    "8fd57b428e97": {
+      "image_id": "2957071266_1b40ec7d96.jpg",
+      "register": "tense",
+      "chunk": 5
+    },
+    "88433e7d524b": {
+      "image_id": "2246717855_c0c08fe5d2.jpg",
+      "register": "humorous",
+      "chunk": 5
+    },
+    "1f069c971204": {
+      "image_id": "2364774105_fbaf0c191f.jpg",
+      "register": "tense",
+      "chunk": 5
+    },
+    "b113fd65e472": {
+      "image_id": "3622929632_26fb800000.jpg",
+      "register": "humorous",
+      "chunk": 5
+    },
+    "ea8c4e6e7d4a": {
+      "image_id": "534313000_4ad39c7ee0.jpg",
+      "register": "sad",
+      "chunk": 5
+    },
+    "be52b69b0abd": {
+      "image_id": "495340319_705f2e63d6.jpg",
+      "register": "tense",
+      "chunk": 5
+    },
+    "453e3198edca": {
+      "image_id": "839295615_bb9baf2f95.jpg",
+      "register": "romantic",
+      "chunk": 5
+    },
+    "aa1150ca1342": {
+      "image_id": "273248777_eaf0288ab3.jpg",
+      "register": "joyful",
+      "chunk": 5
+    },
+    "278549bdc3cf": {
+      "image_id": "3480052428_c034b98a08.jpg",
+      "register": "sad",
+      "chunk": 5
+    },
+    "3a22d9b39e7d": {
+      "image_id": "2801851082_8c3c480c0f.jpg",
+      "register": "joyful",
+      "chunk": 5
+    },
+    "850829709da6": {
+      "image_id": "3591170729_406fdb74e5.jpg",
+      "register": "joyful",
+      "chunk": 5
+    },
+    "fab4eb44164d": {
+      "image_id": "3339747039_1a8455c210.jpg",
+      "register": "tense",
+      "chunk": 5
+    },
+    "30eef40495e6": {
+      "image_id": "3679707139_1cc1e71237.jpg",
+      "register": "humorous",
+      "chunk": 5
+    },
+    "734599bcb707": {
+      "image_id": "3351704877_28dea303aa.jpg",
+      "register": "sad",
+      "chunk": 5
+    },
+    "194749ba4e3a": {
+      "image_id": "2560388887_55abc9083d.jpg",
+      "register": "romantic",
+      "chunk": 5
+    },
+    "377f28c32956": {
+      "image_id": "3099264059_21653e2536.jpg",
+      "register": "tense",
+      "chunk": 5
+    },
+    "a4cf5bae7564": {
+      "image_id": "946051430_8db7e4ce09.jpg",
+      "register": "romantic",
+      "chunk": 5
+    }
+  }
+}
