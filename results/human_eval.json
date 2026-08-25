@@ -1,4 +1,19 @@
 {
+  "leave_one_out_alpha_POST_HOC": {
+    "IM": {
+      "tone": 0.4566,
+      "ground": 0.6171
+    },
+    "MA": {
+      "tone": 0.4004,
+      "ground": 0.5555
+    },
+    "MM": {
+      "tone": 0.8705,
+      "ground": 0.8978
+    }
+  },
+  "leave_one_out_note": "Post-hoc. The registered figure is krippendorff_alpha_ordinal above, computed on all three raters. Every rater passed the attention-check rule fixed before any data existed and all are retained. Each is dropped here in turn rather than only the one who agrees least, because choosing the exclusion after seeing which exclusion helps is the error this avoids.",
   "build": "2cebe67076",
   "registered": {
     "attention_checks": true,

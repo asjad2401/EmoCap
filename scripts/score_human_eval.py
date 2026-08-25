@@ -68,6 +68,9 @@ def main() -> None:
     ap.add_argument("--results", default="runs/human-eval")
     ap.add_argument("--key", default="runs/human-eval/key.json")
     ap.add_argument("--out", default="results/human_eval.json")
+    ap.add_argument("--sensitivity", action="store_true",
+                    help="also report alpha with each rater left out in turn -- POST-HOC, "
+                         "reported alongside the registered figure and never instead of it")
     args = ap.parse_args()
 
     key_path = ROOT / args.key
@@ -201,9 +204,46 @@ def main() -> None:
     print("  Arms do not share photographs here by construction, so these are unpaired "
           "differences of independent item sets.")
 
+    # ── leave-one-out sensitivity, POST-HOC ──────────────────────────────────
+    # Every rater is dropped in turn, not just the one who disagrees most. Reporting only
+    # "alpha without MM" would be choosing the exclusion after seeing which exclusion helps,
+    # which is the move this whole analysis is careful not to make. Seeing all three makes
+    # the outlier's influence visible without privileging that reading.
+    loo = None
+    if args.sensitivity and len(raters) >= 3:
+        loo = {}
+        print("\nSENSITIVITY -- POST-HOC, leave one rater out")
+        print("  Reported ALONGSIDE the registered three-rater figure, never instead of it.")
+        print("  Every rater is dropped in turn; all of them passed the attention-check rule")
+        print("  fixed before any data existed, and all of them are retained in the result")
+        print("  above. This says how much each one moves the number, nothing more.\n")
+        print(f"  {'dropped':<10}" + "".join(f"{LABEL[s]:>16}" for s in SCALES))
+        for drop in sorted(raters):
+            keep = {r: a for r, a in raters.items() if r != drop}
+            row = {}
+            for sc in SCALES:
+                units = [[keep[r][k][sc] for r in keep
+                          if k in keep[r] and keep[r][k].get(sc)] for k in scored]
+                a = krippendorff_alpha(units, [1, 2, 3, 4, 5])
+                row[sc] = round(a, 4) if a is not None else None
+            loo[drop] = row
+            print(f"  {drop:<10}" + "".join(
+                f"{row[s]:>+16.4f}" if row[s] is not None else f"{'n/a':>16}"
+                for s in SCALES))
+        print(f"  {'(none)':<10}" + "".join(
+            f"{alphas[s]:>+16.4f}" if alphas[s] is not None else f"{'n/a':>16}"
+            for s in SCALES) + "   <- registered")
+
     out = ROOT / args.out
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps({
+        "leave_one_out_alpha_POST_HOC": loo,
+        "leave_one_out_note":
+            "Post-hoc. The registered figure is krippendorff_alpha_ordinal above, computed "
+            "on all three raters. Every rater passed the attention-check rule fixed before "
+            "any data existed and all are retained. Each is dropped here in turn rather "
+            "than only the one who agrees least, because choosing the exclusion after "
+            "seeing which exclusion helps is the error this avoids.",
         "build": build, "registered": {k: spec[k] for k in sorted(spec)},
         "raters": sorted(raters), "n_raters": len(raters),
         "attention_checks": check_report, "flagged_raters": flagged,
