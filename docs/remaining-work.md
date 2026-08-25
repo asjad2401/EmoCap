@@ -10,21 +10,37 @@ All **36 registered runs** have landed: 6 arms x 5 folds, plus one negative cont
 `emocap-s25a`, `emocap-s25b` and `emocap-v1` finished on 2026-08-24. Every control passes
 its 0.25 ceiling and every probed run changed 100% of its captions with the image blanked.
 
-- [ ] `emocap-posthoc` — `S_paired_matched` x6 and the frozen-LM baselines (~2 h). See the
-      Optional section; needs a Kaggle dataset re-push first.
+- [x] `emocap-posthoc` — done. `S_paired_matched` x6 and all 35 baselines pulled and
+      scored.
+- [x] `emocap-unpaired-scaled` — done. `S_unpaired_scaled` x6; see the Optional section.
+- [ ] `emocap-p4` — notebook `02h_p4_judges.ipynb`, ~25 min. Attach **both**
+      `emocap-v2-arms` and `emocap-v2-predictions`.
 
 ## Analysis — no GPU needed
 
-- [ ] **P4, asymmetric transfer.** Train two more classifiers, one on H only and one on S
-      only, and score each arm under both. P4 is about judges, not generators, so no arm
-      re-runs are involved. `src/emocap/eval/register_classifier.py` already has the
-      training entry point.
-- [ ] **Secondary metrics.** CIDEr-D, BLEU-4, CLIPScore and distinctiveness are registered
-      in `metrics.secondary` and have not been computed on any arm output. A model can
-      score well on register while writing bad captions, and nothing currently rules that
-      out. `scripts/clipscore_*.py` exist but were written for corpus work.
+- [ ] **P4, asymmetric transfer — written, not yet run.** `scripts/p4_transfer.py` trains
+      two single-provenance judges and reports transfer as a **drop from own-corpus
+      accuracy**, because a raw cross-provenance number cannot separate "transfer fails"
+      from "that judge is weak". It also measures corpus-level transfer on the reference
+      captions as a control. Runs on Kaggle via `02h_p4_judges.ipynb`; a local attempt
+      wedged on MPS overnight. `judge_S` already exists at sha256 `87cc0093`, own-corpus
+      CV **0.8547**.
+- [x] **Secondary metrics — computed on all 42 runs.** `scripts/secondary_metrics.py`.
+      Distinctiveness earned its place: it turned `S_paired_matched`'s floor result from an
+      uninformative null into a diagnosis (self-BLEU 0.8631 — one caption per image reused
+      across all five registers). Still to do: the 6 `S_unpaired_scaled` runs, which
+      arrived after the sweep.
+- [x] **Artifact ablation — redone on the instrument that scores the study.** The
+      registered version reported a gap of exactly 0.0000 because it ran on TF-IDF, whose
+      tokenizer discards punctuation: a test that could not fail. On the frozen
+      DistilRoBERTa, stripping changes 100% of captions and the gaps are −0.0009 to
+      +0.0123 — except `V1_paired5` at **+0.0381**, three times any other arm. See
+      `results/artifact_ablation.json`. Still to do: the instrument's own CV on stripped
+      text (`--skip-arms`), which is what §4.1 literally describes.
+
 - [ ] **Per-arm classifier robustness.** Registered in `metrics.classifier.
-      robustness_reported`. Not run.
+      robustness_reported`. P4's two single-provenance judges are exactly this; the item
+      closes when `02h` runs.
 
 ## Human work — the critical path
 
@@ -126,10 +142,9 @@ The full rationale is in `docs/deviations.md`, 2026-08-24.
       accuracy overstates conditioning because 89% of it is keyword-reachable; leaning on
       that same raw number to praise the model contradicts its own central finding.
 
-- [ ] **Still to do:** re-push the Kaggle dataset so `S_paired_matched.jsonl` is in it
-      (`uv run python scripts/push_kaggle.py`), then run `02f_posthoc.ipynb`. Notebook
-      cell 4 checks for the arm file and fails immediately if the attached dataset predates
-      it, rather than 20 minutes in.
+- [x] **Kaggle dataset re-pushed** with both post-hoc arms, and a third dataset
+      `emocap-v2-predictions` added: generated captions with references stripped, so
+      GPU-side analysis of model output needs no third-party corpus text.
 
 - [x] **`S_unpaired_scaled` — trained, scored, and it ANSWERS P3 against the hypothesis.**
       40,235 cells, 8,047 images, five source captions per image at one register each.
