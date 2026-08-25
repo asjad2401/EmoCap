@@ -682,6 +682,10 @@ at floor. Logging the ordering because a prediction written after the fact is no
 
 ## 2026-08-24 — the sweep completes, the margin gets an interval, and a rater finds the anchor by eye
 
+> **Partly retracted the same day.** `S_paired25`'s anchor below was measured at the wrong n, so
+> its margin here (+0.0608) and the `S_paired25` vs `S_paired5` comparison are both wrong. See
+> the entry of 2026-08-24 (later). The rest of this entry stands.
+
 All **36 registered runs** are in. `emocap-s25a`, `emocap-s25b` and `emocap-v1` finished on
 Kaggle; every arm was re-scored so its `cells.jsonl` carries a per-cell anchor. All six
 negative controls pass (0.1821–0.2131 against a 0.25 cap), all 36 probe verdicts are

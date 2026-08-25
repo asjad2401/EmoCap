@@ -1,6 +1,7 @@
 # Remaining work
 
-Status as of 2026-08-24. Everything above the "Optional" heading is registered in
+Status as of 2026-08-25. **All measurement is complete.** What remains is one reporting
+caveat and the writing. Everything above the "Optional" heading is registered in
 `configs/prereg.lock.yaml` or `docs/preregistration.md` and is not new scope; the Optional
 section is explicitly not, and says so.
 
@@ -13,34 +14,47 @@ its 0.25 ceiling and every probed run changed 100% of its captions with the imag
 - [x] `emocap-posthoc` — done. `S_paired_matched` x6 and all 35 baselines pulled and
       scored.
 - [x] `emocap-unpaired-scaled` — done. `S_unpaired_scaled` x6; see the Optional section.
-- [ ] `emocap-p4` — notebook `02h_p4_judges.ipynb`, ~25 min. Attach **both**
-      `emocap-v2-arms` and `emocap-v2-predictions`.
+- [x] `emocap-p4` — done. Two provenance judges trained on a T4 in ~17 minutes, on the
+      third attempt: one run wedged on MPS overnight, one crashed formatting a log path.
+
+**No GPU work remains.** Every number the machines can produce is produced.
 
 ## Analysis — no GPU needed
 
-- [ ] **P4, asymmetric transfer — written, not yet run.** `scripts/p4_transfer.py` trains
-      two single-provenance judges and reports transfer as a **drop from own-corpus
-      accuracy**, because a raw cross-provenance number cannot separate "transfer fails"
-      from "that judge is weak". It also measures corpus-level transfer on the reference
-      captions as a control. Runs on Kaggle via `02h_p4_judges.ipynb`; a local attempt
-      wedged on MPS overnight. `judge_S` already exists at sha256 `87cc0093`, own-corpus
-      CV **0.8547**.
-- [x] **Secondary metrics — computed on all 42 runs.** `scripts/secondary_metrics.py`.
+- [x] **P4, asymmetric transfer — run. FALSIFIED, and vacuously.**
+      `scripts/p4_transfer.py` trains two single-provenance judges and reports transfer as
+      a **drop from own-corpus accuracy**, because a raw cross-provenance number cannot
+      separate "transfer fails" from "that judge is weak". It also measures corpus-level
+      transfer on the reference captions as a control.
+
+      On generated captions the two sides come out **identical** at 0.2027, so the
+      registered condition — symmetric, or reversed — is met, and met vacuously: all three
+      arms it names sit at chance. That is the fourth registered prediction closed by one
+      diagnosis.
+
+      The **corpus-level** asymmetry is real and large. The synthetic-trained judge loses
+      **54.1 points** moving to human text (0.8565 → 0.3157); the human-trained judge loses
+      **29.5** moving the other way (0.7241 → 0.4294). Synthetic register is far easier to
+      read — the same fact the keyword anchor reports at 0.507 against 0.450 and TF-IDF at
+      0.81 against 0.61, now measured a third time with a transformer. Reporting drops
+      rather than raw scores is load-bearing here: raw, the human-trained judge looks
+      *better* at foreign text while being 13 points worse on its own corpus.
+- [x] **Secondary metrics — computed on all 48 runs.** `scripts/secondary_metrics.py`.
       Distinctiveness earned its place: it turned `S_paired_matched`'s floor result from an
       uninformative null into a diagnosis (self-BLEU 0.8631 — one caption per image reused
-      across all five registers). Still to do: the 6 `S_unpaired_scaled` runs, which
-      arrived after the sweep.
+      across all five registers). All 48 runs are covered.
 - [x] **Artifact ablation — redone on the instrument that scores the study.** The
       registered version reported a gap of exactly 0.0000 because it ran on TF-IDF, whose
       tokenizer discards punctuation: a test that could not fail. On the frozen
       DistilRoBERTa, stripping changes 100% of captions and the gaps are −0.0009 to
       +0.0123 — except `V1_paired5` at **+0.0381**, three times any other arm. See
-      `results/artifact_ablation.json`. Still to do: the instrument's own CV on stripped
-      text (`--skip-arms`), which is what §4.1 literally describes.
+      `results/artifact_ablation.json`. The instrument's own CV on stripped text is also
+      done — **0.8279 → 0.8214, a gap of +0.0065** — so it does not read typography and the
+      raw accuracies stand as primary. §4.1's fallback is not triggered.
 
-- [ ] **Per-arm classifier robustness.** Registered in `metrics.classifier.
-      robustness_reported`. P4's two single-provenance judges are exactly this; the item
-      closes when `02h` runs.
+- [x] **Per-arm classifier robustness.** Closed by P4's two single-provenance judges,
+      `models/judge_S` and `models/judge_H`. The frozen instrument was not touched and its
+      hash is unchanged.
 
 ## Human work — the critical path
 
@@ -58,37 +72,78 @@ study; these can.
       Registered as **run once, on final models only**, so a second build after seeing
       results would be a deviation.
 
-- [ ] **Send it to 3 raters and collect their exports.** THIS is the critical path and it
-      is the only item left that needs other people. Each rater opens the file, works
-      through it (progress saves in their browser), and sends back one JSON. Drop those
-      into `runs/human-eval/` and run:
+- [x] **Three raters, done.** All external, none connected to the study. Krippendorff's
+      alpha (ordinal): **grounding 0.684**, above the 0.667 bar for tentative conclusions;
+      **tone-match 0.579**, below it. Per-arm tone: S_paired25 4.19, S_paired5 4.15,
+      V1_paired5 **3.88** — V1 last at one rater, two and three.
 
-          uv run python scripts/score_human_eval.py
+      Attention checks IM 12/12, MA 12/12, MM 8/12. **MM is retained**: they passed the
+      rule fixed before any data existed, and dropping the rater who turns out to disagree
+      most, after discovering that, is sampling until the number improves. Leave-one-out is
+      reported post-hoc and drops every rater in turn, not only that one. The haste
+      hypothesis was tested against the timestamps and does not hold — the *fastest* rater
+      agreed most.
 
-      It reports attention-check pass rates per rater first, then Krippendorff's alpha
-      (ordinal) on both scales, then per-arm means with cluster-bootstrap CIs. A rater
-      failing more than half their checks is FLAGGED and still included — excluding one is
-      a judgement to write down, not something the script does.
-- [ ] **Widen the legibility sample to >=300 items.** The current human number is one
-      unblinded 100-item self-measurement at roughly 1.7 SE, and the prereg registers the
-      gate with that weakness stated. The gate cannot be applied until this is done.
-- [ ] **Off-distribution validation, 250 hand-labelled captions not written by Gemini.**
-      Registered in `metrics.classifier.robustness_reported`. Without it, the classifier
-      can be argued to have learned one generator's habits rather than emotional register.
+- [x] **Legibility widened to 300 items, and the gate PASSES.** A fresh reader, not the
+      three above, since a reader trained on the task gives a higher ceiling and the gate
+      asks whether a human *exceeds* the anchor. FCE **0.864 ± 0.020** against a corpus
+      anchor of **0.507** — about eighteen standard errors, where the old 100-item sitting
+      passed by two.
 
-- [ ] **P5 depends on the widened sample.** It is a bound reported either way, not a
-      hypothesis. Worth flagging early: `S_paired5` scores 0.7685 against a superseded
-      human reference of 0.726, so the bound may well be crossed. That is a reportable
-      result in either direction, but the number is meaningless until the 300-item
-      measurement exists.
+      The earlier figures (0.55 and 0.592) were measured on `captions_v10_35` and
+      `captions_v10_37flash`, which are prompt candidates and **not** the shipped corpus:
+      on 130 shared images, zero of their caption sets match `captions_corpus.jsonl`. So
+      0.592 was never a measurement of the final corpus and 0.864 is the first one.
+
+- [x] **A like-for-like human/classifier comparison**, added post-hoc and free. The frozen
+      classifier was run over the identical 300 captions the reader saw: **0.8503**, CI
+      [0.8095, 0.8912], against the reader's 0.8640. Indistinguishable, κ **0.718**, same
+      label on 77.5% of items, complementary errors. This closes the *judge* half of P5's
+      comparability problem — the instrument reads corpus captions at human level.
+
+- [x] **Off-distribution validation — 148 of the registered 250.** Three blind writers.
+      **0.7770**, CI [0.7095, **0.8446**] — the interval contains the instrument's own
+      0.8279, so no degradation is detectable. On the same captions a keyword rule reaches
+      only **0.2782**, so the classifier works where the lexical shortcut has essentially
+      vanished: it is neither a Gemini detector nor a keyword detector.
+
+      **The shortfall is 102 captions and is reported, not absorbed.** Completing it would
+      tighten the interval from about ±0.067 to ±0.052 and would not move the verdict. A
+      real drop of up to roughly twelve points cannot be excluded at this n; the 5.1-point
+      point difference is the instrument's measurement error, not a demonstrated gap.
+
+- [ ] **P5 — measurable now, and the comparison needs a caveat in the paper.** The human
+      blind-guess score on the shipped corpus is **0.864**. `S_paired25` at **0.9119** and
+      `V1_paired5` at **0.8748** exceed it; the other arms do not. P5 is a bound reported
+      either way, so crossing it is not a failure.
+
+      But it is **not like-for-like** and must be written as such: the human read *corpus*
+      captions and the classifier read *generated* captions, so the text differs even
+      though the judge no longer does. Nothing in the study closes that half.
+
+      This also supersedes the prereg's own reasoning on P5, which says "on this corpus a
+      reader scores 0.592 and a keyword bag 0.510, so a model at 0.85 is prima facie
+      evidence of a shortcut". That rests on 0.592, measured on a corpus that was never
+      shipped. On the one that was, a reader scores 0.864, so a model at 0.85–0.91 is near
+      human rather than prima facie shortcutting.
 
 ## Reporting obligations
 
-- [ ] Report **every** registered hypothesis with its outcome, including P1, P2 and P6.
+- [ ] Report **every** registered hypothesis with its outcome. Final tally: **P3a and
+      P3b confirmed** (P3b the only registered magnitude criterion met, by a factor of
+      two) · **P2 and P4 falsified** · **P6 not confirmed** — both directions right, the
+      margin gap significant at +0.0232 but 2.3 points against a required 7 ·
+      **P1 underpowered** at +3.75, below the 0.07 smallest effect of interest and reported
+      as underpowered rather than as a null · **P5** a bound, crossed by two arms with the
+      like-for-like caveat above.
       They are frozen in the public `prereg-v2` tag. Framing the paper around the
       confirmed results is ordinary scientific writing; omitting registered predictions is
       the selective reporting the registration exists to prevent.
-- [ ] Report P6 **with its diagnosis**, not as a bare null: the corpora differ by 21 anchor
+- [ ] Report the **shared diagnosis** rather than four separate disappointments. P1, P2,
+      P4 and P6 all rest on 4,390-cell arms, and no arm of that size learned any register:
+      accuracy 0.2018–0.2457 against chance 0.200. One measured fact closes four
+      predictions, and it belongs in the paper as a result. Then report P6 with its own
+      diagnosis: the corpora differ by 21 anchor
       points and their generated captions by 3.1, because at 4,390 cells no model learns
       enough register vocabulary for provenance to transfer. The finding that a
       three-corpus provenance comparison needs paired data — and that the human corpus
@@ -180,9 +235,8 @@ The full rationale is in `docs/deviations.md`, 2026-08-24.
       generation, persona dialogue, emotional TTS". The measurement went the other way and
       those sentences do not stand.
 
-- [ ] **Probe verdicts for the 6 `S_unpaired_scaled` runs.** All six changed 100% of
-      captions with the image blanked. `compare_arms.py` prints PROVISIONAL until they are
-      recorded in `runs/probe_verdicts.json`.
+- [x] **Probe verdicts recorded for all 48 runs**, none excluded. `compare_arms.py`
+      prints FINAL rather than PROVISIONAL.
 
 - [ ] **A stronger baseline, not written.** A published emotion-captioning model decoded on
       the same held-out cells would beat both modes above as a comparison point, and costs

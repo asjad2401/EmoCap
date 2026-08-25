@@ -24,21 +24,32 @@ So: **how much of emotion-conditioning accuracy reflects a register a reader can
 how much reflects lexical provenance? And does training on human-written emotive captions
 change the answer?**
 
-### Design — six data arms, one decoder
+### Design — eight data arms, one decoder
 
-| arm | captions from | structure | captions |
-|---|---|---|---|
-| **S-paired25** | ours — prompt v10, gemini-3.7-flash | 25/image | 201,900 |
-| **S-paired5** | ours, 1 source caption | Flickr8k | 5/image | 40,240 |
-| **S-unpaired** | ours, subsampled | 1/image | 4,390 |
-| **V1-paired5** | the retired v1 pilot corpus | 5/image | 40,240 |
-| **V1-unpaired** | the v1 pilot, subsampled | 1/image | 4,390 |
-| **H-unpaired** | Personality-Captions (human) | 1/image | 4,390 |
+| arm | captions from | structure | cells | images |
+|---|---|---|---|---|
+| **S_paired25** | ours — prompt v10, gemini-3.7-flash | 25 / image | 201,175 | 8,047 |
+| **S_paired5** | ours, one source caption | 5 / image | 40,235 | 8,047 |
+| **V1_paired5** | the retired v1 pilot corpus | 5 / image | 40,235 | 8,047 |
+| **S_unpaired** | ours, subsampled | 1 / image | 4,390 | 4,390 |
+| **V1_unpaired** | the v1 pilot, subsampled | 1 / image | 4,390 | 4,390 |
+| **H_unpaired** | Personality-Captions (human) | 1 / image | 4,390 | 4,390 |
+| **S_unpaired_scaled** † | ours, five source captions | 5 captions, 1 register | 40,235 | 8,047 |
+| **S_paired_matched** † | ours, one source caption | 5 / image | 4,390 | 878 |
+
+† decided after the `prereg-v2` tag and labelled post-hoc wherever reported. Both are strict
+*views* of cells the registered arms already trained on — `scripts/build_posthoc_arms.py`
+refuses to write either unless it can prove the containment — so "the extra arm drew easier
+data" is not available as an explanation of what they show.
+
+Cell counts are the **arm** sizes from `data/arms/manifest.json`, which are smaller than the
+corpus totals: an image qualifies only if both our corpus and the v1 pilot can supply it in
+full, which leaves 8,047 of 8,076.
 
 Three structure classes, so provenance is compared at matched shape and never across it. The 1-caption-per-image arms are **4,390** (878 x 5), set by the scarcest register under the strict trait mapping; matching on count as well as structure keeps P1 from confounding provenance with data volume. The
 decoder — frozen CLIP ViT-B/32 → mapping network → GPT-2 + LoRA — is a **control, held
-fixed**, so differences are attributable to the data. **36 runs**: 6 arms × 5 folds, plus a
-shuffled-label negative control per arm. Folds split by `image_id`, never by caption.
+fixed**, so differences are attributable to the data. **48 runs**: 8 arms × 5 folds, plus a
+shuffled-label negative control per arm — the six registered above, plus two decided after the tag to separate paired structure from data volume (`S_paired_matched`, `S_unpaired_scaled`). Folds split by `image_id`, never by caption.
 
 The **v1 pilot corpus is an arm** for two reasons: the pilot's decoder faults are fixed here,
 so its data can be tested apart from its code; and its keyword anchor is **0.718** against
@@ -55,10 +66,11 @@ Everything that changed between the draft and the tag:
 src/emocap/     the package — all logic, unit-tested on CPU
 tests/          run with `uv run pytest`, no GPU, no Kaggle, seconds
 configs/        every threshold and hyperparameter; prereg.lock.yaml is frozen
-notebooks/      thin Kaggle runners, one per pipeline stage — PLANNED, not yet written.
+notebooks/      thin Kaggle runners: 02a–02e the registered arms, 02f–02g the post-hoc
+                arms and baselines, 02h–02i the P4 judges and the ablation.
                 Save & Run All, every run output preserved for export, no stage depending
                 on a session surviving (hence no checkpointing).
-docs/           preregistration, deviations log, lab notebook, postmortem
+docs/           preregistration, deviations log, lab notebook, remaining work
 runs/           one directory per run — manifest, metrics, generations. Never overwritten.
 results/        final tables and figures, regenerable from runs/
 archive/        the v1 pilot, untouched
@@ -86,7 +98,7 @@ Dataset version. No stage depends on a session surviving, so no checkpointing is
 | 05 | `tokenize_vocab` | CPU | `emocap-tokenized` |
 | 06 | `instrument_emotion_clf` | GPU | `emocap-emo-clf` |
 | 07 | `build_arms` — S-paired / S-unpaired / H-unpaired | CPU | `emocap-arms` |
-| 08 | `train_clipcap` — one decoder, the six arms, five folds | GPU | `runs/` |
+| 08 | `train_clipcap` — one decoder, eight arms, five folds | GPU | `runs/` |
 | 09 | `decode_testset` | GPU | `emocap-generations` |
 | 10 | `metrics_and_anchors` | CPU | `results/` |
 | 11 | `figures_and_tables` | CPU | `results/` |

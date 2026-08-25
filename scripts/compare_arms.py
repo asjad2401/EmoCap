@@ -364,7 +364,10 @@ def main() -> None:
     complete = len(runs) >= expected and not unreviewed
     provisional = not complete
 
-    print(f"runs found        {len(runs)} of {expected} registered")
+    extra = len(runs) - expected
+    print(f"runs found        {len(runs)}"
+          + (f"  ({expected} registered + {extra} post-hoc)" if extra > 0
+             else f" of {expected} registered"))
     print(f"excluded by probe {len(excluded)}" + (f"  {excluded}" if excluded else ""))
     if not vpath.exists():
         print(f"\n  NO VERDICT FILE at {rel(vpath)}")

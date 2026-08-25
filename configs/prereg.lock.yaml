@@ -1,9 +1,24 @@
 # ═══════════════════════════════════════════════════════════════════════════
-# FROZEN at git tag `prereg-v1`. Do not edit.
+# FROZEN at git tag `prereg-v2` (commit 892358f), which supersedes `prereg-v1`
+# (3a61cde). Both tags are public on origin and neither is ever moved.
+#
+# THIS FILE HAS BEEN AMENDED SINCE THAT TAG, and the amendment is logged in
+# docs/deviations.md (2026-08-22, commit 473066b). To read the registered text
+# rather than the amended one:
+#
+#     git show prereg-v2:configs/prereg.lock.yaml
+#
+# What the amendment changed, and what it did not. Changed: three MEASURED
+# facts that the draft had estimated -- paired5_arm_images 8075 -> 8047,
+# paired25_arm_cells 201875 -> 201175 -- and `v1_matching`, narrowed from
+# same_images_same_caption_idx_same_register to same_images_same_register,
+# because the pilot rewrote ONE neutral caption per image where our corpus
+# rewrites FIVE, so there is no shared caption_idx to align on. NOT changed:
+# no hypothesis, no criterion, no threshold, no comparison set, no gate.
 #
 # Stage 10 (metrics_and_anchors) hashes the live configs against this file and
-# refuses to run on a mismatch. To change anything here, log the change in
-# docs/deviations.md, bump to prereg-v2, and say so in the write-up.
+# refuses to run on a mismatch. Any further change goes in docs/deviations.md,
+# gets a new tag, and is stated in the write-up.
 # ═══════════════════════════════════════════════════════════════════════════
 
 study:

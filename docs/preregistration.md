@@ -1,5 +1,24 @@
 # Pre-registration — EmoCap v2
 
+> ## This file has been amended since the tag
+>
+> Registered at `prereg-v2` (commit `892358f`), superseding `prereg-v1` (`3a61cde`). Both
+> tags are public and neither is ever moved. **To read the text as registered rather than
+> as amended:**
+>
+> ```
+> git show prereg-v2:docs/preregistration.md
+> ```
+>
+> One amendment, on 2026-08-22 (commit `473066b`), logged in
+> [`docs/deviations.md`](deviations.md). It corrected three arm sizes the draft had
+> estimated rather than measured (8,075 → 8,047 images; 201,875 → 201,175 and 40,375 →
+> 40,235 cells) and narrowed the V1 matching claim from "same images, same source caption
+> and same register" to "same images and same register", because the pilot rewrote *one*
+> neutral caption per image where this corpus rewrites *five*, so no shared source sentence
+> exists to align on. **No hypothesis, criterion, threshold, comparison set or gate was
+> changed.**
+>
 > ## Scope of this registration
 >
 > This registers a study about **training data**, not about decoder architecture. An earlier
