@@ -91,3 +91,25 @@ runs/kaggle-preds/
 # LEGIBILITY-300.html is NOT excluded: it is text-only, carrying our own generated captions
 # and no photographs.
 WRITING-*.html
+
+# ── Corpus-stage process records ───────────────────────────────────────────
+# Kept ON DISK and in git history, but out of HEAD so a reader sees the study's
+# results rather than 78 batch manifests from before the arms existed. These are
+# provenance for corpus generation (prompt iteration, Vertex batches, YFCC fetch),
+# not inputs to any claim. Recover any of them with:
+#     git show ff96643:runs/vertex-gemini-3.7-flash-20260820-150402/manifest.json
+# The generating scripts still write to these paths unchanged.
+runs/vertex-*/
+runs/stage02-*/
+runs/corpus-batch-*/
+runs/smoke/
+runs/yfcc-fetch/
+runs/gate-check-test/
+runs/cap_carry*.json
+runs/cap_frozen*.json
+runs/matched-*.json
+runs/model_cmp_images.json
+
+# The legibility instrument, like HUMAN-EVAL.html and WRITING-*.html: a
+# data-collection page, rebuildable from runs/guess/legibility300_key.json.
+LEGIBILITY-300.html
