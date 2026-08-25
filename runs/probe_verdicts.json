@@ -5,7 +5,7 @@
     "method": "Skimmed the probe_review.txt caption pairs across the arms. The judgement was made at the arm level -- the pattern was the same everywhere -- and applied to every run of every arm.",
     "finding": "With the image, captions are well-formed English (a judgement about writing quality, NOT about whether the register is right). With the image blanked, output is mostly gibberish. Consistent with the measured 0% identical-caption rate and the collapse to 4-5 distinct strings across 500 cells in every run.",
     "criterion": "prereg S7 requires captions to change 'substantially' without the image and sets no threshold; the call is the reviewer's.",
-    "n_runs": 42,
+    "n_runs": 48,
     "second_pass": "The six S_paired_matched runs were reviewed on 2026-08-24 after the registered 36. Same pattern, same verdict. The reviewer was asked to judge the caption pairs only, and explicitly not to let the arm's chance-level accuracy influence the call -- that failure is a register-distinctiveness collapse with the image present, which the probe does not measure."
   },
   "H_unpaired-f0": {
@@ -259,5 +259,41 @@
     "reviewer": "AA",
     "date": "2026-08-24",
     "note": "captions change from well-formed to gibberish when blanked; read on its own terms -- this arm's floor result is a distinctiveness failure (self-BLEU 0.86), not a probe failure"
+  },
+  "S_unpaired_scaled-f0": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-25",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_unpaired_scaled-f0-nc": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-25",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_unpaired_scaled-f1": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-25",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_unpaired_scaled-f2": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-25",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_unpaired_scaled-f3": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-25",
+    "note": "captions change from well-formed to gibberish when blanked"
+  },
+  "S_unpaired_scaled-f4": {
+    "probe": "pass",
+    "reviewer": "AA",
+    "date": "2026-08-25",
+    "note": "captions change from well-formed to gibberish when blanked"
   }
 }

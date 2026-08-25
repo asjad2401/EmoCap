@@ -73,9 +73,9 @@ def predict(texts: list[str], clf_dir: Path, batch: int = 128) -> list[int]:
     return out
 
 
-def arm_generated(arm: str) -> tuple[list[str], list[int]]:
+def arm_generated(arm: str, runs_root: Path) -> tuple[list[str], list[int]]:
     texts, labels = [], []
-    for d in sorted((ROOT / "runs/arms").iterdir()):
+    for d in sorted(runs_root.iterdir()):
         if not d.is_dir() or not d.name.startswith(f"{arm}-f") or d.name.endswith("-nc"):
             continue
         p = d / "predictions.jsonl"
@@ -89,10 +89,10 @@ def arm_generated(arm: str) -> tuple[list[str], list[int]]:
     return texts, labels
 
 
-def pool_cells() -> tuple[list[str], list[int], list[str]]:
+def pool_cells(data_root: Path) -> tuple[list[str], list[int], list[str]]:
     texts, labels, images = [], [], []
     for arm in POOL:
-        for line in (ROOT / "data/arms" / f"{arm}.jsonl").read_text().splitlines():
+        for line in (data_root / "arms" / f"{arm}.jsonl").read_text().splitlines():
             if line.strip():
                 c = json.loads(line)
                 texts.append(c["text"])
@@ -119,12 +119,26 @@ def punctuation_rate(texts: list[str]) -> float:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--classifier", default="models/register_classifier")
+    ap.add_argument("--data-root", default=None,
+                    help="where arms/ lives; defaults to the repo's data/")
+    ap.add_argument("--runs-root", default="runs/arms",
+                    help="decoded predictions for the arms level; the stripped Kaggle "
+                         "export works too")
+    ap.add_argument("--baseline-report", default="runs/classifier/report.json",
+                    help="where the instrument's RAW cv accuracy was recorded when it was "
+                         "frozen; the stripped run is compared against it")
     ap.add_argument("--out", default="results/artifact_ablation.json")
     ap.add_argument("--skip-cv", action="store_true")
     ap.add_argument("--skip-arms", action="store_true")
     args = ap.parse_args()
 
-    clf = ROOT / args.classifier
+    data_root = Path(args.data_root) if args.data_root else ROOT / "data"
+    runs_root = Path(args.runs_root)
+    if not runs_root.is_absolute():
+        runs_root = ROOT / runs_root
+    clf = Path(args.classifier)
+    if not clf.is_absolute():
+        clf = ROOT / clf
     report: dict = {
         "why": "the registered ablation in runs/classifier/report.json ran on TF-IDF, whose "
                "tokenizer discards punctuation, so its 0.0000 gap was a test that could not "
@@ -140,10 +154,10 @@ def main() -> None:
         print("── the frozen classifier on each arm's generated captions ──")
         print(f"{'arm':<19}{'raw':>9}{'stripped':>10}{'gap':>9}{'changed':>9}{'n':>9}")
         rows: dict[str, dict] = {}
-        arms = sorted({d.name.rsplit("-f", 1)[0] for d in (ROOT / "runs/arms").iterdir()
+        arms = sorted({d.name.rsplit("-f", 1)[0] for d in runs_root.iterdir()
                        if d.is_dir() and (d / "predictions.jsonl").exists()})
         for arm in arms:
-            texts, labels = arm_generated(arm)
+            texts, labels = arm_generated(arm, runs_root)
             if not texts:
                 continue
             raw = acc(predict(texts, clf), labels)
@@ -166,7 +180,7 @@ def main() -> None:
 
     # ── level 2: the instrument's own accuracy ───────────────────────────────
     if not args.skip_cv:
-        texts, labels, images = pool_cells()
+        texts, labels, images = pool_cells(data_root)
         rate = punctuation_rate(texts)
         print(f"\n── the instrument's own 5-fold CV, stripped text ──")
         print(f"  pool {len(texts):,} cells, {rate:.1%} changed by stripping")
@@ -178,7 +192,10 @@ def main() -> None:
             [strip_artifacts(t) for t in texts], labels, images, folds=5, seed=42,
             progress=lambda f, a: print(f"  fold {f+1}/5  running {a:.4f}  "
                                         f"[{(time.time()-t0)/60:.0f} min]", flush=True))
-        prior = json.loads((ROOT / "runs/classifier/report.json").read_text())
+        bp = Path(args.baseline_report)
+        if not bp.is_absolute():
+            bp = ROOT / bp
+        prior = json.loads(bp.read_text())
         raw_cv = prior["cv"]["accuracy"]
         report["instrument"] = {
             "raw_cv_accuracy": raw_cv,
