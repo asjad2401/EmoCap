@@ -39,6 +39,15 @@ the registered cluster bootstrap exactly like accuracy. The fold mean and fold s
 still reported next to it, because the two are computed from different weightings of the same
 estimator and a disagreement between them is worth seeing.
 
+**Post-hoc comparisons are computed here but corrected nowhere.** The two arms decided
+after the tag -- `S_paired_matched` and `S_unpaired_scaled` -- carry the comparisons that
+actually separate paired structure from data volume, which the registered P3 cannot. They
+get the identical estimator every registered comparison gets, because a result reported as
+two eyeballed means when an interval was available is weaker than it needs to be. They do
+NOT enter the Holm family: the registration fixes that family at exactly four comparisons,
+and quietly growing it to six would change every threshold in the table. Their pairs come
+from `data/arms/posthoc_manifest.json`, so this file cannot invent one.
+
 **Which metric the Holm correction attaches to is NOT settled by the registration.**
 `metrics.primary` is `emotion_accuracy`, and `multiple_comparisons: holm_bonferroni` names
 the family of four comparisons without naming a metric. Rather than pick one after seeing the
@@ -59,6 +68,18 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from emocap.eval.bootstrap import cluster_bootstrap_mean  # noqa: E402
 from emocap.runtime import load_config  # noqa: E402
+
+#: Post-hoc comparisons, with the reading of each fixed here rather than after the numbers.
+#: Left vs right, and what a positive margin difference would mean.
+POSTHOC_PAIRS = [
+    (("S_paired_matched", "S_unpaired"),
+     "volume matched at 4,390 cells; LEFT is paired, RIGHT is not. A positive margin gap "
+     "means paired structure helps at a small budget."),
+    (("S_paired5", "S_unpaired_scaled"),
+     "volume matched at 40,235 cells and the same 8,047 images; LEFT varies register "
+     "within an image, RIGHT varies source text. A positive margin gap ISOLATES pairing "
+     "from volume -- this is the comparison P3 could not make."),
+]
 
 VERDICT_HELP = """
 Create it once the reviewers have read the probe_review.txt files:
@@ -434,6 +455,28 @@ def main() -> None:
     ref = [r for r in ref if not r.get("error")]
     show(ref, "REFERENCE -- cross-dataset, confounded by construction, UNCORRECTED", False)
 
+    # Post-hoc. Same estimator, deliberately outside the Holm family -- see the module
+    # docstring. Only pairs whose arms are named in the post-hoc manifest are attempted, so
+    # a typo here cannot silently invent a comparison.
+    ph_manifest = ROOT / "data/arms/posthoc_manifest.json"
+    known = set(json.loads(ph_manifest.read_text())["arms"]) if ph_manifest.exists() else set()
+    posthoc, notes = [], {}
+    for (left, right), reading in POSTHOC_PAIRS:
+        if not (known & {left, right}):
+            continue
+        r = compare(kept, left, right, boot)
+        if r.get("error"):
+            print(f"\n  {left} vs {right}: {r['error']} -- not yet trained?")
+            continue
+        r["post_hoc"] = True
+        r["reading"] = reading
+        posthoc.append(r)
+        notes[f"{left} vs {right}"] = reading
+    if posthoc:
+        show(posthoc, "POST-HOC -- decided after the tag, NOT in the Holm family", False)
+        for r in posthoc:
+            print(f"\n  {r['left']} vs {r['right']}: {r['reading']}")
+
     out = ROOT / args.out
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps({
@@ -442,6 +485,9 @@ def main() -> None:
         "excluded_by_probe": excluded, "unreviewed": unreviewed,
         "manipulation_check": controls,
         "confirmatory": conf, "reference": ref,
+        "post_hoc": posthoc, "post_hoc_readings": notes,
+        "post_hoc_note": "same estimator as the confirmatory comparisons and deliberately "
+                         "outside the Holm family, which the registration fixes at four",
         "smallest_effect_of_interest": soi, "criterion_points": crit_pts,
         "bootstrap": boot, "correction": lock["metrics"]["multiple_comparisons"],
     }, indent=2))

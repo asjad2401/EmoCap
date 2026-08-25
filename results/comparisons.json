@@ -317,6 +317,53 @@
       "right_accuracy": 0.2169
     }
   ],
+  "post_hoc": [
+    {
+      "left": "S_paired_matched",
+      "right": "S_unpaired",
+      "folds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "paired": true,
+      "n_cells_paired": 878,
+      "accuracy_diff": -0.0057,
+      "ci": {
+        "lo": -0.0376,
+        "hi": 0.0262
+      },
+      "n_clusters": 878,
+      "p_bootstrap": 0.749,
+      "crosses_zero": true,
+      "margin_diff_bootstrap": -0.0447,
+      "margin_ci": {
+        "lo": -0.0862,
+        "hi": -0.0032
+      },
+      "margin_p_bootstrap": 0.0338,
+      "margin_crosses_zero": false,
+      "margin_diff": -0.0117,
+      "margin_sd_across_folds": 0.0265,
+      "margin_by_fold": [
+        0.0267,
+        -0.0043,
+        -0.034,
+        -0.0393,
+        -0.0076
+      ],
+      "left_accuracy": 0.197,
+      "right_accuracy": 0.2027,
+      "post_hoc": true,
+      "reading": "volume matched at 4,390 cells; LEFT is paired, RIGHT is not. A positive margin gap means paired structure helps at a small budget."
+    }
+  ],
+  "post_hoc_readings": {
+    "S_paired_matched vs S_unpaired": "volume matched at 4,390 cells; LEFT is paired, RIGHT is not. A positive margin gap means paired structure helps at a small budget."
+  },
+  "post_hoc_note": "same estimator as the confirmatory comparisons and deliberately outside the Holm family, which the registration fixes at four",
   "smallest_effect_of_interest": 0.07,
   "criterion_points": 0.07,
   "bootstrap": {
