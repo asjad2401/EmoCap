@@ -1,7 +1,9 @@
 # Remaining work
 
-Status as of 2026-08-25. **All measurement is complete.** What remains is one reporting
-caveat and the writing. Everything above the "Optional" heading is registered in
+Status as of 2026-08-25. **All measurement is complete and closed.** The one registered
+quantity delivered short — off-distribution validation, 148 of 250 — was closed deliberately
+and the decision is logged in [`deviations.md`](deviations.md). What remains is reporting and
+the writing. Everything above the "Optional" heading is registered in
 `configs/prereg.lock.yaml` or `docs/preregistration.md` and is not new scope; the Optional
 section is explicitly not, and says so.
 
@@ -107,10 +109,17 @@ study; these can.
       only **0.2782**, so the classifier works where the lexical shortcut has essentially
       vanished: it is neither a Gemini detector nor a keyword detector.
 
-      **The shortfall is 102 captions and is reported, not absorbed.** Completing it would
-      tighten the interval from about ±0.067 to ±0.052 and would not move the verdict. A
-      real drop of up to roughly twelve points cannot be excluded at this n; the 5.1-point
-      point difference is the instrument's measurement error, not a demonstrated gap.
+      **CLOSED at 148 on 2026-08-25.** The shortfall of 102 is reported, not absorbed —
+      see `docs/deviations.md` for the decision and why it is not optional stopping.
+      Completing it would tighten the interval from about ±0.067 to ±0.052 and cannot move
+      the verdict, since 0.8279 sits inside either. A real drop of up to roughly twelve
+      points cannot be excluded at this n; the 5.1-point point difference is the
+      instrument's measurement error, not a demonstrated gap.
+
+      Note the order of events, because it is what makes the stop defensible: at 100
+      captions the pooled figure had *fallen* to 0.7400 and collection continued anyway.
+      It was stopped only after the third chunk lifted it to 0.7770 — the harder direction
+      to stop in.
 
 - [ ] **P5 — measurable now, and the comparison needs a caveat in the paper.** The human
       blind-guess score on the shipped corpus is **0.864**. `S_paired25` at **0.9119** and

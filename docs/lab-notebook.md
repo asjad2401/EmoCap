@@ -1176,7 +1176,11 @@ not believe in produces a cleaner test set than one who fills every box.
 
 ### Still open
 
-* **102 captions short of the registered 250.** The shortfall is reported, not hidden.
-  Completing it would tighten the interval from about ±0.067 to ±0.052 and would not change
-  the verdict, since 0.8279 sits comfortably inside either.
-* **P5** remains the only registered prediction still unmeasured on its own terms.
+* **Closed at 148 of the registered 250**, decided 2026-08-25 and logged in
+  `docs/deviations.md`. Completing it would tighten the interval from about ±0.067 to ±0.052
+  and cannot change the verdict, since 0.8279 sits comfortably inside either. The order
+  matters and is on the record: at 100 captions the pooled figure had *fallen* to 0.7400 and
+  collection continued; it was stopped only after the third chunk lifted it to 0.7770.
+* **P5** is measurable but not like-for-like — the human read corpus captions and the
+  classifier read generated ones. The judge half of that gap is closed; the text half is not,
+  and the paper must say so.

@@ -1068,3 +1068,55 @@ margin is **+0.0535**, CI [+0.0487, +0.0585], positive on 5/5 folds. The negativ
 the bug. See `docs/lab-notebook.md`, 2026-08-24 (later), for the retraction. The study's claim
 about the *level* is untouched: 0.9119 accuracy against a 0.7722 anchor still means 77 of 91
 points are keyword-reachable with no model.
+
+---
+
+## 2026-08-25 — off-distribution validation closed at 148 of a registered 250
+
+**A registered quantity was delivered short, deliberately, and this is the record of that
+decision.** `metrics.classifier.robustness_reported` names
+`off_distribution_250_hand_labelled`; the number is written into the lock's own identifier,
+so it is not a loose figure in prose. **148 captions were collected and collection was
+stopped.** Decided 2026-08-25, before any further data existed.
+
+**What was collected.** Three blind writers, none connected to the study, each shown a
+photograph and a target register and asked for one sentence. No writer ever saw a source
+caption or a model's attempt, either of which would have anchored them. Chunk sizes 50, 50
+and 48 — the third writer skipped two items they could not work out, which is better
+behaviour than forcing captions nobody believes in. Registers stayed at 30/30/30/30/28,
+because each chunk was balanced at ten per register precisely so a partial return would
+still be a clean sample.
+
+**Why stopping is defensible here.** The check has already answered the question it was
+registered to answer. Accuracy is **0.7770**, 95% CI [0.7095, **0.8446**], and the interval
+*contains* the instrument's own in-distribution 0.8279 — no degradation is detectable. On the
+same captions a keyword rule reaches **0.2782** against 0.200 chance, so the classifier also
+works where the lexical shortcut has essentially vanished. Both forms of the criticism it
+exists to answer are answered.
+
+Completing the remaining 102 would tighten the interval from about ±0.067 to ±0.052 and
+cannot move the verdict, since 0.8279 sits comfortably inside either. The cost was two more
+writers at roughly 45 minutes each; the benefit was precision the conclusion does not need.
+
+**Why stopping is not optional stopping, and how to tell.** The distinction that matters is
+whether the decision was prompted by the direction of the result. It was not, and the record
+shows it. At 100 captions the pooled figure had **fallen** to 0.7400 and looked like a real
+drop; collection continued, explicitly on the reasoning that stopping while a number was
+moving unfavourably would be sampling until it improved. The third chunk then came in at
+0.8542 and lifted the pooled figure to 0.7770. **Collection was stopped only after the
+number recovered, which is the harder direction to stop in** — stopping at 100 would have
+locked in the worse estimate.
+
+The one chunk that scored badly, chunk 2 at 0.6400 against 0.8400 and 0.8542, is **retained**.
+Dropping the observation that moves a number the wrong way is the error this project has
+refused twice already, once for a rater in the human evaluation and once here.
+
+**What must be reported.** The sample size, as 148 against a registered 250, wherever the
+figure appears. That a real degradation of up to roughly twelve points cannot be excluded at
+this n. And that the 5.1-point point difference is the instrument's **measurement error**, not
+a demonstrated gap — it bears little on the study either way, because every arm comparison
+uses the same instrument on the same kind of text, and a uniform error cancels out of a
+comparison.
+
+`WRITING-4-of-5.html` and `WRITING-5-of-5.html` were built and never sent. They remain
+reproducible from `runs/offdist/key.json` if the shortfall is ever worth closing.
