@@ -1,0 +1,50 @@
+{
+  "own_cv_accuracy": 0.8565,
+  "own_cv_n": 4390,
+  "own_confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.811,
+        "sad": 0.014,
+        "tense": 0.043,
+        "romantic": 0.095,
+        "humorous": 0.038
+      },
+      "sad": {
+        "joyful": 0.017,
+        "sad": 0.854,
+        "tense": 0.059,
+        "romantic": 0.05,
+        "humorous": 0.019
+      },
+      "tense": {
+        "joyful": 0.034,
+        "sad": 0.038,
+        "tense": 0.869,
+        "romantic": 0.03,
+        "humorous": 0.03
+      },
+      "romantic": {
+        "joyful": 0.054,
+        "sad": 0.041,
+        "tense": 0.031,
+        "romantic": 0.864,
+        "humorous": 0.01
+      },
+      "humorous": {
+        "joyful": 0.036,
+        "sad": 0.032,
+        "tense": 0.038,
+        "romantic": 0.01,
+        "humorous": 0.884
+      }
+    },
+    "recall": {
+      "joyful": 0.811,
+      "sad": 0.854,
+      "tense": 0.869,
+      "romantic": 0.864,
+      "humorous": 0.884
+    }
+  }
+}

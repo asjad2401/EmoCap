@@ -1004,3 +1004,80 @@ why P4 appeared hung after 800 seconds without finishing a fold.
 * **Two human items remain**, and both are narrower than the evaluation that just closed:
   the legibility sample widened to >=300, and 250 hand-labelled captions not written by
   Gemini. P5 waits on the first.
+
+---
+
+## 2026-08-25 (later) — P4 completes, and every registered prediction but one is resolved
+
+Third attempt. The first wedged on MPS overnight, the second crashed formatting a path, the
+third ran clean on a T4 in about 17 minutes.
+
+### P4 is falsified on its registered comparison, and the comparison is vacuous
+
+    S captions under the H-judge   0.2027
+    H captions under the S-judge   0.2027
+    asymmetry (S drop - H drop)   -0.0237  -> "symmetric, or reversed" -> FALSIFIED
+
+The two foreign-judge numbers are **identical**. The −0.0237 comes entirely from the
+own-judge baselines differing, 0.2415 against 0.2178, which is a gap between two
+chance-level numbers. All three arms P4 is registered over sit at 0.20–0.24. So this is
+falsified on noise, for the same structural reason as P1, P2 and P6: at 4,390 cells the
+captioners learn no register, and there is nothing for a judge to transfer.
+
+### The control is informative, and the asymmetry is real — in the corpora, not the models
+
+| judge | own corpus | other corpus | drop |
+|---|---|---|---|
+| S-trained | 0.8565 | 0.3157 on human text | **54.1 pts** |
+| H-trained | 0.7241 | 0.4294 on synthetic text | **29.5 pts** |
+
+A judge trained on our synthetic captions loses 54 points moving to human text; a judge
+trained on human text loses 29 moving to synthetic. **Synthetic register is far easier to
+read than human register**, which is the same fact the keyword anchor reports (0.507 for
+ours against 0.450 for human) and TF-IDF reports (0.81 against 0.61), now measured a third
+way with a transformer.
+
+So P4's *mechanism* holds in the data while P4 *as worded* — a claim about captioners —
+fails, and it fails because the captioners it names are at floor. That is the fourth
+prediction closed by the same diagnosis, and at this point the diagnosis is itself a finding:
+**a 4,390-cell arm cannot support any provenance comparison in this design.**
+
+**Reporting these as drops rather than raw accuracies is load-bearing.** Raw, the H-judge
+looks better at foreign text (0.4294 against 0.3157) — but it is 13 points worse on its own
+corpus. `p4_transfer.py` prints a warning when the two judges differ by more than 10 points
+for exactly this reason, and it fired. Without the drop framing the finding inverts.
+
+The judges are also the registered `per_arm_classifier` robustness item, which closes with
+this run. The frozen instrument was not touched; both judges are separate and hashed.
+
+### Every registered prediction, resolved
+
+| | outcome |
+|---|---|
+| **P1** | H beats S by 3.75 accuracy points, below the 0.07 smallest effect of interest — **underpowered**, reported as such, not as a null |
+| **P2** | **falsified** on its own condition: margin difference −0.0021, CI [−0.0232, +0.0185] |
+| **P3a** | **confirmed**, +69.9 accuracy points |
+| **P3b** | **confirmed**, margin +0.1360, CI [+0.1190, +0.1528] — the only registered magnitude criterion met |
+| **P4** | **falsified**, and vacuous: symmetric at chance |
+| **P5** | **open** — blocked on the widened legibility sample |
+| **P6** | **not confirmed**: both directions right, magnitude 2.3 points against ≥7 |
+
+P5 is the last one, and it is the only registered prediction still unmeasured.
+
+### A fourth pinning failure, and the guard that should have existed from the start
+
+The second P4 crash was the `relative_to` bug again — not because the fix was wrong, but
+because the notebook pins its checkout to the predictions dataset's provenance, that
+provenance was `ac10078`, and the fix landed in `8a43ea5` two commits later. The dataset was
+never re-pushed, so the notebook faithfully checked out code predating its own fix.
+
+That is three distinct pin failures: a missing script, missing CLI flags, and a bug fixed
+after the last push. The `--help` guard added for the second cannot see internal changes.
+Both notebooks now fetch and ask `git log COMMIT..origin` for the specific scripts they run,
+refusing to start if anything touched them, naming the commits and the one command that
+fixes it. Verified against the failing state: it reports `8a43ea5`, exactly the missing
+commit.
+
+Pinning to a dataset's provenance is right for reproducibility and wrong every time code is
+fixed afterwards. The guard does not remove that coupling; it makes it visible in ten seconds
+instead of eight minutes.

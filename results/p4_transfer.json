@@ -1,0 +1,155 @@
+{
+  "runs_root": "/kaggle/input/datasets/muhammadasjadali/emocap-v2-predictions/predictions",
+  "prediction": "P4 -- models trained on S score lower under an H-trained judge than H-trained models do under an S-trained judge",
+  "falsified_if": "symmetric, or reversed",
+  "p4_pair": [
+    "S_unpaired",
+    "H_unpaired"
+  ],
+  "p4_pair_why": "matched on cell count and structure, so the difference is provenance and not volume or gradient steps",
+  "frozen_instrument_untouched": true,
+  "judges": {
+    "S": {
+      "trained_on": "S_unpaired",
+      "cells": 4390,
+      "own_cv_accuracy": 0.8565,
+      "own_cv_n": 4390,
+      "own_confusion": {
+        "row_normalised": {
+          "joyful": {
+            "joyful": 0.811,
+            "sad": 0.014,
+            "tense": 0.043,
+            "romantic": 0.095,
+            "humorous": 0.038
+          },
+          "sad": {
+            "joyful": 0.017,
+            "sad": 0.854,
+            "tense": 0.059,
+            "romantic": 0.05,
+            "humorous": 0.019
+          },
+          "tense": {
+            "joyful": 0.034,
+            "sad": 0.038,
+            "tense": 0.869,
+            "romantic": 0.03,
+            "humorous": 0.03
+          },
+          "romantic": {
+            "joyful": 0.054,
+            "sad": 0.041,
+            "tense": 0.031,
+            "romantic": 0.864,
+            "humorous": 0.01
+          },
+          "humorous": {
+            "joyful": 0.036,
+            "sad": 0.032,
+            "tense": 0.038,
+            "romantic": 0.01,
+            "humorous": 0.884
+          }
+        },
+        "recall": {
+          "joyful": 0.811,
+          "sad": 0.854,
+          "tense": 0.869,
+          "romantic": 0.864,
+          "humorous": 0.884
+        }
+      },
+      "sha256": "bfc7954bf6a0ab8c0001c7c56042e050ba3dae932528cb398edfd44e6c0e4722",
+      "epochs": 4,
+      "path": "/kaggle/working/models/judge_S"
+    },
+    "H": {
+      "trained_on": "H_unpaired",
+      "cells": 4390,
+      "own_cv_accuracy": 0.7241,
+      "own_cv_n": 4390,
+      "own_confusion": {
+        "row_normalised": {
+          "joyful": {
+            "joyful": 0.739,
+            "sad": 0.028,
+            "tense": 0.036,
+            "romantic": 0.128,
+            "humorous": 0.068
+          },
+          "sad": {
+            "joyful": 0.03,
+            "sad": 0.745,
+            "tense": 0.116,
+            "romantic": 0.039,
+            "humorous": 0.071
+          },
+          "tense": {
+            "joyful": 0.032,
+            "sad": 0.126,
+            "tense": 0.739,
+            "romantic": 0.023,
+            "humorous": 0.08
+          },
+          "romantic": {
+            "joyful": 0.114,
+            "sad": 0.043,
+            "tense": 0.009,
+            "romantic": 0.774,
+            "humorous": 0.059
+          },
+          "humorous": {
+            "joyful": 0.087,
+            "sad": 0.126,
+            "tense": 0.103,
+            "romantic": 0.062,
+            "humorous": 0.623
+          }
+        },
+        "recall": {
+          "joyful": 0.739,
+          "sad": 0.745,
+          "tense": 0.739,
+          "romantic": 0.774,
+          "humorous": 0.623
+        }
+      },
+      "sha256": "9d25dc531de4625f36ae9f41db400df54bc77ebb93a84fb9e618468b33af2a3b",
+      "epochs": 4,
+      "path": "/kaggle/working/models/judge_H"
+    }
+  },
+  "corpus_transfer": {
+    "S_judge_on_H_corpus": 0.3157,
+    "H_judge_on_S_corpus": 0.4294
+  },
+  "generated": {
+    "S_unpaired": {
+      "n": 4390,
+      "S_judge": 0.2178,
+      "H_judge": 0.2027
+    },
+    "H_unpaired": {
+      "n": 4390,
+      "S_judge": 0.2027,
+      "H_judge": 0.2415
+    },
+    "V1_unpaired": {
+      "n": 4390,
+      "S_judge": 0.2166,
+      "H_judge": 0.2153
+    }
+  },
+  "p4_verdict": {
+    "S_generated_under_own_judge": 0.2178,
+    "S_generated_under_H_judge": 0.2027,
+    "S_drop": 0.0151,
+    "H_generated_under_own_judge": 0.2415,
+    "H_generated_under_S_judge": 0.2027,
+    "H_drop": 0.0388,
+    "asymmetry_S_minus_H": -0.0237,
+    "p4_direction_holds": false,
+    "reading": "P4 predicts S captions lose MORE under a foreign judge than H captions do. asymmetry > 0 is the predicted direction; <= 0 falsifies it as symmetric or reversed. No magnitude was registered for P4, so the direction and the size are both reported and neither is thresholded."
+  }
+}
