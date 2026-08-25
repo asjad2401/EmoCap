@@ -1,0 +1,80 @@
+{
+  "build": "2d052e2372",
+  "n_captions": 50,
+  "n_registered": 250,
+  "chunks_returned": [
+    1
+  ],
+  "per_register": {
+    "tense": 10,
+    "romantic": 10,
+    "joyful": 10,
+    "sad": 10,
+    "humorous": 10
+  },
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "accuracy": 0.84,
+  "ci": {
+    "mean": 0.84,
+    "lo": 0.74,
+    "hi": 0.94,
+    "n_clusters": 50,
+    "width": 0.2
+  },
+  "in_distribution_cv": 0.8279,
+  "drop": -0.0121,
+  "chance": 0.2,
+  "keyword_anchor": 0.242,
+  "anchor_n_cells": 50,
+  "margin_over_anchor": 0.598,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 1.0,
+        "sad": 0.0,
+        "tense": 0.0,
+        "romantic": 0.0,
+        "humorous": 0.0
+      },
+      "sad": {
+        "joyful": 0.1,
+        "sad": 0.8,
+        "tense": 0.1,
+        "romantic": 0.0,
+        "humorous": 0.0
+      },
+      "tense": {
+        "joyful": 0.1,
+        "sad": 0.0,
+        "tense": 0.7,
+        "romantic": 0.0,
+        "humorous": 0.2
+      },
+      "romantic": {
+        "joyful": 0.3,
+        "sad": 0.0,
+        "tense": 0.0,
+        "romantic": 0.7,
+        "humorous": 0.0
+      },
+      "humorous": {
+        "joyful": 0.0,
+        "sad": 0.0,
+        "tense": 0.0,
+        "romantic": 0.0,
+        "humorous": 1.0
+      }
+    },
+    "recall": {
+      "joyful": 1.0,
+      "sad": 0.8,
+      "tense": 0.7,
+      "romantic": 0.7,
+      "humorous": 1.0
+    }
+  },
+  "mean_words": 20.2,
+  "distinct_captions": 50,
+  "verdict": "holds. The instrument reads register rather than one generator's style, and the criticism is answered.",
+  "label_provenance": "the register is what the writer was ASKED for, shown beside the photograph; no second annotator is needed because the label precedes the text rather than being inferred from it"
+}
