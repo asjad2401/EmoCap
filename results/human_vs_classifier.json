@@ -1,0 +1,40 @@
+{
+  "post_hoc": true,
+  "decided": "2026-08-25",
+  "why": "P5 compared a human on corpus captions against the classifier on generated captions -- different text and a different judge. This runs the classifier over the identical captions the reader saw.",
+  "n_items": 300,
+  "n_in_training_pool_excluded": 6,
+  "reader": {
+    "fce": 0.864,
+    "decided_only": 0.8893,
+    "raw": 0.8567,
+    "neutral_rate": 0.0367
+  },
+  "classifier": {
+    "accuracy_excluding_overlap": 0.8503,
+    "ci": {
+      "mean": 0.8503,
+      "lo": 0.8095,
+      "hi": 0.8912,
+      "n_clusters": 294,
+      "width": 0.0816
+    },
+    "n": 294,
+    "accuracy_all_items": 0.8533
+  },
+  "fair_difference_classifier_minus_reader_fce": -0.0137,
+  "decided_subset": {
+    "reader": 0.8873,
+    "classifier": 0.8486,
+    "n": 284
+  },
+  "agreement": {
+    "same_label_rate": 0.7746,
+    "cohens_kappa": 0.7181,
+    "reader_only_right": 35,
+    "classifier_only_right": 24,
+    "both_wrong": 8
+  },
+  "keyword_anchor_same_text": 0.4096,
+  "caveat": "Both judges read CORPUS captions. This makes human and classifier comparable to each other; it does not make either comparable to an arm's accuracy on GENERATED captions."
+}
