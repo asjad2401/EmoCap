@@ -12,11 +12,17 @@
     ]
   },
   "raters": [
+    "IM",
     "MA",
     "MM"
   ],
-  "n_raters": 2,
+  "n_raters": 3,
   "attention_checks": {
+    "IM": {
+      "rated": 12,
+      "passed": 12,
+      "rate": 1.0
+    },
     "MA": {
       "rated": 12,
       "passed": 12,
@@ -30,52 +36,52 @@
   },
   "flagged_raters": [],
   "krippendorff_alpha_ordinal": {
-    "tone": 0.4566,
-    "ground": 0.6171
+    "tone": 0.5789,
+    "ground": 0.6841
   },
   "per_arm": {
     "S_paired25": {
       "n_items": 50,
       "tone": {
-        "mean": 4.14,
-        "lo": 3.87,
-        "hi": 4.38,
+        "mean": 4.187,
+        "lo": 3.92,
+        "hi": 4.4267,
         "n_rated": 50
       },
       "ground": {
-        "mean": 3.81,
-        "lo": 3.45,
-        "hi": 4.15,
+        "mean": 3.927,
+        "lo": 3.58,
+        "hi": 4.2533,
         "n_rated": 50
       }
     },
     "S_paired5": {
       "n_items": 50,
       "tone": {
-        "mean": 4.09,
-        "lo": 3.86,
-        "hi": 4.3,
+        "mean": 4.153,
+        "lo": 3.9133,
+        "hi": 4.3733,
         "n_rated": 50
       },
       "ground": {
-        "mean": 3.3,
-        "lo": 2.94,
-        "hi": 3.64,
+        "mean": 3.38,
+        "lo": 3.02,
+        "hi": 3.72,
         "n_rated": 50
       }
     },
     "V1_paired5": {
       "n_items": 50,
       "tone": {
-        "mean": 3.81,
-        "lo": 3.54,
-        "hi": 4.05,
+        "mean": 3.88,
+        "lo": 3.6067,
+        "hi": 4.1267,
         "n_rated": 50
       },
       "ground": {
-        "mean": 3.47,
-        "lo": 3.11,
-        "hi": 3.81,
+        "mean": 3.613,
+        "lo": 3.26,
+        "hi": 3.9467,
         "n_rated": 50
       }
     }
@@ -84,20 +90,20 @@
     {
       "left": "S_paired25",
       "right": "S_paired5",
-      "tone": 0.05,
-      "ground": 0.51
+      "tone": 0.033,
+      "ground": 0.547
     },
     {
       "left": "S_paired25",
       "right": "V1_paired5",
-      "tone": 0.33,
-      "ground": 0.34
+      "tone": 0.307,
+      "ground": 0.313
     },
     {
       "left": "S_paired5",
       "right": "V1_paired5",
-      "tone": 0.28,
-      "ground": -0.17
+      "tone": 0.273,
+      "ground": -0.233
     }
   ],
   "bootstrap": {
