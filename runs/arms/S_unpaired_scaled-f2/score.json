@@ -1,0 +1,322 @@
+{
+  "run": "S_unpaired_scaled-f2",
+  "arm": "S_unpaired_scaled",
+  "fold": 2,
+  "negative_control": false,
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "n_cells": 7955,
+  "n_images": 1591,
+  "accuracy": 0.7995,
+  "ci": {
+    "mean": 0.7995,
+    "lo": 0.78,
+    "hi": 0.819,
+    "n_clusters": 1591,
+    "width": 0.039
+  },
+  "anchor": 0.6568,
+  "anchor_n_cells": 7955,
+  "anchor_pooled_per_cell": 0.6568,
+  "margin_over_anchor": 0.1427,
+  "chance": 0.2,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.865,
+        "sad": 0.003,
+        "tense": 0.028,
+        "romantic": 0.094,
+        "humorous": 0.009
+      },
+      "sad": {
+        "joyful": 0.009,
+        "sad": 0.928,
+        "tense": 0.009,
+        "romantic": 0.053,
+        "humorous": 0.0
+      },
+      "tense": {
+        "joyful": 0.082,
+        "sad": 0.019,
+        "tense": 0.855,
+        "romantic": 0.038,
+        "humorous": 0.006
+      },
+      "romantic": {
+        "joyful": 0.151,
+        "sad": 0.019,
+        "tense": 0.101,
+        "romantic": 0.726,
+        "humorous": 0.003
+      },
+      "humorous": {
+        "joyful": 0.223,
+        "sad": 0.082,
+        "tense": 0.047,
+        "romantic": 0.025,
+        "humorous": 0.624
+      }
+    },
+    "recall": {
+      "joyful": 0.865,
+      "sad": 0.928,
+      "tense": 0.855,
+      "romantic": 0.726,
+      "humorous": 0.624
+    }
+  },
+  "empty_captions": 0,
+  "mean_words": 16.0,
+  "unique_captions": 1588,
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.87,
+    "accuracy_blanked": 0.16,
+    "accuracy_drop": 0.71,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "1131800850_89c7ffd477.jpg",
+        "emotion": "joyful",
+        "with_image": "A brown and white dog waddles happily through the swirling water, darting across the surface.",
+        "blanked": ", (1)\n\n(1) (2) (See: \"I'm a girl\" on the screen.)\n\nFor the first time, the last.\n\n\"I'm"
+      },
+      {
+        "image_id": "1131800850_89c7ffd477.jpg",
+        "emotion": "joyful",
+        "with_image": "A brown and white dog waddles happily through the swirling water, darting across the surface.",
+        "blanked": ", (1)\n\n(1) (2) (See: \"I'm a girl\" on the screen.)\n\nFor the first time, the last.\n\n\"I'm"
+      },
+      {
+        "image_id": "1131800850_89c7ffd477.jpg",
+        "emotion": "joyful",
+        "with_image": "A brown and white dog waddles happily through the swirling water, darting across the surface.",
+        "blanked": ", (1)\n\n(1) (2) (See: \"I'm a girl\" on the screen.)\n\nFor the first time, the last.\n\n\"I'm"
+      },
+      {
+        "image_id": "1131800850_89c7ffd477.jpg",
+        "emotion": "joyful",
+        "with_image": "A brown and white dog waddles happily through the swirling water, darting across the surface.",
+        "blanked": ", (1)\n\n(1) (2) (See: \"I'm a girl\" on the screen.)\n\nFor the first time, the last.\n\n\"I'm"
+      },
+      {
+        "image_id": "1131800850_89c7ffd477.jpg",
+        "emotion": "joyful",
+        "with_image": "A brown and white dog waddles happily through the swirling water, darting across the surface.",
+        "blanked": ", (1)\n\n(1) (2) (See: \"I'm a girl\" on the screen.)\n\nFor the first time, the last.\n\n\"I'm"
+      },
+      {
+        "image_id": "1248940539_46d33ed487.jpg",
+        "emotion": "tense",
+        "with_image": "Two children hold their position on the sand, their faces locked together in the open air.",
+        "blanked": "(A)\n\nThe first-person-to-person, right-hand move, with the view of the other person.\n\nWeighing on the right side of the"
+      },
+      {
+        "image_id": "1248940539_46d33ed487.jpg",
+        "emotion": "tense",
+        "with_image": "Two children hold their position on the sand, their faces locked together in the open air.",
+        "blanked": "(A)\n\nThe first-person-to-person, right-hand move, with the view of the other person.\n\nWeighing on the right side of the"
+      },
+      {
+        "image_id": "1248940539_46d33ed487.jpg",
+        "emotion": "tense",
+        "with_image": "Two children hold their position on the sand, their faces locked together in the open air.",
+        "blanked": "(A)\n\nThe first-person-to-person, right-hand move, with the view of the other person.\n\nWeighing on the right side of the"
+      },
+      {
+        "image_id": "1248940539_46d33ed487.jpg",
+        "emotion": "tense",
+        "with_image": "Two children hold their position on the sand, their faces locked together in the open air.",
+        "blanked": "(A)\n\nThe first-person-to-person, right-hand move, with the view of the other person.\n\nWeighing on the right side of the"
+      },
+      {
+        "image_id": "1248940539_46d33ed487.jpg",
+        "emotion": "tense",
+        "with_image": "Two children hold their position on the sand, their faces locked together in the open air.",
+        "blanked": "(A)\n\nThe first-person-to-person, right-hand move, with the view of the other person.\n\nWeighing on the right side of the"
+      },
+      {
+        "image_id": "1425485485_d7c97a5470.jpg",
+        "emotion": "romantic",
+        "with_image": "A young boy and a girl share a warm embrace in the quiet room.",
+        "blanked": "(1)\n\n\"The right-hand side of the screen is the only one of the two.\n\nA few of the other ones. (One of the three."
+      },
+      {
+        "image_id": "1425485485_d7c97a5470.jpg",
+        "emotion": "romantic",
+        "with_image": "A young boy and a girl share a warm embrace in the quiet room.",
+        "blanked": "(1)\n\n\"The right-hand side of the screen is the only one of the two.\n\nA few of the other ones. (One of the three."
+      },
+      {
+        "image_id": "1425485485_d7c97a5470.jpg",
+        "emotion": "romantic",
+        "with_image": "A young boy and a girl share a warm embrace in the quiet room.",
+        "blanked": "(1)\n\n\"The right-hand side of the screen is the only one of the two.\n\nA few of the other ones. (One of the three."
+      },
+      {
+        "image_id": "1425485485_d7c97a5470.jpg",
+        "emotion": "romantic",
+        "with_image": "A young boy and a girl share a warm embrace in the quiet room.",
+        "blanked": "(1)\n\n\"The right-hand side of the screen is the only one of the two.\n\nA few of the other ones. (One of the three."
+      },
+      {
+        "image_id": "1425485485_d7c97a5470.jpg",
+        "emotion": "romantic",
+        "with_image": "A young boy and a girl share a warm embrace in the quiet room.",
+        "blanked": "(1)\n\n\"The right-hand side of the screen is the only one of the two.\n\nA few of the other ones. (One of the three."
+      },
+      {
+        "image_id": "152029243_b3582c36fa.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a red helmet grips the dirt bike with both hands as he navigates the rough rock.",
+        "blanked": ", (1)\n\n(1) (2) (See: \"I'm a girl\" on the screen.)\n\nFor the first time, the last.\n\n\"I'm"
+      },
+      {
+        "image_id": "152029243_b3582c36fa.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a red helmet grips the dirt bike with both hands as he navigates the rough rock.",
+        "blanked": ", (1)\n\n(1) (2) (See: \"I'm a girl\" on the screen.)\n\nFor the first time, the last.\n\n\"I'm"
+      },
+      {
+        "image_id": "152029243_b3582c36fa.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a red helmet grips the dirt bike with both hands as he navigates the rough rock.",
+        "blanked": ", (1)\n\n(1) (2) (See: \"I'm a girl\" on the screen.)\n\nFor the first time, the last.\n\n\"I'm"
+      },
+      {
+        "image_id": "152029243_b3582c36fa.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a red helmet grips the dirt bike with both hands as he navigates the rough rock.",
+        "blanked": ", (1)\n\n(1) (2) (See: \"I'm a girl\" on the screen.)\n\nFor the first time, the last.\n\n\"I'm"
+      },
+      {
+        "image_id": "152029243_b3582c36fa.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a red helmet grips the dirt bike with both hands as he navigates the rough rock.",
+        "blanked": ", (1)\n\n(1) (2) (See: \"I'm a girl\" on the screen.)\n\nFor the first time, the last.\n\n\"I'm"
+      },
+      {
+        "image_id": "1522787272_5a31497ef2.jpg",
+        "emotion": "humorous",
+        "with_image": "Two dogs attempt to run across the lawn at the same time.",
+        "blanked": "(1) (2)\n\n\"I don't know how to do it right now, but I'm going to try.\n\nThe first-person-to-the-"
+      },
+      {
+        "image_id": "1522787272_5a31497ef2.jpg",
+        "emotion": "humorous",
+        "with_image": "Two dogs attempt to run across the lawn at the same time.",
+        "blanked": "(1) (2)\n\n\"I don't know how to do it right now, but I'm going to try.\n\nThe first-person-to-the-"
+      },
+      {
+        "image_id": "1522787272_5a31497ef2.jpg",
+        "emotion": "humorous",
+        "with_image": "Two dogs attempt to run across the lawn at the same time.",
+        "blanked": "(1) (2)\n\n\"I don't know how to do it right now, but I'm going to try.\n\nThe first-person-to-the-"
+      },
+      {
+        "image_id": "1522787272_5a31497ef2.jpg",
+        "emotion": "humorous",
+        "with_image": "Two dogs attempt to run across the lawn at the same time.",
+        "blanked": "(1) (2)\n\n\"I don't know how to do it right now, but I'm going to try.\n\nThe first-person-to-the-"
+      },
+      {
+        "image_id": "1522787272_5a31497ef2.jpg",
+        "emotion": "humorous",
+        "with_image": "Two dogs attempt to run across the lawn at the same time.",
+        "blanked": "(1) (2)\n\n\"I don't know how to do it right now, but I'm going to try.\n\nThe first-person-to-the-"
+      },
+      {
+        "image_id": "160585932_fa6339f248.jpg",
+        "emotion": "romantic",
+        "with_image": "Deep in the deep water, a black and white coupe navigates quietly through the quiet water.",
+        "blanked": "(1)\n\n\"The right-hand side of the screen is the only one of the two.\n\nA few of the other ones. (One of the three."
+      },
+      {
+        "image_id": "160585932_fa6339f248.jpg",
+        "emotion": "romantic",
+        "with_image": "Deep in the deep water, a black and white coupe navigates quietly through the quiet water.",
+        "blanked": "(1)\n\n\"The right-hand side of the screen is the only one of the two.\n\nA few of the other ones. (One of the three."
+      },
+      {
+        "image_id": "160585932_fa6339f248.jpg",
+        "emotion": "romantic",
+        "with_image": "Deep in the deep water, a black and white coupe navigates quietly through the quiet water.",
+        "blanked": "(1)\n\n\"The right-hand side of the screen is the only one of the two.\n\nA few of the other ones. (One of the three."
+      },
+      {
+        "image_id": "160585932_fa6339f248.jpg",
+        "emotion": "romantic",
+        "with_image": "Deep in the deep water, a black and white coupe navigates quietly through the quiet water.",
+        "blanked": "(1)\n\n\"The right-hand side of the screen is the only one of the two.\n\nA few of the other ones. (One of the three."
+      },
+      {
+        "image_id": "160585932_fa6339f248.jpg",
+        "emotion": "romantic",
+        "with_image": "Deep in the deep water, a black and white coupe navigates quietly through the quiet water.",
+        "blanked": "(1)\n\n\"The right-hand side of the screen is the only one of the two.\n\nA few of the other ones. (One of the three."
+      },
+      {
+        "image_id": "1884727806_d84f209868.jpg",
+        "emotion": "sad",
+        "with_image": "A man and woman stand alone on the edge of the park, their faces fixed on the distant edge.",
+        "blanked": "(1) (2) (3)\n\nThe first-person-to-the-right-hand corner of the room.\n\nA few of the other people in the"
+      },
+      {
+        "image_id": "1884727806_d84f209868.jpg",
+        "emotion": "sad",
+        "with_image": "A man and woman stand alone on the edge of the park, their faces fixed on the distant edge.",
+        "blanked": "(1) (2) (3)\n\nThe first-person-to-the-right-hand corner of the room.\n\nA few of the other people in the"
+      },
+      {
+        "image_id": "1884727806_d84f209868.jpg",
+        "emotion": "sad",
+        "with_image": "A man and woman stand alone on the edge of the park, their faces fixed on the distant edge.",
+        "blanked": "(1) (2) (3)\n\nThe first-person-to-the-right-hand corner of the room.\n\nA few of the other people in the"
+      },
+      {
+        "image_id": "1884727806_d84f209868.jpg",
+        "emotion": "sad",
+        "with_image": "A man and woman stand alone on the edge of the park, their faces fixed on the distant edge.",
+        "blanked": "(1) (2) (3)\n\nThe first-person-to-the-right-hand corner of the room.\n\nA few of the other people in the"
+      },
+      {
+        "image_id": "1884727806_d84f209868.jpg",
+        "emotion": "sad",
+        "with_image": "A man and woman stand alone on the edge of the park, their faces fixed on the distant edge.",
+        "blanked": "(1) (2) (3)\n\nThe first-person-to-the-right-hand corner of the room.\n\nA few of the other people in the"
+      },
+      {
+        "image_id": "2073105823_6dacade004.jpg",
+        "emotion": "sad",
+        "with_image": "A lone skateboarder hangs suspended above the empty concrete wall, surrounded only by empty space.",
+        "blanked": "(1) (2) (3)\n\nThe first-person-to-the-right-hand corner of the room.\n\nA few of the other people in the"
+      },
+      {
+        "image_id": "2073105823_6dacade004.jpg",
+        "emotion": "sad",
+        "with_image": "A lone skateboarder hangs suspended above the empty concrete wall, surrounded only by empty space.",
+        "blanked": "(1) (2) (3)\n\nThe first-person-to-the-right-hand corner of the room.\n\nA few of the other people in the"
+      },
+      {
+        "image_id": "2073105823_6dacade004.jpg",
+        "emotion": "sad",
+        "with_image": "A lone skateboarder hangs suspended above the empty concrete wall, surrounded only by empty space.",
+        "blanked": "(1) (2) (3)\n\nThe first-person-to-the-right-hand corner of the room.\n\nA few of the other people in the"
+      },
+      {
+        "image_id": "2073105823_6dacade004.jpg",
+        "emotion": "sad",
+        "with_image": "A lone skateboarder hangs suspended above the empty concrete wall, surrounded only by empty space.",
+        "blanked": "(1) (2) (3)\n\nThe first-person-to-the-right-hand corner of the room.\n\nA few of the other people in the"
+      },
+      {
+        "image_id": "2073105823_6dacade004.jpg",
+        "emotion": "sad",
+        "with_image": "A lone skateboarder hangs suspended above the empty concrete wall, surrounded only by empty space.",
+        "blanked": "(1) (2) (3)\n\nThe first-person-to-the-right-hand corner of the room.\n\nA few of the other people in the"
+      }
+    ]
+  }
+}

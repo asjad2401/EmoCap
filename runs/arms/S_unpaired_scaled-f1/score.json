@@ -1,0 +1,322 @@
+{
+  "run": "S_unpaired_scaled-f1",
+  "arm": "S_unpaired_scaled",
+  "fold": 1,
+  "negative_control": false,
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "n_cells": 8185,
+  "n_images": 1637,
+  "accuracy": 0.7538,
+  "ci": {
+    "mean": 0.7538,
+    "lo": 0.733,
+    "hi": 0.7746,
+    "n_clusters": 1637,
+    "width": 0.0415
+  },
+  "anchor": 0.6,
+  "anchor_n_cells": 8185,
+  "anchor_pooled_per_cell": 0.6,
+  "margin_over_anchor": 0.1538,
+  "chance": 0.2,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.789,
+        "sad": 0.018,
+        "tense": 0.028,
+        "romantic": 0.141,
+        "humorous": 0.024
+      },
+      "sad": {
+        "joyful": 0.018,
+        "sad": 0.945,
+        "tense": 0.018,
+        "romantic": 0.018,
+        "humorous": 0.0
+      },
+      "tense": {
+        "joyful": 0.07,
+        "sad": 0.024,
+        "tense": 0.823,
+        "romantic": 0.076,
+        "humorous": 0.006
+      },
+      "romantic": {
+        "joyful": 0.223,
+        "sad": 0.04,
+        "tense": 0.076,
+        "romantic": 0.662,
+        "humorous": 0.0
+      },
+      "humorous": {
+        "joyful": 0.277,
+        "sad": 0.116,
+        "tense": 0.037,
+        "romantic": 0.018,
+        "humorous": 0.552
+      }
+    },
+    "recall": {
+      "joyful": 0.789,
+      "sad": 0.945,
+      "tense": 0.823,
+      "romantic": 0.662,
+      "humorous": 0.552
+    }
+  },
+  "empty_captions": 0,
+  "mean_words": 16.0,
+  "unique_captions": 1634,
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.76,
+    "accuracy_blanked": 0.12,
+    "accuracy_drop": 0.64,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "109260216_85b0be5378.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a red helmet moves along the dark tunnel wall, surrounded by bright green boulders.",
+        "blanked": "(1) (2) (See the image of the person in the photo)\n\nA photo of a person.\n\nThe person can be seen in the background of the photo"
+      },
+      {
+        "image_id": "109260216_85b0be5378.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a red helmet moves along the dark tunnel wall, surrounded by bright green boulders.",
+        "blanked": "(1) (2) (See the image of the person in the photo)\n\nA photo of a person.\n\nThe person can be seen in the background of the photo"
+      },
+      {
+        "image_id": "109260216_85b0be5378.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a red helmet moves along the dark tunnel wall, surrounded by bright green boulders.",
+        "blanked": "(1) (2) (See the image of the person in the photo)\n\nA photo of a person.\n\nThe person can be seen in the background of the photo"
+      },
+      {
+        "image_id": "109260216_85b0be5378.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a red helmet moves along the dark tunnel wall, surrounded by bright green boulders.",
+        "blanked": "(1) (2) (See the image of the person in the photo)\n\nA photo of a person.\n\nThe person can be seen in the background of the photo"
+      },
+      {
+        "image_id": "109260216_85b0be5378.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a red helmet moves along the dark tunnel wall, surrounded by bright green boulders.",
+        "blanked": "(1) (2) (See the image of the person in the photo)\n\nA photo of a person.\n\nThe person can be seen in the background of the photo"
+      },
+      {
+        "image_id": "109260218_fca831f933.jpg",
+        "emotion": "romantic",
+        "with_image": "Three people stand together in the dark stone cavern, surrounded by the pale glow of the surrounding rock.",
+        "blanked": "(1) (2) (See the image of the person in the photo)\n\nA photo of a person.\n\nThe person can be seen in the background of the photo"
+      },
+      {
+        "image_id": "109260218_fca831f933.jpg",
+        "emotion": "romantic",
+        "with_image": "Three people stand together in the dark stone cavern, surrounded by the pale glow of the surrounding rock.",
+        "blanked": "(1) (2) (See the image of the person in the photo)\n\nA photo of a person.\n\nThe person can be seen in the background of the photo"
+      },
+      {
+        "image_id": "109260218_fca831f933.jpg",
+        "emotion": "romantic",
+        "with_image": "Three people stand together in the dark stone cavern, surrounded by the pale glow of the surrounding rock.",
+        "blanked": "(1) (2) (See the image of the person in the photo)\n\nA photo of a person.\n\nThe person can be seen in the background of the photo"
+      },
+      {
+        "image_id": "109260218_fca831f933.jpg",
+        "emotion": "romantic",
+        "with_image": "Three people stand together in the dark stone cavern, surrounded by the pale glow of the surrounding rock.",
+        "blanked": "(1) (2) (See the image of the person in the photo)\n\nA photo of a person.\n\nThe person can be seen in the background of the photo"
+      },
+      {
+        "image_id": "109260218_fca831f933.jpg",
+        "emotion": "romantic",
+        "with_image": "Three people stand together in the dark stone cavern, surrounded by the pale glow of the surrounding rock.",
+        "blanked": "(1) (2) (See the image of the person in the photo)\n\nA photo of a person.\n\nThe person can be seen in the background of the photo"
+      },
+      {
+        "image_id": "1096097967_ac305887b4.jpg",
+        "emotion": "joyful",
+        "with_image": "A black and white dog leaps into the blue pool, grinning happily at the water.",
+        "blanked": "(1,2,3)\n\n\" (1,4,5, or 2)\n (See the photo on the right).\n\nFor more information, see the photo"
+      },
+      {
+        "image_id": "1096097967_ac305887b4.jpg",
+        "emotion": "joyful",
+        "with_image": "A black and white dog leaps into the blue pool, grinning happily at the water.",
+        "blanked": "(1,2,3)\n\n\" (1,4,5, or 2)\n (See the photo on the right).\n\nFor more information, see the photo"
+      },
+      {
+        "image_id": "1096097967_ac305887b4.jpg",
+        "emotion": "joyful",
+        "with_image": "A black and white dog leaps into the blue pool, grinning happily at the water.",
+        "blanked": "(1,2,3)\n\n\" (1,4,5, or 2)\n (See the photo on the right).\n\nFor more information, see the photo"
+      },
+      {
+        "image_id": "1096097967_ac305887b4.jpg",
+        "emotion": "joyful",
+        "with_image": "A black and white dog leaps into the blue pool, grinning happily at the water.",
+        "blanked": "(1,2,3)\n\n\" (1,4,5, or 2)\n (See the photo on the right).\n\nFor more information, see the photo"
+      },
+      {
+        "image_id": "1096097967_ac305887b4.jpg",
+        "emotion": "joyful",
+        "with_image": "A black and white dog leaps into the blue pool, grinning happily at the water.",
+        "blanked": "(1,2,3)\n\n\" (1,4,5, or 2)\n (See the photo on the right).\n\nFor more information, see the photo"
+      },
+      {
+        "image_id": "1119463452_69d4eecd08.jpg",
+        "emotion": "sad",
+        "with_image": "A young boy swims through the quiet pool, surrounded only by empty water.",
+        "blanked": "(1) (2) (See the photo on the right hand side of the screen)\n\nThe image of the person on the screen can be seen in the background."
+      },
+      {
+        "image_id": "1119463452_69d4eecd08.jpg",
+        "emotion": "sad",
+        "with_image": "A young boy swims through the quiet pool, surrounded only by empty water.",
+        "blanked": "(1) (2) (See the photo on the right hand side of the screen)\n\nThe image of the person on the screen can be seen in the background."
+      },
+      {
+        "image_id": "1119463452_69d4eecd08.jpg",
+        "emotion": "sad",
+        "with_image": "A young boy swims through the quiet pool, surrounded only by empty water.",
+        "blanked": "(1) (2) (See the photo on the right hand side of the screen)\n\nThe image of the person on the screen can be seen in the background."
+      },
+      {
+        "image_id": "1119463452_69d4eecd08.jpg",
+        "emotion": "sad",
+        "with_image": "A young boy swims through the quiet pool, surrounded only by empty water.",
+        "blanked": "(1) (2) (See the photo on the right hand side of the screen)\n\nThe image of the person on the screen can be seen in the background."
+      },
+      {
+        "image_id": "1119463452_69d4eecd08.jpg",
+        "emotion": "sad",
+        "with_image": "A young boy swims through the quiet pool, surrounded only by empty water.",
+        "blanked": "(1) (2) (See the photo on the right hand side of the screen)\n\nThe image of the person on the screen can be seen in the background."
+      },
+      {
+        "image_id": "1311132744_5ffd03f831.jpg",
+        "emotion": "humorous",
+        "with_image": "A black and white dog sprints through the grass with its mouth wide open.",
+        "blanked": "(1)\n\n(1) A person with the same name is the only person in the group.\n\nThe group is a group of people."
+      },
+      {
+        "image_id": "1311132744_5ffd03f831.jpg",
+        "emotion": "humorous",
+        "with_image": "A black and white dog sprints through the grass with its mouth wide open.",
+        "blanked": "(1)\n\n(1) A person with the same name is the only person in the group.\n\nThe group is a group of people."
+      },
+      {
+        "image_id": "1311132744_5ffd03f831.jpg",
+        "emotion": "humorous",
+        "with_image": "A black and white dog sprints through the grass with its mouth wide open.",
+        "blanked": "(1)\n\n(1) A person with the same name is the only person in the group.\n\nThe group is a group of people."
+      },
+      {
+        "image_id": "1311132744_5ffd03f831.jpg",
+        "emotion": "humorous",
+        "with_image": "A black and white dog sprints through the grass with its mouth wide open.",
+        "blanked": "(1)\n\n(1) A person with the same name is the only person in the group.\n\nThe group is a group of people."
+      },
+      {
+        "image_id": "1311132744_5ffd03f831.jpg",
+        "emotion": "humorous",
+        "with_image": "A black and white dog sprints through the grass with its mouth wide open.",
+        "blanked": "(1)\n\n(1) A person with the same name is the only person in the group.\n\nThe group is a group of people."
+      },
+      {
+        "image_id": "1383698008_8ac53ed7ec.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-air, the snowboarder hangs suspended in mid-air above the steep hillside.",
+        "blanked": "(1)\n\n(A photo, or a photo, can be seen on the screen.\n\nThe group of the two-digit numbers is the only one."
+      },
+      {
+        "image_id": "1383698008_8ac53ed7ec.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-air, the snowboarder hangs suspended in mid-air above the steep hillside.",
+        "blanked": "(1)\n\n(A photo, or a photo, can be seen on the screen.\n\nThe group of the two-digit numbers is the only one."
+      },
+      {
+        "image_id": "1383698008_8ac53ed7ec.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-air, the snowboarder hangs suspended in mid-air above the steep hillside.",
+        "blanked": "(1)\n\n(A photo, or a photo, can be seen on the screen.\n\nThe group of the two-digit numbers is the only one."
+      },
+      {
+        "image_id": "1383698008_8ac53ed7ec.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-air, the snowboarder hangs suspended in mid-air above the steep hillside.",
+        "blanked": "(1)\n\n(A photo, or a photo, can be seen on the screen.\n\nThe group of the two-digit numbers is the only one."
+      },
+      {
+        "image_id": "1383698008_8ac53ed7ec.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-air, the snowboarder hangs suspended in mid-air above the steep hillside.",
+        "blanked": "(1)\n\n(A photo, or a photo, can be seen on the screen.\n\nThe group of the two-digit numbers is the only one."
+      },
+      {
+        "image_id": "1659396176_ced00a549f.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-leap, the brown and white dog charges forward with its tail raised high above the ground.",
+        "blanked": "(1)\n\n(A photo, or a photo, can be seen on the screen.\n\nThe group of the two-digit numbers is the only one."
+      },
+      {
+        "image_id": "1659396176_ced00a549f.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-leap, the brown and white dog charges forward with its tail raised high above the ground.",
+        "blanked": "(1)\n\n(A photo, or a photo, can be seen on the screen.\n\nThe group of the two-digit numbers is the only one."
+      },
+      {
+        "image_id": "1659396176_ced00a549f.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-leap, the brown and white dog charges forward with its tail raised high above the ground.",
+        "blanked": "(1)\n\n(A photo, or a photo, can be seen on the screen.\n\nThe group of the two-digit numbers is the only one."
+      },
+      {
+        "image_id": "1659396176_ced00a549f.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-leap, the brown and white dog charges forward with its tail raised high above the ground.",
+        "blanked": "(1)\n\n(A photo, or a photo, can be seen on the screen.\n\nThe group of the two-digit numbers is the only one."
+      },
+      {
+        "image_id": "1659396176_ced00a549f.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-leap, the brown and white dog charges forward with its tail raised high above the ground.",
+        "blanked": "(1)\n\n(A photo, or a photo, can be seen on the screen.\n\nThe group of the two-digit numbers is the only one."
+      },
+      {
+        "image_id": "2056377805_e9a9b3bcf0.jpg",
+        "emotion": "joyful",
+        "with_image": "A young boy and a girl sit together in the open water, taking in the swirling currents.",
+        "blanked": "(1,2,3)\n\n\" (1,4,5, or 2)\n (See the photo on the right).\n\nFor more information, see the photo"
+      },
+      {
+        "image_id": "2056377805_e9a9b3bcf0.jpg",
+        "emotion": "joyful",
+        "with_image": "A young boy and a girl sit together in the open water, taking in the swirling currents.",
+        "blanked": "(1,2,3)\n\n\" (1,4,5, or 2)\n (See the photo on the right).\n\nFor more information, see the photo"
+      },
+      {
+        "image_id": "2056377805_e9a9b3bcf0.jpg",
+        "emotion": "joyful",
+        "with_image": "A young boy and a girl sit together in the open water, taking in the swirling currents.",
+        "blanked": "(1,2,3)\n\n\" (1,4,5, or 2)\n (See the photo on the right).\n\nFor more information, see the photo"
+      },
+      {
+        "image_id": "2056377805_e9a9b3bcf0.jpg",
+        "emotion": "joyful",
+        "with_image": "A young boy and a girl sit together in the open water, taking in the swirling currents.",
+        "blanked": "(1,2,3)\n\n\" (1,4,5, or 2)\n (See the photo on the right).\n\nFor more information, see the photo"
+      },
+      {
+        "image_id": "2056377805_e9a9b3bcf0.jpg",
+        "emotion": "joyful",
+        "with_image": "A young boy and a girl sit together in the open water, taking in the swirling currents.",
+        "blanked": "(1,2,3)\n\n\" (1,4,5, or 2)\n (See the photo on the right).\n\nFor more information, see the photo"
+      }
+    ]
+  }
+}

@@ -1,0 +1,324 @@
+visual-dependence probe -- S_unpaired_scaled-f4
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.7800 with image, 0.4000 blanked (+0.3800)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+1141718391_24164bf1b1.jpg  [sad]  
+   with image: A man and woman walk down the narrow wooden path, separated only by a bare wooden fence.
+   blanked   : (1) (2) (3)
+
+The first line of the line is the only one of the two.
+
+For the first line.
+
+1141718391_24164bf1b1.jpg  [sad]  
+   with image: A man and woman walk down the narrow wooden path, separated only by a bare wooden fence.
+   blanked   : (1) (2) (3)
+
+The first line of the line is the only one of the two.
+
+For the first line.
+
+1141718391_24164bf1b1.jpg  [sad]  
+   with image: A man and woman walk down the narrow wooden path, separated only by a bare wooden fence.
+   blanked   : (1) (2) (3)
+
+The first line of the line is the only one of the two.
+
+For the first line.
+
+1141718391_24164bf1b1.jpg  [sad]  
+   with image: A man and woman walk down the narrow wooden path, separated only by a bare wooden fence.
+   blanked   : (1) (2) (3)
+
+The first line of the line is the only one of the two.
+
+For the first line.
+
+1141718391_24164bf1b1.jpg  [sad]  
+   with image: A man and woman walk down the narrow wooden path, separated only by a bare wooden fence.
+   blanked   : (1) (2) (3)
+
+The first line of the line is the only one of the two.
+
+For the first line.
+
+1176580356_9810d877bf.jpg  [joyful]  
+   with image: A dog leaps high into the air, catching the ball in midair.
+   blanked   : (1,2)
+
+"I'm not sure I can get the right to do it right now.
+
+The man-in-the-pocket is the only way to
+
+1176580356_9810d877bf.jpg  [joyful]  
+   with image: A dog leaps high into the air, catching the ball in midair.
+   blanked   : (1,2)
+
+"I'm not sure I can get the right to do it right now.
+
+The man-in-the-pocket is the only way to
+
+1176580356_9810d877bf.jpg  [joyful]  
+   with image: A dog leaps high into the air, catching the ball in midair.
+   blanked   : (1,2)
+
+"I'm not sure I can get the right to do it right now.
+
+The man-in-the-pocket is the only way to
+
+1176580356_9810d877bf.jpg  [joyful]  
+   with image: A dog leaps high into the air, catching the ball in midair.
+   blanked   : (1,2)
+
+"I'm not sure I can get the right to do it right now.
+
+The man-in-the-pocket is the only way to
+
+1176580356_9810d877bf.jpg  [joyful]  
+   with image: A dog leaps high into the air, catching the ball in midair.
+   blanked   : (1,2)
+
+"I'm not sure I can get the right to do it right now.
+
+The man-in-the-pocket is the only way to
+
+1287475186_2dee85f1a5.jpg  [romantic]  
+   with image: Sunlight catches the boy's pale hair as he glides through the water.
+   blanked   : (1)
+
+"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.
+
+The first-person view
+
+1287475186_2dee85f1a5.jpg  [romantic]  
+   with image: Sunlight catches the boy's pale hair as he glides through the water.
+   blanked   : (1)
+
+"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.
+
+The first-person view
+
+1287475186_2dee85f1a5.jpg  [romantic]  
+   with image: Sunlight catches the boy's pale hair as he glides through the water.
+   blanked   : (1)
+
+"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.
+
+The first-person view
+
+1287475186_2dee85f1a5.jpg  [romantic]  
+   with image: Sunlight catches the boy's pale hair as he glides through the water.
+   blanked   : (1)
+
+"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.
+
+The first-person view
+
+1287475186_2dee85f1a5.jpg  [romantic]  
+   with image: Sunlight catches the boy's pale hair as he glides through the water.
+   blanked   : (1)
+
+"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.
+
+The first-person view
+
+1397923690_d3bf1f799e.jpg  [romantic]  
+   with image: A skier in a bright blue jacket moves down the snowy hillside with open eyes.
+   blanked   : (1)
+
+"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.
+
+The first-person view
+
+1397923690_d3bf1f799e.jpg  [romantic]  
+   with image: A skier in a bright blue jacket moves down the snowy hillside with open eyes.
+   blanked   : (1)
+
+"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.
+
+The first-person view
+
+1397923690_d3bf1f799e.jpg  [romantic]  
+   with image: A skier in a bright blue jacket moves down the snowy hillside with open eyes.
+   blanked   : (1)
+
+"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.
+
+The first-person view
+
+1397923690_d3bf1f799e.jpg  [romantic]  
+   with image: A skier in a bright blue jacket moves down the snowy hillside with open eyes.
+   blanked   : (1)
+
+"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.
+
+The first-person view
+
+1397923690_d3bf1f799e.jpg  [romantic]  
+   with image: A skier in a bright blue jacket moves down the snowy hillside with open eyes.
+   blanked   : (1)
+
+"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.
+
+The first-person view
+
+141140165_9002a04f19.jpg  [joyful]  
+   with image: Two young boys play baseball together in the open field, one holding a baseball and the other holding it.
+   blanked   : (1,2)
+
+"I'm not sure I can get the right to do it right now.
+
+The man-in-the-pocket is the only way to
+
+141140165_9002a04f19.jpg  [joyful]  
+   with image: Two young boys play baseball together in the open field, one holding a baseball and the other holding it.
+   blanked   : (1,2)
+
+"I'm not sure I can get the right to do it right now.
+
+The man-in-the-pocket is the only way to
+
+141140165_9002a04f19.jpg  [joyful]  
+   with image: Two young boys play baseball together in the open field, one holding a baseball and the other holding it.
+   blanked   : (1,2)
+
+"I'm not sure I can get the right to do it right now.
+
+The man-in-the-pocket is the only way to
+
+141140165_9002a04f19.jpg  [joyful]  
+   with image: Two young boys play baseball together in the open field, one holding a baseball and the other holding it.
+   blanked   : (1,2)
+
+"I'm not sure I can get the right to do it right now.
+
+The man-in-the-pocket is the only way to
+
+141140165_9002a04f19.jpg  [joyful]  
+   with image: Two young boys play baseball together in the open field, one holding a baseball and the other holding it.
+   blanked   : (1,2)
+
+"I'm not sure I can get the right to do it right now.
+
+The man-in-the-pocket is the only way to
+
+1418019748_51c7d59c11.jpg  [romantic]  
+   with image: A man in a white shirt and a white hat holds his fork firmly in his hand.
+   blanked   : (1)
+
+"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.
+
+The first-person view
+
+1418019748_51c7d59c11.jpg  [romantic]  
+   with image: A man in a white shirt and a white hat holds his fork firmly in his hand.
+   blanked   : (1)
+
+"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.
+
+The first-person view
+
+1418019748_51c7d59c11.jpg  [romantic]  
+   with image: A man in a white shirt and a white hat holds his fork firmly in his hand.
+   blanked   : (1)
+
+"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.
+
+The first-person view
+
+1418019748_51c7d59c11.jpg  [romantic]  
+   with image: A man in a white shirt and a white hat holds his fork firmly in his hand.
+   blanked   : (1)
+
+"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.
+
+The first-person view
+
+1418019748_51c7d59c11.jpg  [romantic]  
+   with image: A man in a white shirt and a white hat holds his fork firmly in his hand.
+   blanked   : (1)
+
+"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.
+
+The first-person view
+
+1490670858_e122df2560.jpg  [humorous]  
+   with image: A little boy in a blue shirt and a red shirt attempts to climb the slide.
+   blanked   : (2)
+
+"I'm not sure I can get the right to the right.
+
+The only way to do that is to take a photo.
+
+1490670858_e122df2560.jpg  [humorous]  
+   with image: A little boy in a blue shirt and a red shirt attempts to climb the slide.
+   blanked   : (2)
+
+"I'm not sure I can get the right to the right.
+
+The only way to do that is to take a photo.
+
+1490670858_e122df2560.jpg  [humorous]  
+   with image: A little boy in a blue shirt and a red shirt attempts to climb the slide.
+   blanked   : (2)
+
+"I'm not sure I can get the right to the right.
+
+The only way to do that is to take a photo.
+
+1490670858_e122df2560.jpg  [humorous]  
+   with image: A little boy in a blue shirt and a red shirt attempts to climb the slide.
+   blanked   : (2)
+
+"I'm not sure I can get the right to the right.
+
+The only way to do that is to take a photo.
+
+1490670858_e122df2560.jpg  [humorous]  
+   with image: A little boy in a blue shirt and a red shirt attempts to climb the slide.
+   blanked   : (2)
+
+"I'm not sure I can get the right to the right.
+
+The only way to do that is to take a photo.
+
+1597557856_30640e0b43.jpg  [sad]  
+   with image: A woman and a dog stand on the bare wooden floor, surrounded by empty shelves and empty shelves.
+   blanked   : (1) (2) (3)
+
+The first line of the line is the only one of the two.
+
+For the first line.
+
+1597557856_30640e0b43.jpg  [sad]  
+   with image: A woman and a dog stand on the bare wooden floor, surrounded by empty shelves and empty shelves.
+   blanked   : (1) (2) (3)
+
+The first line of the line is the only one of the two.
+
+For the first line.
+
+1597557856_30640e0b43.jpg  [sad]  
+   with image: A woman and a dog stand on the bare wooden floor, surrounded by empty shelves and empty shelves.
+   blanked   : (1) (2) (3)
+
+The first line of the line is the only one of the two.
+
+For the first line.
+
+1597557856_30640e0b43.jpg  [sad]  
+   with image: A woman and a dog stand on the bare wooden floor, surrounded by empty shelves and empty shelves.
+   blanked   : (1) (2) (3)
+
+The first line of the line is the only one of the two.
+
+For the first line.
+
+1597557856_30640e0b43.jpg  [sad]  
+   with image: A woman and a dog stand on the bare wooden floor, surrounded by empty shelves and empty shelves.
+   blanked   : (1) (2) (3)
+
+The first line of the line is the only one of the two.
+
+For the first line.

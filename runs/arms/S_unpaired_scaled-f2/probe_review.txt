@@ -1,0 +1,344 @@
+visual-dependence probe -- S_unpaired_scaled-f2
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.8700 with image, 0.1600 blanked (+0.7100)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+1131800850_89c7ffd477.jpg  [joyful]  
+   with image: A brown and white dog waddles happily through the swirling water, darting across the surface.
+   blanked   : , (1)
+
+(1) (2) (See: "I'm a girl" on the screen.)
+
+For the first time, the last.
+
+"I'm
+
+1131800850_89c7ffd477.jpg  [joyful]  
+   with image: A brown and white dog waddles happily through the swirling water, darting across the surface.
+   blanked   : , (1)
+
+(1) (2) (See: "I'm a girl" on the screen.)
+
+For the first time, the last.
+
+"I'm
+
+1131800850_89c7ffd477.jpg  [joyful]  
+   with image: A brown and white dog waddles happily through the swirling water, darting across the surface.
+   blanked   : , (1)
+
+(1) (2) (See: "I'm a girl" on the screen.)
+
+For the first time, the last.
+
+"I'm
+
+1131800850_89c7ffd477.jpg  [joyful]  
+   with image: A brown and white dog waddles happily through the swirling water, darting across the surface.
+   blanked   : , (1)
+
+(1) (2) (See: "I'm a girl" on the screen.)
+
+For the first time, the last.
+
+"I'm
+
+1131800850_89c7ffd477.jpg  [joyful]  
+   with image: A brown and white dog waddles happily through the swirling water, darting across the surface.
+   blanked   : , (1)
+
+(1) (2) (See: "I'm a girl" on the screen.)
+
+For the first time, the last.
+
+"I'm
+
+1248940539_46d33ed487.jpg  [tense]  
+   with image: Two children hold their position on the sand, their faces locked together in the open air.
+   blanked   : (A)
+
+The first-person-to-person, right-hand move, with the view of the other person.
+
+Weighing on the right side of the
+
+1248940539_46d33ed487.jpg  [tense]  
+   with image: Two children hold their position on the sand, their faces locked together in the open air.
+   blanked   : (A)
+
+The first-person-to-person, right-hand move, with the view of the other person.
+
+Weighing on the right side of the
+
+1248940539_46d33ed487.jpg  [tense]  
+   with image: Two children hold their position on the sand, their faces locked together in the open air.
+   blanked   : (A)
+
+The first-person-to-person, right-hand move, with the view of the other person.
+
+Weighing on the right side of the
+
+1248940539_46d33ed487.jpg  [tense]  
+   with image: Two children hold their position on the sand, their faces locked together in the open air.
+   blanked   : (A)
+
+The first-person-to-person, right-hand move, with the view of the other person.
+
+Weighing on the right side of the
+
+1248940539_46d33ed487.jpg  [tense]  
+   with image: Two children hold their position on the sand, their faces locked together in the open air.
+   blanked   : (A)
+
+The first-person-to-person, right-hand move, with the view of the other person.
+
+Weighing on the right side of the
+
+1425485485_d7c97a5470.jpg  [romantic]  
+   with image: A young boy and a girl share a warm embrace in the quiet room.
+   blanked   : (1)
+
+"The right-hand side of the screen is the only one of the two.
+
+A few of the other ones. (One of the three.
+
+1425485485_d7c97a5470.jpg  [romantic]  
+   with image: A young boy and a girl share a warm embrace in the quiet room.
+   blanked   : (1)
+
+"The right-hand side of the screen is the only one of the two.
+
+A few of the other ones. (One of the three.
+
+1425485485_d7c97a5470.jpg  [romantic]  
+   with image: A young boy and a girl share a warm embrace in the quiet room.
+   blanked   : (1)
+
+"The right-hand side of the screen is the only one of the two.
+
+A few of the other ones. (One of the three.
+
+1425485485_d7c97a5470.jpg  [romantic]  
+   with image: A young boy and a girl share a warm embrace in the quiet room.
+   blanked   : (1)
+
+"The right-hand side of the screen is the only one of the two.
+
+A few of the other ones. (One of the three.
+
+1425485485_d7c97a5470.jpg  [romantic]  
+   with image: A young boy and a girl share a warm embrace in the quiet room.
+   blanked   : (1)
+
+"The right-hand side of the screen is the only one of the two.
+
+A few of the other ones. (One of the three.
+
+152029243_b3582c36fa.jpg  [joyful]  
+   with image: A man in a red helmet grips the dirt bike with both hands as he navigates the rough rock.
+   blanked   : , (1)
+
+(1) (2) (See: "I'm a girl" on the screen.)
+
+For the first time, the last.
+
+"I'm
+
+152029243_b3582c36fa.jpg  [joyful]  
+   with image: A man in a red helmet grips the dirt bike with both hands as he navigates the rough rock.
+   blanked   : , (1)
+
+(1) (2) (See: "I'm a girl" on the screen.)
+
+For the first time, the last.
+
+"I'm
+
+152029243_b3582c36fa.jpg  [joyful]  
+   with image: A man in a red helmet grips the dirt bike with both hands as he navigates the rough rock.
+   blanked   : , (1)
+
+(1) (2) (See: "I'm a girl" on the screen.)
+
+For the first time, the last.
+
+"I'm
+
+152029243_b3582c36fa.jpg  [joyful]  
+   with image: A man in a red helmet grips the dirt bike with both hands as he navigates the rough rock.
+   blanked   : , (1)
+
+(1) (2) (See: "I'm a girl" on the screen.)
+
+For the first time, the last.
+
+"I'm
+
+152029243_b3582c36fa.jpg  [joyful]  
+   with image: A man in a red helmet grips the dirt bike with both hands as he navigates the rough rock.
+   blanked   : , (1)
+
+(1) (2) (See: "I'm a girl" on the screen.)
+
+For the first time, the last.
+
+"I'm
+
+1522787272_5a31497ef2.jpg  [humorous]  
+   with image: Two dogs attempt to run across the lawn at the same time.
+   blanked   : (1) (2)
+
+"I don't know how to do it right now, but I'm going to try.
+
+The first-person-to-the-
+
+1522787272_5a31497ef2.jpg  [humorous]  
+   with image: Two dogs attempt to run across the lawn at the same time.
+   blanked   : (1) (2)
+
+"I don't know how to do it right now, but I'm going to try.
+
+The first-person-to-the-
+
+1522787272_5a31497ef2.jpg  [humorous]  
+   with image: Two dogs attempt to run across the lawn at the same time.
+   blanked   : (1) (2)
+
+"I don't know how to do it right now, but I'm going to try.
+
+The first-person-to-the-
+
+1522787272_5a31497ef2.jpg  [humorous]  
+   with image: Two dogs attempt to run across the lawn at the same time.
+   blanked   : (1) (2)
+
+"I don't know how to do it right now, but I'm going to try.
+
+The first-person-to-the-
+
+1522787272_5a31497ef2.jpg  [humorous]  
+   with image: Two dogs attempt to run across the lawn at the same time.
+   blanked   : (1) (2)
+
+"I don't know how to do it right now, but I'm going to try.
+
+The first-person-to-the-
+
+160585932_fa6339f248.jpg  [romantic]  
+   with image: Deep in the deep water, a black and white coupe navigates quietly through the quiet water.
+   blanked   : (1)
+
+"The right-hand side of the screen is the only one of the two.
+
+A few of the other ones. (One of the three.
+
+160585932_fa6339f248.jpg  [romantic]  
+   with image: Deep in the deep water, a black and white coupe navigates quietly through the quiet water.
+   blanked   : (1)
+
+"The right-hand side of the screen is the only one of the two.
+
+A few of the other ones. (One of the three.
+
+160585932_fa6339f248.jpg  [romantic]  
+   with image: Deep in the deep water, a black and white coupe navigates quietly through the quiet water.
+   blanked   : (1)
+
+"The right-hand side of the screen is the only one of the two.
+
+A few of the other ones. (One of the three.
+
+160585932_fa6339f248.jpg  [romantic]  
+   with image: Deep in the deep water, a black and white coupe navigates quietly through the quiet water.
+   blanked   : (1)
+
+"The right-hand side of the screen is the only one of the two.
+
+A few of the other ones. (One of the three.
+
+160585932_fa6339f248.jpg  [romantic]  
+   with image: Deep in the deep water, a black and white coupe navigates quietly through the quiet water.
+   blanked   : (1)
+
+"The right-hand side of the screen is the only one of the two.
+
+A few of the other ones. (One of the three.
+
+1884727806_d84f209868.jpg  [sad]  
+   with image: A man and woman stand alone on the edge of the park, their faces fixed on the distant edge.
+   blanked   : (1) (2) (3)
+
+The first-person-to-the-right-hand corner of the room.
+
+A few of the other people in the
+
+1884727806_d84f209868.jpg  [sad]  
+   with image: A man and woman stand alone on the edge of the park, their faces fixed on the distant edge.
+   blanked   : (1) (2) (3)
+
+The first-person-to-the-right-hand corner of the room.
+
+A few of the other people in the
+
+1884727806_d84f209868.jpg  [sad]  
+   with image: A man and woman stand alone on the edge of the park, their faces fixed on the distant edge.
+   blanked   : (1) (2) (3)
+
+The first-person-to-the-right-hand corner of the room.
+
+A few of the other people in the
+
+1884727806_d84f209868.jpg  [sad]  
+   with image: A man and woman stand alone on the edge of the park, their faces fixed on the distant edge.
+   blanked   : (1) (2) (3)
+
+The first-person-to-the-right-hand corner of the room.
+
+A few of the other people in the
+
+1884727806_d84f209868.jpg  [sad]  
+   with image: A man and woman stand alone on the edge of the park, their faces fixed on the distant edge.
+   blanked   : (1) (2) (3)
+
+The first-person-to-the-right-hand corner of the room.
+
+A few of the other people in the
+
+2073105823_6dacade004.jpg  [sad]  
+   with image: A lone skateboarder hangs suspended above the empty concrete wall, surrounded only by empty space.
+   blanked   : (1) (2) (3)
+
+The first-person-to-the-right-hand corner of the room.
+
+A few of the other people in the
+
+2073105823_6dacade004.jpg  [sad]  
+   with image: A lone skateboarder hangs suspended above the empty concrete wall, surrounded only by empty space.
+   blanked   : (1) (2) (3)
+
+The first-person-to-the-right-hand corner of the room.
+
+A few of the other people in the
+
+2073105823_6dacade004.jpg  [sad]  
+   with image: A lone skateboarder hangs suspended above the empty concrete wall, surrounded only by empty space.
+   blanked   : (1) (2) (3)
+
+The first-person-to-the-right-hand corner of the room.
+
+A few of the other people in the
+
+2073105823_6dacade004.jpg  [sad]  
+   with image: A lone skateboarder hangs suspended above the empty concrete wall, surrounded only by empty space.
+   blanked   : (1) (2) (3)
+
+The first-person-to-the-right-hand corner of the room.
+
+A few of the other people in the
+
+2073105823_6dacade004.jpg  [sad]  
+   with image: A lone skateboarder hangs suspended above the empty concrete wall, surrounded only by empty space.
+   blanked   : (1) (2) (3)
+
+The first-person-to-the-right-hand corner of the room.
+
+A few of the other people in the

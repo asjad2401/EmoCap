@@ -1,9 +1,16 @@
 {
-  "status": "final",
-  "runs_found": 42,
+  "status": "provisional",
+  "runs_found": 48,
   "runs_expected": 36,
   "excluded_by_probe": [],
-  "unreviewed": [],
+  "unreviewed": [
+    "S_unpaired_scaled-f0",
+    "S_unpaired_scaled-f0-nc",
+    "S_unpaired_scaled-f1",
+    "S_unpaired_scaled-f2",
+    "S_unpaired_scaled-f3",
+    "S_unpaired_scaled-f4"
+  ],
   "manipulation_check": [
     {
       "run": "H_unpaired-f0-nc",
@@ -37,6 +44,13 @@
       "run": "S_unpaired-f0-nc",
       "arm": "S_unpaired",
       "accuracy": 0.1821,
+      "max": 0.25,
+      "passes": true
+    },
+    {
+      "run": "S_unpaired_scaled-f0-nc",
+      "arm": "S_unpaired_scaled",
+      "accuracy": 0.1942,
       "max": 0.25,
       "passes": true
     },
@@ -358,10 +372,52 @@
       "right_accuracy": 0.2027,
       "post_hoc": true,
       "reading": "volume matched at 4,390 cells; LEFT is paired, RIGHT is not. A positive margin gap means paired structure helps at a small budget."
+    },
+    {
+      "left": "S_paired5",
+      "right": "S_unpaired_scaled",
+      "folds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "paired": true,
+      "n_cells_paired": 8047,
+      "accuracy_diff": -0.0112,
+      "ci": {
+        "lo": -0.0224,
+        "hi": 0.0002
+      },
+      "n_clusters": 8047,
+      "p_bootstrap": 0.0558,
+      "crosses_zero": true,
+      "margin_diff_bootstrap": -0.0529,
+      "margin_ci": {
+        "lo": -0.0648,
+        "hi": -0.0409
+      },
+      "margin_p_bootstrap": 0.0001,
+      "margin_crosses_zero": false,
+      "margin_diff": -0.0541,
+      "margin_sd_across_folds": 0.0122,
+      "margin_by_fold": [
+        -0.0527,
+        -0.0567,
+        -0.0719,
+        -0.0513,
+        -0.0379
+      ],
+      "left_accuracy": 0.7645,
+      "right_accuracy": 0.7757,
+      "post_hoc": true,
+      "reading": "volume matched at 40,235 cells and the same 8,047 images; LEFT varies register within an image, RIGHT varies source text. A positive margin gap ISOLATES pairing from volume -- this is the comparison P3 could not make."
     }
   ],
   "post_hoc_readings": {
-    "S_paired_matched vs S_unpaired": "volume matched at 4,390 cells; LEFT is paired, RIGHT is not. A positive margin gap means paired structure helps at a small budget."
+    "S_paired_matched vs S_unpaired": "volume matched at 4,390 cells; LEFT is paired, RIGHT is not. A positive margin gap means paired structure helps at a small budget.",
+    "S_paired5 vs S_unpaired_scaled": "volume matched at 40,235 cells and the same 8,047 images; LEFT varies register within an image, RIGHT varies source text. A positive margin gap ISOLATES pairing from volume -- this is the comparison P3 could not make."
   },
   "post_hoc_note": "same estimator as the confirmatory comparisons and deliberately outside the Holm family, which the registration fixes at four",
   "smallest_effect_of_interest": 0.07,

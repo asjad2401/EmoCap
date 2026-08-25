@@ -1,0 +1,204 @@
+visual-dependence probe -- S_unpaired_scaled-f3
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.8100 with image, 0.0000 blanked (+0.8100)
+blanked output has 3 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+1149179852_acad4d7300.jpg  [tense]  
+   with image: A man in a black coat walks along the road with his horse, holding onto the black carriage.
+   blanked   : (1,2,3,4, or (2,4)
+
+In the case of a single-digit number.
+
+1149179852_acad4d7300.jpg  [tense]  
+   with image: A man in a black coat walks along the road with his horse, holding onto the black carriage.
+   blanked   : (1,2,3,4, or (2,4)
+
+In the case of a single-digit number.
+
+1149179852_acad4d7300.jpg  [tense]  
+   with image: A man in a black coat walks along the road with his horse, holding onto the black carriage.
+   blanked   : (1,2,3,4, or (2,4)
+
+In the case of a single-digit number.
+
+1149179852_acad4d7300.jpg  [tense]  
+   with image: A man in a black coat walks along the road with his horse, holding onto the black carriage.
+   blanked   : (1,2,3,4, or (2,4)
+
+In the case of a single-digit number.
+
+1149179852_acad4d7300.jpg  [tense]  
+   with image: A man in a black coat walks along the road with his horse, holding onto the black carriage.
+   blanked   : (1,2,3,4, or (2,4)
+
+In the case of a single-digit number.
+
+125319704_49ead3463c.jpg  [tense]  
+   with image: Three bikers hold their ground on the rocky hillside, holding their ground as the river rushes past them.
+   blanked   : (1,2,3,4, or (2,4)
+
+In the case of a single-digit number.
+
+125319704_49ead3463c.jpg  [tense]  
+   with image: Three bikers hold their ground on the rocky hillside, holding their ground as the river rushes past them.
+   blanked   : (1,2,3,4, or (2,4)
+
+In the case of a single-digit number.
+
+125319704_49ead3463c.jpg  [tense]  
+   with image: Three bikers hold their ground on the rocky hillside, holding their ground as the river rushes past them.
+   blanked   : (1,2,3,4, or (2,4)
+
+In the case of a single-digit number.
+
+125319704_49ead3463c.jpg  [tense]  
+   with image: Three bikers hold their ground on the rocky hillside, holding their ground as the river rushes past them.
+   blanked   : (1,2,3,4, or (2,4)
+
+In the case of a single-digit number.
+
+125319704_49ead3463c.jpg  [tense]  
+   with image: Three bikers hold their ground on the rocky hillside, holding their ground as the river rushes past them.
+   blanked   : (1,2,3,4, or (2,4)
+
+In the case of a single-digit number.
+
+1298295313_db1f4c6522.jpg  [tense]  
+   with image: Mid-leap, a boy in a blue shirt jumps high above the lake surface.
+   blanked   : (1,2,3,4, or (2,4)
+
+In the case of a single-digit number.
+
+1298295313_db1f4c6522.jpg  [tense]  
+   with image: Mid-leap, a boy in a blue shirt jumps high above the lake surface.
+   blanked   : (1,2,3,4, or (2,4)
+
+In the case of a single-digit number.
+
+1298295313_db1f4c6522.jpg  [tense]  
+   with image: Mid-leap, a boy in a blue shirt jumps high above the lake surface.
+   blanked   : (1,2,3,4, or (2,4)
+
+In the case of a single-digit number.
+
+1298295313_db1f4c6522.jpg  [tense]  
+   with image: Mid-leap, a boy in a blue shirt jumps high above the lake surface.
+   blanked   : (1,2,3,4, or (2,4)
+
+In the case of a single-digit number.
+
+1298295313_db1f4c6522.jpg  [tense]  
+   with image: Mid-leap, a boy in a blue shirt jumps high above the lake surface.
+   blanked   : (1,2,3,4, or (2,4)
+
+In the case of a single-digit number.
+
+1342766791_1e72f92455.jpg  [joyful]  
+   with image: A boy and a girl share a peaceful stroll together in the open courtyard.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1342766791_1e72f92455.jpg  [joyful]  
+   with image: A boy and a girl share a peaceful stroll together in the open courtyard.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1342766791_1e72f92455.jpg  [joyful]  
+   with image: A boy and a girl share a peaceful stroll together in the open courtyard.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1342766791_1e72f92455.jpg  [joyful]  
+   with image: A boy and a girl share a peaceful stroll together in the open courtyard.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1342766791_1e72f92455.jpg  [joyful]  
+   with image: A boy and a girl share a peaceful stroll together in the open courtyard.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+134894450_dadea45d65.jpg  [joyful]  
+   with image: A man in a shirt and shorts jumps high into the air above the forest canopy.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+134894450_dadea45d65.jpg  [joyful]  
+   with image: A man in a shirt and shorts jumps high into the air above the forest canopy.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+134894450_dadea45d65.jpg  [joyful]  
+   with image: A man in a shirt and shorts jumps high into the air above the forest canopy.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+134894450_dadea45d65.jpg  [joyful]  
+   with image: A man in a shirt and shorts jumps high into the air above the forest canopy.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+134894450_dadea45d65.jpg  [joyful]  
+   with image: A man in a shirt and shorts jumps high into the air above the forest canopy.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1351315701_6580b51c41.jpg  [humorous]  
+   with image: A black and white dog sprints across the lawn in full pursuit of a small white dog.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1351315701_6580b51c41.jpg  [humorous]  
+   with image: A black and white dog sprints across the lawn in full pursuit of a small white dog.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1351315701_6580b51c41.jpg  [humorous]  
+   with image: A black and white dog sprints across the lawn in full pursuit of a small white dog.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1351315701_6580b51c41.jpg  [humorous]  
+   with image: A black and white dog sprints across the lawn in full pursuit of a small white dog.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1351315701_6580b51c41.jpg  [humorous]  
+   with image: A black and white dog sprints across the lawn in full pursuit of a small white dog.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1482960952_95f2d419cb.jpg  [sad]  
+   with image: Three women walk together across the dark pavement, their faces fixed on the empty bench.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1482960952_95f2d419cb.jpg  [sad]  
+   with image: Three women walk together across the dark pavement, their faces fixed on the empty bench.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1482960952_95f2d419cb.jpg  [sad]  
+   with image: Three women walk together across the dark pavement, their faces fixed on the empty bench.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1482960952_95f2d419cb.jpg  [sad]  
+   with image: Three women walk together across the dark pavement, their faces fixed on the empty bench.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1482960952_95f2d419cb.jpg  [sad]  
+   with image: Three women walk together across the dark pavement, their faces fixed on the empty bench.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1541272333_1624b22546.jpg  [tense]  
+   with image: Suspended mid-stride, the dog locks its jaws tightly on the ground.
+   blanked   : (1,2,3,4, or (2,4)
+
+In the case of a single-digit number.
+
+1541272333_1624b22546.jpg  [tense]  
+   with image: Suspended mid-stride, the dog locks its jaws tightly on the ground.
+   blanked   : (1,2,3,4, or (2,4)
+
+In the case of a single-digit number.
+
+1541272333_1624b22546.jpg  [tense]  
+   with image: Suspended mid-stride, the dog locks its jaws tightly on the ground.
+   blanked   : (1,2,3,4, or (2,4)
+
+In the case of a single-digit number.
+
+1541272333_1624b22546.jpg  [tense]  
+   with image: Suspended mid-stride, the dog locks its jaws tightly on the ground.
+   blanked   : (1,2,3,4, or (2,4)
+
+In the case of a single-digit number.
+
+1541272333_1624b22546.jpg  [tense]  
+   with image: Suspended mid-stride, the dog locks its jaws tightly on the ground.
+   blanked   : (1,2,3,4, or (2,4)
+
+In the case of a single-digit number.

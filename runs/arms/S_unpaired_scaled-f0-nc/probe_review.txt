@@ -1,0 +1,324 @@
+visual-dependence probe -- S_unpaired_scaled-f0-nc
+0/501 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.2315 with image, 0.2180 blanked (+0.0135)
+blanked output has 5 unique captions in 501 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+1007129816_e794419615.jpg  [tense]  
+   with image: A man in a bright orange hat and a hat stands alone in the dimly lit room.
+   blanked   : , (1)
+
+"I don't know what the word is, but I don't think it's a good idea.
+
+The man is the only person in the room.
+
+1019077836_6fc9b15408.jpg  [humorous]  
+   with image: A brown dog leaps across the green lawn with its mouth open wide as it runs through the water.
+   blanked   : , (1)
+
+"I'm not going to do it right now, but I'm going to.
+
+The man in the picture is the only person in the room.
+
+1056359656_662cee0814.jpg  [joyful]  
+   with image: A little girl sits on the sofa, reading aloud from a book on the table.
+   blanked   : , (1)
+
+"I'm the only person in the room, right now.
+
+The woman in the photo was the only one in the picture.
+
+1056359656_662cee0814.jpg  [joyful]  
+   with image: A little girl sits on the sofa, reading aloud from a book on the table.
+   blanked   : , (1)
+
+"I'm the only person in the room, right now.
+
+The woman in the photo was the only one in the picture.
+
+1096165011_cc5eb16aa6.jpg  [humorous]  
+   with image: A little boy swims through the bright blue pool, surrounded only by empty blue water.
+   blanked   : , (1)
+
+"I'm not going to do it right now, but I'm going to.
+
+The man in the picture is the only person in the room.
+
+1096165011_cc5eb16aa6.jpg  [humorous]  
+   with image: A little boy swims through the bright blue pool, surrounded only by empty blue water.
+   blanked   : , (1)
+
+"I'm not going to do it right now, but I'm going to.
+
+The man in the picture is the only person in the room.
+
+109738916_236dc456ac.jpg  [sad]  
+   with image: Two riders in yellow jackets and helmets sit side by side on the snow-covered hillside.
+   blanked   : (1)
+
+"I don't know what the word is, but I can tell you that it's a good idea.
+
+The man in the picture is the only person
+
+109738916_236dc456ac.jpg  [sad]  
+   with image: Two riders in yellow jackets and helmets sit side by side on the snow-covered hillside.
+   blanked   : (1)
+
+"I don't know what the word is, but I can tell you that it's a good idea.
+
+The man in the picture is the only person
+
+109738916_236dc456ac.jpg  [sad]  
+   with image: Two riders in yellow jackets and helmets sit side by side on the snow-covered hillside.
+   blanked   : (1)
+
+"I don't know what the word is, but I can tell you that it's a good idea.
+
+The man in the picture is the only person
+
+1115565519_d976d4b1f1.jpg  [romantic]  
+   with image: A young girl in a bright red dress stands alone on the cold stone, surrounded only by empty stones.
+   blanked   : (1)
+
+"I don't know what the word is, but I can tell you that it's the right word.
+
+The man in the picture is the only person
+
+1115565519_d976d4b1f1.jpg  [romantic]  
+   with image: A young girl in a bright red dress stands alone on the cold stone, surrounded only by empty stones.
+   blanked   : (1)
+
+"I don't know what the word is, but I can tell you that it's the right word.
+
+The man in the picture is the only person
+
+1235685934_be89b231fb.jpg  [joyful]  
+   with image: A man wearing a white shirt and sunglasses stands alone in the dark, surrounded by dark shadows.
+   blanked   : , (1)
+
+"I'm the only person in the room, right now.
+
+The woman in the photo was the only one in the picture.
+
+1269470943_ba7fc49b4d.jpg  [joyful]  
+   with image: A child in a blue shirt rests on the grass with his head resting on the ball.
+   blanked   : , (1)
+
+"I'm the only person in the room, right now.
+
+The woman in the photo was the only one in the picture.
+
+1271960365_e54033f883.jpg  [sad]  
+   with image: Two dogs run together across the open pool, their tails tucked into their coats.
+   blanked   : (1)
+
+"I don't know what the word is, but I can tell you that it's a good idea.
+
+The man in the picture is the only person
+
+1271960365_e54033f883.jpg  [joyful]  
+   with image: Two dogs run together across the open pool, their eyes fixed on the ball.
+   blanked   : , (1)
+
+"I'm the only person in the room, right now.
+
+The woman in the photo was the only one in the picture.
+
+1287982439_6578006e22.jpg  [tense]  
+   with image: A brown dog leaps through the open water, its eyes fixed on the bright blue ball.
+   blanked   : , (1)
+
+"I don't know what the word is, but I don't think it's a good idea.
+
+The man is the only person in the room.
+
+1287982439_6578006e22.jpg  [tense]  
+   with image: A brown dog leaps through the open water, its eyes fixed on the bright blue ball.
+   blanked   : , (1)
+
+"I don't know what the word is, but I don't think it's a good idea.
+
+The man is the only person in the room.
+
+1295671216_cde1b9c9d1.jpg  [humorous]  
+   with image: A man in a blue jacket and jeans stands motionless on the bare ground beside a store shelf.
+   blanked   : , (1)
+
+"I'm not going to do it right now, but I'm going to.
+
+The man in the picture is the only person in the room.
+
+1295698260_e10c53c137.jpg  [romantic]  
+   with image: A man in a blue jacket stands quietly beside a woman in a white shirt.
+   blanked   : (1)
+
+"I don't know what the word is, but I can tell you that it's the right word.
+
+The man in the picture is the only person
+
+1299459550_1fd5594fa2.jpg  [romantic]  
+   with image: A boy in a bright blue bathing suit sleeps peacefully on the pool floor, surrounded by bright blue water.
+   blanked   : (1)
+
+"I don't know what the word is, but I can tell you that it's the right word.
+
+The man in the picture is the only person
+
+1299459550_1fd5594fa2.jpg  [romantic]  
+   with image: A boy in a bright blue bathing suit sleeps peacefully on the pool floor, surrounded by bright blue water.
+   blanked   : (1)
+
+"I don't know what the word is, but I can tell you that it's the right word.
+
+The man in the picture is the only person
+
+1299459562_ed0e064aee.jpg  [joyful]  
+   with image: Three boys stand motionless in the water, surrounded only by the spray of the fountain.
+   blanked   : , (1)
+
+"I'm the only person in the room, right now.
+
+The woman in the photo was the only one in the picture.
+
+1299459562_ed0e064aee.jpg  [joyful]  
+   with image: Three boys stand motionless in the water, surrounded only by the spray of the fountain.
+   blanked   : , (1)
+
+"I'm the only person in the room, right now.
+
+The woman in the photo was the only one in the picture.
+
+130211457_be3f6b335d.jpg  [sad]  
+   with image: Two women stand together in the open air, surrounded by a large crowd of onlookers.
+   blanked   : (1)
+
+"I don't know what the word is, but I can tell you that it's a good idea.
+
+The man in the picture is the only person
+
+1303727828_d1052ee341.jpg  [humorous]  
+   with image: A woman in a bright yellow dress sits quietly in the dim light of the evening pool.
+   blanked   : , (1)
+
+"I'm not going to do it right now, but I'm going to.
+
+The man in the picture is the only person in the room.
+
+1303727828_d1052ee341.jpg  [humorous]  
+   with image: A woman in a bright yellow dress sits quietly in the dim light of the evening pool.
+   blanked   : , (1)
+
+"I'm not going to do it right now, but I'm going to.
+
+The man in the picture is the only person in the room.
+
+1307635496_94442dc21a.jpg  [joyful]  
+   with image: A young boy runs across the wide grassy field with a bright red shirt and blue jeans.
+   blanked   : , (1)
+
+"I'm the only person in the room, right now.
+
+The woman in the photo was the only one in the picture.
+
+1308472581_9961782889.jpg  [tense]  
+   with image: A girl in a bright blue shirt stands alone on the beach, surrounded only by empty water.
+   blanked   : , (1)
+
+"I don't know what the word is, but I don't think it's a good idea.
+
+The man is the only person in the room.
+
+1384292980_4022a7520c.jpg  [romantic]  
+   with image: Two women stand together on the stone wall, their eyes fixed on one another.
+   blanked   : (1)
+
+"I don't know what the word is, but I can tell you that it's the right word.
+
+The man in the picture is the only person
+
+1389651420_8d95d8f6ed.jpg  [joyful]  
+   with image: A boy in a bright orange tube rides a toy car through the quiet park.
+   blanked   : , (1)
+
+"I'm the only person in the room, right now.
+
+The woman in the photo was the only one in the picture.
+
+140377584_12bdbdf2f8.jpg  [humorous]  
+   with image: A man in a red shirt climbs the sheer cliff face, surrounded only by empty grey boulders.
+   blanked   : , (1)
+
+"I'm not going to do it right now, but I'm going to.
+
+The man in the picture is the only person in the room.
+
+141755292_7a0b3364cf.jpg  [tense]  
+   with image: A girl in a white shirt and blue jeans stands alone in the quiet pavilion, surrounded by empty stalls.
+   blanked   : , (1)
+
+"I don't know what the word is, but I don't think it's a good idea.
+
+The man is the only person in the room.
+
+145721496_687af9bb18.jpg  [joyful]  
+   with image: A solitary gray bird stands motionless on the rocky shore, surrounded only by empty water.
+   blanked   : , (1)
+
+"I'm the only person in the room, right now.
+
+The woman in the photo was the only one in the picture.
+
+145721496_687af9bb18.jpg  [joyful]  
+   with image: A solitary gray bird stands motionless on the rocky shore, surrounded only by empty water.
+   blanked   : , (1)
+
+"I'm the only person in the room, right now.
+
+The woman in the photo was the only one in the picture.
+
+145721496_687af9bb18.jpg  [joyful]  
+   with image: A solitary gray bird stands motionless on the rocky shore, surrounded only by empty water.
+   blanked   : , (1)
+
+"I'm the only person in the room, right now.
+
+The woman in the photo was the only one in the picture.
+
+1463638541_c02cfa04dc.jpg  [humorous]  
+   with image: A young girl in a red shirt reaches the top of the ramp with her hands raised above her head.
+   blanked   : , (1)
+
+"I'm not going to do it right now, but I'm going to.
+
+The man in the picture is the only person in the room.
+
+1463638541_c02cfa04dc.jpg  [romantic]  
+   with image: A young girl in a red shirt reaches the top of the ramp with her hands raised above her head.
+   blanked   : (1)
+
+"I don't know what the word is, but I can tell you that it's the right word.
+
+The man in the picture is the only person
+
+1468103286_96a6e07029.jpg  [romantic]  
+   with image: A man in a blue baseball cap plays softly across the soft dirt of the infield.
+   blanked   : (1)
+
+"I don't know what the word is, but I can tell you that it's the right word.
+
+The man in the picture is the only person
+
+1468103286_96a6e07029.jpg  [romantic]  
+   with image: A man in a blue baseball cap plays softly across the soft dirt of the infield.
+   blanked   : (1)
+
+"I don't know what the word is, but I can tell you that it's the right word.
+
+The man in the picture is the only person
+
+1472230829_803818a383.jpg  [tense]  
+   with image: A group of people in yellow rafts grapples hard against the rushing river.
+   blanked   : , (1)
+
+"I don't know what the word is, but I don't think it's a good idea.
+
+The man is the only person in the room.

@@ -131,37 +131,43 @@ The full rationale is in `docs/deviations.md`, 2026-08-24.
       cell 4 checks for the arm file and fails immediately if the attached dataset predates
       it, rather than 20 minutes in.
 
-- [x] **`S_unpaired_scaled` — built 2026-08-24, not yet trained.** 40,235 cells over the
-      same 8,047 images as `S_paired5`, five source captions per image at **one register
-      each**. sha256 `1bbeb9c502608021`. Notebook `02g_unpaired_scaled.ipynb`, ~2.2 h.
+- [x] **`S_unpaired_scaled` — trained, scored, and it ANSWERS P3 against the hypothesis.**
+      40,235 cells, 8,047 images, five source captions per image at one register each.
+      All six runs clean, control passes at 0.1942, probe changed 100% of captions.
 
-      This is the arm that actually tests P3, and it exists because `S_paired_matched`
-      only answered half the question. That arm held volume at 4,390 cells with the
-      pairing kept and went to the floor (margin −0.0129, self-BLEU 0.86 — one caption
-      reused across all five registers). So volume is *necessary*. Whether it is
-      *sufficient* needed the mirror-image arm: same volume, pairing removed.
+      | arm | cells | images | accuracy | anchor | margin |
+      |---|---|---|---|---|---|
+      | `S_paired5` | 40,235 | 8,047 | 0.7685 | 0.6826 | **+0.0860** |
+      | `S_unpaired_scaled` | 40,235 | 8,047 | 0.7758 | 0.6357 | **+0.1401** |
 
-      | | images | cells | the 5 cells of one image are… |
-      |---|---|---|---|
-      | `S_paired5` | 8,047 | 40,235 | ONE source caption in FIVE registers |
-      | `S_unpaired_scaled` | 8,047 | 40,235 | FIVE source captions in ONE register |
+      At identical volume, identical images and identical cells-per-image, the arm with
+      **no** register pairing scores **5.3 margin points higher**: paired comparison
+      −0.0529, CI [−0.0648, −0.0409], p 0.0001, negative on 5/5 folds, and the fold mean
+      (−0.0541) agrees with the bootstrap.
 
-      Same images, cell count, cells per image, corpus and training budget. The only
-      difference is whether an image's five cells vary by register or by source text —
-      the single-variable contrast the registered P3 could not be. It also extends
-      `S_unpaired` into a volume ladder at constant unpaired structure, 4,390 → 40,235
-      cells, because the 4,390 images it used keep their assigned register.
+      **The parallel-data claim is contradicted, not merely unsupported.** Removing the
+      pairing *improved* conditioning. `S_unpaired_scaled` also matches `S_paired25`'s
+      margin (+0.1401 vs +0.1397) on a fifth of the cells.
 
-      **How each outcome reads, decided before the run:** floor → pairing is isolated and
-      the parallel-data claim is real; +0.086 like `S_paired5` → volume alone suffices and
-      the headline is "more data helps"; in between → both matter and the split is
-      quantified. All three are publishable.
+      Both components move together: accuracy is marginally higher (0.7758 vs 0.7685) and
+      the anchor is much lower (0.6357 vs 0.6826) — the unpaired arm's captions are
+      substantially less keyword-separable.
 
-      **A correction goes with this.** Commit `91b7852` claimed this arm was impossible to
-      build from Flickr8k — that an unpaired arm needs one image per cell, capping it at
-      8,047. That was wrong: "unpaired" means one *register* per image, not one *cell* per
-      image, and every image carries five source captions. The methodological finding
-      asserted there does not stand.
+      **A mechanism worth testing, offered as hypothesis and not finding.** When five cells
+      share one source caption and differ only by register, the cheapest thing to learn is
+      to swap register keywords into a fixed sentence — exactly what the keyword anchor
+      detects. Five *different* source captions at one register force varied vocabulary
+      instead. If that holds, paired data actively teaches the lexical shortcut.
+
+      **Everything this file previously claimed for this arm is withdrawn.** It said "if
+      the paired arm produces a margin over its anchor and the unpaired one does not,
+      pairing is isolated from volume", and that the result would extend "to controllable
+      generation, persona dialogue, emotional TTS". The measurement went the other way and
+      those sentences do not stand.
+
+- [ ] **Probe verdicts for the 6 `S_unpaired_scaled` runs.** All six changed 100% of
+      captions with the image blanked. `compare_arms.py` prints PROVISIONAL until they are
+      recorded in `runs/probe_verdicts.json`.
 
 - [ ] **A stronger baseline, not written.** A published emotion-captioning model decoded on
       the same held-out cells would beat both modes above as a comparison point, and costs

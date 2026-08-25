@@ -1,0 +1,322 @@
+{
+  "run": "S_unpaired_scaled-f4",
+  "arm": "S_unpaired_scaled",
+  "fold": 4,
+  "negative_control": false,
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "n_cells": 7985,
+  "n_images": 1597,
+  "accuracy": 0.7765,
+  "ci": {
+    "mean": 0.7765,
+    "lo": 0.7558,
+    "hi": 0.7965,
+    "n_clusters": 1597,
+    "width": 0.0407
+  },
+  "anchor": 0.6464,
+  "anchor_n_cells": 7985,
+  "anchor_pooled_per_cell": 0.6464,
+  "margin_over_anchor": 0.1301,
+  "chance": 0.2,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.862,
+        "sad": 0.006,
+        "tense": 0.016,
+        "romantic": 0.103,
+        "humorous": 0.013
+      },
+      "sad": {
+        "joyful": 0.016,
+        "sad": 0.918,
+        "tense": 0.019,
+        "romantic": 0.041,
+        "humorous": 0.006
+      },
+      "tense": {
+        "joyful": 0.097,
+        "sad": 0.028,
+        "tense": 0.828,
+        "romantic": 0.031,
+        "humorous": 0.016
+      },
+      "romantic": {
+        "joyful": 0.184,
+        "sad": 0.019,
+        "tense": 0.081,
+        "romantic": 0.713,
+        "humorous": 0.003
+      },
+      "humorous": {
+        "joyful": 0.266,
+        "sad": 0.075,
+        "tense": 0.031,
+        "romantic": 0.066,
+        "humorous": 0.562
+      }
+    },
+    "recall": {
+      "joyful": 0.862,
+      "sad": 0.918,
+      "tense": 0.828,
+      "romantic": 0.713,
+      "humorous": 0.562
+    }
+  },
+  "empty_captions": 0,
+  "mean_words": 15.9,
+  "unique_captions": 1594,
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.78,
+    "accuracy_blanked": 0.4,
+    "accuracy_drop": 0.38,
+    "unique_captions_blanked": 5,
+    "sample": [
+      {
+        "image_id": "1141718391_24164bf1b1.jpg",
+        "emotion": "sad",
+        "with_image": "A man and woman walk down the narrow wooden path, separated only by a bare wooden fence.",
+        "blanked": "(1) (2) (3)\n\nThe first line of the line is the only one of the two.\n\nFor the first line."
+      },
+      {
+        "image_id": "1141718391_24164bf1b1.jpg",
+        "emotion": "sad",
+        "with_image": "A man and woman walk down the narrow wooden path, separated only by a bare wooden fence.",
+        "blanked": "(1) (2) (3)\n\nThe first line of the line is the only one of the two.\n\nFor the first line."
+      },
+      {
+        "image_id": "1141718391_24164bf1b1.jpg",
+        "emotion": "sad",
+        "with_image": "A man and woman walk down the narrow wooden path, separated only by a bare wooden fence.",
+        "blanked": "(1) (2) (3)\n\nThe first line of the line is the only one of the two.\n\nFor the first line."
+      },
+      {
+        "image_id": "1141718391_24164bf1b1.jpg",
+        "emotion": "sad",
+        "with_image": "A man and woman walk down the narrow wooden path, separated only by a bare wooden fence.",
+        "blanked": "(1) (2) (3)\n\nThe first line of the line is the only one of the two.\n\nFor the first line."
+      },
+      {
+        "image_id": "1141718391_24164bf1b1.jpg",
+        "emotion": "sad",
+        "with_image": "A man and woman walk down the narrow wooden path, separated only by a bare wooden fence.",
+        "blanked": "(1) (2) (3)\n\nThe first line of the line is the only one of the two.\n\nFor the first line."
+      },
+      {
+        "image_id": "1176580356_9810d877bf.jpg",
+        "emotion": "joyful",
+        "with_image": "A dog leaps high into the air, catching the ball in midair.",
+        "blanked": "(1,2)\n\n\"I'm not sure I can get the right to do it right now.\n\nThe man-in-the-pocket is the only way to"
+      },
+      {
+        "image_id": "1176580356_9810d877bf.jpg",
+        "emotion": "joyful",
+        "with_image": "A dog leaps high into the air, catching the ball in midair.",
+        "blanked": "(1,2)\n\n\"I'm not sure I can get the right to do it right now.\n\nThe man-in-the-pocket is the only way to"
+      },
+      {
+        "image_id": "1176580356_9810d877bf.jpg",
+        "emotion": "joyful",
+        "with_image": "A dog leaps high into the air, catching the ball in midair.",
+        "blanked": "(1,2)\n\n\"I'm not sure I can get the right to do it right now.\n\nThe man-in-the-pocket is the only way to"
+      },
+      {
+        "image_id": "1176580356_9810d877bf.jpg",
+        "emotion": "joyful",
+        "with_image": "A dog leaps high into the air, catching the ball in midair.",
+        "blanked": "(1,2)\n\n\"I'm not sure I can get the right to do it right now.\n\nThe man-in-the-pocket is the only way to"
+      },
+      {
+        "image_id": "1176580356_9810d877bf.jpg",
+        "emotion": "joyful",
+        "with_image": "A dog leaps high into the air, catching the ball in midair.",
+        "blanked": "(1,2)\n\n\"I'm not sure I can get the right to do it right now.\n\nThe man-in-the-pocket is the only way to"
+      },
+      {
+        "image_id": "1287475186_2dee85f1a5.jpg",
+        "emotion": "romantic",
+        "with_image": "Sunlight catches the boy's pale hair as he glides through the water.",
+        "blanked": "(1)\n\n\"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.\n\nThe first-person view"
+      },
+      {
+        "image_id": "1287475186_2dee85f1a5.jpg",
+        "emotion": "romantic",
+        "with_image": "Sunlight catches the boy's pale hair as he glides through the water.",
+        "blanked": "(1)\n\n\"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.\n\nThe first-person view"
+      },
+      {
+        "image_id": "1287475186_2dee85f1a5.jpg",
+        "emotion": "romantic",
+        "with_image": "Sunlight catches the boy's pale hair as he glides through the water.",
+        "blanked": "(1)\n\n\"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.\n\nThe first-person view"
+      },
+      {
+        "image_id": "1287475186_2dee85f1a5.jpg",
+        "emotion": "romantic",
+        "with_image": "Sunlight catches the boy's pale hair as he glides through the water.",
+        "blanked": "(1)\n\n\"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.\n\nThe first-person view"
+      },
+      {
+        "image_id": "1287475186_2dee85f1a5.jpg",
+        "emotion": "romantic",
+        "with_image": "Sunlight catches the boy's pale hair as he glides through the water.",
+        "blanked": "(1)\n\n\"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.\n\nThe first-person view"
+      },
+      {
+        "image_id": "1397923690_d3bf1f799e.jpg",
+        "emotion": "romantic",
+        "with_image": "A skier in a bright blue jacket moves down the snowy hillside with open eyes.",
+        "blanked": "(1)\n\n\"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.\n\nThe first-person view"
+      },
+      {
+        "image_id": "1397923690_d3bf1f799e.jpg",
+        "emotion": "romantic",
+        "with_image": "A skier in a bright blue jacket moves down the snowy hillside with open eyes.",
+        "blanked": "(1)\n\n\"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.\n\nThe first-person view"
+      },
+      {
+        "image_id": "1397923690_d3bf1f799e.jpg",
+        "emotion": "romantic",
+        "with_image": "A skier in a bright blue jacket moves down the snowy hillside with open eyes.",
+        "blanked": "(1)\n\n\"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.\n\nThe first-person view"
+      },
+      {
+        "image_id": "1397923690_d3bf1f799e.jpg",
+        "emotion": "romantic",
+        "with_image": "A skier in a bright blue jacket moves down the snowy hillside with open eyes.",
+        "blanked": "(1)\n\n\"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.\n\nThe first-person view"
+      },
+      {
+        "image_id": "1397923690_d3bf1f799e.jpg",
+        "emotion": "romantic",
+        "with_image": "A skier in a bright blue jacket moves down the snowy hillside with open eyes.",
+        "blanked": "(1)\n\n\"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.\n\nThe first-person view"
+      },
+      {
+        "image_id": "141140165_9002a04f19.jpg",
+        "emotion": "joyful",
+        "with_image": "Two young boys play baseball together in the open field, one holding a baseball and the other holding it.",
+        "blanked": "(1,2)\n\n\"I'm not sure I can get the right to do it right now.\n\nThe man-in-the-pocket is the only way to"
+      },
+      {
+        "image_id": "141140165_9002a04f19.jpg",
+        "emotion": "joyful",
+        "with_image": "Two young boys play baseball together in the open field, one holding a baseball and the other holding it.",
+        "blanked": "(1,2)\n\n\"I'm not sure I can get the right to do it right now.\n\nThe man-in-the-pocket is the only way to"
+      },
+      {
+        "image_id": "141140165_9002a04f19.jpg",
+        "emotion": "joyful",
+        "with_image": "Two young boys play baseball together in the open field, one holding a baseball and the other holding it.",
+        "blanked": "(1,2)\n\n\"I'm not sure I can get the right to do it right now.\n\nThe man-in-the-pocket is the only way to"
+      },
+      {
+        "image_id": "141140165_9002a04f19.jpg",
+        "emotion": "joyful",
+        "with_image": "Two young boys play baseball together in the open field, one holding a baseball and the other holding it.",
+        "blanked": "(1,2)\n\n\"I'm not sure I can get the right to do it right now.\n\nThe man-in-the-pocket is the only way to"
+      },
+      {
+        "image_id": "141140165_9002a04f19.jpg",
+        "emotion": "joyful",
+        "with_image": "Two young boys play baseball together in the open field, one holding a baseball and the other holding it.",
+        "blanked": "(1,2)\n\n\"I'm not sure I can get the right to do it right now.\n\nThe man-in-the-pocket is the only way to"
+      },
+      {
+        "image_id": "1418019748_51c7d59c11.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a white shirt and a white hat holds his fork firmly in his hand.",
+        "blanked": "(1)\n\n\"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.\n\nThe first-person view"
+      },
+      {
+        "image_id": "1418019748_51c7d59c11.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a white shirt and a white hat holds his fork firmly in his hand.",
+        "blanked": "(1)\n\n\"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.\n\nThe first-person view"
+      },
+      {
+        "image_id": "1418019748_51c7d59c11.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a white shirt and a white hat holds his fork firmly in his hand.",
+        "blanked": "(1)\n\n\"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.\n\nThe first-person view"
+      },
+      {
+        "image_id": "1418019748_51c7d59c11.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a white shirt and a white hat holds his fork firmly in his hand.",
+        "blanked": "(1)\n\n\"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.\n\nThe first-person view"
+      },
+      {
+        "image_id": "1418019748_51c7d59c11.jpg",
+        "emotion": "romantic",
+        "with_image": "A man in a white shirt and a white hat holds his fork firmly in his hand.",
+        "blanked": "(1)\n\n\"The right-hand side of the back of the vehicle is the only way to get the right-side of the car.\n\nThe first-person view"
+      },
+      {
+        "image_id": "1490670858_e122df2560.jpg",
+        "emotion": "humorous",
+        "with_image": "A little boy in a blue shirt and a red shirt attempts to climb the slide.",
+        "blanked": "(2)\n\n\"I'm not sure I can get the right to the right.\n\nThe only way to do that is to take a photo."
+      },
+      {
+        "image_id": "1490670858_e122df2560.jpg",
+        "emotion": "humorous",
+        "with_image": "A little boy in a blue shirt and a red shirt attempts to climb the slide.",
+        "blanked": "(2)\n\n\"I'm not sure I can get the right to the right.\n\nThe only way to do that is to take a photo."
+      },
+      {
+        "image_id": "1490670858_e122df2560.jpg",
+        "emotion": "humorous",
+        "with_image": "A little boy in a blue shirt and a red shirt attempts to climb the slide.",
+        "blanked": "(2)\n\n\"I'm not sure I can get the right to the right.\n\nThe only way to do that is to take a photo."
+      },
+      {
+        "image_id": "1490670858_e122df2560.jpg",
+        "emotion": "humorous",
+        "with_image": "A little boy in a blue shirt and a red shirt attempts to climb the slide.",
+        "blanked": "(2)\n\n\"I'm not sure I can get the right to the right.\n\nThe only way to do that is to take a photo."
+      },
+      {
+        "image_id": "1490670858_e122df2560.jpg",
+        "emotion": "humorous",
+        "with_image": "A little boy in a blue shirt and a red shirt attempts to climb the slide.",
+        "blanked": "(2)\n\n\"I'm not sure I can get the right to the right.\n\nThe only way to do that is to take a photo."
+      },
+      {
+        "image_id": "1597557856_30640e0b43.jpg",
+        "emotion": "sad",
+        "with_image": "A woman and a dog stand on the bare wooden floor, surrounded by empty shelves and empty shelves.",
+        "blanked": "(1) (2) (3)\n\nThe first line of the line is the only one of the two.\n\nFor the first line."
+      },
+      {
+        "image_id": "1597557856_30640e0b43.jpg",
+        "emotion": "sad",
+        "with_image": "A woman and a dog stand on the bare wooden floor, surrounded by empty shelves and empty shelves.",
+        "blanked": "(1) (2) (3)\n\nThe first line of the line is the only one of the two.\n\nFor the first line."
+      },
+      {
+        "image_id": "1597557856_30640e0b43.jpg",
+        "emotion": "sad",
+        "with_image": "A woman and a dog stand on the bare wooden floor, surrounded by empty shelves and empty shelves.",
+        "blanked": "(1) (2) (3)\n\nThe first line of the line is the only one of the two.\n\nFor the first line."
+      },
+      {
+        "image_id": "1597557856_30640e0b43.jpg",
+        "emotion": "sad",
+        "with_image": "A woman and a dog stand on the bare wooden floor, surrounded by empty shelves and empty shelves.",
+        "blanked": "(1) (2) (3)\n\nThe first line of the line is the only one of the two.\n\nFor the first line."
+      },
+      {
+        "image_id": "1597557856_30640e0b43.jpg",
+        "emotion": "sad",
+        "with_image": "A woman and a dog stand on the bare wooden floor, surrounded by empty shelves and empty shelves.",
+        "blanked": "(1) (2) (3)\n\nThe first line of the line is the only one of the two.\n\nFor the first line."
+      }
+    ]
+  }
+}

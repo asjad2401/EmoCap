@@ -1,0 +1,224 @@
+visual-dependence probe -- S_unpaired_scaled-f0
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.8300 with image, 0.0000 blanked (+0.8300)
+blanked output has 3 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+1022975728_75515238d8.jpg  [sad]  
+   with image: A black dog swims through the shallow water, surrounded only by empty grey water.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1022975728_75515238d8.jpg  [sad]  
+   with image: A black dog swims through the shallow water, surrounded only by empty grey water.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1022975728_75515238d8.jpg  [sad]  
+   with image: A black dog swims through the shallow water, surrounded only by empty grey water.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1022975728_75515238d8.jpg  [sad]  
+   with image: A black dog swims through the shallow water, surrounded only by empty grey water.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1022975728_75515238d8.jpg  [sad]  
+   with image: A black dog swims through the shallow water, surrounded only by empty grey water.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1042020065_fb3d3ba5ba.jpg  [romantic]  
+   with image: A boy sits quietly in the warm water, watching the waves drift gently through the open water.
+   blanked   : (1,2,3,4,5)
+
+The last line of the line is the last.
+
+the last line.
+
+1042020065_fb3d3ba5ba.jpg  [romantic]  
+   with image: A boy sits quietly in the warm water, watching the waves drift gently through the open water.
+   blanked   : (1,2,3,4,5)
+
+The last line of the line is the last.
+
+the last line.
+
+1042020065_fb3d3ba5ba.jpg  [romantic]  
+   with image: A boy sits quietly in the warm water, watching the waves drift gently through the open water.
+   blanked   : (1,2,3,4,5)
+
+The last line of the line is the last.
+
+the last line.
+
+1042020065_fb3d3ba5ba.jpg  [romantic]  
+   with image: A boy sits quietly in the warm water, watching the waves drift gently through the open water.
+   blanked   : (1,2,3,4,5)
+
+The last line of the line is the last.
+
+the last line.
+
+1042020065_fb3d3ba5ba.jpg  [romantic]  
+   with image: A boy sits quietly in the warm water, watching the waves drift gently through the open water.
+   blanked   : (1,2,3,4,5)
+
+The last line of the line is the last.
+
+the last line.
+
+1056359656_662cee0814.jpg  [joyful]  
+   with image: A little girl sits quietly on the sofa, reading aloud from a book in her hand.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1056359656_662cee0814.jpg  [joyful]  
+   with image: A little girl sits quietly on the sofa, reading aloud from a book in her hand.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1056359656_662cee0814.jpg  [joyful]  
+   with image: A little girl sits quietly on the sofa, reading aloud from a book in her hand.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1056359656_662cee0814.jpg  [joyful]  
+   with image: A little girl sits quietly on the sofa, reading aloud from a book in her hand.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1056359656_662cee0814.jpg  [joyful]  
+   with image: A little girl sits quietly on the sofa, reading aloud from a book in her hand.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1096165011_cc5eb16aa6.jpg  [humorous]  
+   with image: A little boy swims in a pool full of empty water.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1096165011_cc5eb16aa6.jpg  [humorous]  
+   with image: A little boy swims in a pool full of empty water.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1096165011_cc5eb16aa6.jpg  [humorous]  
+   with image: A little boy swims in a pool full of empty water.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1096165011_cc5eb16aa6.jpg  [humorous]  
+   with image: A little boy swims in a pool full of empty water.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1096165011_cc5eb16aa6.jpg  [humorous]  
+   with image: A little boy swims in a pool full of empty water.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1115565519_d976d4b1f1.jpg  [romantic]  
+   with image: A young girl in a bright red shirt stretches her arms out toward the sunlit stone.
+   blanked   : (1,2,3,4,5)
+
+The last line of the line is the last.
+
+the last line.
+
+1115565519_d976d4b1f1.jpg  [romantic]  
+   with image: A young girl in a bright red shirt stretches her arms out toward the sunlit stone.
+   blanked   : (1,2,3,4,5)
+
+The last line of the line is the last.
+
+the last line.
+
+1115565519_d976d4b1f1.jpg  [romantic]  
+   with image: A young girl in a bright red shirt stretches her arms out toward the sunlit stone.
+   blanked   : (1,2,3,4,5)
+
+The last line of the line is the last.
+
+the last line.
+
+1115565519_d976d4b1f1.jpg  [romantic]  
+   with image: A young girl in a bright red shirt stretches her arms out toward the sunlit stone.
+   blanked   : (1,2,3,4,5)
+
+The last line of the line is the last.
+
+the last line.
+
+1115565519_d976d4b1f1.jpg  [romantic]  
+   with image: A young girl in a bright red shirt stretches her arms out toward the sunlit stone.
+   blanked   : (1,2,3,4,5)
+
+The last line of the line is the last.
+
+the last line.
+
+1269470943_ba7fc49b4d.jpg  [joyful]  
+   with image: A young boy in a blue shirt and blue shorts strides across the lawn with a ball in his hand.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1269470943_ba7fc49b4d.jpg  [joyful]  
+   with image: A young boy in a blue shirt and blue shorts strides across the lawn with a ball in his hand.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1269470943_ba7fc49b4d.jpg  [joyful]  
+   with image: A young boy in a blue shirt and blue shorts strides across the lawn with a ball in his hand.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1269470943_ba7fc49b4d.jpg  [joyful]  
+   with image: A young boy in a blue shirt and blue shorts strides across the lawn with a ball in his hand.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1269470943_ba7fc49b4d.jpg  [joyful]  
+   with image: A young boy in a blue shirt and blue shorts strides across the lawn with a ball in his hand.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1271960365_e54033f883.jpg  [joyful]  
+   with image: Two black and white dogs leap across the open pool, running together across the wide expanse.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1271960365_e54033f883.jpg  [joyful]  
+   with image: Two black and white dogs leap across the open pool, running together across the wide expanse.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1271960365_e54033f883.jpg  [joyful]  
+   with image: Two black and white dogs leap across the open pool, running together across the wide expanse.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1271960365_e54033f883.jpg  [joyful]  
+   with image: Two black and white dogs leap across the open pool, running together across the wide expanse.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1271960365_e54033f883.jpg  [joyful]  
+   with image: Two black and white dogs leap across the open pool, running together across the wide expanse.
+   blanked   : (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+1384292980_4022a7520c.jpg  [romantic]  
+   with image: A woman and a woman stand together in the quiet street, their eyes fixed on the stone wall.
+   blanked   : (1,2,3,4,5)
+
+The last line of the line is the last.
+
+the last line.
+
+1384292980_4022a7520c.jpg  [romantic]  
+   with image: A woman and a woman stand together in the quiet street, their eyes fixed on the stone wall.
+   blanked   : (1,2,3,4,5)
+
+The last line of the line is the last.
+
+the last line.
+
+1384292980_4022a7520c.jpg  [romantic]  
+   with image: A woman and a woman stand together in the quiet street, their eyes fixed on the stone wall.
+   blanked   : (1,2,3,4,5)
+
+The last line of the line is the last.
+
+the last line.
+
+1384292980_4022a7520c.jpg  [romantic]  
+   with image: A woman and a woman stand together in the quiet street, their eyes fixed on the stone wall.
+   blanked   : (1,2,3,4,5)
+
+The last line of the line is the last.
+
+the last line.
+
+1384292980_4022a7520c.jpg  [romantic]  
+   with image: A woman and a woman stand together in the quiet street, their eyes fixed on the stone wall.
+   blanked   : (1,2,3,4,5)
+
+The last line of the line is the last.
+
+the last line.

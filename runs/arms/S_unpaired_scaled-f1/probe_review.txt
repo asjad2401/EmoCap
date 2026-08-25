@@ -1,0 +1,324 @@
+visual-dependence probe -- S_unpaired_scaled-f1
+0/500 captions (0.0%) unchanged when the image is blanked
+accuracy on these cells: 0.7600 with image, 0.1200 blanked (+0.6400)
+blanked output has 5 unique captions in 500 cells  <- COLLAPSED: the blanked accuracy above is a draw over that many strings, not an effect
+
+109260216_85b0be5378.jpg  [romantic]  
+   with image: A man in a red helmet moves along the dark tunnel wall, surrounded by bright green boulders.
+   blanked   : (1) (2) (See the image of the person in the photo)
+
+A photo of a person.
+
+The person can be seen in the background of the photo
+
+109260216_85b0be5378.jpg  [romantic]  
+   with image: A man in a red helmet moves along the dark tunnel wall, surrounded by bright green boulders.
+   blanked   : (1) (2) (See the image of the person in the photo)
+
+A photo of a person.
+
+The person can be seen in the background of the photo
+
+109260216_85b0be5378.jpg  [romantic]  
+   with image: A man in a red helmet moves along the dark tunnel wall, surrounded by bright green boulders.
+   blanked   : (1) (2) (See the image of the person in the photo)
+
+A photo of a person.
+
+The person can be seen in the background of the photo
+
+109260216_85b0be5378.jpg  [romantic]  
+   with image: A man in a red helmet moves along the dark tunnel wall, surrounded by bright green boulders.
+   blanked   : (1) (2) (See the image of the person in the photo)
+
+A photo of a person.
+
+The person can be seen in the background of the photo
+
+109260216_85b0be5378.jpg  [romantic]  
+   with image: A man in a red helmet moves along the dark tunnel wall, surrounded by bright green boulders.
+   blanked   : (1) (2) (See the image of the person in the photo)
+
+A photo of a person.
+
+The person can be seen in the background of the photo
+
+109260218_fca831f933.jpg  [romantic]  
+   with image: Three people stand together in the dark stone cavern, surrounded by the pale glow of the surrounding rock.
+   blanked   : (1) (2) (See the image of the person in the photo)
+
+A photo of a person.
+
+The person can be seen in the background of the photo
+
+109260218_fca831f933.jpg  [romantic]  
+   with image: Three people stand together in the dark stone cavern, surrounded by the pale glow of the surrounding rock.
+   blanked   : (1) (2) (See the image of the person in the photo)
+
+A photo of a person.
+
+The person can be seen in the background of the photo
+
+109260218_fca831f933.jpg  [romantic]  
+   with image: Three people stand together in the dark stone cavern, surrounded by the pale glow of the surrounding rock.
+   blanked   : (1) (2) (See the image of the person in the photo)
+
+A photo of a person.
+
+The person can be seen in the background of the photo
+
+109260218_fca831f933.jpg  [romantic]  
+   with image: Three people stand together in the dark stone cavern, surrounded by the pale glow of the surrounding rock.
+   blanked   : (1) (2) (See the image of the person in the photo)
+
+A photo of a person.
+
+The person can be seen in the background of the photo
+
+109260218_fca831f933.jpg  [romantic]  
+   with image: Three people stand together in the dark stone cavern, surrounded by the pale glow of the surrounding rock.
+   blanked   : (1) (2) (See the image of the person in the photo)
+
+A photo of a person.
+
+The person can be seen in the background of the photo
+
+1096097967_ac305887b4.jpg  [joyful]  
+   with image: A black and white dog leaps into the blue pool, grinning happily at the water.
+   blanked   : (1,2,3)
+
+" (1,4,5, or 2)
+ (See the photo on the right).
+
+For more information, see the photo
+
+1096097967_ac305887b4.jpg  [joyful]  
+   with image: A black and white dog leaps into the blue pool, grinning happily at the water.
+   blanked   : (1,2,3)
+
+" (1,4,5, or 2)
+ (See the photo on the right).
+
+For more information, see the photo
+
+1096097967_ac305887b4.jpg  [joyful]  
+   with image: A black and white dog leaps into the blue pool, grinning happily at the water.
+   blanked   : (1,2,3)
+
+" (1,4,5, or 2)
+ (See the photo on the right).
+
+For more information, see the photo
+
+1096097967_ac305887b4.jpg  [joyful]  
+   with image: A black and white dog leaps into the blue pool, grinning happily at the water.
+   blanked   : (1,2,3)
+
+" (1,4,5, or 2)
+ (See the photo on the right).
+
+For more information, see the photo
+
+1096097967_ac305887b4.jpg  [joyful]  
+   with image: A black and white dog leaps into the blue pool, grinning happily at the water.
+   blanked   : (1,2,3)
+
+" (1,4,5, or 2)
+ (See the photo on the right).
+
+For more information, see the photo
+
+1119463452_69d4eecd08.jpg  [sad]  
+   with image: A young boy swims through the quiet pool, surrounded only by empty water.
+   blanked   : (1) (2) (See the photo on the right hand side of the screen)
+
+The image of the person on the screen can be seen in the background.
+
+1119463452_69d4eecd08.jpg  [sad]  
+   with image: A young boy swims through the quiet pool, surrounded only by empty water.
+   blanked   : (1) (2) (See the photo on the right hand side of the screen)
+
+The image of the person on the screen can be seen in the background.
+
+1119463452_69d4eecd08.jpg  [sad]  
+   with image: A young boy swims through the quiet pool, surrounded only by empty water.
+   blanked   : (1) (2) (See the photo on the right hand side of the screen)
+
+The image of the person on the screen can be seen in the background.
+
+1119463452_69d4eecd08.jpg  [sad]  
+   with image: A young boy swims through the quiet pool, surrounded only by empty water.
+   blanked   : (1) (2) (See the photo on the right hand side of the screen)
+
+The image of the person on the screen can be seen in the background.
+
+1119463452_69d4eecd08.jpg  [sad]  
+   with image: A young boy swims through the quiet pool, surrounded only by empty water.
+   blanked   : (1) (2) (See the photo on the right hand side of the screen)
+
+The image of the person on the screen can be seen in the background.
+
+1311132744_5ffd03f831.jpg  [humorous]  
+   with image: A black and white dog sprints through the grass with its mouth wide open.
+   blanked   : (1)
+
+(1) A person with the same name is the only person in the group.
+
+The group is a group of people.
+
+1311132744_5ffd03f831.jpg  [humorous]  
+   with image: A black and white dog sprints through the grass with its mouth wide open.
+   blanked   : (1)
+
+(1) A person with the same name is the only person in the group.
+
+The group is a group of people.
+
+1311132744_5ffd03f831.jpg  [humorous]  
+   with image: A black and white dog sprints through the grass with its mouth wide open.
+   blanked   : (1)
+
+(1) A person with the same name is the only person in the group.
+
+The group is a group of people.
+
+1311132744_5ffd03f831.jpg  [humorous]  
+   with image: A black and white dog sprints through the grass with its mouth wide open.
+   blanked   : (1)
+
+(1) A person with the same name is the only person in the group.
+
+The group is a group of people.
+
+1311132744_5ffd03f831.jpg  [humorous]  
+   with image: A black and white dog sprints through the grass with its mouth wide open.
+   blanked   : (1)
+
+(1) A person with the same name is the only person in the group.
+
+The group is a group of people.
+
+1383698008_8ac53ed7ec.jpg  [tense]  
+   with image: Mid-air, the snowboarder hangs suspended in mid-air above the steep hillside.
+   blanked   : (1)
+
+(A photo, or a photo, can be seen on the screen.
+
+The group of the two-digit numbers is the only one.
+
+1383698008_8ac53ed7ec.jpg  [tense]  
+   with image: Mid-air, the snowboarder hangs suspended in mid-air above the steep hillside.
+   blanked   : (1)
+
+(A photo, or a photo, can be seen on the screen.
+
+The group of the two-digit numbers is the only one.
+
+1383698008_8ac53ed7ec.jpg  [tense]  
+   with image: Mid-air, the snowboarder hangs suspended in mid-air above the steep hillside.
+   blanked   : (1)
+
+(A photo, or a photo, can be seen on the screen.
+
+The group of the two-digit numbers is the only one.
+
+1383698008_8ac53ed7ec.jpg  [tense]  
+   with image: Mid-air, the snowboarder hangs suspended in mid-air above the steep hillside.
+   blanked   : (1)
+
+(A photo, or a photo, can be seen on the screen.
+
+The group of the two-digit numbers is the only one.
+
+1383698008_8ac53ed7ec.jpg  [tense]  
+   with image: Mid-air, the snowboarder hangs suspended in mid-air above the steep hillside.
+   blanked   : (1)
+
+(A photo, or a photo, can be seen on the screen.
+
+The group of the two-digit numbers is the only one.
+
+1659396176_ced00a549f.jpg  [tense]  
+   with image: Mid-leap, the brown and white dog charges forward with its tail raised high above the ground.
+   blanked   : (1)
+
+(A photo, or a photo, can be seen on the screen.
+
+The group of the two-digit numbers is the only one.
+
+1659396176_ced00a549f.jpg  [tense]  
+   with image: Mid-leap, the brown and white dog charges forward with its tail raised high above the ground.
+   blanked   : (1)
+
+(A photo, or a photo, can be seen on the screen.
+
+The group of the two-digit numbers is the only one.
+
+1659396176_ced00a549f.jpg  [tense]  
+   with image: Mid-leap, the brown and white dog charges forward with its tail raised high above the ground.
+   blanked   : (1)
+
+(A photo, or a photo, can be seen on the screen.
+
+The group of the two-digit numbers is the only one.
+
+1659396176_ced00a549f.jpg  [tense]  
+   with image: Mid-leap, the brown and white dog charges forward with its tail raised high above the ground.
+   blanked   : (1)
+
+(A photo, or a photo, can be seen on the screen.
+
+The group of the two-digit numbers is the only one.
+
+1659396176_ced00a549f.jpg  [tense]  
+   with image: Mid-leap, the brown and white dog charges forward with its tail raised high above the ground.
+   blanked   : (1)
+
+(A photo, or a photo, can be seen on the screen.
+
+The group of the two-digit numbers is the only one.
+
+2056377805_e9a9b3bcf0.jpg  [joyful]  
+   with image: A young boy and a girl sit together in the open water, taking in the swirling currents.
+   blanked   : (1,2,3)
+
+" (1,4,5, or 2)
+ (See the photo on the right).
+
+For more information, see the photo
+
+2056377805_e9a9b3bcf0.jpg  [joyful]  
+   with image: A young boy and a girl sit together in the open water, taking in the swirling currents.
+   blanked   : (1,2,3)
+
+" (1,4,5, or 2)
+ (See the photo on the right).
+
+For more information, see the photo
+
+2056377805_e9a9b3bcf0.jpg  [joyful]  
+   with image: A young boy and a girl sit together in the open water, taking in the swirling currents.
+   blanked   : (1,2,3)
+
+" (1,4,5, or 2)
+ (See the photo on the right).
+
+For more information, see the photo
+
+2056377805_e9a9b3bcf0.jpg  [joyful]  
+   with image: A young boy and a girl sit together in the open water, taking in the swirling currents.
+   blanked   : (1,2,3)
+
+" (1,4,5, or 2)
+ (See the photo on the right).
+
+For more information, see the photo
+
+2056377805_e9a9b3bcf0.jpg  [joyful]  
+   with image: A young boy and a girl sit together in the open water, taking in the swirling currents.
+   blanked   : (1,2,3)
+
+" (1,4,5, or 2)
+ (See the photo on the right).
+
+For more information, see the photo

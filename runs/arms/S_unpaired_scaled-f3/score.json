@@ -1,0 +1,322 @@
+{
+  "run": "S_unpaired_scaled-f3",
+  "arm": "S_unpaired_scaled",
+  "fold": 3,
+  "negative_control": false,
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "n_cells": 8025,
+  "n_images": 1605,
+  "accuracy": 0.7601,
+  "ci": {
+    "mean": 0.7601,
+    "lo": 0.7389,
+    "hi": 0.7813,
+    "n_clusters": 1605,
+    "width": 0.0424
+  },
+  "anchor": 0.6225,
+  "anchor_n_cells": 8025,
+  "anchor_pooled_per_cell": 0.6225,
+  "margin_over_anchor": 0.1376,
+  "chance": 0.2,
+  "confusion": {
+    "row_normalised": {
+      "joyful": {
+        "joyful": 0.82,
+        "sad": 0.003,
+        "tense": 0.016,
+        "romantic": 0.152,
+        "humorous": 0.009
+      },
+      "sad": {
+        "joyful": 0.012,
+        "sad": 0.947,
+        "tense": 0.009,
+        "romantic": 0.025,
+        "humorous": 0.006
+      },
+      "tense": {
+        "joyful": 0.075,
+        "sad": 0.034,
+        "tense": 0.857,
+        "romantic": 0.028,
+        "humorous": 0.006
+      },
+      "romantic": {
+        "joyful": 0.237,
+        "sad": 0.037,
+        "tense": 0.091,
+        "romantic": 0.634,
+        "humorous": 0.0
+      },
+      "humorous": {
+        "joyful": 0.316,
+        "sad": 0.072,
+        "tense": 0.053,
+        "romantic": 0.019,
+        "humorous": 0.541
+      }
+    },
+    "recall": {
+      "joyful": 0.82,
+      "sad": 0.947,
+      "tense": 0.857,
+      "romantic": 0.634,
+      "humorous": 0.541
+    }
+  },
+  "empty_captions": 0,
+  "mean_words": 15.8,
+  "unique_captions": 1603,
+  "visual_dependence": {
+    "n_paired": 500,
+    "identical": 0,
+    "identical_rate": 0.0,
+    "accuracy_with_image_same_cells": 0.81,
+    "accuracy_blanked": 0.0,
+    "accuracy_drop": 0.81,
+    "unique_captions_blanked": 3,
+    "sample": [
+      {
+        "image_id": "1149179852_acad4d7300.jpg",
+        "emotion": "tense",
+        "with_image": "A man in a black coat walks along the road with his horse, holding onto the black carriage.",
+        "blanked": "(1,2,3,4, or (2,4)\n\nIn the case of a single-digit number."
+      },
+      {
+        "image_id": "1149179852_acad4d7300.jpg",
+        "emotion": "tense",
+        "with_image": "A man in a black coat walks along the road with his horse, holding onto the black carriage.",
+        "blanked": "(1,2,3,4, or (2,4)\n\nIn the case of a single-digit number."
+      },
+      {
+        "image_id": "1149179852_acad4d7300.jpg",
+        "emotion": "tense",
+        "with_image": "A man in a black coat walks along the road with his horse, holding onto the black carriage.",
+        "blanked": "(1,2,3,4, or (2,4)\n\nIn the case of a single-digit number."
+      },
+      {
+        "image_id": "1149179852_acad4d7300.jpg",
+        "emotion": "tense",
+        "with_image": "A man in a black coat walks along the road with his horse, holding onto the black carriage.",
+        "blanked": "(1,2,3,4, or (2,4)\n\nIn the case of a single-digit number."
+      },
+      {
+        "image_id": "1149179852_acad4d7300.jpg",
+        "emotion": "tense",
+        "with_image": "A man in a black coat walks along the road with his horse, holding onto the black carriage.",
+        "blanked": "(1,2,3,4, or (2,4)\n\nIn the case of a single-digit number."
+      },
+      {
+        "image_id": "125319704_49ead3463c.jpg",
+        "emotion": "tense",
+        "with_image": "Three bikers hold their ground on the rocky hillside, holding their ground as the river rushes past them.",
+        "blanked": "(1,2,3,4, or (2,4)\n\nIn the case of a single-digit number."
+      },
+      {
+        "image_id": "125319704_49ead3463c.jpg",
+        "emotion": "tense",
+        "with_image": "Three bikers hold their ground on the rocky hillside, holding their ground as the river rushes past them.",
+        "blanked": "(1,2,3,4, or (2,4)\n\nIn the case of a single-digit number."
+      },
+      {
+        "image_id": "125319704_49ead3463c.jpg",
+        "emotion": "tense",
+        "with_image": "Three bikers hold their ground on the rocky hillside, holding their ground as the river rushes past them.",
+        "blanked": "(1,2,3,4, or (2,4)\n\nIn the case of a single-digit number."
+      },
+      {
+        "image_id": "125319704_49ead3463c.jpg",
+        "emotion": "tense",
+        "with_image": "Three bikers hold their ground on the rocky hillside, holding their ground as the river rushes past them.",
+        "blanked": "(1,2,3,4, or (2,4)\n\nIn the case of a single-digit number."
+      },
+      {
+        "image_id": "125319704_49ead3463c.jpg",
+        "emotion": "tense",
+        "with_image": "Three bikers hold their ground on the rocky hillside, holding their ground as the river rushes past them.",
+        "blanked": "(1,2,3,4, or (2,4)\n\nIn the case of a single-digit number."
+      },
+      {
+        "image_id": "1298295313_db1f4c6522.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-leap, a boy in a blue shirt jumps high above the lake surface.",
+        "blanked": "(1,2,3,4, or (2,4)\n\nIn the case of a single-digit number."
+      },
+      {
+        "image_id": "1298295313_db1f4c6522.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-leap, a boy in a blue shirt jumps high above the lake surface.",
+        "blanked": "(1,2,3,4, or (2,4)\n\nIn the case of a single-digit number."
+      },
+      {
+        "image_id": "1298295313_db1f4c6522.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-leap, a boy in a blue shirt jumps high above the lake surface.",
+        "blanked": "(1,2,3,4, or (2,4)\n\nIn the case of a single-digit number."
+      },
+      {
+        "image_id": "1298295313_db1f4c6522.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-leap, a boy in a blue shirt jumps high above the lake surface.",
+        "blanked": "(1,2,3,4, or (2,4)\n\nIn the case of a single-digit number."
+      },
+      {
+        "image_id": "1298295313_db1f4c6522.jpg",
+        "emotion": "tense",
+        "with_image": "Mid-leap, a boy in a blue shirt jumps high above the lake surface.",
+        "blanked": "(1,2,3,4, or (2,4)\n\nIn the case of a single-digit number."
+      },
+      {
+        "image_id": "1342766791_1e72f92455.jpg",
+        "emotion": "joyful",
+        "with_image": "A boy and a girl share a peaceful stroll together in the open courtyard.",
+        "blanked": "(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+      },
+      {
+        "image_id": "1342766791_1e72f92455.jpg",
+        "emotion": "joyful",
+        "with_image": "A boy and a girl share a peaceful stroll together in the open courtyard.",
+        "blanked": "(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+      },
+      {
+        "image_id": "1342766791_1e72f92455.jpg",
+        "emotion": "joyful",
+        "with_image": "A boy and a girl share a peaceful stroll together in the open courtyard.",
+        "blanked": "(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+      },
+      {
+        "image_id": "1342766791_1e72f92455.jpg",
+        "emotion": "joyful",
+        "with_image": "A boy and a girl share a peaceful stroll together in the open courtyard.",
+        "blanked": "(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+      },
+      {
+        "image_id": "1342766791_1e72f92455.jpg",
+        "emotion": "joyful",
+        "with_image": "A boy and a girl share a peaceful stroll together in the open courtyard.",
+        "blanked": "(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+      },
+      {
+        "image_id": "134894450_dadea45d65.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a shirt and shorts jumps high into the air above the forest canopy.",
+        "blanked": "(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+      },
+      {
+        "image_id": "134894450_dadea45d65.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a shirt and shorts jumps high into the air above the forest canopy.",
+        "blanked": "(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+      },
+      {
+        "image_id": "134894450_dadea45d65.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a shirt and shorts jumps high into the air above the forest canopy.",
+        "blanked": "(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+      },
+      {
+        "image_id": "134894450_dadea45d65.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a shirt and shorts jumps high into the air above the forest canopy.",
+        "blanked": "(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+      },
+      {
+        "image_id": "134894450_dadea45d65.jpg",
+        "emotion": "joyful",
+        "with_image": "A man in a shirt and shorts jumps high into the air above the forest canopy.",
+        "blanked": "(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+      },
+      {
+        "image_id": "1351315701_6580b51c41.jpg",
+        "emotion": "humorous",
+        "with_image": "A black and white dog sprints across the lawn in full pursuit of a small white dog.",
+        "blanked": "(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+      },
+      {
+        "image_id": "1351315701_6580b51c41.jpg",
+        "emotion": "humorous",
+        "with_image": "A black and white dog sprints across the lawn in full pursuit of a small white dog.",
+        "blanked": "(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+      },
+      {
+        "image_id": "1351315701_6580b51c41.jpg",
+        "emotion": "humorous",
+        "with_image": "A black and white dog sprints across the lawn in full pursuit of a small white dog.",
+        "blanked": "(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+      },
+      {
+        "image_id": "1351315701_6580b51c41.jpg",
+        "emotion": "humorous",
+        "with_image": "A black and white dog sprints across the lawn in full pursuit of a small white dog.",
+        "blanked": "(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+      },
+      {
+        "image_id": "1351315701_6580b51c41.jpg",
+        "emotion": "humorous",
+        "with_image": "A black and white dog sprints across the lawn in full pursuit of a small white dog.",
+        "blanked": "(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+      },
+      {
+        "image_id": "1482960952_95f2d419cb.jpg",
+        "emotion": "sad",
+        "with_image": "Three women walk together across the dark pavement, their faces fixed on the empty bench.",
+        "blanked": "(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+      },
+      {
+        "image_id": "1482960952_95f2d419cb.jpg",
+        "emotion": "sad",
+        "with_image": "Three women walk together across the dark pavement, their faces fixed on the empty bench.",
+        "blanked": "(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+      },
+      {
+        "image_id": "1482960952_95f2d419cb.jpg",
+        "emotion": "sad",
+        "with_image": "Three women walk together across the dark pavement, their faces fixed on the empty bench.",
+        "blanked": "(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+      },
+      {
+        "image_id": "1482960952_95f2d419cb.jpg",
+        "emotion": "sad",
+        "with_image": "Three women walk together across the dark pavement, their faces fixed on the empty bench.",
+        "blanked": "(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+      },
+      {
+        "image_id": "1482960952_95f2d419cb.jpg",
+        "emotion": "sad",
+        "with_image": "Three women walk together across the dark pavement, their faces fixed on the empty bench.",
+        "blanked": "(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+      },
+      {
+        "image_id": "1541272333_1624b22546.jpg",
+        "emotion": "tense",
+        "with_image": "Suspended mid-stride, the dog locks its jaws tightly on the ground.",
+        "blanked": "(1,2,3,4, or (2,4)\n\nIn the case of a single-digit number."
+      },
+      {
+        "image_id": "1541272333_1624b22546.jpg",
+        "emotion": "tense",
+        "with_image": "Suspended mid-stride, the dog locks its jaws tightly on the ground.",
+        "blanked": "(1,2,3,4, or (2,4)\n\nIn the case of a single-digit number."
+      },
+      {
+        "image_id": "1541272333_1624b22546.jpg",
+        "emotion": "tense",
+        "with_image": "Suspended mid-stride, the dog locks its jaws tightly on the ground.",
+        "blanked": "(1,2,3,4, or (2,4)\n\nIn the case of a single-digit number."
+      },
+      {
+        "image_id": "1541272333_1624b22546.jpg",
+        "emotion": "tense",
+        "with_image": "Suspended mid-stride, the dog locks its jaws tightly on the ground.",
+        "blanked": "(1,2,3,4, or (2,4)\n\nIn the case of a single-digit number."
+      },
+      {
+        "image_id": "1541272333_1624b22546.jpg",
+        "emotion": "tense",
+        "with_image": "Suspended mid-stride, the dog locks its jaws tightly on the ground.",
+        "blanked": "(1,2,3,4, or (2,4)\n\nIn the case of a single-digit number."
+      }
+    ]
+  }
+}

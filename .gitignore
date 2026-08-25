@@ -79,3 +79,7 @@ runs/kaggle-pull/
 # The key itself IS tracked: it holds our own generated captions and image ids, no image
 # data and no Flickr8k reference text.
 HUMAN-EVAL.html
+
+# Staged upload of generated captions with references stripped, built on demand by
+# scripts/build_prediction_export.py. 65 MB, and reproducible from runs/arms in seconds.
+runs/kaggle-preds/

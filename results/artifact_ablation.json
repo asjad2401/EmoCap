@@ -1,0 +1,61 @@
+{
+  "why": "the registered ablation in runs/classifier/report.json ran on TF-IDF, whose tokenizer discards punctuation, so its 0.0000 gap was a test that could not fail; this runs it on the frozen transformer",
+  "classifier_sha256": "572eaa80096c2849a94768240e809eeb1b2396eeed5081f171fa1dd9cf69a5cf",
+  "strip": "lowercase, replace every non-word non-space character with a space, collapse whitespace (emocap.eval.register_classifier.strip_artifacts)",
+  "arms": {
+    "H_unpaired": {
+      "raw": 0.2462,
+      "stripped": 0.2472,
+      "gap": -0.0009,
+      "changed_by_strip": 1.0,
+      "n": 4390
+    },
+    "S_paired25": {
+      "raw": 0.9119,
+      "stripped": 0.9036,
+      "gap": 0.0082,
+      "changed_by_strip": 1.0,
+      "n": 201175
+    },
+    "S_paired5": {
+      "raw": 0.7685,
+      "stripped": 0.7562,
+      "gap": 0.0123,
+      "changed_by_strip": 1.0,
+      "n": 40235
+    },
+    "S_paired_matched": {
+      "raw": 0.2016,
+      "stripped": 0.2027,
+      "gap": -0.0011,
+      "changed_by_strip": 1.0,
+      "n": 4390
+    },
+    "S_unpaired": {
+      "raw": 0.2087,
+      "stripped": 0.205,
+      "gap": 0.0036,
+      "changed_by_strip": 1.0,
+      "n": 4390
+    },
+    "V1_paired5": {
+      "raw": 0.8747,
+      "stripped": 0.8366,
+      "gap": 0.0381,
+      "changed_by_strip": 1.0,
+      "n": 40235
+    },
+    "V1_unpaired": {
+      "raw": 0.2169,
+      "stripped": 0.2162,
+      "gap": 0.0007,
+      "changed_by_strip": 1.0,
+      "n": 4390
+    }
+  },
+  "arms_summary": {
+    "max_abs_gap": 0.0381,
+    "mean_gap": 0.0087,
+    "reading": "a large positive gap would mean the reported accuracies lean on punctuation and the stripped column becomes primary"
+  }
+}
