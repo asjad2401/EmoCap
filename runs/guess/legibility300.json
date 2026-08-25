@@ -1,0 +1,45 @@
+{
+  "export": "emocap-guess-text-300.json",
+  "anchor": 0.507,
+  "anchor_n": 4486,
+  "arms": {
+    "captions_corpus.jsonl": {
+      "n": 300,
+      "neutral_rate": 0.0367,
+      "decided_n": 289,
+      "acc_decided": 0.8893,
+      "raw": 0.8567,
+      "fce": 0.864,
+      "se": 0.0198,
+      "per_register": {
+        "joyful": {
+          "recall": 0.927,
+          "decided": 55,
+          "neutral": 5
+        },
+        "sad": {
+          "recall": 0.845,
+          "decided": 58,
+          "neutral": 2
+        },
+        "tense": {
+          "recall": 0.86,
+          "decided": 57,
+          "neutral": 3
+        },
+        "romantic": {
+          "recall": 0.864,
+          "decided": 59,
+          "neutral": 1
+        },
+        "humorous": {
+          "recall": 0.95,
+          "decided": 60,
+          "neutral": 0
+        }
+      },
+      "passes_legibility_gate": true
+    }
+  },
+  "passes": true
+}
