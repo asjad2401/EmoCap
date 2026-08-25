@@ -64,7 +64,8 @@ PARTS = {
     # it, and separate from `classifier` because it changes whenever an arm is re-decoded.
     "predictions": {
         "slug": "emocap-v2-predictions",
-        "title": "EmoCap v2 — generated captions (references removed)",
+        # Kaggle caps dataset titles at 50 characters; the long form was 51.
+        "title": "EmoCap v2 — generated captions, no refs",
         "sources": {"predictions": ROOT / "runs/kaggle-preds"},
     },
     "classifier": {
