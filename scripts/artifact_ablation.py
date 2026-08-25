@@ -48,6 +48,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
+from emocap.runtime import rel  # noqa: E402
+
 from emocap.data.prompt import EMOTIONS  # noqa: E402
 from emocap.eval.register_classifier import (finetune_classifier,  # noqa: E402
                                              strip_artifacts)
@@ -211,7 +213,7 @@ def main() -> None:
     out = ROOT / args.out
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(report, indent=2))
-    print(f"\nwrote {out.relative_to(ROOT)}")
+    print(f"\nwrote {rel(out)}")
 
 
 if __name__ == "__main__":

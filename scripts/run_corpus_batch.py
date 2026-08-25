@@ -31,7 +31,7 @@ from emocap.data import drop_malformed, read_captions  # noqa: E402
 from emocap.data.exclusions import load_exclusions  # noqa: E402
 from emocap.data.generate import completed_keys, vertex_client  # noqa: E402
 from emocap.data.vertex_batch import run_vertex_batch  # noqa: E402
-from emocap.runtime import Manifest, load_config  # noqa: E402
+from emocap.runtime import Manifest, load_config, rel# noqa: E402
 
 PROJECT = "gen-lang-client-0673022159"
 BUCKET = f"emocap-batch-{PROJECT}"
@@ -83,7 +83,7 @@ def main() -> None:
     run_dir = ROOT / "runs" / f"corpus-batch-{time.strftime('%Y%m%d-%H%M%S')}"
     man = Manifest(run_id=run_dir.name, stage="02c_corpus_batch",
                    config={**gen, "chunk": args.chunk, "n_images": len(pending),
-                           "out_path": str(out.relative_to(ROOT)), "bucket": BUCKET})
+                           "out_path": str(rel(out)), "bucket": BUCKET})
     man.save(run_dir)
 
     tot = {"images": 0, "captions": 0, "row_errors": 0, "failed": []}

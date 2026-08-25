@@ -137,3 +137,23 @@ def assert_matches_lock(
             + "\n\nIf this change is intended, record it in docs/deviations.md and "
             "bump the lock to prereg-v2. Do not silently edit the lock."
         )
+
+
+def rel(path) -> "Path":
+    """``path`` relative to the repository, or unchanged when it lies outside it.
+
+    Only ever used to make a printed path shorter. ``Path.relative_to`` RAISES when the
+    path is outside the root, and every script here has an ``--out``/``--out-root`` that can
+    point anywhere -- on Kaggle they always do, since outputs go to ``/kaggle/working`` while
+    the clone sits in ``/kaggle/working/EmoCap``.
+
+    That turned into three separate incidents. Twenty complete baseline runs were reported
+    as failures by a print statement; a P4 run threw away two trained judges; an artifact
+    ablation threw away twenty minutes of cross-validation it had already written to disk.
+    Each time the work was finished and the crash was in the line that formats the path
+    for a log message. Fixing it twice as one-offs is why it happened a third time.
+    """
+    from pathlib import Path
+
+    p = Path(path)
+    return p.relative_to(REPO_ROOT) if p.is_relative_to(REPO_ROOT) else p

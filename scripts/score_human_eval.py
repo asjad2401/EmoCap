@@ -37,7 +37,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from emocap.eval.bootstrap import cluster_bootstrap_mean  # noqa: E402
 from emocap.eval.human_eval import krippendorff_alpha  # noqa: E402
-from emocap.runtime import load_config  # noqa: E402
+from emocap.runtime import load_config, rel# noqa: E402
 
 SCALES = ("tone", "ground")
 LABEL = {"tone": "tone-match", "ground": "grounding"}
@@ -252,8 +252,7 @@ def main() -> None:
         "per_arm": per_arm, "pairwise_uncorrected": pairs,
         "bootstrap": boot,
     }, indent=2))
-    rel = out.relative_to(ROOT) if out.is_relative_to(ROOT) else out
-    print(f"\nwrote {rel}")
+    print(f"\nwrote {rel(out)}")
 
 
 if __name__ == "__main__":

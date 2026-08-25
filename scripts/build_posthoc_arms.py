@@ -29,6 +29,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
+from emocap.runtime import rel  # noqa: E402
+
 from emocap.data.arms import load_corpus, write_arm  # noqa: E402
 from emocap.data.exclusions import load_exclusions  # noqa: E402
 from emocap.data.posthoc import (build_s_paired_matched,  # noqa: E402
@@ -202,7 +204,7 @@ def main() -> None:
     print(f"  S_unpaired_scaled: {len(scaled):,} cells vs S_paired5's {len(paired5):,}"
           f"  (volume matched, pairing removed)")
     print(f"  registers in S_unpaired_scaled: {dict(reg_scaled)}  spread {spread}")
-    print(f"\nwrote both arms and {(out / 'posthoc_manifest.json').relative_to(ROOT)}")
+    print(f"\nwrote both arms and {rel(out / 'posthoc_manifest.json')}")
 
 
 if __name__ == "__main__":

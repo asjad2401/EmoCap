@@ -51,7 +51,7 @@ from emocap.data.generate import (  # noqa: E402
     load_image_bytes,
     vertex_client,
 )
-from emocap.runtime import Manifest, load_config  # noqa: E402
+from emocap.runtime import Manifest, load_config, rel# noqa: E402
 
 PROJECT = "gen-lang-client-0673022159"
 
@@ -242,7 +242,7 @@ def main() -> None:
                            "min_words": MINW, "max_words": MAXW,
                            "max_sentences": MAXS,
                            "cap_refresh": args.cap_refresh,
-                           "out_path": str(out_path.relative_to(ROOT)),
+                           "out_path": str(rel(out_path)),
                            "image_ids": pending})
     man.save(run_dir)
 

@@ -8,42 +8,42 @@
     {
       "top_k": 10,
       "min_doc_freq": 2,
-      "anchor_ours": 0.3629,
+      "anchor_ours": 0.3634,
       "anchor_human": 0.3692,
-      "margin_ours": 0.3201,
+      "margin_ours": 0.3196,
       "margin_human": 0.3568,
-      "margin_diff": 0.0367,
-      "pct_of_gap_explained_by_anchor": 14.7
+      "margin_diff": 0.0372,
+      "pct_of_gap_explained_by_anchor": 13.5
     },
     {
       "top_k": 10,
       "min_doc_freq": 4,
-      "anchor_ours": 0.3629,
+      "anchor_ours": 0.3635,
       "anchor_human": 0.3692,
-      "margin_ours": 0.3201,
+      "margin_ours": 0.3195,
       "margin_human": 0.3568,
-      "margin_diff": 0.0367,
-      "pct_of_gap_explained_by_anchor": 14.7
+      "margin_diff": 0.0373,
+      "pct_of_gap_explained_by_anchor": 13.3
     },
     {
       "top_k": 10,
       "min_doc_freq": 8,
-      "anchor_ours": 0.3688,
+      "anchor_ours": 0.3721,
       "anchor_human": 0.3754,
-      "margin_ours": 0.3142,
+      "margin_ours": 0.3109,
       "margin_human": 0.3506,
-      "margin_diff": 0.0364,
-      "pct_of_gap_explained_by_anchor": 15.3
+      "margin_diff": 0.0397,
+      "pct_of_gap_explained_by_anchor": 7.7
     },
     {
       "top_k": 25,
       "min_doc_freq": 2,
-      "anchor_ours": 0.4466,
+      "anchor_ours": 0.4486,
       "anchor_human": 0.4483,
-      "margin_ours": 0.2364,
+      "margin_ours": 0.2344,
       "margin_human": 0.2777,
-      "margin_diff": 0.0413,
-      "pct_of_gap_explained_by_anchor": 4.0
+      "margin_diff": 0.0433,
+      "pct_of_gap_explained_by_anchor": -0.7
     },
     {
       "top_k": 25,
@@ -58,72 +58,72 @@
     {
       "top_k": 25,
       "min_doc_freq": 8,
-      "anchor_ours": 0.4656,
+      "anchor_ours": 0.4666,
       "anchor_human": 0.4673,
-      "margin_ours": 0.2174,
+      "margin_ours": 0.2164,
       "margin_human": 0.2587,
-      "margin_diff": 0.0413,
-      "pct_of_gap_explained_by_anchor": 4.0
+      "margin_diff": 0.0423,
+      "pct_of_gap_explained_by_anchor": 1.6
     },
     {
       "top_k": 50,
       "min_doc_freq": 2,
-      "anchor_ours": 0.5204,
+      "anchor_ours": 0.5101,
       "anchor_human": 0.4946,
-      "margin_ours": 0.1626,
+      "margin_ours": 0.1729,
       "margin_human": 0.2314,
-      "margin_diff": 0.0688,
-      "pct_of_gap_explained_by_anchor": -60.0
+      "margin_diff": 0.0585,
+      "pct_of_gap_explained_by_anchor": -36.0
     },
     {
       "top_k": 50,
       "min_doc_freq": 4,
-      "anchor_ours": 0.52,
+      "anchor_ours": 0.5117,
       "anchor_human": 0.4999,
-      "margin_ours": 0.163,
+      "margin_ours": 0.1713,
       "margin_human": 0.2261,
-      "margin_diff": 0.0631,
-      "pct_of_gap_explained_by_anchor": -46.7
+      "margin_diff": 0.0548,
+      "pct_of_gap_explained_by_anchor": -27.4
     },
     {
       "top_k": 50,
       "min_doc_freq": 8,
-      "anchor_ours": 0.495,
+      "anchor_ours": 0.4973,
       "anchor_human": 0.4965,
-      "margin_ours": 0.188,
+      "margin_ours": 0.1857,
       "margin_human": 0.2295,
-      "margin_diff": 0.0415,
-      "pct_of_gap_explained_by_anchor": 3.5
+      "margin_diff": 0.0438,
+      "pct_of_gap_explained_by_anchor": -1.9
     },
     {
       "top_k": 100,
       "min_doc_freq": 2,
-      "anchor_ours": 0.5438,
+      "anchor_ours": 0.5343,
       "anchor_human": 0.5187,
-      "margin_ours": 0.1392,
+      "margin_ours": 0.1487,
       "margin_human": 0.2073,
-      "margin_diff": 0.0681,
-      "pct_of_gap_explained_by_anchor": -58.4
+      "margin_diff": 0.0586,
+      "pct_of_gap_explained_by_anchor": -36.3
     },
     {
       "top_k": 100,
       "min_doc_freq": 4,
-      "anchor_ours": 0.525,
+      "anchor_ours": 0.5197,
       "anchor_human": 0.5165,
-      "margin_ours": 0.158,
+      "margin_ours": 0.1633,
       "margin_human": 0.2095,
-      "margin_diff": 0.0515,
-      "pct_of_gap_explained_by_anchor": -19.8
+      "margin_diff": 0.0462,
+      "pct_of_gap_explained_by_anchor": -7.4
     },
     {
       "top_k": 100,
       "min_doc_freq": 8,
-      "anchor_ours": 0.4816,
+      "anchor_ours": 0.4628,
       "anchor_human": 0.4897,
-      "margin_ours": 0.2014,
+      "margin_ours": 0.2202,
       "margin_human": 0.2363,
-      "margin_diff": 0.0349,
-      "pct_of_gap_explained_by_anchor": 18.8
+      "margin_diff": 0.0161,
+      "pct_of_gap_explained_by_anchor": 62.6
     }
   ]
 }

@@ -33,6 +33,9 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
+from emocap.runtime import rel  # noqa: E402
 
 KEEP = ("image_id", "emotion", "generated", "fold")
 
@@ -81,7 +84,7 @@ def main() -> None:
     print(f"{runs} runs, {total:,} predictions")
     print(f"  {raw_bytes/1e6:.0f} MB with references -> {kept_bytes/1e6:.0f} MB without")
     print(f"  fields kept: {', '.join(KEEP)}   (reference dropped)")
-    print(f"\nwrote {out.relative_to(ROOT)}")
+    print(f"\nwrote {rel(out)}")
     print("  now: uv run python scripts/push_kaggle.py --part predictions")
 
 

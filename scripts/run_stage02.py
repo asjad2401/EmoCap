@@ -31,7 +31,7 @@ from emocap.data import (  # noqa: E402
 from emocap.data.batch import run_batch_generation  # noqa: E402
 from emocap.data.exclusions import load_exclusions, record_exclusion  # noqa: E402
 from emocap.data.generate import completed_keys, read_records  # noqa: E402
-from emocap.runtime import Manifest, assert_matches_lock, load_config  # noqa: E402
+from emocap.runtime import Manifest, assert_matches_lock, load_config, rel# noqa: E402
 
 
 def load_key() -> str:
@@ -207,7 +207,7 @@ def main() -> None:
                    config={**gen, "part": args.part, "chunk_size": args.chunk_size,
                            "prompt_sha256": prompt_sha,
                            "n_images": len(pending), "audit_offset": args.audit_offset,
-                           "out_path": str(out_path.relative_to(ROOT)),
+                           "out_path": str(rel(out_path)),
                            "image_ids": pending})
     man.save(run_dir)
 

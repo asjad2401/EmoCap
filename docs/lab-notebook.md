@@ -878,3 +878,129 @@ measurement. Publish the five captions and never the accuracy.
 * Human evaluation is at 2 of 3 raters. Krippendorff's alpha is computable for the first time
   — grounding **+0.617**, tone-match **+0.457** — both below the 0.667 conventional threshold
   for tentative conclusions, so the per-arm tone means carry little weight yet.
+
+---
+
+## 2026-08-25 — the human evaluation closes, the ablation clears, and a bug that ate three runs
+
+### The registered human evaluation is complete
+
+Three raters, 150 items, blinded and randomised, 12 attention checks, run once on final
+models. All three were external and none had any connection to the study.
+
+| scale | Krippendorff's alpha, ordinal |
+|---|---|
+| grounding | **+0.684** |
+| tone-match | **+0.579** |
+
+The conventional bars are 0.800 for firm conclusions and 0.667 for tentative ones. Grounding
+clears the second; tone-match does not. **That split is itself worth reporting**: grounding is
+close to a factual judgement and tone is closer to taste. It also lands on the study's own
+assumption — the primary metric is a classifier reading tone from text, and three blind
+humans managed only 0.58 agreement on the same judgement.
+
+| arm | tone-match | grounding |
+|---|---|---|
+| S_paired25 | 4.19 [3.92, 4.43] | 3.93 [3.58, 4.25] |
+| S_paired5 | 4.15 [3.91, 4.37] | 3.38 [3.02, 3.72] |
+| V1_paired5 | **3.88** [3.61, 4.13] | 3.61 [3.26, 3.95] |
+
+**V1 is last on tone at every rater count** — one, two and three — by about 0.3 against both
+S arms. That is now the fifth independent measure ranking V1 last, after the keyword anchor,
+CIDEr-D, CLIPScore and the punctuation ablation. The classifier still ranks it second. Five
+measures agreeing, and the one that disagrees is the one the study is arguing about.
+
+V1's grounding position moved between one rater and three, from last to middle. The
+single-rater table was not settled and should not have been read as though it were.
+
+### One rater carries almost all of the disagreement, and is retained
+
+Attention checks: IM 12/12, MA 12/12, MM 8/12. Leave-one-out, **post-hoc**:
+
+| dropped | tone-match | grounding |
+|---|---|---|
+| IM | +0.4566 | +0.6171 |
+| MA | +0.4004 | +0.5555 |
+| **MM** | **+0.8705** | **+0.8978** |
+| (none) | +0.5789 | +0.6841 ← registered |
+
+Without MM both scales clear the 0.800 bar. MA and IM are close to interchangeable.
+
+**MM stays in, and the reason is not politeness.** They passed the attention-check rule fixed
+before any data existed, which flags only below 50%. Dropping the rater who turns out to
+disagree most, *after* discovering they disagree most, is sampling until the number improves.
+Every rater is dropped in turn in the table above precisely so that reading is available to a
+reader without being privileged by the analysis.
+
+**The obvious explanation was tested and does not hold.** MM finished faster than MA, which
+suggested haste. The timestamps say otherwise:
+
+| rater | total | median per item | answers under 2s |
+|---|---|---|---|
+| MM | 26.1 min | **8.85 s** | 0 |
+| MA | 35.3 min | 8.60 s | 0 |
+| IM | **25.2 min** | **5.27 s** | 0 |
+
+IM was the *fastest* rater and agrees most; MM has the *longest* median per item of the
+three. MM's shorter total than MA comes from MA taking occasional long pauses, not from MM
+rushing. Nobody answered anything in under two seconds. There is no haste signature in this
+data and the hypothesis is dropped.
+
+What is left is that MM read the tone scale differently: all four of their missed checks were
+wrong-register items scored exactly **3** — "neither" where the others committed to a low
+score — at a median of nearly nine seconds each. That is a scale-usage difference, not
+inattention.
+
+Since all three were blind and unconnected, the honest reading is that MA and IM happening to
+share an intuition is as plausible as MM being the odd one out. Two raters agreeing is
+evidence that they are similar, not that they are right. **0.579 and 0.684 stand as the
+study's numbers.**
+
+### The artifact ablation clears, on the instrument that scores the study
+
+The registered check had never actually run: `runs/classifier/report.json` reports a gap of
+exactly 0.0000 because it was computed on TF-IDF, whose tokenizer discards punctuation before
+it sees the text. Redone on the frozen DistilRoBERTa, where stripping changes 98–100% of the
+input:
+
+| level | raw | stripped | gap |
+|---|---|---|---|
+| instrument, 5-fold CV | 0.8279 | 0.8214 | **+0.0065** |
+| arms, worst case (`V1_paired5`) | 0.8747 | 0.8366 | **+0.0381** |
+| arms, every other arm | — | — | −0.0009 to +0.0123 |
+
+**The instrument does not read punctuation** — 0.65 of a point. The raw accuracies stand as
+primary and §4.1's fallback is not triggered. The exception is `V1_paired5`, where nearly four
+points of accuracy is formatting: the sixth measure on which V1 comes last.
+
+### A path-formatting bug destroyed three completed runs
+
+`Path.relative_to` raises when the path is outside the root, and every script here has an
+output flag that can point anywhere — on Kaggle they always do, since outputs go to
+`/kaggle/working` while the clone sits in `/kaggle/working/EmoCap`. Used only to shorten a
+path for a log line, it took down:
+
+* twenty complete baseline runs, reported as failures by a print statement;
+* a P4 run that had trained and saved judge S (own-corpus CV 0.8565);
+* this artifact ablation, after all five folds had finished **and the results file had been
+  written**.
+
+Each time the work was done and the crash was in the line formatting the path. The ablation
+numbers above were recovered from the kernel log rather than recomputed, and
+`results/artifact_ablation.json` records that provenance.
+
+It was fixed twice as one-offs, which is exactly why it happened a third time. There is now
+one `emocap.runtime.rel()` and no `relative_to(ROOT)` anywhere in `scripts/`.
+
+The same run also exposed a second one: `finetune_classifier` and `train_final_classifier`
+resolved their device as "mps if available else cpu". Correct on the laptop; on a T4 there is
+no MPS, so both trained DistilRoBERTa on the host CPU with an idle GPU beside them. That is
+why P4 appeared hung after 800 seconds without finishing a fold.
+
+### Still open
+
+* **P4 has never completed.** Two attempts: one wedged on MPS overnight, one crashed on the
+  path bug after training judge S. Both bugs are fixed; it needs one clean run.
+* **Two human items remain**, and both are narrower than the evaluation that just closed:
+  the legibility sample widened to >=300, and 250 hand-labelled captions not written by
+  Gemini. P5 waits on the first.

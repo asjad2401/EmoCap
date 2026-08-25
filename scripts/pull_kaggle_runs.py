@@ -33,6 +33,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
+from emocap.runtime import rel  # noqa: E402
+
 
 def api():
     os.environ.setdefault("KAGGLE_CONFIG_DIR", os.path.expanduser("~/.kaggle"))
@@ -79,7 +81,7 @@ def main() -> None:
             shutil.rmtree(dst)
         shutil.copytree(src, dst)
         n = sum(1 for _ in (dst / "predictions.jsonl").open())
-        print(f"  {dst.name:<22} {n:>7,} predictions -> {dst.relative_to(ROOT)}")
+        print(f"  {dst.name:<22} {n:>7,} predictions -> {rel(dst)}")
         pulled.append(dst)
     shutil.rmtree(tmp)
 

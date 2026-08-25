@@ -49,6 +49,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
+from emocap.runtime import rel  # noqa: E402
+
 from emocap.data.prompt import EMOTIONS  # noqa: E402
 from emocap.eval.register_classifier import (confusion_matrix,  # noqa: E402
                                              finetune_classifier,
@@ -167,7 +169,7 @@ def main() -> None:
         if not args.skip_cv and cache.exists() and not args.retrain:
             entry.update(json.loads(cache.read_text()))
             print(f"\njudge {k}: reusing cached own-corpus CV "
-                  f"{entry['own_cv_accuracy']:.4f} from {cache.relative_to(ROOT)}")
+                  f"{entry['own_cv_accuracy']:.4f} from {rel(cache)}")
         elif not args.skip_cv:
             t0 = time.time()
             print(f"\njudge {k}: 5-fold CV by image on its own corpus ...", flush=True)
@@ -198,7 +200,7 @@ def main() -> None:
             fin = train_final_classifier(texts, labels, out_dir=out_dir)
             entry.update({"sha256": fin["sha256"], "epochs": fin["epochs"]})
             print(f"  sha256 {fin['sha256'][:16]}")
-        entry["path"] = str(out_dir.relative_to(ROOT))
+        entry["path"] = str(rel(out_dir))
         report["judges"][k] = entry
 
     paths = {k: ROOT / report["judges"][k]["path"] for k in JUDGES}
@@ -278,7 +280,7 @@ def main() -> None:
     out = ROOT / args.out
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(report, indent=2))
-    print(f"\nwrote {out.relative_to(ROOT)}")
+    print(f"\nwrote {rel(out)}")
 
 
 if __name__ == "__main__":

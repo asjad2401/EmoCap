@@ -57,5 +57,22 @@
     "max_abs_gap": 0.0381,
     "mean_gap": 0.0087,
     "reading": "a large positive gap would mean the reported accuracies lean on punctuation and the stripped column becomes primary"
+  },
+  "instrument": {
+    "raw_cv_accuracy": 0.8279,
+    "stripped_cv_accuracy": 0.8214,
+    "gap": 0.0065,
+    "n": 13170,
+    "changed_by_strip": 0.983,
+    "per_fold_running": [
+      0.8182,
+      0.8157,
+      0.8177,
+      0.8211,
+      0.8214
+    ],
+    "device": "cuda (Tesla T4)",
+    "recovered_from": "Kaggle kernel log 02i-artifact-ablation, 2026-08-25. The run completed all five folds and wrote this file, then crashed in the line that formats the output path for a log message (Path.relative_to on a path outside the repo). The numbers below are the ones it printed; no part of the computation was affected.",
+    "note": "raw value is the CV accuracy recorded when the instrument was frozen; the stripped run retrains transient models and does NOT touch models/register_classifier"
   }
 }

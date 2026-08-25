@@ -56,7 +56,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from emocap.data.prompt import EMOTIONS  # noqa: E402
-from emocap.runtime import load_config  # noqa: E402
+from emocap.runtime import load_config, rel  # noqa: E402
 
 CLIP_W = 2.5  # Hessel et al.'s rescaling; affects the scale, never the ordering
 
@@ -290,7 +290,7 @@ def main() -> None:
         r = one_run(run, refs, data_root, device)
         out.write_text(json.dumps(r, indent=2))
         show(r)
-        print(f"  -> {out.relative_to(ROOT)}\n", flush=True)
+        print(f"  -> {rel(out)}\n", flush=True)
 
 
 if __name__ == "__main__":

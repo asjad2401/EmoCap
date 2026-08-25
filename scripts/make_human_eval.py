@@ -70,7 +70,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from emocap.data.prompt import EMOTIONS  # noqa: E402
-from emocap.runtime import load_config  # noqa: E402
+from emocap.runtime import load_config, rel# noqa: E402
 
 SALT = "humaneval-v1"
 
@@ -445,7 +445,7 @@ def main() -> None:
     print(f"  {len(items) - len(real)} attention checks "
           f"{dict(Counter(i['kind'] for i in items if i['kind'] != 'real'))}")
     print(f"  images reused: {len(items) - len(cache)} (0 means every photo appears once)")
-    print(f"  answer key -> {kp.relative_to(ROOT)}  (the page never loads it)")
+    print(f"  answer key -> {rel(kp)}  (the page never loads it)")
     print(f"\n  send {out.name} to {spec['raters']} raters; collect their JSON exports into "
           f"runs/human-eval/")
 

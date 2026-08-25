@@ -57,7 +57,7 @@ from emocap.data.arms import load_corpus  # noqa: E402
 from emocap.data.prompt import EMOTIONS  # noqa: E402
 from emocap.decode.beam import DecodeConfig  # noqa: E402
 from emocap.models.dataset import load_arm, make_split  # noqa: E402
-from emocap.runtime import Manifest, load_config, seed_everything  # noqa: E402
+from emocap.runtime import Manifest, load_config, seed_everything, rel# noqa: E402
 
 #: Fixed before any baseline score existed. Prompt wording is a real degree of freedom --
 #: a better prompt would raise the floor -- so these are recorded in the run manifest and
@@ -211,12 +211,11 @@ def main() -> None:
               f"{uniq} outcomes, not an effect:")
         for e in EMOTIONS:
             print(f"    {e:<9} {caps[e]!r}")
-    # Not run_dir.relative_to(ROOT): --out-root can point outside the repo, and on Kaggle
+    # Not rel(run_dir): --out-root can point outside the repo, and on Kaggle
     # it does -- the outputs land in /kaggle/working/runs while the clone is in
     # /kaggle/working/EmoCap. This crashed AFTER every file was written, so 20 complete
     # baseline runs were reported as failures by a print statement.
-    rel = run_dir.relative_to(ROOT) if run_dir.is_relative_to(ROOT) else run_dir
-    print(f"\n  score it:  uv run python scripts/score_arm.py --run {rel}")
+    print(f"\n  score it:  uv run python scripts/score_arm.py --run {rel(run_dir)}")
 
 
 if __name__ == "__main__":

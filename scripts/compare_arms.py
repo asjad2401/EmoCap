@@ -67,7 +67,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from emocap.eval.bootstrap import cluster_bootstrap_mean  # noqa: E402
-from emocap.runtime import load_config  # noqa: E402
+from emocap.runtime import load_config, rel# noqa: E402
 
 #: Post-hoc comparisons, with the reading of each fixed here rather than after the numbers.
 #: Left vs right, and what a positive margin difference would mean.
@@ -367,7 +367,7 @@ def main() -> None:
     print(f"runs found        {len(runs)} of {expected} registered")
     print(f"excluded by probe {len(excluded)}" + (f"  {excluded}" if excluded else ""))
     if not vpath.exists():
-        print(f"\n  NO VERDICT FILE at {vpath.relative_to(ROOT)}")
+        print(f"\n  NO VERDICT FILE at {rel(vpath)}")
         print(VERDICT_HELP)
     if unreviewed:
         print(f"unreviewed        {len(unreviewed)} run(s) have no probe verdict:")
@@ -491,7 +491,7 @@ def main() -> None:
         "smallest_effect_of_interest": soi, "criterion_points": crit_pts,
         "bootstrap": boot, "correction": lock["metrics"]["multiple_comparisons"],
     }, indent=2))
-    print(f"\nwrote {out.relative_to(ROOT)}")
+    print(f"\nwrote {rel(out)}")
 
 
 if __name__ == "__main__":
