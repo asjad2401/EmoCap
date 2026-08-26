@@ -1120,3 +1120,114 @@ comparison.
 
 `WRITING-4-of-5.html` and `WRITING-5-of-5.html` were built and never sent. They remain
 reproducible from `runs/offdist/key.json` if the shortfall is ever worth closing.
+
+---
+
+## 2026-08-25 — the registered anchor gradient named the wrong corpus, and one value was never measured
+
+**Two frozen documents disagreed about the same number, and resolving it moved a registered
+figure by 8.2 points.** `docs/preregistration.md` quotes the three-corpus stereotypy gradient
+as **v1 0.718 / ours 0.507 / human 0.450** at 4,486 cells. `configs/prereg.lock.yaml`
+(`lexical_shortcut_reference.matched_4486_cells`) quotes **ours 0.440** at the same n. Both
+files are byte-identical to `prereg-v2` and **neither names the corpus it measured**, so
+neither could be checked against the other by reading.
+
+Recomputed with the registered estimator — `scripts/anchor_corpus_gradient.py`, written for
+this, results in `results/anchor_corpus_gradient.json`.
+
+### The cause: two full-scale corpora exist, and the registered numbers describe the wrong one
+
+| store | prompt | generator | cells | role |
+|---|---|---|---|---|
+| `data/generated/captions_raw.jsonl` | **v5** | `gemini-3.1-flash-lite` | 201,900 | superseded — **trains no arm** |
+| `data/generated/captions_corpus.jsonl` | **v10** | `gemini-3.7-flash` | 201,875 | **every S arm trains on this** |
+
+| registered figure | what it actually is | reproduces? |
+|---|---|---|
+| **0.440** (the lock) | the **v5** corpus at 4,486 cells → **0.4443 ± 0.0111**, and its 24,925-cell value → **0.4075** against the registered 0.403 | **yes — but it is the wrong corpus** |
+| **0.507** (the prereg) | **nothing.** No store in this repository produces it | **no** |
+| **0.718** (v1 pilot) | **0.7171 ± 0.0047** | yes |
+| **0.450** (human) | 0.4501, `runs/anchor-matched/result.json` | yes |
+
+**0.507 was never a measurement.** It was written while the v10 corpus did not yet exist, and
+**the registration says exactly that about itself**: *"Every anchor in this document is
+provisional until the corpus exists"*, and *"The gradient's **ordering** is the registered
+prediction; its **values** are not."* So this is not a violation — the registration reserved
+this in advance, and it is the clause doing its job. It is logged here because a registered
+number moved, which is what this file is for.
+
+**The corpus every S arm trains on had never been measured at 4,486 cells.** It is **0.5890**.
+
+### The corrected gradient — the registered ORDERING holds
+
+| corpus | anchor @ 4,486 | anchor @ full n |
+|---|---|---|
+| **v1 pilot** | **0.7171** | 0.6254 (40,315 cells) |
+| **ours, v10 — FINAL** | **0.5890** | **0.4196** (201,875 cells) |
+| ours, v5 — superseded | 0.4443 | 0.3324 (201,900 cells) |
+| **human (Personality-Captions, strict)** | **0.4501** | — |
+
+**v1 > ours > human is preserved.** The registered prediction was on the ordering and it holds.
+
+### A second dependence, and nothing in this project controlled for it
+
+The anchor is registered as sample-size dependent, and it is. **It is also dependent on cells
+per image**, which no rule in the lock addresses. The three corpora differ on exactly that —
+human **1**, v1 **5**, ours **25** — so *"matched at 4,486 cells"* **does not match the
+diversity of the fit pool.** The same v10 corpus, viewed at the other two structures using the
+arms' own hash rules:
+
+| view of the v10 corpus | anchor @ 4,486 | fair comparison |
+|---|---|---|
+| **1 cell/image** (the human corpus's structure) | **0.6590** | vs human **0.4501** → gap **20.9 pts** |
+| **5 cells/image** (v1's structure) | **0.5878** | vs v1 **0.7171** → gap **12.9 pts** |
+| 25 cells/image (raw) | 0.5890 | — |
+
+**The ordering survives every view.** The structure-matched figures are the fair comparisons;
+0.5890 is the figure to quote when no comparison is being made. `§4`'s rule — *recompute on
+whatever set the metric is measured on, at that set's own n* — should be read as **at that
+set's own n and structure**. That is a strengthening of the registered rule, not a departure
+from it, and the paper should state it as a methodological finding: **a keyword anchor is not
+comparable across corpora that differ in captions per image, even at identical cell counts.**
+
+### What changes downstream — three items, all checked
+
+1. **The human-legibility gate still passes.** The registered comparison was reader **0.8640**
+   against anchor 0.507. The correct comparison is **0.8640 against 0.5890** — or 0.6590 at
+   the human corpus's own structure. The margin falls from ~0.357 to **0.275** (or 0.205)
+   against SE 0.0198. **Still overwhelming. Gate outcome unchanged**, and the gate's own
+   requirement — that the anchor be *for the same corpus at the same n* — is now actually met
+   rather than approximately met.
+
+2. **Our corpus is more lexically stereotyped, relative to human text, than registered.**
+   **13.9 points** at raw structure and **20.9** structure-matched, against a registered
+   **5.7**. This **strengthens** the study's central claim rather than weakening it: the
+   corpus that scores 0.9119 is further from human text on the exact axis the paper argues
+   accuracy is measuring.
+
+3. **One rationale in the registration does not survive, and must be reported rather than
+   repeated.** §3 argues P6 is scoped to the matched-image pair because its anchor gap is
+   **21 points** against **5.7** cross-dataset — *"below both the ≥7 criterion and the 6.3
+   MDE, so P6 could not be tested there even if it were coherent to try."* Corrected, **the
+   two gaps swap: matched pair 12.9, cross-dataset 20.9**, which is above the criterion.
+
+   **The conclusion is unaffected** — both cross-dataset arms sit at floor (accuracy 0.2457
+   and 0.2089 against 0.200 chance), and that comparison remains confounded by image
+   distribution and groundedness, CLIPScore 2.64 SD apart. **But the reason P6 could not be
+   tested cross-dataset is the confound, not the anchor gap**, and the write-up must say the
+   true reason instead of quoting the registered one.
+
+### Why this was found at all
+
+The conflict was invisible to `scripts/check_docs.py`, which checks that documents agree with
+each other and found nothing, because **both documents were internally consistent and simply
+described different corpora.** It surfaced only when every anchor in the study was assembled
+into one place for the write-up and the two values sat on adjacent lines. **A consistency
+checker cannot catch a number that is consistent and wrong**; that needs recomputation from
+the estimator, which is why the estimator was made reproducible in the first place.
+
+**Neither registered file is edited.** `docs/preregistration.md` and
+`configs/prereg.lock.yaml` remain byte-identical to `prereg-v2`; the correction lives here and
+in `results/anchor_corpus_gradient.json`.
+
+**Reproduce:** `uv run python scripts/anchor_corpus_gradient.py`

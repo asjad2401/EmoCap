@@ -1,0 +1,91 @@
+{
+ "why": "resolve 0.507 vs 0.440; neither describes the corpus that trained the arms",
+ "estimator": "cv5_by_image_id_3seeds_fractional_ties",
+ "matched_n_cells": 4486,
+ "chance": 0.2,
+ "corpora": {
+  "v1_pilot": {
+   "store": "archive/v1-pilot/data/v1_emotion_captions.csv.gz",
+   "cells_per_image": 5,
+   "images": 8063,
+   "matched": {
+    "mean": 0.7171,
+    "sd": 0.0047,
+    "min": 0.7095,
+    "max": 0.7238,
+    "n_cells": 4486
+   },
+   "full_n": 0.6254,
+   "registered_value": 0.718,
+   "reproduces": true
+  },
+  "ours_v10_FINAL": {
+   "store": "data/generated/captions_corpus.jsonl",
+   "model": "gemini-3.7-flash",
+   "prompt": "v10",
+   "cells_per_image": 25,
+   "images": 8075,
+   "matched": {
+    "mean": 0.589,
+    "sd": 0.0065,
+    "min": 0.5742,
+    "max": 0.5965,
+    "n_cells": 4486
+   },
+   "full_n": 0.4196,
+   "registered_value": null,
+   "note": "NEVER MEASURED BEFORE. This is the corpus every S arm trains on."
+  },
+  "ours_v5_SUPERSEDED": {
+   "store": "data/generated/captions_raw.jsonl",
+   "model": "gemini-3.1-flash-lite",
+   "prompt": "v5",
+   "cells_per_image": 25,
+   "images": 8076,
+   "matched": {
+    "mean": 0.4443,
+    "sd": 0.0111,
+    "min": 0.4321,
+    "max": 0.4644,
+    "n_cells": 4486
+   },
+   "full_n": 0.3324,
+   "registered_value": 0.44,
+   "reproduces": true,
+   "note": "this is what the lock's 0.440 measured; it trains no arm"
+  },
+  "human_personality_captions": {
+   "source": "runs/anchor-matched/result.json (unchanged by the prompt rewrite)",
+   "cells_per_image": 1,
+   "matched": {
+    "mean": 0.4501,
+    "sd": 0.0,
+    "n_cells": 4486
+   },
+   "registered_value": 0.45,
+   "reproduces": true
+  }
+ },
+ "structure_matched_views_of_ours_v10": {
+  "1_cell_per_image": {
+   "mean": 0.659,
+   "sd": 0.0059,
+   "min": 0.648,
+   "max": 0.6668,
+   "n_cells": 4486
+  },
+  "5_cells_per_image": {
+   "mean": 0.5878,
+   "sd": 0.0111,
+   "min": 0.5736,
+   "max": 0.6064,
+   "n_cells": 4486
+  }
+ },
+ "forecast_0_507": {
+  "reproduces_from": null,
+  "verdict": "a pre-corpus forecast, not a measurement; the registration labels every anchor in it provisional until the corpus exists",
+  "measured_instead": "0.589 at 4,486 cells",
+  "error": "+0.082 -- the forecast UNDERSTATED our corpus's stereotypy"
+ }
+}

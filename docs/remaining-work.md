@@ -158,6 +158,14 @@ study; these can.
       three-corpus provenance comparison needs paired data — and that the human corpus
       cannot supply it — stands on its own.
 - [ ] State that the P6-shaped reading of `S_paired5` vs `V1_paired5` is **exploratory**.
+- [ ] **Quote the recomputed anchor gradient, not the registered one, and give P6's true
+      scoping reason.** The registered `ours 0.507` was a forecast and reproduces from no
+      corpus; the v10 corpus that trains every S arm is **0.5890** at 4,486 cells. The
+      gradient's ordering holds (v1 0.7171 > ours 0.5890 > human 0.4501) but the two anchor
+      gaps swap, so P6 was scoped to the matched pair by the **image-distribution confound**,
+      not by the anchor gap the registration cites. Also report that the anchor depends on
+      **cells per image** as well as n. Full record: `docs/deviations.md`, 2026-08-25;
+      numbers: `results/anchor_corpus_gradient.json`.
       That pair is a confirmatory comparison in its own right, but P6 was registered over
       the unpaired pair.
 
